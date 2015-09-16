@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="..>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PAN 2010</title> 
+
+<link href="../../css/bootstrap.min.css" rel="stylesheet" />
+<link href="../../css/prettify.css" rel="stylesheet" />
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="../../js/html5shiv.js"></script>
+  <script src="../../js/respond.min.js"></script>
+<![endif]-->
+
+<link rel="shortcut icon" href="../pan10-figures/pan-icon-16x16.ico">
+<!--
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+-->
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="index.html"><img src="../pan10-figures/pan-logo-small-lightgrey.png" alt="PAN" style="margin-top:-5px"></a>
+  </div>
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li><a href="about.html">About</a></li>
+      <li><a href="plagiarism-detection.html">Plagiarism Detection</a></li>
+      <li><a href="wikipedia-vandalism-detection.html">Wikipedia Vandalism Detection</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Join PAN's mailing list <span class="caret"></span></a>
+        <ul class="dropdown-menu pull-right" role="menu"><li>
+          <form class="form-inline" role="form" style="white-space:nowrap;margin:0 20px;" action="http://groups.google.com/group/pan-workshop-series/boxsubscribe">
+          <div class="input-group">
+            <input class="form-control" style="min-width:150px" name="email" type="email" placeholder="Email">
+            <span class="input-group-btn">
+            <button type="submit" class="btn btn-grey">Join</button>
+            </span>
+          </div>
+          </form>
+        </li><li>
+          <a href="http://groups.google.com/group/pan-workshop-series" target="_blank">Visit the mailing list </a>
+        </li></ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+
+<div class="row">
+  <div class="col-xs-12">
+    <h1 id="task-description" class="page-header">
+      Wikipedia Vandalism Detection
+      <div class="btn-group">
+        <span role="button" class="btn btn-default" disabled="disabled"><span class="glyphicon glyphicon-chevron-left" style="color:grey;"></span></span>
+        <span role="button" class="btn btn-default" disabled="disabled">2010</span>
+        <a role="button" class="btn btn-default" href="../../clef11/pan11-web/wikipedia-vandalism-detection.html"><span class="glyphicon glyphicon-chevron-right" style="color:grey;"></span></a>
+      </div>
+    </h1>
+    <p>Vandalism has always been one of Wikipedia's biggest problems, yet there are only few automatic countermeasures. Instead, volunteers spend their time in reverting vandalism edits---time, which is not spend on improving other parts of the Wikipedia. The goal of this evaluation campaign is to research and develop new, reliable ways to detect vandalism edits, which can be used to aid the Wikipedians.</p>
+    <p>Vandalism is <a href="http://en.wikipedia.org/wiki/Wikipedia:Vandalism">defined</a> as "any addition, removal, or change of content made in a <em>deliberate</em> attempt to compromise the integrity of Wikipedia". Put another way, a vandalism edit is an edit made with bad intentions.</p>
+    <p>Solutions to vandalism detection will resemble those of, e.g., spam detection. Hence, the application of machine learning to this problem is straightforward which makes the engineering of features for an edit model that discriminates vandalism edits from regular edits one of the primary topics. You can use all features imaginable for your edit model, with one exception: <i>you may not look into an edit's future</i>. I.e., to classify an edit, you may not analyze succeeding edits on the same article to see what became of it. Such a feature would be unusable in practice.</p>
+    <div class="panel panel-default">
+      <div class="panel-heading">Task</div>
+      <div class="panel-body">
+        Given a set of edits on Wikipedia articles, separate the ill-intentioned edits from the well-intentioned edits.
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Training Corpus</div>
+      <div class="panel-body">
+        <p>To develop your approach, we provide you with a training corpus which comprises a set of edits on Wikipedia articles. All of these edits have been manually annotated whether they constitue vandalism or not.</p>
+        <p>
+          <a class="btn btn-default" href="http://www.uni-weimar.de/medien/webis/publications/papers/potthast_2010b.pdf">Learn more »</a>
+          <a class="btn btn-default" target="_blank" href="http://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-10/pan10-data/pan10-wikipedia-vandalism-detection-training-corpus-2010-03-15.zip">Download corpus</a>
+        </p>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Output</div>
+      <div class="panel-body">
+      <p>
+      For all edits found in the evaluation corpora, your vandalism detector shall output a file <code>classification.txt</code> as follows:
+      </p>
+<pre class="prettyprint lang-py" style="overflow-x:auto">
+26864258 27932250 V 0.92
+28689695 87188208 R 0.50
+85047080 85047157 V 0.67
+80637222 91249168 R 0.43
+...</pre>
+      <ul><li>
+      The first column is the edit's old revision ID.
+      </li><li>
+      The second column is the edit's new revision ID.
+      </li><li>
+      The third column denotes whether the edit is vandalism (V) or regular (R), as determined by your classifier.
+      </li><li>
+      The fourth column denotes your classifier's confidence. Providing these confidence values is optional.
+      </li></ul>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Performance Measures</div>
+      <div class="panel-body">
+        <p>
+        Performance is measured using the receiver operating characteristics (ROC) [<a href="http://en.wikipedia.org/wiki/Receiver_operating_characteristic" target="_blank">Wikipedia</a> | <a href="http://home.comcast.net/~tom.fawcett/public_html/papers/ROC101.pdf" target="_blank">paper</a>]. More specifically, we measure the area under the ROC curve (AUC), while the algorithm which maximizes the AUC performs best.
+        </p>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Test Corpus</div>
+      <div class="panel-body">
+        <p>Once you finished tuning your approach to achieve satisfying performance on the training corpus, you should run your software on the test corpus.</p>
+        <p>During the competition, the test corpus does not contain ground truth data that reveals whether or not a suspicious document contains any plagiarized passages. To find out the performance of your software on the test corpus, you must collect the output its and submit it as described below.</p>
+        <p>After the competition, the test corpus is updated to include the ground truth data. This way, you have all the neccessary data to evaluate your approach on your own, without submitting it's output, yet being comparable to those who took part in the competition.</p>
+        <p>
+          <a class="btn btn-default" target="_blank" href="http://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-10/pan10-data/pan10-wikipedia-vandalism-detection-test-corpus-2010-05-16.zip">Download corpus</a>
+        </p>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Submission</div>
+      <div class="panel-body">
+        <p>To submit your test run for evaluation, we ask you to send a Zip archive containing the output of your software when run on the test corpus to <a href="mailto:pan@webis.de">pan@webis.de</a>.</p>
+        <p>Should the Zip archive be too large to be sent via mail, please upload it to a file hoster of your choosing and share a download link with us.</p>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Results</div>
+      <div class="panel-body">
+        <p>The following table lists the performances achieved by the participating teams:</p>
+        <table class="table table-condensed rule" style="font-size:small">
+        <thead>
+        <tr class="top"><th colspan="7" style="text-align:center">Wikipedia Vandalism Detection Performance</th></tr>
+        <tr class="mid"><th>ROC-AUC</th><th>Participant</th></tr>
+        </thead>
+        <tbody>
+        <tr><td>0.92236</td><td>S.M. Mola Velasco<br/>Private, Spain</td></tr>
+        <tr><td>0.90351</td><td>B.T. Adler*, L. de Alfaro° and I. Pye^<br/>*Fujitsu Labs of America, Inc., USA<br/>°Google, Inc., and University of California Santa Cruz, USA<br/>^CloudFlare, Inc., USA</td></tr>
+        <tr><td>0.89856</td><td>S. Javanmardi <span style="font-style:italic">et al.</span><br/>University of California Irvine, USA</td></tr>
+        <tr><td>0.89377</td><td>D. Chichkov<br/>SC Software Inc., USA</td></tr>
+        <tr><td>0.87990</td><td>L. Seaward<br/>University of Ottawa, Canada</td></tr>
+        <tr><td>0.87669</td><td>I. Heged&#x169;s*, R. Orm&aacute;ndi*, R. Farkas*, and M. Jelasity*<sup>,</sup>°<br/>*University of Szeged, Hungary<br/>°Hungarian Academy of Sciences, Hungary</td></tr>
+        <tr><td>0.85875</td><td>M. Harpalani, T. Phumprao, M. Bassi, M. Hart, and R. Johnson<br/>Stony Brook University, USA</td></tr>
+        <tr><td>0.84340</td><td>J. White and R. Maessen<br/>University of California Irvine, USA</td></tr>
+        <tr><td>0.65404</td><td>A. Iftene<br/>University of Iasi, Romania</td></tr>
+        </tbody>
+        </table>
+        <p>A more detailed analysis of the detection performances can be found in the overview paper accompanying this task.</p>
+        <p><a class="btn btn-default" href="http://www.uni-weimar.de/medien/webis/publications/papers/stein_2010u.pdf#page=7">Learn more »</a></p>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Related Work</div>
+      <div class="panel-body">
+        <p>
+        On Wikipedia, there are a number of pages dealing with vandalism. The following pages offer a good introduction as well as many links to other pages about vandalism detection policies and tools:
+        <ul>
+        <li><a href="http://en.wikipedia.org/wiki/Wikipedia:Vandalism" target="_blank">Definition of vandalism</a></li>
+        <li><a href="http://en.wikipedia.org/wiki/Wikipedia:Cleaning_up_vandalism" target="_blank">Vandalism fighter's portal</a></li>
+        <li><a href="http://en.wikipedia.org/wiki/Wikipedia:Most_vandalized_pages" target="_blank">Most vandalized pages</a></li>
+        <li><a href="http://en.wikipedia.org/w/api.php" target="_blank">Wikipedia API</a></li>
+        </ul>
+        </p>
+        <p>
+        Research on Wikipedia vandalism is still in its infancy. The following lists all related papers up to now:
+        <ul>
+        <li>Si-Chi Chin, W. Nick Street, Padmini Srinivasan, and David Eichmann. Detecting Wikipedia vandalism with active learning and statistical language models. Fourth Workshop on Information Credibility on the Web (WICOW 2010), Raleigh, NC, April 2010.</li>
+        <li>R. Stuart Geiger and David Ribes. The Work of Sustaining Order in Wikipedia: The Banning of a Vandal. In CSCW'10: Proceedings of the ACM Conference on Computer Supported Cooperative Work, pages 117-126, Savannah, Georgia, USA, 2010. ACM.</li>
+        <li>Kelly Y. Itakura and Charles L. A. Clarke. Using Dynamic Markov Compression to Detect Vandalism in the Wikipedia. In SIGIR'09: Proceedings of the 32nd International ACM SIGIR Conference on Research and Development in Information Retrieval, pages 822-823, New York, NY, USA, 2009. ACM.</li>
+        <li>Martin Potthast. Crowdsourcing a Wikipedia Vandalism Corpus. In 33rd Annual International ACM SIGIR Conference (to appear), Geneva, July  2010. ACM.</li>
+        <li>Martin Potthast, Benno Stein, and Robert Gerling. Automatic Vandalism Detection in Wikipedia. In ECIR'08: Proceedings of the 30th European Conference on IR Research, Glasgow, volume 4956 LNCS of Lecture Notes in Computer Science, pages 663-668, Berlin Heidelberg New York, 2008. Springer.</li>
+        <li>Reid Priedhorsky, Jilin Chen, Shyong (Tony) K. Lam, Katherine Panciera, Loren Terveen, and John Riedl. Creating, Destroying, and Restoring Value in Wikipedia. In Group'07: Proceedings of the International Conference on Supporting Group Work, Sanibel Island, Florida, USA, 2007.</li>
+        <li>Koen Smets, Bart Goethals, and Brigitte Verdonk. Automatic Vandalism Detection in Wikipedia: Towards a Machine Learning Approach. In WikiAI'08: Proceedings of the Workshop on Wikipedia and Artificial Intelligence: An Evolving Synergy, pages 43-48. AAAI Press, 2008.</li>
+        <li>Andrew G. West, Sampath Kannan, and Insup Lee. Detecting Wikipedia Vandalism via Spatio-Temporal Analysis of Revision Metadata. Technical Report MS-CIS-10-05, University of Pennsylvania, 2010.</li>
+        </ul>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="task-committee" class="row" style="padding-top:60px;">
+  <div class="col-xs-12">
+    <h1 class="page-header">Task Chair</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-6 col-sm-3">
+    <div class="thumbnail" style="text-align:center;">
+      <a href="http://www.uni-weimar.de/medien/webis/people" target="_blank"><img src="../pan10-figures/martin.jpg" class="img-rounded" alt="Martin Potthast"></a>
+      <p style="white-space:nowrap"><a href="http://www.uni-weimar.de/medien/webis/people" target="_blank">Martin Potthast</a></p>
+      <p style="font-size:10pt">Bauhaus-Universit&auml;t Weimar</p>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <h2>Task Committee</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-6 col-sm-3">
+    <div class="thumbnail" style="text-align:center;">
+      <a href="http://www.uni-weimar.de/medien/webis/people" target="_blank"><img src="../pan10-figures/teresa.jpg" class="img-rounded" alt="Teresa Holfeld"></a>
+      <p style="white-space:nowrap"><a href="http://www.uni-weimar.de/medien/webis/people" target="_blank">Teresa Holfeld</a></p>
+      <p style="font-size:10pt">Bauhaus-Universit&auml;t Weimar</p>
+    </div>
+  </div>
+  <div class="col-xs-6 col-sm-3">
+    <div class="thumbnail" style="text-align:center;">
+      <a href="http://www.webis.de" target="_blank"><img src="../pan10-figures/benno.jpg" class="img-rounded" alt="Benno Stein"></a>
+      <p style="white-space:nowrap"><a href="http://www.webis.de" target="_blank">Benno Stein</a></p>
+      <p style="font-size:10pt">Bauhaus-Universit&auml;t Weimar</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p class="pull-right">© pan.webis.de</p>
+</footer>
+
+</div> <!-- /container -->
+
+<script src="../../js/jquery.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script src="../../js/prettify.js"></script>
+<script>
+  !function ($) {
+    $(function(){
+      window.prettyPrint && prettyPrint()   
+    })
+  }(window.jQuery)
+</script>
+
+</body>
+</html>
+

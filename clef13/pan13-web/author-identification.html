@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="..>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PAN 2013</title> 
+
+<link href="../../css/bootstrap.min.css" rel="stylesheet" />
+<link href="../../css/prettify.css" rel="stylesheet" />
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="../../js/html5shiv.js"></script>
+  <script src="../../js/respond.min.js"></script>
+<![endif]-->
+
+<link rel="shortcut icon" href="../pan13-figures/pan-icon-16x16.ico">
+<!--
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+-->
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="index.html"><img src="../pan13-figures/pan-logo-small-lightgrey.png" alt="PAN" style="margin-top:-5px"></a>
+  </div>
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li><a href="about.html">About</a></li>
+      <li><a href="plagiarism-detection.html">Plagiarism Detection</a></li>
+      <li><a href="author-identification.html">Author Identification</a></li>
+      <li><a href="author-profiling.html">Author Profiling</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Join PAN's mailing list <span class="caret"></span></a>
+        <ul class="dropdown-menu pull-right" role="menu"><li>
+          <form class="form-inline" role="form" style="white-space:nowrap;margin:0 20px;" action="http://groups.google.com/group/pan-workshop-series/boxsubscribe">
+          <div class="input-group">
+            <input class="form-control" style="min-width:150px" name="email" type="email" placeholder="Email">
+            <span class="input-group-btn">
+            <button type="submit" class="btn btn-grey">Join</button>
+            </span>
+          </div>
+          </form>
+        </li><li>
+          <a href="http://groups.google.com/group/pan-workshop-series" target="_blank">Visit the mailing list </a>
+        </li></ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+
+<div id="task-description" class="row">
+  <div class="col-xs-12">
+    <h1 id="task-description" class="page-header">
+      Author Identification
+      <div class="btn-group">
+        <a role="button" class="btn btn-default" href="../../clef12/pan12-web/author-identification.html"><span class="glyphicon glyphicon-chevron-left" style="color:grey;"></span></a>
+        <span role="button" class="btn btn-default" disabled="disabled">2013</span>
+        <a role="button" class="btn btn-default" href="../../clef14/pan14-web/author-identification.html"><span class="glyphicon glyphicon-chevron-right" style="color:grey;"></span></a>
+      </div>
+    </h1>
+    <p>Authorship attribution is an important problem in many areas including information retrieval and computational linguistics, but also in applied areas such as law and journalism where knowing the author of a document (such as a ransom note) may be able to save lives. The most common framework for testing candidate algorithms is a text classification problem: given known sample documents from a small, finite set of candidate authors, which if any wrote a questioned document of unknown authorship? It has been commented, however, that this may be an unreasonably easy task. A more demanding problem is author verification where given a set of documents by a single author and a questioned document, the problem is to determine if the questioned document was written by that particular author or not. This may more accurately reflect real life in the experiences of professional forensic linguists, who are often called upon to answer this kind of question.</p>
+    <p><strong>A note to forensic linguists:</strong> In order to bridge the gap between linguistics and computer science, we strongly encourage submissions from researchers from both fields. We understand that research groups with expertise in linguistics use manual or semi-automated methods and, therefore, they are not able to submit their software. To enable their participation, we will provide them with the opportunity to analyze the test corpus after the deadline of software submission (mid-April). Their results will be ranked in a separate list with respect to the performance of the software submissions and they will be entitled to describe their approach in a paper.</p>
+    <div class="panel panel-default">
+      <div class="panel-heading">Task</div>
+      <div class="panel-body">Given a small set (no more than 10, possibly as few as one) of "known" documents by a single person and a "questioned" document, the task is to determine whether the questioned document was written by the same person who wrote the known document set.</div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Training Corpus</div>
+      <div class="panel-body">
+        <p>To develop your software, we provide you with a training corpus that comprises a set of known documents by a single person and exactly one questioned document. There are several such problem instances covering English, Greek, and Spanish and a varying number of known documents (1-10 per problem). All documents within a single problem instance will be in the same language and best efforts are applied to assure that within-problem documents are matched for genre, register, theme, and date of writing. The document lengths vary from a few hundred to a few thousand words.</p>
+        <p>
+          <a class="btn btn-default" href="../pan13-papers-final/pan13-authorship-verification/juola13-overview.pdf#page=3">Learn more »</a>
+          <a class="btn btn-default" target="_blank" href="http://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-authorship-verification-training-corpus-2013-02-01.zip">Download corpus</a>
+        </p>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Output</div>
+      <div class="panel-body">
+        <p>Your software must take as input the absolute path to a set of problems. For each problem there is a separate sub-folder within that path including the set of known documents and the single unknown document of that problem. The software has to output a single text file <code>answers.txt</code> with all the produced answers for the whole set of evaluation problems. Each line of this file corresponds to a problem instance, it starts with the ID of the problem followed by a binary (Y)ES/(N)O answer to the question "Is the unknown document written by the author of the known documents?". If you do not want to provide answers for some problems, you can either replace the answer character with "-" or just do not include a line for that problem to your answers. For example, an <code>answers.txt</code> file may look like this:</p>
+<pre class="prettyprint lang-py" style="overflow-x:auto">
+EN01 Y
+EN02 N
+EN03 -
+EN04 Y
+EN07 Y
+...
+</pre>
+        <p>Optionally, you may also provide a score, a real number in the set [0,1] inclusive, where 0 corresponds to NO and 1 to YES. This score should be round with two decimal digits and will allow a more detailed evaluation of your approach. In this case, the scores have to be placed next to the binary answers. It is possible to provide scores even for problems you are not able to provide binary answers. For example, an <code>answers.txt</code> file with scores may look like this:</p>
+<pre class="prettyprint lang-py" style="overflow-x:auto">
+EN01 Y 0.90
+EN02 N 0.25
+EN03 - 0.53
+EN04 Y 0.86
+EN07 Y 0.74
+...
+</pre>
+        <p>Use a single whitespace to separate problem ID, binary answer, and score. The naming of the output file is up to you. We reccomend to use the name of the participant group-run.</p>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Performance Measures</div>
+      <div class="panel-body">
+        <p>Performance of the binary classification will be measured as follows:</p>
+        <ul>
+        <li>Recall = #correct_answers / #problems</li>
+        <li>Precision = #correct_answers / #answers</li>
+        </ul>
+        <p>Participants are be ranked by combining these measures via F1.</p>
+        <p>In addition, participants may also provide a score, a real number in the set [0,1] inclusive, where 0 corresponds to NO and 1 to YES. A separate ranking for those participants who also submit real scores [0,1] according to the ROC-AUC. For the calculation of ROC curves, any missing answers are assumed to be wrong answers.</p>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Test Corpus</div>
+      <div class="panel-body">
+        <p>Once you finished tuning your approach to achieve satisfying performance on the training corpus, you should run your software on the test corpus.</p>
+        <p>During the competition, the test corpus will not be released publicly. Instead, we ask you to submit your software for evaluation at our site as described below.</p>
+        <p>After the competition, the test corpus is available including ground truth data. This way, you have all the necessities to evaluate your approach on your own, yet being comparable to those who took part in the competition.</p>
+        <p>
+          <a class="btn btn-default" target="_blank" href="http://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-authorship-verification-test-corpus1-2013-02-28.zip">Download corpus 1</a>
+          <a class="btn btn-default" target="_blank" href="http://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-authorship-verification-test-corpus2-2013-05-29.zip">Download corpus 2</a>
+        </p>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Submission</div>
+      <div class="panel-body">
+        <p>We ask you to prepare your software so that it can be executed via a command line call. You can choose freely among the available programming languages and among the operating systems Microsoft Windows 7 and Ubuntu 12.04. We will ask you to deploy your software onto a virtual machine that will be made accessible to you after registration. You will be able to reach the virtual machine via ssh and via remote desktop. Please test your software using one of the unit-test-scripts below. Download the script, fill in the required fields, and start it using the sh command. If the script runs without errors and if the correct output is produced, you can submit your software by sending your unit-test-script via e-mail to <a href="mailto:pan@webis.de">pan@webis.de</a>. For more information see the PAN 2013 User Guide below.</p>
+        <p>
+	        <a class="btn btn-default" href="pan13-virtual-machine-user-guide.pdf">PAN User Guide »</a>
+	        <a class="btn btn-default" href="../pan13-code/unit-test-ta-windows.sh">Unit-Test Windows »</a>
+	        <a class="btn btn-default" href="../pan13-code/unit-test-ta-ubuntu.sh">Unit-Test Ubuntu »</a>
+        </p>
+        <p><strong>Note:</strong> By submitting your software you retain full copyrights. You agree to grant us usage rights only for the purpose of the PAN competition. We agree not to share your software with a third party or use it for other purposes than the PAN competition.</p>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Results</div>
+      <div class="panel-body">
+        <p>The following table lists the performances achieved by the participating teams:</p>
+        <table class="table table-condensed rule" style="font-size:small;">
+        <thead>
+        <tr><th colspan="2" style="text-align:center">Authorship attribution performance</th></tr>
+        <tr><th>F1</th><th>Participant</th></tr>
+        </thead>
+        <tbody>
+        <tr><td>0.753</td><td>Shachar Seidman<br/>Bar Ilan University, Israel</td></tr>
+        <tr><td>0.718</td><td>Oren Halvani, Martin Steinebach, and Ralf Zimmermann<br/>Fraunhofer Institute for Secure Information Technology SIT, Germany</td></tr>
+        <tr><td>0.671</td><td>Robert Layton, Paul Watters, and Richard Dazeley<br/>University of Ballarat, Australia</td></tr>
+        <tr><td>0.671</td><td>Timo Petmanson<br/>University of Tartu, Estonia</td></tr>
+        <tr><td>0.659</td><td>Magdalena Jankowska, Vlado Kešelj, and Evangelos Milios<br/>Dalhousie University, Canada</td></tr>
+        <tr><td>0.659</td><td>Darnes Vilariño, David Pinto, Helena Gómez, Saúl León, and Esteban Castillo<br/>Benemérita Universidad Autónoma de Puebla, Mexico</td></tr>
+        <tr><td>0.655</td><td>Victoria Bobicev<br/>Technical University of Moldova, Moldova</td></tr>
+        <tr><td>0.647</td><td>Vanessa Wei Feng and Graeme Hirst<br/>University of Toronto, Canada</td></tr>
+        <tr><td>0.612</td><td>Paola Ledesma°, Gibran Fuentes*, Gabriela Jasso*, Angel Toledo*, and Ivan Meza*<br/>°Escuela Nacional de Antropología e Historia (ENAH) and *Universidad Nacional Autónoma de México (UNAM), Mexico</td></tr>
+        <tr><td>0.606</td><td>M.R. Ghaeini<br/>Amirkabir University of Technology, Iran</td></tr>
+        <tr><td>0.600</td><td>Michiel van Dam<br/>Delft University of Technology, The Netherlands</td></tr>
+        <tr><td>0.600</td><td>Erwan Moreau and Carl Vogel<br/>Trinity College Dublin, Ireland</td></tr>
+        <tr><td>0.576</td><td>Arun Jayapal and Binayak Goswami<br/>Nuance Communications, India</td></tr>
+        <tr><td>0.553</td><td>Cristian Grozea° and Marius Popescu*<br/>°Fraunhofer FIRST, Germany, and *University of Bucharest, Romania</td></tr>
+        <tr><td>0.541</td><td>Anna Vartapetiance and Lee Gillam<br/>University of Surrey, UK</td></tr>
+        <tr><td>0.529</td><td>Roman Kern<br/>Know-Center GmbH, Austria</td></tr>
+        <tr><td>0.500</td><td>Baseline</td></tr>
+        <tr><td>0.417</td><td>Cor J. Veenman° and Zhenshi Li*<br/>°Netherlands Forensic Institute and *Delft University of Technology, The Netherlands</td></tr>
+        <tr><td>0.331</td><td>Sorin Fratila<br/>University Politehnica of Bucharest, Romania</td></tr>
+        </tbody>
+        </table>
+        <p>A more detailed analysis of the detection performances can be found in the overview paper accompanying this task.</p>
+        <p>
+	        <a class="btn btn-default" href="../pan13-papers-final/pan13-authorship-verification/juola13-overview.pdf#page=8">Learn more »</a>
+        </p>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Related Work</div>
+      <div class="panel-body">
+        <p>We refer you to:</p>
+        <ul><li>
+        <a href="../../clef12/pan12-web/about.html#proceedings">PAN @ CLEF'12</a> (<a href="../../clef12/pan12-web/pan12-papers-final/pan12-author-identification/juola12-overview.pdf">overview paper</a>),
+        </li><li>
+        <a href="../../clef11/pan11-web/about.html#proceedings">PAN @ CLEF'11</a> (<a href="../../clef11/pan11-web/pan11-papers-final/pan11-author-identification/juola11-overview.pdf">overview paper</a>),
+        </li><li>
+        Patrick Juola. <a href="http://portal.acm.org/citation.cfm?id=1373451">Authorship Attribution</a>. In Foundations and Trends in
+        Retrieval, Volume 1, Issue 3, December 2006.
+        </li><li>
+        Moshe Koppel, Jonathan Schler, and Shlomo Argamon. <a href="http://onlinelibrary.wiley.com/doi/10.1002/asi.20961/full">Computational Methods
+        Authorship Attribution</a>. Journal of the American Society for Information Science and
+        Technology, Volume 60, Issue 1, pages 9-26, January 2009.
+        </li><li>
+        Efstathios Stamatatos. <a href="http://onlinelibrary.wiley.com/doi/10.1002/asi.21001/full">A Survey of Modern Authorship Attribution Methods</a>.
+        of the American Society for Information Science and Technology, Volume 60, Issue 3,
+        pages 538-556, March 2009.
+        </li></ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="task-committee" class="row" style="padding-top:60px;">
+  <div class="col-xs-12">
+    <h1 class="page-header">Task Chair</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-6 col-sm-3">
+    <div class="thumbnail" style="text-align:center;">
+      <a href="http://www.icsd.aegean.gr/lecturers/stamatatos/" target="_blank"><img src="../pan13-figures/stathis.jpg" class="img-rounded" alt="Efstathios Stamatatos"></a>
+      <p><a href="http://www.icsd.aegean.gr/lecturers/stamatatos/" target="_blank">Efstathios Stamatatos</a></p>
+      <p style="font-size:10pt">University of the Aegean</p>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <h2>Task Committee</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-6 col-sm-3">
+    <div class="thumbnail" style="text-align:center;">
+      <a href="http://www.mathcs.duq.edu/~juola/" target="_blank"><img src="../pan13-figures/patrick.jpg" class="img-rounded" alt="Patrick Juola"></a>
+      <p style="white-space:nowrap"><a href="http://www.mathcs.duq.edu/~juola/" target="_blank">Patrick Juola</a></p>
+      <p style="font-size:10pt">Duquesne University</p>
+    </div>
+  </div>
+  <div class="col-xs-6 col-sm-3">
+    <div class="thumbnail" style="text-align:center;">
+      <a href="http://lingcog.iit.edu/~argamon/" target="_blank"><img src="../pan13-figures/shlomo.jpg" class="img-rounded" alt="Shlomo Argamon"></a>
+      <p style="white-space:nowrap"><a href="http://lingcog.iit.edu/~argamon/" target="_blank">Shlomo Argamon</a></p>
+      <p style="font-size:10pt">Illinois Institute of Technology</p>
+    </div>
+  </div>
+  <div class="col-xs-6 col-sm-3">
+    <div class="thumbnail" style="text-align:center;">
+      <a href="http://u.cs.biu.ac.il/~koppel/" target="_blank"><img src="../pan13-figures/moshe.jpg" class="img-rounded" alt="Moshe Koppel"></a>
+      <p style="white-space:nowrap"><a href="http://u.cs.biu.ac.il/~koppel/" target="_blank">Moshe Koppel</a></p>
+      <p style="font-size:10pt">Bar-Ilan University</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p class="pull-right">© pan.webis.de</p>
+</footer>
+
+</div> <!-- /container -->
+
+<script src="../../js/jquery.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script src="../../js/prettify.js"></script>
+<script>
+  !function ($) {
+    $(function(){
+      window.prettyPrint && prettyPrint()   
+    })
+  }(window.jQuery)
+</script>
+
+</body>
+</html>
+

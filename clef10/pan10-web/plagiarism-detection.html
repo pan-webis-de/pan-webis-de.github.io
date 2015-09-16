@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="..>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PAN 2010</title> 
+
+<link href="../../css/bootstrap.min.css" rel="stylesheet" />
+<link href="../../css/prettify.css" rel="stylesheet" />
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="../../js/html5shiv.js"></script>
+  <script src="../../js/respond.min.js"></script>
+<![endif]-->
+
+<link rel="shortcut icon" href="../pan10-figures/pan-icon-16x16.ico">
+<!--
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+-->
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="index.html"><img src="../pan10-figures/pan-logo-small-lightgrey.png" alt="PAN" style="margin-top:-5px"></a>
+  </div>
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li><a href="about.html">About</a></li>
+      <li><a href="plagiarism-detection.html">Plagiarism Detection</a></li>
+      <li><a href="wikipedia-vandalism-detection.html">Wikipedia Vandalism Detection</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Join PAN's mailing list <span class="caret"></span></a>
+        <ul class="dropdown-menu pull-right" role="menu"><li>
+          <form class="form-inline" role="form" style="white-space:nowrap;margin:0 20px;" action="http://groups.google.com/group/pan-workshop-series/boxsubscribe">
+          <div class="input-group">
+            <input class="form-control" style="min-width:150px" name="email" type="email" placeholder="Email">
+            <span class="input-group-btn">
+            <button type="submit" class="btn btn-grey">Join</button>
+            </span>
+          </div>
+          </form>
+        </li><li>
+          <a href="http://groups.google.com/group/pan-workshop-series" target="_blank">Visit the mailing list </a>
+        </li></ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+
+<div class="row">
+  <div class="col-xs-12">
+    <h1 id="task-description" class="page-header">
+      Plagiarism Detection
+      <div class="btn-group">
+        <a role="button" class="btn btn-default" href="../../sepln09/pan09-web/plagiarism-detection.html"><span class="glyphicon glyphicon-chevron-left" style="color:grey;"></span></a>
+        <span role="button" class="btn btn-default" disabled="disabled">2010</span>
+        <a type="button" class="btn btn-default" href="../../clef11/pan11-web/plagiarism-detection.html"><span class="glyphicon glyphicon-chevron-right" style="color:grey;"></span></a>
+      </div>
+    </h1> 
+    <p class="lead">
+    The detection of plagiarism by hand is a laborious retrieval task---a task which can be aided or automatized. This evaluation task shall foster the development of new solutions in this respect.
+    </p>
+    <div class="panel panel-default">
+      <div class="panel-heading">Award</div>
+      <div class="panel-body">
+        <div class="thumbnail pull-right" style="text-align:center;"><a href="http://labs.yahoo.com/Yahoo_Labs_Barcelona" target="_blank"><img src="../pan10-figures/logo-yahoo-research.jpg" alt="Yahoo! Research" style="max-height:150px"></a><div style="font-size:7pt;margin-top:-3px;">Sponsor</div></div>
+        <p>
+        We are happy to announce the following overall winner of the 2nd International Competition on Plagiarism Detection who will be awarded 500,- Euro sponsored by Yahoo! Research:
+        <br/><ul><li>
+        J. Kasprzak and M. Brandejs from Masaryk University, Czech Republic
+        </li></ul>
+        Congratulations!
+        </p>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Task</div>
+      <div class="panel-body">
+        <p>Given a set of suspicious documents and a set of source documents, the task is to find all plagiarized sections in the suspicious documents and, if available, the corresponding source sections.</p>
+        <p><em>Remark.</em> This task combines both external plagiarism detection and intrinsic plagiarism detection, where the former refers to detecting plagiarized sections in a suspicious document and the corresponding source sections in a given set of source documents, and the latter refers to detecting plagiarized sections without comparing the suspicious document to any other documents, e.g., by detecting changes in writing style.</p>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Training Corpus</div>
+      <div class="panel-body">
+        <p>To develop your approach, we provide you with a training corpus which comprises a set of suspicious documents and a set of source documents. A suspicious document may contain plagiarized passages, the source passages of which may or may not be present in one or more of the source documents.</p>
+        <p>
+          <a class="btn btn-default" href="http://www.uni-weimar.de/medien/webis/publications/papers/stein_2010p.pdf#page=4">Learn more »</a>
+          <a class="btn btn-default" target="_blank" href="http://www.uni-weimar.de/en/media/chairs/webis/corpora/corpus-pan-pc-09/">Download corpus</a>
+        </p>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Output</div>
+      <div class="panel-body">
+        <p>For each suspicious document <code>suspicious-documentXYZ.txt</code> found in the evaluation corpora, your plagiarism detector shall output an XML file <code>suspicious-documentXYZ.xml</code> which contains meta information about all plagiarism cases detected within: 
+<pre class="prettyprint lang-xml" style="overflow-x:auto">&lt;document reference="suspicious-documentXYZ.txt"&gt;
+&lt;feature
+  name="detected-plagiarism"
+  this_offset="5"
+  this_length="1000"
+  source_reference="suspicious-documentABC.txt"
+  source_offset="100"
+  source_length="1000"
+/&gt;
+...
+&lt;/document&gt;</pre>
+        The <code>source_*</code> attributes may be omitted in case no source document can be identified for a given detected plagiarized passage.
+        <p><p>
+        The XML documents must be valid with respect to the XML schema found <a href="http://www.uni-weimar.de/medien/webis/corpora/corpus-pan-pc-09/document.xsd">here</a>.</p>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Performance Measures</div>
+      <div class="panel-body">
+        <p>Performance will be measured using macro-averaged precision and recall, granularity, and the plagdet score, which is a combination of the first three measures. For your convenience, we provide a reference implementation of the measures written in Python.</p>
+        <p>
+          <a class="btn btn-default" href="http://www.uni-weimar.de/medien/webis/publications/papers/stein_2010p.pdf#page=2">Learn more »</a>
+          <a class="btn btn-default" href="../../sepln09/pan09-code/pan09-plagiarism-detection-performance-measures.py">Download measures</a>
+        </p>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Test Corpus</div>
+      <div class="panel-body">
+        <p>Once you finished tuning your approach to achieve satisfying performance on the training corpus, you should run your software on the test corpus.</p>
+        <p>During the competition, the test corpus does not contain ground truth data that reveals whether or not a suspicious document contains any plagiarized passages. To find out the performance of your software on the test corpus, you must collect the output its and submit it as described below.</p>
+        <p>After the competition, the test corpus is updated to include the ground truth data. This way, you have all the neccessary data to evaluate your approach on your own, without submitting it's output, yet being comparable to those who took part in the competition.</p>
+        <p>
+          <a class="btn btn-default" target="_blank" href="http://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-10/pan10-data/pan10-plagiarism-detection-test-corpus-2010-05-17.zip">Download corpus</a>
+        </p>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Submission</div>
+      <div class="panel-body">
+        <p>To submit your test run for evaluation, we ask you to send a Zip archive containing the output of your software when run on the test corpus to <a href="mailto:pan@webis.de">pan@webis.de</a>.</p>
+        <p>Should the Zip archive be too large to be sent via mail, please upload it to a file hoster of your choosing and share a download link with us.</p>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Results</div>
+      <div class="panel-body">
+        <p>The following table lists the performances achieved by the participating teams:</p>
+        <table class="table table-condensed rule" style="font-size:small;">
+        <thead>
+        <tr><th colspan="2" style="text-align:center">Plagiarism Detection Performance</th></tr>
+        <tr><th>Plagdet</th><th>Participant</th></tr>
+        </thead>
+        <tbody>
+        <tr><td>0.7971</td><td>J. Kasprzak and M. Brandejs<br/>Masaryk University, Czech Republic</td></tr>
+        <tr><td>0.7090</td><td>D. Zou, W. Long, and Z. Ling<br/>South China University of Technology, China</td></tr>
+        <tr><td>0.6948</td><td>M. Muhr, R. Kern, M. Zechner, and M. Granitzer<br/>Know-Center Graz, Austria</td></tr>
+        <tr><td>0.6209</td><td>C. Grozea* and M. Popescu°<br/>*Fraunhofer FIRST, Germany<br/>°University of Bucharest, Romania</td></tr>
+        <tr><td>0.6066</td><td>G. Oberreuter, G. L'Huillier, S.A. R&iacute;os, and J.D. Vel&aacute;squez<br/>University of Chile, Chile</td></tr>
+        <tr><td>0.5851</td><td>D.A.R. Torrej&oacute;n*<sup>,</sup>° and J.M.M. Ramos°<br/>*IES "Jos&eacute; Caballero", Spain<br/>°Universidad de Huelva, Spain</td></tr>
+        <tr><td>0.5191</td><td>R.C. Pereira, V.P. Moreira, and R. Galante<br/>Universidade Federal do Rio Grande do Sul, Brazil</td></tr>
+        <tr><td>0.5093</td><td>Y. Palkovskii, A. Belov, and I. Muzika<br/>Zhytomyr State University and SkyLine, Inc. Ukraine</td></tr>
+        <tr><td>0.4378</td><td>Sobha L., Pattabhi R.K R., Vijay S.R., A. Akilandeswari<br/>MIT Campus of Anna University Chennai, India</td></tr>
+        <tr><td>0.2564</td><td>T. Gottron<br/>Universit&auml;t Koblenz-Landau, Germany</td></tr>
+        <tr><td>0.2222</td><td>D. Micol, &Oacute;. Ferr&aacute;ndez, and R. Mu&ntilde;oz<br/>University of Alicante, Spain</td></tr>
+        <tr><td>0.2148</td><td>M.R. Costa-juss&agrave;, R.E. Banchs, J. Grivolla, and J. Codina<br/>Barcelona Media Research Center, Spain</td></tr>
+        <tr><td>0.2053</td><td>R.M.A. Nawab, M. Stevenson, and P. Clough<br/>University of Sheffield, UK</td></tr>
+        <tr><td>0.2034</td><td>P. Gupta and S. Rao<br/>DA-IICT, India</td></tr>
+        <tr><td>0.1375</td><td>C. Vania and M. Adriani<br/>Universitas Indonesia, Indonesia</td></tr>
+        <tr><td>0.0558</td><td>P. Su&aacute;rez*, J.C. Gonz&aacute;lez*<sup>,</sup>°, and J. Villena-Rom&aacute;n*<sup>,</sup>^<br/>*Daedalus - Data, Decisions and Language, Spain<br/>°Universidad Polit&eacute;cnica de Madrid, Spain<br/>^Universidad Carlos III de Madrid, Spain</td></tr>
+        <tr><td>0.0195</td><td>S. Alzahrani* and N. Salim°<br/>*Taif University, Saudi Arabia<br/>°Universiti Teknologi Malaysia, Malaysia</td></tr>
+        <tr><td>0.0008</td><td>A. Iftene <span style="font-style:italic">et al.</span><br/>University of Iasi, Romania</td></tr>
+        </tbody>
+        </table>
+        <p>A more detailed analysis of the detection performances can be found in the overview paper accompanying this task.</p>
+        <p><a class="btn btn-default" href="http://www.uni-weimar.de/medien/webis/publications/papers/stein_2010t.pdf#page=6">Learn more »</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="task-committee" class="row" style="padding-top:60px;">
+  <div class="col-xs-12">
+    <h1 class="page-header">Task Chair</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-6 col-sm-3">
+    <div class="thumbnail" style="text-align:center;">
+      <a href="http://www.uni-weimar.de/medien/webis/people" target="_blank"><img src="../pan10-figures/martin.jpg" class="img-rounded" alt="Martin Potthast"></a>
+      <p style="white-space:nowrap"><a href="http://www.uni-weimar.de/medien/webis/people" target="_blank">Martin Potthast</a></p>
+      <p style="font-size:10pt">Bauhaus-Universit&auml;t Weimar</p>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <h2>Task Committee</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-6 col-sm-3">
+    <div class="thumbnail" style="text-align:center;">
+      <a href="http://www.webis.de" target="_blank"><img src="../pan10-figures/benno.jpg" class="img-rounded" alt="Benno Stein"></a>
+      <p style="white-space:nowrap"><a href="http://www.webis.de" target="_blank">Benno Stein</a></p>
+      <p style="font-size:10pt">Bauhaus-Universit&auml;t Weimar</p>
+    </div>
+  </div>
+  <div class="col-xs-6 col-sm-3">
+    <div class="thumbnail" style="text-align:center;">
+      <a href="http://www.uni-weimar.de/medien/webis/people" target="_blank"><img src="../pan10-figures/andreas.jpg" class="img-rounded" alt="Andreas Eiselt"></a>
+      <p style="white-space:nowrap"><a href="http://www.uni-weimar.de/medien/webis/people" target="_blank">Andreas Eiselt</a></p>
+      <p style="font-size:10pt">Bauhaus-Universit&auml;t Weimar</p>
+    </div>
+  </div>
+  <div class="col-xs-6 col-sm-3">
+    <div class="thumbnail" style="text-align:center;">
+      <a href="http://users.dsic.upv.es/~lbarron/" target="_blank"><img src="../pan10-figures/alberto.jpg" class="img-rounded" alt="Alberto Barr&oacute;n-Cede&ntilde;o"></a>
+      <p style="white-space:nowrap"><a href="http://users.dsic.upv.es/~lbarron/" target="_blank">Alberto Barr&oacute;n-Cede&ntilde;o</a></p>
+      <p style="font-size:10pt">Universitat Polit&egrave;cnica de Val&egrave;ncia</p>
+    </div>
+  </div>
+  <div class="col-xs-6 col-sm-3">
+    <div class="thumbnail" style="text-align:center;">
+      <a href="http://users.dsic.upv.es/~prosso/" target="_blank"><img src="../pan10-figures/paolo.jpg" class="img-rounded" alt="Paolo Rosso"></a>
+      <p style="white-space:nowrap"><a href="http://users.dsic.upv.es/~prosso/" target="_blank">Paolo Rosso</a></p>
+      <p style="font-size:10pt">Universitat Polit&egrave;cnica de Val&egrave;ncia</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p class="pull-right">© pan.webis.de</p>
+</footer>
+
+</div> <!-- /container -->
+
+<script src="../../js/jquery.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script src="../../js/prettify.js"></script>
+<script>
+  !function ($) {
+    $(function(){
+      window.prettyPrint && prettyPrint()   
+    })
+  }(window.jQuery)
+</script>
+
+</body>
+</html>
+
