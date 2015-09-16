@@ -176,22 +176,23 @@
 <!--
 <script type="text/javascript">
   $.ajax({
-    url: "https://spreadsheets.google.com/feeds/cells/0AlwcskAJGamSdEN2ZUQ4Uk44cW13XzQ4UDRNTDR0V3c/od5/public/basic?min-row=5&min-col=1&max-row=1&max-col=1",
-    cache: false
-  }).done(function(xml) {
-    $(xml).find("entry").each(function() {
-      var title = $(this).find("title").text();
-      var content = $(this).find("content").text();
+    url: "https://spreadsheets.google.com/feeds/cells/0AlwcskAJGamSdEN2ZUQ4Uk44cW13XzQ4UDRNTDR0V3c/od5/public/basic?min-row=5&min-col=1&max-row=1&max-col=1&alt=json",
+    cache: false,
+    dataType: "json"
+  }).done(function(json) {
+    $(json["feed"]["entry"]).each(function() {
+      var title = this["title"]["$t"];
+      var content = this["content"]["$t"];
       switch (title) {
-      case "..:
+      case "A1":
         $("#registered-total").text(content)
-      case "..:
+      case "A2":
         $("#registered-plagiarism-detection").text(content)
-      case "..:
+      case "A3":
         $("#registered-author-identification").text(content)
-      case "..:
+      case "A4":
         $("#registered-author-profiling").text(content)
-      case "..:
+      case "A5":
         $("#registered-countries").text(content)
       }
     });
