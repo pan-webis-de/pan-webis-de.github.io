@@ -79,9 +79,18 @@ body {
 /*
  * Header
  */
+.masthead {
+  padding-bottom:50px;
+}
+ 
 .masthead-brand {
   margin-top: 0px;
   margin-bottom: 10px;
+  float: left;
+}
+
+.masthead-nav {
+  float: right;
 }
 
 .masthead-nav > li {
@@ -115,31 +124,30 @@ body {
   border-bottom-color: #fff;
 }
 
-@media (min-width: 768px) {
-  .masthead-brand {
-    float: left;
-  }
-  .masthead-nav {
-    float: right;
-  }
-}
 
 /*
  * Cover
  */
-
 .cover {
   padding: 0 20px;
 }
+
 .cover .btn-lg {
   padding: 10px 20px;
   font-weight: bold;
 }
 
+.cover .btn-lg:first-of-type {
+  margin-right: 20px;
+}
+
+.cover .lead {
+  white-space: nowrap;
+}
+
 /*
  * Footer
  */
-
 .mastfoot {
   color: #999; /* IE8 proofing */
   color: rgba(255,255,255,.5);
@@ -148,7 +156,6 @@ body {
 /*
  * Affix and center
  */
-
 @media (min-width: 768px) {
   /* Pull out the header and footer */
   .masthead {
@@ -209,7 +216,7 @@ body {
 </head>
 <body>
 
-  <div class="site-wrapper">
+  <div class="site-wrapper"  style="background-image:url('clef15/pan15-figures/pan-fingerprint2.png');background-repeat:no-repeat;background-position:right top;">
 
     <div class="site-wrapper-inner">
 
@@ -217,50 +224,13 @@ body {
 
         <div class="masthead clearfix">
           <div class="inner">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <h3 class="masthead-brand">
-                <a class="navbar-brand" href="index.html"><img src="clef15/pan15-figures/pan-logo-small-lightgrey.png" alt="PAN" style="margin-top:-5px"></a>
-              </h3>
-              <nav class="collapse navbar-collapse" id="nav-collapse">
-                <ul class="nav masthead-nav">
-                  <li class="active"><a href="#">Home</a></li>
-                  <li><a href="#">Tasks</a></li>
-                  <li><a href="#">Data</a></li>
-                  <li><a href="#">Events</a></li>
-                  <li><a href="#">People</a></li>
-                  <li><a href="#">About</a></li>
-                </ul>
-              </nav>
-            </div>
-          <!--
-            <div class="btn-group navbar-toggle" data-toggle="collapse" data-target="#nav-collapse">
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <ul class="dropdown-menu">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Tasks</a></li>
-                <li><a href="#">Data</a></li>
-                <li><a href="#">Events</a></li>
-                <li><a href="#">People</a></li>
-                <li><a href="#">About</a></li>
-              </ul>
-            </div>
             <h3 class="masthead-brand">
               <a class="navbar-brand" href="index.html"><img src="clef15/pan15-figures/pan-logo-small-lightgrey.png" alt="PAN" style="margin-top:-5px"></a>
             </h3>
-            <nav class="collapse navbar-collapse" id="nav-collapse">
+            <nav>
               <ul class="nav masthead-nav">
                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Tasks</a></li>
+                <li><a href="tasks.html">Tasks</a></li>
                 <li><a href="#">Data</a></li>
                 <li><a href="#">Events</a></li>
                 <li><a href="#">People</a></li>
@@ -268,13 +238,9 @@ body {
               </ul>
             </nav>
           </div>
-          -->
         </div>
 
         <div class="inner cover">
-          <p class="lead">
-            
-          </p>
           <h1 class="cover-heading">PAN is a series of scientific workshops and shared tasks on digital text forensics</h1>
           <p class="lead">
             <a href="#" class="btn btn-lg btn-default">Browse tasks</a>
