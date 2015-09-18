@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="..>
+<html lang="en">
 <head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -176,19 +176,19 @@
     cache: false,
     dataType: "json"
   }).done(function(json) {
-    $(json["feed"..entry"]).each(function() {
-      var title = this["title"..$t"];
-      var content = this["content"..$t"];
+    $(json["feed"]["entry"]).each(function() {
+      var title = this["title"]["$t"];
+      var content = this["content"]["$t"];
       switch (title) {
-      case "..:
+      case "A1":
         $("#registered-total").text(content)
-      case "..:
+      case "A2":
         $("#registered-plagiarism-detection").text(content)
-      case "..:
+      case "A3":
         $("#registered-author-identification").text(content)
-      case "..:
+      case "A4":
         $("#registered-author-profiling").text(content)
-      case "..:
+      case "A5":
         $("#registered-countries").text(content)
       }
     });
