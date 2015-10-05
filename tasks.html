@@ -27,6 +27,10 @@
 -->
 
 <style>
+body {
+  background-color: #333;
+}
+
 .navbar {
   margin-bottom: 0;
 }
@@ -36,16 +40,51 @@
   border-bottom: 1px solid #bbb;
 }
 
-.jumbotron.authorship {
+.research-goal.container {
+  margin:0;
+  padding:0;
+  width:100%
+}
+
+.research-goal .goal-cell { 
+  background-color: #82007d;
   border-bottom: 1px solid #82007d;
+  color: white;
+  width: 40px;
 }
 
-.jumbotron.originality {
+.research-goal .goal-cell .goal { 
+  -webkit-transform-origin: 100% 0%;
+  -moz-transform-origin: 100% 0%;
+  -o-transform-origin: 100% 0%;
+  transform-origin: 100% 0%;
+  -ms-transform: rotate(90deg); /* IE 9 */
+  -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+  transform: rotate(90deg);
+  font-size: 26px;
+  width: 40px;
+}
+
+.research-field {
+  padding: 40px 30px;
+}
+
+.authorship {
+  background-color: #f2e5f2;
+  border-bottom: 1px solid #82007d;
+  color: #82007d;
+}
+
+.originality {
+  background-color: #e6ecf6;
   border-bottom: 1px solid #094599;
+  color: #094599;
 }
 
-.jumbotron.trust {
+.trust {
+  background-color: #fce5d9;
   border-bottom: 1px solid #ad3c00;
+  color: #ad3c00;
 }
 </style>
 
@@ -90,33 +129,65 @@
   </div>
 </div>
 
-<div class="jumbotron authorship" style="background-color:#f2e5f2">
+  <table class="research-goal authorship" style="width:100%;">
+    
+    <tr>
+      <td class="research-field authorship">
+<div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <h2>Author Identification</h2>
+              <p class="lead"></p>
+            </div>
+          </div>
+        </div>
+      </td>
+      
+      <td class="goal-cell" rowspan="3">
+        <div class="goal">Authorship</div>
+      </td>
+      
+    </tr>
+
+    <tr>
+      <td class="research-field authorship">
+          <div class="row">
+            <div class="col-xs-12">
+              <h2>Author Profiling</h2>
+              <p class="lead"></p>
+            </div>
+          </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="research-field authorship">
+          <div class="row">
+            <div class="col-xs-12">
+              <h2>Author Obfuscation</h2>
+              <p class="lead"></p>
+            </div>
+          </div>
+      </td>
+    </tr>
+  </table>
+
+<div class="research-field originality">
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <h2>Authorship</h2>
+        <h2>Originality Tasks</h2>
         <p class="lead"></p>
       </div>
     </div>
   </div>
 </div>
 
-<div class="jumbotron originality" style="background-color:#e6ecf6">
+<div class="research-field trust">
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <h2>Originality</h2>
-        <p class="lead"></p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="jumbotron trust" style="background-color:#fce5d9">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <h2>Trust</h2>
+        <h2>Trust Tasks</h2>
         <p class="lead"></p>
       </div>
     </div>
