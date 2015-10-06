@@ -35,6 +35,30 @@ body {
   margin-bottom: 0;
 }
 
+.container-fluid .row {
+  margin-right: 0;
+}
+
+.introduction {
+  color: white;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .introduction {
+    padding-top: 48px;
+    padding-bottom: 48px;
+    background-image:url('clef15/pan15-figures/pan-fingerprint2.png');
+    background-repeat:no-repeat;
+    background-position:right top;
+  }
+  
+  .introduction h1 {
+    font-size: 63px;
+  }
+}
+
 .jumbotron {
   margin-bottom: 0;
   border-bottom: 1px solid #bbb;
@@ -75,16 +99,31 @@ body {
   color: #82007d;
 }
 
+.authorship.strong {
+  background-color: #82007d;
+  color: white;
+}
+
 .originality {
   background-color: #e6ecf6;
   border-bottom: 1px solid #094599;
   color: #094599;
 }
 
+.originality.strong {
+  background-color: #094599;
+  color: white;
+}
+
 .trust {
   background-color: #fce5d9;
   border-bottom: 1px solid #ad3c00;
   color: #ad3c00;
+}
+
+.trust.strong {
+  background-color: #ad3c00;
+  color: white;
 }
 </style>
 
@@ -113,6 +152,7 @@ body {
   </div>
 </nav>
 
+<!--
 <div class="jumbotron" style="background-image:url('clef15/pan15-figures/pan-fingerprint.png');background-repeat:no-repeat;background-position:right top;">
   <div class="container">
     <div class="row">
@@ -128,67 +168,200 @@ body {
     </div>
   </div>
 </div>
+-->
 
-  <table class="research-goal authorship" style="width:100%;">
-    
-    <tr>
-      <td class="research-field authorship">
-<div class="container">
-          <div class="row">
-            <div class="col-xs-12">
-              <h2>Author Identification</h2>
-              <p class="lead"></p>
-            </div>
+<div class="container-fluid introduction">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h1>Shared Tasks</h1>
+            <p class="lead">PAN fosters digital text forensics research by organizing shared task evaluations. Shared tasks are computer science events that invite researchers and practitioners to work on a specific problem of interest, <em>the task</em>. You are welcome to take part in any of the tasks shown below.</p>
+            <p>
+              <a class="btn btn-primary btn-large" href="people.html#registration">Register now »</a>
+              <a class="btn btn-default btn-large" href="data.html">Learn more »</a>
+              <span class="badge"><span id="registered-total">0</span> already signed up</span>
+            </p>
           </div>
         </div>
-      </td>
-      
-      <td class="goal-cell" rowspan="3">
-        <div class="goal">Authorship</div>
-      </td>
-      
-    </tr>
-
-    <tr>
-      <td class="research-field authorship">
-          <div class="row">
-            <div class="col-xs-12">
-              <h2>Author Profiling</h2>
-              <p class="lead"></p>
-            </div>
-          </div>
-      </td>
-    </tr>
-
-    <tr>
-      <td class="research-field authorship">
-          <div class="row">
-            <div class="col-xs-12">
-              <h2>Author Obfuscation</h2>
-              <p class="lead"></p>
-            </div>
-          </div>
-      </td>
-    </tr>
-  </table>
-
-<div class="research-field originality">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <h2>Originality Tasks</h2>
-        <p class="lead"></p>
       </div>
     </div>
   </div>
 </div>
 
-<div class="research-field trust">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <h2>Trust Tasks</h2>
-        <p class="lead"></p>
+<div class="container-fluid authorship strong">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 text-center">
+            <h1>Authorship</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid authorship">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2>Author Identification</h2>
+            <p class="lead"></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+              <h3>Authorship Attribution</h3>
+              <p>Given a document, who wrote it?</p>
+              <p>This task focuses on <strong>authorship verification</strong> and methods to answer the question whether two given documents have the same author or no. This question accurately emulates the real-world problem that most forensic linguists face every day.</p>
+              <p><a class="btn btn-default" href="author-identification.html">Learn more »</a></p>
+           </div>
+          <div class="col-md-4">
+              <h3>Authorship Verification</h3>
+              <p>Given a document, who wrote it?</p>
+              <p>This task focuses on <strong>authorship verification</strong> and methods to answer the question whether two given documents have the same author or no. This question accurately emulates the real-world problem that most forensic linguists face every day.</p>
+              <p><a class="btn btn-default" href="author-identification.html">Learn more »</a></p>
+           </div>
+          <div class="col-md-4">
+              <h3>Author Clustering</h3>
+              <p>Given a document, who wrote it?</p>
+              <p>This task focuses on <strong>authorship verification</strong> and methods to answer the question whether two given documents have the same author or no. This question accurately emulates the real-world problem that most forensic linguists face every day.</p>
+              <p><a class="btn btn-default" href="author-identification.html">Learn more »</a></p>
+           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid authorship">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2>Author Profiling</h2>
+            <p class="lead"></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <p>Nunc congue, enim nec faucibus rutrum, orci magna bibendum odio, nec euismod lectus neque at felis. Vestibulum lectus arcu, aliquet vel vulputate sed, aliquet convallis massa. Aenean urna ante, pretium in pellentesque at, posuere vitae urna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec in ipsum urna, id aliquet erat. Aliquam id nisi eu nunc pulvinar faucibus quis quis erat. Aliquam placerat auctor lectus, sit amet consectetur ipsum lacinia sit amet.</p>
+            <p>Duis vulputate bibendum elementum. Phasellus eu sodales ligula. Vivamus at justo mauris, id pretium libero. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas hendrerit dolor sit amet urna lacinia porttitor. Integer sed gravida turpis. Etiam varius nulla nulla, volutpat porta risus. Nullam sollicitudin augue posuere nisl sollicitudin ultrices. Morbi dignissim mauris varius orci placerat luctus. Aliquam et risus nulla, ac tincidunt augue. Integer interdum convallis nibh. Maecenas porttitor, leo at sollicitudin posuere, neque sem porttitor odio, et convallis sem massa id dolor. Sed molestie justo id lacus luctus vel commodo sem vestibulum. Vestibulum venenatis risus quis dui consectetur tempus. Suspendisse ultricies turpis sed odio laoreet imperdiet vel ac erat. In mattis enim ut orci tincidunt condimentum.</p>
+          </div>
+          <div class="col-sm-6">
+            <p>Phasellus non nibh ante, a elementum quam. Donec cursus fringilla dui et iaculis. Aenean rhoncus erat accumsan orci mollis vitae malesuada metus euismod. Maecenas aliquet leo et dui venenatis pulvinar sit amet id mi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed non purus sed tellus vehicula ullamcorper. Curabitur in nisi faucibus enim rutrum placerat. Morbi consequat, magna at convallis tempus, eros ante cursus neque, quis fermentum quam est a est. Mauris non arcu nulla. Vestibulum facilisis pulvinar augue nec egestas. In iaculis diam in libero facilisis eu rutrum arcu elementum. Phasellus viverra porttitor interdum. Donec vel elit vel erat sollicitudin sollicitudin.</p>
+            <p>Ut libero turpis, tristique et euismod quis, feugiat eu lorem. Nulla facilisi. Donec nec cursus nisi. Suspendisse tempor egestas rutrum. Pellentesque ac velit eget nisl auctor tincidunt in at risus. Integer lacinia neque vel lacus ornare vehicula suscipit dolor suscipit. Nunc quam diam, consequat pulvinar egestas quis, congue ac lacus. Donec pharetra posuere lacus, eget egestas est feugiat vel. Fusce orci dolor, lacinia aliquet mollis quis, posuere at diam. Curabitur non nibh massa, elementum luctus dolor. Curabitur elit odio, elementum sit amet placerat ac, ullamcorper sagittis purus. Integer odio dolor, scelerisque nec hendrerit non, laoreet ut augue. Curabitur lorem odio, lacinia ac placerat in, condimentum a velit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid authorship">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2>Author Obfuscation</h2>
+            <p class="lead"></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <p>Nunc congue, enim nec faucibus rutrum, orci magna bibendum odio, nec euismod lectus neque at felis. Vestibulum lectus arcu, aliquet vel vulputate sed, aliquet convallis massa. Aenean urna ante, pretium in pellentesque at, posuere vitae urna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec in ipsum urna, id aliquet erat. Aliquam id nisi eu nunc pulvinar faucibus quis quis erat. Aliquam placerat auctor lectus, sit amet consectetur ipsum lacinia sit amet.</p>
+            <p>Duis vulputate bibendum elementum. Phasellus eu sodales ligula. Vivamus at justo mauris, id pretium libero. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas hendrerit dolor sit amet urna lacinia porttitor. Integer sed gravida turpis. Etiam varius nulla nulla, volutpat porta risus. Nullam sollicitudin augue posuere nisl sollicitudin ultrices. Morbi dignissim mauris varius orci placerat luctus. Aliquam et risus nulla, ac tincidunt augue. Integer interdum convallis nibh. Maecenas porttitor, leo at sollicitudin posuere, neque sem porttitor odio, et convallis sem massa id dolor. Sed molestie justo id lacus luctus vel commodo sem vestibulum. Vestibulum venenatis risus quis dui consectetur tempus. Suspendisse ultricies turpis sed odio laoreet imperdiet vel ac erat. In mattis enim ut orci tincidunt condimentum.</p>
+          </div>
+          <div class="col-sm-6">
+            <p>Phasellus non nibh ante, a elementum quam. Donec cursus fringilla dui et iaculis. Aenean rhoncus erat accumsan orci mollis vitae malesuada metus euismod. Maecenas aliquet leo et dui venenatis pulvinar sit amet id mi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed non purus sed tellus vehicula ullamcorper. Curabitur in nisi faucibus enim rutrum placerat. Morbi consequat, magna at convallis tempus, eros ante cursus neque, quis fermentum quam est a est. Mauris non arcu nulla. Vestibulum facilisis pulvinar augue nec egestas. In iaculis diam in libero facilisis eu rutrum arcu elementum. Phasellus viverra porttitor interdum. Donec vel elit vel erat sollicitudin sollicitudin.</p>
+            <p>Ut libero turpis, tristique et euismod quis, feugiat eu lorem. Nulla facilisi. Donec nec cursus nisi. Suspendisse tempor egestas rutrum. Pellentesque ac velit eget nisl auctor tincidunt in at risus. Integer lacinia neque vel lacus ornare vehicula suscipit dolor suscipit. Nunc quam diam, consequat pulvinar egestas quis, congue ac lacus. Donec pharetra posuere lacus, eget egestas est feugiat vel. Fusce orci dolor, lacinia aliquet mollis quis, posuere at diam. Curabitur non nibh massa, elementum luctus dolor. Curabitur elit odio, elementum sit amet placerat ac, ullamcorper sagittis purus. Integer odio dolor, scelerisque nec hendrerit non, laoreet ut augue. Curabitur lorem odio, lacinia ac placerat in, condimentum a velit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid originality strong">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 text-center">
+            <h1>Originality</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid originality">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2>Plagiarism Detection and Text Reuse Detection</h2>
+            <p class="lead"></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <p>Nunc congue, enim nec faucibus rutrum, orci magna bibendum odio, nec euismod lectus neque at felis. Vestibulum lectus arcu, aliquet vel vulputate sed, aliquet convallis massa. Aenean urna ante, pretium in pellentesque at, posuere vitae urna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec in ipsum urna, id aliquet erat. Aliquam id nisi eu nunc pulvinar faucibus quis quis erat. Aliquam placerat auctor lectus, sit amet consectetur ipsum lacinia sit amet.</p>
+            <p>Duis vulputate bibendum elementum. Phasellus eu sodales ligula. Vivamus at justo mauris, id pretium libero. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas hendrerit dolor sit amet urna lacinia porttitor. Integer sed gravida turpis. Etiam varius nulla nulla, volutpat porta risus. Nullam sollicitudin augue posuere nisl sollicitudin ultrices. Morbi dignissim mauris varius orci placerat luctus. Aliquam et risus nulla, ac tincidunt augue. Integer interdum convallis nibh. Maecenas porttitor, leo at sollicitudin posuere, neque sem porttitor odio, et convallis sem massa id dolor. Sed molestie justo id lacus luctus vel commodo sem vestibulum. Vestibulum venenatis risus quis dui consectetur tempus. Suspendisse ultricies turpis sed odio laoreet imperdiet vel ac erat. In mattis enim ut orci tincidunt condimentum.</p>
+          </div>
+          <div class="col-sm-6">
+            <p>Phasellus non nibh ante, a elementum quam. Donec cursus fringilla dui et iaculis. Aenean rhoncus erat accumsan orci mollis vitae malesuada metus euismod. Maecenas aliquet leo et dui venenatis pulvinar sit amet id mi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed non purus sed tellus vehicula ullamcorper. Curabitur in nisi faucibus enim rutrum placerat. Morbi consequat, magna at convallis tempus, eros ante cursus neque, quis fermentum quam est a est. Mauris non arcu nulla. Vestibulum facilisis pulvinar augue nec egestas. In iaculis diam in libero facilisis eu rutrum arcu elementum. Phasellus viverra porttitor interdum. Donec vel elit vel erat sollicitudin sollicitudin.</p>
+            <p>Ut libero turpis, tristique et euismod quis, feugiat eu lorem. Nulla facilisi. Donec nec cursus nisi. Suspendisse tempor egestas rutrum. Pellentesque ac velit eget nisl auctor tincidunt in at risus. Integer lacinia neque vel lacus ornare vehicula suscipit dolor suscipit. Nunc quam diam, consequat pulvinar egestas quis, congue ac lacus. Donec pharetra posuere lacus, eget egestas est feugiat vel. Fusce orci dolor, lacinia aliquet mollis quis, posuere at diam. Curabitur non nibh massa, elementum luctus dolor. Curabitur elit odio, elementum sit amet placerat ac, ullamcorper sagittis purus. Integer odio dolor, scelerisque nec hendrerit non, laoreet ut augue. Curabitur lorem odio, lacinia ac placerat in, condimentum a velit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid trust strong">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 text-center">
+            <h1>Trust</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid trust">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2>Credibility Analysis</h2>
+            <p class="lead"></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <p>Nunc congue, enim nec faucibus rutrum, orci magna bibendum odio, nec euismod lectus neque at felis. Vestibulum lectus arcu, aliquet vel vulputate sed, aliquet convallis massa. Aenean urna ante, pretium in pellentesque at, posuere vitae urna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec in ipsum urna, id aliquet erat. Aliquam id nisi eu nunc pulvinar faucibus quis quis erat. Aliquam placerat auctor lectus, sit amet consectetur ipsum lacinia sit amet.</p>
+            <p>Duis vulputate bibendum elementum. Phasellus eu sodales ligula. Vivamus at justo mauris, id pretium libero. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas hendrerit dolor sit amet urna lacinia porttitor. Integer sed gravida turpis. Etiam varius nulla nulla, volutpat porta risus. Nullam sollicitudin augue posuere nisl sollicitudin ultrices. Morbi dignissim mauris varius orci placerat luctus. Aliquam et risus nulla, ac tincidunt augue. Integer interdum convallis nibh. Maecenas porttitor, leo at sollicitudin posuere, neque sem porttitor odio, et convallis sem massa id dolor. Sed molestie justo id lacus luctus vel commodo sem vestibulum. Vestibulum venenatis risus quis dui consectetur tempus. Suspendisse ultricies turpis sed odio laoreet imperdiet vel ac erat. In mattis enim ut orci tincidunt condimentum.</p>
+          </div>
+          <div class="col-sm-6">
+            <p>Phasellus non nibh ante, a elementum quam. Donec cursus fringilla dui et iaculis. Aenean rhoncus erat accumsan orci mollis vitae malesuada metus euismod. Maecenas aliquet leo et dui venenatis pulvinar sit amet id mi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed non purus sed tellus vehicula ullamcorper. Curabitur in nisi faucibus enim rutrum placerat. Morbi consequat, magna at convallis tempus, eros ante cursus neque, quis fermentum quam est a est. Mauris non arcu nulla. Vestibulum facilisis pulvinar augue nec egestas. In iaculis diam in libero facilisis eu rutrum arcu elementum. Phasellus viverra porttitor interdum. Donec vel elit vel erat sollicitudin sollicitudin.</p>
+            <p>Ut libero turpis, tristique et euismod quis, feugiat eu lorem. Nulla facilisi. Donec nec cursus nisi. Suspendisse tempor egestas rutrum. Pellentesque ac velit eget nisl auctor tincidunt in at risus. Integer lacinia neque vel lacus ornare vehicula suscipit dolor suscipit. Nunc quam diam, consequat pulvinar egestas quis, congue ac lacus. Donec pharetra posuere lacus, eget egestas est feugiat vel. Fusce orci dolor, lacinia aliquet mollis quis, posuere at diam. Curabitur non nibh massa, elementum luctus dolor. Curabitur elit odio, elementum sit amet placerat ac, ullamcorper sagittis purus. Integer odio dolor, scelerisque nec hendrerit non, laoreet ut augue. Curabitur lorem odio, lacinia ac placerat in, condimentum a velit.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
