@@ -10,6 +10,7 @@
 
 <link href="css/bootstrap.min.css" rel="stylesheet" />
 <link href="css/prettify.css" rel="stylesheet" />
+<link href="css/pan.css" rel="stylesheet" />
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -25,115 +26,6 @@
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
 <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
 -->
-
-<style>
-body {
-  background-color: #333;
-}
-
-.navbar {
-  margin-bottom: 0;
-}
-
-.container-fluid .row {
-  margin-right: 0;
-}
-
-.introduction {
-  color: white;
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-
-@media screen and (min-width: 768px) {
-  .introduction {
-    padding-top: 48px;
-    padding-bottom: 48px;
-    background-image:url('clef15/pan15-figures/pan-fingerprint2.png');
-    background-repeat:no-repeat;
-    background-position:right top;
-  }
-  
-  .introduction h1 {
-    font-size: 63px;
-  }
-}
-
-.jumbotron {
-  margin-bottom: 0;
-  border-bottom: 1px solid #bbb;
-}
-
-.research-goal.container {
-  margin:0;
-  padding:0;
-  width:100%
-}
-
-.research-goal .goal-cell { 
-  background-color: #82007d;
-  border-bottom: 1px solid #82007d;
-  color: white;
-  width: 40px;
-}
-
-.research-goal .goal-cell .goal { 
-  -webkit-transform-origin: 100% 0%;
-  -moz-transform-origin: 100% 0%;
-  -o-transform-origin: 100% 0%;
-  transform-origin: 100% 0%;
-  -ms-transform: rotate(90deg); /* IE 9 */
-  -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
-  transform: rotate(90deg);
-  font-size: 26px;
-  width: 40px;
-}
-
-.research-field {
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-
-@media screen and (min-width: 768px) {
-  .reseach-field {
-    padding-top: 48px;
-    padding-bottom: 48px;
-  }
-}
-
-.authorship {
-  background-color: #f2e5f2;
-  border-bottom: 1px solid #82007d;
-  color: #82007d;
-}
-
-.authorship.strong {
-  background-color: #82007d;
-  color: white;
-}
-
-.originality {
-  background-color: #e6ecf6;
-  border-bottom: 1px solid #094599;
-  color: #094599;
-}
-
-.originality.strong {
-  background-color: #094599;
-  color: white;
-}
-
-.trust {
-  background-color: #fce5d9;
-  border-bottom: 1px solid #ad3c00;
-  color: #ad3c00;
-}
-
-.trust.strong {
-  background-color: #ad3c00;
-  color: white;
-}
-</style>
 
 </head>
 <body>
@@ -153,31 +45,13 @@ body {
       <li><a href="index.html">Home</a></li>
       <li class="active"><a href="tasks.html">Tasks</a></li>
       <li><a href="data.html">Data</a></li>
-      <li><a href="tech.html">Tech</a></li>
-      <li><a href="pubs.html">Pubs</a></li>
+      <li><a href="technology.html">Technology</a></li>
+      <li><a href="publications.html">Publications</a></li>
       <li><a href="events.html">Events</a></li>
       <li><a href="people.html">People</a></li>
     </ul>
   </div>
 </nav>
-
-<!--
-<div class="jumbotron" style="background-image:url('clef15/pan15-figures/pan-fingerprint.png');background-repeat:no-repeat;background-position:right top;">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <h1>Shared Tasks</h1>
-        <p class="lead">PAN fosters digital text forensics research by organizing shared task evaluations. Shared tasks are computer science events that invite researchers and practitioners to work on a specific problem of interest, <em>the task</em>. You are welcome to take part in any of the tasks shown below.</p>
-        <p>
-          <a class="btn btn-primary btn-large" href="people.html#registration">Register now »</a>
-          <a class="btn btn-default btn-large" href="data.html">Learn more »</a>
-          <span class="badge"><span id="registered-total">0</span> already signed up</span>
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
--->
 
 <div class="container-fluid introduction">
   <div class="row">
@@ -188,8 +62,8 @@ body {
             <h1>Shared Tasks</h1>
             <p class="lead">PAN fosters digital text forensics research by organizing shared task evaluations. Shared tasks are computer science events that invite researchers and practitioners to work on a specific problem of interest, <em>the task</em>. You are welcome to take part in any of the tasks shown below.</p>
             <p>
-              <a class="btn btn-primary btn-large" href="people.html#registration">Register now »</a>
-              <a class="btn btn-default btn-large" href="data.html">Learn more »</a>
+              <a class="btn btn-primary btn-large" href="people.html#registration">Register now</a>
+              <a class="btn btn-default btn-large" href="data.html">Learn more</a>
               <span class="badge"><span id="registered-total">0</span> already signed up</span>
             </p>
           </div>
@@ -226,33 +100,35 @@ body {
         <div class="row">
           <div class="col-md-4 task">
             <h3>Authorship Attribution</h3>
-            <p>Given a document and a set of candidate authors, which of them wrote the document?</p>
+            <p>Given a document and a set of candidate authors, determine which of them wrote the document.</p>
             <p></p>
-            <p><a class="btn btn-default" href="author-identification.html">Learn more »</a></p>
+            <p><a class="btn btn-default" href="author-identification.html">Learn more</a></p>
           </div>
           <div class="col-md-4 task">
             <h3>Authorship Verification</h3>
-            <p>Given two documents, are they written by the same author?</p>
+            <p>Given a pair of documents, determine whether they are written by the same author.</p>
             <p></p>
-            <p><a class="btn btn-default" href="author-identification.html">Learn more »</a></p>
+            <p><a class="btn btn-default" href="author-identification.html">Learn more</a></p>
           </div>
           <div class="col-md-4 task">
             <h3>Author Clustering</h3>
-            <p>Given a set of documents, which have been written by the same author?</p>
+            <p>Given a set of documents, group them by authorship.</p>
             <p></p>
-            <p><a class="btn btn-default" href="author-identification.html">Learn more »</a></p>
+            <p><a class="btn btn-default" href="author-identification.html">Learn more</a></p>
           </div>
+        </div>
+        <div class="row">
           <div class="col-md-4 task">
             <h3>Author Linking</h3>
-            <p>Given a set of documents, which pairs of documents have been written by the same author?</p>
+            <p>Given a set of documents, determine pairs of documents that have been written by the same author.</p>
             <p></p>
-            <p><a class="btn btn-default" href="author-identification.html">Learn more »</a></p>
+            <p><a class="btn btn-default" href="author-identification.html">Learn more</a></p>
           </div>
           <div class="col-md-4 task">
             <h3>Author Diarization</h3>
-            <p>Given a document, which parts have been written by the same author?</p>
+            <p>Given a document, identify and group parts that have been written by the same author.</p>
             <p></p>
-            <p><a class="btn btn-default" href="author-identification.html">Learn more »</a></p>
+            <p><a class="btn btn-default" href="author-identification.html">Learn more</a></p>
           </div>
         </div>
       </div>
@@ -273,21 +149,21 @@ body {
         <div class="row">
           <div class="col-md-4 task">
             <h3>Gender Prediction</h3>
-            <p>Given a document, what is its author's gender?</p>
+            <p>Given a document, determine its author's gender.</p>
             <p></p>
-            <p><a class="btn btn-default" href="author-identification.html">Learn more »</a></p>
+            <p><a class="btn btn-default" href="author-identification.html">Learn more</a></p>
           </div>
           <div class="col-md-4 task">
             <h3>Age Prediction</h3>
-            <p>Given a document, what is its author's age?</p>
+            <p>Given a document, determine its author's age.</p>
             <p></p>
-            <p><a class="btn btn-default" href="author-identification.html">Learn more »</a></p>
+            <p><a class="btn btn-default" href="author-identification.html">Learn more</a></p>
           </div>
           <div class="col-md-4 task">
             <h3>Personality Prediction</h3>
-            <p>Given a document, what is its author's personality type?</p>
+            <p>Given a document, determine its author's personality type.</p>
             <p></p>
-            <p><a class="btn btn-default" href="author-identification.html">Learn more »</a></p>
+            <p><a class="btn btn-default" href="author-identification.html">Learn more</a></p>
           </div>
         </div>
       </div>
@@ -308,15 +184,15 @@ body {
         <div class="row">
           <div class="col-md-4 task">
             <h3>Author Masking</h3>
-            <p>Given a document and a set of documents from the same author, can the former be paraphrased so that its author cannot be identified, anymore?</p>
+            <p>Given a document and a set of documents from the same author, paraphrase the former so that its author cannot be identified, anymore.</p>
             <p></p>
-            <p><a class="btn btn-default" href="author-identification.html">Learn more »</a></p>
+            <p><a class="btn btn-default" href="author-identification.html">Learn more</a></p>
           </div>
           <div class="col-md-4 task">
             <h3>Author Imitation</h3>
-            <p>Given a document and a set of documents from another author, can the former be paraphrased so that it appears to have been written by the latters' author?</p>
+            <p>Given a document and a set of documents from another author, paraphrase the former so that it appears to have been written by the latters' author.</p>
             <p></p>
-            <p><a class="btn btn-default" href="author-identification.html">Learn more »</a></p>
+            <p><a class="btn btn-default" href="author-identification.html">Learn more</a></p>
           </div>
         </div>
       </div>
@@ -344,46 +220,48 @@ body {
       <div class="container">
         <div class="row">
           <div class="col-xs-12">
-            <h2>Plagiarism Detection and Text Reuse Detection</h2>
+            <h2>Text Reuse Detection (aka Plagiarism Detection)</h2>
             <p class="lead"></p>
           </div>
         </div>
         <div class="row">
           <div class="col-md-4 task">
-            <h3>External Plagiarism Detection</h3>
-            <p>Given a document and a set of documents, ?</p>
-            <p></p>
-            <p><a class="btn btn-default" href="author-identification.html">Learn more »</a></p>
-          </div>
-          <div class="col-md-4 task">
-            <h3>Intrinsic Plagiarism Detection</h3>
-            <p>Given a document, who wrote it?</p>
-            <p></p>
-            <p><a class="btn btn-default" href="author-identification.html">Learn more »</a></p>
-          </div>
-          <div class="col-md-4 task">
-            <h3>Cross-language Text Reuse Detection</h3>
-            <p>Given a document, who wrote it?</p>
-            <p></p>
-            <p><a class="btn btn-default" href="author-identification.html">Learn more »</a></p>
-          </div>
-          <div class="col-md-4 task">
             <h3>Source Retrieval</h3>
-            <p>Given a document, who wrote it?</p>
+            <p>Given a document and a search engine, retrieve likely candidates from which text might have been reused in the document, while minimizing retrieval costs.</p>
             <p></p>
-            <p><a class="btn btn-default" href="author-identification.html">Learn more »</a></p>
+            <p><a class="btn btn-default" href="author-identification.html">Learn more</a></p>
           </div>
           <div class="col-md-4 task">
             <h3>Text Alignment</h3>
-            <p>Given a document, who wrote it?</p>
+            <p>Given a pair of documents, exracts all pairs of reused passages of maximal length.</p>
             <p></p>
-            <p><a class="btn btn-default" href="author-identification.html">Learn more »</a></p>
+            <p><a class="btn btn-default" href="author-identification.html">Learn more</a></p>
+          </div>
+          <div class="col-md-4 task">
+            <h3>Intrinsic Plagiarism Detection</h3>
+            <p>Given a document, determine if parts of it have been written by different authors.</p>
+            <p></p>
+            <p><a class="btn btn-default" href="author-identification.html">Learn more</a></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 task">
+            <h3>Cross-language Text Reuse Detection</h3>
+            <p>Given a document in one language and a set of documents from another, determine whether parts of the former have been reused by translation from the latter.</p>
+            <p></p>
+            <p><a class="btn btn-default" href="author-identification.html">Learn more</a></p>
+          </div>
+          <div class="col-md-4 task">
+            <h3>External Plagiarism Detection</h3>
+            <p>Given a document and a set of documents, determine whether parts of the former have been reused from the latter.</p>
+            <p></p>
+            <p><a class="btn btn-default" href="author-identification.html">Learn more</a></p>
           </div>
           <div class="col-md-4 task">
             <h3>Source Code Reuse Detection</h3>
-            <p>Given a document, who wrote it?</p>
+            <p>Given a piece of code and code repository, determine whether parts of the former have been reused from the latter.</p>
             <p></p>
-            <p><a class="btn btn-default" href="author-identification.html">Learn more »</a></p>
+            <p><a class="btn btn-default" href="author-identification.html">Learn more</a></p>
           </div>
         </div>
       </div>
@@ -418,21 +296,21 @@ body {
         <div class="row">
           <div class="col-md-4 task">
             <h3>Wikipedia Vandalism Detection</h3>
-            <p>Given a document, who wrote it?</p>
+            <p>Given a an edit on a Wikipedia article, determine whether it is vandalism.</p>
             <p></p>
-            <p><a class="btn btn-default" href="author-identification.html">Learn more »</a></p>
+            <p><a class="btn btn-default" href="author-identification.html">Learn more</a></p>
           </div>
           <div class="col-md-4 task">
             <h3>Wikipedia Quality Flaw Prediction</h3>
-            <p>Given a document, who wrote it?</p>
+            <p>Given a Wikipedia article, predict whether it comprises quality flaws, and if so, which.</p>
             <p></p>
-            <p><a class="btn btn-default" href="author-identification.html">Learn more »</a></p>
+            <p><a class="btn btn-default" href="author-identification.html">Learn more</a></p>
           </div>
           <div class="col-md-4 task">
             <h3>Sexual Predator Identification</h3>
-            <p>Given a document, who wrote it?</p>
+            <p>Given a chat log between two people, determine whether one pretends to be a child.</p>
             <p></p>
-            <p><a class="btn btn-default" href="author-identification.html">Learn more »</a></p>
+            <p><a class="btn btn-default" href="author-identification.html">Learn more</a></p>
           </div>
         </div>
       </div>

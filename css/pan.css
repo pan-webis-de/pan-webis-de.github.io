@@ -1,0 +1,110 @@
+body {
+  background-color: #333;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.navbar .navbar-nav {
+  font-weight: bold;
+}
+
+.container-fluid .row {
+  margin-right: 0;
+}
+
+.introduction {
+  color: white;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .introduction {
+    padding-top: 48px;
+    padding-bottom: 48px;
+    background-image:url('../clef15/pan15-figures/pan-fingerprint2.png');
+    background-repeat:no-repeat;
+    background-position:right top;
+  }
+  
+  .introduction h1 {
+    font-size: 63px;
+  }
+}
+
+.jumbotron {
+  margin-bottom: 0;
+  border-bottom: 1px solid #bbb;
+}
+
+.research-goal.container {
+  margin:0;
+  padding:0;
+  width:100%
+}
+
+.research-goal .goal-cell { 
+  background-color: #82007d;
+  border-bottom: 1px solid #82007d;
+  color: white;
+  width: 40px;
+}
+
+.research-goal .goal-cell .goal { 
+  -webkit-transform-origin: 100% 0%;
+  -moz-transform-origin: 100% 0%;
+  -o-transform-origin: 100% 0%;
+  transform-origin: 100% 0%;
+  -ms-transform: rotate(90deg); /* IE 9 */
+  -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+  transform: rotate(90deg);
+  font-size: 26px;
+  width: 40px;
+}
+
+.research-field {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .reseach-field {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+}
+
+.authorship {
+  background-color: #f2e5f2;
+  border-bottom: 1px solid #82007d;
+  color: #82007d;
+}
+
+.authorship.strong {
+  background-color: #82007d;
+  color: white;
+}
+
+.originality {
+  background-color: #e6ecf6;
+  border-bottom: 1px solid #094599;
+  color: #094599;
+}
+
+.originality.strong {
+  background-color: #094599;
+  color: white;
+}
+
+.trust {
+  background-color: #fce5d9;
+  border-bottom: 1px solid #ad3c00;
+  color: #ad3c00;
+}
+
+.trust.strong {
+  background-color: #ad3c00;
+  color: white;
+}
