@@ -108,3 +108,12 @@ body {
   background-color: #ad3c00;
   color: white;
 }
+
+.vertical-align {
+  display: flex;
+  align-items: center;
+}
+
+.no-indent {
+  padding-left: 16px;
+}
