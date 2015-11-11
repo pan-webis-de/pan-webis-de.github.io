@@ -140,7 +140,7 @@
                 <li><strong>Authors retain copyright</strong> of all their code. PAN assumes no ownership.</li>
                 <li>The choice of license rests with the authors. <strong>Respect the license</strong>.</li>
                 <li>When you use some code, <strong>cite the authors</strong>. If you don't know how, ask.</li>
-                <li>When you find bugs, fix them and <strong>share bugfixes</strong> with the authors</li>
+                <li>When you find bugs, fix them and <strong>share bugfixes</strong> with the authors.</li>
               </ul>
             </p>
           </div>
@@ -171,7 +171,7 @@
         <div class="row vertical-align">
           <div class="col-xs-10">
             <h2>PAN at TIRA</h2>
-            <p class="lead">At PAN, it is our goal to carry out reproducible research. While the evaluation resources created for our shared tasks benefit future evaluations, even shared tasks lack reproducibility: test data is handed out prematurely harming the integrity of an evaluation, and software created by participants are often lost after the event has passed. Therefore, we ask participants to submit working executables of their software. To facilitate the submission of software, we employ TIRA, a platform that implements the evaluation as a service paradigm.</p>
+            <p class="lead">At PAN, it is our goal to carry out reproducible research. While the evaluation resources created for our shared tasks benefit future evaluations, even shared tasks lack reproducibility. Therefore, we ask participants to submit working executables of their software. To facilitate the submission of software, we employ TIRA (<a href="http://www.tira.io" target="_blank">tira.io</a>), a platform that implements the evaluation as a service paradigm.</p>
           </div>
           <div class="col-xs-2">
             <img class="img-responsive" src="img/tira-logo.png" width="120px" />
@@ -180,21 +180,28 @@
         <div class="row">
           <div class="col-xs-6 col-lg-3">
             <h3>How to get access?</h3>
-            <p>To get started, send us an email with your preferred choice of operating system. We offer Ubuntu Linux 14 LTS (Desktop / Server) as well as Windows&nbsp;7. We will set up a virtual machine (VM) for you and pass you the access credentials. You can access your VM via SSH and remote desktop. Once you have access, please install your software inside the virtual machine.</p>
+            <p>To get started, send us an email with your preferred choice of operating system. We offer Ubuntu Linux 14 LTS (Desktop or Server) as well as Windows&nbsp;7. We will set up a virtual machine (VM) for you and pass you the access credentials. You can access your VM via SSH and remote desktop. Once you have access, please install your software inside the virtual machine.</p>
             <p>
               <a class="btn btn-default" target="_blank" href="mailto:pan@webis.de?subject=Request Virtual Machine on TIRA&body=Hi PAN organizers,%0D%0A%0D%0AI would like request access to a virtual machine on TIRA.%0D%0A%0D%0AMy preferred  GitHub name:%0D%0A%0D%0A<ENTER YOUR GITHUB NAME HERE>%0D%0A%0D%0ACheers!">Request virtual machine</a>
             </p>
           </div>
           <div class="col-xs-6 col-lg-3">
-            <h3>What to prepare?</h3>
-            <p></p>
-            <a class="btn btn-default" target="_blank" href="http://faculty.washington.edu/rjl/pubs/topten/topten.pdf">Learn more</a>
+            <h3>Why submit software?</h3>
+            <p>Reproducibility is one of the corner stones of science; yet, in recent years it was shown that many scientific contributions are irreproducible. For shared tasks in particular, the softwares developed by participants often go missing soon after the event has passed. Moreover, the test datasets used in shared tasks are released to participants, creating an evaluation bias. All of these problems are solved by submitting software instead of runs.</p>
+            <p><a class="btn btn-default" target="_blank" href="http://www.uni-weimar.de/medien/webis/publications/papers/stein_2014j.pdf">Learn more</a></p>
           </div>
           <div class="col-xs-6 col-lg-3">
-            <h3>How TIRA works?</h3>
-            <p></p>
-            <a class="btn btn-default" target="_blank" href="mailto:pan@webis.de?subject=Share my code at PAN's GitHub page&body=Hi PAN organizers,%0D%0A%0D%0AI would like to share my code at PAN's GitHub page.%0D%0A%0D%0APlease create a team for me; here is my GitHub name:%0D%0A%0D%0A<ENTER YOUR GITHUB NAME HERE>%0D%0A%0D%0ACheers!">Share now</a>
-            <a class="btn btn-default" target="_blank" href="https://help.github.com/articles/adding-a-file-to-a-repository-from-the-command-line/">Commit instructions</a>
+            <h3>What to prepare?</h3>
+            <p>
+              To work with TIRA, your software has to be executable from the command line and it must accept the following parameters:
+              <ul class="no-indent">
+                <li>A path to an input dataset.</li>
+                <li>A path to an output directory.</li>
+                <li>A path to the output of a previous run of the software (optional).</li>
+              </ul>
+              Once your software is installed in your VM, you can remote control its evaluation via TIRA's web interface.
+            </p>
+            <p><a class="btn btn-default" target="_blank" href="http://www.uni-weimar.de/medien/webis/publications/papers/stein_2014j.pdf#page=4">Learn more</a></p>
           </div>
           <div class="col-xs-6 col-lg-3">
             <h3>What are the terms?</h3>
@@ -203,7 +210,7 @@
                 <li><strong>Authors retain copyright</strong> of their software.</li>
                 <li><strong>Authors provide usage rights</strong> to PAN and TIRA for the purpose of evaluation.</li>
                 <li>Authors may <strong>revoke usage rights</strong> at any time.</li>
-                <li>Usage of TIRA is at the <strong>author's risk</strong>. PAN and TIRA take reasonable security precautions.</li>
+                <li>Usage of TIRA is at the <strong>author's risk</strong>.</li>
               </ul>
             </p>
           </div>
