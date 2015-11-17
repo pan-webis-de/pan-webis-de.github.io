@@ -117,3 +117,13 @@ body {
 .no-indent {
   padding-left: 16px;
 }
+
+.selected, .selected:hover, .selected:active, .selected:focus, .selected:visited {
+  color: white;
+  background-color: #094599;
+  border: none;
+}
+
+.csc-menu td:not(:first-child) {
+  padding-left: 50px;
+}
