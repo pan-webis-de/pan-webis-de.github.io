@@ -118,12 +118,60 @@ body {
   padding-left: 16px;
 }
 
-.selected, .selected:hover, .selected:active, .selected:focus, .selected:visited {
+.selected,
+.selected:hover,
+.selected:active,
+.selected:focus,
+.selected:visited {
   color: white;
   background-color: #094599;
   border: none;
 }
 
+.selected .caret {
+  border-top-color: white;
+}
+
 .csc-menu td:not(:first-child) {
   padding-left: 50px;
+}
+
+.publications-view-by-downloads.btn-group {
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.publications-view-by-downloads.btn-group button:nth-child(1) {
+  width: 80%; /* Hack for IE 9 */
+  flex:6;
+}
+
+.publications-view-by-downloads.btn-group button:nth-child(2) {
+  width: 20%; /* Hack for IE 9 */
+  flex:1;
+}
+
+.publications-view-by-downloads.btn-group button:nth-child(2).selected,
+.publications-view-by-downloads.btn-group button:nth-child(2).selected:hover,
+.publications-view-by-downloads.btn-group button:nth-child(2).selected:active,
+.publications-view-by-downloads.btn-group button:nth-child(2).selected:focus,
+.publications-view-by-downloads.btn-group button:nth-child(2).selected:visited {
+  color: white;
+  background-color: #094599;
+  border: none;
+  border-left: 1px solid white;
+}
+
+.btn-group .btn.selected:hover,
+.btn-group .btn.selected:focus,
+.btn-group .btn.selected:active,
+.btn-group .btn.selected:visited {
+  z-index: 0;
+}
+
+.publications-view-browser {
+  padding-top: 60px;
+  padding-bottom: 60px;
 }

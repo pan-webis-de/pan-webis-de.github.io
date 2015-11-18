@@ -99,7 +99,7 @@
   </div>
 </div>
 
-<div class="container-fluid research-field authorship">
+<div class="container-fluid research-field authorship publications-view-browser">
   <div class="row">
     <div class="col-xs-12">
       <div class="container">
@@ -118,10 +118,22 @@
           </div>
           <div class="hidden-lg">&nbsp;</div>
           <div class="col-xs-6 col-lg-3">
-            <button id="publications-view-by-downloads" class="btn btn-default btn-lg btn-block">
-              <span class="hidden-xs">Publications</span>
-              by Downloads
-            </button>
+            <div id="publications-view-by-downloads-button-wrapper" class="publications-view-by-downloads btn-group">
+              <button id="publications-view-by-downloads" type="button" class="btn btn-default btn-lg">
+                <span class="hidden-xs">Publications</span>
+                by Downloads
+              </button>
+              <button id="publications-view-by-downloads-dropdown" type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a id="publications-view-by-downloads-last-day" href="#">last day</a></li>
+                <li><a id="publications-view-by-downloads-last-week" href="#">last week</a></li>
+                <li><a id="publications-view-by-downloads-last-month" href="#">last month</a></li>
+                <li><a id="publications-view-by-downloads-last-year" href="#">last year</a></li>
+              </ul>
+            </div>
           </div>
           <div class="col-xs-6 col-lg-3">
             <button id="publications-view-by-topic" class="btn btn-default btn-lg btn-block">
@@ -155,7 +167,7 @@
       <div class="container">
         <div class="row">
           <div id="publications-view" class="col-xs-12">
-            
+            Loading...
           </div>
         </div>
       </div>
@@ -213,10 +225,16 @@
 </script>
 
 <script type="text/javascript">
-var byYearUrl      = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-year";
-var byAuthorUrl    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-author";
-var byDownloadsUrl = "http://www.uni-weimar.de/medien/webis/publications/pub-by-download-pan.php?days=31"
-var byTopicUrl     = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-topic";
+var url1                    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php";
+var byYearUrl               = url1 + "?filter=by-year";
+var byAuthorUrl             = url1 + "?filter=by-author";
+var byTopicUrl              = url1 + "?filter=by-topic";
+var url2                    = "http://www.uni-weimar.de/medien/webis/publications/pub-by-download-pan.php";
+var byDownloadsLastDayUrl   = url2 + "?days=1"
+var byDownloadsLastWeekUrl  = url2 + "?days=7"
+var byDownloadsLastMonthUrl = url2 + "?days=31"
+var byDownloadsLastYearUrl  = url2 + "?days=365"
+
 
 var publicationsViewId      = "publications-view";
 var publicationsViewTitleId = "publications-view-title";
@@ -224,30 +242,59 @@ var publicationsViewTitleId = "publications-view-title";
 var publicationsViewSelector      = "#" + publicationsViewId;
 var publicationsViewTitleSelector = "#" + publicationsViewTitleId;
 
-var byYearBtnId      = "publications-view-by-year";
-var byAuthorBtnId    = "publications-view-by-author";
-var byDownloadsBtnId = "publications-view-by-downloads";
-var byTopicBtnId     = "publications-view-by-topic";
+var byYearBtnId              = "publications-view-by-year";
+var byAuthorBtnId            = "publications-view-by-author";
+var byDownloadsBtnId         = "publications-view-by-downloads";
+var byDownloadsBtnDropdownId = "publications-view-by-downloads-dropdown";
+var byDownloadsBtnWrapperId  = "publications-view-by-downloads-button-wrapper";
+var byTopicBtnId             = "publications-view-by-topic";
 
-var byYearBtnSelector      = "#" + byYearBtnId;
-var byAuthorBtnSelector    = "#" + byAuthorBtnId;
-var byDownloadsBtnSelector = "#" + byDownloadsBtnId;
-var byTopicBtnSelector     = "#" + byTopicBtnId;
-var allViewBtnsSelector    = [byYearBtnSelector, 
-                              byAuthorBtnSelector, 
-                              byDownloadsBtnSelector, 
-                              byTopicBtnSelector].join();
+var byYearBtnSelector              = "#" + byYearBtnId;
+var byAuthorBtnSelector            = "#" + byAuthorBtnId;
+var byDownloadsBtnSelector         = "#" + byDownloadsBtnId;
+var byDownloadsBtnDropdownSelector = "#" + byDownloadsBtnDropdownId;
+var byDownloadsBtnWrapperSelector  = "#" + byDownloadsBtnWrapperId;
+var byTopicBtnSelector             = "#" + byTopicBtnId;
+var allViewBtnsSelector            = [byYearBtnSelector, 
+                                      byAuthorBtnSelector, 
+                                      byDownloadsBtnSelector,
+                                      byTopicBtnSelector].join();
+var allViewBtnsAndDropdownSelector = [allViewBtnsSelector,
+                                      byDownloadsBtnDropdownSelector].join();
+
+var byDownloadsLastDayLnkId     = "publications-view-by-downloads-last-day";
+var byDownloadsLastWeekId       = "publications-view-by-downloads-last-week";
+var byDownloadsLastMonthLnkId   = "publications-view-by-downloads-last-month";
+var byDownloadsLastYearLnkId    = "publications-view-by-downloads-last-year";
+
+var byDownloadsLastDayLnkSelector     = "#" + byDownloadsLastDayLnkId;
+var byDownloadsLastWeekSelector       = "#" + byDownloadsLastWeekId;
+var byDownloadsLastMonthLnkSelector   = "#" + byDownloadsLastMonthLnkId;
+var byDownloadsLastYearLnkSelector    = "#" + byDownloadsLastYearLnkId;
+var allByDownloadsLnksSelector        = [byDownloadsLastDayLnkSelector,
+                                         byDownloadsLastWeekSelector,
+                                         byDownloadsLastMonthLnkSelector,
+                                         byDownloadsLastYearLnkSelector].join();
 
 var attrId        = "id";
 var classSelected = "selected";
+
+$.ajaxSetup ({
+    // Disable caching of AJAX responses
+    cache: false
+});
 
 $(document).ready(function() {
   fetchPublicationsViewHtml(byYearUrl);
 });
 
 $(allViewBtnsSelector).click(function(){
-  $(allViewBtnsSelector).removeClass(classSelected);
+  $(allViewBtnsAndDropdownSelector).removeClass(classSelected);
+  $(allByDownloadsLnksSelector).removeClass(classSelected);
   $(this).addClass(classSelected);
+  if ($(this).attr(attrId) === byDownloadsBtnId) {
+    $(byDownloadsBtnDropdownSelector).addClass(classSelected);
+  }
   var title = $(this).text();
   switch($(this).attr(attrId)) {
   case byYearBtnId:
@@ -257,7 +304,10 @@ $(allViewBtnsSelector).click(function(){
     fetchPublicationsViewHtml(byAuthorUrl, title);
     break;
   case byDownloadsBtnId:
-    fetchPublicationsViewHtml(byDownloadsUrl, title);
+    title = title + " (" + $(byDownloadsLastMonthLnkSelector).text() + ")";
+    fetchPublicationsViewHtml(byDownloadsLastMonthUrl, title);
+    $(allByDownloadsLnksSelector).removeClass(classSelected);
+    $(byDownloadsLastMonthLnkSelector).addClass(classSelected);
     break;
   case byTopicBtnId:
     fetchPublicationsViewHtml(byTopicUrl, title);
@@ -265,13 +315,36 @@ $(allViewBtnsSelector).click(function(){
   }
 });
 
-
+$(allByDownloadsLnksSelector).click(function(){
+  $(allViewBtnsAndDropdownSelector).removeClass(classSelected);
+  $(byDownloadsBtnSelector).addClass(classSelected);
+  $(byDownloadsBtnDropdownSelector).addClass(classSelected);
+  $(allByDownloadsLnksSelector).removeClass(classSelected);
+  $(this).addClass(classSelected);
+  var title = $(byDownloadsBtnSelector).text();
+  title = title + " (" + $(this).text() + ")";
+  switch($(this).attr(attrId)) {
+  case byDownloadsLastDayLnkId:
+    fetchPublicationsViewHtml(byDownloadsLastDayUrl, title);
+    break;
+  case byDownloadsLastWeekId:
+    fetchPublicationsViewHtml(byDownloadsLastWeekUrl, title);
+    break;
+  case byDownloadsLastMonthLnkId:
+    fetchPublicationsViewHtml(byDownloadsLastMonthUrl, title);
+    break;
+  case byDownloadsLastYearLnkId:
+    fetchPublicationsViewHtml(byDownloadsLastYearUrl, title);
+    break;
+  }
+});
 
 function fetchPublicationsViewHtml(url, title) {
   if (typeof title !== "undefined") {
     $(publicationsViewTitleSelector).text(title);
   }
   $(publicationsViewSelector).empty();
+  $(publicationsViewSelector).text("Loading...");
   $(publicationsViewSelector).load(url + " #webis-pub-database", 
     function (response, status, xhr) {
       if ( status == "error" ) {
@@ -281,6 +354,18 @@ function fetchPublicationsViewHtml(url, title) {
     }
   );
 }
+
+// Hack to reset the selected class due to Bootstrap removing it without reason.
+$(byDownloadsBtnWrapperSelector).on('shown.bs.dropdown', function() {
+  if ($(byDownloadsBtnDropdownSelector).hasClass(classSelected)) {
+    $(byDownloadsBtnSelector).addClass(classSelected);
+  }
+});
+$(byDownloadsBtnWrapperSelector).on('hidden.bs.dropdown', function() {
+  if ($(byDownloadsBtnDropdownSelector).hasClass(classSelected)) {
+    $(byDownloadsBtnSelector).addClass(classSelected);
+  }
+});
 </script>
 
 </body>
