@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PAN 2009</title> 
+
+<link href="../../css/bootstrap.min.css" rel="stylesheet" />
+<link href="../../css/prettify.css" rel="stylesheet" />
+<link href="http://www.uni-weimar.de/medien/webis/publications/bibentry-pan.css" rel="stylesheet" />
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="../../js/html5shiv.js"></script>
+  <script src="../../js/respond.min.js"></script>
+<![endif]-->
+
+<link rel="shortcut icon" href="../pan09-figures/pan-icon-16x16.ico">
+<!--
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+-->
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="index.html"><img src="../pan09-figures/pan-logo-small-lightgrey.png" alt="PAN" style="margin-top:-5px"></a>
+  </div>
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li><a href="about.html">About</a></li>
+      <li><a href="plagiarism-detection.html">Plagiarism Detection</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Join PAN's mailing list <span class="caret"></span></a>
+        <ul class="dropdown-menu pull-right" role="menu"><li>
+          <form class="form-inline" role="form" style="white-space:nowrap;margin:0 20px;" action="http://groups.google.com/group/pan-workshop-series/boxsubscribe">
+          <div class="input-group">
+            <input class="form-control" style="min-width:150px" name="email" type="email" placeholder="Email">
+            <span class="input-group-btn">
+            <button type="submit" class="btn btn-grey">Join</button>
+            </span>
+          </div>
+          </form>
+        </li><li>
+          <a href="http://groups.google.com/group/pan-workshop-series" target="_blank">Visit the mailing list </a>
+        </li></ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+
+<div class="row">
+  <div class="col-xs-12">
+    <h1 id="task-description" class="page-header">
+      Proceedings
+      <div class="btn-group">
+        <span role="button" class="btn btn-default" disabled="disabled"><span class="glyphicon glyphicon-chevron-left" style="color:grey;"></span></span>
+        <span role="button" class="btn btn-default" disabled="disabled">2009</span>
+        <a role="button" class="btn btn-default" href="../../clef10/pan10-web/about.html"><span class="glyphicon glyphicon-chevron-right" style="color:grey;"></span></a>
+      </div>
+    </h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <h3>PAN Overview Papers</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div id="proceedings-overviews" class="col-xs-12"></div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <h3>External Plagiarism Detection</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div id="proceedings-notebooks-external-plagiarism-detection" class="col-xs-12"></div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <h3>Intrinsic Plagiarism Detection</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div id="proceedings-notebooks-intrinsic-plagiarism-detection" class="col-xs-12"></div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <h3>PAN Workshop</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div id="proceedings-workshop" class="col-xs-12"></div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <p>The entire proceedings can be found <a href="http://ceur-ws.org/Vol-502/">here</a>.</p>    
+  </div>
+</div>
+
+<footer>
+  <p class="pull-right">© pan.webis.de</p>
+</footer>
+
+</div> <!-- /container -->
+
+<script src="../../js/jquery.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script src="../../js/prettify.js"></script>
+<script>
+  !function ($) {
+    $(function(){
+      window.prettyPrint && prettyPrint()   
+    })
+  }(window.jQuery)
+</script>
+
+<script>
+var urlOverview = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=sepln,2009,overview";
+var urlTask1    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=sepln,2009,external-plagiarism-detection&exclude=overview,workshop";
+var urlTask2    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=sepln,2009,intrinsic-plagiarism-detection&exclude=overview,workshop";
+var urlWorkshop = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=sepln,2009,workshop";
+
+$(document).ready(function() {
+  fetchPublicationsViewHtml(urlOverview, "#proceedings-overviews");
+  fetchPublicationsViewHtml(urlTask1, "#proceedings-notebooks-external-plagiarism-detection");
+  fetchPublicationsViewHtml(urlTask2, "#proceedings-notebooks-intrinsic-plagiarism-detection");
+  fetchPublicationsViewHtml(urlWorkshop, "#proceedings-workshop");
+});
+
+function fetchPublicationsViewHtml(url, selector) {
+  $(selector).empty();
+  $(selector).text("Loading...");
+  $(selector).load(url + " #webis-pub-database", 
+    function (response, status, xhr) {
+      if ( status == "error" ) {
+        var msg = "Sorry but there was an error: ";
+        $(publicationsViewSelector).html(msg + xhr.status + " " + xhr.statusText);
+      }
+    }
+  );
+}
+</script>
+
+</body>
+</html>
+

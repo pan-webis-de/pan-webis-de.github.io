@@ -349,7 +349,7 @@ function fetchPublicationsViewHtml(url, title) {
     function (response, status, xhr) {
       if ( status == "error" ) {
         var msg = "Sorry but there was an error: ";
-        $( "#error" ).html( msg + xhr.status + " " + xhr.statusText );
+        $(publicationsViewSelector).html(msg + xhr.status + " " + xhr.statusText);
       }
     }
   );
