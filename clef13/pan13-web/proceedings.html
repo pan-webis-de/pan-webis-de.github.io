@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>PAN 2009</title> 
+<title>PAN 2013</title> 
 
 <link href="../../css/bootstrap.min.css" rel="stylesheet" />
 <link href="../../css/prettify.css" rel="stylesheet" />
@@ -19,7 +19,7 @@
   <script src="../../js/respond.min.js"></script>
 <![endif]-->
 
-<link rel="shortcut icon" href="../pan09-figures/pan-icon-16x16.ico">
+<link rel="shortcut icon" href="../pan13-figures/pan-icon-16x16.ico">
 <!--
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
@@ -38,12 +38,14 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="index.html"><img src="../pan09-figures/pan-logo-small-lightgrey.png" alt="PAN" style="margin-top:-5px"></a>
+    <a class="navbar-brand" href="index.html"><img src="../pan13-figures/pan-logo-small-lightgrey.png" alt="PAN" style="margin-top:-5px"></a>
   </div>
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
       <li><a href="about.html">About</a></li>
       <li><a href="plagiarism-detection.html">Plagiarism Detection</a></li>
+      <li><a href="author-identification.html">Author Identification</a></li>
+      <li><a href="author-profiling.html">Author Profiling</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li class="dropdown">
@@ -67,14 +69,14 @@
 
 <div class="container">
 
-<div class="row">
+<div id="proceedings" class="row">
   <div class="col-xs-12">
     <h1 id="task-description" class="page-header">
       Proceedings
       <div class="btn-group">
-        <span role="button" class="btn btn-default" disabled="disabled"><span class="glyphicon glyphicon-chevron-left" style="color:grey;"></span></span>
-        <span role="button" class="btn btn-default" disabled="disabled">2009</span>
-        <a role="button" class="btn btn-default" href="../../clef10/pan10-web/proceedings.html"><span class="glyphicon glyphicon-chevron-right" style="color:grey;"></span></a>
+        <a role="button" class="btn btn-default" href="../../clef12/pan12-web/proceedings.html"><span class="glyphicon glyphicon-chevron-left" style="color:grey;"></span></a>
+        <span role="button" class="btn btn-default" disabled="disabled">2013</span>
+        <a role="button" class="btn btn-default" href="../../clef14/pan14-web/proceedings.html"><span class="glyphicon glyphicon-chevron-right" style="color:grey;"></span></a>
       </div>
     </h1>
   </div>
@@ -92,32 +94,42 @@
 
 <div class="row">
   <div class="col-xs-12">
-    <h3>External Plagiarism Detection</h3>
+    <h3>Plagiarism Detection: Source Retrieval</h3>
   </div>
 </div>
 
 <div class="row">
-  <div id="proceedings-notebooks-external-plagiarism-detection" class="col-xs-12"></div>
+  <div id="proceedings-notebooks-source-retrieval" class="col-xs-12"></div>
 </div>
 
 <div class="row">
   <div class="col-xs-12">
-    <h3>Intrinsic Plagiarism Detection</h3>
+    <h3>Plagiarism Detection: Text Alignment</h3>
   </div>
 </div>
 
 <div class="row">
-  <div id="proceedings-notebooks-intrinsic-plagiarism-detection" class="col-xs-12"></div>
+  <div id="proceedings-notebooks-text-alignment" class="col-xs-12"></div>
 </div>
 
 <div class="row">
   <div class="col-xs-12">
-    <h3>PAN Workshop</h3>
+    <h3>Authorship Verification</h3>
   </div>
 </div>
 
 <div class="row">
-  <div id="proceedings-workshop" class="col-xs-12"></div>
+  <div id="proceedings-notebooks-authorship-verification" class="col-xs-12"></div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <h3>Author Profiling: Age Prediction and Gender Prediction</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div id="proceedings-notebooks-author-profiling" class="col-xs-12"></div>
 </div>
 
 <div class="row">
@@ -144,16 +156,18 @@
 </script>
 
 <script>
-var urlOverview = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=sepln,2009,overview";
-var urlTask1    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=sepln,2009,external-plagiarism-detection&exclude=overview,workshop";
-var urlTask2    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=sepln,2009,intrinsic-plagiarism-detection&exclude=overview,workshop";
-var urlWorkshop = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=sepln,2009,workshop";
+var urlOverview = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2013,overview";
+var urlTask1    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2013,source-retrieval&exclude=overview";
+var urlTask2    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2013,text-alignment&exclude=overview";
+var urlTask3    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2013,authorship-verification&exclude=overview";
+var urlTask4    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2013,author-profiling&exclude=overview";
 
 $(document).ready(function() {
   fetchPublicationsViewHtml(urlOverview, "#proceedings-overviews");
-  fetchPublicationsViewHtml(urlTask1, "#proceedings-notebooks-external-plagiarism-detection");
-  fetchPublicationsViewHtml(urlTask2, "#proceedings-notebooks-intrinsic-plagiarism-detection");
-  fetchPublicationsViewHtml(urlWorkshop, "#proceedings-workshop");
+  fetchPublicationsViewHtml(urlTask1, "#proceedings-notebooks-source-retrieval");
+  fetchPublicationsViewHtml(urlTask2, "#proceedings-notebooks-text-alignment");
+  fetchPublicationsViewHtml(urlTask3, "#proceedings-notebooks-authorship-verification");
+  fetchPublicationsViewHtml(urlTask4, "#proceedings-notebooks-author-profiling");
 });
 
 function fetchPublicationsViewHtml(url, selector) {
