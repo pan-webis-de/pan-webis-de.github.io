@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PAN 2015</title> 
+
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+<link href="css/prettify.css" rel="stylesheet" />
+<link href="css/pan.css" rel="stylesheet" />
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+  <script src="js/respond.min.js"></script>
+<![endif]-->
+
+<link rel="shortcut icon" href="clef15/pan15-figures/pan-icon-16x16.ico">
+<!--
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+-->
+
+<style>
+.navbar {
+  margin-bottom: 0;
+}
+
+.jumbotron {
+  margin-bottom: 0;
+  border-bottom: 1px solid #bbb;
+}
+</style>
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="index.html"><img src="clef15/pan15-figures/pan-logo-small-lightgrey.png" alt="PAN" style="margin-top:-5px"></a>
+  </div>
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="tasks.html">Tasks</a></li>
+      <li><a href="data.html">Data</a></li>
+      <li><a href="technology.html">Technology</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li class="active"><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container-fluid introduction">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h1>Contact</h1>
+            <p class="lead">PAN has become a network of experts on digital text forensics. Many actively contribute, hundreds are following up on the latest developments. You are welcome to join the network. Take part in PAN's shared tasks, develop new technology, compile new evaluation datasets, share your achievements with the community, offer community service, or just listen in.</p>
+            <p>
+              <a class="btn btn-primary btn-large" href="contact.html#registration">Register now »</a>
+              <a class="btn btn-default btn-large" href="contact.html">Learn more »</a>
+              <span class="badge"><span id="registered-total">0</span> already signed up</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid authorship strong">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 text-center">
+            <h1>Sign up and Contribute</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid research-field authorship">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="container">
+        <div class="row vertical-align">
+          <div class="col-xs-12">
+            <h2>What you can do at PAN</h2>
+            <p class="lead">PAN is a community-driven effort. If you want to help push forward the digital text forensics, all other PAN community members will gladly help you make it happen. There's a number of ways big and small in which you can contribute.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-6 col-lg-3">
+            <h3>Participate in a Task</h3>
+            <p>Got an idea how to solve one of PAN's main tasks? Brilliant! All you have to do is to register for the task you wish to tackle. You will be given access to a virtual machine on TIRA, and may then evaluate your new approach. For some of the tasks, we organize annual events where you can present your results.</p>
+          </div>
+          <div class="col-xs-6 col-lg-3">
+            <h3>Submit Data</h3>
+            <p>Got a new dataset for one of PAN's task? We welcome the submission of new datasets to all tasks. As long as the dataset is formatted the same way as the other datasets for the same task, all software submitted by previous participants on that task can be run against it.</p>
+          </div>
+          <div class="col-xs-6 col-lg-3">
+            <h3>Organize an Event</h3>
+            <p>Have an idea for an event around the digital text forensics? It can be a new task you wish to develop, a workshop, a special issue in a journal. Get in touch with us to discuss how it can be integrated into PAN.</p>
+          </div>
+          <div class="col-xs-6 col-lg-3">
+            <h3>Get in Touch</h3>
+            <p>Reach us by email at <a href="mailto:pan@webis.de">pan@webis.de</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid research-field authorship">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h3>Registration Form</h3>
+            <form id="registration-form" action="https://docs.google.com/spreadsheet/formResponse?formkey=dEN2ZUQ4Uk44cW13XzQ4UDRNTDR0V3c6MQ&amp;embedded=true&amp;ifq" method="POST" class="form-horizontal" role="form">
+              <div class="form-group">
+                  <label for="entry.2217159" class="col-sm-2 col-lg-1 control-label"><nobr>Full name</nobr></label>
+                  <div class="col-sm-10 col-lg-11">
+                    <input class="form-control" type="text" name="entry.2217159" value="" id="entry.2217159" placeholder="Full name">
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="entry.1000001" class="col-sm-2 col-lg-1 control-label">Affiliation</label>
+                  <div class="col-sm-10 col-lg-11">
+                    <input class="form-control" type="text" name="entry.1000001" value="" id="entry.1000001" placeholder="Affiliation">
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="entry.1000002" class="col-sm-2 col-lg-1 control-label">Country</label>
+                  <div class="col-sm-10 col-lg-11">
+                    <input class="form-control" type="text" name="entry.1000002" value="" id="entry.1000002" placeholder="Country">
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="entry.1000003" class="col-sm-2 col-lg-1 control-label">Email</label>
+                  <div class="col-sm-10 col-lg-11">
+                    <input class="form-control" type="email" name="entry.1000003" value="" id="entry.1000003" placeholder="Email">
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="entry.1000004" class="col-sm-2 col-lg-1 control-label">Team</label>
+                  <div class="col-sm-10 col-lg-11">
+                    <textarea class="form-control" name="entry.1000004" rows="5" id="entry.1000004" class="input-block-level" placeholder="Full name, affiliation, country, and email of each additional team member"></textarea>
+                  </div>
+              </div>
+              <div class="form-group">
+                <label for="entry.1000006.1" class="col-sm-2 col-lg-1 control-label">Task(s)</label>
+                <div class="col-sm-10 col-lg-11">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" name="entry.1000006" value="Plagiarism Detection" id="entry.1000006.1"> Plagiarism Detection
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" name="entry.1000006" value="Author Identification" id="entry.1000006.1">Author Identification
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" name="entry.1000006" value="Author Profiling" id="entry.1000006.1">Author Profiling
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-2 col-lg-1"></div>
+                <div class="col-sm-10 col-lg-11">
+                <input type="hidden" name="pageNumber" value="0">
+                <input type="hidden" name="backupCache" value="">
+                <input type="submit" name="submit" value="Register" class="btn btn-primary">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid originality strong">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 text-center">
+            <h1>Follow</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid research-field originality">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="container">
+        <div class="row vertical-align">
+          <div class="col-xs-12">
+            <h3>Mailing List</h3>
+            <iframe id="forum_embed"
+              src="javascript:void(0)"
+              scrolling="no"
+              frameborder="0"
+              width="100%"
+              height="700">
+            </iframe>
+            <p>
+              <a class="btn btn-default" href="http://groups.google.com/group/pan-workshop-series" target="_blank">View at Google Groups</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid trust strong">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 text-center">
+            <h1>Committees</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid research-field trust">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h3>Credibility Analysis</h3>
+            <p class="lead"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p class="pull-right">© pan.webis.de</p>
+</footer>
+
+</div>
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+  $('.jumbotron').tooltip({
+    selector: "[data-toggle=tooltip]",
+    container: "body"
+  })
+</script>
+<script src="js/prettify.js"></script>
+<script type="text/javascript">
+  document.getElementById('forum_embed').src =
+     'https://groups.google.com/forum/embed/?place=forum/pan-workshop-series'
+     + '&showsearch=true&showpopout=true&showtabs=false&output=embed'
+     + '&parenturl=' + encodeURIComponent(window.location.href);
+</script>
+<script>
+  !function ($) {
+    $(function(){
+      window.prettyPrint && prettyPrint()   
+    })
+  }(window.jQuery)
+</script>
+
+<!-- Update the registration statistics. -->
+<script type="text/javascript">
+  $.ajax({
+    url: "https://spreadsheets.google.com/feeds/cells/0AlwcskAJGamSdEN2ZUQ4Uk44cW13XzQ4UDRNTDR0V3c/od5/public/basic?min-row=5&min-col=1&max-row=1&max-col=1&alt=json",
+    cache: false,
+    dataType: "json"
+  }).done(function(json) {
+    $(json["feed"]["entry"]).each(function() {
+      var title = this["title"]["$t"];
+      var content = this["content"]["$t"];
+      switch (title) {
+      case "A1":
+        $("#registered-total").text(content)
+      case "A2":
+        $("#registered-plagiarism-detection").text(content)
+      case "A3":
+        $("#registered-author-identification").text(content)
+      case "A4":
+        $("#registered-author-profiling").text(content)
+      case "A5":
+        $("#registered-countries").text(content)
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
+
