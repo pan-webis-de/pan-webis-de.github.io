@@ -73,7 +73,7 @@
   </div>
 </div>
 
-<div class="container-fluid authorship strong" data-toggle="collapse" data-target="#authorship-collapse" aria-expanded="false" aria-controls="authorship-collapse">
+<div class="container-fluid authorship strong collapsible" data-toggle="collapse" data-target="#authorship-collapse" aria-expanded="false" aria-controls="authorship-collapse">
   <div class="row">
     <div class="col-xs-12">
       <div class="container">
@@ -236,7 +236,7 @@
 
 </div>
 
-<div class="container-fluid originality strong" data-toggle="collapse" data-target="#originality-collapse" aria-expanded="false" aria-controls="originality-collapse">
+<div class="container-fluid originality strong collapsible" data-toggle="collapse" data-target="#originality-collapse" aria-expanded="false" aria-controls="originality-collapse">
   <div class="row">
     <div class="col-xs-12">
       <div class="container">
@@ -334,7 +334,7 @@
 
 </div>
 
-<div class="container-fluid trust strong" data-toggle="collapse" data-target="#trust-collapse" aria-expanded="false" aria-controls="trust-collapse">
+<div class="container-fluid trust strong collapsible" data-toggle="collapse" data-target="#trust-collapse" aria-expanded="false" aria-controls="trust-collapse">
   <div class="row">
     <div class="col-xs-12">
       <div class="container">
@@ -381,6 +381,23 @@
               <a class="btn btn-default" href="clef12/pan12-web/wikipedia-quality-flaw-prediction.html">2012</a>
             </p>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid research-field trust">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2>Deception Detection</h2>
+            <p class="lead"></p>
+          </div>
+        </div>
+        <div class="row">
           <div class="col-md-4 task">
             <h3>Sexual Predator Identification</h3>
             <p>Given a chat log between two people, determine whether one pretends to be a child.</p>
@@ -420,6 +437,21 @@
   }(window.jQuery)
 </script>
 
+<script>
+$(".collapse").on("show.bs.collapse", function(){
+  $(this).prev(".container-fluid")
+         .find(".glyphicon")
+         .removeClass("glyphicon-chevron-down")
+         .addClass("glyphicon-chevron-up");
+});  
+$(".collapse").on("hide.bs.collapse", function(){
+  $(this).prev(".container-fluid")
+         .find(".glyphicon")
+         .removeClass("glyphicon-chevron-up")
+         .addClass("glyphicon-chevron-down");
+});
+</script>
+
 <!-- Update the registration statistics. -->
 <script type="text/javascript">
   $.ajax({
@@ -454,7 +486,6 @@
 
   ga('create', 'UA-70770005-1', 'auto');
   ga('send', 'pageview');
-
 </script>
 
 </body>
