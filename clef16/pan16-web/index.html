@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>PAN 2015</title> 
+<title>PAN 2016</title> 
 
 <link href="../../css/bootstrap.min.css" rel="stylesheet" />
 <link href="../../css/prettify.css" rel="stylesheet" />
@@ -24,7 +24,7 @@
   <script src="../../js/respond.min.js"></script>
 <![endif]-->
 
-<link rel="shortcut icon" href="../pan15-figures/pan-icon-16x16.ico">
+<link rel="shortcut icon" href="../pan16-figures/pan-icon-16x16.ico">
 <!--
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
@@ -43,36 +43,36 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="../../index.html"><img src="../pan15-figures/pan-logo-small-lightgrey.png" alt="PAN" style="margin-top:-5px"></a>
+    <a class="navbar-brand" href="../../index.html"><img src="../pan16-figures/pan-logo-small-lightgrey.png" alt="PAN" style="margin-top:-5px"></a>
   </div>
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav navbar-right">
       <li><a href="../../index.html">Home</a></li>
-      <li class="active"><a href="index.html">PAN @ CLEF 2015:</a></li>
+      <li class="active"><a href="index.html">PAN @ CLEF 2016:</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="proceedings.html">Proceedings</a></li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tasks <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="plagiarism-detection.html">Plagiarism Detection</a></li>
           <li><a href="author-identification.html">Author Identification</a></li>
           <li><a href="author-profiling.html">Author Profiling</a></li>
+          <li><a href="author-obfuscation.html">Author Obfuscation</a></li>
         </ul>
       </li>
     </ul>
   </div>
 </nav>
 
-<div class="jumbotron" style="background-image:url('../pan15-figures/pan-fingerprint.png');background-repeat:no-repeat;background-position:right top;">
+<div class="jumbotron" style="background-image:url('../pan16-figures/pan-fingerprint.png');background-repeat:no-repeat;background-position:right top;">
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
         <h1>
-          PAN @ CLEF 2015
-          <a href="../../clef14/pan14-web/index.html"><small data-toggle="tooltip" title="Previous year" class="glyphicon glyphicon-chevron-left"></small></a>
-          <a href="../../clef16/pan16-web/index.html"><small data-toggle="tooltip" title="Next year" class="glyphicon glyphicon-chevron-right"></small></a>
+          PAN @ CLEF 2016
+          <a href="../../clef15/pan15-web/index.html"><small data-toggle="tooltip" title="Previous year" class="glyphicon glyphicon-chevron-left"></small></a>
+          <small data-toggle="tooltip" title="Let's not get ahead of ourselves..." class="glyphicon glyphicon-chevron-right" style="color:lightgrey;"></small>
         </h1>
-        <p>This is the 13th evaluation lab on uncovering plagiarism, authorship, and social software misuse. PAN will be held as part of the <a href="http://clef2015.clef-initiative.eu" target="_blank">CLEF conference</a> in Toulouse, France, on September 8-11, 2015. Evaluations will commence <a href="about.html#important-dates">from January till June</a>. We invite you to take part in any of the three tasks shown below.</p>
+        <p>This is the 15th evaluation lab on uncovering plagiarism, authorship, and social software misuse. PAN will be held as part of the <a href="http://clef2016.clef-initiative.eu" target="_blank">CLEF conference</a> in &Eacute;vora, Portugal, on September 5-8, 2016. Evaluations will commence <a href="about.html#important-dates">from January till June</a>. We invite you to take part in any of the three tasks shown below.</p>
         <p>
           <a class="btn btn-default btn-large" href="about.html">Learn more »</a>
           <a class="btn btn-primary btn-large" href="about.html#registration">Register now »</a>
@@ -87,34 +87,45 @@
 <div class="container" style="padding-top:20px;">
 <!-- Tasks -->
 <div class="row">
+  <!--
   <div class="col-md-4">
     <h3>Plagiarism Detection</h3>
     <p>Given a document, is it an original?</p>
     <p>This task is divided into <strong>source retrieval</strong> and <strong>text alignment</strong>. Source retrieval is about searching for likely sources of a suspicious document. Text alignment is about matching passages of reused text between a pair of documents.</p>
     <p><a class="btn btn-default" href="plagiarism-detection.html">Learn more »</a></p>
   </div>
+  -->
   <div class="col-md-4">
     <h3>Author Identification</h3>
     <p>Given a document, who wrote it?</p>
-    <p>This task focuses on <strong>authorship verification</strong> and methods to answer the question whether two given documents have the same author or no. This question accurately emulates the real-world problem that most forensic linguists face every day.</p>
+    <p>This task focuses on <strong>author clustering</strong>, <strong>author linking</strong>, and <strong>author diarization</strong> (also known as <strong>intrinsic plagiarism detection</strong>. All three tasks are concerned with measuring author similarity across and within texts.</p>
     <p><a class="btn btn-default" href="author-identification.html">Learn more »</a></p>
  </div>
   <div class="col-md-4">
     <h3>Author Profiling</h3>
-    <div class="pull-right text-right" style="padding:0 10px;"><a href="http://www.meaningcloud.com/" target="_blank"><img width="175px" src="../pan15-figures/logo-meaningcloud.png" alt="MeaningCloud"></a><div style="font-size:7pt;margin-top:-3px;">Sponsor</div></div>
+    <!--
+    <div class="pull-right text-right" style="padding:0 10px;"><a href="http://www.meaningcloud.com/" target="_blank"><img width="175px" src="../pan16-figures/logo-meaningcloud.png" alt="MeaningCloud"></a><div style="font-size:7pt;margin-top:-3px;">Sponsor</div></div>
+    -->
     <p>Given a document, what're its author's traits?</p>
-    <p>This task is concerned with predicting an author's demographics from her writing. For example, an author's style may reveal her <strong>age, gender, and personality</strong>.</p>
+    <p>This task is concerned with predicting an author's demographics from her writing. For example, an author's style may reveal her <strong>age and gender</strong>. </p>
     <p><a class="btn btn-default" href="author-profiling.html">Learn more »</a></p>
+  </div>
+  <div class="col-md-4">
+    <h3>Author Obfuscation</h3>
+    <p>Given a document, hide its author.</p>
+    <p>This task works against author identification by automatically obfuscating the author of a text. The challenges offered are <strong>author masking</strong> and <strong>author imitation</strong>, where the former is about disguising an author, and the latter about pretending a text to be from a given author.</p>
+    <p><a class="btn btn-default" href="author-obfuscation.html">Learn more »</a></p>
   </div>
 </div>
 
 <!-- Keynotes -->
+<!--
 <div class="row">
   <div class="col-md-12">
     <h2>Keynotes</h2>
   </div>
   <div class="col-md-6">
-    <div class="pull-left"><img class="img-rounded" style="max-height:140px;margin:5px;" src="../pan15-figures/tommaso.jpg" alt="Tommaso Fornaciari"></div>
+    <div class="pull-left"><img class="img-rounded" style="max-height:140px;margin:5px;" src="../pan16-figures/tommaso.jpg" alt="Tommaso Fornaciari"></div>
     <h4 class="media-heading">Deception detection in criminal analysis: from lie detector to stylometry</h4>
     <p><a href="https://it.linkedin.com/pub/tommaso-fornaciari/32/8a1/21b" target="_blank">Tommaso Fornaciari</a><br/>
     <span style="font-size:10pt">Italian National Police</span></p>
@@ -124,7 +135,7 @@
   </div>
   <div class="clearfix visible-xs visible-sm"></div>
   <div class="col-md-6">
-    <div class="pull-left"><img class="img-rounded" style="max-height:140px;margin:5px;" src="../pan15-figures/walter2.jpg" alt="Walter Daelemans"></div>
+    <div class="pull-left"><img class="img-rounded" style="max-height:140px;margin:5px;" src="../pan16-figures/walter2.jpg" alt="Walter Daelemans"></div>
     <h4 class="media-heading">Author Profiling in Practice</h4>
     <p><a href="http://www.clips.ua.ac.be/~walter/" target="_blank">Walter Daelemans</a><br/>
     <span style="font-size:10pt">University of Antwerp</span></p>
@@ -133,16 +144,17 @@
   </div>
 
 </div>
+-->
 
 
 <div class="row" style="padding-top:60px;">
-  <div class="col-xs-6 col-sm-4 col-md-3"><a href="http://www.webis.de" target="_blank" class="thumbnail" style="border:none;min-height:75px;"><img src="../pan15-figures/logo-bauhaus-universitaet-weimar.png" alt="Bauhaus-Universtät Weimar logo" class="img-responsive" style="max-height:50px;"></a></div>
-  <div class="col-xs-6 col-sm-4 col-md-3"><a href="http://www.upv.es" target="_blank" class="thumbnail" style="border:none;min-height:75px;"><img src="../pan15-figures/logo-universitat-politecnica-de-valencia.png" alt="Universitat Politecnica de Valencia logo" class="img-responsive" style="max-height:50px;"></a></div>
-  <div class="col-xs-6 col-sm-4 col-md-3"><a href="http://www.aegean.gr" target="_blank" class="thumbnail" style="border:none;min-height:75px;"><img src="../pan15-figures/logo-university-of-the-aegean.gif" alt="University of the Aegean logo" class="img-responsive" style="max-height:50px;"></a></div>
-  <div class="col-xs-6 col-sm-4 col-md-3"><a href="http://www.autoritas.es" target="_blank" class="thumbnail" style="border:none;min-height:75px;"><img src="../pan15-figures/logo-autoritas.jpg" alt="Autoritas Consulting logo" class="img-responsive" style="max-height:50px;"></a></div>
-  <div class="col-xs-6 col-sm-4 col-md-3"><a href="http://cordis.europa.eu/projects/rcn/99075_en.html" target="_blank" class="thumbnail" style="border:none;min-height:75px;"><img src="../pan15-figures/logo-wiqei.png" alt="WiQ-Ei logo" class="img-responsive" style="max-height:50px;"></a></div>
-  <div class="col-xs-6 col-sm-4 col-md-3"><a href="http://clef2015.clef-initiative.eu/" target="_blank" class="thumbnail" style="border:none;min-height:75px;"><img src="../pan15-figures/logo-clef15.jpg" alt="CLEF'15 logo" class="img-responsive" style="max-height:70px;"></a></div>
-  <div class="col-xs-6 col-sm-4 col-md-3"><a href="http://www.clef-initiative.eu/" target="_blank" class="thumbnail" style="border:none;min-height:75px;"><img src="../pan15-figures/logo-clef.png" alt="CLEF Initiative logo" class="img-responsive" style="max-height:70px;"></a></div>
+  <div class="col-xs-6 col-sm-4 col-md-3"><a href="http://www.webis.de" target="_blank" class="thumbnail" style="border:none;min-height:75px;"><img src="../pan16-figures/logo-bauhaus-universitaet-weimar.png" alt="Bauhaus-Universtät Weimar logo" class="img-responsive" style="max-height:50px;"></a></div>
+  <div class="col-xs-6 col-sm-4 col-md-3"><a href="http://www.upv.es" target="_blank" class="thumbnail" style="border:none;min-height:75px;"><img src="../pan16-figures/logo-universitat-politecnica-de-valencia.png" alt="Universitat Politecnica de Valencia logo" class="img-responsive" style="max-height:50px;"></a></div>
+  <div class="col-xs-6 col-sm-4 col-md-3"><a href="http://www.aegean.gr" target="_blank" class="thumbnail" style="border:none;min-height:75px;"><img src="../pan16-figures/logo-university-of-the-aegean.gif" alt="University of the Aegean logo" class="img-responsive" style="max-height:50px;"></a></div>
+  <div class="col-xs-6 col-sm-4 col-md-3"><a href="http://www.autoritas.es" target="_blank" class="thumbnail" style="border:none;min-height:75px;"><img src="../pan16-figures/logo-autoritas.jpg" alt="Autoritas Consulting logo" class="img-responsive" style="max-height:50px;"></a></div>
+  <div class="col-xs-6 col-sm-4 col-md-3"><a href="http://cordis.europa.eu/projects/rcn/99075_en.html" target="_blank" class="thumbnail" style="border:none;min-height:75px;"><img src="../pan16-figures/logo-wiqei.png" alt="WiQ-Ei logo" class="img-responsive" style="max-height:50px;"></a></div>
+  <div class="col-xs-6 col-sm-4 col-md-3"><a href="http://clef2016.clef-initiative.eu/" target="_blank" class="thumbnail" style="border:none;min-height:75px;"><img src="../pan16-figures/logo-clef16.png" alt="CLEF'16 logo" class="img-responsive" style="max-height:70px;"></a></div>
+  <div class="col-xs-6 col-sm-4 col-md-3"><a href="http://www.clef-initiative.eu/" target="_blank" class="thumbnail" style="border:none;min-height:75px;"><img src="../pan16-figures/logo-clef.png" alt="CLEF Initiative logo" class="img-responsive" style="max-height:70px;"></a></div>
 </div>
 
 <footer>
