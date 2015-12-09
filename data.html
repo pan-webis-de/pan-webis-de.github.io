@@ -85,8 +85,8 @@
             <h1>Evaluation Data</h1>
             <p class="lead">Key ingredient to evaluation are data. For PAN's shared tasks on digital text forensics, a number of datasets have been compiled and used to evaluate dozens of approaches. Using these datasets in your research ensures comparability. You are welcome to submit datasets of your own making to PAN's shared tasks.</p>
             <p>
-              <a class="btn btn-primary btn-large" href="contact.html#registration">Register now »</a>
-              <a class="btn btn-default btn-large" href="technology.html">Learn more »</a>
+              <a class="btn btn-primary btn-large" href="contact.html#registration">Register now</a>
+              <a class="btn btn-default btn-large" href="technology.html">Learn more</a>
               <span class="badge"><span id="registered-total">0</span> already signed up</span>
             </p>
           </div>
@@ -96,19 +96,25 @@
   </div>
 </div>
 
-<div class="container-fluid authorship strong">
+<div class="container-fluid authorship strong collapsible" data-toggle="collapse" data-target="#authorship-collapse" aria-expanded="false" aria-controls="authorship-collapse">
   <div class="row">
     <div class="col-xs-12">
       <div class="container">
         <div class="row">
           <div class="col-xs-12 text-center">
-            <h1>Authorship</h1>
+            <h1>
+              <div class="pull-right"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div>
+              Authorship
+              <small>(14 datasets)</small>
+            </h1>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<div class="collapse" id="authorship-collapse">
 
 <div class="container-fluid research-field authorship">
   <div class="row">
@@ -217,19 +223,27 @@
   </div>
 </div>
 
-<div class="container-fluid originality strong">
+</div>
+
+<div class="container-fluid originality strong collapsible" data-toggle="collapse" data-target="#originality-collapse" aria-expanded="false" aria-controls="originality-collapse">
   <div class="row">
     <div class="col-xs-12">
       <div class="container">
         <div class="row">
           <div class="col-xs-12 text-center">
-            <h1>Originality</h1>
+            <h1>
+              <div class="pull-right"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div>
+              Originality
+              <small>(20 datasets)</small>
+            </h1>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<div  class="collapse" id="originality-collapse">
 
 <div class="container-fluid research-field originality">
   <div class="row">
@@ -294,19 +308,27 @@
   </div>
 </div>
 
-<div class="container-fluid trust strong">
+</div>
+
+<div class="container-fluid trust strong collapsible" data-toggle="collapse" data-target="#trust-collapse" aria-expanded="false" aria-controls="trust-collapse">
   <div class="row">
     <div class="col-xs-12">
       <div class="container">
         <div class="row">
           <div class="col-xs-12 text-center">
-            <h1>Trust</h1>
+            <h1>
+              <div class="pull-right"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div>
+              Trust
+              <small>(4 datasets)</small>
+            </h1>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<div  class="collapse" id="trust-collapse">
 
 <div class="container-fluid research-field trust">
   <div class="row">
@@ -330,6 +352,23 @@
             <p>Datasets that comprise samples of Wikipedia articles and annotations with regard to quality flaws.</p>
             <p>PAN12: <a href="http://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-12/pan12-data/pan12-wikipedia-quality-flaw-prediction-training-corpus-2012-03-19.zip">training</a>, <a href="http://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-12/pan12-data/pan12-wikipedia-quality-flaw-prediction-test-corpus-2012-05-18.zip">test</a>, <a href="http://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=stein_2012u">bib</a></p>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid research-field trust">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2>Credibility Analysis</h2>
+            <p class="lead"></p>
+          </div>
+        </div>
+        <div class="row">
           <div class="col-md-4 task">
             <h3>Sexual Predator Identification</h3>
             <p>Datasets that comprise conversations with sexual content, where one party pretends to be a minor.</p>
@@ -341,9 +380,26 @@
   </div>
 </div>
 
-<footer>
-  <p class="pull-right">© pan.webis.de</p>
-</footer>
+</div>
+
+<div class="container-fluid introduction">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h1>Submit Data</h1>
+            <p class="lead">Got a new dataset for one of PAN's task? We welcome the submission of new datasets to all tasks. As long as the dataset is formatted the same way as the other datasets for the same task, all software submitted by previous participants on that task can be run against it.</p>
+            <p>
+              <a class="btn btn-primary btn-large" href="contact.html#registration">Register now</a>
+              <a class="btn btn-default btn-large" href="technology.html">Learn more</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 </div>
 
@@ -362,6 +418,21 @@
       window.prettyPrint && prettyPrint()   
     })
   }(window.jQuery)
+</script>
+
+<script>
+$(".collapse").on("show.bs.collapse", function(){
+  $(this).prev(".container-fluid")
+         .find(".glyphicon")
+         .removeClass("glyphicon-chevron-down")
+         .addClass("glyphicon-chevron-up");
+});  
+$(".collapse").on("hide.bs.collapse", function(){
+  $(this).prev(".container-fluid")
+         .find(".glyphicon")
+         .removeClass("glyphicon-chevron-up")
+         .addClass("glyphicon-chevron-down");
+});
 </script>
 
 <!-- Update the registration statistics. -->
