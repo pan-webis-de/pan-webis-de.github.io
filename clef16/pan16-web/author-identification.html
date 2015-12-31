@@ -99,63 +99,83 @@
       <div class="panel-heading">Task</div>
       <div class="panel-body">Given a collection of documents, identify authorship links and groups of documents by the same author. All documents are single-authored, in the same language, and belong to the same genre. However, the topic or text-length of documents may vary. The number of distinct authors whose documents are included in the collection is not given.</div>
     </div>
-    <!--
     <div class="panel panel-default">
       <div class="panel-heading">Training Phase</div>
-      <div class="panel-body"><p>To develop your software, we provide you with a training corpus that comprises a set of author verification problems in several languages/genres. Each problem consists of some (up to five) known documents by a single person and exactly one questioned document. All documents within a single problem instance will be in the same language. 
-		  However, their genre and/or topic may differ 
-		  significantly. The document lengths vary from a few hundred to a few thousand words.</p>
-		  <p>
-		  <a class="btn btn-default" target="_blank" href="http://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-15/pan15-data/pan15-authorship-verification-training-dataset-2015-04-19.zip">Download corpus</a> (Update April 19, 2015)
-		  </p><p>
-		  The documents of each problem are located in a separate folder, 
-		  the name of which (problem ID) encodes the language of the 
-		  documents. The following list shows the available sub-corpora, including their language, type (cross-genre or cross-topic), code, and examples of problem IDs:
-		  <br><table class="table table-condensed rule" style="font-size:small;">
-        <thead>
-        <tr><th>Language</th><th>Type</th><th>Code</th><th>Problem IDs</th></tr>
-        </thead>
-        <tbody>
-        <tr><td>Dutch</td><td>
-			Cross-genre</td><td>DU</td><td>
-			DU001, DU002,
-			DU003, etc.</td></tr>
-        <tr><td>English</td><td>Cross-topic</td><td>EN</td><td>
-			EN001, EN002, 
-			EN003, etc.</td></tr>
-        <tr><td>Greek</td><td>Cross-topic</td><td>GR</td><td>GR001, GR002, GR003, etc.</td></tr>
-        <tr><td>Spanish</td><td>Cross-genre</td><td>SP</td><td>SP001, SP002, SP003, etc.</td></tr>
-        </tbody>
-        </table>
-		  <br>The ground truth data of the training corpus found in the file <code>truth.txt</code> include one line per problem with problem ID and the correct binary answer (Y means the known and the questioned documents are 
-		  by the same author and N means the opposite). 
-		  For example: <br>
-        <pre class="prettyprint lang-py" style="overflow-x:auto">
-EN001 N
-EN002 Y
-EN003 N
-...
-		</pre>
-  </p>
+      <div class="panel-body"><p>To develop your software, we provide you with a training corpus that comprises a set of author clustering problems. Each problem comprises a set of documents in the same language and genre together with ground truth for clustering.</p>
+      <p>Details will be released here soon.</p>
 </div>
     </div>
     <div class="panel panel-default">
       <div class="panel-heading">Evaluation Phase</div>
-      <div class="panel-body">Once you finished tuning your approach to achieve satisfying performance on the training corpus, your software will be tested on the evaluation corpus. During the competition, the evaluation corpus will not be released publicly. Instead, we ask you to submit your software for evaluation at our site as described below.
+      <div class="panel-body">Once you finished tuning your approach to achieve satisfying performance on the training corpus, your software will be tested on the evaluation corpus. During the competition, the evaluation corpus will not be released publicly. Instead, we ask you to submit your software for evaluation at our site (details will appear here soon).
 <br>After the competition, the evaluation corpus will become available including ground truth data. This way, you have all the necessities to evaluate your approach on your own, yet being comparable to those who took part in the competition.
 </div></div>
     <div class="panel panel-default">
       <div class="panel-heading">Output</div>
-      <div class="panel-body">Your software must take as input the absolute path to a set of problems. For each problem there is a separate sub-folder within that path including the set of known documents and the single unknown document of that problem (similarly to the training corpus). The software has to output a single text file <code>answers.txt</code> with all the produced answers for the whole set of evaluation problems. Each line of this file corresponds to a problem instance, it starts with the ID of the problem followed by a score, a real number in [0,1] inclusive, corresponding to the probability of a positive answer. That is, 0 means it is absolutely sure the questioned document is not by the author of the known documents, 1.0 means it is absolutely sure the questioned document and the known documents are by the same author, and 0.5 means that a positive and a negative answer are equally likely. The probability scores should be round with three decimal digits. Use a single whitespace to separate problem ID and probability score.
-<br>For example, an <code>answers.txt</code> file may look like this:
+      <div class="panel-body">
+<p>Your system should produce two output files in <a href="http://www.json.org/">JSON</a>:</p>
+<ul>
+	<li>One output file including complete information about the detected clusters. Each cluster should contain all documents found in the collection by a specific author. A JSON file of the following format should be produced (a list of clusters, each cluster is a list of documents):<li>
 <pre class="prettyprint lang-py" style="overflow-x:auto">
-EN001 0.031
-EN002 0.874
-EN003 0.500
-...
+[
+	[
+		{"document":  "filename1"},
+		{"document":  "filename2"},
+	…
+	],
+…
+]
 </pre>
-&nbsp;</div></div>
--->
+
+<p>The clusters should be non-overlapping, thus each filename should belong to exactly one cluster.</p>
+
+<li>One output file including a list of document pairs ranked according to a real-valued score in [0,1], where higher values denote more confidence that the pair of documents are by the same author. A JSON file of the following format should be produced (a list of document pairs and a real-valued number):</li>
+<pre class="prettyprint lang-py" style="overflow-x:auto">
+[
+	{"document1": "filename1",
+	 "document2": "filename2",
+	 "score": real-valued-number},
+	…
+]
+</pre>
+<p>The order of documents within a pair is not important (e.g. "document1": "filename1", "document2": "filename2" is the same with "document2": "filename1",
+ "document1": "filename2"). In case the same pair is reported more than once the first occurrence will be taken into account.</p>
+</ul>
+
+<p>An illustrating example follows. Let’s assume that a document collection of 6 files is given: file1.txt, file2.txt, file3.txt, file4.txt, file5.txt, and file6.txt. There are 3 clusters: (i) file1.txt, file3.txt, and file4.txt are by the same author, (ii) file5.txt and file6.txt are by another author and (iii) file2.txt is by yet another author. </p>
+<ul>
+<li>The output file in JSON for the complete author clustering task should be:</li>
+<pre class="prettyprint lang-py" style="overflow-x:auto">
+[   [	{"document": "file1.txt"},
+		{"document": "file3.txt"},
+		{"document": "file4.txt"}	],
+	[
+		{"document": "file5.txt"},
+		{"document": "file6.txt"}	],
+	[
+		{"document": "file2.txt"}	]
+]
+</pre>
+<li>An example of the output file for authorship-link ranking could be:</li>
+<pre class="prettyprint lang-py" style="overflow-x:auto">
+[	{"document1": "file1.txt",
+	 "document2": "file4.txt",
+	 "score": 0.95},
+
+	{"document1": "file3.txt",
+	 "document2": "file4.txt",
+	 "score": 0.75},
+
+	{"document1": "file5.txt",
+	 "document2": "file6.txt",
+	 "score": 0.66},
+
+	{"document1": "file1.txt",
+	 "document2": "file3.txt",
+	 "score": 0.63}
+]
+</pre>
+</div></div>
     <div class="panel panel-default">
       <div class="panel-heading">Performance Measures</div>
       <div class="panel-body">
