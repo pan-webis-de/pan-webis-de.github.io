@@ -153,35 +153,14 @@ EN003 0.500
 ...
 </pre>
 &nbsp;</div></div>
+-->
     <div class="panel panel-default">
       <div class="panel-heading">Performance Measures</div>
       <div class="panel-body">
-		  <p>The participants' answers will be evaluated according to the area 
-		  under the ROC curve (AUC) of their probability scores.</p>
-		  <p>In addition, the performance of the binary 
-		  classification results (automatically extracted from probability 
-		  scores where every score greater than 0.5 corresponds to a positive 
-		  answer, every score lower than 0.5 corresponds to a negative answer, 
-		  while 0.5 corresponds to an unanswered problem, or an "I don't know" 
-		  answer) will be measured based on c@1 (<a href="http://www.aclweb.org/anthology/P11-1142.pdf">Pe&ntilde;as 
-		  &amp; Rodrigo, 2011</a>):</p>
-		  <ul>
-		  <li>c@1 = (1/<i>n</i>)*(<i>n</i><sub>c</sub>+(<i>n</i><sub>u</sub>*<i>n</i><sub>c</sub>/<i>n</i>))</li></ul>
-		  <p>where:</p>
-		  <ul>
-			  <li><i>n</i> = #problems</li>
-			  <li><i>n</i><sub>c </sub>= #correct_answers</li>
-			  <li><i>n</i><sub>u </sub>= #unanswered_problems</li>
-		  </ul>
-		  <p><b>Note:</b> when 
-		  positive/negative answers are provided for all available problems 
-		  (probability scores different than 0.5), then c@1=accuracy. However, 
-		  c@1 rewards approaches that maintain the same number of correct 
-		  answers and decrease the number of incorrect answers by leaving some 
-		  problems unanswered (when probability score equals 0.5).</p>
-		  The final ranking of the participants will be based on the <b>
-		  product of AUC and c@1.</b></div></div>
-    
+		  <p>The clustering output will be evaluated according to <strong>BCubed, recall, precision, and F-score</strong> (<a href="http://nlp.uned.es/docs/amigo2007a.pdf">Amigo et al. 2007</a>)</p>
+		  <p>The ranking of document pairs will be evaluated according to <a href="http://nlp.stanford.edu/IR-book/html/htmledition/evaluation-of-ranked-retrieval-results-1.html"></a>average precision</a></p>
+	</div></div></div>
+<!--    
 	  <div class="panel panel-default">
       <div class="panel-heading">Submission</div>
       <div class="panel-body">
