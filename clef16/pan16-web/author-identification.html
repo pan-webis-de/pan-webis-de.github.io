@@ -86,31 +86,11 @@
 <div class="row">
   <div class="col-sm-6">
     <h2 id="author-clustering">Author Clustering</h2>
-    <!--
-    <p>Authorship attribution is an important problem in many areas including 
-	information retrieval and computational linguistics, but also in applied 
-	areas such as law and journalism where knowing the author of a document 
-	(such as a ransom note) may be able to save lives. The most common framework 
-	for testing candidate algorithms is a text classification problem: given 
-	known sample documents from a small, finite set of candidate authors, which 
-	if any wrote a questioned document of unknown authorship? It has been 
-	commented, however, that this may be an unreasonably easy task. A more 
-	demanding problem is author verification where given a set of documents by a 
-	single author and a questioned document, the problem is to determine if the 
-	questioned document was written by that particular author or not. This may 
-	more accurately reflect real life in the experiences of professional 
-	forensic linguists, who are often called upon to answer this kind of 
-	question. It is the third year PAN focuses on the so-called author 
-	verification problem. The major difference with previous 
-	PAN editions is that this year we no longer consider cases where all texts 
-	within a verification problem are in the same genre or the same thematic 
-	area. We are focusing on <strong>cross-genre and cross-topic author 
-	verification</strong>, a more challenging version of the problem that better 
-	resembles real-world applications.</p>
-    <p><strong>A note to forensic linguists:</strong> In order to bridge the gap between linguistics and computer science, we strongly encourage submissions from researchers from both fields. We understand that research groups with expertise in linguistics use manual or semi-automated methods and, therefore, they are not able to submit their software. To enable their participation, we will provide them with the opportunity to analyze the test corpus after the deadline of software submission (mid-April). Their results will be ranked in a separate list with respect to the performance of the software submissions and they will be entitled to describe their approach in a paper.
-	In this framework, any scholar or research group with expertise in 
-	linguistics wishing to participate should contact the Task Chair.</p>
-	-->
+    <p>Authorship attribution is an important problem in information retrieval and computational linguistics but also in applied areas such as law and journalism where knowing the author of a document (such as a ransom note) may be able to save lives. The most common framework for testing candidate algorithms is the closed-set attribution task: given known sample documents from a small, finite set of candidate authors, which wrote a questioned document of unknown authorship? It has been commented, however, that this may be an unreasonably easy task. A more demanding task is author clustering where given a document collection the task is to group documents written by the same author so that each cluster corresponds to a different author. This task can also be viewed as establishing authorship links between documents. 
+	Note that a variation of author clustering was included in the PAN-2012 edition. However, it was focused on the paragraph-level and therefore it is more related to the author diarization task. In PAN-2016, we focus on document-level author clustering. The task of authorship verification studied in detail in previous editions of PAN (2013-2015) is strongly associated with author clustering since any clustering problem can be decomposed into a series of author verification problems. We encourage participants to attempt to modify authorship verification approaches to deal with the author clustering task.
+	In this edition of PAN we aim to study two application scenarios: </p>
+	<p>-	Complete author clustering: This scenario requires a detailed analysis where the number (k) of different authors found in the collection should be identified and each document should be assigned to exactly one of the k clusters (each cluster corresponds to a different author). </p>
+	<p>-	Authorship-link ranking: This scenario views the exploration of the given document collection as a retrieval task. It aims at establishing authorship links between documents and provides a list of document pairs ranked according to a confidence score (the score shows how likely it is the document pair to be by the same author).</p>
     <div class="panel panel-default">
       <div class="panel-heading">Task</div>
       <div class="panel-body">Given a set of documents, the task is to distinguish groups of documents written by the same author.</div>
