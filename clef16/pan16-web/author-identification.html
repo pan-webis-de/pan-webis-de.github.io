@@ -110,7 +110,6 @@
       <div class="panel-body">Once you finished tuning your approach to achieve satisfying performance on the training corpus, your software will be tested on the evaluation corpus. During the competition, the evaluation corpus will not be released publicly. Instead, we ask you to submit your software for evaluation at our site (details will appear here soon).
 <br>After the competition, the evaluation corpus will become available including ground truth data. This way, you have all the necessities to evaluate your approach on your own, yet being comparable to those who took part in the competition.
 </div></div>
-<!--
     <div class="panel panel-default">
       <div class="panel-heading">Output</div>
       <div class="panel-body">
@@ -185,23 +184,11 @@
       		<li>The ranking of authorship links will be evaluated according to <strong>Average Precision</strong> (<a href="http://nlp.stanford.edu/IR-book/html/htmledition/evaluation-of-ranked-retrieval-results-1.html">Manning et al. 2008</a>)</li>
  	</ul>
 	</div></div>
-	-->
-<!--    
+  
 	  <div class="panel panel-default">
       <div class="panel-heading">Submission</div>
       <div class="panel-body">
-        <p>We ask you to prepare your software so that it can be executed via command line calls. To maximize the sustainability of software submissions for this task, we encourage you to prepare your software so it can be re-trained on demand, i.e., by offering two commands, one for training, and one for testing. This way, your software can be reused on future evaluation corpora as well as on private collections submitted to PAN by via our data submission initiative.</p>
-        <p>The training command shall take as input (i) an absolute path to a training corpus formated as described above, and (ii) an absolute path to an empty output directory:</p>
-        <pre class="prettyprint lang-c" style="overflow-x:auto">
-> myTrainingSoftware <b>-i</b> path/to/training/corpus <b>-o</b> path/to/output/directory
-</pre>
-        <p>Based on the training corpus, and perhaps based on its language and genre found within, your software shall train a classification model, and save the trained model to the specified output directory in serialized or binary form.</p>
-        <p>The testing command shall take as input (i) an absolute path to a test corpus (not containing the ground truth) (ii) an absolute path to a previously trained classification model, and (iii) an absolute path to an empty output directory:</p>
-        <pre class="prettyprint lang-py" style="overflow-x:auto">
-> myTestingSoftware <b>-i</b> path/to/test/corpus <b>-m</b> path/to/classification/model <b>-o</b> path/to/output/directory
-</pre>
-        <p>Based on the classification model, the software shall classifiy each case found in the test corpus and write an output file as described above to the output directory.</p>
-        <p>However, <b>offering a command for training is optional</b>, so if you face difficulties in doing so, you may skip the training command and omit the model option <b>-m</b> from the testing command.</p>
+        <p>We ask you to prepare your software so that it can be executed via command line calls. More details will be release here soon.</p>
         <p>You can choose freely among the available programming languages and among the operating systems Microsoft Windows and Ubuntu. We will ask you to deploy your software onto a virtual machine that will be made accessible to you after registration. You will be able to reach the virtual machine via ssh and via remote desktop. More information about how to access the virtual machines can be found in the user guide below:</p>
         <p><a class="btn btn-default" href="pan15-virtual-machine-user-guide.pdf">PAN Virtual Machine User Guide »</a></p>
         <p>Once deployed in your virtual machine, we ask you to access TIRA at <a href="http://www.tira.io">www.tira.io</a>, where you can self-evaluate your software on the test data.</p>
@@ -209,27 +196,6 @@
       </div>
     </div>
     
-    <div class="panel panel-default">
-      <div class="panel-heading">Similarities/Differences with PAN-2014</div>
-      <div class="panel-body">For your convenience, we summarize here the main similarities/differences of the author identification task @PAN-2015 with respect to the corresponding task @PAN-2014:
-<br><br>Similarities:
-<ul>
-<li>The task definition is essentially the same</li>
-<li>The format of corpus and ground truth is the same</li>
-	<li>The format of input/output of your software is the 
-	same</li>
-<li>The positive/negative problems are equally distributed</li>
-	<li>The evaluation measures are the same</li>
-	<li>It is possible (optionally) to submit a trainable version of your approach to be used with any given training corpus</li>
-</ul>
-Differences:
-<ul>
-<li>The genre and/or topic of the documents within a 
-verification problem may differ significantly.</li>
-</ul>
-
-</div></div>
--->
 
     <div class="panel panel-default">
       <div class="panel-heading">Related Work</div>
