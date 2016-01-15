@@ -98,16 +98,20 @@ from INAOE, Mexico
       
       <div class="panel panel-default">
         <div class="panel-heading">Task</div>
-        <div class="panel-body"><p>Given a number of documents from an author, the task is to predict their age and gender.</p>
+        <div class="panel-body"><p>The focus of 2016 shared task is on cross-genre age and gender
+identification. That is, the training documents will be on one genre (e.g.
+Twitter, blogs, social media...) and the evaluation will be on another
+genre (e.g. Twitter, blogs, social media...).</p>
+
+<p>Three languages will be addressed: English, Spanish and Dutch.</p>
         </div>
       </div>
-      
-    <!--
-	  <div class="panel panel-default">
+    
+    	  <div class="panel panel-default">
       <div class="panel-heading">Training corpus</div>
       <div class="panel-body"><p>
-
-To develop your software, we provide you with a training data set that consists of Twitter tweets in English, Spanish, Italian and Dutch.</p>
+	Soon...
+<!--To develop your software, we provide you with a training data set that consists of Twitter tweets in English, Spanish, Italian and Dutch.</p>
         <p><a class="btn btn-default" target="_blank" href="http://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-15/pan15-data/pan15-author-profiling-training-dataset-2015-04-23-password-protected.zip">Download corpus</a> (Updated April 23, 2015. The file is password-protected. To obtain the password, you need to register first.)</p>
 
 <p>With regard to age, we will consider the following classes: 18-24, 25-34, 35-49, 50-xx.</p>
@@ -118,7 +122,7 @@ To develop your software, we provide you with a training data set that consists 
 To develop your software for age and gender identification, we provide you with a training data set that consists of blog posts, Twitter tweets and social media texts written in both English and Spanish as well as hotel reviews written in English. With regard to age, we will consider the following classes: 18-24, 25-34, 35-49, 50-64, 65-xx.</p>
         <p><a class="btn btn-default" target="_blank" href="http://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-14/pan14-data/pan14-author-profiling-training-corpus-2014-04-16.zip">Download corpus</a> (updated on April 16, 2014)</p>
         <p><b>Remark.</b> Due to Twitter's privacy policy we cannot provide tweets directly, but only URLs referring to them. You will have to download them yourself. For your convenience, we provide a download software for this. We expect participants to extract gender and age information only from the textual part of a tweet and to discard any other meta information that may be provided by Twitter's API. When we evaluate your software at our site, we do not expect it downloads tweets. We will do this beforehand.</p>
-        <p><a class="btn btn-default" target="_blank" href="../pan15-code/pan15-author-profiling-twitter-downloader.zip">Download software</a></p>
+        <p><a class="btn btn-default" target="_blank" href="../pan15-code/pan15-author-profiling-twitter-downloader.zip">Download software</a></p>-->
       </div>
     </div>
 
@@ -129,15 +133,10 @@ To develop your software for age and gender identification, we provide you with 
         <p>Your software must take as input the absolute path to an unpacked dataset, and has to output for each document of the dataset a corresponding XML file that looks like this:</p>
   <pre class="prettyprint lang-xml" style="overflow-x: auto;">
   &lt;author id="{author-id}"
-	  type="twitter"
-	  lang="en|es|it|nl"
-	  age_group="18-24|25-34|35-49|50-xx"
+	  type="to be announced"
+	  lang="en|es|nl"
+	  age_group="to be announced"
 	  gender="male|female"
-	  extroverted="-0.5 to +0.5"
-	  stable="-0.5 to +0.5"
-	  agreeable="-0.5 to +0.5"
-	  conscientious="-0.5 to +0.5"
-	  open="-0.5 to +0.5"
   /&gt;
   </pre>
         <p>The naming of the output files is up to you, we recommend to use the author-id as filename and "xml" as extension.</p>
@@ -147,9 +146,8 @@ To develop your software for age and gender identification, we provide you with 
       <div class="panel-heading">Performance Measures</div>
       <div class="panel-body">
 
-<p>The performance of your author profiling solution for age and gender will be ranked by accuracy.</p>
-<p>For personality identification the average Root Mean Squared Error (RMSE) will be used.</p>
-<p>For obtaining a global ranking, we apply the following formula: global_ranking = ((1-RMSE) + joint_accuracy)/ 2</p>
+<p>The performance of your author profiling solution will be ranked by
+accuracy.</p>
 
 
 </div>
@@ -157,25 +155,14 @@ To develop your software for age and gender identification, we provide you with 
 	  <div class="panel panel-default">
       <div class="panel-heading">Submission</div>
       <div class="panel-body">
-        <p>We ask you to prepare your software so that it can be executed via command line calls. To maximize the sustainability of software submissions for this task, we encourage you to prepare your software so it can be re-trained on demand, i.e., by offering two commands, one for training, and one for testing. This way, your software can be reused on future evaluation corpora as well as on private collections submitted to PAN by via our data submission initiative.</p>
-        <p>The training command shall take as input (i) an absolute path to a training corpus formated as described above, and (ii) an absolute path to an empty output directory:</p>
-        <pre class="prettyprint lang-c" style="overflow-x:auto">
-> myTrainingSoftware <b>-i</b> path/to/training/corpus <b>-o</b> path/to/output/directory
-</pre>
-        <p>Based on the training corpus, and perhaps based on its language and genre found within, your software shall train a classification model, and save the trained model to the specified output directory in serialized or binary form.</p>
-        <p>The testing command shall take as input (i) an absolute path to a test corpus (not containing the ground truth) (ii) an absolute path to a previously trained classification model, and (iii) an absolute path to an empty output directory:</p>
-        <pre class="prettyprint lang-py" style="overflow-x:auto">
-> myTestingSoftware <b>-i</b> path/to/test/corpus <b>-m</b> path/to/classification/model <b>-o</b> path/to/output/directory
-</pre>
-        <p>Based on the classification model, the software shall classifiy each case found in the test corpus and write an output file as described above to the output directory.</p>
-        <p>However, <b>offering a command for training is optional</b>, so if you face difficulties in doing so, you may skip the training command and omit the model option <b>-m</b> from the testing command.</p>
+        <p>We ask you to prepare your software so that it can be executed via command line calls. <stonger>More details will be released here soon.</stronger></p>
         <p>You can choose freely among the available programming languages and among the operating systems Microsoft Windows and Ubuntu. We will ask you to deploy your software onto a virtual machine that will be made accessible to you after registration. You will be able to reach the virtual machine via ssh and via remote desktop. More information about how to access the virtual machines can be found in the user guide below:</p>
         <p><a class="btn btn-default" href="pan15-virtual-machine-user-guide.pdf">PAN Virtual Machine User Guide »</a></p>
         <p>Once deployed in your virtual machine, we ask you to access TIRA at <a href="http://www.tira.io">www.tira.io</a>, where you can self-evaluate your software on the test data.</p>
         <p><strong>Note:</strong> By submitting your software you retain full copyrights. You agree to grant us usage rights only for the purpose of the PAN competition. We agree not to share your software with a third party or use it for other purposes than the PAN competition.</p>
       </div>
     </div>
-
+<!--
     <div class="panel panel-default">
       <div class="panel-heading">Results</div>
       <div class="panel-body">
@@ -217,40 +204,30 @@ To develop your software for age and gender identification, we provide you with 
         </p>
       </div>
     </div>
-
+-->
     <div class="panel panel-default">
       <div class="panel-heading">Related Work and Corpora</div>
       <div class="panel-body">
         <p>We refer you to:</p>
         <ul>
-		<li>Fabio Celli, Bruno Lepri, Joan-Isaac Biel, Daniel Gatica-Perez, Giuseppe Riccardi, Fabio Pianesi. <a href="http://clic.cimec.unitn.it/fabio/wk02cpr-celli.pdf" target="_blank">The Workshop on Computational Personality Recognition 2014.</a> Proceedings of ACM Multimedia 2014: 1245-1246.</li>
 		<li>Francisco Rangel, Paolo Rosso, Moshe Koppel, Efstatios Stamatatos, Giacomo Inches. <a href="http://ceur-ws.org/Vol-1179/CLEF2013wn-PAN-RangelEt2013.pdf" target="_blank">Overview of the Author Profiling Task at PAN 2013.</a> In: Forner P., Navigli R., Tufis D. (Eds.)Notebook Papers of CLEF 2013 LABs and Workshops. CEUR-WS.org, vol. 1179</li>
 		<li>Francisco Rangel, Paolo Rosso, Irina Chugur, Martin Potthast, Martin Trenkmann, Benno Stein, Ben Verhoeven, Walter Daelemans. <a href="http://ceur-ws.org/Vol-1180/CLEF2014wn-Pan-RangelEt2014.pdf" target="_blank">Overview of the 2nd Author Profiling Task at PAN 2014.</a> In: Cappellato L., Ferro N., Halvey M., Kraaij W. (Eds.) CLEF 2014 Labs and Workshops, Notebook Papers. CEUR-WS.org, vol. 1180, pp. 898-827.</li>
+		<li>Francisco Rangel, Fabio Celli, Paolo Rosso, Martin Pottast, Benno Stein, Walter Daelemans. <a href="https://github.com/autoritas/RD-Lab/blob/master/doc/papers/2015%20-%20PAN/pan15-ap-overview.pdf" target="_blank">Overview of the 3rd Author Profiling Task at PAN 2015.</a>In: Linda Cappelato and Nicola Ferro and Gareth Jones and Eric San Juan (Eds.): CLEF 2015 Labs and Workshops, Notebook Papers, 8-11 September, Toulouse, France. CEUR Workshop Proceedings. ISSN 1613-0073, http://ceur-ws.org/Vol-1391/,2015.</li>
 		<li>S. Argamon, M. Koppel, J. Pennebaker and J. Schler (2009), <a href="http://u.cs.biu.ac.il/~koppel/papers/AuthorshipProfiling-cacm-final.pdf" target="_blank">Automatically profiling the author of an anonymous text</a>, Communications of the ACM 52 (2): 119–123.</li>
         <li>J. Schler, Moshe Koppel, S. Argamon and J. Pennebaker (2006), <a href="http://u.cs.biu.ac.il/~koppel/papers/springsymp-blogs-07.10.05-final.pdf" target="_blank">Effects of Age and Gender on Blogging</a>,  in Proc. of AAAI Spring Symposium on Computational Approaches for Analyzing Weblogs, March 2006.</li>
         <li>M.Koppel, S. Argamon and A. Shimoni (2003), <a href="http://u.cs.biu.ac.il/~koppel/papers/male-female-llc-final.pdf" target="_blank">Automatically categorizing written texts by author gender</a>, Literary and Linguistic Computing 17(4), November 2002, pp. 401-412.</li>
 
 		<li>J. Pennebaker (2011). The secret life of pronouns: What our words say about us. New York: Bloomsbury Publishing, 2011.</li>
 
-		<li><a href="http://mypersonality.org/wiki/doku.php?id=wcpr13" target="_blank">Workshop on Computational Personality Recognition 2013</a></li>
-
-		<li><a href="https://sites.google.com/site/wcprst/home/wcpr14#data" target="_blank">Workshop on Computational Personality Recognition 2014</a></li>
-
 		<li><a href="http://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-author-profiling-training-corpus-2013-01-09.zip" target="_blank">PAN-AP-13 corpus - Author Profiling Shared Task</a></li>
 		<li><a href="http://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-14/pan14-data/pan14-author-profiling-training-corpus-2014-04-16.zip" target="_blank">PAN-AP-14 corpus - Author Profiling Shared Task</a></li>
+		<li><a href="http://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-15/pan15-data/pan15-author-profiling-training-dataset-2015-04-23-password-protected.zip" target="_blank">PAN-AP-15 corpus - Author Profiling Shared Task</a></li>
 		<li><a href="http://u.cs.biu.ac.il/~koppel/BlogCorpus.htm" target="_blank">The Blog Authorship Corpus</a></li>
-		<li><a href="http://mypersonality.org/wiki/lib/exe/fetch.php?media=wiki:mypersonality_final.zip" target="_blank">Mypersonality dataset</a></li>
-
-		<li><a href="http://mypersonality.org/wiki/lib/exe/fetch.php?media=wiki:essays.zip" target="_blank">Essays dataset</a></li>
-
-		<li><a href="http://clic.cimec.unitn.it/fabio/wcpr14/mobile_data_wcpr14final.zip" target="_blank">Mobile dataset</a></li>
-
-		<li><a href="https://www.idiap.ch/dataset/youtube-personality" target="_blank">Youtube dataset (request)</a></li>
 	</ul>
       </div>
     </div>
   </div>
-  -->
+  
 
   <div id="task-committee" class="row" style="padding-top:60px;">
     <div class="col-xs-12">
