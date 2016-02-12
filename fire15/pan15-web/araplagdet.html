@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>PAN 2015</title> 
+<title>PAN@FIRE 2015</title> 
 
 <link href="../../css/bootstrap.min.css" rel="stylesheet" />
 <link href="../../css/prettify.css" rel="stylesheet" />
@@ -31,7 +31,6 @@
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
 <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
 -->
-
 </head>
 <body>
 
@@ -48,15 +47,14 @@
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav navbar-right">
       <li><a href="../../index.html">Home</a></li>
-      <li><a href="index.html">PAN @ CLEF 2015:</a></li>
+      <li><a href="index.html">PAN @ FIRE 2015</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="proceedings.html">Proceedings</a></li>
       <li class="dropdown active">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tasks <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li class="active"><a href="plagiarism-detection.html">Plagiarism Detection</a></li>
-          <li><a href="author-identification.html">Author Identification</a></li>
-          <li><a href="author-profiling.html">Author Profiling</a></li>
+          <li class="active"><a href="clsoco.html">CL-SOCO</a></li>
+          <li><a href="araplagdet.html">AraPlagDet</a></li>
         </ul>
       </li>
     </ul>
@@ -68,11 +66,11 @@
 <div class="row">
   <div class="col-xs-12">
     <h1 id="task-description" class="page-header">
-      Plagiarism Detection on 
-        Arabic Document
+      <strong>Plag</strong>iarism <strong>Det</strong>ection in 
+        <strong>Ara</strong>bic Text
         (AraPlagDet)
         <div class="btn-group">
-        <a role="button" class="btn btn-default" href="../../clef14/pan14-web/plagiarism-detection.html"><span class="glyphicon glyphicon-chevron-left" style="color:grey;"></span></a>
+        <a role="button" class="btn btn-default" disabled="disabled"><span class="glyphicon glyphicon-chevron-left" style="color:grey;"></span></a>
         <span role="button" class="btn btn-default" disabled="disabled">2015</span>
         <span role="button" class="btn btn-default" disabled="disabled"><span class="glyphicon glyphicon-chevron-right" style="color:grey;"></span></span>      </div>
     </h1>
@@ -91,15 +89,15 @@
       <div class="panel-heading">Task</div>
       <div class="panel-body">
         <p>Identify the <strong>similar</strong> text fragments between the suspicious document and the potential<strong> sources of plagiarism</strong>. The suspicious document <strong>should be compared</strong> to other documents.</p>
-        </div>
+      </div>
     </div>
     <div class="panel panel-default">
       <div class="panel-heading">Training Corpus</div>
       <div class="panel-body">
-        <p>You will be provided with a training corpus corpus to use it while developing your method. The corpus involve two collections: suspicious documents and source documents. Each suspicious document is associated with an XML document that determine the position of the plagiarised fragments and its source, which allows you to check the correctness of your detections.</p>
+        <p>You will be provided with a training corpus corpus to use it while developing your method. The corpus involves two collections: suspicious documents and source documents. Each suspicious document is associated with an XML document that determine the position of the plagiarised fragments and its source, which allows you to check the correctness of your detections.</p>
         <p>
           <!--a class="btn btn-default" href="http://www.uni-weimar.de/medien/webis/publications/papers/stein_2013f.pdf">Learn more »</a>-->
-          <a class="btn btn-default" target="_blank" href="http://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-14/pan14-data/pan14-source-retrieval-training-corpus-2014-12-01.zip">Download corpus</a>
+          <a class="btn btn-default" target="_blank" href="http://misc-umc.org/AraPlagDet/corpora/ExAraPlagDet-10-08-2015.zip">Download corpus</a>
         </p>
       </div>
     </div>
@@ -137,85 +135,203 @@
           <li><strong>Plagdet</strong>: a combination of the former measures to an overall score. This score is used to rank the methods.</li>
         </ul>
         <p>
-          <a class="btn btn-default" href="http://www.uni-weimar.de/medien/webis/publications/papers/stein_2010p.pdf#page=2">Learn more »</a>
-        </p>
+          <a class="btn btn-default" href="http://www.uni-weimar.de/medien/webis/publications/papers/stein_2010p.pdf#page=2">Learn more »</a></p>
+        <p>To compute these measures, we use the same code provided at <a href="http://pan.webis.de/">PAN@CLEF</a> (author: Martin Potthast).</p>
+        <p>
+          <a class="btn btn-default" href="http://www.uni-weimar.de/medien/webis/events/pan-09/pan09-code/pan09-plagiarism-detection-performance-measures.py">Download measures' code »</a></p>
       </div>
     </div>
     <div class="panel panel-default">
       <div class="panel-heading">Test Corpus</div>
       <div class="panel-body">
-        <p>Once you finished tuning your approach to achieve satisfying performance on the training corpus, you should run your software on the test corpus.</p>
-        <p>During the competition, the test corpus will not be released publicly. Instead, we ask you to submit your software for evaluation at our site as described below.</p>
-        <p>After the competition, the test corpus is available including ground truth data. This way, you have all the necessities to evaluate your approach on your own, yet being comparable to those who took part in the competition.</p>
-<!--
+        <p>This corpus will be provided just a couple of weeks before the end of the competition. You have to run your method on this corpus in order to compare it with others. The XML documents (the actual plagiarism annotation) will not be provided in this corpus until the end of the competition. </p>
+        <p><strong>Update: plagiarism annotations are now available for download.</strong></p>
+        <p>
+          <a class="btn btn-default" target="_blank" href="http://misc-umc.org/AraPlagDet/corpora/ExAraPlagDet-21-09-2015-with-ground-truth.zip">Download corpus</a>
+        </p>
+        <!--
         <p>
           <a class="btn btn-default" target="_blank" href="http://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan14/pan14-data/">Download corpus</a>
         </p>
 -->
       </div>
     </div>
+    
     <div class="panel panel-default">
       <div class="panel-heading">Submission</div>
       <div class="panel-body">
-        <p>We ask you to prepare your software so that it can be executed via a command line call.</p>
-        <pre class="prettyprint lang-c" style="overflow-x:auto">
-> mySoftware <b>-i</b> path/to/corpus <b>-o</b> path/to/output/directory <b>-t</b> accessToken
-</pre>
-        <p>You can choose freely among the available programming languages and among the operating systems Microsoft Windows and Ubuntu. We will ask you to deploy your software onto a virtual machine that will be made accessible to you after registration. You will be able to reach the virtual machine via ssh and via remote desktop. More information about how to access the virtual machines can be found in the user guide below:</p>
-        <p><a class="btn btn-default" href="pan15-virtual-machine-user-guide.pdf">PAN Virtual Machine User Guide »</a></p>
-        <p>Once deployed in your virtual machine, we ask you to access TIRA at <a href="http://www.tira.io">www.tira.io</a>, where you can self-evaluate your software on the test data.</p>
-        <p><strong>Note:</strong> By submitting your software you retain full copyrights. You agree to grant us usage rights only for the purpose of the PAN competition. We agree not to share your software with a third party or use it for other purposes than the PAN competition.</p>
+        <p>(1) Run your method(s) on the test corpus, and generate for each suspicious document an XML document (with the same name) that contains the detected plagiarism (please follow the format shown above). <br>
+        Please record the runtime of your method in terms of seconds on the training as well as the test corpus.</p>
+        <p>(2) Send your runs on the test corpus as well as the training one in separate zip files to araplagdet.fire2015@gmail.com .(you can also upload them in a site such as Google Drive or Dropbox and send us the links) <br>
+          The names of the zip files should follow the format bellow:<br>
+          - for the runs on the training corpus:  external_train_your.familly.name.zip<br>
+          - for the runs on the test corpus:  external_test_your.familly.name.zip</p>
+        <p>If you submit more than 1 run for a subtask,  please add a number to the name of you files e.g. external_test_your.familly.name_1.zip and  external_test_your.familly.name_2.zip</p>
+        <p>In the email, mention the names of the sent zip files along with the runtime to generate each of them (preferably in seconds if possible, but you could put an approximate time in hours or minutes)  . E.g. <br>
+          external_test_your.familly.name.zip   1000 sec<br>
+          external_train_your.familly.name.zip  1022 sec</p>
       </div>
     </div>
-    <!--
+    
     <div class="panel panel-default">
       <div class="panel-heading">Results</div>
       <div class="panel-body">
-        <p>The following table lists the performances achieved by the participating teams:</p>
-        <table class="table table-condensed rule" style="font-size:small;">
-        <thead>
-        <tr class="top"><th colspan="5" style="text-align:center">Source Retrieval Performance</th></tr>
-        <tr class="top2"><th colspan="2" style="text-align:center">Workload to 1st Detection</th><th colspan="2" style="text-align:center">Downloaded Sources</th><th>Team</th></tr>
-        <tr class="mid"><th>Queries</th><th>Downloads</th><th>Precision</th><th>Recall</th><th></th></tr>
-        </thead>
-        <tbody>
-        <tr><td> 54.5</td><td> 33.2</td><td>0.40</td><td>0.39</td><td>Victoria Elizalde<br/>Private, Argentina</td></tr>
-        <tr><td> 83.5</td><td>207.1</td><td>0.08</td><td>0.48</td><td>Leilei Kong, Yong Han, Zhongyuan Han, Haihao Yu, Qibo Wang, Tinglei Zhang , Haoliang Qi<br/>Heilongjiang Institute of Technology, China</td></tr>
-        <tr><td> 60.0</td><td> 38.8</td><td>0.38</td><td>0.51</td><td>Amit Prakash and Sujan kumar Saha<br/>Birla Institute of Technology, India</td></tr>
-        <tr><td> 19.5</td><td>237.3</td><td>0.08</td><td>0.40</td><td>Šimon Suchomel and Michal Brandejs<br/>Masaryk University, Czech Republic</td></tr>
-        <tr><td>117.1</td><td> 14.4</td><td>0.57</td><td>0.48</td><td>Kyle Williams, Hung-Hsuan Chen, and C. Lee Giles<br/>Pennsylvania State University, USA</td></tr>
-        <tr><td> 37.0</td><td> 18.6</td><td>0.54</td><td>0.45</td><td>Denis Zubarev° and Ilya Sochenkov*<br/>°Institute for Systems Analysis of Russian Academy of Sciences and *Peoples’ Friendship University of Russia, Russia</td></tr>
-        </tbody>
-        </table>
-        <p>A more detailed analysis of the retrieval performances can be found in the overview paper accompanying this task.</p>
-        <p>
-          <a class="btn btn-default" href="http://www.uni-weimar.de/medien/webis/publications/papers/stein_2013h.pdf#page=11">Learn more »</a>
+      <p>The winner is <a href="#participants" class="Style7"><strong>Magooda Team</strong></a>. Congratulation !</p>
+            <table border="0" align="center" cellpadding="0" cellspacing="0" dir="ltr" class="table table-condensed rule" style="font-size:small;">
+              <tbody>
+              <thead>
+                <tr>
+                  <td><strong>Rank</strong></td>
+                  <td><strong>Method</strong></td>
+                  <td bgcolor="#CEE7FF"><strong>Plagdet</strong></td>
+                  <td><strong>Precision</strong></td>
+                  <td><strong>Recall</strong></td>
+                  <td><strong>Granularity</strong></td>
+                </tr>
+              </thead>
+                <tr>
+                  <td>1</td>
+                  <td>Magooda_2</td>
+                  <td bgcolor="#CEE7FF">0.8021737</td>
+                  <td>0.8521183</td>
+                  <td>0.8314955</td>
+                  <td>1.0694534</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Magooda_3</td>
+                  <td bgcolor="#CEE7FF">0.7715430</td>
+                  <td>0.8535960</td>
+                  <td>0.7591500</td>
+                  <td>1.0584507</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Magooda_1</td>
+                  <td bgcolor="#CEE7FF">0.7669238</td>
+                  <td>0.8048888</td>
+                  <td>0.7863135</td>
+                  <td>1.0523139</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Palkovskii_1</td>
+                  <td bgcolor="#CEE7FF">0.6270522</td>
+                  <td>0.9774681</td>
+                  <td>0.5422843</td>
+                  <td>1.1621349</td>
+                </tr>
+                <tr>
+                  <td>#</td>
+                  <td>Baseline</td>
+                  <td bgcolor="#CEE7FF">0.6075470</td>
+                  <td>0.9903910</td>
+                  <td>0.5349007</td>
+                  <td>1.2089249</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Alzahrani</td>
+                  <td bgcolor="#CEE7FF">0.5739858</td>
+                  <td>0.8308816</td>
+                  <td>0.5304589</td>
+                  <td>1.1857283</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>Palkovskii_3</td>
+                  <td bgcolor="#CEE7FF">0.5595334</td>
+                  <td>0.6582152</td>
+                  <td>0.5893837</td>
+                  <td>1.1606464</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>Palkovskii_2</td>
+                  <td bgcolor="#CEE7FF">0.5178527</td>
+                  <td>0.5642698</td>
+                  <td>0.5893964</td>
+                  <td>1.1634981</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+          <a class="btn btn-default" href="http://www.uni-weimar.de/medien/webis/events/pan-at-fire-15/pan15-papers-final/pan15-plagiarism-detection/bensalem15-overview.pdf#page=7">Learn more »</a>
         </p>
+        <div id="participants">
+            <p><strong>Participants</strong></p>
+            <table align="center" cellpadding="5" cellspacing="0" dir="ltr" style="font-size:small;" class="table table-condensed rule">
+              <tbody>
+                <tr>
+                  <td width="62">Magooda</td>
+                  <td width="275">Ahmed Ezzat abdelGawad Magooda<br>Ahsraf Youssef Mahgoub<br>Mohsen Rashwan</td>
+                  <td><a href="http://www.rdi-eg.com/">RDI, Egypt</a></td>
+                </tr>
+                <tr>
+                  <td>Palkovskii</td>
+                  <td>Yurii Palkovskii<br>Alexei Belov</td>
+                  <td>SkyLine LLC and <a href="http://www.plagiarism-detector.com/" class="bg-primary">Plagiarism Detector Project</a>, Ukraine</td>
+                </tr>
+                <tr>
+                  <td>Alzahrani</td>
+                  <td><a href="http://www.c2learn.com/" class="bg-primary">Salha Alzahrani</a></td>
+                  <td>Taif University, Saudi Arabia</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+        
       </div>
     </div>
-    -->
+   
     <div class="panel panel-default">
       <div class="panel-heading">Related Work</div>
       <div class="panel-body">
-        <p>This task has been run since PAN'12; here is a quick list of the respective proceedings and overviews:</p>
+        <p>The external plagiarism detection task (on English documents)  has been run from PAN'09 to PAN'11. Here is a quick list of the respective proceedings and overviews:</p>
         <ul><li>
-        <a href="../../clef14/pan14-web/about.html#proceedings">PAN @ CLEF'14</a> (<a href="http://www.uni-weimar.de/medien/webis/publications/papers/stein_2014k.pdf">overview paper</a>), and
+        <a href="../../clef11/pan11-web/about.html#proceedings">PAN @ CLEF'11</a> (<a href="http://www.uni-weimar.de/medien/webis/publications/papers/stein_2011t.pdf">overview paper</a>),
         </li><li>
-        <a href="../../clef13/pan13-web/about.html#proceedings">PAN @ CLEF'13</a> (<a href="http://www.uni-weimar.de/medien/webis/publications/papers/stein_2013h.pdf">overview paper</a>), and
-        </li><li>
+        <a href="../../clef10/pan10-web/about.html#proceedings">PAN @ CLEF'10</a> (<a href="http://www.uni-weimar.de/medien/webis/publications/papers/stein_2010t.pdf">overview paper</a>), and
+        </li>
+        <li>
+        <a href="../../sepln09/pan09-web/about.html#proceedings">PAN @ SEPLN'09</a> (<a href="http://www.uni-weimar.de/medien/webis/publications/papers/stein_2009e.pdf">overview paper</a>).</li>
+        
+        </ul>
+                <p>The external plagiarism detection task has been devided to Source Retrieval and Text Alignment sub-tasks since PAN'12. Here is a quick list of the respective proceedings and overviews:                </p>
+                <ul>
+                  <li>
+        <a href="../../clef14/pan15-web/about.html#proceedings">PAN @ CLEF'15</a> (<a href="http://www.uni-weimar.de/medien/webis/publications/papers/stein_2015j.pdf">overview paper1</a>, <a href="http://www.uni-weimar.de/medien/webis/publications/papers/stein_2015k.pdf">overview paper2</a>), </li>
+                  
+                  <li><a href="../../clef14/pan14-web/about.html#proceedings">PAN @ CLEF'14</a> (<a href="http://www.uni-weimar.de/medien/webis/publications/papers/stein_2014k.pdf">overview paper</a>),</li>
+                  <li>
+        <a href="../../clef13/pan13-web/about.html#proceedings">PAN @ CLEF'13</a> (<a href="http://www.uni-weimar.de/medien/webis/publications/papers/stein_2013h.pdf">overview paper</a>), and        </li><li>
         <a href="../../clef12/pan12-web/about.html#proceedings">PAN @ CLEF'12</a> (<a href="http://www.uni-weimar.de/medien/webis/publications/papers/stein_2012t.pdf">overview paper</a>).
         </li></ul>
-      </div>
+          <p>The following references provide further information on external plagiarism detection and Arabic language:</p>
+          <ul>
+            <li>Potthast, M., Stein, B., Barrón-Cedeño, A., &amp; Rosso, P. (2010). <a href="http://users.dsic.upv.es/~prosso/resources/PotthastEtAl_COLING10.pdf">An Evaluation Framework for Plagiarism Detection</a>. COLING 2010, 997–1005. ACL.</li>
+            <li>Darwish, K., Magdy, W.(2013). <a href="http://alt.qcri.org/~wmagdy/PDF/ArabicIR.pdf">Arabic Information Retrieval.</a> Foundations and Trends&#174; in Information Retrieval. 7, 239&#8211;342.</li>
+            <li>Habash, N.(2010). <a href="http://www.morganclaypool.com/doi/abs/10.2200/S00277ED1V01Y201008HLT010">Introduction to Arabic Natural Language processing</a>. Morgan &#38; Claypool.</li>
+          </ul>
+        </div>
     </div>
   </div>
   <div class="col-sm-6">
-    <h2 id="text-alignment">Text Alignment <small>Corpus Construction</small></h2>
+    <h2 id="text-alignment">Intrinsic Plagiarism Detection</h2>
     <div class="panel panel-default">
       <div class="panel-heading">Task</div>
       <div class="panel-body">
-        <p>This task may be solved in two alternative ways:</p>
-        <p><em>Collection:</em> Find real-world instances of text reuse or plagiarism, and annotate them.</p>
-        <p><em>Generation:</em> Given pairs of documents, generate passages of reused or plagiarized text between them. Apply a means of obfuscation of your choosing.</p>
+        <p>Identify the text fragments that are <strong>inconsistent</strong> with the rest of the document in terms of the <strong>writing style</strong>. The suspicious document <strong>should not be compared</strong> to any other documents.</p>
+        </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Training Corpus</div>
+      <div class="panel-body">
+        <p>You will be provided with a training corpus corpus to use it while developing your method. The corpus involves a collection of suspicious documents. Each suspicious document is associated with an XML document that determine the position of the plagiarised fragments, which allows you to check the correctness of your detections.</p>
+        <p>
+          <!--a class="btn btn-default" href="http://www.uni-weimar.de/medien/webis/publications/papers/stein_2013f.pdf">Learn more »</a>-->
+          <a class="btn btn-default" target="_blank" href="https://goo.gl/eGz5NN">Download corpus</a>
+        </p>
       </div>
     </div>
     <!--
@@ -241,151 +357,188 @@
     <div class="panel panel-default">
       <div class="panel-heading">Output</div>
       <div class="panel-body">
-        <p>We ask you to prepare your corpus so that its format corresponds to the previous PAN plagiarism corpora. An example for of a correctly formatted corpus can be downloaded here:</p>
-        <p><a class="btn btn-default" target="_blank" href="http://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-text-alignment-training-corpus-2013-01-21.zip">Download example corpus</a></p>
-        <p>Enclosed in the evaluation corpora, a file named <code>pairs</code> is found, which lists all pairs of suspicious documents and source documents to be compared. For each pair <code>suspicious-documentXYZ.txt</code> and <code>source-documentABC.txt</code>, your plagiarism detector shall output an XML file <code>suspicious-documentXYZ-source-documentABC.xml</code> which contains meta information about the plagiarism cases detected within:</p>
-<pre class="prettyprint lang-xml" style="overflow-x:auto"><nobr>&lt;document reference="suspicious-documentXYZ.txt"&gt;</nobr>
+        <p>Participants should submit their runs on the test corpus in the form of XML documents following the annotation format of the actual plagiarism provided in the training corpus (PAN format). Below an example on the content of the XML documents that should be submitted by the participants.</p>
+        <pre class="prettyprint lang-xml" style="overflow-x:auto"><nobr>&lt;document reference="suspicious-documentXYZ.txt"&gt;</nobr>
 &lt;feature
   name="detected-plagiarism"
-  this_offset="5"
+  this_offset="5" 
   this_length="1000"
-&nbsp;&nbsp;<nobr>source_reference="source-documentABC.txt"</nobr>
-  source_offset="100"
-  source_length="1000"
 /&gt;
 &lt;feature ... /&gt;
 ...
 &lt;/document&gt;</pre>
-        <p>For example, the above file would specify an aligned passage of text between <code>suspicious-documentXYZ.txt</code> and <code>source-documentABC.txt</code>, and that it is of length 1000 characters, starting at character offset 5 in the suspicious document and at character offset 100 in the source document.</p>
-      </div>
+        
+        Each <code>&lt;feature&gt;</code> tag desribes a detected fragment.
+        
+        The attribute <code>this_offset</code> describes the position of the first character of the detected plagiarism fragment in the suspicious document.
+        The attribute <code>this_length</code>repesents the number of characters of the detected plagiarism fragment in the suspicious document. </div>
     </div>
     <div class="panel panel-default">
       <div class="panel-heading">Performance Measures</div>
       <div class="panel-body">
-        <p>Performance will be measured by assessing the validity of your corpus in two ways.</p>
-        <p><em>Detection:</em> Your corpus will be fed into the text alignment prototypes that have been submitted in previous years to the text alignment task. The performances of each text alignment prototype in detecting the plagiarism in your corpus will be measured using macro-averaged precision and recall, granularity, and the plagdet score.</p>
-        <p><em>Peer-review:</em> Your corpus will be made available to the other participants of this task and be subject to peer-review. Every participant will be given a chance to assess and analyze the corpora of all other participants in order to determine corpus quality.</p>
+        <p>The following measures are used to evaluate the performance of methods:</p>
+        <ul>
+          <li><strong>Precision</strong> and <strong>Recall</strong> at character level,</li>
+          <li><strong>Granularity</strong>: it reports overlapping or multiple detections for a single plagiarism case,</li>
+          <li><strong>Plagdet</strong>: a combination of the former measures to an overall score. This score is used to rank the methods.</li>
+        </ul>
+        <p>
+          <a class="btn btn-default" href="http://www.uni-weimar.de/medien/webis/publications/papers/stein_2010p.pdf#page=2">Learn more »</a></p>
+        <p>To compute these measures, we use the same code provided at <a href="http://pan.webis.de/">PAN@CLEF</a> (author: Martin Potthast).</p>
+        <p>
+          <a class="btn btn-default" href="http://www.uni-weimar.de/medien/webis/events/pan-09/pan09-code/pan09-plagiarism-detection-performance-measures.py">Download measures' code »</a></p>
       </div>
     </div>
-    <!--
     <div class="panel panel-default">
       <div class="panel-heading">Test Corpus</div>
       <div class="panel-body">
-        <p>Once you finished tuning your approach to achieve satisfying performance on the training corpus, you should run your software on the test corpus.</p>
-        <p>During the competition, the test corpus will not be released publicly. Instead, we ask you to submit your software for evaluation at our site as described below.</p>
-        <p>After the competition, the test corpus is available including ground truth data. This way, you have all the necessities to evaluate your approach on your own, yet being comparable to those who took part in the competition.</p>
+        <p>This corpus will be provided just a couple of weeks before the end of the competition. You have to run your method on this corpus in order to compare it with others. The XML documents (the actual plagiarism annotation) will not be provided in this corpus until the end of the competition. </p>
+        <p><strong>Update: plagiarism annotations are now available for download.</strong></p>
         <p>
-          <a class="btn btn-default" target="_blank" href="http://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-14/pan14-data/">Download corpus</a>
+          <a class="btn btn-default" target="_blank" href="https://goo.gl/t0sDYy">Download corpus</a>
         </p>
+        
       </div>
     </div>
-    -->
+    
     <div class="panel panel-default">
       <div class="panel-heading">Submission</div>
       <div class="panel-body">
-        <p>To submit your corpus, put it in a ZIP archive, and make it available to us via a file sharing service of your choosing, e.g., Dropbox, or Mega.</p>
+        <p>(1) Run your method(s) on the test corpus, and generate for each suspicious document an XML document (with the same name) that contains the detected plagiarism (please follow the format shown above). <br>
+        Please record the runtime of your method in terms of seconds on the training as well as the test corpus.</p>
+        <p>(2) Send your runs on the test corpus as well as the training one in separate zip files to araplagdet.fire2015@gmail.com .(you can also upload them in a site such as Google Drive or Dropbox and send us the links) <br>
+          The names of the zip files should follow the format bellow:<br>
+          - for the runs on the training corpus:  intrinsic_train_your.familly.name.zip<br>
+          - for the runs on the test corpus:  intrinsic_test_your.familly.name.zip</p>
+        <p>If you submit more than 1 run for a subtask,  please add a number to the name of you files e.g. intrinsic_test_myname_1.zip and  intrinsic_test_myname_2.zip</p>
+        <p>In the email, mention the names of the sent zip files along with the runtime to generate each of them (preferably in seconds if possible, but you could put an approximate time in hours or minutes)  . E.g. <br>
+          intrinsic_test_yourname.zip   1000 sec<br>
+          intrinsic_train_yourname.zip  1022 sec</p>
       </div>
     </div>
-    <!--
+    
     <div class="panel panel-default">
       <div class="panel-heading">Results</div>
       <div class="panel-body">
-        <p>The following table lists the performances achieved by the participating teams:</p>
-        <table class="table table-condensed rule"  style="font-size:small;">
-        <thead>
-        <tr><th colspan="2" style="text-align:center">Text Alignment Performance</th></tr>
-        <tr><th>Plagdet</th><th>Team</th></tr>
-        </thead>
-        <tbody>
-        <tr><td>0.87818</td><td>Miguel A. Sanchez-Perez, Grigori Sidorov, and Alexander Gelbukh<br/>Instituto Politécnico Nacional, Mexico</td></tr>
-        <tr><td>0.86933</td><td>Gabriel Oberreuter and Andreas Eiselt<br/>Innovand.io, Chile</td></tr>
-        <tr><td>0.86806</td><td>Yurii Palkovskii and Alexei Belov<br/>Zhytomyr Ivan Franko State University, Ukraine</td></tr>
-        <tr><td>0.85930</td><td>Demetrios Glinos<br/>University of Central Florida, USA</td></tr>
-        <tr><td>0.84404</td><td>Prasha Shrestha, Suraj Maharjan, and Thamar Solorio<br/>University of Alabama at Birmingham, USA</td></tr>
-        <tr><td>0.82952</td><td>Diego Antonio Rodríguez Torrejón and José Manuel Martín Ramos<br/>Universidad de Huelva, Spain</td></tr>
-        <tr><td>0.82642</td><td>Philipp Gross and Pashutan Modaresi<br/>pressrelations GmbH, Germany</td></tr>
-        <tr><td>0.82161</td><td>Leilei Kong, Yong Han, Zhongyuan Han, Haihao Yu, Qibo Wang, Tinglei Zhang, Haoliang Qi<br/>Heilongjiang Institute of Technology, China</td></tr>
-        <tr><td>0.67220</td><td>Samira Abnar, Mostafa Dehghani, Hamed Zamani, and Azadeh Shakery<br/>University of Tehran, Iran</td></tr>
-        <tr><td>0.65954</td><td>Faisal Alvi°, Mark Stevenson*, and Paul Clough*<br/>°King Fahd University of Petroleum & Minerals, Saudi Arabia, and *University of Sheffield, UK</td></tr>
-        <tr><td>0.42191</td><td>Baseline</td></tr>
-        <tr><td>0.28302</td><td>Lee Gillam and Scott Notley<br/>University of Surrey, UK</td></tr>
-        </tbody>
-        </table>
-        <p>A more detailed analysis of the detection performances can be found in the overview paper accompanying this task.</p>
+        <p>Only one participant !</p>
+            <table border="0" align="center" cellpadding="0" cellspacing="0" dir="ltr" style="font-size:small;" class="table table-condensed rule">
+              <tbody align = "center">
+                <tr>
+                  <td><strong>Method</strong></td>
+                  <td bgcolor="#CEE7FF"><strong>Plagdet</strong></td>
+                  <td><strong>Precision</strong></td>
+                  <td><strong>Recall</strong></td>
+                  <td><strong>Granularity</strong></td>
+                </tr>
+                <tr>
+                  <td>Baseline</td>
+                  <td bgcolor="#CEE7FF">0.3753558</td>
+                  <td>0.2691282</td>
+                  <td>0.7792149</td>
+                  <td>1.0934164</td>
+                </tr>
+                <tr>
+                  <td>Magooda</td>
+                  <td bgcolor="#CEE7FF">0.1926474</td>
+                  <td>0.1879309</td>
+                  <td>0.1976069</td>
+                  <td>1.0000000</td>
+                </tr>
+              </tbody>
+          </table>
+            
         <p>
-          <a class="btn btn-default" href="http://www.uni-weimar.de/medien/webis/publications/papers/stein_2013h.pdf#page=18">Learn more »</a>
+          <a class="btn btn-default" href="http://www.uni-weimar.de/medien/webis/events/pan-at-fire-15/pan15-papers-final/pan15-plagiarism-detection/bensalem15-overview.pdf#page=10">Learn more »</a>
         </p>
-      </div>
+          <div id="participants">
+            <p><strong>Participants</strong></p>
+            <table align="center" cellpadding="5" cellspacing="0" dir="ltr" style="font-size:small;" class="table table-condensed rule">
+              <colgroup>
+              <col width="100">
+              <col width="300">
+              <col width="300">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <td width="62">Magooda</td>
+                  <td width="275">Ahmed Ezzat abdelGawad Magooda<br>Ahsraf Youssef Mahgoub<br>Mohsen Rashwan</td>
+                  <td><a href="http://www.rdi-eg.com/">RDI, Egypt</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+            
+      
     </div>
-    -->
+    </div> 
     <div class="panel panel-default">
       <div class="panel-heading">Related Work</div>
       <div class="panel-body">
-        <p>The text alignment task has been run since PAN'09; here is a quick list of the respective proceedings and overviews:</p>
-        <ul><li>
-        <a href="../../clef14/pan14-web/about.html#proceedings">PAN @ CLEF'14</a> (<a href="http://www.uni-weimar.de/medien/webis/publications/papers/stein_2014k.pdf">overview paper</a>),
-        </li><li>
-        <a href="../../clef13/pan13-web/about.html#proceedings">PAN @ CLEF'13</a> (<a href="http://www.uni-weimar.de/medien/webis/publications/papers/stein_2013h.pdf">overview paper</a>),
-        </li><li>
-        <a href="../../clef12/pan12-web/about.html#proceedings">PAN @ CLEF'12</a> (<a href="http://www.uni-weimar.de/medien/webis/publications/papers/stein_2012t.pdf">overview paper</a>),
-        </li><li>
-        <a href="../../clef11/pan11-web/about.html#proceedings">PAN @ CLEF'11</a> (<a href="http://www.uni-weimar.de/medien/webis/publications/papers/stein_2011t.pdf">overview paper</a>),
-        </li><li>
-        <a href="../../clef10/pan10-web/about.html#proceedings">PAN @ CLEF'10</a> (<a href="http://www.uni-weimar.de/medien/webis/publications/papers/stein_2010t.pdf">overview paper</a>), and
-        </li><li>
-        <a href="../../sepln09/pan09-web/about.html#proceedings">PAN @ SEPLN'09</a> (<a href="http://www.uni-weimar.de/medien/webis/publications/papers/stein_2009e.pdf">overview paper</a>).
-        </li></ul>
-      </div>
+        <p>The intrinsic plagiarism detection task on English documents has been run from PAN'09 to PAN'12. Here is a quick list of the respective proceedings and overviews:</p>
+        <ul>
+          <li>
+        <a href="../../clef12/pan12-web/about.html#proceedings">PAN @ CLEF'12</a> (<a href="http://www.uni-weimar.de/medien/webis/events/pan-12/pan12-papers-final/pan12-author-identification/juola12-overview.pdf">overview paper</a>),</li>
+          <li><a href="../../clef11/pan11-web/about.html#proceedings">PAN @ CLEF'11</a> (<a href="http://www.uni-weimar.de/medien/webis/publications/papers/stein_2011t.pdf">overview paper</a>), </li>
+          <li>
+        <a href="../../clef10/pan10-web/about.html#proceedings">PAN @ CLEF'10</a> (<a href="http://www.uni-weimar.de/medien/webis/publications/papers/stein_2010t.pdf">overview paper</a>), and        </li>
+        <li>
+        <a href="../../sepln09/pan09-web/about.html#proceedings">PAN @ SEPLN'09</a> (<a href="http://www.uni-weimar.de/medien/webis/publications/papers/stein_2009e.pdf">overview paper</a>).</li>
+        </ul>
+        <p>The following references provide further information on intrinsic plagiarism detection, its evaluation corpora development approaches and Arabic language:</p>
+        <ul>
+          <li>Stein, B., Lipka, N., &amp; Prettenhofer, P. (2011). <a href="http://www.uni-weimar.de/medien/webis/publications/papers/stein_2011a.pdf">Intrinsic Plagiarism Analysis</a>. Language Resources and Evaluation, 45(1), 63–82.</li>
+          <li>Bensalem, I., Rosso, P., &amp; Chikhi, S. (2014). <a href="http://users.dsic.upv.es/~prosso/resources/BensalemEtAl_EMNLP14.pdf">Intrinsic Plagiarism Detection using N-gram Classes</a>. EMNLP 2014, 1459–1464. ACL.</li>
+          <li>Potthast, M., Stein, B., Barrón-Cedeño, A., &amp; Rosso, P. (2010). <a href="http://users.dsic.upv.es/~prosso/resources/PotthastEtAl_COLING10.pdf">An Evaluation Framework for Plagiarism Detection</a>. COLING 2010, 997–1005. ACL. </li>
+          <li>Bensalem, I., Rosso, P., &amp; Chikhi, S. (2013). <a href="https://riunet.upv.es/bitstream/handle/10251/40242/BensalemEtAl_CLEF13.pdf">A New Corpus for the Evaluation of Arabic Intrinsic Plagiarism Detection</a>. CLEF 2013, LNCS, vol. 8138, 53–58. Springer.</li>
+          <li>Habash, N.(2010). <a href="http://www.morganclaypool.com/doi/abs/10.2200/S00277ED1V01Y201008HLT010">Introduction to Arabic Natural Language processing</a>. Morgan &#38; Claypool.</li>
+        </ul>
+        </div>
     </div>
   </div>
 </div>
 
 <div id="task-committee" class="row" style="padding-top:60px;">
-  <div class="col-xs-12">
-    <h1 class="page-header">Task Chair</h1>
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-6 col-sm-3">
-    <div class="thumbnail" style="text-align:center;">
-      <a href="http://www.uni-weimar.de/medien/webis/people" target="_blank"><img src="../pan15-figures/martin.jpg" class="img-rounded" alt="Martin Potthast"></a>
-      <p style="white-space:nowrap"><a href="http://www.uni-weimar.de/medien/webis/people" target="_blank">Martin Potthast</a></p>
-      <p style="font-size:10pt">Bauhaus-Universit&auml;t Weimar</p>
-    </div>
-  </div>
+  
 </div>
 <div class="row">
   <div class="col-xs-12">
-    <h2>Task Committee</h2>
+    <h2>Task Coordinators</h2>
   </div>
 </div>
 <div class="row">
   <div class="col-xs-6 col-sm-3">
     <div class="thumbnail" style="text-align:center;">
-      <a href="http://www.uni-weimar.de/medien/webis/people" target="_blank"><img src="../pan15-figures/tim.jpg" class="img-rounded" alt="Tim Gollub"></a>
-      <p style="white-space:nowrap"><a href="http://www.uni-weimar.de/medien/webis/people" target="_blank">Tim Gollub</a></p>
-      <p style="font-size:10pt">Bauhaus-Universit&auml;t Weimar</p>
-    </div>
-  </div>
-  <div class="col-xs-6 col-sm-3">
-    <div class="thumbnail" style="text-align:center;">
-      <a href="http://www.uni-weimar.de/medien/webis/people" target="_blank"><img src="../pan15-figures/matthias.jpg" class="img-rounded" alt="Matthias Hagen"></a>
-      <p style="white-space:nowrap"><a href="http://www.uni-weimar.de/medien/webis/people" target="_blank">Matthias Hagen</a></p>
-      <p style="font-size:10pt">Bauhaus-Universit&auml;t Weimar</p>
-    </div>
-  </div>
-  <div class="col-xs-6 col-sm-3">
-    <div class="thumbnail" style="text-align:center;">
-      <a href="http://www.webis.de" target="_blank"><img src="../pan15-figures/benno.jpg" class="img-rounded" alt="Benno Stein"></a>
-      <p style="white-space:nowrap"><a href="http://www.webis.de" target="_blank">Benno Stein</a></p>
-      <p style="font-size:10pt">Bauhaus-Universit&auml;t Weimar</p>
+      <a href="http://www.univ-constantine2.dz/facntic/departements/" target="_blank"><img src="../pan15-figures/imene.jpg" class="img-rounded" alt="Imene Bensalem"></a>
+      <p style="white-space:nowrap"><a href="http://www.univ-constantine2.dz/facntic/departements/" target="_blank">Imene Bensalem</a></p>
+      <p style="font-size:10pt">Constantine 2 University, Algeria</p>
     </div>
   </div>
   <div class="col-xs-6 col-sm-3">
     <div class="thumbnail" style="text-align:center;">
       <a href="http://users.dsic.upv.es/~prosso/" target="_blank"><img src="../pan15-figures/paolo.jpg" class="img-rounded" alt="Paolo Rosso"></a>
       <p style="white-space:nowrap"><a href="http://users.dsic.upv.es/~prosso/" target="_blank">Paolo Rosso</a></p>
-      <p style="font-size:10pt">Universitat Polit&egrave;cnica de Val&egrave;ncia</p>
+      <p style="font-size:10pt">Universitat Polit&egrave;cnica de Val&egrave;ncia, Spain</p>
+    </div>
+  </div>
+  <div class="col-xs-6 col-sm-3">
+    <div class="thumbnail" style="text-align:center;">
+      <a href="http://qcri.org.qa/our-people/bio?pid=23&name=KareemDarwish" target="_blank"><img src="../pan15-figures/kareem.jpg" class="img-rounded" alt="Kareem Darwish"></a>
+      <p style="white-space:nowrap"><a href="http://qcri.org.qa/our-people/bio?pid=23&name=KareemDarwish" target="_blank">Kareem Darwish</a></p>
+      <p style="font-size:10pt">Qatar Computing Research Institute, Qatar</p>
+    </div>
+  </div>
+  <div class="col-xs-6 col-sm-3">
+    <div class="thumbnail" style="text-align:center;">
+      <a href="http://www.univ-constantine2.dz/laboratoires/labmisc/index.php?static6/scal" target="_blank"></a>
+      <p style="white-space:nowrap"><a href="http://www.univ-constantine2.dz/laboratoires/labmisc/index.php?static6/scal" target="_blank">Salim Chikhi</a></p>
+      <p style="font-size:10pt">Constantine 2 University, Algeria</p>
+    </div>
+  </div>
+  <div class="col-xs-6 col-sm-3">
+    <div class="thumbnail" style="text-align:center;">
+      <a href="http://www.univ-constantine2.dz/facntic/departements/" target="_blank"></a>
+      <p style="white-space:nowrap"><a href="http://www.univ-constantine2.dz/facntic/departements/" target="_blank">Imène Boukhalfa</a></p>
+      <p style="font-size:10pt">Constantine 2 University, Algeria</p>
     </div>
   </div>
 </div>
