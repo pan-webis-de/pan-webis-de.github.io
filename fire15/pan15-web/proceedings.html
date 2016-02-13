@@ -70,9 +70,9 @@
     <h1 id="task-description" class="page-header">
       Proceedings
       <div class="btn-group">
-        <a role="button" class="btn btn-default" href="../../clef14/pan14-web/proceedings.html"><span class="glyphicon glyphicon-chevron-left" style="color:grey;"></span></a>
+        <a role="button" class="btn btn-default" href="../../fire14/pan14-web/proceedings.html"><span class="glyphicon glyphicon-chevron-left" style="color:grey;"></span></a>
         <span role="button" class="btn btn-default" disabled="disabled">2015</span>
-        <a role="button" class="btn btn-default" href="../../clef16/pan16-web/proceedings.html"><span class="glyphicon glyphicon-chevron-right" style="color:grey;"></span></a>
+        <a role="button" class="btn btn-default" href="../../fire16/pan16-web/proceedings.html"><span class="glyphicon glyphicon-chevron-right" style="color:grey;"></span></a>
       </div>
     </h1>
   </div>
@@ -88,55 +88,36 @@
   <div id="proceedings-overviews" class="col-xs-12"></div>
 </div>
 
-<div class="row">
+<!--div class="row">
   <div class="col-xs-12">
     <h3>Keynotes</h3>
   </div>
-</div>
+</div-->
 
-<div class="row">
+<!--div class="row">
   <div id="proceedings-talks" class="col-xs-12"></div>
-</div>
+</div-->
 
 <div class="row">
   <div class="col-xs-12">
-    <h3>Plagiarism Detection: Source Retrieval</h3>
+    <h3>Cross-Language Detection of SOurce COde Re-use (CL-SOCO)</h3>
   </div>
 </div>
 
 <div class="row">
-  <div id="proceedings-notebooks-source-retrieval" class="col-xs-12"></div>
+  <div id="proceedings-notebooks-clsoco" class="col-xs-12"></div>
 </div>
 
 <div class="row">
   <div class="col-xs-12">
-    <h3>Plagiarism Detection: Text Alignment</h3>
+    <h3>Plagiarism Detection in Arabic Text (AraPlagDet)</h3>
   </div>
 </div>
 
 <div class="row">
-  <div id="proceedings-notebooks-text-alignment" class="col-xs-12"></div>
+  <div id="proceedings-notebooks-araplagdet" class="col-xs-12"></div>
 </div>
 
-<div class="row">
-  <div class="col-xs-12">
-    <h3>Authorship Verification</h3>
-  </div>
-</div>
-
-<div class="row">
-  <div id="proceedings-notebooks-authorship-verification" class="col-xs-12"></div>
-</div>
-
-<div class="row">
-  <div class="col-xs-12">
-    <h3>Author Profiling: Age Prediction, Gender Prediction, and Personality Prediction</h3>
-  </div>
-</div>
-
-<div class="row">
-  <div id="proceedings-notebooks-author-profiling" class="col-xs-12"></div>
-</div>
 
 <footer>
   <p class="pull-right">© pan.webis.de</p>
@@ -156,20 +137,14 @@
 </script>
 
 <script>
-var urlOverview = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2015,overview&exclude=talk";
-var urlTalks    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2015,talk";
-var urlTask1    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2015,source-retrieval&exclude=overview";
-var urlTask2    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2015,text-alignment&exclude=overview";
-var urlTask3    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2015,authorship-verification&exclude=overview";
-var urlTask4    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2015,author-profiling&exclude=overview";
+var urlOverview = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=fire,2015,overview&exclude=talk";
+var urlTask1    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=fire,2015,source-retrieval&exclude=overview";
+var urlTask2    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=fire,2015,plagiarism-detection&exclude=overview";
 
 $(document).ready(function() {
   fetchPublicationsViewHtml(urlOverview, "#proceedings-overviews");
-  fetchPublicationsViewHtml(urlTalks, "#proceedings-talks");
-  fetchPublicationsViewHtml(urlTask1, "#proceedings-notebooks-source-retrieval");
-  fetchPublicationsViewHtml(urlTask2, "#proceedings-notebooks-text-alignment");
-  fetchPublicationsViewHtml(urlTask3, "#proceedings-notebooks-authorship-verification");
-  fetchPublicationsViewHtml(urlTask4, "#proceedings-notebooks-author-profiling");
+  fetchPublicationsViewHtml(urlTask1, "#proceedings-notebooks-clsoco");
+  fetchPublicationsViewHtml(urlTask2, "#proceedings-notebooks-araplagdet");
 });
 
 function fetchPublicationsViewHtml(url, selector) {
