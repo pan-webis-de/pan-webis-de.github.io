@@ -97,12 +97,19 @@
 	</ul>
     <div class="panel panel-default">
       <div class="panel-heading">Task</div>
-      <div class="panel-body">Given a collection of documents, identify authorship links and groups of documents by the same author. All documents are single-authored, in the same language, and belong to the same genre. However, the topic or text-length of documents may vary. The number of distinct authors whose documents are included in the collection is not given.</div>
+      <div class="panel-body">Given a collection of (up to 100) documents, identify authorship links and groups of documents by the same author. All documents are single-authored, in the same language, and belong to the same genre. However, the topic or text-length of documents may vary. The number of distinct authors whose documents are included in the collection is not given.</div>
     </div>
     <div class="panel panel-default">
       <div class="panel-heading">Training Phase</div>
-      <div class="panel-body"><p>To develop your software, we provide you with a training corpus that comprises a set of author clustering problems. Each problem comprises a set of documents in the same language and genre together with ground truth for clustering.</p>
-      <p>Details will be released here soon.</p>
+      <div class="panel-body"><p>To develop your software, we provide you with a training corpus that comprises a set of author clustering problems in <strong>3 languages</strong> (English, Dutch, and Greek) and <strong>2 genres</strong> (newspaper articles and reviews). Each problem consists of a set of documents in the same language and genre. However, their topic may differ and the document lengths vary from a few hundred to a few thousand words.</p>
+	  <p>The documents of each problem are located in a separate folder. The file <code>info.json</code> describes all required information for each clustering problem. In more detail, the language (either <code>"en"</code>, <code>"nl"</code>, or <code>"gr"</code> for English, Dutch and Greek, respectively), genre (either <code>"articles"</code> or <code>"reviews"</code>), and the folder of each problem (relative path).</p>
+	<pre class="prettyprint lang-py" style="overflow-x:auto">
+[
+               	{"language": "en",             "genre": "articles",              "folder": "english-articles-1"},
+               	...
+]
+	</pre>
+	<p>The ground truth data of the training corpus consists of two files for each clustering problem: <code>clustering.json</code> and <code>ranking.json</code> similar to the files described in the <strong>Output</strong> section (see details below). All ground truth files are located in the <code>truth</code> folder.</p>
 </div>
     </div>
     <div class="panel panel-default">
@@ -115,7 +122,7 @@
       <div class="panel-body">
 <p>Your system should produce <strong>two output files</strong> in <a href="http://www.json.org/">JSON</a>:</p>
 <ul>
-	<li>One output file including complete information about the detected clusters named <code>clustering-output.json</code>. Each cluster should contain all documents found in the collection by a specific author. A JSON file of the following format should be produced (a list of clusters, each cluster is a list of documents):<li>
+	<li>One output file including complete information about the detected clusters named <code>clustering.json</code>. Each cluster should contain all documents found in the collection by a specific author. A JSON file of the following format should be produced (a list of clusters, each cluster is a list of documents):<li>
 <pre class="prettyprint lang-py" style="overflow-x:auto">
 [
 	[
@@ -129,7 +136,7 @@
 
 <p>The clusters should be non-overlapping, thus each filename should belong to exactly one cluster.</p>
 
-<li>One output file named <code>ranking-output.json</code> including a list of document pairs ranked according to a real-valued score in [0,1], where higher values denote more confidence that the pair of documents are by the same author. A JSON file of the following format should be produced (a list of document pairs and a real-valued number):</li>
+<li>One output file named <code>ranking.json</code> including a list of document pairs ranked according to a real-valued score in [0,1], where higher values denote more confidence that the pair of documents are by the same author. A JSON file of the following format should be produced (a list of document pairs and a real-valued number):</li>
 <pre class="prettyprint lang-py" style="overflow-x:auto">
 [
 	{"document1": "filename1",
@@ -188,7 +195,11 @@
 	  <div class="panel panel-default">
       <div class="panel-heading">Submission</div>
       <div class="panel-body">
-        <p>We ask you to prepare your software so that it can be executed via command line calls. <strong>More details will be released here soon.</strong></p>
+        <p>We ask you to prepare your software so that it can be executed via command line calls. The command shall take as input (i) an absolute path to the directory of the evaluation corpus and (ii) an absolute path to an empty output directory:</p>
+	<pre class="prettyprint lang-py" style="overflow-x:auto">
+	> mySoftware -i EVALUATION-DIRECTORY -o OUTPUT-DIRECTORY
+	</pre>
+	<p>Within <code>EVALUATION-DIRECTORY</code> a <code>info.json</code> file and a number of folders, one for each clustering problem, will be found (similar to the training corpus as described above). For each clustering problem, a new folder should be built in <code>OUTPUT-DIRECTORY</code> using the same folder name found in <code>info.json</code> for that problem and within that folder the <code>clustering.json</code> and <code>ranking.json</code> output files should be written (similar to the <code>truth</code> folder of the training corpus).</p>
         <p>You can choose freely among the available programming languages and among the operating systems Microsoft Windows and Ubuntu. We will ask you to deploy your software onto a virtual machine that will be made accessible to you after registration. You will be able to reach the virtual machine via ssh and via remote desktop. More information about how to access the virtual machines can be found in the user guide below:</p>
         <p><a class="btn btn-default" href="pan15-virtual-machine-user-guide.pdf">PAN Virtual Machine User Guide »</a></p>
         <p>Once deployed in your virtual machine, we ask you to access TIRA at <a href="http://www.tira.io">www.tira.io</a>, where you can self-evaluate your software on the test data.</p>
