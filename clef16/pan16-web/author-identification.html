@@ -319,7 +319,72 @@
           <div class="panel-heading">Training Phase</div>
           <div class="panel-body">
               <p>To develop your algorithms, training data sets for each sub problem including corresponding solutions are provided.</p>
-              <p>Details will be released soon.</p>
+              <p>The data set consists of three folders corresponding to each subtask. For each problem instance X in each subtask, three files are provided:</p>
+              <ul>
+                  <li><code>problem-X.txt</code> contains the actual text</li>
+                  <li><code>problem-X.meta</code> contains meta information about the file in <a href="http://www.json.org/">JSON</a> format. It contains the<code>"language"</code> (which is always <strong>English</strong> this year), the problem <code>"type"</code> (<code>"plagiarism"</code> or <code>"diarization"</code>) and for the diarization problem with given number of authors additionally the correct number of authors (<code>"numAuthors"</code>)</li>
+                  <li><code>problem-X.truth</code> contains the ground truth, i.e., the correct solution in <a href="http://www.json.org/">JSON</a> format:
+<pre class="prettyprint lang-py" style="overflow-x:auto">
+{
+    "authors": [
+        [
+            {"from": fromCharPosition,
+            "to": toCharPosition},
+            …
+        ],
+        …
+    ]
+}
+</pre>
+
+                      <p>
+                          To identify the text fragments, the absolute character start/end positions within the document are used, whereby the document starts at character position 0.</p>
+
+                      <p>
+                          Note that for simplicity reasons the solutions for the <strong>intrinsic plagiarism task</strong> contains exactly 2 clusters: one for the main author and one combined for all other authors. Nevertheless, when producing the output, you are free to create as many clusters as you wish for the plagiarized sections.
+                      </p>
+
+                          <p>An example for an <strong>intrinsic plagiarism detection solution</strong> could look like this:
+                          <pre class="prettyprint lang-py" style="overflow-x:auto">
+{
+	"authors": [
+		[
+			{"from": 314, "to": 15769}
+		],
+		[
+			{"from": 0, "to": 313},
+			{"from": 15770, "to": 19602}
+		]
+	]
+}
+</pre>
+
+                          An example of the <strong>diarization solution</strong> of a document that was written by four authors could then look like this:</p>
+<pre class="prettyprint lang-py" style="overflow-x:auto">
+{
+    "authors": [
+        [
+            {"from": 123, "to": 400},
+            {"from": 598, "to": 680}
+        ],
+        [
+            {"from": 0, "to": 122}
+        ],
+        [
+            {"from": 401, "to": 597},
+            {"from": 681, "to": 1020},
+            {"from": 1101, "to": 1400}
+        ],
+        [
+            {"from": 1021, "to": 1100}
+        ]
+    ]
+}
+</pre>
+
+                      <p>Of course, in the actual evaluation phase the ground truth, i.e., the <code>problem-X.truth</code> file will be missing.</p>
+                  </li>
+              </ul>
           </div>
       </div>
 
@@ -333,61 +398,74 @@
       <div class="panel panel-default">
           <div class="panel-heading">Output</div>
           <div class="panel-body">
-              <p>For solutions of the training data set as well as for your expected output, the <a href="http://www.json.org/">JSON</a> format is used. To identify the text fragments, the absolute character start/end positions within the document are used, whereby the document starts at character position 0.</p>
+             <p>
+                 In general, the data structure during the evaluation phase will be similar to that in the training phase, with the exception that the ground truth files are missing.
+                 This means, you can also use the information provided in the <code>problem-X.meta</code> file. Your software should finally output the missing solution file <code>problem-X.truth</code> for every problem instance X in the respective output folder (see Submission). The output syntax should thereby be exactly like it is used in the training phase.
+             </p>
 
+              <p>In general, there is no difference in the output between the intrinisic plagiarism detection and the diarization subtasks. Moreover, the <strong>order</strong> of the entries is <strong>not relevant</strong>.
+                  <p>In the following, we provide you with some examples for both subtasks:</p>
 
-              <p>For the <strong>traditional intrinsic plagiarism task</strong>, you should list only the intrusive sections, i.e., the plagiarized parts, as follows:</p>
-
+              <ul>
+                  <li>
+              <p>
+              For the <strong>intrinsic plagiarism detection</strong> subtask, you should create one entry for the main author. For the plagiarized sections you are free to either combine them into one entry (like it is done in the training data) or split them into more entries. As an example, if you found 2 plagiarized sections in the file <code>problem-3.txt</code>, you should produce the file <code>problem-3.truth</code>, where both</p>
 <pre class="prettyprint lang-py" style="overflow-x:auto">
-[
-    {"from": fromCharPosition,
-     "to": toCharPosition},
-    …
-]
+{
+	"authors": [
+		[
+			{"from": 314, "to": 15769}
+		],
+		[
+			{"from": 0, "to": 313},
+			{"from": 15770, "to": 19602}
+		]
+	]
+}
 </pre>
 
-              <p>An example containing three plagiarized fragments could be:</p>
-<pre class="prettyprint lang-py" style="overflow-x:auto">
-[
-    {"from": 123, "to": 245},
-    {"from": 343, "to": 460},
-    {"from": 678, "to": 1084}
-]
-</pre>
-              <br/><br/>
-              <p>For the <strong>diarization task</strong>, you should list all sections, clustered by authorship, as follows:</p>
+              <p>and</p>
 
 <pre class="prettyprint lang-py" style="overflow-x:auto">
-[
-    [
-        {"from": fromCharPosition,
-         "to": toCharPosition},
-        …
-    ],
-    …
-]
+{
+	"authors": [
+		[
+			{"from": 314, "to": 15769}
+		],
+		[
+			{"from": 0, "to": 313}
+        ],
+			{"from": 15770, "to": 19602}
+		]
+	]
+}
 </pre>
+              <p>are valid solutions.</p>
 
-              <p>The order of clusters is thereby not important. An example of a document that was written by four authors could look like this:</p>
-<pre class="prettyprint lang-py" style="overflow-x:auto">
-[
-    [
-        {"from": 123, "to": 400},
-        {"from": 598, "to": 680},
-    ],
-    [
-        {"from": 0, "to": 122},
-    ],
-    [
-        {"from": 401, "to": 597},
-        {"from": 681, "to": 1020},
-        {"from": 1101, "to": 1400}
-    ],
-    [
-        {"from": 1021, "to": 1100}
-    ]
-]
+                  </li>
+                  <li>
+              <p>
+                  For the <strong>diarization</strong> subtask, if you found 3 authors for the file <code>problem-12.txt</code>, you should produce the file <code>problem-12.truth</code> containing the solution like this:</p>
+                  <pre class="prettyprint lang-py" style="overflow-x:auto">
+{
+	"authors": [
+		[
+			{"from": 0, "to": 409},
+			{"from": 645, "to": 4893}
+		],
+		[
+			{"from": 410, "to": 644},
+			{"from": 4894, "to": 6716}
+		],
+		[
+			{"from": 6717, "to": 15036}
+		]
+	]
+}
 </pre>
+                  </li>
+              </ul>
+
 
           </div>
       </div>
@@ -408,7 +486,12 @@
       <div class="panel panel-default">
           <div class="panel-heading">Submission</div>
           <div class="panel-body">
-              <p>We ask you to prepare your software so that it can be executed via command line calls. <strong>More details will be released here soon.</strong></p>
+              <p>We ask you to prepare your software so that it can be executed via command line calls. The command shall take as input (i) an absolute path to the directory of the evaluation corpus and (ii) an absolute path to an empty output directory:</p>
+<pre class="prettyprint lang-py" style="overflow-x:auto">
+> mySoftware -i EVALUATION-DIRECTORY -o OUTPUT-DIRECTORY
+</pre>
+              <p>Within <code>EVALUATION-DIRECTORY</code>, you will find a list of folders. Exactly as in the training data, each folder then contains <code>[filename].txt</code> and corresponding <code>[filename].meta</code> files. You should use the latter to determine which problem type you should solve (plagiarism detection or diarization).</p>
+              <p>For each folder, you should produce a folder in the <code>OUTPUT-DIRECTORY</code> with the same name. Finally, your software should write the <code>[filename].truth</code> file for each <code>[filename]</code> inside these directories.</p>
               <p>You can choose freely among the available programming languages and among the operating systems Microsoft Windows and Ubuntu. We will ask you to deploy your software onto a virtual machine that will be made accessible to you after registration. You will be able to reach the virtual machine via ssh and via remote desktop. More information about how to access the virtual machines can be found in the user guide below:</p>
               <p><a class="btn btn-default" href="pan15-virtual-machine-user-guide.pdf">PAN Virtual Machine User Guide »</a></p>
               <p>Once deployed in your virtual machine, we ask you to access TIRA at <a href="http://www.tira.io">www.tira.io</a>, where you can self-evaluate your software on the test data.</p>
