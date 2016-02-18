@@ -199,7 +199,7 @@
       <div class="panel-body">
         <p>We ask you to prepare your software so that it can be executed via command line calls. The command shall take as input (i) an absolute path to the directory of the evaluation corpus and (ii) an absolute path to an empty output directory:</p>
 	<pre class="prettyprint lang-py" style="overflow-x:auto">
-	> mySoftware -i EVALUATION-DIRECTORY -o OUTPUT-DIRECTORY
+> mySoftware -i EVALUATION-DIRECTORY -o OUTPUT-DIRECTORY
 	</pre>
 	<p>Within <code>EVALUATION-DIRECTORY</code> a <code>info.json</code> file and a number of folders, one for each clustering problem, will be found (similar to the training corpus as described above). For each clustering problem, a new folder should be built in <code>OUTPUT-DIRECTORY</code> using the same folder name found in <code>info.json</code> for that problem and within that folder the <code>clustering.json</code> and <code>ranking.json</code> output files should be written (similar to the <code>truth</code> folder of the training corpus).</p>
         <p>You can choose freely among the available programming languages and among the operating systems Microsoft Windows and Ubuntu. We will ask you to deploy your software onto a virtual machine that will be made accessible to you after registration. You will be able to reach the virtual machine via ssh and via remote desktop. More information about how to access the virtual machines can be found in the user guide below:</p>
