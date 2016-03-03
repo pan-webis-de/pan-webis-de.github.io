@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>PAN 2014</title> 
+<title>PAN 2013</title> 
 
 <link href="../../css/bootstrap.min.css" rel="stylesheet" />
 <link href="../../css/prettify.css" rel="stylesheet" />
@@ -24,7 +24,7 @@
   <script src="../../js/respond.min.js"></script>
 <![endif]-->
 
-<link rel="shortcut icon" href="../pan14-figures/pan-icon-16x16.ico">
+<link rel="shortcut icon" href="../pan13-figures/pan-icon-16x16.ico">
 <!--
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
@@ -43,18 +43,18 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="../../index.html"><img src="../pan14-figures/pan-logo-small-lightgrey.png" alt="PAN" style="margin-top:-5px"></a>
+    <a class="navbar-brand" href="../../index.html"><img src="../pan13-figures/pan-logo-small-lightgrey.png" alt="PAN" style="margin-top:-5px"></a>
   </div>
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav navbar-right">
       <li><a href="../../index.html">Home</a></li>
-      <li><a href="index.html">PAN @ FIRE 2014:</a></li>
+      <li><a href="index.html">PAN @ FIRE 2013:</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="proceedings.html">Proceedings</a></li>
       <li class="dropdown active">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tasks <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li class="active"><a href="soco.html">SOCO</a></li>
+          <li class="active"><a href="clinss.html">CL!NSS</a></li>
           
         </ul>
       </li>
@@ -68,61 +68,54 @@
 <div id="task-description" class="row">
   <div class="col-xs-12">
     <h1 id="task-description" class="page-header">
-      Detection of SOurce COde Re-use
+      Cross-Language !ndian News Story Search
       <div class="btn-group">
-        <!--a role="button" class="btn btn-default" href="../../fire14/pan14-web/soco.html"><span class="glyphicon glyphicon-chevron-left" style="color:grey;"></span></a-->
-        <span role="button" class="btn btn-default" disabled="disabled">2014</span>
-        <a role="button" class="btn btn-default" href="../../fire15/pan15-web/clsoco.html"><span class="glyphicon glyphicon-chevron-right" style="color:grey;"></span></a>
+        <a role="button" class="btn btn-default" href="../../fire12/pan12-web/clinss.html"><span class="glyphicon glyphicon-chevron-left" style="color:grey;"></span></a>
+        <span role="button" class="btn btn-default" disabled="disabled">2013</span>
+        
       </div>
     </h1>
     
-    <div class="thumbnail pull-right" style="text-align:right;margin-left:15px;"><img src="../pan14-figures/SOCO.png" alt="SOCO logo" style="max-height:150px">
-    </div>
-    
-    <p>
-The information has become easily accessible with the advent of the Web. Blogs, forums, repositories, etc. have made source code widely available to be read, to be copied and to be modified. Programmers are tempted to re-use debugged and tested source codes that can easily found on the Web. The vast amount of resources on the Web makes unfeasible the manual analysis of suspicious source code re-used. There is a need of development automatic systems for detecting source code re-use phenomenon.
+  <p>  
+This edition of CLiNSS focuses on journalistic text reuse. News agencies are a prolific source of text on the web and a valuable source of text in multiple languages. News stories are generated independently and consequently there is a need to link news stories covering the same events written in different languages. Linking these stories vastly enhances the user's experience. In multilingual environment (such as India), a reader might want to refer to the local language version of a news story.
 </p>
 <p>
-Software companies have a special interest in preserving their own intellectual property. In a survey of 3,970 developers, more than 75 percent of respondents admitted that have re-use blocks of source code from elsewhere. Academic and programming environments have become a potential scenario for research in source code re-use because it is a frequent practice between students. In this context, students are tempted to re-use source code because they have to solve the same problem. It is a difficult scenario for detecting source code re-use because all the source codes will contain some degree of similarity.
+News stories covering the same event published in different languages may be rich sources of parallel and comparable text. Some fragments in these stories are parallel, for example, personal quotes and translated versions of the same content. Identification of such highly similar news stories solves dual purposes, enhancement of reader experience and generation of valuable multilingual resource.
 </p>
+<p>
+This year we will continue offering the task based around the identification of highly similar journalistic articles and news stories in a cross-language setting. The task will involve identifying and linking highly similar news stories covering the same event published in different languages.
+</p> 
 
-<p>
-SOCO is a new task focused on source code re-use. We will offer a task based around the detection of source codes that have been re-used in a monolingual context such an academic environment. The task will involve identifying and distinguishing the most similar source code pairs among a large source code collection.
-</p>
     <div class="panel panel-default">
       <div class="panel-heading">Task</div>
       <div class="panel-body">
       <p>
 
-In this first edition SOCO focuses on monolingual source code re-use detection. Nevertheless, there will be source codes in diferent languages. Source codes will be tagged by language to ease the detection. You are provided with a set of source codes written in C and Java languages. The task is about retrieving the source code pairs that have been re-used. Note that this is a document level task. No specific fragments inside of the source codes are expected to be identified; only pairs of source codes. Participants are asked to determine whether a source code has been re-used.
+The focus of CL!NSS this year is to evaluate the identification of news stories with same focal event in a cross-language environment. For the given source collection, S, containing news stories in Indian languages, Li, and the target collection, T, containing news stories in English, Lt, the task is to link each news story in T to its corresponding version in S for each Li. The news stories are considered the same if they describe the same focal event. For example, "Housing minister Somanna attacked with slipper" and "BJP leaders condemn attack on Somanna" are two news stories with two different focal events: the former describes the main news event whilst the latter is the consequences of the event. The framework of this year's task is shown in Fig. 2. The languages included in S will be Hindi and Gujarati (and possibly Marathi).
 </p>
 
-In the test phase the only annotation that will be provided is the programming language extensions.
+
 <p>
-<b>IMPORTANT: 3 RUNS per team are allowed as a maximum.</b>
+The task is similar to a (cross-language) copy detection task where the query is an entire document and "similar" documents must be found from a set of known documents. The task is not trivial because similar stories may exist with varying degrees of overlapping (e.g. a story written in English and used as the query text may be a subset of a longer story written in a different language, and vice-versa). Table 1 provides an example of relevant and non-relevant English-Hindi text pair. Although the source articles share the same news event as the target, the focal events are similar for source article 1 (relevant), but differ for source article 2 (non-relevant). 
+
 </p>
       </div>
     </div>
     <div class="panel panel-default">
       <div class="panel-heading">Training Phase</div>
-      <div class="panel-body"><p>For the training phase we provide an annotated corpus including with the programming language extensions. 
-It includes information about whether a text fragment has been re-used and, if it is the case, what its source is. </p>
+      <div class="panel-body"><p>
+      The source collection is in Hindi and the target collection is in English. All the documents are with the following text markup.
+      </p>
+		  
+
 		  
 		  <p>
-		  <ul>
-<li>The collection consists of source codes written in Java and C. </li>
-<li>Re-use is commited in both programming languages but ONLY at monolingual level. </li>
-<li>The Java collection contains 259 source codes from 000.java to 258.java. </li>
-<li>The C collection contains 79 source codes from 000.c to 078.c.</li>
-<li>Relevance Judgements represent re-use in both directions(a&#8594;b and b&#8594;a)</li>
-</ul>
-		  </p>
-		  
-		  <p>
-		  <a class="btn btn-default" target="_blank" href="../pan14-code/SOCO.14.tar.gz.gpg">Corpus train</a>
-	md5sum a0588d47c8c3dcd476f37caef0eb8606 , 2.52 kB <br> 
-		  <a class="btn btn-default" target="_blank" href="../pan14-code/SOCO14-java.qrel">Java Training Relevance Judgements</a> <br> 
-		  <a class="btn btn-default" target="_blank" href="../pan14-code/SOCO14-c.qrel">C Training Relevance Judgements</a> 
+		  <a class="btn btn-default" target="_blank" href="http://users.dsic.upv.es/~pgupta/clinss/downloads/hindi.12.tar.gz.gpg">Source Collection</a>
+	md5sum 84231ba743f55b37602073c8b845d59d , 47.8 MB  <br> 
+		  <a class="btn btn-default" target="_blank" href="http://users.dsic.upv.es/~pgupta/clinss/downloads/english-test.12.tar.gz.gpg">Target Collection</a> 
+		  md5sum 359dfe7d11ad30b9bbcad6517772cdf3 , 55.7 KB <br> 
+		  <a class="btn btn-default" target="_blank" href="http://users.dsic.upv.es/~pgupta/clinss/downloads/clinss12-en-hi.qrel">Relevance Judgements</a> <br>
+		  <a class="btn btn-default" target="_blank" href="http://users.dsic.upv.es/~pgupta/clinss/downloads/clinss12.eval">Evaluation Script</a> 
 		  </p>
 
   </p>
@@ -130,57 +123,77 @@ It includes information about whether a text fragment has been re-used and, if i
     </div>
     <div class="panel panel-default">
       <div class="panel-heading">Evaluation Phase</div>
-      <div class="panel-body">In the test phase the only annotation that will be provided in the corpus is the programming language extensions.
-      <ul>
-		<li>It is divided by programming language (C/C++ and JAVA) so you do not need any pre-process to identify the programming language of the source codes.</li>
-		<li>Each programming language folder contains 6 folders (A1, B1, B2, C1 and C2) that contains a specific scenario with monolingual re-use.</li>
-		<li>There is not re-use between scenarios so you just need to look for re-used cases among the source code files inside each folder.</li>
-		<li>The name of the files consists of the name of the task which they belong plus an identifier. For example, file "B10021" belongs to scenario B1 and its identifier number is 0021.</li>
-		<li>It could not exist re-use between source codes that belong to different scenarios. For example, you do not have to submit a re-used case between files "B10021" and "B20013". 
-		The first one belongs to scenario B1 but the second one belongs to B2.</li>
-		
+      <div class="panel-body">
+      
+      Let T be a set of target news stories. Let S be a set of potential source news stories. The task is to find and link news stories s in S which have the same news event as of corresponding news story t in T. Moreover, link each t to its corresponding s where t and s also share the same focal event. 
 
+<h3>Evaluation Corpus</h3>
+
+The corpus will contain a set of potential source news stories S, written in Hindi, and a set of target news stories T, written in English. In the corpus you will find plain text files encoded in UTF-8. The documents contain meta information including news title and publication date.
+
+<h3>Test Collection</h3>
+
+The test collection will be composed of the same way as the training collection: a set of target documents together with potential source documents. 
+<ul>
+<li>Training Corpus Statistics</li>
+<ul>
+<li>50691 Source news stories in Hindi</li>
+<li>50 Target news stories in English</li>
 </ul>
-<a class="btn btn-default" target="_blank" href="../pan14-code/SOCO.14.test.tar.gz.gpg">SOCO.14.test.tar.gz.gpg</a>
-	md5sum df2dfe666ab56146bfe7f9de9c5a88bb , 15.2 kB 
+<li>Test Corpus Statistics</li>
+<ul>
+<li>50691 Source news stories in Hindi</li>
+<li>25 Target news stories in English</li>
+</ul>
+</ul>
+
      
       </div>
       </div>
     <div class="panel panel-default">
-      <div class="panel-heading">Output</div>
+      <div class="panel-heading">Submission of Detection Results</div>
       <div class="panel-body">
       
-      <p>
-The results of your re-use detection software are required to be formatted in XML:
-</p>
-<br/>
-<table border="1"><tr><td>
-&lt;document&gt; <br>
-&lt;reuse_case <br>
-&nbsp;&nbsp;source_code1="..." &nbsp;&nbsp;  &lt;!-- file name of the first source code re-used element  --&gt; <br>
-&nbsp;&nbsp;source_code2="..." &nbsp;&nbsp; &lt;!-- file name of the second source code re-used element  --&gt; <br>
-/&gt; <br>
-&lt;reuse_case <br>
-&nbsp;&nbsp;source_code1="..."   &nbsp;&nbsp; &lt;!-- file name of the first source code re-used element  --&gt;<br>
-&nbsp;&nbsp;source_code2="..." &nbsp;&nbsp;&lt;!-- file name of the second source code re-used element  --&gt; <br>
-/&gt; <br>
-.........................  &nbsp;&nbsp;  &lt;!-- more detections in the collection --&gt;<br>
-&lt;/document &gt; <br>
-</td></tr></table>
-<br><br>
-For each pair of suspicious source code pair there will be one entry of the &lt;reuse_case .../&gt; in the xml file.
-<br>
 
-</font>
+<p>
+The participants can use the training data to build their systems, tune parameters, proof-of-concept, manual analysis etc. Although participants can analyse their runs on test data, it is not desirable that they tune system according to test data. It is both, unreliable and unethical, in shared task environment. 
+</p><p>
+Participants are allowed to submit up to three runs per language pair in order to experiment with different settings. Participants are welcome to submit more than three competition runs which will be considered as extra runs (upto three). Please upload separately from competition runs. Such extra runs will not be considered in ranking of systems but might be included in the Evaluation page of the website. Please check the naming convention of such extra runs.
+</p><p>
+The results of your detection are required to be formatted as below.
+&lt;target-docid> Q0 &lt;source-docid> &lt;rank> &lt;similarity> 
+</p><p>
+where,
+</p>
+<ul>
+<li><target-docid> is the id of the corresponding English target document</li>
+<li>Q0 is an unused parameter (use as it is)</li>
+<li><source-docid> is the id of the corresponding source document in the respective language</li>
+<li><rank> is the rank given to the source document for the given target document by your system (must be integer)</li>
+<li><similarity> is the similarity score given to the source document for the given target document by your system (must be double)</li>
+<li>All the fields are just one <space> delimited.</li>
+<li>Participants are required to submit rank-list up-to 100 source news stories for each target news story.</li>
+<li>Name of the run file should be in the format of run-<1/2/3>-english-<hindi/gujarati>-<teamname>.txt</li>
+</ul>
+<p>
+For example, a standard run file will look like, 
+<p>
+english-document-00001.txt Q0 hindi-document-00345.txt 1 0.4644<br>
+english-document-00001.txt Q0 hindi-document-42325.txt 2 0.2823<br>
+.<br>
+.<br>
+english-document-00050.txt Q0 hindi-document-23443.txt 100 0.1123
+</p><p>
+Name of the file might be run-1-english-hindi-upv.txt and in case of extra runs extra-run-1-english-hindi-upv.txt
+</p>
 
     </td></tr>
 </tbody></table>
 <br>
-<a class="btn btn-default" target="_blank" href="../fire14-code/soco14-update.py">Evaluation Script</a> <b> Run as "python clsoco15-update.py"</b>
-<br>
-<a class="btn btn-default" target="_blank" href="../pan14-code/soco14-test-java-update.qrel">Java Test Relevance Judgements</a> <br> 
-<a class="btn btn-default" target="_blank" href="../pan14-code/soco14-test-c-update.qrel">C Test Relevance Judgements</a> 
-		  
+<a class="btn btn-default" target="_blank" href="http://users.dsic.upv.es/~pgupta/clinss/downloads/hindi.12.tar.gz.gpg">Source Collection (same as previous year)</a> 
+md5sum 84231ba743f55b37602073c8b845d59d , 47.8 MB<br> 
+<a class="btn btn-default" target="_blank" href="http://users.dsic.upv.es/~pgupta/clinss/downloads/english-test.13.tar.gz.gpg">Target Collection</a> 
+		  md5sum bf054ce66d4be31307e2e6e1368e1219 , 28K
 
 
       
@@ -188,18 +201,18 @@ For each pair of suspicious source code pair there will be one entry of the &lt;
     <div class="panel panel-default">
       <div class="panel-heading">Performance Measures</div>
       <div class="panel-body">
-		  <p>The success of the detection of source code re-use will be measured in terms of Precision, Recall and F1 measure.</p>
-		  </div></div>
-    
+		  <p>The success of the cross-language news story discovery will be measured in terms of NDCG@1, NDCG@10 and NGCG@20. The relevance level of the source news stories for the given test queries will be in {2,1,0} where,</p>
+		  
+  <ul>  
+<li>2 = "same news event + same focal event"</li>
+<li>1 = "same news event + different focal event" and</li>
+<li>0 = "different news event"</li>
+	  </ul></div></div>
 	  <div class="panel panel-default">
       <div class="panel-heading">Submission</div>
       <div class="panel-body">
         
-	The participants can use the training data to build their systems, tune parameters, proof-of-concept, manual analysis etc. Although participants can analyse their runs on test data, it is not desirable that they tune system according to test data. It is both, unreliable and unethical, in shared task environment. 
-<br><br>
-Participants are allowed to submit up to three runs per language pair in order to experiment with different settings.
-<br><br>
-The results of your detection are required to be formatted as is explained in Task Description section.
+Submissions Closed
 	</div>
     </div>
     
@@ -211,15 +224,9 @@ The results of your detection are required to be formatted as is explained in Ta
         <p>We refer you to:</p>
         <ul>
  
-
-<li>Chae D., Ha J., Kim S., Kang B., Im, E. (2013). Software plagiarism detection: a graph-based approach. In Proceedings of the 22nd ACM international conference on Conference on information & knowledge management, pp. 1577-1580. ACM. </li>
-<li>Marinescu D., Baicoianu A., Dimitriu S. (2012). Software for Plagiarism Detection in Computer Source Code. In Proc. of the 7th International Conference on Virtual Learning ICVL 2012, pp. 373-379.</li>
-<li>Flores E., Barr&oacute;n-Cede&ntilde;o A., Rosso P., Moreno L. (2011). Towards the Detection of Cross-Language Source Code Reuse. In: Proc. 16th Int. Conf. on Applications of Natural Language to Information Systems, NLDB-2011, Springer-Verlag, LNCS(6716), pp. 250-253.</li>
-<li>Flores E., Barr&oacute;n-Cede&ntilde;o A., Rosso P., Moreno L. (2012). DeSoCoRe: Detecting Source Code Re-Use across Programming Languages. In: Proc. 12th Int. Conf. of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, NAACL-2012, pp. 1-4.</li>
-<li>Flores E., Barr&oacute;n-Cede&ntilde;o A., Moreno L., Rosso P. (2014) Uncovering Source Code Re-Use in Large-Scale Programming Environments. In: Computer Applications in Engineering and Education.  <a href="http://onlinelibrary.wiley.com/doi/10.1002/cae.21608/abstract">DOI: 10.1002/cae.21608<a/>
-</li>
-
-      	
+<li>Dragos Munteanu and Daniel Marcu (2005). Improving Machine Translation Performance by Exploiting Comparable Corpora. Computational Linguistics, 31 (4), pp. 477-504, December</li>
+<li>Emma Barker and Robert Gaizauskas (2012). Assessing the Comparability of News Texts. In Proceedings of the Eighth International Conference on Language Resources and Evaluation (LREC'12).</li>
+	
 		
 		</ul>
       </div>
@@ -239,30 +246,37 @@ The results of your detection are required to be formatted as is explained in Ta
 <div class="row">
   <div class="col-xs-6 col-sm-3">
     <div class="thumbnail" style="text-align:center;">
-      <a href="http://users.dsic.upv.es/~eflores/" target="_blank"><img src="../pan14-figures/enrique.jpg" class="img-rounded" alt="Enrique Flores"></a>
-      <p style="white-space:nowrap"><a href="http://users.dsic.upv.es/~eflores/" target="_blank">Enrique Flores</a></p>
-      <p style="font-size:10pt">Universitat Polit&egrave;cnica de Val&egrave;ncia, Spain</p>
+      <a href="http://users.dsic.upv.es/~pgupta/" target="_blank"><img src="../pan13-figures/parth.jpg" class="img-rounded" alt="Parth Gupta"></a>
+      <p style="white-space:nowrap"><a href="http://users.dsic.upv.es/~pgupta/" target="_blank">Parth Gupta</a></p>
+      <p style="font-size:10pt">NLE Lab @ Universitat Polit&egrave;cnica de Val&egrave;ncia, Spain</p>
     </div>
   </div>
   <div class="col-xs-6 col-sm-3">
     <div class="thumbnail" style="text-align:center;">
-      <a href="http://users.dsic.upv.es/~prosso/" target="_blank"><img src="../pan14-figures/paolo.jpg" class="img-rounded" alt="Paolo Rosso"></a>
+      <a href="http://users.dsic.upv.es/~prosso/" target="_blank"><img src="../pan13-figures/paolo.jpg" class="img-rounded" alt="Paolo Rosso"></a>
       <p style="white-space:nowrap"><a href="http://users.dsic.upv.es/~prosso/" target="_blank">Paolo Rosso</a></p>
-      <p style="font-size:10pt">Universitat Polit&egrave;cnica de Val&egrave;ncia, Spain</p>
+      <p style="font-size:10pt">NLE Lab @ Universitat Polit&egrave;cnica de Val&egrave;ncia, Spain</p>
     </div>
   </div>
   <div class="col-xs-6 col-sm-3">
     <div class="thumbnail" style="text-align:center;">
-      <img src="../pan14-figures/lidia.jpg" class="img-rounded" src="../pan14-figures/lidia.jpg" alt="Lidia Moreno">
-      <p style="white-space:nowrap">Lidia Moreno</p>
-      <p style="font-size:10pt">Universitat Polit&egrave;cnica de Val&egrave;ncia, Spain</p>
+      <a href="http://ir.shef.ac.uk/cloughie/" target="_blank"><img style="max-height:140px;margin:5px;" src="../pan13-figures/paul.jpg" class="img-rounded" alt="Paul Clough"></a>
+      <p style="white-space:nowrap"><a href="http://ir.shef.ac.uk/cloughie/" target="_blank">Paul Clough</a></p>
+      <p style="font-size:10pt">IR &NLP Groups @ University of Sheffield, UK</p>
     </div>
   </div>
-  <div class="col-xs-6 col-sm-3">
+    <div class="col-xs-6 col-sm-3">
     <div class="thumbnail" style="text-align:center;">
-      <a href="http://ccd.cua.uam.mx/~evillatoro" target="_blank"><img src="../pan14-figures/esau.jpg" class="img-rounded" alt="Esa&uacute; Villatoro-Tello"></a>
-      <p style="white-space:nowrap"><a href="http://www.webis.de" target="_blank">Esa&uacute; Villatoro-Tello</a></p>
-      <p style="font-size:10pt">Universidad Aut&oacute;noma Metropolitana (UAM), Mexico</p>
+      <a href="http://staffwww.dcs.shef.ac.uk/people/M.Stevenson/" target="_blank"><img src="../pan13-figures/stevenson.jpg" class="img-rounded" alt="Mark Stevenson"></a>
+      <p style="white-space:nowrap"><a href="http://staffwww.dcs.shef.ac.uk/people/M.Stevenson/" target="_blank">Mark Stevenson</a></p>
+      <p style="font-size:10pt">IR &NLP Groups @ University of Sheffield, UK</p>
+    </div>
+  </div>
+    <div class="col-xs-6 col-sm-3">
+    <div class="thumbnail" style="text-align:center;">
+      <a href="http://www.rbanchs.com/" target="_blank"><img src="../pan13-figures/banchs.jpg" class="img-rounded" alt="Rafael E. Banchs"></a>
+      <p style="white-space:nowrap"><a href="http://www.rbanchs.com/" target="_blank">Rafael E. Banchs</a></p>
+      <p style="font-size:10pt">HLT, Institute for Infocomm Research, Singapore</p>
     </div>
   </div>
   
