@@ -82,13 +82,14 @@
   </div>
 </div>
 
+<!--
 <div class="row">
   <div class="col-xs-12">
     <h3>The proceedings will be published after the workshop.</h3>
   </div>
 </div>
+-->
 
-<!--
 <div class="row">
   <div class="col-xs-12">
     <h3>Overview Papers</h3>
@@ -111,48 +112,43 @@
 
 <div class="row">
   <div class="col-xs-12">
-    <h3>Plagiarism Detection: Source Retrieval</h3>
+    <h3>Author Clustering</h3>
   </div>
 </div>
 
 <div class="row">
-  <div id="proceedings-notebooks-source-retrieval" class="col-xs-12"></div>
+  <div id="proceedings-notebooks-author-clustering" class="col-xs-12"></div>
 </div>
 
 <div class="row">
   <div class="col-xs-12">
-    <h3>Plagiarism Detection: Text Alignment</h3>
+    <h3>Author Diarization</h3>
   </div>
 </div>
 
 <div class="row">
-  <div id="proceedings-notebooks-text-alignment" class="col-xs-12"></div>
+  <div id="proceedings-notebooks-author-diarization" class="col-xs-12"></div>
 </div>
 
 <div class="row">
   <div class="col-xs-12">
-    <h3>Authorship Verification</h3>
+    <h3>Author Obfuscation</h3>
   </div>
 </div>
 
 <div class="row">
-  <div id="proceedings-notebooks-authorship-verification" class="col-xs-12"></div>
+  <div id="proceedings-notebooks-author-obfuscation" class="col-xs-12"></div>
 </div>
 
 <div class="row">
   <div class="col-xs-12">
-    <h3>Author Profiling: Age Prediction, Gender Prediction, and Personality Prediction</h3>
+    <h3>Author Profiling: Age Prediction and Gender Prediction</h3>
   </div>
 </div>
 
 <div class="row">
   <div id="proceedings-notebooks-author-profiling" class="col-xs-12"></div>
 </div>
-
-<footer>
-  <p class="pull-right">© pan.webis.de</p>
-</footer>
--->
 
 </div> <!-- /container -->
 
@@ -170,17 +166,17 @@
 <script>
 var urlOverview = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2016,overview&exclude=talk";
 var urlTalks    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2016,talk";
-var urlTask1    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2016,source-retrieval&exclude=overview";
-var urlTask2    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2016,text-alignment&exclude=overview";
-var urlTask3    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2016,authorship-verification&exclude=overview";
+var urlTask1    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2016,author-clustering&exclude=overview";
+var urlTask2    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2016,author-diarization&exclude=overview";
+var urlTask3    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2016,author-obfuscation&exclude=overview";
 var urlTask4    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2016,author-profiling&exclude=overview";
 
 $(document).ready(function() {
   fetchPublicationsViewHtml(urlOverview, "#proceedings-overviews");
   fetchPublicationsViewHtml(urlTalks, "#proceedings-talks");
-  fetchPublicationsViewHtml(urlTask1, "#proceedings-notebooks-source-retrieval");
-  fetchPublicationsViewHtml(urlTask2, "#proceedings-notebooks-text-alignment");
-  fetchPublicationsViewHtml(urlTask3, "#proceedings-notebooks-authorship-verification");
+  fetchPublicationsViewHtml(urlTask1, "#proceedings-notebooks-author-clustering");
+  fetchPublicationsViewHtml(urlTask2, "#proceedings-notebooks-author-diarization");
+  fetchPublicationsViewHtml(urlTask3, "#proceedings-notebooks-author-obfuscation");
   fetchPublicationsViewHtml(urlTask4, "#proceedings-notebooks-author-profiling");
 });
 
