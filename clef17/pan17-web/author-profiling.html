@@ -24,7 +24,7 @@
   <script src="../../js/respond.min.js"></script>
 <![endif]-->
 
-<link rel="shortcut icon" href="../pan16-figures/pan-icon-16x16.ico">
+<link rel="shortcut icon" href="../pan17-figures/pan-icon-16x16.ico">
 <!--
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
@@ -48,7 +48,7 @@
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav navbar-right">
       <li><a href="../../index.html">Home</a></li>
-      <li><a href="index.html">PAN @ CLEF 2016:</a></li>
+      <li><a href="index.html">PAN @ CLEF 2017:</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="proceedings.html">Proceedings</a></li>
       <li class="dropdown active">
@@ -70,8 +70,8 @@
       <h1 id="task-description" class="page-header">
         Author Profiling
         <div class="btn-group">
-          <a role="button" class="btn btn-default" href="../../clef15/pan15-web/author-profiling.html"><span class="glyphicon glyphicon-chevron-left" style="color:grey;"></span></a>
-          <span role="button" class="btn btn-default" disabled="disabled">2016</span>
+          <a role="button" class="btn btn-default" href="../../clef16/pan16-web/author-profiling.html"><span class="glyphicon glyphicon-chevron-left" style="color:grey;"></span></a>
+          <span role="button" class="btn btn-default" disabled="disabled">2017</span>
           <span role="button" class="btn btn-default" disabled="disabled"><span class="glyphicon glyphicon-chevron-right" style="color:grey;"></span></span>
         </div>
       </h1>
@@ -79,7 +79,7 @@
       <div class="thumbnail pull-right" style="text-align:right;margin-left:15px;"><a href="http://www.meaningcloud.com/" target="_blank"><img src="../pan16-figures/logo-meaningcloud.png" alt="MeaningCloud" style="max-height:150px"></a><div style="font-size:7pt;margin-top:-3px;">Sponsor</div></div>
       <p>Authorship analysis deals with the classification of texts into classes based on the stylistic choices of their authors. Beyond the author identification and author verification tasks where the style of individual authors is examined, author profiling distinguishes between classes of authors studying their sociolect aspect, that is, how language is shared by people. This helps in identifying profiling aspects such as gender, age, native language, or personality type. Author profiling is a problem of growing importance in applications in forensics, security, and marketing. E.g., from a forensic linguistics perspective one would like being able to know the linguistic profile of the author of a harassing text message (language used by a certain type of people) and identify certain characteristics (language as evidence). Similarly, from a marketing viewpoint, companies may be interested in knowing, on the basis of the analysis of blogs and online product reviews, the demographics of people that like or dislike their products. The focus is on author profiling in social media since we are mainly interested in everyday language and how it reflects basic social and personality processes.</p>
       
-      
+      <!--
       <div class="panel panel-default">
         <div class="panel-heading">Award</div>
         <div class="panel-body">
@@ -93,7 +93,7 @@
           <p>Congratulations!</p>
         </div>
       </div>
-      
+      -->
       
       <div class="panel panel-default">
         <div class="panel-heading">Task</div>
@@ -109,18 +109,22 @@ genre (e.g. Twitter, blogs, social media...).</p>
     	  <div class="panel panel-default">
       <div class="panel-heading">Training corpus</div>
       <div class="panel-body"><p>
-To develop your software, we provide you with a training data set that consists of Twitter tweets in English, Spanish and Dutch.</p>
+<!--To develop your software, we provide you with a training data set that consists of Twitter tweets in English, Spanish and Dutch.</p>
         <p><a class="btn btn-default" target="_blank" href="http://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-16/pan16-data/pan16-author-profiling-training-dataset-2016-04-25.zip">Download corpus</a> (Updated April 25, 2016)</p>
 
 <p> The English and Spanish datasets are labeled with age and gender, whereas the Dutch one only with gender. 
 	With regard to age, we will consider the following classes: 18-24, 25-34, 35-49, 50-64, 65-xx.</p>
 
+	      
         <p><b>Remark.</b> Due to Twitter's privacy policy we cannot provide tweets directly, but only URLs referring to them. You will have to download them yourself. For your convenience, we provide a download software for this. We expect participants to extract gender and age information only from the textual part of a tweet and to discard any other meta information that may be provided by Twitter's API. When we evaluate your software at our site, we do not expect it downloads tweets. We will do this beforehand.</p>
         <p><a class="btn btn-default" target="_blank" href="http://www.uni-weimar.de/medien/webis/events/pan-16/pan16-code/pan16-author-profiling-twitter-downloader.zip">Download software</a></p>
+-->
+	      
+	      More information soon...
       </div>
     </div>
 
-
+<!--
 	  <div class="panel panel-default">
       <div class="panel-heading">Output</div>
       <div class="panel-body">
@@ -136,7 +140,10 @@ To develop your software, we provide you with a training data set that consists 
         <p>The naming of the output files is up to you, we recommend to use the author-id as filename and "xml" as extension.</p>
       </div>
     </div>
-	  <div class="panel panel-default">
+
+-->
+<!--	 
+    <div class="panel panel-default">
       <div class="panel-heading">Performance Measures</div>
       <div class="panel-body">
 
@@ -149,6 +156,7 @@ Then, we will average the accuracy values to obtain a joint identification of ag
 
 </div>
     </div>
+-->
 	  <div class="panel panel-default">
       <div class="panel-heading">Submission</div>
       <div class="panel-body">
@@ -159,7 +167,7 @@ Then, we will average the accuracy values to obtain a joint identification of ag
         <p><strong>Note:</strong> By submitting your software you retain full copyrights. You agree to grant us usage rights only for the purpose of the PAN competition. We agree not to share your software with a third party or use it for other purposes than the PAN competition.</p>
       </div>
     </div>
-
+<!--
     <div class="panel panel-default">
       <div class="panel-heading">Results</div>
       <div class="panel-body">
@@ -198,9 +206,12 @@ Then, we will average the accuracy values to obtain a joint identification of ag
         <p>
 	        <a class="btn btn-default" href="../pan15-papers-final/pan15-author-profiling/rangel15-overview.pdf#page=8">Learn more »</a>
         </p>-->
+<!--	    
       </div>
     </div>
-
+-->
+	
+<!--	
     <div class="panel panel-default">
       <div class="panel-heading">Related Work and Corpora</div>
       <div class="panel-body">
@@ -223,7 +234,7 @@ Then, we will average the accuracy values to obtain a joint identification of ag
       </div>
     </div>
   </div>
-  
+ -->
 
   <div id="task-committee" class="row" style="padding-top:60px;">
     <div class="col-xs-12">
