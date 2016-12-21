@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>PAN 2016</title> 
+<title>PAN 2017</title>
 
 <link href="../../css/bootstrap.min.css" rel="stylesheet" />
 <link href="../../css/prettify.css" rel="stylesheet" />
@@ -24,7 +24,7 @@
   <script src="../../js/respond.min.js"></script>
 <![endif]-->
 
-<link rel="shortcut icon" href="../pan16-figures/pan-icon-16x16.ico">
+<link rel="shortcut icon" href="../pan17-figures/pan-icon-16x16.ico">
 <!--
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
@@ -48,7 +48,7 @@
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav navbar-right">
       <li><a href="../../index.html">Home</a></li>
-      <li><a href="index.html">PAN @ CLEF 2016:</a></li>
+      <li><a href="index.html">PAN @ CLEF 2017:</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="proceedings.html">Proceedings</a></li>
       <li class="dropdown active">
@@ -71,15 +71,15 @@
       Author Identification
       <div class="btn-group">
         <a role="button" class="btn btn-default" href="../../clef15/pan15-web/author-identification.html"><span class="glyphicon glyphicon-chevron-left" style="color:grey;"></span></a>
-        <span role="button" class="btn btn-default" disabled="disabled">2016</span>
+        <span role="button" class="btn btn-default" disabled="disabled">2017</span>
         <span role="button" class="btn btn-default" disabled="disabled"><span class="glyphicon glyphicon-chevron-right" style="color:grey;"></span></span>
       </div>
     </h1>
     <div class="thumbnail pull-right" style="text-align:right;margin-left:15px;"><a href="http://www.adobe.com/" target="_blank"><img src="../pan16-figures/logo-adobe.png" alt="Adobe" style="max-height:150px"></a><div style="font-size:7pt;margin-right:13px;margin-top:2px;">Sponsor</div></div>
-    <p class="lead">This task is divided into <strong>author clustering</strong> and <strong>author diarization</strong>. You can choose to solve one or both of them.</p>
+    <p class="lead">This task is divided into <strong>author clustering</strong> and <strong>style breach detection</strong>. You can choose to solve one or both of them.</p>
     <ul class="nav nav-pills visible-xs">
       <li><a href="#author-clustering" class="btn btn-large"><span class="glyphicon glyphicon-chevron-down"></span> Author Clustering</a></li>
-      <li><a href="#author-diarization" class="btn btn-large"><span class="glyphicon glyphicon-chevron-down"></span> Author Diarization</a></li>
+      <li><a href="#author-diarization" class="btn btn-large"><span class="glyphicon glyphicon-chevron-down"></span> Style Breach Detection</a></li>
     </ul>
   </div>
 </div>
@@ -296,104 +296,54 @@
   </div>
 
   <div class="col-sm-6">
-    <h2 id="source-retrieval">Author Diarization <small>or Intrinsic Plagiarism Detection</small></h2>
+    <h2 id="style-breach-detection">Style Breach Detection</h2>
 
-      <p>The term <i>author diarization</i> originates from the research field <strong>speaker diarization</strong>, where approaches try to automatically identify and cluster different speakers of an audio speech signal like a telephone conversation or a political TV debate by processing and analyzing the audio frequency signal (an overview of approaches can be found, for example, <a href="http://www1.icsi.berkeley.edu/~vinyals/Files/taslp2011a.pdf">here</a>).</p>
-      <p>Similar to such approaches, the task of <strong>author diarization</strong> in this PAN edition is to identify different authors within a single document. Such documents may be the result of a collaborative work (e.g., a combined master thesis written by two students, a scientific paper written by four authors, …), or the result of plagiarism. The latter is thereby a special case, where it can be assumed that the main text is written by one author and only some fragments are by other writers (the plagiarized or intrusive sections). On the other hand, the contributions of a collaboratively written document may be equally weighted, i.e., each author contributes to the same extent.</p>
-
-
+      <p>While many approaches target the problem of identifying authors of whole documents, research on investigating multi-authored documents is sparse. To narrow the gap, the <a href="../../clef16/pan16-web/author-identification.html">author diarization</a> task of the PAN-2016 edition already focused on collaboratively written documents, attempting to cluster text by authors within documents. This year we modify the problem by asking participants to detect style breaches within documents, i.e., to locate borders where authorships change.</p>
+      <p>The problem is therefore related to the <strong>text segmentation</strong> problem, with the difference that the latter usually focus on detecting switches of topics or <i>stories</i>. In contrast to that, this task aims to find borders based on the writing style, disregarding the specific content. As the goal is to only find borders, it is irrelevant to identify or cluster authors of segments. A simple example consisting of four breaches of style (switches / borders) is illustrated below:</p>
+      <p align="center"><img src="../pan17-figures/style-breach-sample.png"/></p>
 
       <div class="panel panel-default">
           <div class="panel-heading">Task</div>
           <div class="panel-body">
-
-              <p>Given a document, identify and group text fragments that correspond to individual authors. Similarly to the situation in speaker diarization approaches, where active speakers may change at any time, you cannot assume that changes in authorship occur, for example, only on paragraph boundaries. But you should rather be prepared to detect different authors at any text position. An example could be as follows:</p>
-
-              <p style="margin-left:30px"><i>"<span style="color:RoyalBlue">She is also a successful businesswoman and an American icon,</span><span style="color:red"> was born in Jersey City to middle-class Polish-American parents and she earned a partial scholarship to …</span>"</i></p>
-
-              <p>Nevertheless, you may use paragraph boundaries or other useful metrics as heuristic to potential changes.</p>
-
-              <p>To cover different variants of the problem, the task of this years PAN edition is split into three subproblems. For this year’s edition, all documents are provided in English.</p>
-
-              <ul>
-                  <li><p><strong>Traditional intrinsic plagiarism detection</strong>: here, you can assume that there exists one main author who wrote at least 70% of the text. Up to the other 30% may be written by other authors. For this problem, you should build exactly two clusters: one containing the text fragments of the main author, and the other one containing the intrusive fragments. </p></li>
-                  <li><p><strong>Diarization with a given number (n) of authors</strong>: given a document, the task is to build exactly n clusters containing the contributions of the different writers. Thereby, each author may have contributed to an arbitrary, but non-zero extent.</p></li>
-                  <li><p><strong>Diarization with an unknown number of authors</strong>: finally, this variant covers the most challenging task, which is similar to the previous task, but without the information of knowing how many authors contributed to the document.</p></li>
-              </ul>
+              <p>Given a document, determine whether it is multi-authored, and if yes, find the borders where authors switch.</p>
+              <p>All documents are provided in English and may contain zero up to arbitrarily many switches (style breaches). Thereby switches of authorships may only occur at the end of sentences, i.e., not within.</p>
           </div>
       </div>
-
 
       <div class="panel panel-default">
           <div class="panel-heading">Training Phase</div>
           <div class="panel-body">
-              <p>To develop your algorithms, training data sets for each sub problem including corresponding solutions are provided.</p>
-              <p><br/>
-              <a class="btn btn-default" target="_blank" href="http://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-16/pan16-data/pan16-author-diarization-training-dataset-2016-02-17.zip">Download corpus</a></p>
-              <br/><p>The data set consists of three folders corresponding to each subtask. For each problem instance X in each subtask, three files are provided:</p>
+              <p>To develop your algorithms, a training data set including corresponding solutions will be provided (soon).</p>
+              <!--<p><br/>
+              <a class="btn btn-default" target="_blank" href="http://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-16/pan16-data/pan16-author-diarization-training-dataset-2016-02-17.zip">Download corpus</a></p>-->
+              <br/><p>For each problem instance X, two files are provided:</p>
               <ul>
                   <li><code>problem-X.txt</code> contains the actual text</li>
-                  <li><code>problem-X.meta</code> contains meta information about the file in <a href="http://www.json.org/">JSON</a> format. It contains the<code>"language"</code> (which is always <strong>English</strong> this year), the problem <code>"type"</code> (<code>"plagiarism"</code> or <code>"diarization"</code>) and for the diarization problem with given number of authors additionally the correct number of authors (<code>"numAuthors"</code>)</li>
                   <li><code>problem-X.truth</code> contains the ground truth, i.e., the correct solution in <a href="http://www.json.org/">JSON</a> format:
 <pre class="prettyprint lang-py" style="overflow-x:auto">
 {
-    "authors": [
-        [
-            {"from": fromCharPosition,
-            "to": toCharPosition},
-            …
-        ],
+    "borders": [
+        character_position_border_1,
+        character_position_border_2,
         …
     ]
 }
 </pre>
 
                       <p>
-                          To identify the text fragments, the absolute character start/end positions within the document are used, whereby the document starts at character position 0.</p>
-
-                      <p>
-                          Note that for simplicity reasons the solutions for the <strong>intrinsic plagiarism task</strong> contains exactly 2 clusters: one for the main author and one combined for all other authors. Nevertheless, when producing the output, you are free to create as many clusters as you wish for the plagiarized sections.
-                      </p>
-
-                          <p>An example for an <strong>intrinsic plagiarism detection solution</strong> could look like this:
-                          <pre class="prettyprint lang-py" style="overflow-x:auto">
+                          To identify a border, the absolute character position <strong>of the first non-whitespace character of the new segment</strong> is used. The document starts at character position 0. An example that could match the borders of the image above could look as follows:</p>
+                      <pre class="prettyprint lang-py" style="overflow-x:auto">
 {
-	"authors": [
-		[
-			{"from": 314, "to": 15769}
-		],
-		[
-			{"from": 0, "to": 313},
-			{"from": 15770, "to": 19602}
-		]
-	]
+    "borders": [1709, 3119, 3956, 5671]
 }
 </pre>
 
-                          An example of the <strong>diarization solution</strong> of a document that was written by four authors could then look like this:</p>
+                      <p>An empty array indicates that the document is single-authored, i.e., contains no style switches:</p>
 <pre class="prettyprint lang-py" style="overflow-x:auto">
 {
-    "authors": [
-        [
-            {"from": 123, "to": 400},
-            {"from": 598, "to": 680}
-        ],
-        [
-            {"from": 0, "to": 122}
-        ],
-        [
-            {"from": 401, "to": 597},
-            {"from": 681, "to": 1020},
-            {"from": 1101, "to": 1400}
-        ],
-        [
-            {"from": 1021, "to": 1100}
-        ]
-    ]
+    "borders": []
 }
 </pre>
-
-                      <p>Of course, in the actual evaluation phase the ground truth, i.e., the <code>problem-X.truth</code> file will be missing.</p>
                   </li>
               </ul>
           </div>
@@ -410,74 +360,8 @@
           <div class="panel-heading">Output</div>
           <div class="panel-body">
              <p>
-                 In general, the data structure during the evaluation phase will be similar to that in the training phase, with the exception that the ground truth files are missing.
-                 This means, you can also use the information provided in the <code>problem-X.meta</code> file. Your software should finally output the missing solution file <code>problem-X.truth</code> for every problem instance X in the respective output folder (see Submission). The output syntax should thereby be exactly like it is used in the training phase.
+                 In general, the data structure during the evaluation phase will be similar to that in the training phase, with the exception that the ground truth files are missing. Thus, for each given problem <code>problem-X.txt</code> your software should output the missing solution file <code>problem-X.truth</code>. The output syntax should thereby be exactly like it is described in the training phase section.
              </p>
-
-              <p>In general, there is no difference in the output between the intrinisic plagiarism detection and the diarization subtasks. Moreover, the <strong>order</strong> of the entries is <strong>not relevant</strong>.
-                  <p>In the following, we provide you with some examples for both subtasks:</p>
-
-              <ul>
-                  <li>
-              <p>
-              For the <strong>intrinsic plagiarism detection</strong> subtask, you should create one entry for the main author. For the plagiarized sections you are free to either combine them into one entry (like it is done in the training data) or split them into more entries. As an example, if you found 2 plagiarized sections in the file <code>problem-3.txt</code>, you should produce the file <code>problem-3.truth</code>, where both</p>
-<pre class="prettyprint lang-py" style="overflow-x:auto">
-{
-	"authors": [
-		[
-			{"from": 314, "to": 15769}
-		],
-		[
-			{"from": 0, "to": 313},
-			{"from": 15770, "to": 19602}
-		]
-	]
-}
-</pre>
-
-              <p>and</p>
-
-<pre class="prettyprint lang-py" style="overflow-x:auto">
-{
-	"authors": [
-		[
-			{"from": 314, "to": 15769}
-		],
-		[
-			{"from": 0, "to": 313}
-        ],
-			{"from": 15770, "to": 19602}
-		]
-	]
-}
-</pre>
-              <p>are valid solutions.</p>
-
-                  </li>
-                  <li>
-              <p>
-                  For the <strong>diarization</strong> subtask, if you found 3 authors for the file <code>problem-12.txt</code>, you should produce the file <code>problem-12.truth</code> containing the solution like this:</p>
-                  <pre class="prettyprint lang-py" style="overflow-x:auto">
-{
-	"authors": [
-		[
-			{"from": 0, "to": 409},
-			{"from": 645, "to": 4893}
-		],
-		[
-			{"from": 410, "to": 644},
-			{"from": 4894, "to": 6716}
-		],
-		[
-			{"from": 6717, "to": 15036}
-		]
-	]
-}
-</pre>
-                  </li>
-              </ul>
-
-
           </div>
       </div>
 
@@ -485,12 +369,15 @@
       <div class="panel panel-default">
           <div class="panel-heading">Performance Measures</div>
           <div class="panel-body">
-              <ul>
-                  <li>
-                      To evaluate the quality of the intrinsic plagiarism detection algorithms, the <strong>micro- and macro-averaged F-score</strong> will be used (see <a href="../../clef11/pan11-web/plagiarism-detection.html">PAN@CLEF'11</a>, or <a href="http://www.uni-weimar.de/medien/webis/publications/papers/stein_2010p.pdf#page=2">this paper</a>) will be used.
-                  </li>
-                  <li>For the diarization algorithms, the <strong>BCubed F-score</strong> (<a href="http://nlp.uned.es/docs/amigo2007a.pdf">Amigo et al. 2007</a>) will be used.</li>
-              </ul>
+              <p>To evaluate the predicted style breaches, two metrics will be used:
+                  <ul>
+                    <li>the <strong>WindowDiff</strong> metric (<a href="http://people.ischool.berkeley.edu/~hearst/papers/pevzner-01.pdf">Pevzner, Hearst, 2002</a>) was proposed for general text segmentation evaluation and is still the de facto standard for such problems. It gives an error rate (between 0 to 1, 0 indicating a perfect prediction) for predicting borders by penalizing near-misses less than other/complete misses or extra borders.</li>
+              <li>a more recent adaption of the WindowDiff metric is the <strong>WinPR</strong> metric (<a href="http://www.aclweb.org/anthology/N12-1038.pdf">Scaiano, Inkpen, 2012</a>). It enhances it by computing the common information retrieval measures precision (WinP) and recall (WinR) and thus allows to give a more detailed, qualitative statement about the prediction. For the final ranking of all participating teams, the F-score of WinPR will be used.</li>
+          </ul>
+
+              <p>Note that while both metrics will be computed on a word-level, you still have to provide your solutions on a character-level (delegating the tokenization to the evaluator).</p>
+
+
           </div>
       </div>
 
@@ -501,8 +388,9 @@
 <pre class="prettyprint lang-py" style="overflow-x:auto">
 > mySoftware -i EVALUATION-DIRECTORY -o OUTPUT-DIRECTORY
 </pre>
-              <p>Within <code>EVALUATION-DIRECTORY</code>, you will find a list of folders. Exactly as in the training data, each folder then contains <code>[filename].txt</code> and corresponding <code>[filename].meta</code> files. You should use the latter to determine which problem type you should solve (plagiarism detection or diarization).</p>
-              <p>For each folder, you should produce a folder in the <code>OUTPUT-DIRECTORY</code> with the same name. Finally, your software should write the <code>[filename].truth</code> file for each <code>[filename]</code> inside these directories.</p>
+              <p>Within <code>EVALUATION-DIRECTORY</code>, you will find a list of problem instances, i.e., <code>[filename].txt</code> files.
+              For each problem instance you should produce the solution file <code>[filename].truth</code> in the <code>OUTPUT-DIRECTORY</code> For instance, you read <code>EVALUATION-DIRECTORY/problem-12.txt</code>, process it and write your results to <code>OUTPUT-DIRECTORY/problem-12.truth</code>.</p>
+
               <p>You can choose freely among the available programming languages and among the operating systems Microsoft Windows and Ubuntu. We will ask you to deploy your software onto a virtual machine that will be made accessible to you after registration. You will be able to reach the virtual machine via ssh and via remote desktop. More information about how to access the virtual machines can be found in the user guide below:</p>
               <p><a class="btn btn-default" href="pan15-virtual-machine-user-guide.pdf">PAN Virtual Machine User Guide »</a></p>
               <p>Once deployed in your virtual machine, we ask you to access TIRA at <a href="http://www.tira.io">www.tira.io</a>, where you can self-evaluate your software on the test data.</p>
@@ -516,11 +404,10 @@
           <div class="panel-body">
               <p>We refer you to:</p>
               <ul><li>
-                  <a href="../../clef11/pan11-web/proceedings.html">PAN@CLEF'11</a>
-              </li><li>
-                  <a href="../../clef12/pan12-web/proceedings.html">PAN@CLEF'12</a>
+                  <a href="../../clef16/pan16-web/proceedings.html">PAN@CLEF'16</a> (<i>Clustering by Authorship Within and Across Documents</i> and <i>Author Diarization</i> section)
               </li>
-                  <li>Sven Meyer zu Eissen, Benno Stein. <a href="http://www.uni-weimar.de/medien/webis/publications/papers/stein_2006d.pdf">Intrinsic Plagiarism Detection</a>. In Advances in Information Retrieval. Proceedings of the 28th European Conference on IR Research (ECIR), pages 565-569, 2006</li>
+                  <li>Marti A. Hearst. <a href="http://anthology.aclweb.org/J/J97/J97-1003.pdf">TextTiling: Segmenting Text into Multi-paragraph Subtopic Passages.</a>. In Computational Linguistics, Volume 23, Issue 1, pages 33-64, 1997.</li>
+                  <li>Benno Stein, Nedim Lipka and Peter Prettenhofer. <a href="http://www.uni-weimar.de/medien/webis/publications/papers/stein_2011a.pdf">Intrinsic Plagiarism Analysis</a>. In Language Resources and Evaluation, Volume 45, Issue 1, pages 63–82, 2011.</li>
                   <li>
                       Patrick Juola. <a href="http://portal.acm.org/citation.cfm?id=1373451">Authorship Attribution</a>. In Foundations and Trends in Information Retrieval, Volume 1, Issue 3, March 2008.
                   </li><li>
@@ -532,7 +419,7 @@
 
 
 
-      <div id="task-committee-diarization" class="row">
+      <div id="task-committee-stylebreachdetection" class="row">
       <div class="col-xs-12">
         <h2 class="page-header">Task Chair</h2>
       </div>
@@ -540,7 +427,7 @@
     <div class="row">
       <div class="col-xs-6">
         <div class="thumbnail" style="text-align:center;">
-          <a href="http://dbis-informatik.uibk.ac.at/1-1-Home.html" target="_blank"><img src="../pan16-figures/michael.png" class="img-rounded" alt="Michael Tschuggnall"></a>
+          <a href="http://dbis-informatik.uibk.ac.at/1-1-Home.html" target="_blank"><img src="../pan17-figures/michael.png" class="img-rounded" alt="Michael Tschuggnall"></a>
           <p><a href="http://dbis-informatik.uibk.ac.at/1-1-Home.html" target="_blank">Michael Tschuggnall</a></p>
           <p style="font-size:10pt">University of Innsbruck</p>
         </div>
@@ -554,21 +441,21 @@
     <div class="row">
       <div class="col-xs-6">
         <div class="thumbnail" style="text-align:center;">
-          <a href="http://dbis-informatik.uibk.ac.at/1-1-Home.html" target="_blank"><img src="../pan16-figures/guenther.jpg" class="img-rounded" alt="G&uuml;nther Specht"></a>
+          <a href="http://dbis-informatik.uibk.ac.at/1-1-Home.html" target="_blank"><img src="../pan17-figures/guenther.jpg" class="img-rounded" alt="G&uuml;nther Specht"></a>
           <p><a href="http://dbis-informatik.uibk.ac.at/1-1-Home.html" target="_blank">G&uuml;nther Specht</a></p>
           <p style="font-size:10pt">University of Innsbruck</p>
         </div>
       </div>
       <div class="col-xs-6">
         <div class="thumbnail" style="text-align:center;">
-          <a href="http://www.uni-weimar.de/medien/webis/people" target="_blank"><img src="../pan16-figures/martin.jpg" class="img-rounded" alt="Martin Potthast"></a>
+          <a href="http://www.uni-weimar.de/medien/webis/people" target="_blank"><img src="../pan17-figures/martin.jpg" class="img-rounded" alt="Martin Potthast"></a>
           <p style="white-space:nowrap"><a href="http://www.uni-weimar.de/medien/webis/people" target="_blank">Martin Potthast</a></p>
           <p style="font-size:10pt">Bauhaus-Universit&auml;t Weimar</p>
         </div>
       </div>
       <div class="col-xs-6">
         <div class="thumbnail" style="text-align:center;">
-          <a href="http://www.webis.de" target="_blank"><img src="../pan16-figures/benno.jpg" class="img-rounded" alt="Benno Stein"></a>
+          <a href="http://www.webis.de" target="_blank"><img src="../pan17-figures/benno.jpg" class="img-rounded" alt="Benno Stein"></a>
           <p style="white-space:nowrap"><a href="http://www.webis.de" target="_blank">Benno Stein</a></p>
           <p style="font-size:10pt">Bauhaus-Universit&auml;t Weimar</p>
         </div>
