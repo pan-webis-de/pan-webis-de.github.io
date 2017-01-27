@@ -88,8 +88,9 @@
   <div class="col-sm-6">
     <h2 id="author-clustering">Author Clustering</h2>
     <p>Authorship attribution is an important problem in information retrieval and computational linguistics but also in applied areas such as law and journalism where knowing the author of a document (such as a ransom note) may be able to save lives. The most common framework for testing candidate algorithms is the closed-set attribution task: given known sample documents from a small, finite set of candidate authors, which wrote a questioned document of unknown authorship? It has been commented, however, that this may be an unreasonably easy task. A more demanding task is <strong>author clustering</strong> where given a document collection the task is to group documents written by the same author so that each cluster corresponds to a different author. This task can also be viewed as establishing <strong>authorship links</strong> between documents. </p>
-	<p>Note that a variation of author clustering was included in the PAN-2012 edition. However, it was focused on the paragraph-level and therefore it is more related to the author diarization task (see details in the right column). In PAN-2016, we focus on <strong>document-level author clustering</strong>. The task of authorship verification studied in detail in previous editions of PAN (2013-2015) is strongly associated with author clustering since any clustering problem can be decomposed into a series of author verification problems. We encourage participants to attempt to modify authorship verification approaches to deal with the author clustering task.</p>
-	<p>In this edition of PAN we aim to study two application scenarios: </p>
+	<p>Note that the task of authorship verification studied in detail in previous editions of PAN (2013-2015) is strongly associated with author clustering since any clustering problem can be decomposed into a series of author verification problems. We encourage participants to attempt to modify authorship verification approaches to deal with the author clustering task.</p>
+	<p>PAN-2016 first studied the author clustering task focusing on relatively long documents like articles and reviews. In this edition of PAN, we focus on short documents of paragraph length. The aim is to cluster paragraphs that may be extracted from the same document or different documents and are by the same author. Such a task is closely related to author diarization and intrinsic plagiarism detection. </p>
+	<p>Similar to PAN-2016 edition of the task, two application scenarios are examined: </p>
 	<ul>
 	<li><strong>Complete author clustering</strong>: This scenario requires a detailed analysis where the number (k) of different authors found in the collection should be identified and each document should be assigned to exactly one of the k clusters (each cluster corresponds to a different author). In the following illustrating example, 4 different authors are found and the colour of each document indicates its author.</li>
 		<p align="center"><img src="https://cloud.githubusercontent.com/assets/15824066/12065874/81d95440-afe7-11e5-828b-54e293540823.png"/></p>
@@ -98,7 +99,7 @@
 	</ul>
     <div class="panel panel-default">
       <div class="panel-heading">Task</div>
-      <div class="panel-body">Given a collection of (up to 100) documents, identify authorship links and groups of documents by the same author. All documents are single-authored, in the same language, and belong to the same genre. However, the topic or text-length of documents may vary. The number of distinct authors whose documents are included in the collection is not given.</div>
+      <div class="panel-body">Given a collection of (up to 50) short documents (paragraphs extracted from larger documents), identify authorship links and groups of documents by the same author. All documents are single-authored, in the same language, and belong to the same genre. However, the topic or text-length of documents may vary. The number of distinct authors whose documents are included in the collection is not given.</div>
     </div>
     <div class="panel panel-default">
       <div class="panel-heading">Training Phase</div>
@@ -214,19 +215,15 @@
       <div class="panel-heading">Related Work</div>
       <div class="panel-body">
         <p>We refer you to:</p>
-        <ul><li>
-			<a href="../../clef15/pan15-web/proceedings.html">PAN@CLEF'15</a></li>
-			<li>
-        	<a href="../../clef13/pan13-web/proceedings.html">PAN@CLEF'13</a>
-        </li><li>
-			<a href="../../clef14/pan14-web/proceedings.html">PAN@CLEF'14</a></li>
-			<li>
-        	<a href="../../clef13/pan13-web/proceedings.html">PAN@CLEF'13</a>
-        </li><li>
-        <a href="../../clef12/pan12-web/proceedings.html">PAN@CLEF'12</a>
-        </li><li>
-        <a href="../../clef11/pan11-web/proceedings.html">PAN@CLEF'11</a>
-        </li><li>
+        <ul>	<li>
+			<a href="../../clef15/pan16-web/proceedings.html">Author clustering task at PAN@CLEF'16</a></li>
+		<li>
+			<a href="../../clef15/pan15-web/proceedings.html">Author verification task at PAN@CLEF'15</a></li>
+		<li>
+			<a href="../../clef14/pan14-web/proceedings.html">Author verification task at PAN@CLEF'14</a></li>
+		<li>
+ 		       	<a href="../../clef13/pan13-web/proceedings.html">Author verification task at PAN@CLEF'13</a></li>
+	<li>
         Patrick Juola. <a href="http://portal.acm.org/citation.cfm?id=1373451">Authorship Attribution</a>. In Foundations and Trends in Information Retrieval, Volume 1, Issue 3, March 2008.
         </li><li>
         Moshe Koppel, Jonathan Schler, and Shlomo Argamon. <a href="http://onlinelibrary.wiley.com/doi/10.1002/asi.20961/full">Computational Methods
@@ -262,13 +259,6 @@
           <a href="http://www.clips.ua.ac.be/~walter/" target="_blank"><img src="../pan16-figures/walter.jpg" class="img-rounded" alt="Walter Daelemans"></a>
           <p style="white-space:nowrap"><a href="http://www.clips.ua.ac.be/~walter/" target="_blank">Walter Daelemans</a></p>
           <p style="font-size:10pt">University of Antwerp</p>
-        </div>
-      </div>
-      <div class="col-xs-6">
-        <div class="thumbnail" style="text-align:center;">
-          <a href="http://www.mathcs.duq.edu/~juola/" target="_blank"><img src="../pan16-figures/patrick.jpg" class="img-rounded" alt="Patrick Juola"></a>
-          <p style="white-space:nowrap"><a href="http://www.mathcs.duq.edu/~juola/" target="_blank">Patrick Juola</a></p>
-          <p style="font-size:10pt">Duquesne University</p>
         </div>
       </div>
       <div class="col-xs-6">
