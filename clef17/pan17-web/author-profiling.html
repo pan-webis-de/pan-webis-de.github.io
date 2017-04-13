@@ -153,6 +153,7 @@
   /&gt;
   </pre>
         <p>The naming of the output files is up to you, we recommend to use the author-id as filename and "xml" as extension.</p>
+	      <p><b>IMPORTANT!</b> Languages should not be mixed. A folder should be created for each language and place inside only the files with the prediction for this language. See more information about how to parametrise the evaluator below.</p>
       </div>
     </div>
 
@@ -181,7 +182,32 @@ Then, we will average the accuracy values to obtain a joint identification of va
         <p>Once deployed in your virtual machine, we ask you to access TIRA at <a href="http://www.tira.io">www.tira.io</a>, where you can self-evaluate your software on the test data.</p>
         <p><strong>Note:</strong> By submitting your software you retain full copyrights. You agree to grant us usage rights only for the purpose of the PAN competition. We agree not to share your software with a third party or use it for other purposes than the PAN competition.</p>
       </div>
-    </div>
+	  </div>
+	  
+	  
+	  
+	  <div class="panel panel-default">
+      <div class="panel-heading">How to parametrise the evaluator?</div>
+      <div class="panel-body">
+        <p>The evaluator works at language level and requieres the following parameters:</p>
+	      <ul>
+		      <li>Path to the folder where the prediction is placed. This folder should contain the files with the prediction for a particular language.</li>
+		      <li>Path to the truth file for the corresponding language. It depends on the set (training, test) and the language:<br>
+			      <ul>
+				      <li>
+					      <b>Training</b>: Complete path to the training folder, including language, followed by truth.txt<br>
+					      E.g. pan17-author-profiling-training-2017-03-10/en/truth.txt
+				      </li>
+				      <li>
+					      <b>Test</b>: Path to the language specific truth file<br>
+					      E.g. pan17-author-profiling-test-2017-03-16/en.txt
+				      </li>
+			      </ul>
+		      </li>
+		      <li>Path to the folder where the evaluation output will be placed.</li>
+	      </ul>
+      </div>
+	  </div>
 <!--
     <div class="panel panel-default">
       <div class="panel-heading">Results</div>
