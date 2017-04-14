@@ -114,7 +114,7 @@
 ]
 	</pre>
 	<p>The ground truth data of the training corpus consists of two files for each clustering problem: <code>clustering.json</code> and <code>ranking.json</code> similar to the files described in the <strong>Output</strong> section (see details below). All ground truth files are located in the <code>truth</code> folder.</p>
-	<p><a class="btn btn-default" target="_blank" href="http://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-16/pan16-data/pan16-author-clustering-training-dataset-2016-02-17.zip">Download corpus</a></p>
+	<p><a class="btn btn-default" target="_blank" href="http://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-17/pan17-data/pan17-author-clustering-training-dataset-2017-02-15.zip">Download corpus</a> (Updated: Feb 17, 2017)</p>
 </div>
     </div>
     <div class="panel panel-default">
@@ -218,7 +218,7 @@
       <div class="panel-body">
         <p>We refer you to:</p>
         <ul>	<li>
-			<a href="../../clef15/pan16-web/proceedings.html">Author clustering task at PAN@CLEF'16</a></li>
+			<a href="../../clef16/pan16-web/proceedings.html">Author clustering task at PAN@CLEF'16</a></li>
 		<li>
 			<a href="../../clef15/pan15-web/proceedings.html">Author verification task at PAN@CLEF'15</a></li>
 		<li>
@@ -306,7 +306,7 @@
           <div class="panel-heading">Training Phase</div>
           <div class="panel-body">
               <p>To develop your algorithms, a training data set including corresponding solutions is provided.</p>
-              <p><a class="btn btn-default" target="_blank" href="http://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-17/pan17-data/pan17-style-breach-detection-training-dataset-2017-01-26.zip">Download corpus</a></p>
+              <p><a class="btn btn-default" target="_blank" href="http://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-17/pan17-data/pan17-style-breach-detection-training-dataset-2017-02-15.zip">Download corpus</a> (Updated: Feb 15, 2017)
               <br/><p>For each problem instance X, two files are provided:</p>
               <ul>
                   <li><code>problem-X.txt</code> contains the actual text</li>
@@ -367,7 +367,9 @@
           </ul>
 
               <p>Note that while both metrics will be computed on a word-level, you still have to provide your solutions on a character-level (delegating the tokenization to the evaluator).</p>
-
+              <p>For your convenience, we provide the evaluator script written in Python.</p>
+              <p><a class="btn btn-default" href="../pan17-code/pan17_stylebreach_evaluator.zip">Download script</a></p>
+              <p>It takes three parameters: an input directory (the data set), an inputRun directory (your computed breaches) and an output directory where the results file is written to. Of course, you are free to modify the script according to your needs.</p>
 
           </div>
       </div>
