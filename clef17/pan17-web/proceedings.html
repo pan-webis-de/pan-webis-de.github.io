@@ -25,7 +25,7 @@
   <script src="../../js/respond.min.js"></script>
 <![endif]-->
 
-<link rel="shortcut icon" href="../pan16-figures/pan-icon-16x16.ico">
+<link rel="shortcut icon" href="../pan17-figures/pan-icon-16x16.ico">
 <!--
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
@@ -44,7 +44,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="../../index.html"><img src="../pan16-figures/pan-logo-small-lightgrey.png" alt="PAN" style="margin-top:-5px"></a>
+    <a class="navbar-brand" href="../../index.html"><img src="../pan17-figures/pan-logo-small-lightgrey.png" alt="PAN" style="margin-top:-5px"></a>
   </div>
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav navbar-right">
@@ -71,10 +71,10 @@
     <h1 id="task-description" class="page-header">
       Proceedings
       <div class="btn-group">
-        <a role="button" class="btn btn-default" href="../../clef15/pan15-web/proceedings.html"><span class="glyphicon glyphicon-chevron-left" style="color:grey;"></span></a>
+        <a role="button" class="btn btn-default" href="../../clef16/pan16-web/proceedings.html"><span class="glyphicon glyphicon-chevron-left" style="color:grey;"></span></a>
         <span role="button" class="btn btn-default" disabled="disabled">2017</span>
         <!--
-        <a role="button" class="btn btn-default" href="../../pan-16/pan16-web/proceedings.html"><span class="glyphicon glyphicon-chevron-right" style="color:grey;"></span></a>
+        <a role="button" class="btn btn-default" href="../../pan-17/pan17-web/proceedings.html"><span class="glyphicon glyphicon-chevron-right" style="color:grey;"></span></a>
         -->
         <span role="button" class="btn btn-default" disabled="disabled"><span class="glyphicon glyphicon-chevron-right" style="color:grey;"></span></span>
       </div>
@@ -122,27 +122,27 @@
 
 <div class="row">
   <div class="col-xs-12">
-    <h3>Author Diarization</h3>
+    <h3>Style Breach Detectuion</h3>
   </div>
 </div>
 
 <div class="row">
-  <div id="proceedings-notebooks-author-diarization" class="col-xs-12"></div>
+  <div id="proceedings-notebooks-style-breach-detection" class="col-xs-12"></div>
 </div>
 
 <div class="row">
   <div class="col-xs-12">
-    <h3>Author Obfuscation</h3>
+    <h3>Author Masking</h3>
   </div>
 </div>
 
 <div class="row">
-  <div id="proceedings-notebooks-author-obfuscation" class="col-xs-12"></div>
+  <div id="proceedings-notebooks-author-masking" class="col-xs-12"></div>
 </div>
 
 <div class="row">
   <div class="col-xs-12">
-    <h3>Author Profiling: Age Prediction and Gender Prediction</h3>
+    <h3>Author Profiling: Age Prediction and Language Variety Identification</h3>
   </div>
 </div>
 
@@ -167,16 +167,16 @@
 var urlOverview = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2017,overview&exclude=talk";
 var urlTalks    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2017,talk";
 var urlTask1    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2017,author-clustering&exclude=overview";
-var urlTask2    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2017,author-diarization&exclude=overview";
-var urlTask3    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2017,author-obfuscation&exclude=overview";
+var urlTask2    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2017,style-breach-detection&exclude=overview";
+var urlTask3    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2017,author-masking&exclude=overview";
 var urlTask4    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2017,author-profiling&exclude=overview";
 
 $(document).ready(function() {
   fetchPublicationsViewHtml(urlOverview, "#proceedings-overviews");
   fetchPublicationsViewHtml(urlTalks, "#proceedings-talks");
   fetchPublicationsViewHtml(urlTask1, "#proceedings-notebooks-author-clustering");
-  fetchPublicationsViewHtml(urlTask2, "#proceedings-notebooks-author-diarization");
-  fetchPublicationsViewHtml(urlTask3, "#proceedings-notebooks-author-obfuscation");
+  fetchPublicationsViewHtml(urlTask2, "#proceedings-notebooks-style-breach-detection");
+  fetchPublicationsViewHtml(urlTask3, "#proceedings-notebooks-author-masking");
   fetchPublicationsViewHtml(urlTask4, "#proceedings-notebooks-author-profiling");
 });
 

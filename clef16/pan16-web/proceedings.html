@@ -73,10 +73,7 @@
       <div class="btn-group">
         <a role="button" class="btn btn-default" href="../../clef15/pan15-web/proceedings.html"><span class="glyphicon glyphicon-chevron-left" style="color:grey;"></span></a>
         <span role="button" class="btn btn-default" disabled="disabled">2016</span>
-        <!--
-        <a role="button" class="btn btn-default" href="../../pan-16/pan16-web/proceedings.html"><span class="glyphicon glyphicon-chevron-right" style="color:grey;"></span></a>
-        -->
-        <span role="button" class="btn btn-default" disabled="disabled"><span class="glyphicon glyphicon-chevron-right" style="color:grey;"></span></span>
+        <a role="button" class="btn btn-default" href="../../clef17/pan17-web/proceedings.html"><span class="glyphicon glyphicon-chevron-right" style="color:grey;"></span></a>
       </div>
     </h1>
   </div>
@@ -132,12 +129,12 @@
 
 <div class="row">
   <div class="col-xs-12">
-    <h3>Author Obfuscation</h3>
+    <h3>Author Masking</h3>
   </div>
 </div>
 
 <div class="row">
-  <div id="proceedings-notebooks-author-obfuscation" class="col-xs-12"></div>
+  <div id="proceedings-notebooks-author-masking" class="col-xs-12"></div>
 </div>
 
 <div class="row">
@@ -168,7 +165,7 @@ var urlOverview = "http://www.uni-weimar.de/medien/webis/publications/pub-databa
 var urlTalks    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2016,talk";
 var urlTask1    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2016,author-clustering&exclude=overview";
 var urlTask2    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2016,author-diarization&exclude=overview";
-var urlTask3    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2016,author-obfuscation&exclude=overview";
+var urlTask3    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2016,author-masking&exclude=overview";
 var urlTask4    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2016,author-profiling&exclude=overview";
 
 $(document).ready(function() {
@@ -176,7 +173,7 @@ $(document).ready(function() {
   fetchPublicationsViewHtml(urlTalks, "#proceedings-talks");
   fetchPublicationsViewHtml(urlTask1, "#proceedings-notebooks-author-clustering");
   fetchPublicationsViewHtml(urlTask2, "#proceedings-notebooks-author-diarization");
-  fetchPublicationsViewHtml(urlTask3, "#proceedings-notebooks-author-obfuscation");
+  fetchPublicationsViewHtml(urlTask3, "#proceedings-notebooks-author-masking");
   fetchPublicationsViewHtml(urlTask4, "#proceedings-notebooks-author-profiling");
 });
 
