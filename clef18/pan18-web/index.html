@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PAN 2018</title> 
+
+<link href="../../css/bootstrap.min.css" rel="stylesheet" />
+<link href="../../css/prettify.css" rel="stylesheet" />
+
+<style>
+.navbar .navbar-nav {
+  font-weight: bold;
+}
+</style>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="../../js/html5shiv.js"></script>
+  <script src="../../js/respond.min.js"></script>
+<![endif]-->
+
+<link rel="shortcut icon" href="../pan18-figures/pan-icon-16x16.ico">
+<!--
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+-->
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom:0px;">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="../../index.html"><img src="../pan18-figures/pan-logo-small-lightgrey.png" alt="PAN" style="margin-top:-5px"></a>
+  </div>
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="../../index.html">Home</a></li>
+      <li class="active"><a href="index.html">PAN @ CLEF 2018:</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="proceedings.html">Proceedings</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tasks <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="author-identification.html">Author Identification</a></li>
+          <li><a href="author-profiling.html">Author Profiling</a></li>
+          <li><a href="author-obfuscation.html">Author Obfuscation</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="jumbotron" style="background-image:url('../pan18-figures/pan-fingerprint.png');background-repeat:no-repeat;background-position:right top;">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>
+          PAN @ CLEF 2018
+          <a href="../../clef17/pan17-web/index.html"><small data-toggle="tooltip" title="Previous year" class="glyphicon glyphicon-chevron-left"></small></a>
+          <small data-toggle="tooltip" title="Let's not get ahead of ourselves..." class="glyphicon glyphicon-chevron-right" style="color:lightgrey;"></small>
+<!--          <div class="pull-right text-right" style="padding:40px;"><a href="https://www.symanto.net/" target="_blank"><img width="300px" src="../pan18-figures/logo-symanto.png" alt="Symanto Group"></a><div style="font-size:7pt;margin-right:13px;margin-top:2px;">Sponsor</div></div>
+-->
+        </h1>
+        <p>This is the 18th evaluation lab on digital text forensics. PAN will be held as part of the <a href="http://clef2018.clef-initiative.eu" target="_blank">CLEF conference</a> in Avignon, France, on September 10-14, 2018. Evaluations will commence <a href="about.html#important-dates">from January till June</a>. We invite you to take part in any of the three tasks shown below.</p>
+        <p>
+          <a class="btn btn-default btn-large" href="about.html">Learn more »</a>
+          <a class="btn btn-primary btn-large" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfR_xoBuGU3q7o3EYPoItN28UPuZENjs3wlWYEX_EdRGUyRfA/viewform">Register now »</a>
+          <span class="badge"><span id="registered-total">0</span> already signed up</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container" style="padding-top:20px;">
+<!-- Tasks -->
+<div class="row">
+  <!--
+  <div class="col-md-4">
+    <h3>Plagiarism Detection</h3>
+    <p>Given a document, is it an original?</p>
+    <p>This task is divided into <strong>source retrieval</strong> and <strong>text alignment</strong>. Source retrieval is about searching for likely sources of a suspicious document. Text alignment is about matching passages of reused text between a pair of documents.</p>
+    <p><a class="btn btn-default" href="plagiarism-detection.html">Learn more »</a></p>
+  </div>
+  -->
+  <div class="col-md-4">
+    <h3>Author Identification</h3>
+    <p>Given a document, who wrote it?</p>
+<!--    <p>This task focuses on <strong>cross-domain authorship attribution</strong> (cross-fabdom attribution in fanfiction) and <strong>style change detection</strong>. </p> -->
+    <p><a class="btn btn-default" href="author-identification.html">Learn more »</a></p>
+ </div>
+  <div class="col-md-4">
+    <h3>Author Profiling</h3>
+    <!--<div class="pull-right text-right" style="padding:0 10px;"><a href="http://www.meaningcloud.com/" target="_blank"><img width="175px" src="../pan18-figures/logo-meaningcloud.png" alt="MeaningCloud"></a><div style="font-size:7pt;margin-top:-3px;">Sponsor</div></div>-->
+    <p>Given a document, what're its author's traits?</p>
+<!--
+    <p>This task focuses on <strong>gender and language variety identification</strong> on Twitter, providing a corpus of tweets annotated with <b>gender</b> and <b>language variety</b>.</p> -->
+    <p><a class="btn btn-default" href="author-profiling.html">Learn more »</a></p>
+  </div>
+  <div class="col-md-4">
+    <h3>Author Obfuscation</h3>
+    <p>Given a document, hide its author.</p>
+<!--    <p>This task works against identification and profiling by automatically paraphrasing a text to obfuscate its author's style. The tasks offered are <strong>author masking</strong> and <strong>obfuscation evaluation</strong>. -->
+    <p><a class="btn btn-default" href="author-obfuscation.html">Learn more »</a></p>
+  </div>
+</div>
+
+<!-- Keynotes -->
+<!--
+<div class="row">
+  <div class="col-md-12">
+    <h2>Keynote</h2>
+  </div>
+  <div class="col-xs-6">
+    <div class="pull-left"><img class="img-rounded" style="max-height:140px;margin:5px;" src="../pan17-figures/rossano.png" alt="Rossano Schifanella"></div>
+    <h4 class="media-heading">Profiling the sensorial, emotional and ironic life of a city</h4>
+    <p><a href="http://www.di.unito.it/~schifane/" target="_blank">Rossano Schifanella</a><br/>
+    <span style="font-size:10pt">University of Turin</span></p>
+    <p>Researchers have used large quantities of online data to study dynamics in novel ways. Consider the specific case of online networked individuals sharing geo-located, multimodal,  pieces of information in social media platforms, e.g., users of Twitter, Instagram, Facebook. Can their social dynamics be used to unveil the hidden dimensions that regulate the social life of our cities? To answer this question, our research has focused on understanding how people psychologically experience cities and, as a result, we have created new mapping tools that capture the aesthetic, olfactory and sonic layers of our cities, modeling happiness and use of figurative language, e.g., irony. The work presented in this talk mixes data mining, urban informatics, and computational social science to study how these dimensions relate to demographic, e.g., age or gender, and socio-economic factors, e.g., education, crime, race, or wealth, that characterize the profile of the modern urban fabric.</p>
+    <p><em>Rossano Schifanella is an Assistant Professor in Computer Science at the University of Turin, Italy, where he is a member of the Applied Research on Computational Complex Systems group. He is a visiting scientist at Nokia Bell Labs, Cambridge, UK, and a former visiting scientist at Yahoo Labs and at the Center for Complex Networks and Systems Research at Indiana University where he was applying computational methods to model social behavior in online platforms. His research embraces the creative energy of a range of disciplines across technology, computational social science, data visualization, and urban informatics. He is passionate about building new mapping tools that capture the sensorial layers of a city, and designing computational frameworks to model aesthetics, creativity, and figurative language in social media.</em></p>
+  </div>
+  <div class="col-xs-6">
+    <div class="pull-left"><img class="img-rounded" style="max-height:140px;margin:5px;" src="../pan17-figures/tatjana.jpg" alt="Tatiana Litvinova"></div>
+    <h4 class="media-heading">RusProfiling: Analyzing Russian written texts to detect deception and identify the author’s personality and gender</h4>
+    <p><a href="http://en.rusprofilinglab.ru/" target="_blank">Tatiana Litvinova</a><br/>
+    <span style="font-size:10pt">RusProfiling Lab</span></p>
+    <p>Authorship profiling and text-based deception detection have been the focus of attention in recent years, partly because of a rapid growth of Internet communication and necessity to detect fraud in online reviews and dating profiles, reveal suicidal tendencies in authors of texts on social media, as well as to assess who likes/dislikes these or those products and services (male, female, extroverts…) using linguistic analysis of their reviews, etc. Industrial companies are in need of techniques for quick and valid assessment of candidates’ intelligence and personality, and analyzing texts could provide such opportunities. Author profiling and deception detection domain is rapidly developing but not for Slavic languages. They have long been beyond the scope of relevant studies, which is largely due to the fact that there were no corresponding text corpora available and no efficient methods of natural language processing in place. In this keynote we present the results of the research aimed at deception detection and personality and gender recognition in Russian written texts. In this research RusPersonality was used, which is by far the largest corpus of written texts in Slavic languages with rich metadata (information on the authors of the texts – gender, age, occupation, scores on different personality traits, results of neuropsychological assessment, etc. and information on the texts – genre, topic, deceptive/truthful, etc.). The second source of material for research conducted in RusProfiling Lab is social media. In most of the experiments topic-independent features were used. Special attention in the talk will be paid to the estimation of a likelihood of self-destructive (including suicidal as the most severe form) behavior using linguistic analyses of writing. The keynote concludes by encouraging a discussion on the necessity to seek for topic-independent and language-independent features in authorship profiling and for explanation of the estimated correlations between linguistics parameters of written texts and characteristics of their authors.</p>
+    <p><em>Tatiana Litvinova is head of Corpus Sociolinguistics and Authorship Profiling Lab (<a href="http://en.rusprofilinglab.ru/">RusProfiling Lab</a>). This is a joint laboratory of Voronezh State University (Voronezh, Russia), Voronezh State Pedagogical University (Voronezh, Russia) and The Kurchatov Institute (Moscow, Russia). The studies conducted in RusProfiling Lab and dedicated to authorship profiling and deception detection have been funded by leading Russian scientific funds. Lab is also in collaboration with industrial companies to get real-world data and to develop authorship profiling techniques that would come in handy in HR. Tatiana has a PhD in Russian Linguistics from Voronezh State University (Voronezh, Russia). She is one of the organizers of RusProfiling Shared Task on Gender Prediction in Cross-Genre perspective which will be held in conjunction with FIRE in December 2017.</em></p>
+  </div>
+</div>
+-->
+
+<div class="row" style="padding-top:60px;">
+  <div class="col-xs-6 col-sm-4 col-md-3"><a href="http://www.webis.de" target="_blank" class="thumbnail" style="border:none;min-height:75px;"><img src="../pan18-figures/logo-bauhaus-universitaet-weimar.png" alt="Bauhaus-Universtät Weimar logo" class="img-responsive" style="max-height:50px;"></a></div>
+  <div class="col-xs-6 col-sm-4 col-md-3"><a href="http://www.upv.es" target="_blank" class="thumbnail" style="border:none;min-height:75px;"><img src="../pan18-figures/logo-universitat-politecnica-de-valencia.png" alt="Universitat Politecnica de Valencia logo" class="img-responsive" style="max-height:50px;"></a></div>
+  <div class="col-xs-6 col-sm-4 col-md-3"><a href="http://www.aegean.gr" target="_blank" class="thumbnail" style="border:none;min-height:75px;"><img src="../pan18-figures/logo-university-of-the-aegean.gif" alt="University of the Aegean logo" class="img-responsive" style="max-height:50px;"></a></div>
+  <div class="col-xs-6 col-sm-4 col-md-3"><a href="http://www.autoritas.es" target="_blank" class="thumbnail" style="border:none;min-height:75px;"><img src="../pan18-figures/logo-autoritas.jpg" alt="Autoritas Consulting logo" class="img-responsive" style="max-height:50px;"></a></div>
+  <div class="col-xs-6 col-sm-4 col-md-3"><a href="http://clef2018.clef-initiative.eu/" target="_blank" class="thumbnail" style="border:none;min-height:75px;"><img src="../pan18-figures/logo-clef18.jpg" alt="CLEF'18 logo" class="img-responsive" style="max-height:70px;"></a></div>
+  <div class="col-xs-6 col-sm-4 col-md-3"><a href="http://www.clef-initiative.eu/" target="_blank" class="thumbnail" style="border:none;min-height:75px;"><img src="../pan18-figures/logo-clef.png" alt="CLEF Initiative logo" class="img-responsive" style="max-height:70px;"></a></div>
+</div>
+
+<footer>
+  <p class="pull-right">© pan.webis.de</p>
+</footer>
+
+</div>
+
+<script src="../../js/jquery.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript">
+  $('.jumbotron').tooltip({
+    selector: "[data-toggle=tooltip]",
+    container: "body"
+  })
+</script>
+<script src="../../js/prettify.js"></script>
+<script>
+  !function ($) {
+    $(function(){
+      window.prettyPrint && prettyPrint()   
+    })
+  }(window.jQuery)
+</script>
+
+<!-- Update the registration statistics. -->
+<script type="text/javascript">
+  $.ajax({
+    url: "https://spreadsheets.google.com/feeds/cells/0AlwcskAJGamSdEN2ZUQ4Uk44cW13XzQ4UDRNTDR0V3c/od5/public/basic?min-row=5&min-col=1&max-row=1&max-col=1&alt=json",
+    cache: false,
+    dataType: "json"
+  }).done(function(json) {
+    $(json["feed"]["entry"]).each(function() {
+      var title = this["title"]["$t"];
+      var content = this["content"]["$t"];
+      switch (title) {
+      case "A1":
+        $("#registered-total").text(content)
+      case "A2":
+        $("#registered-plagiarism-detection").text(content)
+      case "A3":
+        $("#registered-author-identification").text(content)
+      case "A4":
+        $("#registered-author-profiling").text(content)
+      case "A5":
+        $("#registered-countries").text(content)
+      }
+    });
+  });
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-70770005-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
+
