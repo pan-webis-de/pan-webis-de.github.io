@@ -112,22 +112,22 @@
 
 <div class="row">
   <div class="col-xs-12">
-    <h3>Author Clustering</h3>
+    <h3>Authorship Attribution</h3>
   </div>
 </div>
 
 <div class="row">
-  <div id="proceedings-notebooks-author-clustering" class="col-xs-12"></div>
+  <div id="proceedings-notebooks-authorship attribution" class="col-xs-12"></div>
 </div>
 
 <div class="row">
   <div class="col-xs-12">
-    <h3>Style Breach Detectuion</h3>
+    <h3>Style Change Detection</h3>
   </div>
 </div>
 
 <div class="row">
-  <div id="proceedings-notebooks-style-breach-detection" class="col-xs-12"></div>
+  <div id="proceedings-notebooks-style-change-detection" class="col-xs-12"></div>
 </div>
 
 <div class="row">
@@ -166,7 +166,7 @@
 <script>
 var urlOverview = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2018,overview&exclude=talk";
 var urlTalks    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2018,talk";
-var urlTask1    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2018,author-clustering&exclude=overview";
+var urlTask1    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2018,authorship-attribution&exclude=overview";
 var urlTask2    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2018,style-breach-detection&exclude=overview";
 var urlTask3    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2018,author-masking&exclude=overview";
 var urlTask4    = "http://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2018,author-profiling&exclude=overview";
@@ -174,7 +174,7 @@ var urlTask4    = "http://www.uni-weimar.de/medien/webis/publications/pub-databa
 $(document).ready(function() {
   fetchPublicationsViewHtml(urlOverview, "#proceedings-overviews");
   fetchPublicationsViewHtml(urlTalks, "#proceedings-talks");
-  fetchPublicationsViewHtml(urlTask1, "#proceedings-notebooks-author-clustering");
+  fetchPublicationsViewHtml(urlTask1, "#proceedings-notebooks-authorship-attribution");
   fetchPublicationsViewHtml(urlTask2, "#proceedings-notebooks-style-breach-detection");
   fetchPublicationsViewHtml(urlTask3, "#proceedings-notebooks-author-masking");
   fetchPublicationsViewHtml(urlTask4, "#proceedings-notebooks-author-profiling");
