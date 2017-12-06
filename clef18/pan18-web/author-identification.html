@@ -92,32 +92,22 @@
    <p>Authorship attribution is an important problem in information retrieval and computational linguistics but also in applied areas such as law and journalism where knowing the author of a document (such as a ransom note) may enable e.g. law enforcement to save lives. The most common framework for testing candidate algorithms is the <strong>closed-set attribution</strong> task: given a sample of reference documents from a restricted and finite set of candidate authors, the task is to determine the most likely author of a previously unseen document of unknown authorship? This task may be quite challenging when documents of known and unknown authorship come from different domains (e.g., thematic area, genre). 
 	<p>In this edition of PAN, for the first time, we focus on <strong>cross-domain attribution</strong> applied to <strong>Fanfiction</strong>. Fanfiction refers to fictional forms of literature which are nowadays produced by admirers ('fans') of a certain author (e.g. J.K. Rowling), novel ('Pride and Prejudice'), TV series (Sherlock Holmes), etc. The fans heavily borrow from the original work's theme, atmosphere, style, characters, story world etc. to produce new fictional literature, i.e. the so-called <strong>fanfics</strong>. This is why fanfiction is also known as transformative literature and has generated a number of controversies in recent years related to the intellectual rights property of the original authors (cf. plagiarism). Fanfiction, however, is typically produced by fans without any explicit commercial goals. The publication of fanfics typically happens online, on informal community platforms that are dedicated to making such literature accessible to a wider audience (e.g. <a href=https://www.fanfiction.net>fanfiction.net</a>). The original work of art or genre is typically refered to as a <strong>fandom</strong>.</p>
 	<p>The cross-domain attribution task in this edition of PAN can be more accurately described as <strong>cross-fandom attribution in fanfiction</strong>. In more detail, all documents of unknown authorship are fanfics of the same fandom (target fandom) while the documents of known authorship by the candidate authors are fanfics of several fandoms (other than the target-fandom). </p>    
-<!--
+
 <div class="panel panel-default">
       <div class="panel-heading">Task</div>
-      <div class="panel-body">Given a collection of (up to 50) short documents (paragraphs extracted from larger documents), identify authorship links and groups of documents by the same author. All documents are single-authored, in the same language, and belong to the same genre. However, the topic or text-length of documents may vary. The number of distinct authors whose documents are included in the collection is not given.</div>
+      <div class="panel-body">more info coming soon</div>
     </div>
     <div class="panel panel-default">
-      <div class="panel-heading">Training Phase</div>
-      <div class="panel-body"><p>To develop your software, we provide you with a training corpus that comprises a set of author clustering problems in <strong>3 languages</strong> (English, Dutch, and Greek) and <strong>2 genres</strong> (newspaper articles and reviews). Each problem consists of a set of documents in the same language and genre. However, their topic may differ and the document lengths vary from a few hundred to a few thousand words.</p>
-	  <p>The documents of each problem are located in a separate folder. The file <code>info.json</code> describes all required information for each clustering problem. In more detail, the language (either <code>"en"</code>, <code>"nl"</code>, or <code>"gr"</code> for English, Dutch and Greek, respectively), genre (either <code>"articles"</code> or <code>"reviews"</code>), and the folder of each problem (relative path).</p>
-	<pre class="prettyprint lang-py" style="overflow-x:auto">
-[
-   {"language": "en", "genre": "articles", "folder": "problem001"},
-   ...
-]
-	</pre>
-	<p>The ground truth data of the training corpus consists of two files for each clustering problem: <code>clustering.json</code> and <code>ranking.json</code> similar to the files described in the <strong>Output</strong> section (see details below). All ground truth files are located in the <code>truth</code> folder.</p>
-	<p><a class="btn btn-default" target="_blank" href="http://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-17/pan17-data/pan17-author-clustering-training-dataset-2017-02-15.zip">Download corpus</a> (Updated: Feb 17, 2017)</p>
+      <div class="panel-heading">Development Phase</div>
+      <div class="panel-body">more info coming soon
 </div>
     </div>
     <div class="panel panel-default">
       <div class="panel-heading">Evaluation Phase</div>
-      <div class="panel-body">Once you finished tuning your approach to achieve satisfying performance on the training corpus, your software will be tested on the evaluation corpus. During the competition, the evaluation corpus will not be released publicly. Instead, we ask you to <strong>submit your software</strong> for evaluation at our site as described below.
-<br>After the competition, the evaluation corpus will become available including ground truth data. This way, you have all the necessities to evaluate your approach on your own, yet being comparable to those who took part in the competition.
-	<p><a class="btn btn-default" target="_blank" href="http://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-17/pan17-data/pan17-author-clustering-test-dataset-2017-03-14.zip">Download evaluation corpus</a></p>
+      <div class="panel-body">more info coming soon
 	    </div></div>
-    <div class="panel panel-default">
+<!--
+<div class="panel panel-default">
       <div class="panel-heading">Output</div>
       <div class="panel-body">
 <p>Your system should produce <strong>two output files</strong> in <a href="http://www.json.org/">JSON</a>:</p>
