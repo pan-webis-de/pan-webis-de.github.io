@@ -91,12 +91,13 @@
     <h2 id="cross-domain">Cross-domain Authorship Attribution</h2>
     <p>Authorship attribution is an important problem in information retrieval and computational linguistics but also in applied areas such as law and journalism where knowing the author of a document (such as a ransom note) may enable e.g. law enforcement to save lives. The most common framework for testing candidate algorithms is the <strong>closed-set attribution</strong> task: given a sample of reference documents from a restricted and finite set of candidate authors, the task is to determine the most likely author of a previously unseen document of unknown authorship? This task may be quite challenging when documents of known and unknown authorship come from different domains (e.g., thematic area, genre). 
 	<p>In this edition of PAN, for the first time, we focus on <strong>cross-domain attribution</strong> applied to <strong>Fanfiction</strong>. Fanfiction refers to fictional forms of literature which are nowadays produced by admirers ('fans') of a certain author (e.g. J.K. Rowling), novel ('Pride and Prejudice'), TV series (Sherlock Holmes), etc. The fans heavily borrow from the original work's theme, atmosphere, style, characters, story world etc. to produce new fictional literature, i.e. the so-called <strong>fanfics</strong>. This is why fanfiction is also known as transformative literature and has generated a number of controversies in recent years related to the intellectual rights property of the original authors (cf. plagiarism). Fanfiction, however, is typically produced by fans without any explicit commercial goals. The publication of fanfics typically happens online, on informal community platforms that are dedicated to making such literature accessible to a wider audience (e.g. <a href=https://www.fanfiction.net>fanfiction.net</a>). The original work of art or genre is typically refered to as a <strong>fandom</strong>.</p>
-	<p>The cross-domain attribution task in this edition of PAN can be more accurately described as <strong>cross-fandom attribution in fanfiction</strong>. In more detail, all documents of unknown authorship are fanfics of the same fandom (target fandom) while the documents of known authorship by the candidate authors are fanfics of several fandoms (other than the target-fandom). </p>
+	<p>The cross-domain attribution task in this edition of PAN can be more accurately described as <strong>cross-fandom attribution in fanfiction</strong>. In more detail, all documents of unknown authorship are fanfics of the same fandom (target fandom) while the documents of known authorship by the candidate authors are fanfics of several fandoms (other than the target-fandom).</p>
 	
     <div class="panel panel-default">
       <div class="panel-heading">Task</div>
-      <div class="panel-body">Given a set of documents (known fanfics) by a small number (up to 20) of candidate authors, identify the authors of another set of documents (unknown fanfics). Each candidate author has contributed at least one of the unknown fanfics, which all belong to the same target fandom. The known fanfics belong to several fandoms (excluding the target fandom), although not necessarily the same for all candidate authors. An equal number of fanfics per candidate author is provided. In contrast, the unknown fanfics are not equally distributed over the authors. The text-length of fanfics varies from 500 to 1,000 tokens. Language of documents may be <strong>English, French, Italian, Polish, or Spanish</strong></div>
-    </div>
+      <div class="panel-body">Given a set of documents (known fanfics) by a small number (up to 20) of candidate authors, identify the authors of another set of documents (unknown fanfics). Each candidate author has contributed at least one of the unknown fanfics, which all belong to the same target fandom. The known fanfics belong to several fandoms (excluding the target fandom), although not necessarily the same for all candidate authors. An equal number of fanfics per candidate author is provided. In contrast, the unknown fanfics are not equally distributed over the authors. The text-length of fanfics varies from 500 to 1,000 tokens. All documents are in the same language that may be <strong>English, French, Italian, Polish, or Spanish</strong>.
+	 	</div>
+    	</div>
     <div class="panel panel-default">
       <div class="panel-heading">Development Phase</div>
       <div class="panel-body"><p>To develop your software, we provide you with a corpus with highly similar characteristics to the evaluation corpus. It comprises a set of cross-domain authorship attribution problems in each of the following 5 languages: English, French, Italian, Polish, and Spanish. Note that we specifically avoid to use the term 'training corpus' because <strong>the sets of candidate authors of the developing and the evaluation corpora are not overlapping</strong>. Therefore, your approach should not be designed to particularly handle the candidate authors of the development corpus. </p>
@@ -127,7 +128,7 @@
 	</pre>
 
 	<p><a class="btn btn-default" target="_blank" href="">Download corpus</a> </p>
-	<p> This is a password-protected file. To obtain the password, first <a href=https://docs.google.com/forms/d/e/1FAIpQLSfR_xoBuGU3q7o3EYPoItN28UPuZENjs3wlWYEX_EdRGUyRfA/viewform>register</a> for the author identification task at PAN-2018, and then <a href="mailto:pan@webis.de?Subject=PAN-18" target="_top">notify</a> PAN organizers.
+	<p> This is a password-protected file. To obtain the password, first <a href=https://docs.google.com/forms/d/e/1FAIpQLSfR_xoBuGU3q7o3EYPoItN28UPuZENjs3wlWYEX_EdRGUyRfA/viewform>register</a> for the author identification task at PAN-2018, and then <a href="mailto:pan@webis.de?Subject=PAN-18" target="_top">notify</a> PAN organizers. </p>
 </div>
     </div>
     <div class="panel panel-default">
@@ -144,9 +145,9 @@
 <pre class="prettyprint lang-py" style="overflow-x:auto">
 [
     { "unknown-document":  "unknown00001.txt", 
-      "predicted-author":  "candidate00003.txt" },
+      "predicted-author":  "candidate00003" },
     { "unknown-document":  "unknown00002.txt", 
-      "predicted-author":  "candidate00005.txt" },
+      "predicted-author":  "candidate00005" },
 	…
 ]
 </pre>
@@ -154,7 +155,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">Performance Measures</div>
       <div class="panel-body">
-	  <p>The submissions will be evaluated in each attribution problem separately based on their <strong>macro-average classification accuracy</strong> (macro-A). Participants will be ranked according to their average macro-A across all attribution problems of the evaluation corpus. </p>
+	  <p>The submissions will be evaluated in each attribution problem separately based on their <strong>macro-averaged F1 score</strong>. Participants will be ranked according to their average macro-F1 across all attribution problems of the evaluation corpus. </p>
 	</div></div>
 	  <div class="panel panel-default">
       <div class="panel-heading">Submission</div>
