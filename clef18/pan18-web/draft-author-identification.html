@@ -100,7 +100,7 @@
     	</div>
     <div class="panel panel-default">
       <div class="panel-heading">Development Phase</div>
-      <div class="panel-body"><p>To develop your software, we provide you with a corpus with highly similar characteristics to the evaluation corpus. It comprises a set of cross-domain authorship attribution problems in each of the following 5 languages: English, French, Italian, Polish, and Spanish. Note that we specifically avoid to use the term 'training corpus' because <strong>the sets of candidate authors of the developing and the evaluation corpora are not overlapping</strong>. Therefore, your approach should not be designed to particularly handle the candidate authors of the development corpus. </p>
+      <div class="panel-body"><p>To develop your software, we provide you with a corpus with highly similar characteristics to the evaluation corpus. It comprises a set of cross-domain authorship attribution problems in each of the following 5 languages: English, French, Italian, Polish, and Spanish. Note that we specifically avoid to use the term 'training corpus' because <strong>the sets of candidate authors of the development and the evaluation corpora are not overlapping</strong>. Therefore, your approach should not be designed to particularly handle the candidate authors of the development corpus. </p>
 	  <p>Each problem consists of a set of known fanfics by each candidate author and a set of unknown fanfics located in separate folders. The file <code>problem-info.json</code> that can be found in the main folder of each problem, shows the name of folder of unknown documents and the list of names of candidate author folders. </p>
 	<pre class="prettyprint lang-py" style="overflow-x:auto">
 
@@ -168,7 +168,7 @@
 	<pre class="prettyprint lang-py" style="overflow-x:auto">
 > mySoftware -i EVALUATION-DIRECTORY -o OUTPUT-DIRECTORY
 	</pre>
-	<p>Within <code>EVALUATION-DIRECTORY</code> a <code>collection-info.json</code> file and a number of folders, one for each attribution problem, will be found (similar to the developing corpus as described above). For each clustering problem, the output file should be written in <code>OUTPUT-DIRECTORY</code>.</p>
+	<p>Within <code>EVALUATION-DIRECTORY</code> a <code>collection-info.json</code> file and a number of folders, one for each attribution problem, will be found (similar to the development corpus as described above). For each clustering problem, the output file should be written in <code>OUTPUT-DIRECTORY</code>.</p>
         <p>You can choose freely among the available programming languages and among the operating systems Microsoft Windows and Ubuntu. We will ask you to deploy your software onto a virtual machine that will be made accessible to you after registration. You will be able to reach the virtual machine via ssh and via remote desktop. More information about how to access the virtual machines can be found in the user guide below:</p>
         <p><a class="btn btn-default" href="http://www.tira.io/static/tira-vm-user-guide.pdf">PAN Virtual Machine User Guide »</a></p>
         <p>Once deployed in your virtual machine, we ask you to access TIRA at <a href="http://www.tira.io">www.tira.io</a>, where you can self-evaluate your software on the test data.</p>
