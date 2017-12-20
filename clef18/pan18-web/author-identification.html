@@ -273,73 +273,89 @@
 </div>
 
   <div class="col-sm-6">
-    <h2 id="style-breach-detection">Style Change Detection</h2>
-<!--
-      <p>While many approaches target the problem of identifying authors of whole documents, research on investigating multi-authored documents is sparse. To narrow the gap, the <a href="../../clef16/pan16-web/author-identification.html">author diarization</a> task of the PAN-2016 edition already focused on collaboratively written documents, attempting to cluster text by authors within documents. This year we modify the problem by asking participants to detect style breaches within documents, i.e., to locate borders where authorships change.</p>
-      <p>The problem is therefore related to the <strong>text segmentation</strong> problem, with the difference that the latter usually focus on detecting switches of topics or <i>stories</i>. In contrast to that, this task aims to find borders based on the writing style, disregarding the specific content. As the goal is to only find borders, it is irrelevant to identify or cluster authors of segments. A simple example consisting of four breaches of style (switches / borders) is illustrated below:</p>
-      <p align="center"><img src="../pan18-figures/style-breach-sample.png"/></p> -->
+    <h2 id="style-change-detection">Style Change Detection</h2>
+
+      <p>While many approaches target the problem of identifying authors of whole documents, research on investigating multi-authored documents is sparse. In the last two PAN editions we therefore aimed to narrow the gap by at first proposing a task to cluster by authors inside documents (<a href="../../clef16/pan16-web/author-identification.html">Author Diarization, 2016</a>).
+
+          Relaxing the problem, the follow-up task (<a href="../../clef17/pan17-web/author-identification.html">Style Breach Detection, 2017</a>) focused only on identifying <i>style breaches</i>, i.e., to find text positions where the authorship and thus the style changes. Nevertheless, the results of participants revealed relatively low accuracies and indicated that this task is still too hard to tackle.
+
+      <p>Consequently, this year we propose a <b>substantially simplified task</b>, while still beeing a continuation of last year's task: The only question that should be answered by participants is whether there <b>exists</b> a style change in a given document or not. Further, we changed the name to <i>Style <b>Change</b> Detection</i>, in order to reflect the task more intuitively.
+  </p>
+
+      Given a document, participants thus should apply intrinsic analyses to decide if the document is written by one or more authors, i.e., if there exist style changes. While the precedent task demanded to specifically locate the exact position of such changes, this year we only ask for a <b>binary answer</b> per document:
+      <ul>
+          <li><code>yes</code>: the document contains at least one style change (is written by at least two authors)</li>
+          <li><code>no</code>: the document has no style changes (is written by a single author)</li>
+      </ul>
+
+
+      <p>In this sense it is irrelevant to identify the number of style changes, the specific positions, or to build clusters of authors. You may adapt existing algorithms other problem types such as <b>intrinsic plagiarism detection</b> or <b>text segmentation</b>. For example, if you already have an intrinsic plagiarism detection system, you can apply your method on this task by outputting <code>yes</code> if you found a plagiarism case or <code>no</code> otherwise (please note that intrinsic plagiarism detection methods may need adaptions as they naturally are not designed to handle uniformly distributed author texts).</p>
+
+      <p>
+      The following figure illustrates some possible scenarios and the expected output:</p>
+      <p align="center"><img class="img-responsive" src="../pan18-figures/style-change-sample.png"/></p>
+
 
       <div class="panel panel-default"> 
 
           <div class="panel-heading">Task</div>
-          <div class="panel-body">more info coming soon
-<!--              <p>Given a document, determine whether it is multi-authored, and if yes, find the borders where authors switch.</p>
-              <p>All documents are provided in English and may contain zero up to arbitrarily many switches (style breaches). Thereby switches of authorships may only occur at the end of sentences, i.e., not within.</p> -->
+          <div class="panel-body">
+              <p>Given a document, determine whether it contains style changes or not, i.e., if it was written by a single or multiple authors.</p>
+              <p>All documents are provided in English and may contain zero up to arbitrarily many style changes.</p>
           </div>
       </div>
 
       <div class="panel panel-default">
-          <div class="panel-heading">Training Phase</div>
-          <div class="panel-body">more info coming soon
-<!--              <p>To develop your algorithms, a training data set including corresponding solutions is provided.</p>
-              <p><a class="btn btn-default" target="_blank" href="http://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-17/pan17-data/pan17-style-breach-detection-training-dataset-2017-02-15.zip">Download corpus</a> (Updated: Feb 15, 2017)
-              <br/><p>For each problem instance X, two files are provided:</p>
+          <div class="panel-heading">Development Phase</div>
+          <div class="panel-body">
+              <p>To develop your algorithms, a training data set including corresponding solutions will be provided. Moreover and for your convenience, within the training data set we provide the exact locations of all style changes, as they may be helpful to develop algorithms.</p>
+              <p><i>The data set will be provided soon.</i></p>
+              <!--<p><a class="btn btn-default" target="_blank" href="http://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-17/pan17-data/pan17-style-breach-detection-training-dataset-2017-02-15.zip">Download corpus</a> (Updated: Feb 15, 2017)
+              -->
+
+              <p>For each problem instance X, two files are provided:</p>
               <ul>
                   <li><code>problem-X.txt</code> contains the actual text</li>
                   <li><code>problem-X.truth</code> contains the ground truth, i.e., the correct solution in <a href="http://www.json.org/">JSON</a> format:
 <pre class="prettyprint lang-py" style="overflow-x:auto">
 {
-    "borders": [
-        character_position_border_1,
-        character_position_border_2,
+    "changes": true/false,
+    "positions": [
+        character_position_change_1,
+        character_position_change_2,
         …
     ]
 }
 </pre>
 
                       <p>
-                          To identify a border, the absolute character position <strong>of the first non-whitespace character of the new segment</strong> is used. The document starts at character position 0. An example that could match the borders of the image above could look as follows:</p>
-                      <pre class="prettyprint lang-py" style="overflow-x:auto">
-{
-    "borders": [1709, 3119, 3956, 5671]
-}
-</pre>
-
-                      <p>An empty array indicates that the document is single-authored, i.e., contains no style switches:</p>
-<pre class="prettyprint lang-py" style="overflow-x:auto">
-{
-    "borders": []
-}
-</pre>
+                          If present, the absolute character positions of the first non-whitespace character of the new segment is provided in the solution (<code>positions</code>). Please note that this information is only for development purposes and not used for the evaluation.</p>
                   </li>
-              </ul> -->
+              </ul>
           </div>
       </div>
 
       <div class="panel panel-default">
           <div class="panel-heading">Evaluation Phase</div>
-          <div class="panel-body">more info coming soon
-		  <!-- Once you finished tuning your approach to achieve satisfying performance on the training corpus, your software will be tested on the evaluation corpus. During the competition, the evaluation corpus will not be released publicly. Instead, we ask you to <strong>submit your software</strong> for evaluation at our site as described below.
+          <div class="panel-body">
+		  Once you finished tuning your approach to achieve satisfying performance on the training corpus, your software will be tested on the evaluation corpus. During the competition, the evaluation corpus will not be released publicly. Instead, we ask you to <strong>submit your software</strong> for evaluation at our site as described below.
               <br>After the competition, the evaluation corpus will become available including ground truth data. This way, you have all the necessities to evaluate your approach on your own, yet being comparable to those who took part in the competition. 
--->
-          </div></div>
 
-<!--
+          </div>
+      </div>
+
+
       <div class="panel panel-default">
           <div class="panel-heading">Output</div>
           <div class="panel-body">
              <p>
-                 In general, the data structure during the evaluation phase will be similar to that in the training phase, with the exception that the ground truth files are missing. Thus, for each given problem <code>problem-X.txt</code> your software should output the missing solution file <code>problem-X.truth</code>. The output syntax should thereby be exactly like it is described in the training phase section.
+                 In general, the data structure during the evaluation phase will be similar to that in the training phase, with the exception that the ground truth files are missing. Thus, for each given problem <code>problem-X.txt</code> your software should output the missing solution file <code>problem-X.truth</code>. The output should be a JSON object containing of a single property:
+<pre class="prettyprint lang-py" style="overflow-x:auto">
+{
+    "changes": true/false
+}
+</pre>
+              Output <code>"changes" : true</code> if there are style changes in the document, and <code>"changes" : false</code> otherwise.
              </p>
           </div>
       </div>
@@ -348,17 +364,7 @@
       <div class="panel panel-default">
           <div class="panel-heading">Performance Measures</div>
           <div class="panel-body">
-              <p>To evaluate the predicted style breaches, two metrics will be used:
-                  <ul>
-                    <li>the <strong>WindowDiff</strong> metric (<a href="http://people.ischool.berkeley.edu/~hearst/papers/pevzner-01.pdf">Pevzner, Hearst, 2002</a>) was proposed for general text segmentation evaluation and is still the de facto standard for such problems. It gives an error rate (between 0 to 1, 0 indicating a perfect prediction) for predicting borders by penalizing near-misses less than other/complete misses or extra borders.</li>
-              <li>a more recent adaption of the WindowDiff metric is the <strong>WinPR</strong> metric (<a href="http://www.aclweb.org/anthology/N12-1038.pdf">Scaiano, Inkpen, 2012</a>). It enhances it by computing the common information retrieval measures precision (WinP) and recall (WinR) and thus allows to give a more detailed, qualitative statement about the prediction. For the final ranking of all participating teams, the F-score of WinPR will be used.</li>
-          </ul>
-
-              <p>Note that while both metrics will be computed on a word-level, you still have to provide your solutions on a character-level (delegating the tokenization to the evaluator).</p>
-              <p>For your convenience, we provide the evaluator script written in Python.</p>
-              <p><a class="btn btn-default" href="../pan17-code/pan17_stylebreach_evaluator.zip">Download script</a></p>
-              <p>It takes three parameters: an input directory (the data set), an inputRun directory (your computed breaches) and an output directory where the results file is written to. Of course, you are free to modify the script according to your needs.</p>
-
+              <p>The performance of the approaches will simply be measured and ranked by computing the <b>accuracy</b>.
           </div>
       </div>
 
@@ -379,13 +385,14 @@
           </div>
       </div>
 
--->
+
+
       <div class="panel panel-default">
           <div class="panel-heading">Related Work</div>
           <div class="panel-body">
               <p>We refer you to:</p>
               <ul><li>
-                  <a href="../../clef17/pan17-web/proceedings.html">PAN@CLEF'17</a> (<i>Overview of the Author Identification Task at PAN-2018</i> and <i>Style Breach Detection</i> section)
+                  <a href="../../clef17/pan17-web/proceedings.html">PAN@CLEF'17</a> (<i>Overview of the Author Identification Task at PAN-2017</i> and <i>Style Breach Detection</i> section)
               </li><li>
                   <a href="../../clef16/pan16-web/proceedings.html">PAN@CLEF'16</a> (<i>Clustering by Authorship Within and Across Documents</i> and <i>Author Diarization</i> section)
               </li>
