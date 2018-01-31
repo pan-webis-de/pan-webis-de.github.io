@@ -286,7 +286,13 @@
       <div class="panel panel-default">
           <div class="panel-heading">Development Phase</div>
           <div class="panel-body">
-              <p>To develop your algorithms, a training data set including corresponding solutions will be provided. Moreover and for your convenience, within the training data set we provide the exact locations of all style changes, as they may be helpful to develop algorithms.</p>
+              <p>To develop your algorithms, a data set including corresponding solutions is provided:</p>
+                  <ul>
+                    <li>a <strong>training</strong> set: contains 50% of the whole dataset and includes solutions. Use this set to feed/train your models.</li>
+                      <li>a <strong>validation</strong> set: contains 25% of the whole dataset and includes solutions. Use this set to evaluate and optimize your models.</li>
+                      <li>a <strong>test</strong> set: contains 25% of the whole dataset and does not include solutions. This set is used for evaluation (see later).</li>
+                  </ul>
+              <p>The whole data set is based on user posts from various sites of the <a href="https://stackexchange.com">StackExchange network</a>, covering different topics and containing approximately 300 to 1000 tokens per document. Moreover and for your convenience, within the training/validation data set the exact locations of all style changes are provided, as they may be helpful to develop your algorithms.</p>
               <p><i>The data set will be provided soon.</i></p>
               <!--<p><a class="btn btn-default" target="_blank" href="http://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-17/pan17-data/pan17-style-breach-detection-training-dataset-2017-02-15.zip">Download corpus</a> (Updated: Feb 15, 2017)
               -->
@@ -316,7 +322,7 @@
       <div class="panel panel-default">
           <div class="panel-heading">Evaluation Phase</div>
           <div class="panel-body">
-		  Once you finished tuning your approach to achieve satisfying performance on the training corpus, your software will be tested on the evaluation corpus. During the competition, the evaluation corpus will not be released publicly. Instead, we ask you to <strong>submit your software</strong> for evaluation at our site as described below.
+		  Once you finished tuning your approach to achieve satisfying performance on the training corpus, your software will be tested on the evaluation corpus (test data set). You can expect the test data set to be similar to the validation data set, i.e., also based on StackExchange user posts and of similar size than the validation set. During the competition, the evaluation corpus will not be released publicly. Instead, we ask you to <strong>submit your software</strong> for evaluation at our site as described below.
               <br>After the competition, the evaluation corpus will become available including ground truth data. This way, you have all the necessities to evaluate your approach on your own, yet being comparable to those who took part in the competition. 
 
           </div>
