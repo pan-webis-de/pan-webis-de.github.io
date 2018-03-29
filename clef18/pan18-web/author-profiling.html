@@ -147,9 +147,22 @@
   <pre class="prettyprint lang-xml" style="overflow-x: auto;">
   &lt;author id="author-id"
 	  lang="en|es|ar"
-	  gender="male|female"
+	  gender_txt="male|female"
+	  gender_img="male|female"
+	  gender_comb="male|female"
   /&gt;
   </pre>
+	      <p>We ask you to provide with three different predictions for the author's gender depending on your approach:</p>
+	      <ul>
+		      <li>gender_txt: gender prediction by using only text</li>
+		      <li>gender_img: gender prediction by using only images</li>
+		      <li>gender_comb: gender prediction by using both text and images</li>
+	      </ul>
+	      <p>As previously said, you can participate in both textual and images classification, or only in one of them. Hence, if your approach uses only textual features, your prediction should be given in gender_txt. 
+		      Similarly, if your approach relies on images, your prediction should be given in gender_img. 
+		      In case you use both text and images, your prediction should be given in gender_comb. Furthermore, in such a case, if you can provide also the prediction by using both approaches separately, this would allow us to perform a more in-depth analysis of the results and to compare textual vs. image based author profiling. In this case, you should provide for the same author the three predictions: gender_txt, gender_img and gender_comb.
+	      </p>
+	      
         <p>The naming of the output files is up to you, we recommend to use the author-id as filename and "xml" as extension.</p>
 	      <p><b>IMPORTANT!</b> Languages should not be mixed. A folder should be created for each language and place inside only the files with the prediction for this language. </p>
       </div>
