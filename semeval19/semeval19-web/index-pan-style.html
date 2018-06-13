@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hyperpartisan News Detection @ SemEval 2019</title> 
+
+<link href="../../css/bootstrap.min.css" rel="stylesheet" />
+<link href="../../css/prettify.css" rel="stylesheet" />
+
+<style>
+.navbar .navbar-nav {
+  font-weight: bold;
+}
+
+/* Responsive video container taken from https://coolestguidesontheplanet.com/videodrome/youtube */
+.video-container {
+	position:relative;
+	padding-bottom: 56.25%;
+	padding-top: 30px;
+	height: 0;
+	overflow: hidden;
+}
+.video-container iframe, .video-container object, .video-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+</style>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="../../js/html5shiv.js"></script>
+  <script src="../../js/respond.min.js"></script>
+<![endif]-->
+
+<link rel="shortcut icon" href="../semeval19-figures/pan-icon-16x16.ico">
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="../../index.html"><img src="../semeval19-figures/pan-logo-small-lightgrey.png" alt="PAN" style="margin-top:-5px"></a>
+  </div>
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="../../index.html">Home</a></li>
+      <li class="active"><a href="index.html">PAN @ SemEval 2019</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+
+<div class="row">
+  <div class="col-12">
+    <h1 id="task-description" class="page-header">
+      <small>SemEval 2019 Task 4</small><br/>
+      Hyperpartisan News Detection
+      <div class="btn-group">
+        <span role="button" class="btn btn-default" disabled="disabled"><span class="glyphicon glyphicon-chevron-left" style="color:grey;"></span></span>
+        <span role="button" class="btn btn-default" disabled="disabled">2019</span>
+        <span role="button" class="btn btn-default" disabled="disabled"><span class="glyphicon glyphicon-chevron-right" style="color:grey;"></span></span>
+      </div>
+    </h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">Teaser video</div>
+      <div class="panel-body">
+        <div class="video-container">
+          <div id="video"></div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Task</div>
+      <div class="panel-body">
+        <p>Given the text of a news article, your task is to classify the article as being hyperpartisan or not in the political sense.</p>
+        <p>An article is hyperpartisan if its argumentation is extremly partisan, that means it exhibits blind, prejudiced, or unreasoning allegiance to one party, faction, cause, or person. (Source: <a target="_blank" href="https://www.merriam-webster.com/dictionary/partisan">Merriam Webster</a>)</p>
+        <p><a class="btn btn-primary btn-large" target="_blank" href="https://goo.gl/forms/cWtOVsjmRYfNkBnC3">Register now</a></p>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Training Corpora</div>
+      <div class="panel-body">
+        <p>To get you started, we will provide you with a small trial corpus very soon. The training and test corpora will have the same format as this one. The training data will be released later, and will contain about one million articles where the label is inferred from the publishing portal and a certain number of articles which were labelled manually.</p>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Baseline</div>
+      <div class="panel-body">
+        <p>For your convenience, we will provide the source code and executable for a baseline program. The program is written in Java and uses Apache UIMA, enabling you to use parts of its pipeline for your own submission. The program is the one used in the ACL'18 publication <a target="_blank" href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2018i.pdf">A Stylometric Inquiry into Hyperpartisan and Fake News</a>.</p>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Performance Measures</div>
+      <div class="panel-body">
+        <p>
+        Main performance measure will be accuracy on a balanced set of articles. In addition, we will publish achieved precision, recall, and F1-score for the hyperpartisan class.
+        </p>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Test Corpus</div>
+      <div class="panel-body">
+        <p>Once you finished tuning your approach to achieve satisfying performance on the training corpus, you should run your software on the test corpus.</p>
+        <p>During the competition, the test corpus will not be released publicly. Instead, we ask you to submit your software for evaluation at our site as described below.</p>
+        <p>After the competition, the test corpus is available including ground truth data. This way, you have all the necessities to evaluate your approach on your own, yet being comparable to those who took part in the competition.</p>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Submission</div>
+      <div class="panel-body">
+        <p>We ask you to prepare your software so that it can be executed via a command line call.</p>
+<pre class="prettyprint lang-c" style="overflow-x:auto">
+&gt; mySoftware <b>-i</b> path/to/corpus <b>-o</b> path/to/output/directory
+</pre>
+        <p>You can choose freely among the available programming languages and among the operating systems Microsoft Windows and Ubuntu. We will ask you to deploy your software onto a virtual machine that will be made accessible to you after registration. You will be able to reach the virtual machine via ssh and via remote desktop. More information about how to access the virtual machines can be found in the user guide below:</p>
+        <p><a class="btn btn-default" target="_blank" href="../semeval19-material/tira-virtual-machine-user-guide.pdf">TIRA Virtual Machine User Guide</a></p>
+        <p>Once deployed in your virtual machine, we ask you to access TIRA at <a href="http://www.tira.io">www.tira.io</a>, where you can self-evaluate your software on the test data.</p>
+        <p><strong>Note:</strong> By submitting your software you retain full copyrights. You agree to grant us usage rights only for the purpose of the competition. We agree not to share your software with a third party or use it for other purposes than the competition.</p>
+      </div>
+    </div>
+    <div id="important-dates" class="panel panel-default">
+      <div class="panel-heading">Important dates</div>
+      <div class="panel-body">
+        <table class="table">
+          <tr><td>Jul 2018 (latest)</td><td>Task mailing list ready</td></tr>
+          <tr><td>Aug 2018 (latest)</td><td>Release of trial data, baseline, output format, evaluation program</td></tr>
+          <tr><td>Sep 2018 (latest)</td><td>Release of training data</td></tr>
+          <tr><td>Jan 2019</td><td>Test data ready, evaluation period</td></tr>
+          <tr><td>5 Feb 2019</td><td>Publication of results</td></tr>
+          <tr><td>28 Feb 2019</td><td>System paper submissions by 23:59 GMT -12:00</td></tr>
+          <tr><td>14 Mar 2019</td><td>Paper reviews due</td></tr>
+          <tr><td>06 Apr 2019</td><td>Author notifications</td></tr>
+          <tr><td>20 Apr 2019</td><td>Camera ready submissions</td></tr>
+          <tr><td>Summer 2019</td><td>SemEval 2019</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Mailing list</div>
+      <div class="panel-body">
+        <p>Information coming soon.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="task-committee" class="row" style="padding-top:60px;">
+<div class="row">
+  <div class="col-xs-12">
+    <h2>Organizers</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-6 col-sm-3">
+    <div class="thumbnail" style="text-align:center;">
+      <a href="https://www.uni-weimar.de/en/media/chairs/computer-science-department/webis/people/#kiesel" target="_blank"><img src="../semeval19-figures/kiesel.jpg" class="img-rounded" alt="Johannes Kiesel"></a>
+      <p style="white-space:nowrap"><a href="https://www.uni-weimar.de/en/media/chairs/computer-science-department/webis/people/#kiesel" target="_blank">Johannes Kiesel</a></p>
+      <p style="font-size:10pt">Bauhaus-Universit&auml;t Weimar</p>
+    </div>
+  </div>
+  <div class="col-xs-6 col-sm-3">
+    <div class="thumbnail" style="text-align:center;">
+      <a href="http://www.temir.org" target="_blank"><img src="../semeval19-figures/potthast.jpg" class="img-rounded" alt="Martin Potthast"></a>
+      <p style="white-space:nowrap"><a href="http://www.temir.org" target="_blank">Martin Potthast</a></p>
+      <p style="font-size:10pt">Leipzig University</p>
+    </div>
+  </div>
+  <div class="col-xs-6 col-sm-3">
+    <div class="thumbnail" style="text-align:center;">
+      <a href="https://angel.co/maria-rosario-1" target="_blank"><img src="../semeval19-figures/mestre.jpg" class="img-rounded" alt="Maria Mestre"></a>
+      <p style="white-space:nowrap"><a href="https://angel.co/maria-rosario-1" target="_blank">Maria Mestre</a></p>
+      <p style="font-size:10pt">Factmata Ltd.</p>
+    </div>
+  </div>
+  <div class="col-xs-6 col-sm-3">
+    <div class="thumbnail" style="text-align:center;">
+      <a href="https://angel.co/0_rishabh" target="_blank"><img src="../semeval19-figures/shukla.jpg" class="img-rounded" alt="Rishabh Shukla"></a>
+      <p style="white-space:nowrap"><a href="https://angel.co/0_rishabh" target="_blank">Rishabh Shukla</a></p>
+      <p style="font-size:10pt">Factmata Ltd.</p>
+    </div>
+  </div>
+  <div class="col-xs-6 col-sm-3">
+    <div class="thumbnail" style="text-align:center;">
+      <a href="https://www.uni-weimar.de/en/media/chairs/computer-science-department/webis/people/#stein" target="_blank"><img src="../semeval19-figures/stein.jpg" class="img-rounded" alt="Benno Stein"></a>
+      <p style="white-space:nowrap"><a href="https://www.uni-weimar.de/en/media/chairs/computer-science-department/webis/people/#stein" target="_blank">Benno Stein</a></p>
+      <p style="font-size:10pt">Bauhaus-Universit&auml;t Weimar</p>
+    </div>
+  </div>
+  <div class="col-xs-6 col-sm-3">
+    <div class="thumbnail" style="text-align:center;">
+      <a href="http://dcorney.com/" target="_blank"><img src="../semeval19-figures/corney.jpg" class="img-rounded" alt="David Corney"></a>
+      <p style="white-space:nowrap"><a href="http://dcorney.com/" target="_blank">David Corney</a></p>
+      <p style="font-size:10pt">&nbsp;</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<footer>
+  <p class="pull-right">© webis.de</p>
+</footer>
+
+</div> <!-- /container -->
+
+<script src="../../js/jquery.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script>
+const tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+const firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var player;
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('video', {
+    videoId: 'e-9MvqHMh6I',
+    playerVars: {
+      'enablejsapi': 1,
+      'origin': 'https://pan.webis.de'
+    },
+    events: {
+      'onReady': onPlayerReady,
+    }
+  });
+}
+
+function onPlayerReady(event) {
+  event.target.mute();
+  event.target.playVideo();
+}
+</script>
+</body>
+</html>
+
