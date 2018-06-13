@@ -99,9 +99,11 @@
   border: 1px solid #dee2e6;
   border-radius: 6px;
 }
+/*
 .person:hover {
   box-shadow: 0 0 6px 5px #ddd;
 }
+*/
 .person-image img {
   width: 100%;
   border-top-left-radius: 6px;
