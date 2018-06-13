@@ -14,13 +14,9 @@
   margin-bottom: 10px;
 }
 .header-registration {
-  flex: 3 1 300px; 
+  flex: 0 1 160px; 
+  margin-top: 10px;
   text-align: center;
-}
-@media (min-width:613px) {
-  .header-registration p {
-    text-align: left;
-  }
 }
 .register button {
   border-radius: 0px;
