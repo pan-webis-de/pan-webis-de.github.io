@@ -82,11 +82,15 @@
   text-align: left;
 }
 
+#organizational {
+  background-color: #f8f9fa;
+}
+
 #persons {
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: 60px;
   margin-bottom: 20px;
 }
@@ -149,7 +153,12 @@
   color: black;
   vertical-align: bottom;
 }
-.organization:hover a {
-  text-decoration: none;
+.organization a {
+  text-decoration: none !important;
+}
+
+footer {
+  text-align: right;
+  padding-right: 5px;
 }
 
