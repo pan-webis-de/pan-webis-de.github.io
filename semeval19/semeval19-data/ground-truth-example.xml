@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<articles>
+  <article id="0000000" url="http://example.com" hyperpartisan="true" bias="left" labeled-by="publisher"/>
+  <article id="0000001" url="http://example.com" hyperpartisan="false" bias="right-center" labeled-by="publisher"/>
+  <article id="0000002" url="http://example.com" hyperpartisan="false" bias="least" labeled-by="publisher"/>
+  <article id="0000003" url="http://example.com" hyperpartisan="true" labeled-by="article"/>
+</articles>

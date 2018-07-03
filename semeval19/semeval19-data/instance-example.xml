@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<articles>
+  <article id="0000000" title="My Article" published-at="2018-07-03">
+    This is the text.
+    <p>It can contain paragraphs that can contain
+    <quote>quotes</quote></p>
+    <quote>But they can also appear outside of paragraphs</quote>
+    <p>The last elements are <a href="https://en.wikipedia.org/wiki/Hyperlink">links</a>
+    that can appear inside paragraphs, <quote>inside <a href="https://en.wikipedia.org/wiki/Quote">quotes</a></quote>,
+    or</p>
+    even <a href="https://en.wikipedia.org/wiki/Outside">outside</a>.
+    They either have only a href-attribute or only the type attribute with <a type="internal">internal value</a> if it is a link to the same domain as the article.
+  </article>
+</articles>

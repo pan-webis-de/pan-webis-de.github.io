@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="articles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="article" minOccurs="1" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:attribute name="id" use="required">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:pattern value="[0-9]+"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="url" type="xs:anyURI" use="required"/>
+            <xs:attribute name="hyperpartisan" type="xs:boolean" use="required"/>
+            <xs:attribute name="bias">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="left"/>
+                  <xs:enumeration value="left-center"/>
+                  <xs:enumeration value="least"/>
+                  <xs:enumeration value="right-center"/>
+                  <xs:enumeration value="right"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="labeled-by" use="required">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="publisher"/>
+                  <xs:enumeration value="article"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema> 
