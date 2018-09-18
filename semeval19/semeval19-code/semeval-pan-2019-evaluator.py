@@ -1,6 +1,20 @@
 #!/usr/bin/env python
 
 """Calculates the measures for the PAN19 hyperpartisan news detection task"""
+# Version: 2018-09-18
+
+# Parameters:
+# --inputDataset=<directory>
+#   Directory that contains the ground truth XML file with the articles for which a prediction should have been made.
+# --inputRun=<directory>
+#   Directory that contains the prediction for the articles in the ground truth XML file. The format of the XML file should be, one article per line:
+#     <article id> <prediction> [<confidence>]
+#   where:
+#     - article id   corresponds to the "id" attribute of the "article" element in the articles and ground truth files
+#     - prediction   is either "true" (hyperpartisan) or "false" (not hyperpartisan)
+#     - confidence   is an optional value to describe the confidence of the predictor in the prediction---the higher, the more confident. If missing, a value of 1 is used. However, the absolute values are unimportant: this may just be used in the future to order the predictions, for example to calculate ROC curves.
+# --outputDir=<directory>
+#   Directory to which the evaluation will be written. Will be created if it does not exist.
 
 from __future__ import division
 
@@ -58,8 +72,7 @@ def getMeasureString(measureName, value):
     return "measure{\n  key: \"" + measureName + "\"\n  value: \"" + str(value) + "\"\n}"
 
 
-########## GROUND TRUTH ##########
-
+########## SAX ##########
 
 groundTruth = {}
 class HyperpartisanNewsGroundTruthHandler(xml.sax.ContentHandler):

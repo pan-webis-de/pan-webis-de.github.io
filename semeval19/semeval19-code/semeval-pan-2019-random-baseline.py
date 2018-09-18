@@ -1,6 +1,13 @@
 #!/usr/bin/env python
 
 """Random baseline for the PAN19 hyperpartisan news detection task"""
+# Version: 2018-09-18
+
+# Parameters:
+# --inputDataset=<directory>
+#   Directory that contains the articles XML file with the articles for which a prediction should be made.
+# --outputDir=<directory>
+#   Directory to which the predictions will be written. Will be created if it does not exist.
 
 from __future__ import division
 
@@ -34,12 +41,12 @@ def parse_options():
         else:
             assert False, "Unknown option."
     if inputDataset == "undefined":
-        sys.exit("Input dataset is undefined. Use option -d or --inputDataset.")
+        sys.exit("Input dataset, the directory that contains the articles XML file, is undefined. Use option -d or --inputDataset.")
     elif not os.path.exists(inputDataset):
         sys.exit("The input dataset folder does not exist (%s)." % inputDataset)
 
     if outputDir == "undefined":
-        sys.exit("Output path undefined. Use option -o or --outputDir.")
+        sys.exit("Output path, the directory into which the predictions should be written, is undefined. Use option -o or --outputDir.")
     elif not os.path.exists(outputDir):
         os.mkdir(outputDir)
 
@@ -55,9 +62,12 @@ class HyperpartisanNewsRandomPredictor(xml.sax.ContentHandler):
 
     def startElement(self, name, attrs):
         if name == "article":
-            articleId = attrs.getValue("id")
-            prediction = random.choice(["true", "false"])
-            confidence = random.random()
+            articleId = attrs.getValue("id") # id of the article for which hyperpartisanship should be predicted
+            prediction = random.choice(["true", "false"]) # random prediction
+            confidence = random.random() # random confidence value for prediction
+            # output format per line: "<article id> <prediction>[ <confidence>]"
+            #   - prediction is either "true" (hyperpartisan) or "false" (not hyperpartisan)
+            #   - confidence is an optional value to describe the confidence of the predictor in the prediction---the higher, the more confident
             self.outFile.write(articleId + " " + prediction + " " + str(confidence) + "\n")
 
 
