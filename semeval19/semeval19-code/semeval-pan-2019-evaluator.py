@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """Calculates the measures for the PAN19 hyperpartisan news detection task"""
-# Version: 2018-09-18
+# Version: 2018-09-24
 
 # Parameters:
 # --inputDataset=<directory>
@@ -129,7 +129,7 @@ def main(inputDataset, inputRun, outputDir):
 
     predictionCount = truePositivesCount + trueNegativesCount + falsePositivesCount + falseNegativesCount
     if predictionCount < len(groundTruth):
-        print("Missing %s predictions\n" % len(grroundTruth) - predictionCount)
+        print("Missing %s predictions\n" % len(groundTruth) - predictionCount)
     else:
         print("true positives: %s" % truePositivesCount)
         print("true negatives: %s" % trueNegativesCount)

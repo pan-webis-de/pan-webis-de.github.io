@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """Random baseline for the PAN19 hyperpartisan news detection task"""
-# Version: 2018-09-18
+# Version: 2018-09-24
 
 # Parameters:
 # --inputDataset=<directory>
@@ -79,9 +79,9 @@ def main(inputDataset, outputDir):
 
     with open(outputDir + "/" + runOutputFileName, 'w') as outFile:
         for file in os.listdir(inputDataset):
-	    if file.endswith(".xml"):
-	        with open(inputDataset + "/" + file) as inputRunFile:
-	            xml.sax.parse(inputRunFile, HyperpartisanNewsRandomPredictor(outFile))
+            if file.endswith(".xml"):
+                with open(inputDataset + "/" + file) as inputRunFile:
+                    xml.sax.parse(inputRunFile, HyperpartisanNewsRandomPredictor(outFile))
 
 
     print("The predictions have been written to the output folder.")
