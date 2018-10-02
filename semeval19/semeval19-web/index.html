@@ -47,7 +47,7 @@
 <div class="row header-row">
   <div class="header-title">
     <h1 id="task-description">
-      <small>SemEval 2019 Task 4</small><br/>
+      <small>SemEval 2019 Task 4</small><span id="registration-counter-badge" class="badge hidden"><span id="registration-counter">?</span> registrations</span><br/>
       Hyperpartisan News Detection
     </h1>
   </div>
@@ -229,6 +229,15 @@ function onPlayerReady(event) {
   event.target.mute();
   event.target.playVideo();
 }
+
+$.ajax({
+        url: "https://sheets.googleapis.com/v4/spreadsheets/1UC-V-PyNAzMA_hW6jtATe5HLIDP1mFkaseUrhnQdG-U/values/public%21A1?key=AIzaSyCR55jq22qAYeaQssNvQKLvEBpcw22ivcY",
+        cache: false,
+        dataType: "json"
+    }).done(function (json) {
+      document.getElementById("registration-counter").innerText = json.values[0][0];
+      document.getElementById("registration-counter-badge").classList.remove("hidden");
+});
 </script>
 </body>
 </html>

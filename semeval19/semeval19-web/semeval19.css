@@ -29,6 +29,14 @@
   background-color: #e0e0e0;
 }
 
+.hidden {
+  display: none;
+}
+#registration-counter-badge {
+  margin-left: 1em;
+  vertical-align: middle;
+}
+
 /* Responsive video container taken from https://coolestguidesontheplanet.com/videodrome/youtube */
 .video-container {
 	position:relative;
