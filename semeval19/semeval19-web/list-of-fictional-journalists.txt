@@ -1,37 +1,198 @@
-alexander-knox                 
-bertha-von-suttner             
-billy-batson                   
-brenda-starr                   
-carla-columna                  
-carrie-bradshaw                
-daily-planet                   
-ford-prefect                   
-francis-wilde                  
-herb-welch                     
-j-jonah-jameson                
-john-king                      
-joseph-rouletabille            
-kit-kittredge                  
-larry-appleton                 
-mark-markin                    
-matt-anders                    
-matt-bai                       
-meduza                         
-meiko-kurita                   
-mikael-blomkvist               
-orwellian-times                
-palatine-star                  
-paparazzo                      
-peter-brinkmann                
-pioquinto-manterola            
-raymond-rambert                
-ron-burgundy                   
-rory-gilmore                   
-sadya-shodh                    
-sarah-jane-smith               
-sidereal-daily-mentioner       
-tintin                         
-tom-jumbo-grumbo               
-vicente-chambon-unam           
-vic-sage                       
-wing                           
+Abby Townsend
+Adam Lockwood
+Adam MacLean
+Alex Burchill
+Amy Amanda "Triple A" Allen
+Andrea Sachs
+Ankh-Morpork Times
+Annika Bengtzon
+Anson Bryson
+Anthony Markovitz
+April O'Neil
+Art Donovan
+Becky Burdock
+Ben Andrews
+Ben Caxton
+Ben Gregory
+Ben Urich
+Betty Brant Leeds
+Bill Hastings
+Billie Newman
+Bill Norton
+Bob Wallace
+Borat Sagdiyev
+Brian Fantana
+Brick Tamland
+Bridget Jones
+Brooke English
+Brooke Vandenberg
+Brüno Gehard
+Bryan Denton
+Caitlin Ryan
+Cameron "Buck" Williams
+Carl Kolchak
+Celeste Anders
+Champ Kind
+Charles Foster Kane
+Chick Adams
+Chloe Sullivan
+Chloe Talbot
+Chris Higby
+Christine Massey
+Clark Kent
+Clint Buchanan
+Cy Bennett
+Damien Day
+Danny Taylor
+Dan Vasser
+Dave Tabak
+Diane Simmons
+Dick Preston
+Dion Patrick
+Doris Martin
+Duke William
+D.X. Beaumont
+Emily Cowles
+Fantasio
+Frances Walsh
+Frankly Unctuous
+Frederick Foswell
+Froud
+Gallegher
+George Cragge
+George Dent
+George Faber
+Georges Duroy
+GlobeLink
+Grant Gabriel
+Gus Hedges
+Hal Towne
+Harris Claibourne
+Helen Cooper
+Henry Davenport
+Hildy Johnson
+Howard Beale
+Ichabod Adams
+I. M. Fletcher
+Jack Flood
+Jackie Harvey
+Jack McEvoy
+Jack McGee
+Jack Parlabane
+Jack Ryder
+Jamie Campbell
+Jasmine Thomas
+Jefferson Crowley
+Jefferson Drum
+Jennifer Horton
+Jimmy Olsen
+Jim Stevens
+John Boy Walton
+John Fitzgerald Byers
+John Larsen
+Josh Cashman
+Juan Carlos Bodoque
+Katie Reed
+Katie Tate
+Kelly O'Donnell
+Kent Brockman
+Kermit the Frog
+Klugie
+Lana Lang
+Lance Bannon
+Les Nessman
+Libby Kennedy
+Lily Wong
+Linda van Schoonhoven
+Lloyd Ramsey
+Lois Lane
+Lou Grant
+Louis Ciccone
+Lou Sheldon
+Maddy Bowen
+Marcello Rubini
+Margaret Pynchon
+Mark Grainger
+Martin "Marty" Di Stasio
+Mattie Storin
+Meiko Kurita
+Melvin Frohike
+Michelle Capra
+Mickey Riley
+Mike Moore
+Miles Clarkson
+Miranda Priestly
+Monique Marmelstein
+Morbo the Annihilator
+Morgan Edge
+Mr. Fosdick
+Mr. Wallace
+Murphy Brown
+Murray Scarvi
+Nancy Hicks-Gribble
+Ned Leeds
+Nick Alexander
+Nicole Walker
+Nic Pappas
+Otto Chriek
+Pat Garrison
+Paul Beltzer
+Paul Marino
+Paul Morgan
+Paul Templin
+Pepper Dennis
+Percy "P.C.M." Mercy
+Perry White
+Peter Parker
+Polly Becker
+Richard Pritchard
+Richard "Ringo" Langly
+Rick Jason
+Riley Parker
+Rita Skeeter
+Robbie Robertson
+Robert "Bob" Major
+Robin Scherbatsky
+Ron Updyke
+Ruth Sherwood
+Sabrina Spellman
+Sacharissa Cripslock
+Sally Smedley
+Sam Miller
+Scott Norris
+Sierra Jennings
+Snapper Carr
+Spider Jerusalem
+Spirou
+Stephen Colbert
+Steve Martin
+Steve Wilson
+Susan Kennedy
+Sweet Polly Purebred
+Tally Atwater
+Ted Baxter
+Tess Mercer
+The Lone Gunmen
+Tom Bradford
+Tom Grunick
+Tom Tucker
+Tony Hills
+Tony Vincenzo
+Trevor Newsworthy
+Tricia Takanawa
+Trinity Wells
+Trudy Monk
+Tulio Triviño
+Tyra Nordbo
+Ulysse Mérou
+Vernon Fenwick
+Veronica Corningstone
+Vicki Vale
+Vivian Rook
+Walter Burns
+Walter 'Wichita' Garrett
+Wes Mantooth
+William de Worde
+William Miller
+Willie Maxwell
+Will McAvoy
