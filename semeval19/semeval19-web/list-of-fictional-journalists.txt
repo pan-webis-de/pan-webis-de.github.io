@@ -7,7 +7,6 @@ Ankh-Morpork Times
 Annika Bengtzon
 Anson Bryson
 Anthony Markovitz
-April O'Neil
 Art Donovan
 Becky Burdock
 Ben Andrews
@@ -19,13 +18,11 @@ Bill Hastings
 Billie Newman
 Bill Norton
 Bob Wallace
-Borat Sagdiyev
 Brian Fantana
 Brick Tamland
 Bridget Jones
 Brooke English
 Brooke Vandenberg
-Brüno Gehard
 Bryan Denton
 Caitlin Ryan
 Cameron "Buck" Williams
@@ -90,7 +87,6 @@ John Larsen
 Josh Cashman
 Juan Carlos Bodoque
 Katie Reed
-Katie Tate
 Kelly O'Donnell
 Kent Brockman
 Kermit the Frog
@@ -120,7 +116,6 @@ Morbo the Annihilator
 Morgan Edge
 Mr. Fosdick
 Mr. Wallace
-Murphy Brown
 Murray Scarvi
 Nancy Hicks-Gribble
 Ned Leeds
@@ -144,7 +139,6 @@ Riley Parker
 Rita Skeeter
 Robbie Robertson
 Robert "Bob" Major
-Robin Scherbatsky
 Ron Updyke
 Ruth Sherwood
 Sabrina Spellman
@@ -156,7 +150,6 @@ Sierra Jennings
 Snapper Carr
 Spider Jerusalem
 Spirou
-Stephen Colbert
 Steve Martin
 Steve Wilson
 Susan Kennedy
@@ -186,4 +179,3 @@ Wes Mantooth
 William de Worde
 William Miller
 Willie Maxwell
-Will McAvoy
