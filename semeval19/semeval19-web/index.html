@@ -1,216 +1,204 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+---
+layout: default
+nav_active: tasks
+title: PAN @ SemEval 2019 - Hyperpartisan News Detection
+description: PAN @ SemEval 2019 - Hyperpartisan News Detection
+---
 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<section class="uk-section">
+    <div class="uk-container">
+        <div>
+            <a class="uk-button uk-button-primary uk-align-right" href="https://goo.gl/forms/cWtOVsjmRYfNkBnC3" target="_blank">
+                Register now!
+            </a>
 
-<title>Hyperpartisan News Detection @ SemEval 2019</title> 
+            <h1 class="uk-margin-small">Hyperpartisan News Detection</h1>
+            <div class="uk-text-muted uk-text-lead">
+                <div>
+                    SemEval 2019 Task 4
+                    <span class="registrations"><span class="counter">0</span> registrations</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-<link href="../../css/bootstrap.min.css" rel="stylesheet" />
-<link href="../../css/prettify.css" rel="stylesheet" />
-<link href="semeval19.css" rel="stylesheet" />
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<section class="uk-section-secondary">
+    <div class="uk-container">
+        <div class="uk-text-center">
+            <div class="video-container">
+                <div id="video"></div>
+            </div>
+        </div>
+    </div>
+</section>
 
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-  <script src="../../js/html5shiv.js"></script>
-  <script src="../../js/respond.min.js"></script>
-<![endif]-->
+<main class="uk-section uk-padding-large">
+    <div class="uk-container uk-column-1-2@l">
+        <h2>Task</h2>
+        <p>Given a news article text, decide whether it follows a
+            <a href="https://www.merriam-webster.com/dictionary/partisan" target="_blank">hyperpartisan</a>
+            argumentation, i.e., whether it exhibits blind,
+            prejudiced, or unreasoning allegiance to one party, faction, cause, or person.</p>
 
-<link rel="shortcut icon" href="../semeval19-figures/pan-icon-16x16.ico">
-</head>
-<body>
+        <h2>Data</h2>
+        <p>We will provide 1 million articles labeled by the overall tendency of the publisher for
+            training your algorithm. Upon
+            <a href="https://goo.gl/forms/cWtOVsjmRYfNkBnC3" target="_blank">registration</a> we provide you with a
+            trial dataset (may take up to 24 hours). We continuously clean the dataset (also based on
+            your feedback) and will send you new versions as they come out.</p>
 
-<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="../../index.html"><img src="../semeval19-figures/pan-logo-small-lightgrey.png" alt="PAN" style="margin-top:-5px"></a>
-  </div>
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="../../index.html">Home</a></li>
-      <li class="active"><a href="index.html">PAN @ SemEval 2019</a></li>
-    </ul>
-  </div>
-</nav>
+        <h2>Registration</h2>
+        <p>Register yourself or your team
+            <a href="https://goo.gl/forms/cWtOVsjmRYfNkBnC3" target="_blank">here</a>. This task will use the
+            <a href="https://groups.google.com/forum/#!forum/pan-workshop-series" target="_blank">PAN
+            mailing list</a> for communication, so please sign up there to ask questions to us or other
+            participants. If you have specific requests, please write to the
+            <a href="mailto:semeval-pan-2019-organizers@googlegroups.com" target="_blank">organizer's mailing list</a>.</p>
 
-<div class="container">
+        <h2>Submission (December 2018)</h2>
+        <p>When you registered, you will get remote access to a virtual machine (Windows or Linux) to
+            deploy the task software in. Your software must be executable from the command line and not
+            require Internet access during the evaluation period.</p>
+        <p>Note that you retain full copyrights of your software, but agree to grant us usage rights
+            only for the purpose of the competition.</p>
+        <p>We provide a <a target="_blank" href="../semeval19-code/semeval-pan-2019-random-baseline.py">random
+            baseline</a> to illustrate the output of a submission and a
+            <a target="_blank" href="../semeval19-code/semeval-pan-2019-tf-extractor.py">term
+            frequency extractor</a> to illustrate how to read the dataset. For features, see the
+            <a target="_blank" href="https://github.com/webis-de/ACL-18">code</a> from our
+            <a target="_blank" href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2018i.pdf">ACL'18
+                publication</a> for inspiration.</p>
 
-<div class="row header-row">
-  <div class="header-title">
-    <h1 id="task-description">
-      <small>SemEval 2019 Task 4</small><span id="registration-counter-badge" class="badge hidden"><span id="registration-counter">?</span> registrations</span><br/>
-      Hyperpartisan News Detection
-    </h1>
-  </div>
-  <div class=" header-registration">
-    <a class="register" href="https://goo.gl/forms/cWtOVsjmRYfNkBnC3" target="_blank"><button>Register now!</button></a>
-  </div>
-</div>
+        <h2>Evaluation (January 2019)</h2>
+        <p>You will be able to self-evaluate your software using the
+            <a href="http://tira.io" target="_blank">TIRA</a>
+            service. You can find the user guide
+            <a target="_blank" href="https://www.tira.io/static/tira-vm-user-guide.pdf">here</a>.
+            Main performance measure will be accuracy on a balanced set of articles. In addition, we
+            will measure precision, recall, and F1-score for the hyperpartisan class.</p>
+        <p>For your convenience, we also provide the
+            <a target="_blank" href="../semeval19-code/semeval-pan-2019-evaluator.py">evaluation
+            script</a> that is used inside TIRA.</p>
+        <p>After the evaluation, participants are required to submit and review task description papers
+            following the <a href="http://alt.qcri.org/semeval2019/" target="_blank">SemEval timeline</a>.</p>
 
-<div class="row video-row">
-  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-12">
-    <div class="video-container">
-      <div id="video"></div>
-    </div>
-  </div>
-</div>
+        <h2>Grand Prize (Summer 2019)</h2>
+        <p>To want to encourage developers to share their software so that everyone can profit from
+            their work. We are thus excited to announce a <b>grand prize of $1,000</b> to the
+            best-performing submission that has its code published open source before the SemEval
+            conference.</p>
+    </div> <!-- /container -->
+</main>
 
-<div class="row info-row">
-  <div class="info-item col-md-4 col-md-offset-0 col-xs-10 col-xs-offset-1">
-    <div class="info-icon"><span><i class="fas fa-clipboard"></i></span></div>
-    <div class="info-description">
-      <div class="info-caption"><h3>Task</h3></div>
-      <div class="info-text">
-        <p>Given a news article text, decide whether it follows a <a href="https://www.merriam-webster.com/dictionary/partisan" target="_blank">hyperpartisan</a> argumentation, i.e., whether it exhibits blind, prejudiced, or unreasoning allegiance to one party, faction, cause, or person.</p>
-      </div>
-    </div>
-  </div>
-  <div class="info-item col-md-4 col-md-offset-0 col-xs-10 col-xs-offset-1">
-    <div class="info-icon"><span><i class="fas fa-database"></i></span></div>
-    <div class="info-description">
-      <div class="info-caption"><h3>Data <small></small></h3></div>
-      <div class="info-text">
-        <p>We will provide 1 million articles labeled by the overall tendency of the publisher for training your algorithm. Upon <a href="https://goo.gl/forms/cWtOVsjmRYfNkBnC3" target="_blank">registration</a> we provide you with a trial dataset (may take up to 24 hours). We continuously clean the dataset (also based on your feedback) and will send you new versions as they come out.</p>
-      </div>
-    </div>
-  </div>
-  <div class="info-item col-md-4 col-md-offset-0 col-xs-10 col-xs-offset-1">
-    <div class="info-icon"><span><i class="fas fa-user-check"></i></span></div>
-    <div class="info-description">
-      <div class="info-caption"><h3>Registration</h3></div>
-      <div class="info-text">
-        <p>Register yourself or your team <a href="https://goo.gl/forms/cWtOVsjmRYfNkBnC3" target="_blank">here</a>. This task will use the <a href="https://groups.google.com/forum/#!forum/pan-workshop-series" target="_blank">PAN mailing list</a> for communication, so please sign up there to ask questions to us or other participants. If you have specific requests, please write to the <a href="mailto:semeval-pan-2019-organizers@googlegroups.com" target="_blank">organizer's mailing list</a>.</p>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="row info-row">
-  <div class="info-item col-md-4 col-md-offset-0 col-xs-10 col-xs-offset-1">
-    <div class="info-icon"><span><i class="fas fa-users-cog"></i></span></div>
-    <div class="info-description">
-      <div class="info-caption"><h3>Submission <small>(December 2018)</small></h3></div>
-      <div class="info-text">
-        <p>When you registered, you will get remote access to a virtual machine (Windows or Linux) to deploy the task software in. Your software must be executable from the command line and not require Internet access during the evaluation period.</p>
-        <p>Note that you retain full copyrights of your software, but agree to grant us usage rights only for the purpose of the competition.</p>
-        <p>We provide a <a target="_blank" href="../semeval19-code/semeval-pan-2019-random-baseline.py">random baseline</a> to illustrate the output of a submission and a <a target="_blank" href="../semeval19-code/semeval-pan-2019-tf-extractor.py">term frequency extractor</a> to illustrate how to read the dataset. For features, see the <a target="_blank" href="https://github.com/webis-de/ACL-18">code</a> from our <a target="_blank" href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2018i.pdf">ACL'18 publication</a> for inspiration.</p>
-      </div>
-    </div>
-  </div>
-  <div class="info-item col-md-4 col-md-offset-0 col-xs-10 col-xs-offset-1">
-    <div class="info-icon"><span><i class="fas fa-chart-bar"></i></span></div>
-    <div class="info-description">
-      <div class="info-caption"><h3>Evaluation <small>(January 2019)</small></h3></div>
-      <div class="info-text">
-        <p>You will be able to self-evaluate your software using the <a href="http://tira.io" target="_blank">TIRA</a> service. You can find the user guide <a target="_blank" href="https://www.tira.io/static/tira-vm-user-guide.pdf">here</a>. Main performance measure will be accuracy on a balanced set of articles. In addition, we will measure precision, recall, and F1-score for the hyperpartisan class.</p>
-        <p>For your convenience, we also provide the <a target="_blank" href="../semeval19-code/semeval-pan-2019-evaluator.py">evaluation script</a> that is used inside TIRA.</p>
-        <p>After the evaluation, participants are required to submit and review task description papers following the <a href="http://alt.qcri.org/semeval2019/" target="_blank">SemEval timeline</a>.</p>
-      </div>
-    </div>
-  </div>
-  <div class="info-item col-md-4 col-md-offset-0 col-xs-10 col-xs-offset-1">
-    <div class="info-icon"><span><i class="fas fa-trophy"></i></span></div>
-    <div class="info-description">
-      <div class="info-caption"><h3>Grand Prize <small>(Summer 2019)</small></h3></div>
-      <div class="info-text">
-        <p>To want to encourage developers to share their software so that everyone can profit from their work. We are thus excited to announce a <b>grand prize of $1,000</b> to the best-performing submission that has its code published open source before the SemEval conference.</p>
-      </div>
-    </div>
-  </div>
-</div>
+<section class="uk-section-muted uk-padding-large">
+    <div class="uk-container">
 
-</div> <!-- /container -->
-<div id="organizational">
-<div class="container">
-<div id="persons">
-  <div class="person col-xl-1 col-lg-2 col-sm-3 col-xs-12">
-    <div class="person-image"><img src="../semeval19-figures/kiesel.jpg"></div>
-    <div class="person-info">
-      <a class="person-name" href="https://kiesels.de/johannes" target="_blank">Johannes<br>Kiesel</a>
-      <p class="affiliation">Bauhaus-Universit&auml;t Weimar</p>
-    </div>
-  </div>
-  <div class="person col-xl-1 col-lg-2 col-sm-3 col-xs-12">
-    <div class="person-image"><img src="../semeval19-figures/potthast.jpg"></div>
-    <div class="person-info">
-      <a class="person-name" href="http://www.temir.org" target="_blank">Martin<br>Potthast</a>
-      <p class="affiliation">Leipzig University</p>
-    </div>
-  </div>
-  <div class="person col-xl-1 col-lg-2 col-sm-3 col-xs-12">
-    <div class="person-image"><img src="../semeval19-figures/mestre.jpg"></div>
-    <div class="person-info">
-      <a class="person-name" href="https://angel.co/maria-rosario-1" target="_blank">Maria<br>Mestre</a>
-      <p class="affiliation">Factmata Ltd.</p>
-    </div>
-  </div>
-  <div class="person col-xl-1 col-lg-2 col-sm-3 col-xs-12">
-    <div class="person-image"><img src="../semeval19-figures/shukla.jpg"></div>
-    <div class="person-info">
-      <a class="person-name" href="https://angel.co/0_rishabh" target="_blank">Rishabh<br>Shukla</a>
-      <p class="affiliation">Factmata Ltd.</p>
-    </div>
-  </div>
-  <div class="person col-xl-1 col-lg-2 col-sm-3 col-xs-12">
-    <div class="person-image"><img src="../semeval19-figures/stein.jpg"></div>
-    <div class="person-info">
-      <a class="person-name" href="https://www.uni-weimar.de/en/media/chairs/computer-science-department/webis/people/#stein" target="_blank">Benno<br>Stein</a>
-      <p class="affiliation">Bauhaus-Universit&auml;t Weimar</p>
-    </div>
-  </div>
-  <div class="person col-xl-1 col-lg-2 col-sm-3 col-xs-12">
-    <div class="person-image"><img src="../semeval19-figures/corney.jpg"></div>
-    <div class="person-info">
-      <a class="person-name" href="http://dcorney.com/" target="_blank">David<br>Corney</a>
-    </div>
-  </div>
-  <div class="person col-xl-1 col-lg-2 col-sm-3 col-xs-12">
-    <div class="person-image"><img src="../semeval19-figures/vincent.jpg"></div>
-    <div class="person-info">
-      <span class="person-name">Emmanuel<br>Vincent</span>
-      <p class="affiliation">Factmata Ltd.</p>
-    </div>
-  </div>
-  <div class="person col-xl-1 col-lg-2 col-sm-3 col-xs-12">
-    <div class="person-image"><img src="../semeval19-figures/adineh.jpg"></div>
-    <div class="person-info">
-      <span class="person-name">Payam<br>Adineh</span>
-      <p class="affiliation">Bauhaus-Universit&auml;t Weimar</p>
-    </div>
-  </div>
-</div>
-<div id="organizations">
-  <div class="organization col-sm-6 col-xs-12">
-    <a href="https://webis.de" target="_blank"><img style="max-width:52px;" src="../semeval19-figures/webis-logo_w52.png"><span>Webis</span></a>
-  </div>
-  <div class="organization col-sm-6 col-xs-12">
-    <a href="https://factmata.com" target="_blank"><img style="max-width:300px;" src="../semeval19-figures/factmata-logo.png"></a>
-  </div>
-</div>
+        <h2>Task Committee</h2>
 
-</div> <!-- /container -->
-<footer>
-  © webis.de
-</footer>
-</div> <!-- /organizational -->
+        <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small task-chair-people">
+            <div>
+                <div class="uk-card uk-card-default uk-card-body">
+                    <div class="avatar"><img src="../semeval19-figures/kiesel.jpg"></div>
+                    <div>
+                        <a class="uk-card-title" href="https://kiesels.de/johannes" target="_blank">Johannes Kiesel</a>
+                        <p class="uk-text-muted">Bauhaus-Universität Weimar</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="uk-card uk-card-default uk-card-body">
+                    <div class="avatar"><img src="../semeval19-figures/potthast.jpg"></div>
+                    <div>
+                        <a class="uk-card-title" href="http://www.temir.org" target="_blank">Martin Potthast</a>
+                        <p class="uk-text-muted">Leipzig University</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="uk-card uk-card-default uk-card-body">
+                    <div class="avatar"><img src="../semeval19-figures/mestre.jpg"></div>
+                    <div>
+                        <a class="uk-card-title" href="https://angel.co/maria-rosario-1" target="_blank">Maria Mestre</a>
+                        <p class="uk-text-muted">Factmata Ltd.</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="uk-card uk-card-default uk-card-body">
+                    <div class="avatar"><img src="../semeval19-figures/shukla.jpg"></div>
+                    <div>
+                        <a class="uk-card-title" href="https://angel.co/0_rishabh" target="_blank">Rishabh Shukla</a>
+                        <p class="uk-text-muted">Factmata Ltd.</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="uk-card uk-card-default uk-card-body">
+                    <div class="avatar"><img src="../semeval19-figures/stein.jpg"></div>
+                    <div>
+                        <a class="uk-card-title" href="https://www.uni-weimar.de/en/media/chairs/computer-science-department/webis/people/#stein"
+                           target="_blank">Benno Stein</a>
+                        <p class="uk-text-muted">Bauhaus-Universität Weimar</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="uk-card uk-card-default uk-card-body">
+                    <div class="avatar"><img src="../semeval19-figures/corney.jpg"></div>
+                    <div>
+                        <a class="uk-card-title" href="http://dcorney.com/" target="_blank">David Corney</a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="uk-card uk-card-default uk-card-body">
+                    <div class="avatar"><img src="../semeval19-figures/vincent.jpg"></div>
+                    <div>
+                        <span class="uk-card-title">Emmanuel Vincent</span>
+                        <p class="uk-text-muted">Factmata Ltd.</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="uk-card uk-card-default uk-card-body">
+                    <div class="avatar"><img src="../semeval19-figures/adineh.jpg"></div>
+                    <div>
+                        <span class="uk-card-title">Payam Adineh</span>
+                        <p class="uk-text-muted">Bauhaus-Universität Weimar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<script src="../../js/jquery.js"></script>
-<script src="../../js/bootstrap.min.js"></script>
+        <div class="uk-container uk-padding-large">
+            <h2>Organizations</h2>
+
+            <div class="task-chair-organizations">
+                <div>
+                    <a href="https://webis.de" target="_blank" class="uk-link-reset">
+                        <img src="../semeval19-figures/webis-logo_w52.png"><span class="logo-font">Webis</span>
+                    </a>
+                </div>
+                <div>
+                    <a href="https://factmata.com" target="_blank" class="uk-link-reset">
+                        <img src="../semeval19-figures/factmata-logo.png">
+                    </a>
+                </div>
+            </div>
+
+        </div> <!-- /container -->
+    </div>
+
+</section>
+
 <script>
 const tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
 const firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-var player;
+let player;
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('video', {
     videoId: 'e-9MvqHMh6I',
@@ -239,6 +227,3 @@ $.ajax({
       document.getElementById("registration-counter-badge").classList.remove("hidden");
 });
 </script>
-</body>
-</html>
-

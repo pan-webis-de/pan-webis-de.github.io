@@ -1,0 +1,56 @@
+.registrations {
+    margin-left: 1rem;
+    padding-left: 1rem;
+    border-left: $global-border-width solid $global-muted-color;
+}
+
+.task-chair-people {
+    & > * {
+        width: 100%;
+        box-sizing: border-box;
+
+        @media (min-width: $breakpoint-medium) {
+            width: 50%;
+        }
+        @media (min-width: $breakpoint-large) {
+            width: 25%;
+        }
+    }
+
+    .uk-card {
+        padding: $padding-small-padding;
+    }
+
+    .avatar {
+        margin: -$padding-small-padding;
+        margin-right: $padding-small-padding;
+        float: left;
+
+        img {
+            height: 140px;
+            filter: grayscale(30%);
+        }
+    }
+}
+
+.task-chair-organizations {
+    text-align: center;
+
+    & > * {
+        height: 50px;
+        display: inline-block;
+        padding: $padding-large-padding;
+    }
+
+    img {
+        height: 100%;
+    }
+
+    .logo-font {
+        display: inline-block;
+        padding-left: $padding-small-padding;
+        font-size: 2.5em;
+        vertical-align: middle;
+        color: lighten($global-color, 20);
+    }
+}

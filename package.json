@@ -1,0 +1,16 @@
+{
+  "name": "pan.webis.de",
+  "version": "1.0.0",
+  "main": "_layouts/index.html",
+  "author": "Janek Bevendorff",
+  "license": "MIT",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.2.0",
+    "uikit": "3.0.0-rc.20"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/webis-de/webis-de.github.io"
+  }
+}
