@@ -1,7 +1,26 @@
-.registrations {
+.vertical-divider-left {
     margin-left: 1rem;
     padding-left: 1rem;
     border-left: $global-border-width solid $global-muted-color;
+}
+
+.page-header-meta {
+    color: $global-muted-color;
+    font-size: $global-medium-font-size;
+}
+
+.task-list {
+    &:nth-child(2n) {
+        background-color: darken($global-muted-background, 2);
+    }
+
+    &:nth-child(2n + 1) {
+        background-color: darken($global-muted-background, 7);
+    }
+
+    .uk-card .uk-list li {
+        display: inline-block;
+    }
 }
 
 .task-chair-people {

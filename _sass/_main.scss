@@ -9,6 +9,10 @@ html {
     overflow-y: auto;
 }
 
+em {
+    color: $global-emphasis-color;
+}
+
 .global-nav {
     border-bottom: 1px solid lighten($global-secondary-background, 25);
 
@@ -136,17 +140,6 @@ a:target {
     text-transform: $section-header-text-transform;
 }
 
-.search-engine-icon {
-    width: 42px;
-    height: 42px;
-    padding-top: .35em;
-}
-
-.search-engines {
-    h5 {
-        margin-bottom: 0;
-    }
-}
 
 .footer-section {
     margin-bottom: 0;
