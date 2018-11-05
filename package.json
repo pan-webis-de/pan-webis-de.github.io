@@ -5,7 +5,8 @@
   "author": "Janek Bevendorff",
   "license": "MIT",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.2.0",
+    "@fortawesome/fontawesome-free": "^5.5.0",
+    "jquery": "^3.3.1",
     "uikit": "3.0.0-rc.20"
   },
   "devDependencies": {},

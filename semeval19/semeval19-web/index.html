@@ -15,7 +15,7 @@ description: PAN @ SemEval 2019 - Hyperpartisan News Detection
             <h1 class="uk-margin-small">Hyperpartisan News Detection</h1>
             <div class="page-header-meta">
                 SemEval 2019 Task 4
-                <span class="registrations vertical-divider-left"><span class="counter">0</span> registrations</span>
+                <span class="registrations vertical-divider-left"><span id="registration-counter">0</span> registrations</span>
             </div>
         </div>
     </div>
@@ -191,37 +191,37 @@ description: PAN @ SemEval 2019 - Hyperpartisan News Detection
 </section>
 
 <script>
-const tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-const firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    const tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-let player;
-function onYouTubeIframeAPIReady() {
-  player = new YT.Player('video', {
-    videoId: 'e-9MvqHMh6I',
-    playerVars: {
-      'enablejsapi': 1,
-      'rel': 0,
-      'origin': 'https://pan.webis.de'
-    },
-    events: {
-      'onReady': onPlayerReady,
-    }
-  });
-}
+    let player;
 
-function onPlayerReady(event) {
-  event.target.mute();
-  event.target.playVideo();
-}
+    onYouTubeIframeAPIReady = () => {
+        player = new YT.Player('video', {
+            videoId: 'e-9MvqHMh6I',
+            playerVars: {
+                'enablejsapi': 1,
+                'rel': 0,
+                'origin': 'https://pan.webis.de'
+            },
+            events: {
+                'onReady': onPlayerReady,
+            }
+        });
+    };
 
-$.ajax({
+    onPlayerReady = (event) => {
+        event.target.mute();
+        event.target.playVideo();
+    };
+
+    $.ajax({
         url: "https://sheets.googleapis.com/v4/spreadsheets/1UC-V-PyNAzMA_hW6jtATe5HLIDP1mFkaseUrhnQdG-U/values/public%21A1?key=AIzaSyCR55jq22qAYeaQssNvQKLvEBpcw22ivcY",
         cache: false,
         dataType: "json"
     }).done(function (json) {
-      document.getElementById("registration-counter").innerText = json.values[0][0];
-      document.getElementById("registration-counter-badge").classList.remove("hidden");
-});
+        document.getElementById("registration-counter").innerText = json.values[0][0];
+    });
 </script>

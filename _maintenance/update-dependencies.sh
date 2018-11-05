@@ -16,6 +16,7 @@ npm update
 rsync -a --delete node_modules/uikit/src/scss/ _sass/uikit/
 
 rsync -a --delete node_modules/uikit/dist/js/ js/thirdparty/uikit/
+rsync -a --delete node_modules/jquery/dist/ js/thirdparty/jquery/
 rsync -a --delete node_modules/@fortawesome/fontawesome-free/js/ js/thirdparty/fontawesome/
 
 cd ${maintenance}
