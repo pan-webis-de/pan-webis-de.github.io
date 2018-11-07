@@ -9,49 +9,6 @@
     font-size: $global-medium-font-size;
 }
 
-.task-list {
-    &:nth-child(2n) {
-        background-color: darken($global-muted-background, 2);
-    }
-
-    &:nth-child(2n + 1) {
-        background-color: darken($global-muted-background, 7);
-    }
-
-    .uk-card .uk-list li {
-        display: inline-block;
-    }
-}
-
-.task-chair-people {
-    & > * {
-        width: 100%;
-        box-sizing: border-box;
-
-        @media (min-width: $breakpoint-medium) {
-            width: 50%;
-        }
-        @media (min-width: $breakpoint-large) {
-            width: 25%;
-        }
-    }
-
-    .uk-card {
-        padding: $padding-small-padding;
-    }
-
-    .avatar {
-        margin: -$padding-small-padding;
-        margin-right: $padding-small-padding;
-        float: left;
-
-        img {
-            height: 140px;
-            filter: grayscale(30%);
-        }
-    }
-}
-
 .task-chair-organizations {
     text-align: center;
 
@@ -61,7 +18,7 @@
         padding: $padding-large-padding;
     }
 
-    img {
+    img, svg {
         height: 100%;
     }
 
@@ -72,4 +29,10 @@
         vertical-align: middle;
         color: lighten($global-color, 20);
     }
+}
+
+.semeval-logo {
+    font-size: 70px;
+    text-align: center;
+    padding: 10px;
 }

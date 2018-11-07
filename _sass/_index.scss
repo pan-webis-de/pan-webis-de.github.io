@@ -1,5 +1,5 @@
 .page-index {
-    background: lighten($background-secondary-background, 4) url("../img/pan-fingerprint2.png") no-repeat top right;
+    background: $global-secondary-background-lighter url("../img/pan-fingerprint2.png") no-repeat top right;
 
     .footer-section, .footer-section a {
         color: $inverse-global-color !important;

@@ -13,6 +13,77 @@ em {
     color: $global-emphasis-color;
 }
 
+.list-inline li {
+    display: inline-block;
+}
+
+.background-secondary-lighter {
+    background-color: $global-secondary-background-lighter;
+}
+
+.background-muted-darker {
+    background-color: darken($global-muted-background, 5);
+}
+
+.background-muted-striped {
+    &:nth-child(2n) {
+        background-color: darken($global-muted-background, 2);
+    }
+
+    &:nth-child(2n + 1) {
+        background-color: darken($global-muted-background, 7);
+    }
+}
+
+svg.text-logo text {
+    width: 100%;
+}
+
+.thumbnail-card-grid {
+    & > * {
+        width: 100%;
+        box-sizing: border-box;
+
+        @media (min-width: $breakpoint-medium) {
+            width: 50%;
+        }
+        @media (min-width: $breakpoint-large) {
+            width: 25%;
+        }
+    }
+
+    .uk-card {
+        padding: $padding-small-padding;
+    }
+
+    .thumbnail-left {
+        margin: -$padding-small-padding;
+        margin-right: $padding-small-padding;
+        float: left;
+
+        img, svg {
+            height: 145px;
+            width: 110px;
+            object-fit: cover;
+        }
+    }
+
+    .thumbnail-top {
+        text-align: center;
+        margin-bottom: $padding-small-padding;
+        height: 140px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        img, svg {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+}
+
 .global-nav {
     border-bottom: 1px solid lighten($global-secondary-background, 25);
 
@@ -29,6 +100,7 @@ em {
         padding-right: 0;
     }
 }
+
 
 .uk-navbar-nav {
     & > li > a {

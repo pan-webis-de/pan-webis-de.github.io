@@ -2,7 +2,7 @@
 
 // Fonts
 $global-font-family: "Product Sans", "Noto Sans", "Verdana", sans-serif;
-$global-font-size: 13px;
+$global-font-size: 14px;
 $global-line-height: 1.65;
 $text-lead-line-height: $global-line-height;
 $text-meta-line-height: $global-line-height;
@@ -21,6 +21,7 @@ $base-selection-background: #1c79cc;
 $table-header-target-color: #d9e7f7;
 
 $global-secondary-background: #323232;
+$global-secondary-background-lighter: lighten($global-secondary-background, 4);
 $global-color: #222;
 $global-muted-color: #666;
 
@@ -32,6 +33,6 @@ $list-margin-top: 5px;
 
 // Navigation
 $navbar-nav-item-height: 70px;
-$navbar-nav-item-font-size: 1.1rem;
-$nav-primary-item-font-size: 1.4rem;
+$navbar-nav-item-font-size: 1.0rem;
+$nav-primary-item-font-size: 1.2rem;
 $navbar-nav-item-padding-horizontal: 10px;
