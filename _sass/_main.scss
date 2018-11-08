@@ -27,11 +27,11 @@ em {
 
 .background-muted-striped {
     &:nth-child(2n) {
-        background-color: darken($global-muted-background, 2);
+        background-color: $global-muted-background;
     }
 
     &:nth-child(2n + 1) {
-        background-color: darken($global-muted-background, 7);
+        background-color: darken($global-muted-background, 5);
     }
 }
 
@@ -60,9 +60,10 @@ svg.text-logo text {
         margin: -$padding-small-padding;
         margin-right: $padding-small-padding;
         float: left;
+        height: calc(100% + #{2 * $padding-small-padding});
 
         img, svg {
-            height: 145px;
+            height: 100%;
             width: 110px;
             object-fit: cover;
         }

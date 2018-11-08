@@ -312,16 +312,25 @@ description: PAN Shared Tasks Overview
 
 <script>
     // update the registration statistics.
+    let counterElement = $("#registration-counter");
+
     $.ajax({
         url: "https://spreadsheets.google.com/feeds/cells/0AlwcskAJGamSdEN2ZUQ4Uk44cW13XzQ4UDRNTDR0V3c/od5/public/basic?min-row=5&min-col=1&max-row=1&max-col=1&alt=json",
         cache: false,
         dataType: "json"
-    }).done(function (json) {
+    }).done((json) => {
         $(json["feed"]["entry"]).each(function () {
             let title = this["title"]["$t"];
             let content = this["content"]["$t"];
             if (title === "A1") {
-                $("#registration-counter").text(content)
+                counterElement.prop('registrationCount', 0).animate({
+                    registrationCount: content
+                }, {
+                    duration: 1200,
+                    step: (value) => {
+                        counterElement.text(Math.ceil(value));
+                    }
+                });
             }
         });
     });

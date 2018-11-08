@@ -1002,55 +1002,15 @@ gender_comb="male|female" /&gt;</code></pre>
 
         <h2>Task Chair</h2>
         <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
-            <div>
-                <div class="uk-card uk-card-default uk-card-body">
-                    <div class="thumbnail-left"><img src="../pan18-figures/paolo.jpg"></div>
-                    <div>
-                        <a class="uk-card-title" href="http://users.dsic.upv.es/~prosso/" target="_blank">Paolo Rosso</a>
-                        <p class="uk-text-muted">Universitat Polit&egrave;cnica de Val&egrave;ncia</p>
-                    </div>
-                </div>
-            </div>
+            {% include people-cards/rosso.html %}
         </div>
 
         <h2>Task Committee</h2>
         <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
-            <div>
-                <div class="uk-card uk-card-default uk-card-body">
-                    <div class="thumbnail-left"><img src="../pan18-figures/francisco.jpg" alt="Francisco Rangel"></div>
-                    <div>
-                        <a class="uk-card-title" href="http://www.kicorangel.com" target="_blank">Francisco Rangel</a>
-                        <p class="uk-text-muted">Autoritas Consulting</p>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="uk-card uk-card-default uk-card-body">
-                    <div class="thumbnail-left"><img src="../pan18-figures/montes.jpg" alt="Manuel Montes-y-Gómez"></div>
-                    <div>
-                        <a class="uk-card-title" href="http://ccc.inaoep.mx/~mmontesg/" target="_blank">Manuel Montes-y-Gómez</a>
-                        <p class="uk-text-muted">INAOE - Puebla</p>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="uk-card uk-card-default uk-card-body">
-                    <div class="thumbnail-left"><img src="../pan18-figures/martin.jpg" alt="Martin Potthast"></div>
-                    <div>
-                        <a class="uk-card-title" href="https://www.uni-weimar.de/medien/webis/people" target="_blank">Martin Potthast</a>
-                        <p class="uk-text-muted">Bauhaus-Universität Weimar</p>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="uk-card uk-card-default uk-card-body">
-                    <div class="thumbnail-left"><img src="../pan18-figures/benno.jpg" alt="Benno Stein"></div>
-                    <div>
-                        <a class="uk-card-title" href="http://www.webis.de" target="_blank">Benno Stein</a>
-                        <p class="uk-text-muted">Bauhaus-Universit&auml;t Weimar</p>
-                    </div>
-                </div>
-            </div>
+            {% include people-cards/rangel.html %}
+            {% include people-cards/montes.html %}
+            {% include people-cards/potthast.html %}
+            {% include people-cards/stein.html %}
         </div>
     </div>
 </section>
