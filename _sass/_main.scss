@@ -26,11 +26,11 @@ em {
 }
 
 .background-muted-striped {
-    &:nth-child(2n) {
+    &:nth-child(2n + 1) {
         background-color: $global-muted-background;
     }
 
-    &:nth-child(2n + 1) {
+    &:nth-child(2n) {
         background-color: darken($global-muted-background, 5);
     }
 }
@@ -85,6 +85,17 @@ svg.text-logo text {
     }
 }
 
+.vertical-divider-left {
+     margin-left: 1rem;
+     padding-left: 1rem;
+     border-left: $global-border-width solid lighten($global-muted-color, 23);
+ }
+
+.page-header-meta {
+    color: $global-muted-color;
+    font-size: 1.1rem;
+}
+
 .global-nav {
     border-bottom: 1px solid lighten($global-secondary-background, 25);
 
@@ -102,6 +113,22 @@ svg.text-logo text {
     }
 }
 
+.page-sub-nav {
+    display: inline-block;
+    margin-left: 1rem;
+
+    & > li {
+        display: inline-block;
+
+        &:not(:first-child) {
+            @extend .vertical-divider-left;
+        }
+    }
+
+    a {
+        color: $global-muted-color;
+    }
+}
 
 .uk-navbar-nav {
     & > li > a {

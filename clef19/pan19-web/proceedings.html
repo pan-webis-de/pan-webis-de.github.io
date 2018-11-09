@@ -1,180 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+---
+layout: default
+nav_active: tasks
+title: PAN @ CLEF 2019 - Proceedings
+description: PAN @ CLEF 2019 - Proceedings
+---
 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<main>
+    <header class="uk-section uk-section-muted">
+        <nav class="uk-container">
+            <div class="uk-align-right uk-text-muted">
+                <a class="uk-button" href="{{ 'clef18/pan18-web/author-profiling.html' | relative_url }}" data-uk-icon="chevron-left"></a>
+                2019
+            </div>
 
-    <title>PAN 2019</title>
+            <ul class="uk-text-muted uk-tab uk-margin-remove-top">
+                <li><a href="{{ '/clef19/pan19-web/index.html' | relative_url }}">Overview</a></li>
+                <li><a href="{{ '/clef19/pan19-web/about.html' | relative_url }}">About</a></li>
+                <li class="uk-active"><a href="{{ '/clef19/pan19-web/proceedings.html' | relative_url }}">Proceedings</a></li>
+                <li>
+                    <a href="#">CLEF 2019 Tasks <span class="uk-margin-small-left" data-uk-icon="icon: chevron-down"></span></a>
+                    <div class="uk-dropdown" data-uk-dropdown="mode: click">
+                        <ul class="uk-nav uk-dropdown-nav">
+                            <li><a href="{{ '/clef19/pan19-web/author-profiling.html' | relative_url }}">Bots and Gender Profiling</a></li>
+                            <li><a href="{{ '/clef19/pan19-web/celebrity-profiling.html' | relative_url }}">Celebrity Profiling</a></li>
+                            <li><a href="{{ '/clef19/pan19-web/author-identification.html' | relative_url }}">Cross-domain Authorship Attribution</a></li>
+                            <li><a href="{{ '/clef19/pan19-web/style-change-detection.html' | relative_url }}">Style Change Detection</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div class="uk-container uk-margin-small">
+            <a class="uk-button uk-button-primary uk-align-right"
+               href="https://docs.google.com/forms/d/e/1FAIpQLSfR_xoBuGU3q7o3EYPoItN28UPuZENjs3wlWYEX_EdRGUyRfA/viewform" target="_blank">
+                Register now!
+            </a>
 
-    <link href="../../css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="../../css/prettify.css" rel="stylesheet"/>
-    <link href="https://www.uni-weimar.de/medien/webis/publications/bibentry-pan.css" rel="stylesheet"/>
+            <h1 class="uk-margin-small">Proceedings</h1>
+            <div class="page-header-meta">CLEF @ PAN 2019</div>
+        </div>
+    </header>
 
-    <style>
-        .navbar .navbar-nav {
-            font-weight: bold;
-        }
-    </style>
+    <div class="uk-section">
+        <div class="uk-container">
+            <h2>Overview Papers</h2>
+            <div id="proceedings-overviews" class="col-xs-12"></div>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="../../js/html5shiv.js"></script>
-    <script src="../../js/respond.min.js"></script>
-    <![endif]-->
+            <h2>Keynotes</h2>
+            <div id="proceedings-talks" class="col-xs-12"></div>
 
-    <link rel="shortcut icon" href="../pan19-figures/pan-icon-16x16.ico">
-    <!--
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
-    -->
+            <h2>Cross-domain Authorship Attribution</h2>
+            <div id="proceedings-notebooks-authorship-attribution" class="col-xs-12"></div>
 
-</head>
-<body>
+            <h2>Style Change Detection</h2>
+            <div id="proceedings-notebooks-style-change-detection" class="col-xs-12"></div>
 
-<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="../../index.html"><img src="../pan19-figures/pan-logo-small-lightgrey.png"
-                                                             alt="PAN" style="margin-top:-5px"></a>
-    </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="../../index.html">Home</a></li>
-            <li><a href="index.html">PAN @ CLEF 2019:</a></li>
-            <li><a href="about.html">About</a></li>
-            <li class="active"><a href="proceedings.html">Proceedings</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                   aria-expanded="false">Tasks <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="author-profiling.html">Bots and Gender Profiling</a></li>
-                    <li><a href="celebrity-profiling.html">Celebrity Profiling</a></li>
-                    <li><a href="author-identification.html">Cross-domain Authorship Attribution</a></li>
-                    <li><a href="style-change-detection.html">Style Change Detection</a></li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-</nav>
+            <h2>Bots and Gender Profiling</h2>
+            <div id="proceedings-notebooks-bots-profiling" class="col-xs-12"></div>
 
-<div class="container">
-
-    <div id="proceedings" class="row">
-        <div class="col-xs-12">
-            <h1 id="task-description" class="page-header">
-                Proceedings
-                <div class="btn-group">
-                    <a role="button" class="btn btn-default" href="../../clef18/pan18-web/proceedings.html"><span
-                            class="glyphicon glyphicon-chevron-left" style="color:grey;"></span></a>
-                    <span role="button" class="btn btn-default" disabled="disabled">2019</span>
-                    <!--
-                    <a role="button" class="btn btn-default" href="../../pan-20/pan20-web/proceedings.html"><span class="glyphicon glyphicon-chevron-right" style="color:grey;"></span></a>
-                    -->
-                    <span role="button" class="btn btn-default" disabled="disabled"><span
-                            class="glyphicon glyphicon-chevron-right" style="color:grey;"></span></span>
-                </div>
-            </h1>
+            <h2>Celebrity Profiling</h2>
+            <div id="proceedings-notebooks-celebrity-profiling" class="col-xs-12"></div>
         </div>
     </div>
-
-    <!--
-    <div class="row">
-      <div class="col-xs-12">
-        <h3>The proceedings will be published after the workshop.</h3>
-      </div>
-    </div>
-    -->
-
-    <div class="row">
-        <div class="col-xs-12">
-            <h3>Overview Papers</h3>
-        </div>
-    </div>
-
-    <div class="row">
-        <div id="proceedings-overviews" class="col-xs-12"></div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-12">
-            <h3>Keynotes</h3>
-        </div>
-    </div>
-
-    <div class="row">
-        <div id="proceedings-talks" class="col-xs-12"></div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-12">
-            <h3>Cross-domain Authorship Attribution</h3>
-        </div>
-    </div>
-
-    <div class="row">
-        <div id="proceedings-notebooks-authorship-attribution" class="col-xs-12"></div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-12">
-            <h3>Style Change Detection</h3>
-        </div>
-    </div>
-
-    <div class="row">
-        <div id="proceedings-notebooks-style-change-detection" class="col-xs-12"></div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-12">
-            <h3>Bots and Gender Profiling</h3>
-        </div>
-    </div>
-
-    <div class="row">
-        <div id="proceedings-notebooks-bots-profiling" class="col-xs-12"></div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-12">
-            <h3>Celebrity Profiling</h3>
-        </div>
-    </div>
-
-    <div class="row">
-        <div id="proceedings-notebooks-celebrity-profiling" class="col-xs-12"></div>
-    </div>
-
-</div> <!-- /container -->
-
-<script src="../../js/jquery.js"></script>
-<script src="../../js/bootstrap.min.js"></script>
-<script src="../../js/prettify.js"></script>
-<script>
-    !function ($) {
-        $(function () {
-            window.prettyPrint && prettyPrint()
-        })
-    }(window.jQuery)
-</script>
+</main>
 
 <script>
-    var urlOverview = "https://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2019,overview&exclude=talk";
-    var urlTalks = "https://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2019,talk";
-    var urlTask1 = "https://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2019,authorship-attribution&exclude=overview";
-    var urlTask2 = "https://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2019,style-change-detection&exclude=overview";
-    var urlTask3 = "https://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2019,bots-profiling&exclude=overview";
-    var urlTask4 = "https://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2019,celebrity-profiling&exclude=overview";
+    let urlOverview = "https://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2019,overview&exclude=talk";
+    let urlTalks = "https://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2019,talk";
+    let urlTask1 = "https://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2019,authorship-attribution&exclude=overview";
+    let urlTask2 = "https://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2019,style-change-detection&exclude=overview";
+    let urlTask3 = "https://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2019,bots-profiling&exclude=overview";
+    let urlTask4 = "https://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2019,celebrity-profiling&exclude=overview";
 
     $(document).ready(function () {
         fetchPublicationsViewHtml(urlOverview, "#proceedings-overviews");
@@ -190,33 +86,11 @@
         $(selector).text("Loading...");
         $(selector).load(url + " #webis-pub-database",
             function (response, status, xhr) {
-                if (status == "error") {
-                    var msg = "Sorry but there was an error: ";
+                if (status === "error") {
+                    let msg = "Sorry but there was an error: ";
                     $(publicationsViewSelector).html(msg + xhr.status + " " + xhr.statusText);
                 }
             }
         );
     }
 </script>
-
-<script>
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', 'UA-70770005-1', 'auto');
-    ga('send', 'pageview');
-
-</script>
-
-</body>
-</html>
-

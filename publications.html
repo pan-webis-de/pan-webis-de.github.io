@@ -6,8 +6,8 @@ description: Publications by PAN participants and overview papers
 ---
 
 <main>
-    <section class="uk-section uk-section-default">
-        <div class="uk-container uk-margin-medium">
+    <header class="uk-section uk-section-muted">
+        <div class="uk-container">
             <h1>Publications</h1>
             <p class="uk-text-lead">All participants of PAN's shared tasks are invited to share their insights in the
                 form of
@@ -16,7 +16,11 @@ description: Publications by PAN participants and overview papers
                 invented by participants to solve a given task. They are typically published in the context of
                 conferences that
                 host PAN's events, or as dedicated workshop proceedings.</p>
+        </div>
+    </header>
 
+    <div class="uk-section uk-section-default">
+        <div class="uk-container">
             <div id="search-control" class="uk-margin-medium">
                 <input type="text" class="uk-input" id="bib-filter-field" placeholder="Type here to filter&hellip;"/>
             </div>
@@ -25,7 +29,7 @@ description: Publications by PAN participants and overview papers
         <div class="uk-container uk-margin-medium-top publications-list" id="publications-view">
             Loading...
         </div>
-    </section>
+    </div>
 </main>
 
 <script src="https://webis.de/js/bibentry.js?{{site.time | date: '%s'}}"></script>

@@ -6,23 +6,35 @@ description: PAN @ SemEval 2019 - Hyperpartisan News Detection
 ---
 
 <main>
-    <section class="uk-section">
-        <div class="uk-container">
-            <div>
-                <a class="uk-button uk-button-primary uk-align-right" href="https://goo.gl/forms/cWtOVsjmRYfNkBnC3" target="_blank">
-                    Register now!
-                </a>
+    <header class="uk-section uk-section-muted">
+        <nav class="uk-container uk-margin-medium-bottom">
+            <ul class="uk-text-muted uk-tab uk-margin-remove-top">
+                <li class="uk-active">
+                    <a href="#">SemEval 2019 Tasks <span class="uk-margin-small-left" data-uk-icon="icon: chevron-down"></span></a>
+                    <div class="uk-dropdown" data-uk-dropdown="mode: click">
+                        <ul class="uk-nav uk-dropdown-nav">
+                            <li class="uk-active"><a href="{{ '/semeval19/semeval19-web/index.html' | relative_url }}">Hyperpartisan News Detection</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
 
-                <h1 class="uk-margin-small">Hyperpartisan News Detection</h1>
-                <div class="page-header-meta">
-                    SemEval 2019 Task 4
-                    <span class="registrations vertical-divider-left"><span id="registration-counter">0</span> registrations</span>
-                </div>
+        <div class="uk-container">
+            <a class="uk-button uk-button-primary uk-align-right"
+               href="https://goo.gl/forms/cWtOVsjmRYfNkBnC3" target="_blank">
+                Register now!
+            </a>
+
+            <h1 class="uk-margin-small">Hyperpartisan News Detection</h1>
+            <div class="page-header-meta">
+                PAN @ SemEval 2019
+                <span class="registrations vertical-divider-left"><span id="registration-counter">0</span> registrations</span>
             </div>
         </div>
-    </section>
+    </header>
 
-    <section class="uk-section uk-section-secondary uk-padding-remove">
+    <div class="uk-section uk-section-secondary uk-padding-remove">
         <div class="uk-container">
             <div class="uk-text-center">
                 <div class="video-container">
@@ -30,9 +42,9 @@ description: PAN @ SemEval 2019 - Hyperpartisan News Detection
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section class="uk-section uk-section-default">
+    <div class="uk-section uk-section-default">
         <div class="uk-container uk-column-1-2@l">
             <h2>Task</h2>
             <p>Given a news article text, decide whether it follows a
@@ -88,9 +100,9 @@ description: PAN @ SemEval 2019 - Hyperpartisan News Detection
                 best-performing submission that has its code published open source before the SemEval
                 conference.</p>
         </div> <!-- /container -->
-    </section>
+    </div>
 
-    <section class="uk-section uk-section-muted">
+    <div class="uk-section uk-section-muted">
         <div class="uk-container">
 
             <h2>Task Committee</h2>
@@ -128,7 +140,7 @@ description: PAN @ SemEval 2019 - Hyperpartisan News Detection
             </div> <!-- /container -->
         </div>
 
-    </section>
+    </div>
 </main>
 
 <script>
