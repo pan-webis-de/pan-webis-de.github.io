@@ -129,889 +129,889 @@ gender_txt="male|female"
 gender_img="male|female"
 gender_comb="male|female" /&gt;</code></pre>
 
-                <p>We ask you to provide with three different predictions for the author's gender depending on your approach:</p>
+            <p>We ask you to provide with three different predictions for the author's gender depending on your approach:</p>
 
-                <ul>
-                    <li>gender_txt: gender prediction by using only text</li>
-                    <li>gender_img: gender prediction by using only images</li>
-                    <li>gender_comb: gender prediction by using both text and images</li>
-                </ul>
+            <ul>
+                <li>gender_txt: gender prediction by using only text</li>
+                <li>gender_img: gender prediction by using only images</li>
+                <li>gender_comb: gender prediction by using both text and images</li>
+            </ul>
 
-                <p>As previously said, you can participate in both textual and images classification, or only in one of
-                    them. Hence, if your approach uses only textual features, your prediction should be given in
-                    gender_txt.
-                    Similarly, if your approach relies on images, your prediction should be given in gender_img.
-                    In case you use both text and images, your prediction should be given in gender_comb. Furthermore,
-                    in such a case, if you can provide also the prediction by using both approaches separately, this
-                    would allow us to perform a more in-depth analysis of the results and to compare textual vs. image
-                    based author profiling. In this case, you should provide for the same author the three predictions:
-                    gender_txt, gender_img and gender_comb.</p>
+            <p>As previously said, you can participate in both textual and images classification, or only in one of
+                them. Hence, if your approach uses only textual features, your prediction should be given in
+                gender_txt.
+                Similarly, if your approach relies on images, your prediction should be given in gender_img.
+                In case you use both text and images, your prediction should be given in gender_comb. Furthermore,
+                in such a case, if you can provide also the prediction by using both approaches separately, this
+                would allow us to perform a more in-depth analysis of the results and to compare textual vs. image
+                based author profiling. In this case, you should provide for the same author the three predictions:
+                gender_txt, gender_img and gender_comb.</p>
 
-                <p>The naming of the output files is up to you, we recommend to use the author-id as filename and "xml"
-                    as extension.</p>
+            <p>The naming of the output files is up to you, we recommend to use the author-id as filename and "xml"
+                as extension.</p>
 
-                <p><strong>IMPORTANT!</strong> Languages should not be mixed. A folder should be created for each language and
-                    place inside only the files with the prediction for this language.</p>
+            <p><strong>IMPORTANT!</strong> Languages should not be mixed. A folder should be created for each language and
+                place inside only the files with the prediction for this language.</p>
 
-                <h2>Performance Measures</h2>
-                <p>The performance of your author profiling solution will be ranked by
-                    accuracy. For each language, we will calculate individual accuracies.
-                    Then, we will average the accuracy values per language to obtain the final ranking.</p>
+            <h2>Performance Measures</h2>
+            <p>The performance of your author profiling solution will be ranked by
+                accuracy. For each language, we will calculate individual accuracies.
+                Then, we will average the accuracy values per language to obtain the final ranking.</p>
 
-                <h2>Submission</h2>
-                <p>We ask you to prepare your software so that it can be executed via command line calls.
-                    <strong>More details will be released here soon.</strong>
-                </p>
+            <h2>Submission</h2>
+            <p>We ask you to prepare your software so that it can be executed via command line calls.
+                <strong>More details will be released here soon.</strong>
+            </p>
 
-                <p>You can choose freely among the available programming languages and among the operating systems
-                    Microsoft Windows and Ubuntu. We will ask you to deploy your software onto a virtual machine that
-                    will be made accessible to you after registration. You will be able to reach the virtual machine via
-                    ssh and via remote desktop. More information about how to access the virtual machines can be found
-                    in the user guide below:</p>
+            <p>You can choose freely among the available programming languages and among the operating systems
+                Microsoft Windows and Ubuntu. We will ask you to deploy your software onto a virtual machine that
+                will be made accessible to you after registration. You will be able to reach the virtual machine via
+                ssh and via remote desktop. More information about how to access the virtual machines can be found
+                in the user guide below:</p>
 
-                <a class="uk-button uk-button-primary" href="http://www.tira.io/static/tira-vm-user-guide.pdf">PAN Virtual
-                    Machine User Guide »</a>
+            <a class="uk-button uk-button-primary" href="http://www.tira.io/static/tira-vm-user-guide.pdf">PAN Virtual
+                Machine User Guide »</a>
 
-                <p>Once deployed in your virtual machine, we ask you to access TIRA at <a href="http://www.tira.io">www.tira.io</a>,
-                    where you can self-evaluate your software on the test data.</p>
+            <p>Once deployed in your virtual machine, we ask you to access TIRA at <a href="http://www.tira.io">www.tira.io</a>,
+                where you can self-evaluate your software on the test data.</p>
 
-                <p><strong>Note:</strong> By submitting your software you retain full copyrights. You agree to grant us
-                    usage rights only for the purpose of the PAN competition. We agree not to share your software with a
-                    third party or use it for other purposes than the PAN competition.</p>
+            <p><strong>Note:</strong> By submitting your software you retain full copyrights. You agree to grant us
+                usage rights only for the purpose of the PAN competition. We agree not to share your software with a
+                third party or use it for other purposes than the PAN competition.</p>
 
-                <h2>Results</h2>
-                <p>The following tables list the performances achieved by the participating teams in the different subtasks:</p>
-                <!-- <p>We provide with three baselines:</p>
-                 <ul>
-                    <li>LDR-baseline: It is described in  A Low Dimensionality Representation for Language Variety Identification.</a>
-                  In: Postproc. 17th Int. Conf. on Comput. Linguistics and Intelligent Text Processing, CICLing-2016, Springer-Verlag, LNCS(), arXiv:1705.10754</li>
-                     <li>BOW-baseline: A common bag-of-words with the 1000 most frequent ones</li>
-                     <li>STAT-baseline: A statistical baseline (majority class or random choice)</li>
-                 </ul>-->
+            <h2>Results</h2>
+            <p>The following tables list the performances achieved by the participating teams in the different subtasks:</p>
+            <!-- <p>We provide with three baselines:</p>
+             <ul>
+                <li>LDR-baseline: It is described in  A Low Dimensionality Representation for Language Variety Identification.</a>
+              In: Postproc. 17th Int. Conf. on Comput. Linguistics and Intelligent Text Processing, CICLing-2016, Springer-Verlag, LNCS(), arXiv:1705.10754</li>
+                 <li>BOW-baseline: A common bag-of-words with the 1000 most frequent ones</li>
+                 <li>STAT-baseline: A statistical baseline (majority class or random choice)</li>
+             </ul>-->
 
-                <!-- Gloabal Ranking -->
+            <!-- Gloabal Ranking -->
 
-                <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
-                    <thead>
-                    <tr>
-                        <th colspan="6">GLOBAL RANKING</th>
-                    </tr>
-                    <tr>
-                        <th>RANK</th>
-                        <th>TEAM</th>
-                        <th>ARABIC</th>
-                        <th>ENGLISH</th>
-                        <th>SPANISH</th>
-                        <th>AVERAGE</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>takahashi18</td>
-                        <td>0.7850</td>
-                        <td>0.8584</td>
-                        <td>0.8159</td>
-                        <td>0.8198</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>daneshvar18</td>
-                        <td>0.8090</td>
-                        <td>0.8221</td>
-                        <td>0.8200</td>
-                        <td>0.8170</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>miranda18</td>
-                        <td>0.8180</td>
-                        <td>0.8068</td>
-                        <td>0.7955</td>
-                        <td>0.8068</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>laporte18</td>
-                        <td>0.7940</td>
-                        <td>0.8132</td>
-                        <td>0.8000</td>
-                        <td>0.8024</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>schuur18</td>
-                        <td>0.7920</td>
-                        <td>0.8074</td>
-                        <td>0.7918</td>
-                        <td>0.7971</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>vaneerden18 --> nieuwenhuis18</td>
-                        <td>0.7870</td>
-                        <td>0.8095</td>
-                        <td>0.7923</td>
-                        <td>0.7963</td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>sierraloaiza18</td>
-                        <td>0.8100</td>
-                        <td>0.8063</td>
-                        <td>0.7477</td>
-                        <td>0.7880</td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>martinc18</td>
-                        <td>0.7780</td>
-                        <td>0.7926</td>
-                        <td>0.7786</td>
-                        <td>0.7831</td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                        <td>snijders18</td>
-                        <td>0.7490</td>
-                        <td>0.7926</td>
-                        <td>0.8036</td>
-                        <td>0.7817</td>
-                    </tr>
-                    <tr>
-                        <td>10</td>
-                        <td>lopezsantillan18</td>
-                        <td>0.7760</td>
-                        <td>0.7847</td>
-                        <td>0.7677</td>
-                        <td>0.7761</td>
-                    </tr>
-                    <tr>
-                        <td>11</td>
-                        <td>miller18</td>
-                        <td>0.7570</td>
-                        <td>0.7947</td>
-                        <td>0.7623</td>
-                        <td>0.7713</td>
-                    </tr>
-                    <tr>
-                        <td>12</td>
-                        <td>gouravdas18</td>
-                        <td>0.7680</td>
-                        <td>0.7737</td>
-                        <td>0.7709</td>
-                        <td>0.7709</td>
-                    </tr>
-                    <tr>
-                        <td>13</td>
-                        <td>yigal18</td>
-                        <td>0.7570</td>
-                        <td>0.7889</td>
-                        <td>0.7591</td>
-                        <td>0.7683</td>
-                    </tr>
-                    <tr>
-                        <td>14</td>
-                        <td>pool18</td>
-                        <td>0.7640</td>
-                        <td>0.7884</td>
-                        <td>0.7432</td>
-                        <td>0.7652</td>
-                    </tr>
-                    <tr>
-                        <td>15</td>
-                        <td>vondaeniken18</td>
-                        <td>0.7320</td>
-                        <td>0.7742</td>
-                        <td>0.7464</td>
-                        <td>0.7509</td>
-                    </tr>
-                    <tr>
-                        <td>16</td>
-                        <td>schaetti18</td>
-                        <td>0.7390</td>
-                        <td>0.7711</td>
-                        <td>0.7359</td>
-                        <td>0.7487</td>
-                    </tr>
-                    <tr>
-                        <td>17</td>
-                        <td>aragonsaenzpardo18</td>
-                        <td>0.6670</td>
-                        <td>0.8016</td>
-                        <td>0.7723</td>
-                        <td>0.7470</td>
-                    </tr>
-                    <tr>
-                        <td>18</td>
-                        <td>bayot18</td>
-                        <td>0.6760</td>
-                        <td>0.7716</td>
-                        <td>0.6873</td>
-                        <td>0.7116</td>
-                    </tr>
-                    <tr>
-                        <td>19</td>
-                        <td>gariboiorts18</td>
-                        <td>0.6750</td>
-                        <td>0.7363</td>
-                        <td>0.7164</td>
-                        <td>0.7092</td>
-                    </tr>
-                    <tr>
-                        <td>20</td>
-                        <td>tekir18</td>
-                        <td>0.6920</td>
-                        <td>0.7495</td>
-                        <td>0.6655</td>
-                        <td>0.7023</td>
-                    </tr>
-                    <tr>
-                        <td>21</td>
-                        <td>raiyani18</td>
-                        <td>0.7220</td>
-                        <td>0.7279</td>
-                        <td>0.6436</td>
-                        <td>0.6978</td>
-                    </tr>
-                    <tr>
-                        <td>22</td>
-                        <td>sandroni18</td>
-                        <td>0.6870</td>
-                        <td>0.6658</td>
-                        <td>0.6782</td>
-                        <td>0.6770</td>
-                    </tr>
-                    <tr>
-                        <td>23</td>
-                        <td>karlgren18</td>
-                        <td>-</td>
-                        <td>0.5521</td>
-                        <td>-</td>
-                        <td>-</td>
-                    </tr>
-                    </tbody>
-                </table>
-
-
-                <!-- ARABIC -->
-
-                <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
-                    <thead>
-                    <tr>
-                        <th colspan="6">ARABIC RANKING</th>
-                    </tr>
-                    <tr>
-                        <th>RANK</th>
-                        <th>TEAM</th>
-                        <th>TEXT</th>
-                        <th>IMAGES</th>
-                        <th>COMBINED</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>miranda18</td>
-                        <td>0.8170</td>
-                        <td>0.5900</td>
-                        <td>0.8180</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>sierraloaiza18</td>
-                        <td>0.8120</td>
-                        <td>0.7280</td>
-                        <td>0.8100</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>daneshvar18</td>
-                        <td>0.8090</td>
-                        <td>-</td>
-                        <td>0.8090</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>laporte18</td>
-                        <td>0.7910</td>
-                        <td>0.7010</td>
-                        <td>0.7940</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>schuur18</td>
-                        <td>0.7920</td>
-                        <td></td>
-                        <td>0.7920</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>vaneerden18 --> nieuwenhuis18</td>
-                        <td>0.7830</td>
-                        <td>0.6230</td>
-                        <td>0.7870</td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>takahashi18</td>
-                        <td>0.7710</td>
-                        <td>0.7720</td>
-                        <td>0.7850</td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>martinc18</td>
-                        <td>0.7760</td>
-                        <td>0.5600</td>
-                        <td>0.7780</td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                        <td>lopezsantillan18</td>
-                        <td>0.7760</td>
-                        <td>-</td>
-                        <td>0.7760</td>
-                    </tr>
-                    <tr>
-                        <td>10</td>
-                        <td>gouravdas18</td>
-                        <td>0.7430</td>
-                        <td>0.6570</td>
-                        <td>0.7680</td>
-                    </tr>
-                    <tr>
-                        <td>11</td>
-                        <td>pool18</td>
-                        <td>0.7600</td>
-                        <td>0.6230</td>
-                        <td>0.7640</td>
-                    </tr>
-                    <tr>
-                        <td>12</td>
-                        <td>miller18</td>
-                        <td>0.7590</td>
-                        <td>0.4970</td>
-                        <td>0.7570</td>
-                    </tr>
-                    <tr>
-                        <td>13</td>
-                        <td>yigal18</td>
-                        <td>0.7590</td>
-                        <td>0.5100</td>
-                        <td>0.7570</td>
-                    </tr>
-                    <tr>
-                        <td>14</td>
-                        <td>snijders18</td>
-                        <td>0.7490</td>
-                        <td>-</td>
-                        <td>0.7490</td>
-                    </tr>
-                    <tr>
-                        <td>15</td>
-                        <td>schaetti18</td>
-                        <td>0.7390</td>
-                        <td>0.5430</td>
-                        <td>0.7390</td>
-                    </tr>
-                    <tr>
-                        <td>16</td>
-                        <td>vondaeniken18</td>
-                        <td>0.7320</td>
-                        <td>-</td>
-                        <td>0.7320</td>
-                    </tr>
-                    <tr>
-                        <td>17</td>
-                        <td>raiyani18</td>
-                        <td>0.7220</td>
-                        <td>-</td>
-                        <td>0.7220</td>
-                    </tr>
-                    <tr>
-                        <td>18</td>
-                        <td>tekir18</td>
-                        <td>0.6920</td>
-                        <td>-</td>
-                        <td>0.6920</td>
-                    </tr>
-                    <tr>
-                        <td>19</td>
-                        <td>sandroni18</td>
-                        <td>0.6870</td>
-                        <td>-</td>
-                        <td>0.6870</td>
-                    </tr>
-                    <tr>
-                        <td>20</td>
-                        <td>bayot18</td>
-                        <td>0.6760</td>
-                        <td>-</td>
-                        <td>0.6760</td>
-                    </tr>
-                    <tr>
-                        <td>21</td>
-                        <td>gariboiorts18</td>
-                        <td>0.6750</td>
-                        <td>-</td>
-                        <td>0.6750</td>
-                    </tr>
-                    <tr>
-                        <td>22</td>
-                        <td>aragonsaenzpardo18</td>
-                        <td>0.6480</td>
-                        <td>0.6800</td>
-                        <td>0.6670</td>
-                    </tr>
-                    <tr>
-                        <td>23</td>
-                        <td>karlgren18</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                    </tr>
-                    </tbody>
-                </table>
-
-                <!-- ENGLISH -->
-
-                <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
-                    <thead>
-                    <tr>
-                        <th colspan="6">ENGLISH RANKING</th>
-                    </tr>
-                    <tr>
-                        <th>RANK</th>
-                        <th>TEAM</th>
-                        <th>TEXT</th>
-                        <th>IMAGES</th>
-                        <th>COMBINED</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>takahashi18</td>
-                        <td>0.7968</td>
-                        <td>0.8163</td>
-                        <td>0.8584</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>daneshvar18</td>
-                        <td>0.8221</td>
-                        <td>-</td>
-                        <td>0.8221</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>laporte18</td>
-                        <td>0.8074</td>
-                        <td>0.6963</td>
-                        <td>0.8132</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>vaneerden18 --> nieuwenhuis18</td>
-                        <td>0.8116</td>
-                        <td>0.6100</td>
-                        <td>0.8095</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>schuur18</td>
-                        <td>0.8074</td>
-                        <td>-</td>
-                        <td>0.8074</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>miranda18</td>
-                        <td>0.8121</td>
-                        <td>0.5468</td>
-                        <td>0.8068</td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>sierraloaiza18</td>
-                        <td>0.8011</td>
-                        <td>0.7442</td>
-                        <td>0.8063</td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>aragonsaenzpardo18</td>
-                        <td>0.7963</td>
-                        <td>0.6921</td>
-                        <td>0.8016</td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                        <td>miller18</td>
-                        <td>0.7911</td>
-                        <td>0.5174</td>
-                        <td>0.7947</td>
-                    </tr>
-                    <tr>
-                        <td>10</td>
-                        <td>snijders18</td>
-                        <td>0.7926</td>
-                        <td>-</td>
-                        <td>0.7926</td>
-                    </tr>
-                    <tr>
-                        <td>11</td>
-                        <td>martinc18</td>
-                        <td>0.7900</td>
-                        <td>0.5826</td>
-                        <td>0.7926</td>
-                    </tr>
-                    <tr>
-                        <td>12</td>
-                        <td>yigal18</td>
-                        <td>0.7911</td>
-                        <td>0.4942</td>
-                        <td>0.7889</td>
-                    </tr>
-                    <tr>
-                        <td>13</td>
-                        <td>pool18</td>
-                        <td>0.7853</td>
-                        <td>0.6584</td>
-                        <td>0.7884</td>
-                    </tr>
-                    <tr>
-                        <td>14</td>
-                        <td>lopezsantillan18</td>
-                        <td>0.7847</td>
-                        <td>-</td>
-                        <td>0.7847</td>
-                    </tr>
-                    <tr>
-                        <td>15</td>
-                        <td>vondaeniken18</td>
-                        <td>0.7742</td>
-                        <td>-</td>
-                        <td>0.7742</td>
-                    </tr>
-                    <tr>
-                        <td>16</td>
-                        <td>gouravdas18</td>
-                        <td>0.7558</td>
-                        <td>0.6747</td>
-                        <td>0.7737</td>
-                    </tr>
-                    <tr>
-                        <td>17</td>
-                        <td>bayot18</td>
-                        <td>0.7716</td>
-                        <td>-</td>
-                        <td>0.7716</td>
-                    </tr>
-                    <tr>
-                        <td>18</td>
-                        <td>schaetti18</td>
-                        <td>0.7711</td>
-                        <td>0.5763</td>
-                        <td>0.0.7711</td>
-                    </tr>
-                    <tr>
-                        <td>19</td>
-                        <td>tekir18</td>
-                        <td>0.7495</td>
-                        <td>-</td>
-                        <td>0.7495</td>
-                    </tr>
-                    <tr>
-                        <td>20</td>
-                        <td>gariboiorts18</td>
-                        <td>0.7363</td>
-                        <td>-</td>
-                        <td>0.7363</td>
-                    </tr>
-                    <tr>
-                        <td>21</td>
-                        <td>raiyani18</td>
-                        <td>0.7279</td>
-                        <td>-</td>
-                        <td>0.7279</td>
-                    </tr>
-                    <tr>
-                        <td>22</td>
-                        <td>sandroni18</td>
-                        <td>0.6658</td>
-                        <td>-</td>
-                        <td>0.6658</td>
-                    </tr>
-                    <tr>
-                        <td>23</td>
-                        <td>karlgren18</td>
-                        <td>0.5521</td>
-                        <td>-</td>
-                        <td>0.5521</td>
-                    </tr>
-                    </tbody>
-                </table>
-
-                <!-- SPANISH -->
-
-                <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
-                    <thead>
-                    <tr>
-                        <th colspan="6">SPANISH RANKING</th>
-                    </tr>
-                    <tr>
-                        <th>RANK</th>
-                        <th>TEAM</th>
-                        <th>TEXT</th>
-                        <th>IMAGES</th>
-                        <th>COMBINED</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>daneshvar18</td>
-                        <td>0.8200</td>
-                        <td>-</td>
-                        <td>0.8200</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>takahashi18</td>
-                        <td>0.7864</td>
-                        <td>0.7732</td>
-                        <td>0.8159</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>snijders18</td>
-                        <td>0.8036</td>
-                        <td>-</td>
-                        <td>0.8036</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>laporte18</td>
-                        <td>0.7959</td>
-                        <td>0.6805</td>
-                        <td>0.8000</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>miranda18</td>
-                        <td>0.8005</td>
-                        <td>0.5691</td>
-                        <td>0.7955</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>vaneerden18 --> nieuwenhuis18</td>
-                        <td>0.8027</td>
-                        <td>0.5873</td>
-                        <td>0.7923</td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>schuur18</td>
-                        <td>0.7918</td>
-                        <td>-</td>
-                        <td>0.7918</td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>martinc18</td>
-                        <td>0.7782</td>
-                        <td>0.5486</td>
-                        <td>0.7786</td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                        <td>aragonsaenzpardo18</td>
-                        <td>0.7686</td>
-                        <td>0.6668</td>
-                        <td>0.7723</td>
-                    </tr>
-                    <tr>
-                        <td>10</td>
-                        <td>gouravdas18</td>
-                        <td>0.7586</td>
-                        <td>0.6918</td>
-                        <td>0.7709</td>
-                    </tr>
-                    <tr>
-                        <td>11</td>
-                        <td>lopezsantillan18</td>
-                        <td>0.7677</td>
-                        <td>-</td>
-                        <td>0.7677</td>
-                    </tr>
-                    <tr>
-                        <td>12</td>
-                        <td>miller18</td>
-                        <td>0.7650</td>
-                        <td>0.4923</td>
-                        <td>0.7623</td>
-                    </tr>
-                    <tr>
-                        <td>13</td>
-                        <td>yigal18</td>
-                        <td>0.7650</td>
-                        <td>0.5027</td>
-                        <td>0.7591</td>
-                    </tr>
-                    <tr>
-                        <td>14</td>
-                        <td>sierraloaiza18</td>
-                        <td>0.7827</td>
-                        <td>0.7100</td>
-                        <td>0.7477</td>
-                    </tr>
-                    <tr>
-                        <td>15</td>
-                        <td>vondaeniken18</td>
-                        <td>0.7464</td>
-                        <td>-</td>
-                        <td>0.7464</td>
-                    </tr>
-                    <tr>
-                        <td>16</td>
-                        <td>pool18</td>
-                        <td>0.7405</td>
-                        <td>0.6232</td>
-                        <td>0.7432</td>
-                    </tr>
-                    <tr>
-                        <td>17</td>
-                        <td>schaetti18</td>
-                        <td>0.7359</td>
-                        <td>0.5782</td>
-                        <td>0.7359</td>
-                    </tr>
-                    <tr>
-                        <td>18</td>
-                        <td>gariboiorts18</td>
-                        <td>0.7164</td>
-                        <td>-</td>
-                        <td>0.7164</td>
-                    </tr>
-                    <tr>
-                        <td>19</td>
-                        <td>bayot18</td>
-                        <td>0.6873</td>
-                        <td>-</td>
-                        <td>0.6873</td>
-                    </tr>
-                    <tr>
-                        <td>20</td>
-                        <td>sandroni18</td>
-                        <td>0.6782</td>
-                        <td>-</td>
-                        <td>0.6782</td>
-                    </tr>
-                    <tr>
-                        <td>21</td>
-                        <td>tekir18</td>
-                        <td>0.6655</td>
-                        <td>-</td>
-                        <td>0.6655</td>
-                    </tr>
-                    <tr>
-                        <td>22</td>
-                        <td>raiyani18</td>
-                        <td>0.6436</td>
-                        <td>-</td>
-                        <td>0.6436</td>
-                    </tr>
-                    <tr>
-                        <td>23</td>
-                        <td>karlgren18</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                    </tr>
-                    </tbody>
-                </table>
+            <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+                <thead>
+                <tr>
+                    <th colspan="6">GLOBAL RANKING</th>
+                </tr>
+                <tr>
+                    <th>RANK</th>
+                    <th>TEAM</th>
+                    <th>ARABIC</th>
+                    <th>ENGLISH</th>
+                    <th>SPANISH</th>
+                    <th>AVERAGE</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>takahashi18</td>
+                    <td>0.7850</td>
+                    <td>0.8584</td>
+                    <td>0.8159</td>
+                    <td>0.8198</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>daneshvar18</td>
+                    <td>0.8090</td>
+                    <td>0.8221</td>
+                    <td>0.8200</td>
+                    <td>0.8170</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>miranda18</td>
+                    <td>0.8180</td>
+                    <td>0.8068</td>
+                    <td>0.7955</td>
+                    <td>0.8068</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>laporte18</td>
+                    <td>0.7940</td>
+                    <td>0.8132</td>
+                    <td>0.8000</td>
+                    <td>0.8024</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>schuur18</td>
+                    <td>0.7920</td>
+                    <td>0.8074</td>
+                    <td>0.7918</td>
+                    <td>0.7971</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>vaneerden18 --> nieuwenhuis18</td>
+                    <td>0.7870</td>
+                    <td>0.8095</td>
+                    <td>0.7923</td>
+                    <td>0.7963</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>sierraloaiza18</td>
+                    <td>0.8100</td>
+                    <td>0.8063</td>
+                    <td>0.7477</td>
+                    <td>0.7880</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>martinc18</td>
+                    <td>0.7780</td>
+                    <td>0.7926</td>
+                    <td>0.7786</td>
+                    <td>0.7831</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>snijders18</td>
+                    <td>0.7490</td>
+                    <td>0.7926</td>
+                    <td>0.8036</td>
+                    <td>0.7817</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>lopezsantillan18</td>
+                    <td>0.7760</td>
+                    <td>0.7847</td>
+                    <td>0.7677</td>
+                    <td>0.7761</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>miller18</td>
+                    <td>0.7570</td>
+                    <td>0.7947</td>
+                    <td>0.7623</td>
+                    <td>0.7713</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>gouravdas18</td>
+                    <td>0.7680</td>
+                    <td>0.7737</td>
+                    <td>0.7709</td>
+                    <td>0.7709</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>yigal18</td>
+                    <td>0.7570</td>
+                    <td>0.7889</td>
+                    <td>0.7591</td>
+                    <td>0.7683</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>pool18</td>
+                    <td>0.7640</td>
+                    <td>0.7884</td>
+                    <td>0.7432</td>
+                    <td>0.7652</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>vondaeniken18</td>
+                    <td>0.7320</td>
+                    <td>0.7742</td>
+                    <td>0.7464</td>
+                    <td>0.7509</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>schaetti18</td>
+                    <td>0.7390</td>
+                    <td>0.7711</td>
+                    <td>0.7359</td>
+                    <td>0.7487</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>aragonsaenzpardo18</td>
+                    <td>0.6670</td>
+                    <td>0.8016</td>
+                    <td>0.7723</td>
+                    <td>0.7470</td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>bayot18</td>
+                    <td>0.6760</td>
+                    <td>0.7716</td>
+                    <td>0.6873</td>
+                    <td>0.7116</td>
+                </tr>
+                <tr>
+                    <td>19</td>
+                    <td>gariboiorts18</td>
+                    <td>0.6750</td>
+                    <td>0.7363</td>
+                    <td>0.7164</td>
+                    <td>0.7092</td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>tekir18</td>
+                    <td>0.6920</td>
+                    <td>0.7495</td>
+                    <td>0.6655</td>
+                    <td>0.7023</td>
+                </tr>
+                <tr>
+                    <td>21</td>
+                    <td>raiyani18</td>
+                    <td>0.7220</td>
+                    <td>0.7279</td>
+                    <td>0.6436</td>
+                    <td>0.6978</td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td>sandroni18</td>
+                    <td>0.6870</td>
+                    <td>0.6658</td>
+                    <td>0.6782</td>
+                    <td>0.6770</td>
+                </tr>
+                <tr>
+                    <td>23</td>
+                    <td>karlgren18</td>
+                    <td>-</td>
+                    <td>0.5521</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                </tbody>
+            </table>
 
 
-                <!--<p>A more detailed analysis of the detection performances can be found in the overview paper accompanying this task.</p>
-                <p>
-                    <a class="btn btn-default" href="../pan15-papers-final/pan15-author-profiling/rangel15-overview.pdf#page=8">Learn more »</a>
-                </p>-->
+            <!-- ARABIC -->
 
-                <h2>Related Work and Corpora</h2>
-                <p>We refer you to:</p>
-                <ul class="uk-list uk-list-bullet">
-                    <li>Francisco Rangel, Paolo Rosso, Martin Potthast, Benno Stein.
-                        <a href="http://ceur-ws.org/Vol-1866/invited_paper_11.pdf" target="_blank">Overview of the 5th
-                        Author Profiling Task at PAN 2017: Gender and Language Variety Identification in Twitter.</a>
-                        In: Cappellato L., Ferro N., Goeuriot L, Mandl T. (Eds.) CLEF 2017 Labs and Workshops, Notebook
-                        Papers. CEUR Workshop Proceedings. CEUR-WS.org, vol. 1866.
-                    </li>
-                    <li>Francisco Rangel, Paolo Rosso, Ben Verhoeven, Walter Daelemans, Martin Pottast, Benno Stein.
-                        <a href="http://ceur-ws.org/Vol-1609/16090750.pdf" target="_blank">Overview of the 4th Author
-                        Profiling Task at PAN 2016: Cross-Genre Evaluations.</a> In: Balog K., Capellato L., Ferro N.,
-                        Macdonald C. (Eds.) CLEF 2016 Labs and Workshops, Notebook Papers. CEUR Workshop Proceedings.
-                        CEUR-WS.org, vol. 1609, pp. 750-784
-                    </li>
-                    <li>Francisco Rangel, Fabio Celli, Paolo Rosso, Martin Pottast, Benno Stein, Walter Daelemans.
-                        <a href="https://github.com/autoritas/RD-Lab/blob/master/doc/papers/2015%20-%20PAN/pan15-ap-overview.pdf"
-                            target="_blank">Overview of the 3rd Author Profiling Task at PAN 2015.</a>In: Linda
-                        Cappelato and Nicola Ferro and Gareth Jones and Eric San Juan (Eds.): CLEF 2015 Labs and
-                        Workshops, Notebook Papers, 8-11 September, Toulouse, France. CEUR Workshop Proceedings. ISSN
-                        1613-0073, http://ceur-ws.org/Vol-1391/,2015.
-                    </li>
-                    <li>Francisco Rangel, Paolo Rosso, Irina Chugur, Martin Potthast, Martin Trenkmann, Benno Stein, Ben
-                        Verhoeven, Walter Daelemans.
-                        <a href="http://ceur-ws.org/Vol-1180/CLEF2014wn-Pan-RangelEt2014.pdf" target="_blank">Overview
-                            of the 2nd Author Profiling Task at PAN 2014.</a> In: Cappellato L., Ferro N., Halvey M.,
-                        Kraaij W. (Eds.) CLEF 2014 Labs and Workshops, Notebook Papers. CEUR-WS.org, vol. 1180, pp.
-                        898-827.
-                    </li>
-                    <li>Francisco Rangel, Paolo Rosso, Moshe Koppel, Efstatios Stamatatos, Giacomo Inches.
-                        <a href="http://ceur-ws.org/Vol-1179/CLEF2013wn-PAN-RangelEt2013.pdf" target="_blank">Overview
-                        of the Author Profiling Task at PAN 2013.</a> In: Forner P., Navigli R., Tufis D. (Eds.)Notebook
-                        Papers of CLEF 2013 LABs and Workshops. CEUR-WS.org, vol. 1179
-                    </li>
+            <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+                <thead>
+                <tr>
+                    <th colspan="6">ARABIC RANKING</th>
+                </tr>
+                <tr>
+                    <th>RANK</th>
+                    <th>TEAM</th>
+                    <th>TEXT</th>
+                    <th>IMAGES</th>
+                    <th>COMBINED</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>miranda18</td>
+                    <td>0.8170</td>
+                    <td>0.5900</td>
+                    <td>0.8180</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>sierraloaiza18</td>
+                    <td>0.8120</td>
+                    <td>0.7280</td>
+                    <td>0.8100</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>daneshvar18</td>
+                    <td>0.8090</td>
+                    <td>-</td>
+                    <td>0.8090</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>laporte18</td>
+                    <td>0.7910</td>
+                    <td>0.7010</td>
+                    <td>0.7940</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>schuur18</td>
+                    <td>0.7920</td>
+                    <td></td>
+                    <td>0.7920</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>vaneerden18 --> nieuwenhuis18</td>
+                    <td>0.7830</td>
+                    <td>0.6230</td>
+                    <td>0.7870</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>takahashi18</td>
+                    <td>0.7710</td>
+                    <td>0.7720</td>
+                    <td>0.7850</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>martinc18</td>
+                    <td>0.7760</td>
+                    <td>0.5600</td>
+                    <td>0.7780</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>lopezsantillan18</td>
+                    <td>0.7760</td>
+                    <td>-</td>
+                    <td>0.7760</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>gouravdas18</td>
+                    <td>0.7430</td>
+                    <td>0.6570</td>
+                    <td>0.7680</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>pool18</td>
+                    <td>0.7600</td>
+                    <td>0.6230</td>
+                    <td>0.7640</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>miller18</td>
+                    <td>0.7590</td>
+                    <td>0.4970</td>
+                    <td>0.7570</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>yigal18</td>
+                    <td>0.7590</td>
+                    <td>0.5100</td>
+                    <td>0.7570</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>snijders18</td>
+                    <td>0.7490</td>
+                    <td>-</td>
+                    <td>0.7490</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>schaetti18</td>
+                    <td>0.7390</td>
+                    <td>0.5430</td>
+                    <td>0.7390</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>vondaeniken18</td>
+                    <td>0.7320</td>
+                    <td>-</td>
+                    <td>0.7320</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>raiyani18</td>
+                    <td>0.7220</td>
+                    <td>-</td>
+                    <td>0.7220</td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>tekir18</td>
+                    <td>0.6920</td>
+                    <td>-</td>
+                    <td>0.6920</td>
+                </tr>
+                <tr>
+                    <td>19</td>
+                    <td>sandroni18</td>
+                    <td>0.6870</td>
+                    <td>-</td>
+                    <td>0.6870</td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>bayot18</td>
+                    <td>0.6760</td>
+                    <td>-</td>
+                    <td>0.6760</td>
+                </tr>
+                <tr>
+                    <td>21</td>
+                    <td>gariboiorts18</td>
+                    <td>0.6750</td>
+                    <td>-</td>
+                    <td>0.6750</td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td>aragonsaenzpardo18</td>
+                    <td>0.6480</td>
+                    <td>0.6800</td>
+                    <td>0.6670</td>
+                </tr>
+                <tr>
+                    <td>23</td>
+                    <td>karlgren18</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <!-- ENGLISH -->
+
+            <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+                <thead>
+                <tr>
+                    <th colspan="6">ENGLISH RANKING</th>
+                </tr>
+                <tr>
+                    <th>RANK</th>
+                    <th>TEAM</th>
+                    <th>TEXT</th>
+                    <th>IMAGES</th>
+                    <th>COMBINED</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>takahashi18</td>
+                    <td>0.7968</td>
+                    <td>0.8163</td>
+                    <td>0.8584</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>daneshvar18</td>
+                    <td>0.8221</td>
+                    <td>-</td>
+                    <td>0.8221</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>laporte18</td>
+                    <td>0.8074</td>
+                    <td>0.6963</td>
+                    <td>0.8132</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>vaneerden18 --> nieuwenhuis18</td>
+                    <td>0.8116</td>
+                    <td>0.6100</td>
+                    <td>0.8095</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>schuur18</td>
+                    <td>0.8074</td>
+                    <td>-</td>
+                    <td>0.8074</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>miranda18</td>
+                    <td>0.8121</td>
+                    <td>0.5468</td>
+                    <td>0.8068</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>sierraloaiza18</td>
+                    <td>0.8011</td>
+                    <td>0.7442</td>
+                    <td>0.8063</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>aragonsaenzpardo18</td>
+                    <td>0.7963</td>
+                    <td>0.6921</td>
+                    <td>0.8016</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>miller18</td>
+                    <td>0.7911</td>
+                    <td>0.5174</td>
+                    <td>0.7947</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>snijders18</td>
+                    <td>0.7926</td>
+                    <td>-</td>
+                    <td>0.7926</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>martinc18</td>
+                    <td>0.7900</td>
+                    <td>0.5826</td>
+                    <td>0.7926</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>yigal18</td>
+                    <td>0.7911</td>
+                    <td>0.4942</td>
+                    <td>0.7889</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>pool18</td>
+                    <td>0.7853</td>
+                    <td>0.6584</td>
+                    <td>0.7884</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>lopezsantillan18</td>
+                    <td>0.7847</td>
+                    <td>-</td>
+                    <td>0.7847</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>vondaeniken18</td>
+                    <td>0.7742</td>
+                    <td>-</td>
+                    <td>0.7742</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>gouravdas18</td>
+                    <td>0.7558</td>
+                    <td>0.6747</td>
+                    <td>0.7737</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>bayot18</td>
+                    <td>0.7716</td>
+                    <td>-</td>
+                    <td>0.7716</td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>schaetti18</td>
+                    <td>0.7711</td>
+                    <td>0.5763</td>
+                    <td>0.0.7711</td>
+                </tr>
+                <tr>
+                    <td>19</td>
+                    <td>tekir18</td>
+                    <td>0.7495</td>
+                    <td>-</td>
+                    <td>0.7495</td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>gariboiorts18</td>
+                    <td>0.7363</td>
+                    <td>-</td>
+                    <td>0.7363</td>
+                </tr>
+                <tr>
+                    <td>21</td>
+                    <td>raiyani18</td>
+                    <td>0.7279</td>
+                    <td>-</td>
+                    <td>0.7279</td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td>sandroni18</td>
+                    <td>0.6658</td>
+                    <td>-</td>
+                    <td>0.6658</td>
+                </tr>
+                <tr>
+                    <td>23</td>
+                    <td>karlgren18</td>
+                    <td>0.5521</td>
+                    <td>-</td>
+                    <td>0.5521</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <!-- SPANISH -->
+
+            <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+                <thead>
+                <tr>
+                    <th colspan="6">SPANISH RANKING</th>
+                </tr>
+                <tr>
+                    <th>RANK</th>
+                    <th>TEAM</th>
+                    <th>TEXT</th>
+                    <th>IMAGES</th>
+                    <th>COMBINED</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>daneshvar18</td>
+                    <td>0.8200</td>
+                    <td>-</td>
+                    <td>0.8200</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>takahashi18</td>
+                    <td>0.7864</td>
+                    <td>0.7732</td>
+                    <td>0.8159</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>snijders18</td>
+                    <td>0.8036</td>
+                    <td>-</td>
+                    <td>0.8036</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>laporte18</td>
+                    <td>0.7959</td>
+                    <td>0.6805</td>
+                    <td>0.8000</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>miranda18</td>
+                    <td>0.8005</td>
+                    <td>0.5691</td>
+                    <td>0.7955</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>vaneerden18 --> nieuwenhuis18</td>
+                    <td>0.8027</td>
+                    <td>0.5873</td>
+                    <td>0.7923</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>schuur18</td>
+                    <td>0.7918</td>
+                    <td>-</td>
+                    <td>0.7918</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>martinc18</td>
+                    <td>0.7782</td>
+                    <td>0.5486</td>
+                    <td>0.7786</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>aragonsaenzpardo18</td>
+                    <td>0.7686</td>
+                    <td>0.6668</td>
+                    <td>0.7723</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>gouravdas18</td>
+                    <td>0.7586</td>
+                    <td>0.6918</td>
+                    <td>0.7709</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>lopezsantillan18</td>
+                    <td>0.7677</td>
+                    <td>-</td>
+                    <td>0.7677</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>miller18</td>
+                    <td>0.7650</td>
+                    <td>0.4923</td>
+                    <td>0.7623</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>yigal18</td>
+                    <td>0.7650</td>
+                    <td>0.5027</td>
+                    <td>0.7591</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>sierraloaiza18</td>
+                    <td>0.7827</td>
+                    <td>0.7100</td>
+                    <td>0.7477</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>vondaeniken18</td>
+                    <td>0.7464</td>
+                    <td>-</td>
+                    <td>0.7464</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>pool18</td>
+                    <td>0.7405</td>
+                    <td>0.6232</td>
+                    <td>0.7432</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>schaetti18</td>
+                    <td>0.7359</td>
+                    <td>0.5782</td>
+                    <td>0.7359</td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>gariboiorts18</td>
+                    <td>0.7164</td>
+                    <td>-</td>
+                    <td>0.7164</td>
+                </tr>
+                <tr>
+                    <td>19</td>
+                    <td>bayot18</td>
+                    <td>0.6873</td>
+                    <td>-</td>
+                    <td>0.6873</td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>sandroni18</td>
+                    <td>0.6782</td>
+                    <td>-</td>
+                    <td>0.6782</td>
+                </tr>
+                <tr>
+                    <td>21</td>
+                    <td>tekir18</td>
+                    <td>0.6655</td>
+                    <td>-</td>
+                    <td>0.6655</td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td>raiyani18</td>
+                    <td>0.6436</td>
+                    <td>-</td>
+                    <td>0.6436</td>
+                </tr>
+                <tr>
+                    <td>23</td>
+                    <td>karlgren18</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                </tbody>
+            </table>
 
 
-                    <li>Francisco Rangel, Paolo Rosso.
-                        <a href="http://www.sciencedirect.com/science/article/pii/S0306457315000783" target="_blank">On
-                        the Impact of Emotions on Author Profiling.</a> In: Information Processing &amp; Management,
-                        vol. 52, issue 1, pp. 73-92
-                    </li>
+            <!--<p>A more detailed analysis of the detection performances can be found in the overview paper accompanying this task.</p>
+            <p>
+                <a class="btn btn-default" href="../pan15-papers-final/pan15-author-profiling/rangel15-overview.pdf#page=8">Learn more »</a>
+            </p>-->
 
-                    <li>S. Argamon, M. Koppel, J. Pennebaker and J. Schler (2009),
-                        <a href="http://u.cs.biu.ac.il/~koppel/papers/AuthorshipProfiling-cacm-final.pdf"
-                            target="_blank">Automatically profiling the author of an anonymous text</a>, Communications
-                        of the ACM 52 (2): 119–123.
-                    </li>
-                    <li>J. Pennebaker (2011). The secret life of pronouns: What our words say about us. New York:
-                        Bloomsbury Publishing, 2011.
-                    </li>
-                    <li>
-                        <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-17/pan17-data/pan17-author-profiling-training-dataset-2017-03-10-password-protected.zip"
-                           target="_blank">PAN-AP-17 corpus - Author Profiling Shared Task</a></li>
-                    <li>
-                        <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-16/pan16-data/pan16-author-profiling-training-dataset-2016-04-25.zip"
-                           target="_blank">PAN-AP-16 corpus - Author Profiling Shared Task</a></li>
-                    <li>
-                        <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-15/pan15-data/pan15-author-profiling-training-dataset-2015-04-23-password-protected.zip"
-                           target="_blank">PAN-AP-15 corpus - Author Profiling Shared Task</a></li>
-                    <li>
-                        <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-14/pan14-data/pan14-author-profiling-training-corpus-2014-04-16.zip"
-                           target="_blank">PAN-AP-14 corpus - Author Profiling Shared Task</a></li>
-                    <li>
-                        <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-author-profiling-training-corpus-2013-01-09.zip"
-                           target="_blank">PAN-AP-13 corpus - Author Profiling Shared Task</a></li>
-                    <li><a href="http://u.cs.biu.ac.il/~koppel/BlogCorpus.htm" target="_blank">The Blog Authorship
-                        Corpus</a></li>
-                </ul>
+            <h2>Related Work and Corpora</h2>
+            <p>We refer you to:</p>
+            <ul class="uk-list uk-list-bullet">
+                <li>Francisco Rangel, Paolo Rosso, Martin Potthast, Benno Stein.
+                    <a href="http://ceur-ws.org/Vol-1866/invited_paper_11.pdf" target="_blank">Overview of the 5th
+                    Author Profiling Task at PAN 2017: Gender and Language Variety Identification in Twitter.</a>
+                    In: Cappellato L., Ferro N., Goeuriot L, Mandl T. (Eds.) CLEF 2017 Labs and Workshops, Notebook
+                    Papers. CEUR Workshop Proceedings. CEUR-WS.org, vol. 1866.
+                </li>
+                <li>Francisco Rangel, Paolo Rosso, Ben Verhoeven, Walter Daelemans, Martin Pottast, Benno Stein.
+                    <a href="http://ceur-ws.org/Vol-1609/16090750.pdf" target="_blank">Overview of the 4th Author
+                    Profiling Task at PAN 2016: Cross-Genre Evaluations.</a> In: Balog K., Capellato L., Ferro N.,
+                    Macdonald C. (Eds.) CLEF 2016 Labs and Workshops, Notebook Papers. CEUR Workshop Proceedings.
+                    CEUR-WS.org, vol. 1609, pp. 750-784
+                </li>
+                <li>Francisco Rangel, Fabio Celli, Paolo Rosso, Martin Pottast, Benno Stein, Walter Daelemans.
+                    <a href="https://github.com/autoritas/RD-Lab/blob/master/doc/papers/2015%20-%20PAN/pan15-ap-overview.pdf"
+                        target="_blank">Overview of the 3rd Author Profiling Task at PAN 2015.</a>In: Linda
+                    Cappelato and Nicola Ferro and Gareth Jones and Eric San Juan (Eds.): CLEF 2015 Labs and
+                    Workshops, Notebook Papers, 8-11 September, Toulouse, France. CEUR Workshop Proceedings. ISSN
+                    1613-0073, http://ceur-ws.org/Vol-1391/,2015.
+                </li>
+                <li>Francisco Rangel, Paolo Rosso, Irina Chugur, Martin Potthast, Martin Trenkmann, Benno Stein, Ben
+                    Verhoeven, Walter Daelemans.
+                    <a href="http://ceur-ws.org/Vol-1180/CLEF2014wn-Pan-RangelEt2014.pdf" target="_blank">Overview
+                        of the 2nd Author Profiling Task at PAN 2014.</a> In: Cappellato L., Ferro N., Halvey M.,
+                    Kraaij W. (Eds.) CLEF 2014 Labs and Workshops, Notebook Papers. CEUR-WS.org, vol. 1180, pp.
+                    898-827.
+                </li>
+                <li>Francisco Rangel, Paolo Rosso, Moshe Koppel, Efstatios Stamatatos, Giacomo Inches.
+                    <a href="http://ceur-ws.org/Vol-1179/CLEF2013wn-PAN-RangelEt2013.pdf" target="_blank">Overview
+                    of the Author Profiling Task at PAN 2013.</a> In: Forner P., Navigli R., Tufis D. (Eds.)Notebook
+                    Papers of CLEF 2013 LABs and Workshops. CEUR-WS.org, vol. 1179
+                </li>
+
+
+                <li>Francisco Rangel, Paolo Rosso.
+                    <a href="http://www.sciencedirect.com/science/article/pii/S0306457315000783" target="_blank">On
+                    the Impact of Emotions on Author Profiling.</a> In: Information Processing &amp; Management,
+                    vol. 52, issue 1, pp. 73-92
+                </li>
+
+                <li>S. Argamon, M. Koppel, J. Pennebaker and J. Schler (2009),
+                    <a href="http://u.cs.biu.ac.il/~koppel/papers/AuthorshipProfiling-cacm-final.pdf"
+                        target="_blank">Automatically profiling the author of an anonymous text</a>, Communications
+                    of the ACM 52 (2): 119–123.
+                </li>
+                <li>J. Pennebaker (2011). The secret life of pronouns: What our words say about us. New York:
+                    Bloomsbury Publishing, 2011.
+                </li>
+                <li>
+                    <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-17/pan17-data/pan17-author-profiling-training-dataset-2017-03-10-password-protected.zip"
+                       target="_blank">PAN-AP-17 corpus - Author Profiling Shared Task</a></li>
+                <li>
+                    <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-16/pan16-data/pan16-author-profiling-training-dataset-2016-04-25.zip"
+                       target="_blank">PAN-AP-16 corpus - Author Profiling Shared Task</a></li>
+                <li>
+                    <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-15/pan15-data/pan15-author-profiling-training-dataset-2015-04-23-password-protected.zip"
+                       target="_blank">PAN-AP-15 corpus - Author Profiling Shared Task</a></li>
+                <li>
+                    <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-14/pan14-data/pan14-author-profiling-training-corpus-2014-04-16.zip"
+                       target="_blank">PAN-AP-14 corpus - Author Profiling Shared Task</a></li>
+                <li>
+                    <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-author-profiling-training-corpus-2013-01-09.zip"
+                       target="_blank">PAN-AP-13 corpus - Author Profiling Shared Task</a></li>
+                <li><a href="http://u.cs.biu.ac.il/~koppel/BlogCorpus.htm" target="_blank">The Blog Authorship
+                    Corpus</a></li>
+            </ul>
         </div>
     </div>
 
-    <div class="uk-section-muted uk-padding-large">
+    <div class="uk-section uk-section-muted">
         <div class="uk-container">
 
             <h2>Task Chair</h2>
