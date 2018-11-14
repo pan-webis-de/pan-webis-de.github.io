@@ -1,15 +1,12 @@
 Abby Townsend
 Adam Lockwood
-Adam MacLean
 Alex Burchill
 Andrea Sachs
 Annika Bengtzon
-Anson Bryson
 Anthony Markovitz
 Art Donovan
 Becky Burdock
 Ben Andrews
-Ben Caxton
 Ben Gregory
 Betty Brant Leeds
 Bill Hastings
@@ -22,9 +19,7 @@ Bridget Jones
 Brooke English
 Brooke Vandenberg
 Bryan Denton
-Caitlin Ryan
 Cameron "Buck" Williams
-Carl Kolchak
 Celeste Anders
 Champ Kind
 Chick Adams
@@ -32,10 +27,8 @@ Chloe Sullivan
 Chloe Talbot
 Chris Higby
 Christine Massey
-Clint Buchanan
 Cy Bennett
 Damien Day
-Danny Taylor
 Dan Vasser
 Dave Tabak
 Diane Simmons
@@ -43,17 +36,14 @@ Dick Preston
 Dion Patrick
 Doris Martin
 Duke William
-D.X. Beaumont
 Emily Cowles
 Frances Walsh
 Frankly Unctuous
 Frederick Foswell
 Froud
 Gallegher
-George Cragge
 George Dent
 George Faber
-Georges Duroy
 GlobeLink
 Grant Gabriel
 Gus Hedges
@@ -69,9 +59,6 @@ Jack Ryder
 Jamie Campbell
 Jasmine Thomas
 Jefferson Crowley
-Jefferson Drum
-Jennifer Horton
-Jimmy Olsen
 Jim Stevens
 John Boy Walton
 John Fitzgerald Byers
@@ -81,7 +68,6 @@ Katie Reed
 Kelly O'Donnell
 Kent Brockman
 Klugie
-Lana Lang
 Lance Bannon
 Les Nessman
 Libby Kennedy
@@ -91,16 +77,12 @@ Louis Ciccone
 Lou Sheldon
 Maddy Bowen
 Margaret Pynchon
-Mark Grainger
-Martin "Marty" Di Stasio
 Mattie Storin
 Melvin Frohike
 Michelle Capra
-Mickey Riley
 Mike Moore
 Miles Clarkson
 Miranda Priestly
-Monique Marmelstein
 Mr. Fosdick
 Mr. Wallace
 Murray Scarvi
@@ -113,32 +95,23 @@ Otto Chriek
 Pat Garrison
 Paul Beltzer
 Paul Marino
-Paul Morgan
 Paul Templin
 Pepper Dennis
 Percy "P.C.M." Mercy
 Perry White
 Polly Becker
-Richard Pritchard
-Richard "Ringo" Langly
 Rick Jason
 Riley Parker
 Rita Skeeter
-Robbie Robertson
-Robert "Bob" Major
 Ron Updyke
 Ruth Sherwood
 Sabrina Spellman
 Sacharissa Cripslock
 Sally Smedley
-Scott Norris
-Sierra Jennings
-Snapper Carr
 Spider Jerusalem
 Steve Wilson
 Sweet Polly Purebred
 Tally Atwater
-Tess Mercer
 The Lone Gunmen
 Tom Bradford
 Tom Grunick
@@ -149,14 +122,12 @@ Tricia Takanawa
 Trinity Wells
 Trudy Monk
 Tulio Triviño
-Tyra Nordbo
 Ulysse Mérou
 Vernon Fenwick
 Veronica Corningstone
 Vicki Vale
 Vivian Rook
 Walter Burns
-Walter 'Wichita' Garrett
 Wes Mantooth
 William de Worde
 William Miller
