@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """Term frequency extractor for the PAN19 hyperpartisan news detection task"""
-# Version: 2018-10-09
+# Version: 2018-11-23
 
 # Parameters:
 # --inputDataset=<directory>
@@ -60,7 +60,7 @@ def handleArticle(article, outFile):
     termfrequencies = {}
 
     # get text from article
-    text = lxml.etree.tostring(article, method="text")
+    text = lxml.etree.tostring(article, method="text", encoding="unicode")
     textcleaned = re.sub('[^a-z ]', '', text.lower())
 
     # counting tokens
@@ -113,8 +113,13 @@ def main(inputDataset, outputFile):
     with open(outputFile, 'w') as outFile:
         for file in os.listdir(inputDataset):
             if file.endswith(".xml"):
-                with open(inputDataset + "/" + file) as inputRunFile:
-                    xml.sax.parse(inputRunFile, HyperpartisanNewsTFExtractor(outFile))
+                with open(inputDataset + "/" + file, 'r') as inputRunFile:
+                    parser = xml.sax.make_parser()
+                    parser.setContentHandler(HyperpartisanNewsTFExtractor(outFile))
+                    source = xml.sax.xmlreader.InputSource()
+                    source.setByteStream(inputRunFile)
+                    source.setEncoding("utf-8")
+                    parser.parse(source)
 
 
     print("The vectors have been written to the output file.")
