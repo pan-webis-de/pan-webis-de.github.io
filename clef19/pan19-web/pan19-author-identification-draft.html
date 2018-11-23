@@ -129,10 +129,18 @@
 
 	<p><a class="btn btn-default" target="_blank" href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-18/pan18-data/pan18-cross-domain-authorship-attribution-training-dataset-2017-12-02-password-protected.zip">Download corpus</a> </p>
 	<p>This is a password-protected file. To obtain the password, first <a href=https://docs.google.com/forms/d/e/1FAIpQLSfR_xoBuGU3q7o3EYPoItN28UPuZENjs3wlWYEX_EdRGUyRfA/viewform>register</a> for the author identification task at PAN-2018, and then <a href="mailto:pan@webis.de?Subject=PAN-18" target="_top">notify</a> PAN organizers. </p>
-	<p>In addition, a language-independent baseline approach based on a character n-gram representation and a linear SVM classifier is provided.</p>
-	<p><a class="btn btn-default" target="_blank" href="../pan18-code/pan18-cdaa-baseline.py">Download baseline</a> </p>
 </div>
     </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Baselines</div>
+      <div class="panel-body">
+	<p>We provide the implementation of baseline methods that can help you estimate the efficacy of your approach. It is also possible for you to start from a baseline method and attempt to improve it for that specific task. The following baselines are available:</p>
+	      <p>CH3-SVM-CS: This is a language-independent authorship attribution approach based on a character 3-gram representation and a linear SVM classifier. It performs closed-set attribution, thus it does not assign any document to the &lt;UNK&gt; class. This method was used as based on the PAN-2018 edition of the task.</p>
+	      	<p><a class="btn btn-default" target="_blank" href="../pan19-code/pan19-cdaa-baseline-ch3svmcs.py">Download CH3-SVM-CS</a> </p>
+     	      <p>CH3-SVM-OS: This is a modification of CH3-SVM-CS for open-set conditions. It estimates the probabilities of output classes and assigns an unknown document to the &lt;UNK&gt; class when the probability of the most likely author is less than a threshold. </p>
+	<p><a class="btn btn-default" target="_blank" href="../pan19-code/pan19-cdaa-baseline-ch3svmos.py">Download CH3-SVM-OS</a> </p>
+	      <p>IMPOSTORS: This is an author verification method</p>
+       </div></div>
     <div class="panel panel-default">
       <div class="panel-heading">Evaluation Phase</div>
       <div class="panel-body">Once you finished tuning your approach to achieve satisfying performance on the development corpus, your software will be tested on the evaluation corpus. During the competition, the evaluation corpus will not be released publicly. Instead, we ask you to <strong>submit your software</strong> for evaluation at our site as described below.
