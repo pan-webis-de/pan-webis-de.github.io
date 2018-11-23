@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>PAN 2018</title>
+<title>PAN 2019</title>
 
 <link href="../../css/bootstrap.min.css" rel="stylesheet" />
 <link href="../../css/prettify.css" rel="stylesheet" />
@@ -43,20 +43,21 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="../../index.html"><img src="../pan18-figures/pan-logo-small-lightgrey.png" alt="PAN" style="margin-top:-5px"></a>
+    <a class="navbar-brand" href="../../index.html"><img src="../pan19-figures/pan-logo-small-lightgrey.png" alt="PAN" style="margin-top:-5px"></a>
   </div>
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav navbar-right">
       <li><a href="../../index.html">Home</a></li>
-      <li><a href="index.html">PAN @ CLEF 2018:</a></li>
+      <li><a href="index.html">PAN @ CLEF 2019:</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="proceedings.html">Proceedings</a></li>
       <li class="dropdown active">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tasks <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li class="active"><a href="author-identification.html">Author Identification</a></li>
-          <li><a href="author-profiling.html">Author Profiling</a></li>
-          <li><a href="author-obfuscation.html">Author Obfuscation</a></li>
+          <li><a href="author-profiling.html">Bots and Gender Profiling</a></li>
+          <li><a href="author-obfuscation.html">Celebrity Profiling</a></li>
+          <li class="active"><a href="author-identification.html">Cross-domain Author Identification</a></li>
+          <li class="active"><a href="author-identification.html">Style Change Detection</a></li>
         </ul>
       </li>
     </ul>
@@ -68,27 +69,7 @@
 <div class="row">
   <div class="col-xs-12">
     <h1 id="task-description" class="page-header">
-      Author Identification
-      <div class="btn-group">
-        <a role="button" class="btn btn-default" href="../../clef17/pan17-web/author-identification.html"><span class="glyphicon glyphicon-chevron-left" style="color:grey;"></span></a>
-        <span role="button" class="btn btn-default" disabled="disabled">2018</span>
-        <a role="button" class="btn btn-default" href="../../clef19/pan19-web/index.html"><span class="glyphicon glyphicon-chevron-right" style="color:grey;"></span></a>
-      </div>
-    </h1>
-    <!--
-    <div class="thumbnail pull-right" style="text-align:right;margin-left:15px;"><a href="http://www.adobe.com/" target="_blank"><img src="../pan18-figures/logo-adobe.png" alt="Adobe" style="max-height:150px"></a><div style="font-size:7pt;margin-right:13px;margin-top:2px;">Sponsor</div></div>
-    -->
-    <p class="lead">This task is divided into <strong>cross-domain authorship attribution</strong> and <strong>style change detection</strong>. You can choose to solve one or both of them.</p>
-    <ul class="nav nav-pills visible-xs">
-      <li><a href="#author-clustering" class="btn btn-large"><span class="glyphicon glyphicon-chevron-down"></span> Author Clustering</a></li>
-      <li><a href="#author-diarization" class="btn btn-large"><span class="glyphicon glyphicon-chevron-down"></span> Style Breach Detection</a></li>
-    </ul>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-sm-6">
-    <h2 id="cross-domain">Cross-domain Authorship Attribution</h2>
+      Cross-domain Author Identification
     <p>Authorship attribution is an important problem in information retrieval and computational linguistics but also in applied areas such as law and journalism where knowing the author of a document (such as a ransom note) may enable e.g. law enforcement to save lives. The most common framework for testing candidate algorithms is the <strong>closed-set attribution</strong> task: given a sample of reference documents from a restricted and finite set of candidate authors, the task is to determine the most likely author of a previously unseen document of unknown authorship? This task may be quite challenging when documents of known and unknown authorship come from different domains (e.g., thematic area, genre). 
 	<p>In this edition of PAN, for the first time, we focus on <strong>cross-domain attribution</strong> applied to <strong>Fanfiction</strong>. Fanfiction refers to fictional forms of literature which are nowadays produced by admirers ('fans') of a certain author (e.g. J.K. Rowling), novel ('Pride and Prejudice'), TV series (Sherlock Holmes), etc. The fans heavily borrow from the original work's theme, atmosphere, style, characters, story world etc. to produce new fictional literature, i.e. the so-called <strong>fanfics</strong>. This is why fanfiction is also known as transformative literature and has generated a number of controversies in recent years related to the intellectual rights property of the original authors (cf. plagiarism). Fanfiction, however, is typically produced by fans without any explicit commercial goals. The publication of fanfics typically happens online, on informal community platforms that are dedicated to making such literature accessible to a wider audience (e.g. <a href=https://www.fanfiction.net>fanfiction.net</a>). The original work of art or genre is typically refered to as a <strong>fandom</strong>.</p>
 	<p>The cross-domain attribution task in this edition of PAN can be more accurately described as <strong>cross-fandom attribution in fanfiction</strong>. In more detail, all documents of unknown authorship are fanfics of the same fandom (target fandom) while the documents of known authorship by the candidate authors are fanfics of several fandoms (other than the target-fandom).</p>
