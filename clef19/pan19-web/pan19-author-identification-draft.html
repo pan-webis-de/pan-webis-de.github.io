@@ -89,11 +89,10 @@
     <div class="panel panel-default">
       <div class="panel-heading">Development Phase</div>
       <div class="panel-body"><p>To develop your software, we provide you with a corpus with highly similar characteristics to the evaluation corpus. It comprises a set of cross-domain authorship attribution problems in each of the following 5 languages: English, French, Italian, Polish, and Spanish. Note that we specifically avoid to use the term 'training corpus' because <strong>the sets of candidate authors of the development and the evaluation corpora are not overlapping</strong>. Therefore, your approach should not be designed to particularly handle the candidate authors of the development corpus. </p>
-	  <p>Each problem consists of a set of known fanfics by each candidate author and a set of unknown fanfics located in separate folders. The file <code>problem-info.json</code> that can be found in the main folder of each problem, shows the source fandom, the name of folder of unknown documents and the list of names of candidate author folders. </p>
+	  <p>Each problem consists of a set of known fanfics by each candidate author and a set of unknown fanfics located in separate folders. The file <code>problem-info.json</code> that can be found in the main folder of each problem, shows the name of folder of unknown documents and the list of names of candidate author folders. </p>
 	<pre class="prettyprint lang-py" style="overflow-x:auto">
 
 {
-    "source-fandom": "Harry Potter - J. K. Rowling",
     "unknown-folder": "unknown",
     "candidate-authors": [
         { "author-name": "candidate00001" },
@@ -115,14 +114,16 @@
 	]
 }
 	</pre>
-    <p>In addition, to handle a collection of such problems, the file <code>collection-info.json</code> includes all relevant information. In more detail, for each problem it lists its main folder, the language (either <code>"en"</code>, <code>"fr"</code>, <code>"it"</code>, <code>"pl"</code>, or <code>"sp"</code>) and encoding (always <code>UTF-8</code>) of its documents. </p>
+    <p>In addition, to handle a collection of such problems, the file <code>collection-info.json</code> includes all relevant information. In more detail, for each problem it lists its main folder, the language (either <code>"en"</code>, <code>"fr"</code>, <code>"it"</code>, <code>"pl"</code>, or <code>"sp"</code>), the source fandom of the training documents, and the encoding (always <code>UTF-8</code>) of documents. </p>
 	<pre class="prettyprint lang-py" style="overflow-x:auto">
 
 [  { "problem-name": "problem00001", 
      "language": "en", 
+     "source-fandom": "Harry Potter - J. K. Rowling",
      "encoding": "UTF-8" },
    { "problem-name": "problem00002", 
      "language": "fr", 
+     "source-fandom": "Teen Wolf (TV)",
      "encoding": "UTF-8" },
 	  ...
 ]
