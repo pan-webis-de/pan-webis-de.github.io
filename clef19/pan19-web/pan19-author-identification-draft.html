@@ -69,21 +69,21 @@
 <div class="row">
   <div class="col-xs-12">
     <h1 id="task-description" class="page-header">
-      Cross-domain Author Identification
+      Cross-domain Authorship Attribution
         <div class="btn-group">
-          <a role="button" class="btn btn-default" href="../../clef17/pan17-web/author-identification.html"><span class="glyphicon glyphicon-chevron-left" style="color:grey;"></span></a>
+          <a role="button" class="btn btn-default" href="../../clef17/pan18-web/author-identification.html"><span class="glyphicon glyphicon-chevron-left" style="color:grey;"></span></a>
           <span role="button" class="btn btn-default" disabled="disabled">2019</span>
           <a role="button" class="btn btn-default" href="../../clef20/pan20-web/author-identification.html"><span class="glyphicon glyphicon-chevron-right" style="color:grey;"></span></a>
         </div>
       </h1>
 
-    <p>Authorship attribution is an important problem in information retrieval and computational linguistics but also in applied areas such as law and journalism where knowing the author of a document (such as a ransom note) may enable e.g. law enforcement to save lives. The most common framework for testing candidate algorithms is the <strong>closed-set attribution</strong> task: given a sample of reference documents from a restricted and finite set of candidate authors, the task is to determine the most likely author of a previously unseen document of unknown authorship? This task may be quite challenging when documents of known and unknown authorship come from different domains (e.g., thematic area, genre). 
-	<p>Fanfiction refers to fictional forms of literature which are nowadays produced by admirers ('fans') of a certain author (e.g. J.K. Rowling), novel ('Pride and Prejudice'), TV series (Sherlock Holmes), etc. The fans heavily borrow from the original work's theme, atmosphere, style, characters, story world etc. to produce new fictional literature, i.e. the so-called <strong>fanfics</strong>. This is why fanfiction is also known as transformative literature and has generated a number of controversies in recent years related to the intellectual rights property of the original authors (cf. plagiarism). Fanfiction, however, is typically produced by fans without any explicit commercial goals. The publication of fanfics typically happens online, on informal community platforms that are dedicated to making such literature accessible to a wider audience (e.g. <a href=https://www.fanfiction.net>fanfiction.net</a>). The original work of art or genre is typically refered to as a <strong>fandom</strong>.<strong>cross-domain attribution</strong> applied to <strong>Fanfiction</strong>. </p>
-	<p>In this edition of PAN focus on cross-domain attribution in fanfiction, a task that can be more accurately described as <strong>cross-fandom attribution in fanfiction</strong>. In more detail, all documents of known authorship by the candidate authors are fanfics of the same fandom (source fandom) while all unknown authorship documents are fanfics of another fandom (target fandom). In contrast to the PAN-2018 edition of this task, we focus on <strong>open-set attribution</strong> conditions, namely the true author of a text in the target domain is not necessarily included in the list of candidate authors.</p>
+    <p>Authorship attribution is an important problem in information retrieval and computational linguistics but also in applied areas such as law and journalism where knowing the author of a document (such as a ransom note) may enable e.g. law enforcement to save lives. The most common framework for testing candidate algorithms is the closed-set attribution task: given a sample of reference documents from a restricted and finite set of candidate authors, the task is to determine the most likely author of a previously unseen document of unknown authorship. This task may be quite challenging in <strong>cross-domain conditions</strong>, when documents of known and unknown authorship come from different domains (e.g., thematic area, genre). It is also more realistic to assume that the true author of an unknown document is not necessarily included in the list of candidates.
+	<p><strong>Fanfiction</strong> refers to fictional forms of literature which are nowadays produced by admirers ('fans') of a certain author (e.g. J.K. Rowling), novel ('Pride and Prejudice'), TV series (Sherlock Holmes), etc. The fans heavily borrow from the original work's theme, atmosphere, style, characters, story world etc. to produce new fictional literature, i.e. the so-called <strong>fanfics</strong>. This is why fanfiction is also known as transformative literature and has generated a number of controversies in recent years related to the intellectual rights property of the original authors (cf. plagiarism). Fanfiction, however, is typically produced by fans without any explicit commercial goals. The publication of fanfics typically happens online, on informal community platforms that are dedicated to making such literature accessible to a wider audience (e.g. <a href=https://www.fanfiction.net>fanfiction.net</a>). The original work of art or genre is typically refered to as a <strong>fandom</strong>.<strong>cross-domain attribution</strong> applied to <strong>Fanfiction</strong>. </p>
+	<p>This edition of PAN focuses on cross-domain attribution in fanfiction, a task that can be more accurately described as <strong>cross-fandom attribution in fanfiction</strong>. In more detail, all documents of unknown authorship are fanfics of the same fandom (target fandom) while the documents of known authorship by the candidate authors are fanfics of several fandoms (other than the target-fandom). In contrast to the PAN-2018 edition of this task, we focus on <strong>open-set attribution</strong> conditions, namely the true author of a text in the target domain is not necessarily included in the list of candidate authors.</p>
 	
     <div class="panel panel-default">
       <div class="panel-heading">Task</div>
-      <div class="panel-body">Given a set of documents (known fanfics) in a source domain by a small number (up to 20) of candidate authors, identify the authors of another set of documents (unknown fanfics) in another target domain. Each candidate author has contributed at least one of the unknown fanfics, which all belong to the same target fandom. Some of the fanfics in the target domain were not written by any of the candidate authors. An equal number of fanfics per candidate author in the source domain is provided. In contrast, the unknown fanfics are not equally distributed over the authors. The text-length of fanfics varies from 500 to 1,000 tokens. All documents are in the same language that may be <strong>English, French, Italian, Polish, or Spanish</strong>.
+      <div class="panel-body">Given a set of documents (known fanfics) by a small number (up to 10) of candidate authors, identify the authors of another set of documents (unknown fanfics) in another target domain. Each candidate author has contributed at least one of the unknown fanfics, which all belong to the same target fandom. Some of the fanfics in the target domain were not written by any of the candidate authors. The known fanfics belong to several fandoms (excluding the target fandom), although not necessarily the same for all candidate authors. An equal number of known fanfics per candidate author is provided. In contrast, the unknown fanfics are not equally distributed over the authors. The text-length of fanfics varies from 500 to 1,000 tokens. All documents are in the same language that may be <strong>English, French, Italian, Polish, or Spanish</strong>.
 	 	</div>
     	</div>
     <div class="panel panel-default">
@@ -114,16 +114,14 @@
 	]
 }
 	</pre>
-    <p>In addition, to handle a collection of such problems, the file <code>collection-info.json</code> includes all relevant information. In more detail, for each problem it lists its main folder, the language (either <code>"en"</code>, <code>"fr"</code>, <code>"it"</code>, <code>"pl"</code>, or <code>"sp"</code>), the source fandom of the training documents, and the encoding (always <code>UTF-8</code>) of documents. </p>
+    <p>In addition, to handle a collection of such problems, the file <code>collection-info.json</code> includes all relevant information. In more detail, for each problem it lists its main folder, the language (either <code>"en"</code>, <code>"fr"</code>, <code>"it"</code>, <code>"pl"</code>, or <code>"sp"</code>), and the encoding (always <code>UTF-8</code>) of documents. </p>
 	<pre class="prettyprint lang-py" style="overflow-x:auto">
 
 [  { "problem-name": "problem00001", 
-     "language": "en", 
-     "source-fandom": "Harry Potter - J. K. Rowling",
+     "language": "en",
      "encoding": "UTF-8" },
    { "problem-name": "problem00002", 
      "language": "fr", 
-     "source-fandom": "Teen Wolf (TV)",
      "encoding": "UTF-8" },
 	  ...
 ]
