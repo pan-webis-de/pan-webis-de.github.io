@@ -81,300 +81,91 @@
                             class="glyphicon glyphicon-chevron-right" style="color:grey;"></span></span>
                 </div>
             </h1>
-            <p class="lead">The details for this task will be announced soon.</p>
-            <!--
-            <div class="thumbnail pull-right" style="text-align:right;margin-left:15px;"><a href="http://www.adobe.com/" target="_blank"><img src="../pan18-figures/logo-adobe.png" alt="Adobe" style="max-height:150px"></a><div style="font-size:7pt;margin-right:13px;margin-top:2px;">Sponsor</div></div>
-            -->
-            <!--<p class="lead">This task is divided into <strong>cross-domain authorship attribution</strong> and <strong>style-->
-            <!--change detection</strong>. You can choose to solve one or both of them.</p>-->
-            <!--<ul class="nav nav-pills visible-xs">-->
-            <!--<li><a href="#author-clustering" class="btn btn-large"><span-->
-            <!--class="glyphicon glyphicon-chevron-down"></span> Author Clustering</a></li>-->
-            <!--<li><a href="#author-diarization" class="btn btn-large"><span-->
-            <!--class="glyphicon glyphicon-chevron-down"></span> Style Breach Detection</a></li>-->
-            <!--</ul>-->
-        </div>
+<p>Authorship attribution is an important problem in information retrieval and computational linguistics but also in applied areas such as law and journalism where knowing the author of a document (such as a ransom note) may enable e.g. law enforcement to save lives. The most common framework for testing candidate algorithms is the closed-set attribution task: given a sample of reference documents from a restricted and finite set of candidate authors, the task is to determine the most likely author of a previously unseen document of unknown authorship. This task may be quite challenging in <strong>cross-domain conditions</strong>, when documents of known and unknown authorship come from different domains (e.g., thematic area, genre). In addition, it is often more realistic to assume that the true author of a disputed document is not necessarily included in the list of candidates.
+	<p><strong>Fanfiction</strong> refers to fictional forms of literature which are nowadays produced by admirers ('fans') of a certain author (e.g. J.K. Rowling), novel ('Pride and Prejudice'), TV series (Sherlock Holmes), etc. The fans heavily borrow from the original work's theme, atmosphere, style, characters, story world etc. to produce new fictional literature, i.e. the so-called <strong>fanfics</strong>. This is why fanfiction is also known as transformative literature and has generated a number of controversies in recent years related to the intellectual rights property of the original authors (cf. plagiarism). Fanfiction, however, is typically produced by fans without any explicit commercial goals. The publication of fanfics typically happens online, on informal community platforms that are dedicated to making such literature accessible to a wider audience (e.g. <a href=https://www.fanfiction.net>fanfiction.net</a>). The original work of art or genre is typically refered to as a <strong>fandom</strong>.</p>
+	<p>This edition of PAN focuses on cross-domain attribution in fanfiction, a task that can be more accurately described as <strong>cross-fandom attribution in fanfiction</strong>. In more detail, all documents of unknown authorship are fanfics of the same fandom (target fandom) while the documents of known authorship by the candidate authors are fanfics of several fandoms (other than the target-fandom). In contrast to the PAN-2018 edition of this task, we focus on <strong>open-set attribution</strong> conditions, namely the true author of a text in the target domain is not necessarily included in the list of candidate authors.</p>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Task</div>
+      <div class="panel-body">Given a set of documents (known fanfics) by a small number (up to 10) of candidate authors, identify the authors of another set of documents (unknown fanfics) in another target domain. Each candidate author has contributed at least one of the unknown fanfics, which all belong to the same target fandom. Some of the fanfics in the target domain were not written by any of the candidate authors. The known fanfics belong to several fandoms (excluding the target fandom), although not necessarily the same for all candidate authors. An equal number of known fanfics per candidate author is provided. In contrast, the unknown fanfics are not equally distributed over the authors. The text-length of fanfics varies from 500 to 1,000 tokens. All documents are in the same language that may be <strong>English, French, Italian, or Spanish</strong>.
+	      <p>More details will be announced soon.</p>
+	 	</div>
+    	</div>
+
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Related Work</div>
+      <div class="panel-body">
+        <p>We refer you to:</p>
+        <ul>	<li>
+			<a href="http://pan.webis.de/clef18/pan18-web/author-identification.html">Cross-domain Author identification task at PAN@CLEF'18</a> (closed-set cross-domain authorship attribution in fanfiction) </li>
+	<li>
+        Patrick Juola. <a href="http://portal.acm.org/citation.cfm?id=1373451">Authorship Attribution</a>. In Foundations and Trends in Information Retrieval, Volume 1, Issue 3, March 2008.
+        </li><li>
+        Moshe Koppel, Jonathan Schler, and Shlomo Argamon. <a href="http://onlinelibrary.wiley.com/doi/10.1002/asi.20961/full">Computational Methods
+        Authorship Attribution</a>. Journal of the American Society for Information Science and Technology, Volume 60, Issue 1, pages 9-26, January 2009.
+        </li><li>
+        Efstathios Stamatatos. <a href="http://onlinelibrary.wiley.com/doi/10.1002/asi.21001/full">A Survey of Modern Authorship Attribution Methods</a>.
+        Journal of the American Society for Information Science and Technology, Volume 60, Issue 3, pages 538-556, March 2009.
+        </li></ul>
+      </div>
     </div>
-
+    <div id="task-committee-attribution" class="row">
+      <div class="col-xs-12">
+        <h2 class="page-header">Task Chair</h2>
+      </div>
+    </div>
     <div class="row">
-        <div class="col-sm-12">
-
-            <!--
-            <div id="flavour-text-authorship-attribution">
-                <p>Authorship attribution is an important problem in information retrieval and computational linguistics
-                    but
-                    also in applied areas such as law and journalism where knowing the author of a document (such as a
-                    ransom note) may enable e.g. law enforcement to save lives. The most common framework for testing
-                    candidate algorithms is the <strong>closed-set attribution</strong> task: given a sample of
-                    reference
-                    documents from a restricted and finite set of candidate authors, the task is to determine the most
-                    likely author of a previously unseen document of unknown authorship? This task may be quite
-                    challenging
-                    when documents of known and unknown authorship come from different domains (e.g., thematic area,
-                    genre).
-                <p>In this edition of PAN, for the first time, we focus on <strong>cross-domain attribution</strong>
-                    applied
-                    to <strong>Fanfiction</strong>. Fanfiction refers to fictional forms of literature which are
-                    nowadays
-                    produced by admirers ('fans') of a certain author (e.g. J.K. Rowling), novel ('Pride and
-                    Prejudice'), TV
-                    series (Sherlock Holmes), etc. The fans heavily borrow from the original work's theme, atmosphere,
-                    style, characters, story world etc. to produce new fictional literature, i.e. the so-called <strong>fanfics</strong>.
-                    This is why fanfiction is also known as transformative literature and has generated a number of
-                    controversies in recent years related to the intellectual rights property of the original authors
-                    (cf.
-                    plagiarism). Fanfiction, however, is typically produced by fans without any explicit commercial
-                    goals.
-                    The publication of fanfics typically happens online, on informal community platforms that are
-                    dedicated
-                    to making such literature accessible to a wider audience (e.g. <a href=https://www.fanfiction.net>fanfiction.net</a>).
-                    The original work of art or genre is typically refered to as a <strong>fandom</strong>.</p>
-                <p>The cross-domain attribution task in this edition of PAN can be more accurately described as <strong>cross-fandom
-                    attribution in fanfiction</strong>. In more detail, all documents of unknown authorship are fanfics
-                    of
-                    the same fandom (target fandom) while the documents of known authorship by the candidate authors are
-                    fanfics of several fandoms (other than the target-fandom).</p>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">Task</div>
-                <div class="panel-body">Given a set of documents (known fanfics) by a small number (up to 20) of
-                    candidate authors, identify the authors of another set of documents (unknown fanfics). Each
-                    candidate author has contributed at least one of the unknown fanfics, which all belong to the same
-                    target fandom. The known fanfics belong to several fandoms (excluding the target fandom), although
-                    not necessarily the same for all candidate authors. An equal number of fanfics per candidate author
-                    is provided. In contrast, the unknown fanfics are not equally distributed over the authors. The
-                    text-length of fanfics varies from 500 to 1,000 tokens. All documents are in the same language that
-                    may be <strong>English, French, Italian, Polish, or Spanish</strong>.
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">Development Phase</div>
-                <div class="panel-body"><p>To develop your software, we provide you with a corpus with highly similar
-                    characteristics to the evaluation corpus. It comprises a set of cross-domain authorship attribution
-                    problems in each of the following 5 languages: English, French, Italian, Polish, and Spanish. Note
-                    that we specifically avoid to use the term 'training corpus' because <strong>the sets of candidate
-                        authors of the development and the evaluation corpora are not overlapping</strong>. Therefore,
-                    your approach should not be designed to particularly handle the candidate authors of the development
-                    corpus. </p>
-                    <p>Each problem consists of a set of known fanfics by each candidate author and a set of unknown
-                        fanfics located in separate folders. The file <code>problem-info.json</code> that can be found
-                        in the main folder of each problem, shows the name of folder of unknown documents and the list
-                        of names of candidate author folders. </p>
-                    <pre class="prettyprint lang-py" style="overflow-x:auto">
-
-{
-    "unknown-folder": "unknown",
-    "candidate-authors": [
-        { "author-name": "candidate00001" },
-        { "author-name": "candidate00002" },
-		...
-	]
-}
-	</pre>
-                    <p>The true author of each unknown document can be seen in the file <code>ground-truth.json</code>,
-                        also found in the main folder of each problem.</p>
-                    <p>In addition, to handle a collection of such problems, the file <code>collection-info.json</code>
-                        includes all relevant information. In more detail, for each problem it lists its main folder,
-                        the language (either <code>"en"</code>, <code>"fr"</code>, <code>"it"</code>, <code>"pl"</code>,
-                        or <code>"sp"</code>) and encoding (always <code>UTF-8</code>) of its documents. </p>
-                    <pre class="prettyprint lang-py" style="overflow-x:auto">
-
-[  { "problem-name": "problem00001",
-     "language": "en",
-     "encoding": "UTF-8" },
-   { "problem-name": "problem00002",
-     "language": "fr",
-     "encoding": "UTF-8" },
-	  ...
-]
-	</pre>
-
-                    <p><a class="btn btn-default" target="_blank"
-                          href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-18/pan18-data/pan18-cross-domain-authorship-attribution-training-dataset-2017-12-02-password-protected.zip">Download
-                        corpus</a></p>
-                    <p>This is a password-protected file. To obtain the password, first <a
-                            href=https://docs.google.com/forms/d/e/1FAIpQLSfR_xoBuGU3q7o3EYPoItN28UPuZENjs3wlWYEX_EdRGUyRfA/viewform>register</a>
-                        for the author identification task at PAN-2019, and then <a
-                                href="mailto:pan@webis.de?Subject=PAN-19" target="_top">notify</a> PAN organizers. </p>
-                    <p>In addition, a language-independent baseline approach based on a character n-gram representation
-                        and a linear SVM classifier is provided.</p>
-                    <p><a class="btn btn-default" target="_blank" href="../pan19-code/pan19-cdaa-baseline.py">Download
-                        baseline</a></p>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">Evaluation Phase</div>
-                <div class="panel-body">Once you finished tuning your approach to achieve satisfying performance on the
-                    development corpus, your software will be tested on the evaluation corpus. During the competition,
-                    the evaluation corpus will not be released publicly. Instead, we ask you to <strong>submit your
-                        software</strong> for evaluation at our site as described below.
-                    <p>After the competition, the evaluation corpus will become available including ground truth data.
-                        This way, you have all the necessities to evaluate your approach on your own, yet being
-                        comparable to those who took part in the competition. </p>
-                    <p><a class="btn btn-default" target="_blank"
-                          href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-18/pan18-data/pan18-cross-domain-authorship-attribution-test-dataset2-2018-04-20-password-protected.zip">Download
-                        evaluation corpus</a></p>
-                    <p>This is a password-protected file (use the same password as for the development corpus). </p>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">Output</div>
-                <div class="panel-body">
-                    <p>Your system should produce one output file for each authorship attribution problem in <a
-                            href="http://www.json.org/">JSON</a>. The name of the output files should be <code>answers-PROBLEMNAME.json</code>
-                        (e.g., <code>answers-problem00001.json</code>, <code>answers-problem00002.json</code>) including
-                        the list of unknown documents and their predicted author:</p>
-
-                    <pre class="prettyprint lang-py" style="overflow-x:auto">
-[
-    { "unknown-text":  "unknown00001.txt",
-      "predicted-author":  "candidate00003" },
-    { "unknown-text":  "unknown00002.txt",
-      "predicted-author":  "candidate00005" },
-	…
-]
-</pre>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">Performance Measures</div>
-                <div class="panel-body">
-                    <p>The submissions will be evaluated in each attribution problem separately based on their <strong>macro-averaged
-                        F1 score</strong>. Participants will be ranked according to their average macro-F1 across all
-                        attribution problems of the evaluation corpus. </p>
-                    <p>We provide you with a Python script that calculates macro-F1 (and optionally the confusion
-                        matrix) of a single attribution problem:</p>
-                    <p><a class="btn btn-default" target="_blank" href="../pan19-code/pan19-cdaa-evaluator-single.py">Download
-                        evaluation script</a></p>
-                    <p>and another Python script that calculates macro-F1 for a collection of attribution problems:</p>
-                    <p><a class="btn btn-default" target="_blank" href="../pan19-code/pan19-cdaa-evaluator.py">Download
-                        evaluation script</a></p>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">Submission</div>
-                <div class="panel-body">
-                    <p>We ask you to prepare your software so that it can be executed via command line calls. The
-                        command shall take as input (i) an absolute path to the directory of the evaluation corpus and
-                        (ii) an absolute path to an existing empty output directory:</p>
-                    <pre class="prettyprint lang-py" style="overflow-x:auto">
-> mySoftware -i EVALUATION-DIRECTORY -o OUTPUT-DIRECTORY
-	</pre>
-                    <p>Within <code>EVALUATION-DIRECTORY</code> a <code>collection-info.json</code> file and a number of
-                        folders, one for each attribution problem, will be found (similar to the development corpus as
-                        described above). For each attribution problem, the output file should be written in <code>OUTPUT-DIRECTORY</code>.
-                    </p>
-                    <p><strong>Note:</strong> Each attribution problem should be solved independently of other problems
-                        in the collection.</p>
-                    <p>You can choose freely among the available programming languages and among the operating systems
-                        Microsoft Windows and Ubuntu. We will ask you to deploy your software onto a virtual machine
-                        that will be made accessible to you after registration. You will be able to reach the virtual
-                        machine via ssh and via remote desktop. More information about how to access the virtual
-                        machines can be found in the user guide below:</p>
-                    <p><a class="btn btn-default" href="http://www.tira.io/static/tira-vm-user-guide.pdf">PAN Virtual
-                        Machine User Guide »</a></p>
-                    <p>Once deployed in your virtual machine, we ask you to access TIRA at <a href="http://www.tira.io">www.tira.io</a>,
-                        where you can self-evaluate your software on the test data.</p>
-                    <p><strong>Note:</strong> By submitting your software you retain full copyrights. You agree to grant
-                        us usage rights only for the purpose of the PAN competition. We agree not to share your software
-                        with a third party or use it for other purposes than the PAN competition.</p>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">Related Work</div>
-                <div class="panel-body">
-                    <p>We refer you to:</p>
-                    <ul>
-                        <li>
-                            <a href="http://pan.webis.de/clef12/pan12-web/author-identification.html">Author
-                                identification task at PAN@CLEF'12</a> (closed-set authorship attribution)
-                        </li>
-                        <li>
-                            <a href="http://pan.webis.de/clef11/pan11-web/author-identification.html">Author
-                                identification task at PAN@CLEF'11</a> (closed-set authorship attribution)
-                        </li>
-                        <li>
-                            Patrick Juola. <a href="http://portal.acm.org/citation.cfm?id=1373451">Authorship
-                            Attribution</a>. In Foundations and Trends in Information Retrieval, Volume 1, Issue 3,
-                            March 2008.
-                        </li>
-                        <li>
-                            Moshe Koppel, Jonathan Schler, and Shlomo Argamon. <a
-                                href="http://onlinelibrary.wiley.com/doi/10.1002/asi.20961/full">Computational Methods
-                            Authorship Attribution</a>. Journal of the American Society for Information Science and
-                            Technology, Volume 60, Issue 1, pages 9-26, January 2009.
-                        </li>
-                        <li>
-                            Efstathios Stamatatos. <a href="http://onlinelibrary.wiley.com/doi/10.1002/asi.21001/full">A
-                            Survey of Modern Authorship Attribution Methods</a>.
-                            Journal of the American Society for Information Science and Technology, Volume 60, Issue 3,
-                            pages 538-556, March 2009.
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            -->
-            <!--
-            <div id="task-committee-clustering" class="row">
-                <div class="col-xs-12">
-                    <h2 class="page-header">Task Chair</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-3">
-                    <div class="thumbnail" style="text-align:center;">
-                        <a href="http://www.mike-kestemont.org/" target="_blank"><img src="../pan19-figures/mike.jpg"
-                                                                                      class="img-rounded"
-                                                                                      alt="Mike Kestemont"></a>
-                        <p style="white-space:nowrap"><a href="http://www.mike-kestemont.org/" target="_blank">Mike
-                            Kestemont</a></p>
-                        <p style="font-size:10pt">University of Antwerp</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12">
-                    <h2>Task Committee</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-3">
-                    <div class="thumbnail" style="text-align:center;">
-                        <a href="http://www.icsd.aegean.gr/lecturers/stamatatos/" target="_blank"><img
-                                src="../pan19-figures/stathis.jpg" class="img-rounded" alt="Efstathios Stamatatos"></a>
-                        <p><a href="http://www.icsd.aegean.gr/lecturers/stamatatos/" target="_blank">Efstathios
-                            Stamatatos</a></p>
-                        <p style="font-size:10pt">University of the Aegean</p>
-                    </div>
-                </div>
-                <div class="col-xs-3">
-                    <div class="thumbnail" style="text-align:center;">
-                        <a href="http://www.clips.ua.ac.be/~walter/" target="_blank"><img
-                                src="../pan19-figures/walter.jpg" class="img-rounded" alt="Walter Daelemans"></a>
-                        <p style="white-space:nowrap"><a href="http://www.clips.ua.ac.be/~walter/" target="_blank">Walter
-                            Daelemans</a></p>
-                        <p style="font-size:10pt">University of Antwerp</p>
-                    </div>
-                </div>
-                <div class="col-xs-3">
-                    <div class="thumbnail" style="text-align:center;">
-                        <a href="https://www.uni-weimar.de/medien/webis/people" target="_blank"><img
-                                src="../pan19-figures/martin.jpg" class="img-rounded" alt="Martin Potthast"></a>
-                        <p style="white-space:nowrap"><a href="https://www.uni-weimar.de/medien/webis/people"
-                                                         target="_blank">Martin Potthast</a></p>
-                        <p style="font-size:10pt">Bauhaus-Universit&auml;t Weimar</p>
-                    </div>
-                </div>
-                <div class="col-xs-3">
-                    <div class="thumbnail" style="text-align:center;">
-                        <a href="http://www.webis.de" target="_blank"><img src="../pan19-figures/benno.jpg"
-                                                                           class="img-rounded" alt="Benno Stein"></a>
-                        <p style="white-space:nowrap"><a href="http://www.webis.de" target="_blank">Benno Stein</a></p>
-                        <p style="font-size:10pt">Bauhaus-Universit&auml;t Weimar</p>
-                    </div>
-                </div>
-            </div>
-            -->
+      <div class="col-xs-6">
+        <div class="thumbnail" style="text-align:center;">
+          <a href="http://www.mike-kestemont.org/" target="_blank"><img src="../pan19-figures/mike.jpg" class="img-rounded" alt="Mike Kestemont"></a>
+          <p style="white-space:nowrap"><a href="http://www.mike-kestemont.org/" target="_blank">Mike Kestemont</a></p>
+          <p style="font-size:10pt">University of Antwerp</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Task Committee</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="thumbnail" style="text-align:center;">
+          <a href="http://www.icsd.aegean.gr/lecturers/stamatatos/" target="_blank"><img src="../pan19-figures/stathis.jpg" class="img-rounded" alt="Efstathios Stamatatos"></a>
+          <p><a href="http://www.icsd.aegean.gr/lecturers/stamatatos/" target="_blank">Efstathios Stamatatos</a></p>
+          <p style="font-size:10pt">University of the Aegean</p>
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <div class="thumbnail" style="text-align:center;">
+          <a href="https://www.uni-weimar.de/medien/webis/people" target="_blank"><img src="../pan19-figures/Enrique_Manjavacas.jpg" class="img-rounded" alt="Martin Potthast"></a>
+          <p style="white-space:nowrap"><a href="https://www.uantwerpen.be/en/projects/mind-bending-grammars/team/enrique-manjavacas/" target="_blank">Enrique Manjavacas</a></p>
+          <p style="font-size:10pt">University of Antwerp</p>
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <div class="thumbnail" style="text-align:center;">
+          <a href="http://www.clips.ua.ac.be/~walter/" target="_blank"><img src="../pan19-figures/walter.jpg" class="img-rounded" alt="Walter Daelemans"></a>
+          <p style="white-space:nowrap"><a href="http://www.clips.ua.ac.be/~walter/" target="_blank">Walter Daelemans</a></p>
+          <p style="font-size:10pt">University of Antwerp</p>
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <div class="thumbnail" style="text-align:center;">
+          <a href="https://www.uni-weimar.de/medien/webis/people" target="_blank"><img src="../pan19-figures/martin.jpg" class="img-rounded" alt="Martin Potthast"></a>
+          <p style="white-space:nowrap"><a href="https://www.uni-weimar.de/medien/webis/people" target="_blank">Martin Potthast</a></p>
+          <p style="font-size:10pt">University of Leipzig</p>
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <div class="thumbnail" style="text-align:center;">
+          <a href="http://www.webis.de" target="_blank"><img src="../pan19-figures/benno.jpg" class="img-rounded" alt="Benno Stein"></a>
+          <p style="white-space:nowrap"><a href="http://www.webis.de" target="_blank">Benno Stein</a></p>
+          <p style="font-size:10pt">Bauhaus-Universit&auml;t Weimar</p>
+        </div>
+      </div>
+    </div>
         </div>
 
     </div>
@@ -416,4 +207,3 @@
 
 </body>
 </html>
-
