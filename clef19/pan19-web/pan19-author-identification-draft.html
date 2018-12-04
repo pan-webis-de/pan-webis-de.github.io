@@ -77,7 +77,7 @@
         </div>
       </h1>
 
-    <p>Authorship attribution is an important problem in information retrieval and computational linguistics but also in applied areas such as law and journalism where knowing the author of a document (such as a ransom note) may enable e.g. law enforcement to save lives. The most common framework for testing candidate algorithms is the closed-set attribution task: given a sample of reference documents from a restricted and finite set of candidate authors, the task is to determine the most likely author of a previously unseen document of unknown authorship. This task may be quite challenging in <strong>cross-domain conditions</strong>, when documents of known and unknown authorship come from different domains (e.g., thematic area, genre). It is also more realistic to assume that the true author of an unknown document is not necessarily included in the list of candidates.
+    <p>Authorship attribution is an important problem in information retrieval and computational linguistics but also in applied areas such as law and journalism where knowing the author of a document (such as a ransom note) may enable e.g. law enforcement to save lives. The most common framework for testing candidate algorithms is the closed-set attribution task: given a sample of reference documents from a restricted and finite set of candidate authors, the task is to determine the most likely author of a previously unseen document of unknown authorship. This task may be quite challenging in <strong>cross-domain conditions</strong>, when documents of known and unknown authorship come from different domains (e.g., thematic area, genre). In addition, it is often more realistic to assume that the true author of a disputed document is not necessarily included in the list of candidates.
 	<p><strong>Fanfiction</strong> refers to fictional forms of literature which are nowadays produced by admirers ('fans') of a certain author (e.g. J.K. Rowling), novel ('Pride and Prejudice'), TV series (Sherlock Holmes), etc. The fans heavily borrow from the original work's theme, atmosphere, style, characters, story world etc. to produce new fictional literature, i.e. the so-called <strong>fanfics</strong>. This is why fanfiction is also known as transformative literature and has generated a number of controversies in recent years related to the intellectual rights property of the original authors (cf. plagiarism). Fanfiction, however, is typically produced by fans without any explicit commercial goals. The publication of fanfics typically happens online, on informal community platforms that are dedicated to making such literature accessible to a wider audience (e.g. <a href=https://www.fanfiction.net>fanfiction.net</a>). The original work of art or genre is typically refered to as a <strong>fandom</strong>.</p>
 	<p>This edition of PAN focuses on cross-domain attribution in fanfiction, a task that can be more accurately described as <strong>cross-fandom attribution in fanfiction</strong>. In more detail, all documents of unknown authorship are fanfics of the same fandom (target fandom) while the documents of known authorship by the candidate authors are fanfics of several fandoms (other than the target-fandom). In contrast to the PAN-2018 edition of this task, we focus on <strong>open-set attribution</strong> conditions, namely the true author of a text in the target domain is not necessarily included in the list of candidate authors.</p>
 	
@@ -101,6 +101,19 @@
 	]
 }
 	</pre>
+	  <p>The fanfics of known authorship belong to several fandoms (excluding the target fandom). The file <code>fandom-info.json</code> (it can be found in the main folder of each problem) provides information about the fandom of all fanfics of known authorsihp, as follows. </p>
+	<pre class="prettyprint lang-py" style="overflow-x:auto">
+
+[
+        { "author-name": "candidate00001",
+	  "known-text": "known00001.txt",
+	   "fandom": "fandom00210"},
+        { "author-name": "candidate00001",
+	  "known-text": "known00002.txt",
+	   "fandom": "fandom00051"},
+		...
+]
+</pre>
 	<p>The true author of each unknown document can be seen in the file <code>ground-truth.json</code>, also found in the main folder of each problem. Note that all unknown documents that are not written by any of the candidate authors belong to the <code>&lt;UNK&gt;</code> class.</p>
 	<pre class="prettyprint lang-py" style="overflow-x:auto">
 
@@ -195,7 +208,7 @@
       <div class="panel-body">
         <p>We refer you to:</p>
         <ul>	<li>
-			<a href="http://pan.webis.de/clef18/pan18-web/author-identification.html">Cross-domain Author identification task at PAN@CLEF'18</a> (closed-set cross-domain authorship attribution in fanfiction) </li>
+			<a href="http://ceur-ws.org/Vol-2125/invited_paper_2.pdf">Cross-domain Author identification task at PAN@CLEF'18</a> (closed-set cross-domain authorship attribution in fanfiction) </li>
 	<li>
         Patrick Juola. <a href="http://portal.acm.org/citation.cfm?id=1373451">Authorship Attribution</a>. In Foundations and Trends in Information Retrieval, Volume 1, Issue 3, March 2008.
         </li><li>
