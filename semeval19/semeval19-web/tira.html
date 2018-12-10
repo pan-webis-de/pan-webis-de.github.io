@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hyperpartisan News Detection @ SemEval 2019: TIRA</title> 
+
+<link href="../../css/bootstrap.min.css" rel="stylesheet" />
+<link href="../../css/prettify.css" rel="stylesheet" />
+<link href="semeval19.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+<link rel="shortcut icon" href="../semeval19-figures/pan-icon-16x16.ico">
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="../../index.html"><img src="../semeval19-figures/pan-logo-small-lightgrey.png" alt="PAN" style="margin-top:-5px"></a>
+  </div>
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="index.html">PAN @ SemEval 2019:</a></li>
+      <li class="active"><a href="tira.html">TIRA</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+
+<div class="row header-row">
+  <div class="header-title">
+    <h1 id="task-description">
+      <small>SemEval 2019 Task 4</small><span id="registration-counter-badge" class="badge hidden"><span id="registration-counter">?</span> registrations</span><br/>
+      Hyperpartisan News Detection
+    </h1>
+  </div>
+  <div class=" header-registration">
+    <a class="register" href="https://goo.gl/forms/cWtOVsjmRYfNkBnC3" target="_blank"><button>Register now!</button></a>
+  </div>
+</div>
+
+<div class="row info-row">
+<div class="info-item col-xs-10 col-xs-offset-1">
+  <div class="info-description">
+    <div class="info-caption"><h3>TIRA</h3></div>
+    <div class="info-text">
+      <p>This task's evaluation is hosted on <a href="https://www.tira.io/task/hyperpartisan-news-detection/" target="_blank">TIRA</a>. Participants will install their systems in dedicated TIRA virtual machines, so that their runs can be reproduced and so that they can easily be applied to different data (of same format) in the future.</p>
+      <p>The following guide is adapted from <a href="http://universaldependencies.org/conll18/tira.html" target="_blank">the corresponding guide</a> of the CoNLL 2018 Shared Task.</p>
+
+      <h4>Quickstart</h4>
+      <p>Typically, you will train your models on your own hardware. Once ready, you will upload both your parsing system and the models to the VM. It is not forbidden to train the models directly in the VM but note that the resources there are limited.</p>
+      <p>The VMs contain the task's data at <code class="highlighter-rouge">/media/training-datasets/hyperpartisan-news-detection</code>. First try running your system on these datasets through connecting by SSH or RDP to your VM (you can find the host and ports in the web interface, same login as to your VM).</p>
+      <p>Next register the shell command to run your system in the web interface, and run it. Note that your VM will not be accessible while your system is running – it will be “sandboxed”, detached from the internet, and after the run the state of the VM before the run will be restored. Your run can then be reviewed and evaluated by the organizers. You can inspect runs on training and validation data yourself.</p>
+      <p>Note that your system is expected to read the paths to the input and output folders from the command line. When you register the command to run your system, put variables in positions where you expect to see these paths. Thus if your system expects to get the options <code class="highlighter-rouge">-i</code> and <code class="highlighter-rouge">-o</code>, followed by input and output path respectively, the command you register may look like this:</p>
+      <pre>/home/my-user-name/my-software/run.sh -i $inputDataset -o $outputDir</pre>
+      <p>The actually executed command will then look something like this:</p>
+      <pre>/home/my-user-name/my-software/run.sh -i /media/training-datasets/hyperpartisan-news-detection/pan19-hyperpartisan-news-detection-by-publisher-validation-dataset-2018-11-22 -o /tmp/my-user-name/2018-11-22-10-11-19/output</pre>
+      <p>See the links below for more details.</p>
+      <ul>
+        <li><a href="http://www.tira.io/static/tira-vm-user-guide.pdf">TIRA user guide</a></li>
+        <li><a href="https://webis.de/publications.html#filter:Improving+the+Reproducibility+of+PAN's+Shared+Tasks">TIRA paper</a> (Section 2)</li>
+      </ul>
+
+      <h4>Scoring</h4>
+      <p>When you have tested your system on the validation or training data and everything works fine, run it on the test data. This is only possible through the web interface. Once the run of your system completes, please also run the evaluator on the output of your system. These are two separate actions and both should be invoked through the web interface of TIRA. You don’t have to install the evaluator in your VM. It is already prepared in TIRA. You should see it in the web interface, under your software, labeled “Evaluator”. Before clicking the “Run” button, you will use a drop-down menu to select the “Input run”, i.e. one of the completed runs of your system. The output files from the selected run will be evaluated.</p>
+      <p>You will see neither the files your system outputs, nor your STDOUT or STDERR. In the evaluator run you will see STDERR, which will tell you if one or more of your output files is not valid. If you think something went wrong with your run, send us an e-mail. We can unblind your STDOUT and STDERR on demand, after we check that you did not leak the test data in the output.</p>
+      <p>You can register more than one system (“software”) per virtual machine using the web interface. TIRA gives systems automatic names “Software 1”, “Software 2” etc. You can perform several runs per system. We will officially score <i>evaluator</i> runs for your softwares like this: the latest run for “Software 1” before the early bird deadline (12 Dec 2018) and the latest run for both “Software 1” and “Software 2” before the final deadline (23 Jan 2019, both deadlines are “Anywhere on Earth”). While we may be able to include some late arrivals in the final ranking, we do not guarantee it.</p>
+      <p>If you want us to score other runs, please write us a mail. If you want to try out more, we will also publish scores of more runs on your request <i>after the deadlines</i>. You can use those numbers in your system description paper, but they do not count for the grand prize.</p>
+      <p>If your system requires more resources than available in the default VM (memory, disk space, CPUs), please estimate what you need and discuss it with Johannes Kiesel. We can usually increase the resources, but note that accommodating such requests takes time, so act early. The sooner you complete at least one successful run, the safer you are.</p>
+
+      <h4>Access to the Virtual Machines and Intellectual Property Rights</h4>
+      <p>The VMs are distributed across different hosts. The only people who have access to the participant VMs are TIRA admins (a very small group of people operating the service) and the organizers of the task.</p>
+      <p>We can guarantee that we will never <em>deliberately</em> share your VM or its contents, nor use it for anything else but for the purpose of evaluating your software as part of the shared task, unless you give us written permission. We ask that you give the task's organizers and the TIRA operators usage rights for your software for this purpose only.</p>
+      <p>However, we cannot guarantee that no content of the VM will leak <em>accidentally</em> and we shall not be held liable for damages caused by such leaks. In particular, we cannot vouch that the software packages and operating systems TIRA depends on are free of zero day exploits.</p>
+      <p>The performance results and output of your software will become part of public record, for which we ask for indefinite, irrevocable, and transferable rights to publish them within any scientific publication as well as on the TIRA web service and on the shared task website.</p>
+      <p>By deploying your system in your VM and running it through the TIRA interface you express your consent to these conditions and give us the rights as described above.</p>
+      <p>We understand that for industry-based participants, protecting their software is an important matter. If you want to learn more about the TIRA procedures and about your options, please get in touch with the TIRA administrators (tira at webis dot de). TIRA has been used by a number of companies so far, some small ones but also some big ones. The involvement of industry in scientific events should not be foreclosed. If we are to improve reproducibility at large, however, there is no way around venturing more openness on either side.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+</div> <!-- /container -->
+<div id="organizational">
+<footer>
+  © webis.de
+</footer>
+</div> <!-- /organizational -->
+
+<script src="../../js/jquery.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script>
+$.ajax({
+        url: "https://sheets.googleapis.com/v4/spreadsheets/1UC-V-PyNAzMA_hW6jtATe5HLIDP1mFkaseUrhnQdG-U/values/public%21A1?key=AIzaSyCR55jq22qAYeaQssNvQKLvEBpcw22ivcY",
+        cache: false,
+        dataType: "json"
+    }).done(function (json) {
+      document.getElementById("registration-counter").innerText = json.values[0][0];
+      document.getElementById("registration-counter-badge").classList.remove("hidden");
+});
+</script>
+</body>
+</html>
+
