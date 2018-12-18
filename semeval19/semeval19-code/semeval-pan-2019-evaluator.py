@@ -110,12 +110,12 @@ def main(inputDataset, inputRun, outputDir):
                 for line in lines:
                     values = line.rstrip('\n').split()
                     articleId = values[0]
-                    prediction = values[1]
+                    prediction = values[1].lower()
                     confidence = 1
                     if (len(values) > 2):
                         confidence = values[2]
                     
-                    hyperpartisan = groundTruth[articleId]
+                    hyperpartisan = groundTruth[articleId].lower()
                     if hyperpartisan == "true":
                         if prediction == "true":
                             truePositivesCount += 1
