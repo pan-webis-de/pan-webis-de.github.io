@@ -84,7 +84,6 @@
             <!--
             <div class="thumbnail pull-right" style="text-align:right;margin-left:15px;"><a href="http://www.adobe.com/" target="_blank"><img src="../pan18-figures/logo-adobe.png" alt="Adobe" style="max-height:150px"></a><div style="font-size:7pt;margin-right:13px;margin-top:2px;">Sponsor</div></div>
             -->
-            <p class="lead">The details for this task will be announced soon.</p>
             <ul class="nav nav-pills visible-xs">
                 <li><a href="#author-clustering" class="btn btn-large"><span
                         class="glyphicon glyphicon-chevron-down"></span> Author Clustering</a></li>
@@ -96,57 +95,24 @@
 
     <div class="row">
         <div class="col-sm-12">
-
-            <!--
             <div id="flavour-text-style-change-detection">
-                <p>While many approaches target the problem of identifying authors of whole documents, research on
-                    investigating multi-authored documents is sparse. In the last two PAN editions we therefore aimed to
-                    narrow the gap by at first proposing a task to cluster by authors inside documents (<a
-                            href="../../clef16/pan16-web/author-identification.html">Author Diarization, 2016</a>).
-
-                    Relaxing the problem, the follow-up task (<a
-                            href="../../clef17/pan17-web/author-identification.html">Style
-                        Breach Detection, 2017</a>) focused only on identifying <i>style breaches</i>, i.e., to find
-                    text
-                    positions where the authorship and thus the style changes. Nevertheless, the results of participants
-                    revealed relatively low accuracies and indicated that this task is still too hard to tackle.
-
-                <p>Consequently, this year we propose a <b>substantially simplified task</b>, while still beeing a
-                    continuation of last year's task: The only question that should be answered by participants is
-                    whether
-                    there <b>exists</b> a style change in a given document or not. Further, we changed the name to <i>Style
-                        <b>Change</b> Detection</i>, in order to reflect the task more intuitively.
+                <p>Many approaches have been proposed recently to identify <i>the</i> author of a given document. Thereby, one fact is often silently assumed: i.e., that the given document is indeed written by only author.
+                    For a realistic author identification system it is therefore crucial to at first determine whether a document is single- or multiauthored.
                 </p>
+                <p>To this end, previous PAN editions aimed to analyze multi-authored documents. As it has been shown that it is a hard problem to reliably identify individual authors and their contribtuion within a single document (<a
+                        href="../../clef16/pan16-web/author-identification.html">Author Diarization, 2016</a>; <a href="../../clef17/pan17-web/author-identification.html">Style Breach Detection, 2017</a>), last year's task substantially relaxed the problem by asking only for binary decision (single- or multi-authored). Considering the promising results achieved by the submitted approaches (see the <a href="../../clef18/pan18-web/proceedings.html">overview paper</a> for details), we continue last year's task and additionally ask participants to predict the number of involved authors.</p>
 
-                Given a document, participants thus should apply intrinsic analyses to decide if the document is written
-                by
-                one or more authors, i.e., if there exist style changes. While the precedent task demanded to
-                specifically
-                locate the exact position of such changes, this year we only ask for a <b>binary answer</b> per
-                document:
-                <ul>
-                    <li><code>yes</code>: the document contains at least one style change (is written by at least two
-                        authors)
-                    </li>
-                    <li><code>no</code>: the document has no style changes (is written by a single author)</li>
-                </ul>
-
-
-                <p>In this sense it is irrelevant to identify the number of style changes, the specific positions, or to
-                    build clusters of authors. You may adapt existing algorithms other problem types such as <b>intrinsic
-                        plagiarism detection</b> or <b>text segmentation</b>. For example, if you already have an
-                    intrinsic
-                    plagiarism detection system, you can apply your method on this task by outputting <code>yes</code>
-                    if
-                    you found a plagiarism case or <code>no</code> otherwise (please note that intrinsic plagiarism
-                    detection methods may need adaptions as they naturally are not designed to handle uniformly
-                    distributed
-                    author texts).</p>
+                <p>Given a document, participants thus should apply intrinsic style analyses to hierarchically answer the following questions:
+                    <ol>
+                        <li>Is the document written by one or more authors, i.e., do style changes exist or not?</li>
+                        <li>If it is multi-authored, how many authors have collaborated?</li>
+                </ol>
 
                 <p>
                     The following figure illustrates some possible scenarios and the expected output:</p>
-                <p align="center"><img class="img-responsive" src="../pan19-figures/style-change-sample.png"/></p>
+                <p align="center" style="margin: 30px 0"><img class="img-responsive" src="../pan19-figures/style-change-detection-19-example.png"/></p>
 
+                <p>Note that it is irrelevant to identify the number of style changes or the specific positions where the authorships change.</p>
 
             </div>
 
@@ -155,15 +121,17 @@
                             <div class="panel-heading">Task</div>
                             <div class="panel-body">
                                 <p>Given a document, determine whether it contains style changes or not, i.e., if it was written by
-                                    a single or multiple authors.</p>
+                                    a single or multiple authors. If it is written by more than one author, determine the number of involved collaborators.</p>
                                 <p>All documents are provided in English and may contain zero up to arbitrarily many style
-                                    changes.</p>
+                                    changes, resulting from arbitrarily many authors.</p>
                             </div>
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading">Development Phase</div>
                             <div class="panel-body">
-                                <p>To develop your algorithms, a data set including corresponding solutions is provided:</p>
+                                <p>To develop your algorithms, a data set including corresponding solutions is provided.</p>
+                                <p><i>Details will be announced soon.</i></p>
+                                <!--<p>To develop your algorithms, a data set including corresponding solutions is provided:</p>
                                 <ul>
                                     <li>a <strong>training</strong> set: contains 50% of the whole dataset and includes solutions.
                                         Use this set to feed/train your models.
@@ -179,9 +147,11 @@
                                         href="https://stackexchange.com">StackExchange network</a>, covering different topics and
                                     containing approximately 300 to 1000 tokens per document. Moreover and for your convenience,
                                     within the training/validation data set the exact locations of all style changes are provided,
-                                    as they may be helpful to develop your algorithms.</p>
+                                    as they may be helpful to develop your algorithms.</p>-->
 
-                                <p><a class="btn btn-default" target="_blank"
+                                <p>To tackle the problem, you can develop novel approaches, extend existing algorithms from last year's task or adapt approaches from related problems such as <b>intrinsic plagiarism detection</b> or <b>text segmentation</b>. You are also free to additionally evaluate your approaches on last year's training/validation/test dataset (for the number of authors use the corresponding meta data).</p>
+
+                                <!--<p><a class="btn btn-default" target="_blank"
                                       href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-18/pan18-data/pan18-style-change-detection-training-dataset-2018-01-31.zip">Download
                                     training set</a></p>
                                 <p><a class="btn btn-default" target="_blank"
@@ -219,7 +189,7 @@
                                             the new segment is provided in the solution (<code>positions</code>). Please note that
                                             this information is only for development purposes and not used for the evaluation.</p>
                                     </li>
-                                </ul>
+                                </ul>-->
                             </div>
                         </div>
                         <div class="panel panel-default">
@@ -242,7 +212,10 @@
                             <div class="panel-body">
                                 <p>
                                     In general, the data structure during the evaluation phase will be similar to that in the
-                                    training phase, with the exception that the ground truth files are missing. Thus, for each given
+                                    training phase, with the exception that the ground truth files are missing.</p>
+                                <p><i>Details will be announced as soon as the dataset is ready.</i></p>
+                                    <p>
+                                    <!--Thus, for each given
                                     problem <code>problem-X.txt</code> your software should output the missing solution file <code>problem-X.truth</code>.
                                     The output should be a JSON object containing of a single property:
                                 <pre class="prettyprint lang-py" style="overflow-x:auto">
@@ -251,16 +224,16 @@
             }
             </pre>
                                 Output <code>"changes" : true</code> if there are style changes in the document, and <code>"changes"
-                                : false</code> otherwise.
+                                : false</code> otherwise.-->
                                 </p>
                             </div>
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading">Performance Measures</div>
                             <div class="panel-body">
-                                <p>The performance of the approaches will simply be measured and ranked by computing the
-                                    <b>accuracy</b>.</p>
-                                <p>For your convenience, we provide the evaluator script written in Python.</p>
+                                <p>The performance of the submitted approaches will be ranked by a combined measure incorporating both the accuracy of distinguishing single- from multi-author documents and the correctness of the predicted number of authors.</p>
+                                <p><i>Details will be anounced soon.</i></p>
+                                <!--<p>For your convenience, we provide the evaluator script written in Python.</p>
                                 <p><a class="btn btn-default" href="../pan19-code/pan19_scd_evaluator.py">Download script</a></p>
                                 <p>It takes three parameters: an input directory (the data set), an inputRun directory (your
                                     computed predictions) and an output directory where the results file is written to. In addition
@@ -268,7 +241,7 @@
                                     is computed that considers only solved problem instances (i.e., if you only solved two problem
                                     instances and were correct both times, the <code>accuracy_solved</code> would be 100%). Please
                                     note that this measure is only for developing purposes and that <code>accuracy</code> over all
-                                    items will be used for the final evaluation.</p>
+                                    items will be used for the final evaluation.</p>-->
 
                             </div>
                         </div>
@@ -278,8 +251,7 @@
                                 <p>We ask you to prepare your software so that it can be executed via command line calls. The
                                     command shall take as input (i) an absolute path to the directory of the evaluation corpus and
                                     (ii) an absolute path to an empty output directory:</p>
-                                <pre class="prettyprint lang-py" style="overflow-x:auto">
-            > mySoftware -i EVALUATION-DIRECTORY -o OUTPUT-DIRECTORY
+                                <pre class="prettyprint lang-py" style="overflow-x:auto"> mySoftware -i EVALUATION-DIRECTORY -o OUTPUT-DIRECTORY
             </pre>
                                 <p>Within <code>EVALUATION-DIRECTORY</code>, you will find a list of problem instances, i.e., <code>[filename].txt</code>
                                     files.
@@ -292,7 +264,7 @@
                                     that will be made accessible to you after registration. You will be able to reach the virtual
                                     machine via ssh and via remote desktop. More information about how to access the virtual
                                     machines can be found in the user guide below:</p>
-                                <p><a class="btn btn-default" href="pan15-virtual-machine-user-guide.pdf">PAN Virtual Machine User
+                                <p><a class="btn btn-default" href="../../clef15/pan15-web/pan15-virtual-machine-user-guide.pdf">PAN Virtual Machine User
                                     Guide »</a></p>
                                 <p>Once deployed in your virtual machine, we ask you to access TIRA at <a href="http://www.tira.io">www.tira.io</a>,
                                     where you can self-evaluate your software on the test data.</p>
@@ -307,6 +279,9 @@
                                 <p>We refer you to:</p>
                                 <ul>
                                     <li>
+                                        <a href="../../clef18/pan18-web/proceedings.html">PAN@CLEF'18</a> (<i>Overview of the Author Identification Task at PAN-2018: Cross-domain Authorship Attribution and Style Change Detection</i>)
+                                    </li>
+                                    <li>
                                         <a href="../../clef17/pan17-web/proceedings.html">PAN@CLEF'17</a> (<i>Overview of the Author
                                         Identification Task at PAN-2017</i> and <i>Style Breach Detection</i> section)
                                     </li>
@@ -314,20 +289,20 @@
                                         <a href="../../clef16/pan16-web/proceedings.html">PAN@CLEF'16</a> (<i>Clustering by
                                         Authorship Within and Across Documents</i> and <i>Author Diarization</i> section)
                                     </li>
-                                    <li>Marti A. Hearst. <a href="http://anthology.aclweb.org/J/J97/J97-1003.pdf">TextTiling:
+                                    <!--<li>Marti A. Hearst. <a href="http://anthology.aclweb.org/J/J97/J97-1003.pdf">TextTiling:
                                         Segmenting Text into Multi-paragraph Subtopic Passages.</a>. In Computational Linguistics,
                                         Volume 23, Issue 1, pages 33-64, 1997.
-                                    </li>
+                                    </li>-->
                                     <li>Benno Stein, Nedim Lipka and Peter Prettenhofer. <a
                                             href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2011a.pdf">Intrinsic
                                         Plagiarism Analysis</a>. In Language Resources and Evaluation, Volume 45, Issue 1, pages
                                         63–82, 2011.
                                     </li>
-                                    <li>
+                                    <!--<li>
                                         Patrick Juola. <a href="http://portal.acm.org/citation.cfm?id=1373451">Authorship
                                         Attribution</a>. In Foundations and Trends in Information Retrieval, Volume 1, Issue 3,
                                         March 2008.
-                                    </li>
+                                    </li>-->
                                     <li>
                                         Efstathios Stamatatos. <a href="http://onlinelibrary.wiley.com/doi/10.1002/asi.21001/full">A
                                         Survey of Modern Authorship Attribution Methods</a>.
@@ -337,9 +312,9 @@
                                 </ul>
                             </div>
                         </div>
-            -->
 
-            <!--
+
+
             <div id="task-committee-stylebreachdetection" class="row">
                 <div class="col-xs-12">
                     <h2 class="page-header">Task Chair</h2>
@@ -389,7 +364,6 @@
                     </div>
                 </div>
             </div>
-            -->
         </div>
     </div>
 
