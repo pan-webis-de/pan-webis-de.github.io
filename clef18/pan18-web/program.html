@@ -9,19 +9,18 @@ description: PAN @ CLEF 2018 - Workshop Program
     <header class="uk-section uk-section-muted">
         <nav class="uk-container">
             <div class="uk-align-right uk-text-muted">
-                <a class="uk-button" href="{{ 'clef17/pan17-web/about.html' | relative_url }}"
+                <a class="uk-button" href="{{ 'clef17/pan17-web/index.html' | relative_url }}"
                    data-uk-icon="chevron-left"></a>
-                2018
-                <a class="uk-button" href="{{ 'clef19/pan19-web/about.html' | relative_url }}"
+                CLEF 2018
+                <a class="uk-button" href="{{ 'clef19/pan19-web/index.html' | relative_url }}"
                    data-uk-icon="chevron-right"></a>
             </div>
 
             <ul class="uk-text-muted uk-tab uk-margin-remove-top">
                 <li><a href="{{ '/clef18/pan18-web/index.html' | relative_url }}">Overview</a></li>
-                <li class="uk-active"><a href="{{ '/clef18/pan18-web/about.html' | relative_url }}">About</a></li>
-                <li><a href="{{ '/clef18/pan18-web/proceedings.html' | relative_url }}">Proceedings</a></li>
+                <li><a href="{{ '/clef18/pan18-web/submission.html' | relative_url }}">Submission</a></li>
                 <li>
-                    <a href="#">CLEF 2018 Tasks <span class="uk-margin-small-left"
+                    <a href="#">Tasks <span class="uk-margin-small-left"
                                                       data-uk-icon="icon: chevron-down"></span></a>
                     <div class="uk-dropdown" data-uk-dropdown="mode: click">
                         <ul class="uk-nav uk-dropdown-nav">
@@ -34,15 +33,13 @@ description: PAN @ CLEF 2018 - Workshop Program
                         </ul>
                     </div>
                 </li>
+                <li class="uk-active"><a href="{{ '/clef18/pan18-web/program.html' | relative_url }}">Program</a></li>
+                <li><a href="{{ '/clef18/pan18-web/proceedings.html' | relative_url }}">Proceedings</a></li>
             </ul>
         </nav>
 
         <div class="uk-container uk-margin-small">
-            <a class="uk-button uk-button-primary uk-align-right"
-               href="https://docs.google.com/forms/d/e/1FAIpQLSfR_xoBuGU3q7o3EYPoItN28UPuZENjs3wlWYEX_EdRGUyRfA/viewform"
-               target="_blank">
-                Register now!
-            </a>
+            {% include current-pan-quicklink.html %}
 
             <h1 class="uk-margin-small">Workshop Program</h1>
             <div class="page-header-meta">CLEF @ PAN 2018</div>
@@ -54,7 +51,8 @@ description: PAN @ CLEF 2018 - Workshop Program
         </div>
     </header>
 
-    <div class="uk-section uk-margin-remove-top">
+    <!-- Sechdule -->
+    <div class="uk-section">
         <div class="uk-container">
             <h2>Schedule
                 <span class="uk-text-lead">
@@ -345,108 +343,8 @@ description: PAN @ CLEF 2018 - Workshop Program
             <!--conference program »</a></p>-->
         </div>
     </div>
-    <div class="uk-section">
-        <div class="uk-container">
-            <div class="uk-grid-medium" data-uk-grid>
-                <div class="uk-width-1-2@m">
-                    <h2 class="page-header">Important Dates
-                        <small>Hawaii time zone</small>
-                    </h2>
-                    <table class="uk-table uk-table-divider uk-table-small uk-table-hover uk-table-justify uk-table-condensed">
-                        <tr>
-                            <td>March 30, 2018</td>
-                            <td>Early bird software submission (extended)</td>
-                        </tr>
-                        <tr>
-                            <td>April 15, 2018</td>
-                            <td>TIRA evaluation phase opens</td>
-                        </tr>
-                        <tr>
-                            <td>May 11, 2018</td>
-                            <td>TIRA evaluation phase deadline</td>
-                        </tr>
-                        <tr>
-                            <td>May 31, 2018</td>
-                            <td>Participant paper submission</td>
-                        </tr>
-                        <tr>
-                            <td>June 15, 2018</td>
-                            <td>Peer review notification</td>
-                        </tr>
-                        <tr>
-                            <td>June 29, 2018</td>
-                            <td>Camery-ready participant papers submission</td>
-                        </tr>
-                        <tr>
-                            <td>June 30, 2018</td>
-                            <td>Early bird conference registration</td>
-                        </tr>
-                        <tr>
-                            <td>September 10-14, 2018</td>
-                            <td>Conference</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="uk-width-1-2@m">
-                    <h2>Benefits for Early Birds</h2>
-                    <p>
-                        If you submit a working prototype of your software by <strong>March 30, 2018 (extended)</strong>,
-                        we
-                        will <strong>pre-evaluate</strong> it on a subset of your task's test data and notify you of
-                        your
-                        performance. Based on the pre-evaluation, you may revise and resubmit your software for the full
-                        evaluation by April 15, 2018.
-                    </p>
-                    <p>
-                        If you register for the CLEF conference by <strong>June 30, 2018</strong> (tentative), you may
-                        do so at
-                        a <strong>reduced fee</strong>.
-                    </p>
-                    <a class="uk-button uk-button-primary" target="_blank"
-                       href="https://docs.google.com/forms/d/e/1FAIpQLSfR_xoBuGU3q7o3EYPoItN28UPuZENjs3wlWYEX_EdRGUyRfA/viewform">Register
-                        now</a>
-                </div>
-            </div>
 
-
-            <h2>Notebooks
-                <span class="uk-text-lead">
-                    <a href="pan18-notebook-templates.zip">Download templates</a>
-                </span>
-            </h2>
-            <p>We ask you to submit a notebook paper describing your approach. Please prepare the notebook
-                as outlined below. For your convenience, we provide a template for Latex and Word.</p>
-
-            <p>Please prepare a notebook paper which gives a concise description of your approach. If you
-                submitted softwares for more than one task, you may submit one notebook each. Your notebook will
-                be accepted if it fulfills basic quality criteria, and it will be published as part of the CLEF
-                conference proceedings.</p>
-            <p>The deadline for submitting your notebook is <strong>May 31, 2018</strong>. Although there is no
-                strict page limit, we ask you to write no more than 12 pages. The notebook must follow the
-                Springer LNCS style guide. Please describe only the approach you implemented to solve the task.
-            </p>
-            <p>To prepare your notebook paper, we have prepared templates for both Latex and Microsoft Word
-                which follow the LNCS guidelines.</p>
-
-
-            <h2>Submission System</h2>
-            <p>Submission of notebooks is to be done electronically through the <a
-                    href="https://easychair.org/conferences/?conf=clef2018">Easychair system</a>.</p>
-            <p>Please follow the submission guidelines.</p>
-            <p><a class="btn btn-default"
-                  href="http://clef2018.clef-initiative.eu/index.php?page=Pages/InstructionsforCLEF2018WorkingNotes.html">Submission
-                guidelines</a></p>
-
-            <h2>Donation</h2>
-            <p>Support PAN by making a donation.</p>
-
-            <p>Organizing PAN entails a significant investment of time and money on our part. If you
-                wish to support us, please consider making a donation.</p>
-
-            {% include donation-form.html %}
-        </div>
-    </div>
-
+    <!-- Footer -->
     <section class="uk-section uk-section-muted">
         <div class="uk-container">
             <h2>Organizing Committee</h2>
