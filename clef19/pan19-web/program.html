@@ -9,7 +9,8 @@ description: PAN @ CLEF 2019 - Workshop Program
     <header class="uk-section uk-section-muted">
         <nav class="uk-container">
             <div class="uk-align-right uk-text-muted">
-                <a class="uk-button" href="{{ 'clef18/pan18-web/program.html' | relative_url }}" data-uk-icon="chevron-left"></a>
+                <a class="uk-button" href="{{ 'clef18/pan18-web/program.html' | relative_url }}"
+                   data-uk-icon="chevron-left"></a>
                 CLEF 2019
                 <a class="uk-button uk-invisible" href="{{ 'clef20/pan20-web/program.html' | relative_url }}"
                    data-uk-icon="chevron-right"></a>
@@ -22,10 +23,14 @@ description: PAN @ CLEF 2019 - Workshop Program
                     <a href="#">Tasks <span class="uk-margin-small-left" data-uk-icon="icon: chevron-down"></span></a>
                     <div class="uk-dropdown" data-uk-dropdown="mode: click">
                         <ul class="uk-nav uk-dropdown-nav">
-                            <li><a href="{{ '/clef19/pan19-web/author-profiling.html' | relative_url }}">Bots and Gender Profiling</a></li>
-                            <li><a href="{{ '/clef19/pan19-web/celebrity-profiling.html' | relative_url }}">Celebrity Profiling</a></li>
-                            <li><a href="{{ '/clef19/pan19-web/author-identification.html' | relative_url }}">Cross-domain Authorship Attribution</a></li>
-                            <li><a href="{{ '/clef19/pan19-web/style-change-detection.html' | relative_url }}">Style Change Detection</a></li>
+                            <li><a href="{{ '/clef19/pan19-web/author-profiling.html' | relative_url }}">Bots and Gender
+                                Profiling</a></li>
+                            <li><a href="{{ '/clef19/pan19-web/celebrity-profiling.html' | relative_url }}">Celebrity
+                                Profiling</a></li>
+                            <li><a href="{{ '/clef19/pan19-web/author-identification.html' | relative_url }}">Cross-domain
+                                Authorship Attribution</a></li>
+                            <li><a href="{{ '/clef19/pan19-web/style-change-detection.html' | relative_url }}">Style
+                                Change Detection</a></li>
                         </ul>
                     </div>
                 </li>
@@ -36,7 +41,8 @@ description: PAN @ CLEF 2019 - Workshop Program
 
         <div class="uk-container uk-margin-small">
             <a class="uk-button uk-button-primary uk-align-right"
-               href="https://docs.google.com/forms/d/e/1FAIpQLSfR_xoBuGU3q7o3EYPoItN28UPuZENjs3wlWYEX_EdRGUyRfA/viewform" target="_blank">
+               href="https://docs.google.com/forms/d/e/1FAIpQLSfR_xoBuGU3q7o3EYPoItN28UPuZENjs3wlWYEX_EdRGUyRfA/viewform"
+               target="_blank">
                 Register now!
             </a>
 
@@ -343,52 +349,18 @@ description: PAN @ CLEF 2019 - Workshop Program
     </div>
 
     <!-- Footer -->
-    <section class="uk-section uk-section-muted">
+    <footer class="uk-section uk-section-muted">
         <div class="uk-container">
-            <div>
-                <h2>Organizing Committee</h2>
-                <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
-                    {% include people-cards/potthast.html %}
-                    {% include people-cards/stein.html %}
-                    {% include people-cards/rosso.html %}
-                    {% include people-cards/stamatatos.html %}
-                </div>
+            <h2>Organizing Committee</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/potthast.html %}
+                {% include people-cards/stein.html %}
+                {% include people-cards/rosso.html %}
+                {% include people-cards/stamatatos.html %}
             </div>
-            <div class="task-chair-organizations">
-                <div>
-                    <a href="http://www.webis.de" target="_blank">
-                        <img src="../pan19-figures/logo-bauhaus-universitaet-weimar.png"
-                             alt="Bauhaus-Universtät Weimar logo">
-                    </a>
-                </div>
-                <div>
-                    <a href="http://www.upv.es/" target="_blank">
-                        <img src="../pan19-figures/logo-universitat-politecnica-de-valencia.png"
-                             alt="Universitat Politecnica de Valencia logo">
-                    </a>
-                </div>
-                <div>
-                    <a href="http://www.aegean.gr/" target="_blank">
-                        <img src="../pan19-figures/logo-university-of-the-aegean.gif"
-                             alt="University of the Aegean logo">
-                    </a>
-                </div>
-                <div>
-                    <a href="http://www.autoritas.es/" target="_blank">
-                        <img src="../pan19-figures/logo-autoritas.jpg" alt="Autoritas logo">
-                    </a>
-                </div>
-                <div>
-                    <a href="http://clef2018.clef-initiative.eu/" target="_blank">
-                        <img src="../pan19-figures/logo-clef19.png" alt="CLEF Lugano 2018 logo">
-                    </a>
-                </div>
-                <div>
-                    <a href="http://www.clef-initiative.eu/" target="_blank">
-                        <img src="../pan19-figures/logo-clef.png" alt="CLEF logo">
-                    </a>
-                </div>
+            <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+                {% include organizations/pan19-organizations-section.html %}
             </div>
         </div>
-    </section>
+    </footer>
 </main>

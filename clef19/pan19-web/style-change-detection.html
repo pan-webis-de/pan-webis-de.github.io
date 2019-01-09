@@ -50,4 +50,23 @@ description: PAN @ CLEF 2019 - Style Change Detection
             <p class="uk-text-lead">The details for this task will be announced soon.</p>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="uk-section uk-section-muted">
+        <div class="uk-container">
+            <h2>Task Chair</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/tschuggnall.html %}
+            </div>
+            <h2>Task Committee</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/specht.html %}
+                {% include people-cards/potthast.html %}
+                {% include people-cards/stein.html %}
+            </div>
+        </div>
+        <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+            {% include organizations/pan19-organizations-section.html %}
+        </div>
+    </footer>
 </main>

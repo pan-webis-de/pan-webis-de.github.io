@@ -22,14 +22,15 @@ description: PAN @ CLEF 2018 - Author Obfuscation
                 <li><a href="{{ '/clef18/pan18-web/submission.html' | relative_url }}">Submission</a></li>
                 <li class="uk-active">
                     <a href="#">Tasks <span class="uk-margin-small-left"
-                                                      data-uk-icon="icon: chevron-down"></span></a>
+                                            data-uk-icon="icon: chevron-down"></span></a>
                     <div class="uk-dropdown" data-uk-dropdown="mode: click">
                         <ul class="uk-nav uk-dropdown-nav">
                             <li><a href="{{ '/clef18/pan18-web/author-identification.html' | relative_url }}">Author
                                 Identification</a></li>
                             <li><a href="{{ '/clef18/pan18-web/author-profiling.html' | relative_url }}">Author
                                 Profiling</a></li>
-                            <li class="uk-active"><a href="{{ '/clef18/pan18-web/author-obfuscation.html' | relative_url }}">Author
+                            <li class="uk-active"><a
+                                    href="{{ '/clef18/pan18-web/author-obfuscation.html' | relative_url }}">Author
                                 Obfuscation</a></li>
                         </ul>
                     </div>
@@ -47,7 +48,8 @@ description: PAN @ CLEF 2018 - Author Obfuscation
 
         <div class="uk-container uk-margin-medium">
             <p class="uk-text-lead">This task is divided into <a href="#author-masking">author masking</a> and
-                <a href="#obfuscation-evaluation">obfuscation evaluation</a>. You can choose to solve one or both of them.</p>
+                <a href="#obfuscation-evaluation">obfuscation evaluation</a>. You can choose to solve one or both of
+                them.</p>
         </div>
     </header>
 
@@ -110,7 +112,9 @@ description: PAN @ CLEF 2018 - Author Obfuscation
                     <p>
                         We call an obfuscation software</p>
                     <ul class="uk-list uk-list-bullet">
-                        <li><em>safe</em>, if a forensic analysis does not reveal the original author of its obfuscated texts,</li>
+                        <li><em>safe</em>, if a forensic analysis does not reveal the original author of its obfuscated
+                            texts,
+                        </li>
                         <li><em>sound</em>, if its obufscated texts are textually entailed with their originals, and
                         </li>
                         <li><em>sensible</em>, if its obfuscated texts are inconspicuous.</li>
@@ -124,10 +128,13 @@ description: PAN @ CLEF 2018 - Author Obfuscation
                     </ul>
                     <p>To measure safety we will use the following authorship verification software:</p>
                     <ul class="uk-list uk-list-bullet">
-                        <li>Caravel [<a href="https://github.com/pan-webis-de/caravel">code</a>] (best-performing approach at PAN 2015)</li>
+                        <li>Caravel [<a href="https://github.com/pan-webis-de/caravel">code</a>] (best-performing
+                            approach at PAN 2015)
+                        </li>
                         <li>GLAD [<a href="https://github.com/pan-webis-de/glad">code</a>]</li>
                         <li>Authorid [<a href="https://github.com/pan-webis-de/authorid">code</a>]</li>
-                        <li>AuthorIdentification-PFP [<a href="https://github.com/pan-webis-de/AuthorIdentification-PFP">code</a>]
+                        <li>AuthorIdentification-PFP [<a
+                                href="https://github.com/pan-webis-de/AuthorIdentification-PFP">code</a>]
                         </li>
                     </ul>
                     <p>To measure soundness and sensibleness, obfuscations will be sampled and handed out to
@@ -166,8 +173,11 @@ description: PAN @ CLEF 2018 - Author Obfuscation
 
                     <p>We call an obfuscation software</p>
                     <ul class="uk-list uk-list-bullet">
-                        <li><em>safe</em>, if a forensic analysis does not reveal the original author of its obfuscated texts,</li>
-                        <li><em>sound</em>, if its obufscated texts are textually entailed with their originals, and</li>
+                        <li><em>safe</em>, if a forensic analysis does not reveal the original author of its obfuscated
+                            texts,
+                        </li>
+                        <li><em>sound</em>, if its obufscated texts are textually entailed with their originals, and
+                        </li>
                         <li><em>sensible</em>, if its obfuscated texts are inconspicuous.</li>
                     </ul>
                     <p>These dimensions are orthogonal; an obfuscation software may meet any of them to various
@@ -197,8 +207,11 @@ measure {
 ...</pre>
                     <p>The output is formatted as ProtoBuf text, not JSON.</p>
                     <ul class="uk-list">
-                        <li><code>key</code> can be any string that clearly and concisely names the performance measure.</li>
-                        <li><code>value</code> shall be a numeric quantification of the measure for a given obfuscated text.</li>
+                        <li><code>key</code> can be any string that clearly and concisely names the performance measure.
+                        </li>
+                        <li><code>value</code> shall be a numeric quantification of the measure for a given obfuscated
+                            text.
+                        </li>
                     </ul>
 
                     <h3>Submission</h3>
@@ -209,7 +222,8 @@ measure {
                         machine that will be made accessible to you after registration. You will be able to reach
                         the virtual machine via ssh and via remote desktop. More information about how to access the
                         virtual machines can be found in the user guide below:</p>
-                    <p><a class="uk-button uk-button-primary" href="../../clef15/pan15-web/pan15-virtual-machine-user-guide.pdf">PAN
+                    <p><a class="uk-button uk-button-primary"
+                          href="../../clef15/pan15-web/pan15-virtual-machine-user-guide.pdf">PAN
                         Virtual Machine User Guide</a></p>
                     <p>Once deployed in your virtual machine, we ask you to access TIRA at <a
                             href="https://www.tira.io">www.tira.io</a>, where you can self-evaluate your software on
@@ -230,21 +244,24 @@ measure {
                 </div>
             </div>
         </div>
-
-        <div class="uk-section uk-section-muted">
-            <div class="uk-container">
-
-                <h2>Task Chair</h2>
-                <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
-                    {% include people-cards/potthast.html %}
-                </div>
-
-                <h2>Task Committee</h2>
-                <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
-                    {% include people-cards/hagen.html %}
-                    {% include people-cards/stein.html %}
-                </div>
-            </div>
-        </div>  <!-- section -->
     </section>
+
+    <footer class="uk-section uk-section-muted">
+        <div class="uk-container">
+
+            <h2>Task Chair</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/potthast.html %}
+            </div>
+
+            <h2>Task Committee</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/hagen.html %}
+                {% include people-cards/stein.html %}
+            </div>
+        </div>
+        <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+            {% include organizations/pan18-organizations-section.html %}
+        </div>
+    </footer>  <!-- section -->
 </main>
