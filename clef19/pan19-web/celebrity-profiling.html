@@ -9,9 +9,11 @@ description: PAN @ CLEF 2019 - Celebrity Profiling
     <header class="uk-section uk-section-muted">
         <nav class="uk-container">
             <div class="uk-align-right uk-text-muted">
-                <a class="uk-button uk-invisible" href="{{ 'clef18/pan18-web/author-profiling.html' | relative_url }}" data-uk-icon="chevron-left"></a>
+                <a class="uk-button uk-invisible" href="{{ 'clef18/pan18-web/author-profiling.html' | relative_url }}"
+                   data-uk-icon="chevron-left"></a>
                 CLEF 2019
-                <a class="uk-button uk-invisible" href="{{ 'clef20/pan20-web/celebrity-profiling.html' | relative_url }}"
+                <a class="uk-button uk-invisible"
+                   href="{{ 'clef20/pan20-web/celebrity-profiling.html' | relative_url }}"
                    data-uk-icon="chevron-right"></a>
             </div>
 
@@ -22,10 +24,15 @@ description: PAN @ CLEF 2019 - Celebrity Profiling
                     <a href="#">Tasks <span class="uk-margin-small-left" data-uk-icon="icon: chevron-down"></span></a>
                     <div class="uk-dropdown" data-uk-dropdown="mode: click">
                         <ul class="uk-nav uk-dropdown-nav">
-                            <li><a href="{{ '/clef19/pan19-web/author-profiling.html' | relative_url }}">Bots and Gender Profiling</a></li>
-                            <li class="uk-active"><a href="{{ '/clef19/pan19-web/celebrity-profiling.html' | relative_url }}">Celebrity Profiling</a></li>
-                            <li><a href="{{ '/clef19/pan19-web/author-identification.html' | relative_url }}">Cross-domain Authorship Attribution</a></li>
-                            <li><a href="{{ '/clef19/pan19-web/style-change-detection.html' | relative_url }}">Style Change Detection</a></li>
+                            <li><a href="{{ '/clef19/pan19-web/author-profiling.html' | relative_url }}">Bots and Gender
+                                Profiling</a></li>
+                            <li class="uk-active"><a
+                                    href="{{ '/clef19/pan19-web/celebrity-profiling.html' | relative_url }}">Celebrity
+                                Profiling</a></li>
+                            <li><a href="{{ '/clef19/pan19-web/author-identification.html' | relative_url }}">Cross-domain
+                                Authorship Attribution</a></li>
+                            <li><a href="{{ '/clef19/pan19-web/style-change-detection.html' | relative_url }}">Style
+                                Change Detection</a></li>
                         </ul>
                     </div>
                 </li>
@@ -36,30 +43,89 @@ description: PAN @ CLEF 2019 - Celebrity Profiling
 
         <div class="uk-container uk-margin-small">
             <a class="uk-button uk-button-primary uk-align-right"
-               href="https://docs.google.com/forms/d/e/1FAIpQLSfR_xoBuGU3q7o3EYPoItN28UPuZENjs3wlWYEX_EdRGUyRfA/viewform" target="_blank">
+               href="https://docs.google.com/forms/d/e/1FAIpQLSfR_xoBuGU3q7o3EYPoItN28UPuZENjs3wlWYEX_EdRGUyRfA/viewform"
+               target="_blank">
                 Register now!
             </a>
 
             <h1 class="uk-margin-small">Celebrity Profiling</h1>
             <div class="page-header-meta">CLEF @ PAN 2019</div>
         </div>
+
+        <div class="uk-container uk-margin-medium">
+            <p class="uk-text-lead">Given the english Social Media feed of a celebrity, determine the degree of fame,
+                occupation, age and gender.</p>
+        </div>
     </header>
 
-    <div class="uk-section">
+    <div class="uk-section uk-section-default">
         <div class="uk-container">
-            <p class="uk-text-lead">The details for this task will be announced soon.</p>
+            <div class="uk-column-1-2@l uk-text-justify">
+                <h2>Corpus
+                    <span class="uk-text-lead">
+                        <a href="#">Download Training Data</a>
+                    </span>
+                </h2>
+                <p>
+                    The dataset consists of two files: a <span class="uk-text-bold">feeds.ndjson</span> and a <span
+                        class="uk-text-bold">labels.ndjson</span>.
+                    Feeds contains on each line all the tweets of one celebrity.
+                    Labels contains on each line the degree of fame, occupation, age, and gender for a celebrity in
+                    Feeds.
+                    The task is, given only the feeds, to predict the labels accordingly and generate the labels.ndjson.
+                    Following values are possible for each trait:</p>
+                <table class="uk-margin-medium uk-table uk-table-divider uk-table-small uk-table-hover">
+                    <tr>
+                        <th>Label</th>
+                        <th>Possible values</th>
+                    </tr>
+                    <tr>
+                        <th>Fame</th>
+                        <td>regional, wellknown, superstar</td>
+                    </tr>
+                    <tr>
+                        <th>Occupation</th>
+                        <td>TODO</td>
+                    </tr>
+                    <tr>
+                        <th>Age</th>
+                        <td>numerical age</td>
+                    </tr>
+                    <tr>
+                        <th>Gender</th>
+                        <td>male, female, other</td>
+                    </tr>
+                </table>
+
+
+                <h2>Evaluation Scheme
+                    <span class="uk-text-lead">
+                        <a href="#">Download Evaluation Script</a>
+                    </span>
+                </h2>
+                <p></p>
+
+                <h2>Submission
+                    <span class="uk-text-lead">
+                        <a href="https://www.tira.io/static/tira-vm-user-guide.pdf">See the TIRA User Guide</a>
+                    </span>
+                </h2>
+                <p>When you registered, you will get remote access to a virtual machine (Windows or Linux) to deploy the
+                    task software in. Your software must be executable from the command line and not require Internet
+                    access during the evaluation period. Note that you retain full copyrights of your software, but
+                    agree to grant us usage rights only for the purpose of the competition.</p>
+
+            </div>
         </div>
     </div>
 
     <!-- Footer -->
     <footer class="uk-section uk-section-muted">
         <div class="uk-container">
-            <h2>Task Chair</h2>
-            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
-                {% include people-cards/potthast.html %}
-            </div>
             <h2>Task Committee</h2>
             <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/potthast.html %}
+                {% include people-cards/wiegmann.html %}
                 {% include people-cards/stein.html %}
             </div>
         </div>
