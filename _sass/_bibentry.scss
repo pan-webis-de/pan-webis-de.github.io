@@ -1,5 +1,27 @@
 // Publications
 
+// START TEMPORARY BIB CSS
+
+.csc-menu {
+    padding-left: 0;
+    margin-bottom: $global-large-gutter;
+
+    td {
+        padding-right: $global-medium-gutter;
+    }
+
+    li {
+        list-style: none;
+    }
+}
+
+#bib > div {
+    margin-bottom: 15px;
+}
+
+// END TEMPORARY BIB CSS
+
+
 .publications-list {
     .bib-entry {
         margin-bottom: 2.5ex;
