@@ -13,7 +13,7 @@ description: PAN @ CLEF 2018 - Author Profiling
                 <a class="uk-button" href="{{ 'clef17/pan17-web/author-profiling.html' | relative_url }}"
                    data-uk-icon="chevron-left"></a>
                 CLEF 2018
-                <a class="uk-button" href="{{ 'clef19/pan19-web/author-profiling.html' | relative_url }}"
+                <a class="uk-button uk-padding-remove-right" href="{{ 'clef19/pan19-web/author-profiling.html' | relative_url }}"
                    data-uk-icon="chevron-right"></a>
             </div>
 
@@ -45,50 +45,32 @@ description: PAN @ CLEF 2018 - Author Profiling
             <h1 class="uk-margin-small">Author Profiling</h1>
             <div class="page-header-meta">CLEF @ PAN 2018</div>
 
-            <div class="uk-align-right">
+            <div class="uk-align-right uk-margin-remove-bottom">
                 <a href="http://www.meaningcloud.com/" target="_blank">
-                    <img src="../pan18-figures/logo-meaningcloud.png" alt="MeaningCloud">
+                    <img src="../pan18-figures/logo-meaningcloud.png" style="height: 70px" alt="MeaningCloud">
                 </a>
                 <div class="uk-text-small uk-text-muted uk-text-right">Sponsor</div>
             </div>
-            <p class="uk-text-justify">Authorship analysis deals with the classification of texts into classes based on the stylistic choices of
-                their authors. Beyond the author identification and author verification tasks where the style of
-                individual
+
+            <p class="uk-text-lead">Authorship analysis deals with the classification of texts into classes based on the stylistic choices of
+                their authors.</p>
+        </div>
+    </header>
+
+    <div class="uk-section">
+        <div class="uk-container uk-column-1-2@l">
+            <h2>Introduction</h2>
+            <p>Beyond the author identification and author verification tasks where the style of individual
                 authors is examined, author profiling distinguishes between classes of authors studying their sociolect
                 aspect, that is, how language is shared by people. This helps in identifying profiling aspects such as
-                gender, age, native language, or personality type. Author profiling is a problem of growing importance
-                in
-                applications in forensics, security, and marketing. E.g., from a forensic linguistics perspective one
-                would
-                like being able to know the linguistic profile of the author of a harassing text message (language used
-                by a
+                gender, age, native language, or personality type. Author profiling is a problem of growing importance in
+                applications in forensics, security, and marketing. E.g., from a forensic linguistics perspective one would
+                like being able to know the linguistic profile of the author of a harassing text message (language used by a
                 certain type of people) and identify certain characteristics (language as evidence). Similarly, from a
                 marketing viewpoint, companies may be interested in knowing, on the basis of the analysis of blogs and
                 online product reviews, the demographics of people that like or dislike their products. The focus is on
                 author profiling in social media since we are mainly interested in everyday language and how it reflects
                 basic social and personality processes.</p>
-        </div>
-    </header>
-
-    <div class="uk-section">
-        <div class="uk-container">
-
-            <!--<p>Authorship analysis deals with the classification of texts into classes based on the stylistic choices of-->
-                <!--their authors. Beyond the author identification and author verification tasks where the style of-->
-                <!--individual-->
-                <!--authors is examined, author profiling distinguishes between classes of authors studying their sociolect-->
-                <!--aspect, that is, how language is shared by people. This helps in identifying profiling aspects such as-->
-                <!--gender, age, native language, or personality type. Author profiling is a problem of growing importance-->
-                <!--in-->
-                <!--applications in forensics, security, and marketing. E.g., from a forensic linguistics perspective one-->
-                <!--would-->
-                <!--like being able to know the linguistic profile of the author of a harassing text message (language used-->
-                <!--by a-->
-                <!--certain type of people) and identify certain characteristics (language as evidence). Similarly, from a-->
-                <!--marketing viewpoint, companies may be interested in knowing, on the basis of the analysis of blogs and-->
-                <!--online product reviews, the demographics of people that like or dislike their products. The focus is on-->
-                <!--author profiling in social media since we are mainly interested in everyday language and how it reflects-->
-                <!--basic social and personality processes.</p>-->
 
             <h2>Award</h2>
             <p>We are happy to announce that the best performing team at the 6th International Competition on Author
@@ -97,13 +79,10 @@ description: PAN @ CLEF 2018 - Author Profiling
 
             <p>Takumi Takahashi, Takuji Tahara, Koki Nagatani, Yasuhide Miura, Tomoki Taniguchi, and Tomoko Ohkuma. Fuji
                 Xerox Co., Ltd.</p>
-            <div class="uk-text-center">
-                <a href="https://s3.amazonaws.com/autoritas.pan/PAN18-Author-Profiling-Award-Paolo-Rosso-Francisco-Rangel-Meaning-Cloud-Takumi-Takahashi.jpg"
-                   target="_blank">
-                    <img style="height: 300px"
-                         src="https://s3.amazonaws.com/autoritas.pan/PAN18-Author-Profiling-Award-Paolo-Rosso-Francisco-Rangel-Meaning-Cloud-Takumi-Takahashi.jpg">
-                </a>
-            </div>
+            <a href="https://s3.amazonaws.com/autoritas.pan/PAN18-Author-Profiling-Award-Paolo-Rosso-Francisco-Rangel-Meaning-Cloud-Takumi-Takahashi.jpg"
+               target="_blank">
+                <img src="https://s3.amazonaws.com/autoritas.pan/PAN18-Author-Profiling-Award-Paolo-Rosso-Francisco-Rangel-Meaning-Cloud-Takumi-Takahashi.jpg">
+            </a>
             <p>Congratulations!</p>
 
             <h2>Task</h2>
@@ -215,7 +194,11 @@ gender_comb="male|female" /&gt;</code></pre>
             <p><strong>Note:</strong> By submitting your software you retain full copyrights. You agree to grant us
                 usage rights only for the purpose of the PAN competition. We agree not to share your software with a
                 third party or use it for other purposes than the PAN competition.</p>
+        </div>
+    </div>
 
+    <div class="uk-section uk-section-default">
+        <div class="uk-container">
             <h2>Results</h2>
             <p>The following tables list the performances achieved by the participating teams in the different
                 subtasks:</p>
@@ -972,11 +955,6 @@ gender_comb="male|female" /&gt;</code></pre>
                 </tbody>
             </table>
 
-
-            <!--<p>A more detailed analysis of the detection performances can be found in the overview paper accompanying this task.</p>
-            <p>
-                <a class="btn btn-default" href="../pan15-papers-final/pan15-author-profiling/rangel15-overview.pdf#page=8">Learn more »</a>
-            </p>-->
 
             <h2>Related Work and Corpora</h2>
             <p>We refer you to:</p>
