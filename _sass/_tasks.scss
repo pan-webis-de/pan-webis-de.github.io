@@ -31,3 +31,54 @@
     text-align: center;
     padding: 10px;
 }
+
+
+.keynote {
+    display: table;
+    border-bottom: 1px solid $divider-icon-color;
+    padding-bottom: $global-medium-gutter;
+    margin-bottom: $global-medium-gutter;
+
+    p:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    &:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .keynote-title {
+        font-size: $text-lead-font-size;
+        font-weight: bold;
+    }
+
+    .keynote-speaker {
+        font-size: $text-lead-font-size;
+    }
+
+    .keynote-affiliation {
+        font-size: $text-small-font-size;
+        margin-top: 5px;
+        color: $global-muted-color;
+    }
+
+    .speaker-image {
+        margin-right: 2*$padding-small-padding;
+
+        img, svg {
+            height: 100%;
+            min-height: 75px;
+            width: 65px;
+            object-fit: cover;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    .speaker-cell {
+        display: table-cell;
+        vertical-align: middle;
+        padding-bottom: $padding-small-padding;
+    }
+}
