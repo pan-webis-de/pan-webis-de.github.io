@@ -59,44 +59,67 @@ description: PAN @ CLEF 2019 - Celebrity Profiling
     <div class="uk-section uk-section-default">
         <div class="uk-container">
             <div class="uk-column-1-2@l uk-text-justify">
+                <h2>Task</h2>
+                <p>Celebrities are among the most prolific users of social media, promoting their personas and rallying
+                    followers. This activity is closely tied to genuine writing samples, rendering them worthy research
+                    subjects in many respects, not least author profiling.</p>
+
+                <p>The Celebrity Profiling task this year is to predict four traits of a celebrity from it's social
+                    media communication. The traits are the degree of fame, occupation, age and gender. The social media
+                    communication is given as the teaser messages from past Tweets. The goal is to develop a piece of
+                    software which predicts celebrity traits from the teaser
+                    history.</p>
+
                 <h2>Corpus
                     <span class="uk-text-lead">
-                        <a href="#">Download Training Data</a>
+                        [<a href="#">Download Training Data</a>]
                     </span>
                 </h2>
-                <p>The task is to predict four traits of a celebrity from it's social media history.
-                    These traits are: </p>
+                <p>The training dataset contains of two files: a <code>feeds.ndjson</code><sup><a
+                        href="#">example</a></sup> and a <code>labels.ndjson</code><sup><a href="#">example</a></sup>.
+                    Each file lists all celebrities as json objects, one per line and identified by the <code>cid</code>
+                    key.</p>
 
-                <pre>
+                <pre class="uk-margin-remove-bottom">
+{"cid": 1234, "text": ["a teaser", "another teaser", &hellip;]}
+{"cid": 5678, "text": ["a teaser", "another teaser", &hellip;]}
+&hellip;</pre><div class="uk-text-small uk-text-muted uk-text-right">feeds.ndjson</div>
+
+
+                <pre class="uk-margin-remove-bottom">
+{"cid": 1234, "fame": "wellknown", "occupation": "sports", "gender": "female", "age": 28}
+{"cid": 5678, "fame": "regional", "occupation": "entertainment", "gender": "male", "age": 54}
+&hellip;</pre><div class="uk-text-small uk-text-muted uk-text-right">labels.ndjson</div>
+
+                <pre class="uk-margin-remove-bottom">
 fame        := {regional, wellknown, superstar}
 occupation  := {TODO}
 age         := {1,&hellip;,114}
-gender      := {male, female, nonbinary}</pre>
+gender      := {male, female, nonbinary}</pre><div class="uk-text-small uk-text-muted uk-align-right">possible value instances for each label</div>
 
-                <p>The social media history consists of the teaser messages of the latest up to 3200 Tweets.</p>
-
-                <p>The training dataset contains of two files: a <code>feeds.ndjson</code><sup><a href="#">example</a></sup> and a <code>labels.ndjson</code><sup><a href="#">example</a></sup>.
-                Each file lists all celebrities as json objects, one per line and identified by the <code>cid</code> key.
-                    For evaluation, you software will read a feeds.ndjson file from a given directory and write a valid labels.ndjson with your predictions to a given output directory:
+                <br>
+                <h2>Evaluation
+                    <span class="uk-text-lead">
+                        [<a href="#">Download Evaluation Script</a>]
+                    </span>
+                </h2>
+                <p>For evaluation, your software will read a <code>feeds.ndjson</code> file from a given directory and write a valid
+                    <code>labels.ndjson</code> with your predictions to a given output directory:
                 </p>
-
                 <pre>
 mySoftware -i path/to/feeds/directory -o path/to/output/directory</pre>
 
+                <p>Submissions are judged by a combined metric <code>cRank</code>, which is the harmonic mean of each
+                    label's metric.
+                    Fame, occupation, and gender are judged by their respective F<sub>1</sub>. Age is judged by
+                    Mean Squared Error.</p>
 
-                <h2>Evaluation Scheme
-                    <span class="uk-text-lead">
-                        <a href="#">Download Evaluation Script</a>
-                    </span>
-                </h2>
-                <p>Submissions are judged by a combined metric <code>cRank</code>, which is the harmonic mean of each label's metric.
-                    Fame, occupation, and gender are judged by their respective F<sub>1</sub> while age is judged by Mean Squared Error.</p>
-
-                $$ \text{cRank} = {4 \over {\frac{1}{\text{F}_{1, \text{fame}}} + \frac{1}{\text{F}_{1, \text{occupation}}} + \frac{1}{\text{F}_{1, \text{gender}}} + \frac{1}{\text{MSE}_{\text{age}}}}} $$
+                $$ \text{cRank} = {4 \over {\frac{1}{\text{F}_{1, \text{fame}}} + \frac{1}{\text{F}_{1,
+                \text{occupation}}} + \frac{1}{\text{F}_{1, \text{gender}}} + \frac{1}{\text{MSE}_{\text{age}}}}} $$
 
                 <h2>Submission
                     <span class="uk-text-lead">
-                        <a href="https://www.tira.io/static/tira-vm-user-guide.pdf">See the TIRA User Guide</a>
+                        [<a href="https://www.tira.io/static/tira-vm-user-guide.pdf">See the TIRA User Guide</a>]
                     </span>
                 </h2>
                 <p>When you registered, you will get remote access to a virtual machine (Windows or Linux) to deploy the
@@ -124,8 +147,10 @@ mySoftware -i path/to/feeds/directory -o path/to/output/directory</pre>
 </main>
 
 <script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
 </script>
+<script src="{{ 'js/thirdparty/fontawesome/fontawesome.min.js' | relative_url }}"></script>
+<script src="{{ 'js/thirdparty/fontawesome/solid.min.js' | relative_url }}"></script>
 <!--<script type="text/x-mathjax-config">-->
-  <!--MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});-->
+<!--MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});-->
 <!--</script>-->
