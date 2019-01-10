@@ -66,36 +66,24 @@ description: PAN @ CLEF 2019 - Celebrity Profiling
                         <a href="#">Download Training Data</a>
                     </span>
                 </h2>
-                <p>
-                    The dataset consists of two files: a <span class="uk-text-bold">feeds.ndjson</span> and a <span
-                        class="uk-text-bold">labels.ndjson</span>.
-                    Feeds contains on each line all the tweets of one celebrity.
-                    Labels contains on each line the degree of fame, occupation, age, and gender for a celebrity in
-                    Feeds.
-                    The task is, given only the feeds, to predict the labels accordingly and generate the labels.ndjson.
-                    Following values are possible for each trait:</p>
-                <table class="uk-margin-medium uk-table uk-table-divider uk-table-small uk-table-hover">
-                    <tr>
-                        <th>Label</th>
-                        <th>Possible values</th>
-                    </tr>
-                    <tr>
-                        <th>Fame</th>
-                        <td>regional, wellknown, superstar</td>
-                    </tr>
-                    <tr>
-                        <th>Occupation</th>
-                        <td>TODO</td>
-                    </tr>
-                    <tr>
-                        <th>Age</th>
-                        <td>numerical age</td>
-                    </tr>
-                    <tr>
-                        <th>Gender</th>
-                        <td>male, female, other</td>
-                    </tr>
-                </table>
+                <p>The task is to predict four traits of a celebrity from it's social media history.
+                    These traits are: </p>
+
+                <pre class="prettyprint">
+    fame        := {regional, wellknown, superstar}
+    occupation  := {TODO}
+    age         := {1,&hellip;,114}
+    gender      := {male, female, nonbinary}</pre>
+
+                <p>The social media history consists of the teaser messages of the latest up to 3200 Tweets.</p>
+
+                <p>The training dataset contains of two files: a <code>feeds.ndjson</code><sup><a href="#">example</a></sup> and a <code>labels.ndjson</code><sup><a href="#">example</a></sup>.
+                Each file lists all celebrities as json objects, one per line and identified by the <code>cid</code> key.
+                    For evaluation, you software will read a feeds.ndjson file from a given directory and write a valid labels.ndjson with your predictions to a given output directory:
+                </p>
+
+                <pre class="prettyprint">
+    mySoftware -i path/to/feeds/directory -o path/to/output/directory</pre>
 
 
                 <h2>Evaluation Scheme
@@ -103,7 +91,10 @@ description: PAN @ CLEF 2019 - Celebrity Profiling
                         <a href="#">Download Evaluation Script</a>
                     </span>
                 </h2>
-                <p></p>
+                <p>Submissions are judged by a combined metric <code>cRank</code>, which is the harmonic mean of each label's metric.
+                    Fame, occupation, and gender are judged by their respective F<sub>1</sub> while age is judged by Mean Squared Error.</p>
+
+                $$ \text{cRank} = {4 \over {\frac{1}{\text{F}_{1, \text{fame}}} + \frac{1}{\text{F}_{1, \text{occupation}}} + \frac{1}{\text{F}_{1, \text{gender}}} + \frac{1}{\text{MSE}_{\text{age}}}}} $$
 
                 <h2>Submission
                     <span class="uk-text-lead">
@@ -114,7 +105,6 @@ description: PAN @ CLEF 2019 - Celebrity Profiling
                     task software in. Your software must be executable from the command line and not require Internet
                     access during the evaluation period. Note that you retain full copyrights of your software, but
                     agree to grant us usage rights only for the purpose of the competition.</p>
-
             </div>
         </div>
     </div>
@@ -134,3 +124,10 @@ description: PAN @ CLEF 2019 - Celebrity Profiling
         </div>
     </footer>
 </main>
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+<!--<script type="text/x-mathjax-config">-->
+  <!--MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});-->
+<!--</script>-->
