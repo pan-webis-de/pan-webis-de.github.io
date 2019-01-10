@@ -9,12 +9,10 @@ description: PAN @ CLEF 2019 - Celebrity Profiling
     <header class="uk-section uk-section-muted">
         <nav class="uk-container">
             <div class="uk-align-right uk-text-muted">
-                <a class="uk-button uk-invisible" href="{{ 'clef18/pan18-web/author-profiling.html' | relative_url }}"
+                <a class="uk-button" href="{{ 'clef18/pan18-web/author-profiling.html' | relative_url }}"
                    data-uk-icon="chevron-left"></a>
                 CLEF 2019
-                <a class="uk-button uk-invisible"
-                   href="{{ 'clef20/pan20-web/celebrity-profiling.html' | relative_url }}"
-                   data-uk-icon="chevron-right"></a>
+                <a class="uk-button uk-padding-remove-right uk-disabled" href="#" data-uk-icon="chevron-right"></a>
             </div>
 
             <ul class="uk-text-muted uk-tab uk-margin-remove-top">
@@ -69,11 +67,11 @@ description: PAN @ CLEF 2019 - Celebrity Profiling
                 <p>The task is to predict four traits of a celebrity from it's social media history.
                     These traits are: </p>
 
-                <pre class="prettyprint">
-    fame        := {regional, wellknown, superstar}
-    occupation  := {TODO}
-    age         := {1,&hellip;,114}
-    gender      := {male, female, nonbinary}</pre>
+                <pre>
+fame        := {regional, wellknown, superstar}
+occupation  := {TODO}
+age         := {1,&hellip;,114}
+gender      := {male, female, nonbinary}</pre>
 
                 <p>The social media history consists of the teaser messages of the latest up to 3200 Tweets.</p>
 
@@ -82,8 +80,8 @@ description: PAN @ CLEF 2019 - Celebrity Profiling
                     For evaluation, you software will read a feeds.ndjson file from a given directory and write a valid labels.ndjson with your predictions to a given output directory:
                 </p>
 
-                <pre class="prettyprint">
-    mySoftware -i path/to/feeds/directory -o path/to/output/directory</pre>
+                <pre>
+mySoftware -i path/to/feeds/directory -o path/to/output/directory</pre>
 
 
                 <h2>Evaluation Scheme
