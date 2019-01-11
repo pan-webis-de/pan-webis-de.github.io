@@ -52,7 +52,7 @@ description: PAN @ CLEF 2019 - Celebrity Profiling
         </div>
 
         <div class="uk-container uk-margin-medium">
-            <p class="uk-text-lead">Given the english Social Media feed of a celebrity, determine the degree of fame,
+            <p class="uk-text-lead">Given the English Social Media feed of a celebrity, determine the degree of fame,
                 occupation, age and gender.</p>
         </div>
     </header>
@@ -65,11 +65,10 @@ description: PAN @ CLEF 2019 - Celebrity Profiling
                     followers. This activity is closely tied to genuine writing samples, rendering them worthy research
                     subjects in many respects, not least author profiling.</p>
 
-                <p>The Celebrity Profiling task this year is to predict four traits of a celebrity from it's social
-                    media communication. The traits are the degree of fame, occupation, age and gender. The social media
-                    communication is given as the teaser messages from past Tweets. The goal is to develop a piece of
-                    software which predicts celebrity traits from the teaser
-                    history.</p>
+                <p>The Celebrity Profiling task this year is to predict four traits of a celebrity from their social
+                    media communication. The traits are the degree of fame, occupation, age, and gender. The social media
+                    communication is given as the teaser messages from past tweets. The goal is to develop a piece of
+                    software which predicts celebrity traits from the teaser history.</p>
 
                 <h2>Corpus
                     <span class="uk-text-lead">
@@ -77,16 +76,15 @@ description: PAN @ CLEF 2019 - Celebrity Profiling
                     </span>
                 </h2>
                 <p>The training dataset contains of two files: a <code>feeds.ndjson</code><sup><a
-                        href="#">example</a></sup> and a <code>labels.ndjson</code><sup><a href="#">example</a></sup>.
-                    Each file lists all celebrities as json objects, one per line and identified by the <code>cid</code>
-                    key.</p>
+                        href="#feeds-ndjson-example">example</a></sup> and a <code>labels.ndjson</code><sup><a href="#labels-ndjson-example">example</a></sup>.
+                    Each file lists all celebrities as JSON objects, one per line identified by the <code>cid</code> key.</p>
 
-                <pre class="prettyprint uk-margin-remove-bottom"><code class="lang-json">{"cid": 1234, "text": ["a teaser", "another teaser", ...]}
+                <pre id="feeds-ndjson-example" class="prettyprint uk-margin-remove-bottom"><code class="lang-json">{"cid": 1234, "text": ["a teaser", "another teaser", ...]}
 {"cid": 5678, "text": ["a teaser", "another teaser", ...]}
 ...</code></pre><div class="uk-text-small uk-text-muted uk-text-right">feeds.ndjson</div>
 
 
-                <pre class="prettyprint uk-margin-remove-bottom"><code class="lang-json">{"cid": 1234, "fame": "wellknown", "occupation": "sports", "gender": "female", "age": 28}
+                <pre id="labels-ndjson-example" class="prettyprint uk-margin-remove-bottom"><code class="lang-json">{"cid": 1234, "fame": "wellknown", "occupation": "sports", "gender": "female", "age": 28}
 {"cid": 5678, "fame": "regional", "occupation": "entertainment", "gender": "male", "age": 54}
 ...</code></pre><div class="uk-text-small uk-text-muted uk-text-right">labels.ndjson</div>
 
@@ -107,10 +105,8 @@ gender      := {male, female, nonbinary}</code></pre>
                 </p>
                 <pre class="prettyprint"><code class="lang-bash">mySoftware -i path/to/feeds/directory -o path/to/output/directory</code></pre>
 
-                <p>Submissions are judged by a combined metric <code>cRank</code>, which is the harmonic mean of each
-                    label's metric.
-                    Fame, occupation, and gender are judged by their respective F<sub>1</sub>. Age is judged by
-                    Mean Squared Error.</p>
+                <p>Submissions are judged by a combined metric <code>cRank</code>, which is the harmonic mean of each label's metric.
+                    Fame, occupation, and gender are judged by their respective F<sub>1</sub>. Age is judged by Mean Squared Error.</p>
 
                 $$ \text{cRank} = {4 \over {\frac{1}{\text{F}_{1, \text{fame}}} + \frac{1}{\text{F}_{1,
                 \text{occupation}}} + \frac{1}{\text{F}_{1, \text{gender}}} + \frac{1}{\text{MSE}_{\text{age}}}}} $$
@@ -120,9 +116,9 @@ gender      := {male, female, nonbinary}</code></pre>
                         [<a href="https://www.tira.io/static/tira-vm-user-guide.pdf">See the TIRA User Guide</a>]
                     </span>
                 </h2>
-                <p>When you registered, you will get remote access to a virtual machine (Windows or Linux) to deploy the
-                    task software in. Your software must be executable from the command line and not require Internet
-                    access during the evaluation period. Note that you retain full copyrights of your software, but
+                <p>After registration, you will get remote access to a virtual machine (Windows or Linux) to deploy your
+                    task software in. The software must be executable from the command line and not require Internet
+                    access during the evaluation period. Note that you retain full copyright of your software, but
                     agree to grant us usage rights only for the purpose of the competition.</p>
             </div>
         </div>
