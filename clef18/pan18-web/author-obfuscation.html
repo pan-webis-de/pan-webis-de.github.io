@@ -56,7 +56,7 @@ description: PAN @ CLEF 2018 - Author Obfuscation
     <section>
         <div class="uk-section">
             <div class="uk-container">
-                <div class="uk-column-1-2@l">
+                <div class="uk-column-1-2@l uk-text-justify">
                     <h2 id="author-masking">Author Masking</h2>
                     <h3>Task</h3>
                     <p>Given a document, paraphrase it so that its writing style does not match that of its original
@@ -65,10 +65,8 @@ description: PAN @ CLEF 2018 - Author Obfuscation
                     <h3>Training Corpus</h3>
                     <p>To develop your software, we provide you with a training corpus that consists of documents
                         that are to be obfuscated, and other documents from the same author.</p>
-                    <p>
-                        <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-16/pan16-data/pan16-author-masking-training-dataset-2016-02-17.zip"
-                           class="uk-button uk-button-primary" target="_blank">Download corpus</a>
-                    </p>
+                    <p><a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-16/pan16-data/pan16-author-masking-training-dataset-2016-02-17.zip"
+                           class="uk-button uk-button-primary" target="_blank">Download corpus</a></p>
 
                     <h3>Output</h3>
                     <p>For each document to be obfuscated, your software shall output a detailed list how each piece
@@ -104,19 +102,16 @@ description: PAN @ CLEF 2018 - Author Obfuscation
                         obfuscates the original text. The concatenation will be done in oder of ascending <code>obfuscation-id</code>.
                     </p>
                     <p>JSON disallows certain special characters in strings (including line breaks). Please make
-                        sure to escape these characters in order to output valid JSON. Refer to the <a
-                                href="http://json.org/">JSON spec</a> for further details, or use a JSON library.
+                        sure to escape these characters in order to output valid JSON. Refer to the
+                        <a href="http://json.org/">JSON spec</a> for further details, or use a JSON library.
                     </p>
 
                     <h3>Performance Measures</h3>
                     <p>
                         We call an obfuscation software</p>
                     <ul class="uk-list uk-list-bullet">
-                        <li><em>safe</em>, if a forensic analysis does not reveal the original author of its obfuscated
-                            texts,
-                        </li>
-                        <li><em>sound</em>, if its obufscated texts are textually entailed with their originals, and
-                        </li>
+                        <li><em>safe</em>, if a forensic analysis does not reveal the original author of its obfuscated texts,</li>
+                        <li><em>sound</em>, if its obufscated texts are textually entailed with their originals, and</li>
                         <li><em>sensible</em>, if its obfuscated texts are inconspicuous.</li>
                     </ul>
                     <p>These dimensions are orthogonal; an obfuscation software may meet any of them to various
@@ -128,14 +123,10 @@ description: PAN @ CLEF 2018 - Author Obfuscation
                     </ul>
                     <p>To measure safety we will use the following authorship verification software:</p>
                     <ul class="uk-list uk-list-bullet">
-                        <li>Caravel [<a href="https://github.com/pan-webis-de/caravel">code</a>] (best-performing
-                            approach at PAN 2015)
-                        </li>
+                        <li>Caravel [<a href="https://github.com/pan-webis-de/caravel">code</a>] (best-performing approach at PAN 2015)</li>
                         <li>GLAD [<a href="https://github.com/pan-webis-de/glad">code</a>]</li>
                         <li>Authorid [<a href="https://github.com/pan-webis-de/authorid">code</a>]</li>
-                        <li>AuthorIdentification-PFP [<a
-                                href="https://github.com/pan-webis-de/AuthorIdentification-PFP">code</a>]
-                        </li>
+                        <li>AuthorIdentification-PFP [<a href="https://github.com/pan-webis-de/AuthorIdentification-PFP">code</a>]</li>
                     </ul>
                     <p>To measure soundness and sensibleness, obfuscations will be sampled and handed out to
                         participants for peer-review.</p>
@@ -207,11 +198,8 @@ measure {
 ...</pre>
                     <p>The output is formatted as ProtoBuf text, not JSON.</p>
                     <ul class="uk-list">
-                        <li><code>key</code> can be any string that clearly and concisely names the performance measure.
-                        </li>
-                        <li><code>value</code> shall be a numeric quantification of the measure for a given obfuscated
-                            text.
-                        </li>
+                        <li><code>key</code> can be any string that clearly and concisely names the performance measure.</li>
+                        <li><code>value</code> shall be a numeric quantification of the measure for a given obfuscated text.</li>
                     </ul>
 
                     <h3>Submission</h3>
@@ -222,11 +210,10 @@ measure {
                         machine that will be made accessible to you after registration. You will be able to reach
                         the virtual machine via ssh and via remote desktop. More information about how to access the
                         virtual machines can be found in the user guide below:</p>
-                    <p><a class="uk-button uk-button-primary"
-                          href="../../clef15/pan15-web/pan15-virtual-machine-user-guide.pdf">PAN
+                    <p><a class="uk-button uk-button-primary" href="../../clef15/pan15-web/pan15-virtual-machine-user-guide.pdf">PAN
                         Virtual Machine User Guide</a></p>
-                    <p>Once deployed in your virtual machine, we ask you to access TIRA at <a
-                            href="https://www.tira.io">www.tira.io</a>, where you can self-evaluate your software on
+                    <p>Once deployed in your virtual machine, we ask you to access TIRA at
+                        <a href="https://www.tira.io">www.tira.io</a>, where you can self-evaluate your software on
                         the test data.</p>
                     <p><strong>Note:</strong> By submitting your software you retain full copyrights. You agree to
                         grant us usage rights only for the purpose of the PAN competition. We agree not to share
