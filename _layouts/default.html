@@ -102,6 +102,12 @@
 </div>
 
 <script src="{{ '/js/thirdparty/jquery/jquery.min.js' | relative_url }}"></script>
+<script src="{{ '/js/thirdparty/code-prettify/prettify.js' | relative_url }}"></script>
+<script>
+    $(document).ready(() => {
+        PR.prettyPrint();
+    });
+</script>
 <div data-uk-height-viewport="expand: true">
 {{ content }}
 </div>

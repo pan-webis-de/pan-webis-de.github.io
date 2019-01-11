@@ -81,22 +81,20 @@ description: PAN @ CLEF 2019 - Celebrity Profiling
                     Each file lists all celebrities as json objects, one per line and identified by the <code>cid</code>
                     key.</p>
 
-                <pre class="uk-margin-remove-bottom">
-{"cid": 1234, "text": ["a teaser", "another teaser", &hellip;]}
-{"cid": 5678, "text": ["a teaser", "another teaser", &hellip;]}
-&hellip;</pre><div class="uk-text-small uk-text-muted uk-text-right">feeds.ndjson</div>
+                <pre class="prettyprint uk-margin-remove-bottom"><code class="language-json">{"cid": 1234, "text": ["a teaser", "another teaser", &hellip;]}
+{"cid": 5678, "text": ["a teaser", "another teaser", ...]}
+...</code></pre><div class="uk-text-small uk-text-muted uk-text-right">feeds.ndjson</div>
 
 
-                <pre class="uk-margin-remove-bottom">
-{"cid": 1234, "fame": "wellknown", "occupation": "sports", "gender": "female", "age": 28}
+                <pre class="prettyprint uk-margin-remove-bottom"><code class="language-json">{"cid": 1234, "fame": "wellknown", "occupation": "sports", "gender": "female", "age": 28}
 {"cid": 5678, "fame": "regional", "occupation": "entertainment", "gender": "male", "age": 54}
-&hellip;</pre><div class="uk-text-small uk-text-muted uk-text-right">labels.ndjson</div>
+...</code></pre><div class="uk-text-small uk-text-muted uk-text-right">labels.ndjson</div>
 
-                <pre class="uk-margin-remove-bottom">
-fame        := {regional, wellknown, superstar}
+                <pre class="prettyprint uk-margin-remove-bottom"><code class="language-wiki">fame        := {regional, wellknown, superstar}
 occupation  := {TODO}
-age         := {1,&hellip;,114}
-gender      := {male, female, nonbinary}</pre><div class="uk-text-small uk-text-muted uk-align-right">possible value instances for each label</div>
+age         := {1, ... ,114}
+gender      := {male, female, nonbinary}</code></pre>
+                <div class="uk-text-small uk-text-muted uk-align-right">possible value instances for each label</div>
 
                 <br>
                 <h2>Evaluation
@@ -107,8 +105,7 @@ gender      := {male, female, nonbinary}</pre><div class="uk-text-small uk-text-
                 <p>For evaluation, your software will read a <code>feeds.ndjson</code> file from a given directory and write a valid
                     <code>labels.ndjson</code> with your predictions to a given output directory:
                 </p>
-                <pre>
-mySoftware -i path/to/feeds/directory -o path/to/output/directory</pre>
+                <pre class="prettyprint"><code class="language-bash">mySoftware -i path/to/feeds/directory -o path/to/output/directory</code></pre>
 
                 <p>Submissions are judged by a combined metric <code>cRank</code>, which is the harmonic mean of each
                     label's metric.

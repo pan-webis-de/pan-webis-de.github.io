@@ -105,14 +105,14 @@ description: PAN @ CLEF 2018 - Author Identification
                         folder of each problem, shows the name of folder of unknown documents and the list of names of candidate
                         author folders. </p>
 
-                    <pre>{
+                    <pre class="prettyprint"><code class="language-json">{
     "unknown-folder": "unknown",
     "candidate-authors": [
         { "author-name": "candidate00001" },
         { "author-name": "candidate00002" },
         ...
     ]
-}</pre>
+}</code></pre>
                     <p>The true author of each unknown document can be seen in the file <code>ground-truth.json</code>, also found in
                         the main folder of each problem.</p>
                     <p>In addition, to handle a collection of such problems, the file <code>collection-info.json</code>includes
@@ -120,7 +120,7 @@ description: PAN @ CLEF 2018 - Author Identification
                         (either <code>"en"</code>, <code>"fr"</code>, <code>"it"</code>, <code>"pl"</code>, or
                         <code>"sp"</code>)
                         and encoding (always <code>UTF-8</code>) of its documents. </p>
-                    <pre>[
+                    <pre class="prettyprint"><code class="language-json">[
     { "problem-name": "problem00001",
       "language": "en",
       "encoding": "UTF-8" },
@@ -128,7 +128,7 @@ description: PAN @ CLEF 2018 - Author Identification
        "language": "fr",
        "encoding": "UTF-8" },
 	  ...
-]</pre>
+]</code></pre>
 
                     <p><a class="uk-button uk-button-primary" target="_blank"
                           href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-18/pan18-data/pan18-cross-domain-authorship-attribution-training-dataset-2017-12-02-password-protected.zip">Download
@@ -165,15 +165,13 @@ description: PAN @ CLEF 2018 - Author Identification
                             (e.g., <code>answers-problem00001.json</code>, <code>answers-problem00002.json</code>)
                             including the list of unknown documents and their predicted author:</p>
 
-                        <pre>
-[
+                        <pre class="prettyprint"><code class="language-json">[
     { "unknown-text":  "unknown00001.txt", 
       "predicted-author":  "candidate00003" },
     { "unknown-text":  "unknown00002.txt", 
       "predicted-author":  "candidate00005" },
 	...
-]
-</pre>
+]</code></pre>
                         <h3>Performance Measures</h3>
                         <p>The submissions will be evaluated in each attribution problem separately based on their
                             <strong>macro-averaged F1 score</strong>. Participants will be ranked according to their
@@ -371,14 +369,14 @@ description: PAN @ CLEF 2018 - Author Identification
                         <li><code>problem-X.txt</code> contains the actual text</li>
                         <li><code>problem-X.truth</code> contains the ground truth, i.e., the correct solution in
                             <a href="http://www.json.org/">JSON</a> format:
-                            <pre>{
+                            <pre class="prettyprint"><code class="language-json">{
     "changes": true/false,
     "positions": [
         character_position_change_1,
         character_position_change_2,
         ...
     ]
-}</pre>
+}</code></pre>
                             <p>
                                 If present, the absolute character positions of the first non-whitespace character of
                                 the new segment is provided in the solution (<code>positions</code>). Please note that this
@@ -406,9 +404,9 @@ description: PAN @ CLEF 2018 - Author Identification
                         <code>problem-X.truth</code>.
                         The output should be a JSON object containing of a single property:</p>
 
-                    <pre>{
+                    <pre class="prettyprint"><code class="language-json">{
     "changes": true/false
-}</pre>
+}</code></pre>
                     <p>Output <code>"changes" : true</code> if there are style changes in the document, and <code>"changes"
                         :
                         false</code> otherwise.</p>
@@ -435,7 +433,7 @@ description: PAN @ CLEF 2018 - Author Identification
                     <p>We ask you to prepare your software so that it can be executed via command line calls. The command
                         shall take as input (i) an absolute path to the directory of the evaluation corpus and (ii) an
                         absolute path to an empty output directory:</p>
-                    <pre>&gt; mySoftware -i EVALUATION-DIRECTORY -o OUTPUT-DIRECTORY</pre>
+                    <pre class="prettyprint"><code class="language-bash">mySoftware -i EVALUATION-DIRECTORY -o OUTPUT-DIRECTORY</code></pre>
 
                     <p>Within <code>EVALUATION-DIRECTORY</code>, you will find a list of problem instances, i.e., <code>[filename].txt</code>files.
                         For each problem instance you should produce the solution file <code>[filename].truth</code> in
