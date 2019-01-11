@@ -105,7 +105,7 @@ description: PAN @ CLEF 2018 - Author Identification
                         folder of each problem, shows the name of folder of unknown documents and the list of names of candidate
                         author folders. </p>
 
-                    <pre class="prettyprint"><code class="language-json">{
+                    <pre class="prettyprint"><code class="lang-json">{
     "unknown-folder": "unknown",
     "candidate-authors": [
         { "author-name": "candidate00001" },
@@ -120,7 +120,7 @@ description: PAN @ CLEF 2018 - Author Identification
                         (either <code>"en"</code>, <code>"fr"</code>, <code>"it"</code>, <code>"pl"</code>, or
                         <code>"sp"</code>)
                         and encoding (always <code>UTF-8</code>) of its documents. </p>
-                    <pre class="prettyprint"><code class="language-json">[
+                    <pre class="prettyprint"><code class="lang-json">[
     { "problem-name": "problem00001",
       "language": "en",
       "encoding": "UTF-8" },
@@ -165,7 +165,7 @@ description: PAN @ CLEF 2018 - Author Identification
                             (e.g., <code>answers-problem00001.json</code>, <code>answers-problem00002.json</code>)
                             including the list of unknown documents and their predicted author:</p>
 
-                        <pre class="prettyprint"><code class="language-json">[
+                        <pre class="prettyprint"><code class="lang-json">[
     { "unknown-text":  "unknown00001.txt", 
       "predicted-author":  "candidate00003" },
     { "unknown-text":  "unknown00002.txt", 
@@ -188,7 +188,7 @@ description: PAN @ CLEF 2018 - Author Identification
                         <p>We ask you to prepare your software so that it can be executed via command line calls. The
                             command shall take as input (i) an absolute path to the directory of the evaluation corpus and (ii)
                             an absolute path to an existing empty output directory:</p>
-                        <pre>&gt; mySoftware -i EVALUATION-DIRECTORY -o OUTPUT-DIRECTORY</pre>
+                        <pre class="prettyprint"><code class="lang-bash">mySoftware -i EVALUATION-DIRECTORY -o OUTPUT-DIRECTORY</code></pre>
                         <p>Within <code>EVALUATION-DIRECTORY</code> a <code>collection-info.json</code> file and a number of
                             folders, one for each attribution problem, will be found (similar to the development corpus
                             as described above). For each attribution problem, the output file should be written in
@@ -369,7 +369,7 @@ description: PAN @ CLEF 2018 - Author Identification
                         <li><code>problem-X.txt</code> contains the actual text</li>
                         <li><code>problem-X.truth</code> contains the ground truth, i.e., the correct solution in
                             <a href="http://www.json.org/">JSON</a> format:
-                            <pre class="prettyprint"><code class="language-json">{
+                            <pre class="prettyprint"><code class="lang-json">{
     "changes": true/false,
     "positions": [
         character_position_change_1,
@@ -404,7 +404,7 @@ description: PAN @ CLEF 2018 - Author Identification
                         <code>problem-X.truth</code>.
                         The output should be a JSON object containing of a single property:</p>
 
-                    <pre class="prettyprint"><code class="language-json">{
+                    <pre class="prettyprint"><code class="lang-json">{
     "changes": true/false
 }</code></pre>
                     <p>Output <code>"changes" : true</code> if there are style changes in the document, and <code>"changes"
@@ -433,7 +433,7 @@ description: PAN @ CLEF 2018 - Author Identification
                     <p>We ask you to prepare your software so that it can be executed via command line calls. The command
                         shall take as input (i) an absolute path to the directory of the evaluation corpus and (ii) an
                         absolute path to an empty output directory:</p>
-                    <pre class="prettyprint"><code class="language-bash">mySoftware -i EVALUATION-DIRECTORY -o OUTPUT-DIRECTORY</code></pre>
+                    <pre class="prettyprint"><code class="lang-bash">mySoftware -i EVALUATION-DIRECTORY -o OUTPUT-DIRECTORY</code></pre>
 
                     <p>Within <code>EVALUATION-DIRECTORY</code>, you will find a list of problem instances, i.e., <code>[filename].txt</code>files.
                         For each problem instance you should produce the solution file <code>[filename].truth</code> in
