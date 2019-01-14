@@ -13,6 +13,10 @@ em {
     color: $global-emphasis-color;
 }
 
+iframe {
+    max-width: 100%;
+}
+
 :not(pre) > code {
     white-space: normal;
 }
