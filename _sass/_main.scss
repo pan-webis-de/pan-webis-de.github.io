@@ -17,6 +17,11 @@ iframe {
     max-width: 100%;
 }
 
+.video-container {
+    margin-left: -$global-small-gutter;
+    margin-right: -$global-small-gutter;
+}
+
 :not(pre) > code {
     white-space: normal;
 }
