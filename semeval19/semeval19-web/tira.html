@@ -33,7 +33,7 @@ description: PAN @ SemEval 2019 - Hyperpartisan News Detection
     </header>
 
     <div class="uk-section uk-section-default">
-        <div class="uk-container uk-column-1-2@l">
+        <div class="uk-container uk-column-1-2@l uk-text-justify">
             <h2>Introduction</h2>
             <p>This task's evaluation is hosted on <a href="https://www.tira.io/task/hyperpartisan-news-detection/" target="_blank">TIRA</a>. Participants will install their systems in dedicated TIRA virtual machines, so that their runs can be reproduced and so that they can easily be applied to different data (of same format) in the future.</p>
             <p>The following guide is adapted from <a href="http://universaldependencies.org/conll18/tira.html" target="_blank">the corresponding guide</a> of the CoNLL 2018 Shared Task.</p>
@@ -111,37 +111,21 @@ description: PAN @ SemEval 2019 - Hyperpartisan News Detection
 </main>
 
 <script>
-    const tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-    const firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-    let player;
-
-    onYouTubeIframeAPIReady = () => {
-        player = new YT.Player('video', {
-            videoId: 'e-9MvqHMh6I',
-            playerVars: {
-                'enablejsapi': 1,
-                'rel': 0,
-                'origin': 'https://pan.webis.de'
-            },
-            events: {
-                'onReady': onPlayerReady,
-            }
-        });
-    };
-
-    onPlayerReady = (event) => {
-        event.target.mute();
-        event.target.playVideo();
-    };
+    // update the registration statistics.
+    let counterElement = $("#registration-counter");
 
     $.ajax({
         url: "https://sheets.googleapis.com/v4/spreadsheets/1UC-V-PyNAzMA_hW6jtATe5HLIDP1mFkaseUrhnQdG-U/values/public%21A1?key=AIzaSyCR55jq22qAYeaQssNvQKLvEBpcw22ivcY",
         cache: false,
         dataType: "json"
-    }).done(function (json) {
-        document.getElementById("registration-counter").innerText = json.values[0][0];
+    }).done((json) => {
+        counterElement.prop('registrationCount', 0).animate({
+            registrationCount: json.values[0][0]
+        }, {
+            duration: 1200,
+            step: (value) => {
+                counterElement.text(Math.ceil(value));
+            }
+        });
     });
 </script>
