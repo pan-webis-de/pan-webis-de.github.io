@@ -43,6 +43,10 @@ svg.text-logo text {
     width: 100%;
 }
 
+.uk-card-title {
+    hyphens: none;
+}
+
 .thumbnail-card-grid {
     & > * {
         width: 100%;
