@@ -102,15 +102,6 @@
 </div>
 
 <script src="{{ '/js/thirdparty/jquery/jquery.min.js' | relative_url }}"></script>
-<script src="{{ '/js/thirdparty/code-prettify/prettify.js' | relative_url }}"></script>
-<script src="{{ '/js/thirdparty/code-prettify/lang-proto.js' | relative_url }}"></script>
-<script src="{{ '/js/thirdparty/code-prettify/lang-wiki.js' | relative_url }}"></script>
-<script src="{{ '/js/thirdparty/code-prettify/lang-yaml.js' | relative_url }}"></script>
-<script>
-    $(() => {
-        PR.prettyPrint();
-    });
-</script>
 <div data-uk-height-viewport="expand: true">
 {{ content }}
 </div>
@@ -126,8 +117,14 @@
     </div>
 </footer>
 
+<script src="{{ '/js/thirdparty/code-prettify/prettify.js' | relative_url }}"></script>
+<script src="{{ '/js/thirdparty/code-prettify/lang-proto.js' | relative_url }}"></script>
+<script src="{{ '/js/thirdparty/code-prettify/lang-wiki.js' | relative_url }}"></script>
+<script src="{{ '/js/thirdparty/code-prettify/lang-yaml.js' | relative_url }}"></script>
 <script>
     UIkit.util.ready(() => {
+        PR.prettyPrint();
+
         const nav = UIkit.util.$(".global-nav");
         const navHeight = UIkit.util.height(nav);
 
