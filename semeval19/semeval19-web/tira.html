@@ -43,9 +43,11 @@ description: PAN @ SemEval 2019 - Hyperpartisan News Detection
             <p>The VMs contain the task's data at <code>/media&shy;/training-datasets&shy;/hyperpartisan-news-detection</code>. First try running your system on these datasets through connecting by SSH or RDP to your VM (you can find the host and ports in the web interface, same login as to your VM). If you can not connect to your virtual machine, please make sure it is powered on: you can check and power on your machine using the web interface.</p>
             <p>Next register the shell command to run your system in the web interface, and run it. Note that your VM will not be accessible while your system is running – it will be “sandboxed”, detached from the internet, and after the run the state of the VM before the run will be restored. Your run can then be reviewed and evaluated by the organizers. You can inspect runs on training and validation data yourself.</p>
             <p>Note that your system is expected to read the paths to the input and output folders from the command line. When you register the command to run your system, put variables in positions where you expect to see these paths. Thus if your system expects to get the options <code>-i</code> and <code>-o</code>, followed by input and output path respectively, the command you register may look like this:</p>
-            <pre>/home/my-user-name/my-software/run.sh -i $inputDataset -o $outputDir</pre>
+            <pre class="prettyprint"><code class="lang-bash">/home/my-user-name/my-software/run.sh -i $inputDataset -o $outputDir</code></pre>
             <p>The actually executed command will then look something like this:</p>
-            <pre>/home/my-user-name/my-software/run.sh -i /media/training-datasets/hyperpartisan-news-detection/pan19-hyperpartisan-news-detection-by-publisher-validation-dataset-2018-11-22 -o /tmp/my-user-name/2018-11-22-10-11-19/output</pre>
+            <pre class="prettyprint"><code class="lang-bash">/home/my-user-name/my-software/run.sh \
+    -i /media/training-datasets/hyperpartisan-news-detection/pan19-hyperpartisan-news-detection-by-publisher-validation-dataset-2018-11-22 \
+    -o /tmp/my-user-name/2018-11-22-10-11-19/output</code></pre>
             <p>See the links below for more details.</p>
             <ul>
                 <li><a href="http://www.tira.io/static/tira-vm-user-guide.pdf">TIRA user guide</a></li>
