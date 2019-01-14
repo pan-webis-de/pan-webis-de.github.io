@@ -1,416 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+---
+layout: default
+nav_active: index
+title: PAN
+description: PAN is a series of scientific events and shared tasks on digital text forensics and stylometry.
+---
 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="PF6Vn6W3xL_WzJ-tobNlP0p4ggPLI-QOnMXPfLm7zqs" />
-
-<title>PAN</title> 
-
-<link href="css/bootstrap.min.css" rel="stylesheet" />
-<link href="css/prettify.css" rel="stylesheet" />
-
-<style>
-/*
- * Globals
- */
-
-/* Links */
-a,
-a:focus,
-a:hover {
-  color: #fff;
-}
-
-/* Custom default button */
-.btn-default,
-.btn-default:hover,
-.btn-default:focus {
-  color: #333;
-  text-shadow: none; /* Prevent inheritence from `body` */
-  background-color: #fff;
-  border: 1px solid #fff;
-}
-
-
-/*
- * Base structure
- */
-
-html,
-body {
-  height: 100%;
-  background-color: #333;
-}
-body {
-  color: #fff;
-  text-align: center;
-  text-shadow: 0 1px 3px rgba(0,0,0,.5);
-}
-
-/* Extra markup and styles for table-esque vertical and horizontal centering */
-.site-wrapper {
-  display: table;
-  width: 100%;
-  height: 100%; /* For at least Firefox */
-  min-height: 100%;
-  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-  background-image:url('clef15/pan15-figures/pan-fingerprint2.png');
-  background-repeat:no-repeat;
-  background-position:right top;
-}
-.site-wrapper-inner {
-  display: table-cell;
-  vertical-align: top;
-}
-.cover-container {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-/* Padding for spacing */
-.inner {
-  padding: 30px;
-}
-
-.cover-heading {
-  padding-bottom: 30px;
-}
-
-/*
- * Header
- */
-.masthead {
-  padding-bottom:50px;
-}
- 
-.masthead-brand {
-  margin-top: 0px;
-  margin-bottom: 10px;
-  float: left;
-}
-
-.masthead-nav {
-  float: right;
-}
-
-.masthead-nav > li {
-  margin-top: 5px;
-}
-.masthead-nav > li {
-  display: inline-block;
-}
-.masthead-nav > li + li {
-  margin-left: 20px;
-}
-.masthead-nav > li > a {
-  padding-right: 0;
-  padding-left: 0;
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff; /* IE8 proofing */
-  color: rgba(255,255,255,.75);
-  /*border-bottom: 2px solid transparent;*/
-}
-.masthead-nav > li > a:hover,
-.masthead-nav > li > a:focus {
-  background-color: transparent;
-  border-bottom-color: #a9a9a9;
-  border-bottom-color: rgba(255,255,255,.25);
-}
-.masthead-nav > .active > a,
-.masthead-nav > .active > a:hover,
-.masthead-nav > .active > a:focus {
-  color: #fff;
-  border-bottom-color: #fff;
-}
-
-
-/*
- * Cover
- */
-.cover {
-  padding: 0 20px;
-}
-
-.cover .btn-lg {
-  padding: 10px 20px;
-  font-weight: bold;
-}
-
-/*
- * Footer
- */
-.mastfoot {
-  color: #999; /* IE8 proofing */
-  color: rgba(255,255,255,.5);
-}
-
-/*
- * Affix and center
- */
-@media (min-width: 768px) {
-  /* Pull out the header and footer */
-  .masthead {
-    position: fixed;
-    top: 0;
-  }
-  .mastfoot {
-    position: fixed;
-    bottom: 0;
-  }
-  /* Start the vertical centering */
-  .site-wrapper-inner {
-    vertical-align: middle;
-  }
-  /* Handle the widths */
-  .masthead,
-  .mastfoot,
-  .cover-container {
-    width: 100%; /* Must be percentage or pixels for horizontal alignment */
-  }
-}
-
-@media (min-width: 992px) {
-  .masthead,
-  .mastfoot,
-  .cover-container {
-    width: 800px;
-  }
-}
-
-/*
- * Fix navbar-toggle
- */ 
-.navbar-toggle {
-  background-color: white;
-}
-
-.navbar-toggle .icon-bar {
-  background-color: #333;
-}
-
-.navbar-brand {
-  margin-top:-5px;
-}
-
-/*
- * Advertisement of upcoming events.
- */
-a.list-group-item:hover {
-  color:black;
-}
-
-.container {
-  padding-top:30px;
-}
-
-.container .panel {
-  color:black;
-  text-shadow:none;
-}
-
-.container .panel .panel-heading h4 {
-  font-weight:bold;
-  margin:5px 0px;
-}
-
-.container .panel .list-group {
-  text-align:left;
-}
-
-.container .panel .carousel {
-  height:60px;
-  background-color: #f5f5f5;
-  border-top: 1px solid #ddd;
-}
-
-.container .panel .carousel .carousel-inner {
-  height:60px;
-}
-
-.container .panel .carousel .carousel-inner .item {
-  height:60px;
-  padding:10px 15px;
-}
-</style>
-
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-  <script src="js/html5shiv.js"></script>
-  <script src="js/respond.min.js"></script>
-<![endif]-->
-
-<link rel="shortcut icon" href="../pan15-figures/pan-icon-16x16.ico">
-<!--
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
-<link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
--->
-
-</head>
-<body>
-
-<div class="site-wrapper">
-  <div class="site-wrapper-inner">
-    <div class="cover-container">
-      <div class="masthead clearfix">
-        <div class="inner">
-          <h3 class="masthead-brand">
-            <a class="navbar-brand" href="index.html"><img src="clef15/pan15-figures/pan-logo-small-lightgrey.png" alt="PAN"></a>
-          </h3>
-          <nav>
-            <ul class="nav masthead-nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="tasks.html">Tasks</a></li>
-              <li><a href="data.html">Data</a></li>
-              <li><a href="technology.html">Technology</a></li>
-              <li><a href="publications.html">Publications</a></li>
-              <li><a href="events.html">Events</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </nav>
+<main class="uk-section" data-uk-height-viewport="expand: true">
+    <div class="uk-container uk-text-center uk-light index-cover">
+        <div class="uk-width-2-3 uk-align-center">
+            <h1>PAN is a series of scientific events and shared&nbsp;tasks on digital text forensics and stylometry</h1>
+            <a href="tasks.html" class="uk-button uk-margin-small-top uk-button-secondary">Learn more</a>
         </div>
-      </div>
-      <div class="inner cover">
-        <h1 class="cover-heading">PAN is a series of scientific events and shared&nbsp;tasks on digital text forensics and stylometry</h1>
-        <p class="lead">
-          <a href="tasks.html" class="btn btn-lg btn-default">Learn more</a>
-        </p>
-      </div>
     </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 col-md-offset-2 col-md-4">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4>PAN @ SemEval 2019</h4>
-            </div>
-            <div class="list-group">
-              <a href="semeval19/semeval19-web/index.html" class="list-group-item">
-                <div class="pull-right"><span class="glyphicon glyphicon-chevron-right"></span></div>
-                Hyperpartisan News Detection
-              </a>
-            </div>
-            <div class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                  <a class="btn btn-primary btn-large" target="_blank" href="https://goo.gl/forms/cWtOVsjmRYfNkBnC3">Register now</a>
+
+    <div class="uk-container uk-align-center">
+        <h2 class="uk-light">Running Tasks</h2>
+
+        <div class="uk-grid uk-grid-match uk-child-width-1-3@l" data-uk-grid>
+            <div>
+                <div class="uk-card uk-card-hover uk-card-body uk-card-default uk-position-relative">
+                    <h3 class="uk-card-title">PAN @ SemEval 2019</h3>
+
+                    <ul class="uk-list uk-list-divider uk-margin-medium-bottom">
+                        <li><a href="{{ 'semeval19/semeval19-web/index.html' | relative_url }}">Hyperpartisan News Detection</a></li>
+                    </ul>
+
+                    <a class="uk-button uk-button-primary uk-position-bottom" target="_blank"
+                       href="https://goo.gl/forms/cWtOVsjmRYfNkBnC3">Register&nbsp;now</a>
                 </div>
-              </div>
             </div>
-          </div>
+
+            <div>
+                <div class="uk-card uk-card-hover uk-card-body uk-card-default uk-position-relative">
+                    <h3 class="uk-card-title">PAN @ CLEF 2019</h3>
+
+                    <ul class="uk-list uk-list-divider uk-margin-medium-bottom">
+                        <li>
+                            <a href="{{ 'clef19/pan19-web/index.html' | relative_url }}">Overview</a>
+                        </li>
+                        <li>
+                            <a href="{{ 'clef19/pan19-web/author-profiling.html' | relative_url }}">Bots and Gender Profiling</a>
+                        </li>
+                        <li>
+                            <a href="{{ 'clef19/pan19-web/celebrity-profiling.html' | relative_url }}">Celebrity Profiling</a>
+                        </li>
+                        <li>
+                            <a href="{{ 'clef19/pan19-web/author-identification.html' | relative_url }}">Cross-domain Authorship Attribution</a>
+                        </li>
+                        <li>
+                            <a href="{{ 'clef19/pan19-web/style-change-detection.html' | relative_url }}">Style Change Detection</a>
+                        </li>
+                    </ul>
+
+                    <a class="uk-button uk-button-primary uk-position-bottom" target="_blank"
+                       href="https://docs.google.com/forms/d/e/1FAIpQLSfR_xoBuGU3q7o3EYPoItN28UPuZENjs3wlWYEX_EdRGUyRfA/viewform">
+                        Register&nbsp;now</a>
+                </div>
+            </div>
+
+            <div>
+                <div class="uk-card uk-card-hover uk-card-body uk-card-default uk-position-relative">
+                    <h3 class="uk-card-title">PAN @ Online</h3>
+
+                    <ul class="uk-list uk-list-divider uk-margin-medium-bottom">
+                        <li>
+                            <a href="{{ 'online19/online19-web/index.html' | relative_url }}">Authorship Obfuscation</a>
+                        </li>
+                    </ul>
+
+                    <a class="uk-button uk-button-default uk-position-bottom uk-disabled uk-text-muted" target="_blank"
+                       href="#">Register&nbsp;now</a>
+                </div>
+            </div>
         </div>
-        <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 col-md-4">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4>PAN @ CLEF 2019</h4>
-            </div>
-            <div class="list-group">
-              <a href="clef19/pan19-web/index.html" class="list-group-item">
-                <div class="pull-right"><span class="glyphicon glyphicon-chevron-right"></span></div>
-                Overview
-              </a>
-              <a href="clef19/pan19-web/author-profiling.html" class="list-group-item">
-                <div class="pull-right"><span class="glyphicon glyphicon-chevron-right"></span></div>
-                Bots and Gender Profiling
-              </a>
-              <a href="clef19/pan19-web/celebrity-profiling.html" class="list-group-item">
-                <div class="pull-right"><span class="glyphicon glyphicon-chevron-right"></span></div>
-                Celebrity Profiling
-              </a>
-              <a href="clef19/pan19-web/author-identification.html" class="list-group-item">
-                <div class="pull-right"><span class="glyphicon glyphicon-chevron-right"></span></div>
-                Cross-domain Authorship Attribution
-              </a>
-              <a href="clef19/pan19-web/style-change-detection.html" class="list-group-item">
-                <div class="pull-right"><span class="glyphicon glyphicon-chevron-right"></span></div>
-                Style Change Detection
-              </a>
-            </div>
-            <div class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner" role="listbox">
-                <!--
-                <div class="item">
-                  Next Deadline: April 29, 2016<br/>
-                  Software Submission
-                </div>
-                -->
-                <div class="item active">
-                  <a class="btn btn-primary btn-large" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfR_xoBuGU3q7o3EYPoItN28UPuZENjs3wlWYEX_EdRGUyRfA/viewform">Register now</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!--
-        <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-5 col-md-offset-0 col-md-4 col-lg-offset-0 col-lg-3">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4>PAN @ CLEF 2016</h4>
-            </div>
-            <div class="list-group">
-              <a href="clef16/pan16-web/index.html" class="list-group-item">
-                <div class="pull-right"><span class="glyphicon glyphicon-chevron-right"></span></div>
-                Overview
-              </a>
-              <a href="clef16/pan16-web/author-identification.html" class="list-group-item">
-                <div class="pull-right"><span class="glyphicon glyphicon-chevron-right"></span></div>
-                Author Identification
-              </a>
-              <a href="clef16/pan16-web/author-profiling.html" class="list-group-item">
-                <div class="pull-right"><span class="glyphicon glyphicon-chevron-right"></span></div>
-                Author Profiling
-              </a>
-              <a href="clef16/pan16-web/author-obfuscation.html" class="list-group-item">
-                <div class="pull-right"><span class="glyphicon glyphicon-chevron-right"></span></div>
-                Author Obfuscation
-              </a>
-            </div>
-            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                  Next Deadline: March 1, 2016<br/>
-                  Early Bird Software Submission
-                </div>
-                <div class="item">
-                  <a class="btn btn-primary btn-large" href="contact.html#registration">Register now</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        -->
-      </div>
-    </div>
-  </div>
-</div>
+    </div>  <!-- uk-container -->
 
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script type="text/javascript">
-  $('.jumbotron').tooltip({
-    selector: "[data-toggle=tooltip]",
-    container: "body"
-  })
-</script>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-70770005-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
-</body>
-</html>
-
+</main>

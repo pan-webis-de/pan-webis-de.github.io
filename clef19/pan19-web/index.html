@@ -1,281 +1,154 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+---
+layout: default
+nav_active: tasks
+title: PAN @ CLEF 2019
+description: PAN @ CLEF 2019
+---
 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<main>
+    <header class="uk-section uk-section-muted">
+        <nav class="uk-container">
+            <div class="uk-align-right uk-visible@m uk-text-muted">
+                <a class="uk-button" href="{{ 'clef18/pan18-web/index.html' | relative_url }}"
+                   data-uk-icon="chevron-left"></a>
+                CLEF 2019
+                <a class="uk-button uk-disabled uk-padding-remove-right" href="#"
+                   data-uk-icon="chevron-right"></a>
+            </div>
 
-    <title>PAN 2019</title>
+            <ul class="uk-text-muted uk-tab uk-margin-remove-top">
+                <li class="uk-active"><a href="{{ '/clef19/pan19-web/index.html' | relative_url }}">Overview</a></li>
+                <li><a href="{{ '/clef19/pan19-web/submission.html' | relative_url }}">Submission</a></li>
+                <li>
+                    <a href="#">Tasks <span class="uk-margin-small-left" data-uk-icon="icon: chevron-down"></span></a>
+                    <div class="uk-dropdown" data-uk-dropdown="mode: click">
+                        <ul class="uk-nav uk-dropdown-nav">
+                            <li><a href="{{ '/clef19/pan19-web/author-profiling.html' | relative_url }}">Bots and Gender
+                                Profiling</a></li>
+                            <li><a href="{{ '/clef19/pan19-web/celebrity-profiling.html' | relative_url }}">Celebrity
+                                Profiling</a></li>
+                            <li><a href="{{ '/clef19/pan19-web/author-identification.html' | relative_url }}">Cross-domain
+                                Authorship Attribution</a></li>
+                            <li><a href="{{ '/clef19/pan19-web/style-change-detection.html' | relative_url }}">Style
+                                Change Detection</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="{{ '/clef19/pan19-web/program.html' | relative_url }}">Program</a></li>
+                <li><a href="{{ '/clef19/pan19-web/proceedings.html' | relative_url }}">Proceedings</a></li>
+            </ul>
+        </nav>
 
-    <link href="../../css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="../../css/prettify.css" rel="stylesheet"/>
+        <div class="uk-container uk-margin-small">
+            <a class="uk-button uk-button-primary uk-align-right@m"
+               href="https://docs.google.com/forms/d/e/1FAIpQLSfR_xoBuGU3q7o3EYPoItN28UPuZENjs3wlWYEX_EdRGUyRfA/viewform"
+               target="_blank">
+                Register now!
+            </a>
 
-    <style>
-        .navbar .navbar-nav {
-            font-weight: bold;
-        }
-    </style>
+            <h1 class="uk-margin-small">PAN @ CLEF 2019</h1>
+            <div class="page-header-meta registrations">
+                <span id="registration-counter">0</span> already signed up
+            </div>
+        </div>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="../../js/html5shiv.js"></script>
-    <script src="../../js/respond.min.js"></script>
-    <![endif]-->
+        <div class="uk-container uk-margin-medium">
+            <p class="uk-text-lead">This is the 19th evaluation lab on digital text forensics. PAN will be held as part of the
+                <a href="http://clef2019.clef-initiative.eu" target="_blank">CLEF conference</a> in Lugano,
+                Switzerland, on September 09-12, 2019. Evaluations will commence
+                <a href="about.html#important-dates">from January till June</a>. We invite you to take part in
+                any of the tasks shown below.
+            </p>
+        </div>
 
-    <link rel="shortcut icon" href="../pan19-figures/pan-icon-16x16.ico">
-    <!--
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
-    -->
+    </header>
 
-</head>
-<body>
-
-<nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom:0px;">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="../../index.html"><img src="../pan19-figures/pan-logo-small-lightgrey.png"
-                                                             alt="PAN" style="margin-top:-5px"></a>
-    </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="../../index.html">Home</a></li>
-            <li class="active"><a href="index.html">PAN @ CLEF 2019:</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="proceedings.html">Proceedings</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                   aria-expanded="false">Tasks <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="author-profiling.html">Bots and Gender Profiling</a></li>
-                    <li><a href="celebrity-profiling.html">Celebrity Profiling</a></li>
-                    <li><a href="author-identification.html">Cross-domain Authorship Attribution</a></li>
-                    <li><a href="style-change-detection.html">Style Change Detection</a></li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-</nav>
-
-<div class="jumbotron"
-     style="background-image:url('../pan19-figures/pan-fingerprint.png');background-repeat:no-repeat;background-position:right top;">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <h1>
-                    PAN @ CLEF 2019
-                    <a href="../../clef18/pan18-web/index.html">
-                        <small data-toggle="tooltip" title="Previous year"
-                               class="glyphicon glyphicon-chevron-left"></small>
-                    </a>
-                    <small data-toggle="tooltip" title="Let's not get ahead of ourselves..."
-                           class="glyphicon glyphicon-chevron-right" style="color:lightgrey;"></small>
-                    <!--<div class="pull-right text-right" style="padding:40px;">-->
-                        <!--<a href="https://www.symanto.net/" target="_blank">-->
-                            <!--<img width="300px" src="../pan19-figures/symanto.png" alt="Symanto Group">-->
-                        <!--</a>-->
-                        <!--<div style="font-size:7pt;margin-right:13px;margin-top:2px;">Sponsor</div>-->
-                    <!--</div>-->
-
-                </h1>
-                <p>This is the 19th evaluation lab on digital text forensics. PAN will be held as part of the <a
-                        href="http://clef2019.clef-initiative.eu" target="_blank">CLEF conference</a> in Lugano,
-                    Switzerland, on September 09-12, 2019. Evaluations will commence <a
-                            href="about.html#important-dates">from January till June</a>. We invite you to take part in
-                    any of the tasks shown below.</p>
-                <p>
-                    <a class="btn btn-default btn-large" href="about.html">Learn more »</a>
-                    <a class="btn btn-primary btn-large" target="_blank"
-                       href="https://docs.google.com/forms/d/e/1FAIpQLSfR_xoBuGU3q7o3EYPoItN28UPuZENjs3wlWYEX_EdRGUyRfA/viewform">Register
-                        now »</a>
-                    <span class="badge"><span id="registered-total">0</span> already signed up</span>
-                </p>
+    <div class="uk-section">
+        <div class="uk-container">
+            <div class="uk-grid uk-grid-large uk-grid-divider uk-child-width-1-2@m" data-uk-grid>
+                <div>
+                    <h2>Bots and Gender Profiling
+                        <span class="uk-text-muted uk-text-lead">
+                            <a href="{{ '/clef19/pan19-web/author-profiling.html' | relative_url }}">Learn more</a>
+                        </span>
+                    </h2>
+                    <p class="uk-margin-small-top">Additional information will follow soon.</p>
+                </div>
+                <div>
+                    <h2>Celebrity Profiling
+                        <span class="uk-text-muted uk-text-lead">
+                            <a href="{{ '/clef19/pan19-web/celebrity-profiling.html' | relative_url }}">Learn more</a>
+                        </span>
+                    </h2>
+                    <p class="uk-margin-small-top">Additional information will follow soon.</p>
+                </div>
+                <div>
+                    <h2>Cross-Domain Authorship Attribution
+                        <span class="uk-text-muted uk-text-lead">
+                            <a href="{{ '/clef19/pan19-web/author-identification.html' | relative_url }}">Learn more</a>
+                        </span>
+                    </h2>
+                    <p class="uk-margin-small-top">Given a document, who wrote it?</p>
+                </div>
+                <div>
+                    <h2>Style Change Detection
+                        <span class="uk-text-muted uk-text-lead">
+                            <a href="{{ '/clef19/pan19-web/style-change-detection.html' | relative_url }}">Learn more</a>
+                        </span>
+                    </h2>
+                    <p class="uk-margin-small-top">Additional information will follow soon.</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-
-<div class="container" style="padding-top:20px;">
-    <!-- Tasks -->
-    <div class="row">
-        <div class="col-md-6">
-            <h3>Bots and Gender Profiling</h3>
-            <p>Additional information will follow soon.</p>
-            <!--<div class="pull-right text-right" style="padding:0 10px;"><a href="http://www.meaningcloud.com/" target="_blank"><img width="175px" src="../pan18-figures/logo-meaningcloud.png" alt="MeaningCloud"></a><div style="font-size:7pt;margin-top:-3px;">Sponsor</div></div>-->
-            <!--<p>Given a document, what're its author's traits?</p>-->
-            <!--<p>One subtask focusses on <strong>bots and gender profiling</strong> and the other one on <strong>celebrity-->
-                <!--profiling</strong> on Twitter.</p>-->
-            <p><a class="btn btn-default" href="author-profiling.html">Learn more »</a></p>
-        </div>
-        <div class="col-md-6">
-            <h3>Celebrity Profiling</h3>
-            <p>Additional information will follow soon.</p>
-            <!--<p>Given a document, what're its author's traits?</p>-->
-            <!--<p>One subtask focusses on <strong>bots and gender profiling</strong> and the other one on <strong>celebrity-->
-                <!--profiling</strong> on Twitter.</p>-->
-            <p><a class="btn btn-default" href="celebrity-profiling.html">Learn more »</a></p>
+    <div class="uk-section">
+        <div class="uk-container">
+            <div>
+                <h2>Keynotes</h2>
+                <p>The keynotes will be announced at a later date.</p>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-6">
-            <h3>Cross-Domain Authorship Attribution</h3>
-            <p>Given a document, who wrote it?</p>
-    <p>This task focuses on <strong>open-set cross-domain authorship attribution</strong> applied in fanfiction in several languages.</p>
-
-            <p><a class="btn btn-default" href="author-identification.html">Learn more »</a></p>
-        </div>
-        <div class="col-md-6">
-            <h3>Style Change Detection</h3>
-            <p>Given a document, how many authors wrote it?</p>
-            <p>This task focuses on the <strong>detection of style changes</strong> to predict the number of involved authors of a document.</p>
-            <!--<p>Given a document, who wrote it?</p>-->
-            <!--<p>One subtask focuses on <strong>cross-domain authorship attribution</strong> applied in fanfiction and-->
-                <!--another subtask focuses on <strong>style change detection</strong>. </p>-->
-            <p><a class="btn btn-default" href="style-change-detection.html">Learn more »</a></p>
-        </div>
     </div>
 
-    <!-- Keynotes -->
-
-    <div class="row">
-        <div class="col-md-12">
-            <h2>Keynotes</h2>
+    <footer class="uk-section uk-section-muted">
+        <div class="uk-container">
+            <h2>Organizing Committee</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/potthast.html %}
+                {% include people-cards/stein.html %}
+                {% include people-cards/rosso.html %}
+                {% include people-cards/stamatatos.html %}
+            </div>
         </div>
-        <div class="col-xs-12 col-sm-6">
-            The keynotes will be announced at a later date.
-            <!--<div class="pull-left"><img class="img-rounded" style="max-height:140px;margin:5px;" src="../pan18-figures/david-losada.png" alt="David Losada"></div>-->
-            <!--<h4 class="media-heading">Profiling Depression and Anorexia in Social Media</h4>-->
-            <!--<p><a href="http://tec.citius.usc.es/ir/" target="_blank">David Losada</a><br/>-->
-            <!--<span style="font-size:10pt">University of Santiago de Compostela (Spain)</span></p>-->
-            <!--<p>In this talk I will review some recent results regarding early detection of signs of depression and anorexia. Since 2017, we have been organizing eRisk, a CLEF lab that promotes the development of effective and efficient solutions for early risk prediction on the Internet. eRisk explores the evaluation methodology, effectiveness metrics and practical applications (particularly those related to health and safety) of early risk detection on the Internet. Early detection technologies can be employed in different areas, particularly those related to health and safety. For instance, early alerts could be sent when a predator starts interacting with a child for sexual purposes, or when a potential offender starts publishing antisocial threats on a blog, forum or social network. Our main goal is to pioneer a new interdisciplinary research area that would be potentially applicable to a wide variety of situations and to many different personal profiles. Examples include potential paedophiles, stalkers, individuals that could fall into the hands of criminal organisations, people with suicidal inclinations, or people susceptible to depression. In this talk, I will discuss the lessons learned over these two years and some future lines of work.</p>-->
-            <!--<p><em>Dr. David E. Losada is an Associate Professor in Computer Science & Artificial Intelligence at the University of Santiago de Compostela (Spain). He is currently the Director of the Master's Programme on Big Data Analytics. David E. Losada received his BS in Computer Science (with honors) in 1997, and his PhD in Computer Science (with honors) in 2001, both from the University of A Coruña (Spain). From 2001 to 2002, he was a lecturer in the San Pablo-CEU University (Spain) and, in 2003, he joined the Univ. of Santiago de Compostela as a senior research fellow ("Ramón y Cajal" R&D programme). His current research interests include a wide range of Information Retrieval (IR) and related areas such as: early risk detection, text mining, IR evaluation, IR probabilistic models, summarization, novelty detection, and sentence retrieval. Losada is an active member of the IR community and he regularly serves in the Programme Committee of prestigious international conferences such as SIGIR or ECIR. He has also led several R&D projects and contracts in the area of search technologies. In 2011, Losada was recognized with an ACM senior member award. David started the organization of eRisk in 2017. eRisk is a CLEF lab that promotes the development of effective and efficient solutions for early risk prediction on the Internet.</em></p>-->
-            <!--</div>-->
-            <!--<div class="col-xs-12 col-sm-6">-->
-            <!--<div class="pull-left"><img class="img-rounded" style="max-height:140px;margin:5px;" src="../pan18-figures/aleksandr-farseev.jpg" alt="Aleksandr Farseev"></div>-->
-            <!--<h4 class="media-heading">Demystifying Psychometric Marketing: Multi-View Learning as a New Social Media User Profiling Standard</h4>-->
-            <!--<p><a href="https://farseev.azurewebsites.net" target="_blank">Aleksandr Farseev</a><br/>-->
-            <!--<span style="font-size:10pt">SoMin.ai</span></p>-->
-            <!--<p>The drastic change in the Web was witnessed throughout the past decade, which saw an exponential growth in social networking services. Traditionally, social network users are encouraged to complete their profiles by explicitly providing their personal attributes such as age, gender, interests, etc. Such information is essential for Marketing, Facility Arrangement, or Candidate Assessment, but, unfortunately, often not publicly available. This gives rise to user profiling, which aims at automatic inference of individual user attributes based on their social network interactions. Considering that human beings frequently contribute multi-modal data in multiple online social networks at the same time, it is essential to implement inter-source complimentary multi-view learning techniques to perform automatic user profiling efficiently. In this talk, we will overview recent research attempts on learning across multiple social networks and data modalities for automatic user profiling. We will also give several practical examples of how Multi-View User Profiling helps SoMin.ai in boosting the efficiency of enterprises' marketing efforts.</p>-->
-            <!--<p><em>Aleksandr Farseev is an international researcher, entrepreneur and the founder of SoMin.ai, the Social Media Marketing platform driven by AI. He has obtained his Ph.D. degree from the National University of Singapore and currently holding an Adjunct Professor position at ITMO University, Russia. Apart from academic efforts, Aleksandr leads the AI research department at SoMin.ai - an AI-Driven Social Discovery and Influencer Marketing Platform. Aleksandr's research interests include Social Media Analytics, Multi-View Learning, and Automatic User Profiling. He is known as one of the leading experts in Multi-View User Profile Learning.</em></p>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="row" style="padding-top:20px;">-->
-            <!--<div class="col-xs-12">-->
-            <!--<div class="pull-left"><img class="img-rounded" style="max-height:140px;margin:5px;" src="../pan18-figures/jahna-otterbacher.jpg" alt="Jahna Otterbacher"></div>-->
-            <!--<h4 class="media-heading">Competent Men and Warm Women: On the Detection and Origin of Gender Stereotyped Image Search Results</h4>-->
-            <!--<p><a href="http://www.jahna-otterbacher.net/" target="_blank">Jahna Otterbacher</a><br/>-->
-            <!--<span style="font-size:10pt">Open University of Cyprus & Research Centre on Interactive Media, Smart Systems & Emerging Technologies Nicosia (Cyprus)</span></p>-->
-            <!--<p>There is much concern about algorithms that underlie information services and the view of the social world they present to users. Image search engines are known to perpetuate gender stereotypes, particularly surrounding professions (e.g., returning primarily images of men on a search for "engineer," although few, if any, men on a search for "nurse"). In the first part of the talk, I discuss the problem of detecting social biases in image search results. We developed a novel method for automatically examining the content and strength of gender stereotypes in image results, which is inspired by the trait adjective checklist method. In experiments with Microsoft Bing, we found that photos of women are more often retrieved for searches on warm character traits (e.g., "emotional"), whereas agentic traits (e.g., "rational") typically result in more images of men. In the second part of the talk, I address questions surrounding the origin of social biases in search algorithms. I will argue that the quality of image metadata is a source of bias, as algorithms are typically trained on "gold standard," human-produced metadata. Specifically, in an experiment testing a commonly used crowdsourcing task for metadata generation, I will provide evidence that people's descriptions of men and women depicted in similar contexts differ in systematic ways that are predictable by theory. In conclusion, I shall argue that while the reproduction of social stereotypes in search algorithms is likely inevitable, there are ways to effectively raise users' awareness of biases in results.</p>-->
-            <!--<p><em>Jahna Otterbacher received her doctorate from the University of Michigan (Ann Arbor, USA), where she was a member of the Computational Linguistics and Information Retrieval (CLAIR) research group. She is currently Assistant Professor at the Open University of Cyprus (OUC), Faculty of Pure and Applied Sciences, where she is the academic coordinator of the MSc in Social Information Systems. Jahna also coordinates the Cyprus Center for Algorithmic Transparency (CyCAT) at the OUC, a new initiative funded by the H2020 Widespread Twinning program. The CyCAT seeks to promote transparency and accountability in algorithmic systems that people routinely use, but that are rather opaque to them (e.g., search engines), through three types of interventions - data-, developer- and user-focused. In addition to her post at the OUC, Jahna holds a concurrent appointment as team leader of the Transparency in Algorithms Group at RISE (Research centre on Interactive media, Smart systems and Emerging technologies), a new center of excellence and innovation in Nicosia, Cyprus, in collaboration with two international Advanced Partners, UCL and MPI.</em></p>-->
+        <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+            {% include organizations/pan19-organizations-section.html %}
         </div>
-    </div>
-
-
-    <div class="row" style="padding-top:60px;">
-        <div class="col-xs-6 col-sm-4 col-md-3"><a href="http://www.webis.de" target="_blank" class="thumbnail"
-                                                   style="border:none;min-height:75px;"><img
-                src="../pan19-figures/logo-bauhaus-universitaet-weimar.png" alt="Bauhaus-Universtät Weimar logo"
-                class="img-responsive" style="max-height:50px;"></a></div>
-        <div class="col-xs-6 col-sm-4 col-md-3"><a href="http://www.upv.es" target="_blank" class="thumbnail"
-                                                   style="border:none;min-height:75px;"><img
-                src="../pan19-figures/logo-universitat-politecnica-de-valencia.png"
-                alt="Universitat Politecnica de Valencia logo" class="img-responsive" style="max-height:50px;"></a>
-        </div>
-        <div class="col-xs-6 col-sm-4 col-md-3"><a href="http://www.aegean.gr" target="_blank" class="thumbnail"
-                                                   style="border:none;min-height:75px;"><img
-                src="../pan19-figures/logo-university-of-the-aegean.gif" alt="University of the Aegean logo"
-                class="img-responsive" style="max-height:50px;"></a></div>
-        <div class="col-xs-6 col-sm-4 col-md-3"><a href="http://www.autoritas.es" target="_blank" class="thumbnail"
-                                                   style="border:none;min-height:75px;"><img
-                src="../pan19-figures/logo-autoritas.jpg" alt="Autoritas Consulting logo" class="img-responsive"
-                style="max-height:50px;"></a></div>
-        <div class="col-xs-6 col-sm-4 col-md-3"><a href="http://clef2018.clef-initiative.eu/" target="_blank"
-                                                   class="thumbnail" style="border:none;min-height:75px;"><img
-                src="../pan19-figures/logo-clef19.png" alt="CLEF'19 logo" class="img-responsive"
-                style="max-height:70px;"></a></div>
-        <div class="col-xs-6 col-sm-4 col-md-3"><a href="http://www.clef-initiative.eu/" target="_blank"
-                                                   class="thumbnail" style="border:none;min-height:75px;"><img
-                src="../pan19-figures/logo-clef.png" alt="CLEF Initiative logo" class="img-responsive"
-                style="max-height:70px;"></a></div>
-    </div>
-
-    <footer>
-        <p class="pull-right">© pan.webis.de</p>
     </footer>
+</main>
 
-</div>
-
-<script src="../../js/jquery.js"></script>
-<script src="../../js/bootstrap.min.js"></script>
-<script type="text/javascript">
-    $('.jumbotron').tooltip({
-        selector: "[data-toggle=tooltip]",
-        container: "body"
-    })
-</script>
-<script src="../../js/prettify.js"></script>
 <script>
-    !function ($) {
-        $(function () {
-            window.prettyPrint && prettyPrint()
-        })
-    }(window.jQuery)
-</script>
+    // update the registration statistics.
+    let counterElement = $("#registration-counter");
 
-<!-- Update the registration statistics. -->
-<script type="text/javascript">
     $.ajax({
         url: "https://spreadsheets.google.com/feeds/cells/0AlwcskAJGamSdEN2ZUQ4Uk44cW13XzQ4UDRNTDR0V3c/od5/public/basic?min-row=5&min-col=1&max-row=1&max-col=1&alt=json",
         cache: false,
         dataType: "json"
-    }).done(function (json) {
+    }).done((json) => {
         $(json["feed"]["entry"]).each(function () {
-            var title = this["title"]["$t"];
-            var content = this["content"]["$t"];
-            switch (title) {
-                case "A1":
-                    $("#registered-total").text(content)
-                case "A2":
-                    $("#registered-plagiarism-detection").text(content)
-                case "A3":
-                    $("#registered-author-identification").text(content)
-                case "A4":
-                    $("#registered-author-profiling").text(content)
-                case "A5":
-                    $("#registered-countries").text(content)
+            let title = this["title"]["$t"];
+            let content = this["content"]["$t"];
+            if (title === "A1") {
+                counterElement.prop('registrationCount', 0).animate({
+                    registrationCount: content
+                }, {
+                    duration: 1200,
+                    step: (value) => {
+                        counterElement.text(Math.ceil(value));
+                    }
+                });
             }
         });
     });
 </script>
-
-<script>
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', 'UA-70770005-1', 'auto');
-    ga('send', 'pageview');
-
-</script>
-
-</body>
-</html>
-

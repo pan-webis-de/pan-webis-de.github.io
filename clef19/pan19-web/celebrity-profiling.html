@@ -1,216 +1,150 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+---
+layout: default
+nav_active: tasks
+title: PAN @ CLEF 2019 - Celebrity Profiling
+description: PAN @ CLEF 2019 - Celebrity Profiling
+---
 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<main>
+    <header class="uk-section uk-section-muted">
+        <nav class="uk-container">
+            <div class="uk-align-right uk-visible@m uk-text-muted">
+                <a class="uk-button" href="{{ 'clef18/pan18-web/index.html' | relative_url }}"
+                   data-uk-icon="chevron-left"></a>
+                CLEF 2019
+                <a class="uk-button uk-disabled uk-padding-remove-right" href="#"
+                   data-uk-icon="chevron-right"></a>
+            </div>
 
-    <title>PAN 2019</title>
+            <ul class="uk-text-muted uk-tab uk-margin-remove-top">
+                <li><a href="{{ '/clef19/pan19-web/index.html' | relative_url }}">Overview</a></li>
+                <li><a href="{{ '/clef19/pan19-web/submission.html' | relative_url }}">Submission</a></li>
+                <li class="uk-active">
+                    <a href="#">Tasks <span class="uk-margin-small-left" data-uk-icon="icon: chevron-down"></span></a>
+                    <div class="uk-dropdown" data-uk-dropdown="mode: click">
+                        <ul class="uk-nav uk-dropdown-nav">
+                            <li><a href="{{ '/clef19/pan19-web/author-profiling.html' | relative_url }}">Bots and Gender
+                                Profiling</a></li>
+                            <li class="uk-active"><a
+                                    href="{{ '/clef19/pan19-web/celebrity-profiling.html' | relative_url }}">Celebrity
+                                Profiling</a></li>
+                            <li><a href="{{ '/clef19/pan19-web/author-identification.html' | relative_url }}">Cross-domain
+                                Authorship Attribution</a></li>
+                            <li><a href="{{ '/clef19/pan19-web/style-change-detection.html' | relative_url }}">Style
+                                Change Detection</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="{{ '/clef19/pan19-web/program.html' | relative_url }}">Program</a></li>
+                <li><a href="{{ '/clef19/pan19-web/proceedings.html' | relative_url }}">Proceedings</a></li>
+            </ul>
+        </nav>
 
-    <link href="../../css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="../../css/prettify.css" rel="stylesheet"/>
+        <div class="uk-container uk-margin-small">
+            <a class="uk-button uk-button-primary uk-align-right@m"
+               href="https://docs.google.com/forms/d/e/1FAIpQLSfR_xoBuGU3q7o3EYPoItN28UPuZENjs3wlWYEX_EdRGUyRfA/viewform"
+               target="_blank">
+                Register now!
+            </a>
 
-    <style>
-        .navbar .navbar-nav {
-            font-weight: bold;
-        }
-    </style>
+            <h1 class="uk-margin-small">Celebrity Profiling</h1>
+            <div class="page-header-meta">CLEF @ PAN 2019</div>
+        </div>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="../../js/html5shiv.js"></script>
-    <script src="../../js/respond.min.js"></script>
-    <![endif]-->
+        <div class="uk-container uk-margin-medium">
+            <p class="uk-text-lead">Given the English Social Media feed of a celebrity, determine their degree of fame,
+                occupation, age, and gender.</p>
+        </div>
+    </header>
 
-    <link rel="shortcut icon" href="../pan19-figures/pan-icon-16x16.ico">
-    <!--
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
-    -->
+    <div class="uk-section uk-section-default">
+        <div class="uk-container uk-text-justify">
+            <div class="uk-column-1-2@l">
+                <h2>Task</h2>
+                <p>Celebrities are among the most prolific users of social media, promoting their personas and rallying
+                    followers. This activity is closely tied to genuine writing samples, rendering them worthy research
+                    subjects in many respects, not least author profiling.</p>
 
-</head>
-<body>
+                <p>The Celebrity Profiling task this year is to predict four traits of a celebrity from their social
+                    media communication. The traits are the degree of fame, occupation, age, and gender. The social media
+                    communication is given as the teaser messages from past tweets. The goal is to develop a piece of
+                    software which predicts celebrity traits from the teaser history.</p>
 
-<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="../../index.html"><img src="../pan19-figures/pan-logo-small-lightgrey.png"
-                                                             alt="PAN" style="margin-top:-5px"></a>
-    </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="../../index.html">Home</a></li>
-            <li><a href="index.html">PAN @ CLEF 2019:</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="proceedings.html">Proceedings</a></li>
-            <li class="dropdown active">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                   aria-expanded="false">Tasks <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="author-profiling.html">Bots and Gender Profiling</a></li>
-                    <li class="active"><a href="celebrity-profiling.html">Celebrity Profiling</a></li>
-                    <li><a href="author-identification.html">Cross-domain Authorship Attribution</a></li>
-                    <li><a href="style-change-detection.html">Style Change Detection</a></li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-</nav>
+                <h2>Corpus
+                    <span class="uk-text-lead">
+                        [<a href="#">Download Training Data</a>]
+                    </span>
+                </h2>
+                <p>The training dataset contains of two files: a <code>feeds.ndjson</code><sup><a
+                        href="#feeds-ndjson-example">example</a></sup> and a <code>labels.ndjson</code><sup><a href="#labels-ndjson-example">example</a></sup>.
+                    Each file lists all celebrities as JSON objects, one per line identified by the <code>cid</code> key.</p>
 
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-            <h1 id="task-description" class="page-header">
-                Celebrity Profiling
-                <div class="btn-group">
-                    <a role="button" class="btn btn-default" disabled="disabled"><span
-                            class="glyphicon glyphicon-chevron-left" style="color:grey;"></span></a>
-                    <span role="button" class="btn btn-default" disabled="disabled">2019</span>
-                    <span role="button" class="btn btn-default" disabled="disabled"><span
-                            class="glyphicon glyphicon-chevron-right" style="color:grey;"></span></span>
-                </div>
-            </h1>
-            <!--<div class="thumbnail pull-right" style="text-align:right;margin-left:15px;"><a href="http://www.adobe.com/" target="_blank"><img src="../pan16-figures/logo-adobe.png" alt="Adobe" style="max-height:150px"></a><div style="font-size:7pt;margin-right:13px;margin-top:2px;">Sponsor</div></div>-->
-            <p class="lead">The details for this task will be announced soon.</p>
+                <pre id="feeds-ndjson-example" class="prettyprint uk-margin-remove-bottom"><code class="lang-json">{"cid": 1234, "text": ["a teaser", "another teaser", ...]}
+{"cid": 5678, "text": ["a teaser", "another teaser", ...]}
+...</code></pre><div class="uk-text-small uk-text-muted uk-text-right">feeds.ndjson</div>
 
+
+                <pre id="labels-ndjson-example" class="prettyprint uk-margin-remove-bottom"><code class="lang-json">{"cid": 1234, "fame": "wellknown", "occupation": "sports", "gender": "female", "age": 28}
+{"cid": 5678, "fame": "regional", "occupation": "entertainment", "gender": "male", "age": 54}
+...</code></pre><div class="uk-text-small uk-text-muted uk-text-right">labels.ndjson</div>
+
+                <pre class="prettyprint uk-margin-remove-bottom"><code class="lang-pascal">fame        := {regional, wellknown, superstar}
+occupation  := {TODO}
+age         := {1, ... ,114}
+gender      := {male, female, nonbinary}</code></pre>
+                <div class="uk-text-small uk-text-muted uk-align-right">possible value instances for each label</div>
+
+                <br>
+                <h2>Evaluation
+                    <span class="uk-text-lead">
+                        [<a href="#">Download Evaluation Script</a>]
+                    </span>
+                </h2>
+                <p>For evaluation, your software will read a <code>feeds.ndjson</code> file from a given directory and write a valid
+                    <code>labels.ndjson</code> with your predictions to a given output directory:
+                </p>
+                <pre class="prettyprint"><code class="lang-bash">mySoftware -i path/to/feeds/directory -o path/to/output/directory</code></pre>
+
+                <p>Submissions are judged by a combined metric <code>cRank</code>, which is the harmonic mean of each label's metric.
+                    Fame, occupation, and gender are judged by their respective F<sub>1</sub>. Age is judged by Mean Squared Error.</p>
+
+                $$ \text{cRank} = {4 \over {\frac{1}{\text{F}_{1, \text{fame}}} + \frac{1}{\text{F}_{1,
+                \text{occupation}}} + \frac{1}{\text{F}_{1, \text{gender}}} + \frac{1}{\text{MSE}_{\text{age}}}}} $$
+
+                <h2>Submission
+                    <span class="uk-text-lead">
+                        [<a href="https://www.tira.io/static/tira-vm-user-guide.pdf">See the TIRA User Guide</a>]
+                    </span>
+                </h2>
+                <p>After registration, you will get remote access to a virtual machine (Windows or Linux) to deploy your
+                    task software in. The software must be executable from the command line and not require Internet
+                    access during the evaluation period. Note that you retain full copyright of your software, but
+                    agree to grant us usage rights only for the purpose of the competition.</p>
+            </div>
         </div>
     </div>
 
-    <div class="row">
-
-        <!--
-        <div class="panel panel-default">
-            <div class="panel-heading">Task</div>
-            <div class="panel-body">
-                tba
+    <!-- Footer -->
+    <footer class="uk-section uk-section-muted">
+        <div class="uk-container">
+            <h2>Task Committee</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/potthast.html %}
+                {% include people-cards/wiegmann.html %}
+                {% include people-cards/stein.html %}
             </div>
         </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">Training Corpus</div>
-            <div class="panel-body">
-                tba
-            </div>
+        <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+            {% include organizations/pan19-organizations-section.html %}
         </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">Output</div>
-            <div class="panel-body">
-                tba
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">Performance Measure</div>
-            <div class="panel-body">
-                tba
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">Submission</div>
-            <div class="panel-body">
-                tba
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">Results</div>
-            <div class="panel-body">
-                tba
-            </div>
-        </div>
-        -->
-
-        <!--
-        <div id="task-committee-celebrities" class="row">
-            <div class="col-xs-12">
-                <h2 class="page-header">Task Chair</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-3">
-                <div class="thumbnail" style="text-align:center;">
-                    <a href="https://www.uni-weimar.de/medien/webis/people" target="_blank"><img
-                            src="../pan19-figures/martin.jpg" class="img-rounded" alt="Martin Potthast"></a>
-                    <p style="white-space:nowrap"><a href="https://www.uni-weimar.de/medien/webis/people"
-                                                     target="_blank">Martin Potthast</a></p>
-                    <p style="font-size:10pt">Bauhaus-Universit&auml;t Weimar</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12">
-                <h2>Task Committee</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-3">
-                <div class="thumbnail" style="text-align:center;">
-                    <a href="http://www.webis.de" target="_blank"><img src="../pan19-figures/benno.jpg"
-                                                                       class="img-rounded" alt="Benno Stein"></a>
-                    <p style="white-space:nowrap"><a href="http://www.webis.de" target="_blank">Benno Stein</a></p>
-                    <p style="font-size:10pt">Bauhaus-Universit&auml;t Weimar</p>
-                </div>
-            </div>
-            <!--<div class="col-xs-6 col-sm-3">
-              <div class="thumbnail" style="text-align:center;">
-                <a href="http://www.clips.ua.ac.be/~walter/" target="_blank"><img src="../pan18-figures/walter.jpg" class="img-rounded" alt="Walter Daelemans"></a>
-                <p style="white-space:nowrap"><a href="http://www.clips.ua.ac.be/~walter/" target="_blank">Walter Daelemans</a></p>
-                <p style="font-size:10pt">University of Antwerp</p>
-              </div>
-            </div>
-            <div class="col-xs-6 col-sm-3">
-              <div class="thumbnail" style="text-align:center;">
-                <a href="http://www.icsd.aegean.gr/lecturers/stamatatos/" target="_blank"><img src="../pan18-figures/stathis.jpg" class="img-rounded" alt="Efstathios Stamatatos"></a>
-                <p><a href="http://www.icsd.aegean.gr/lecturers/stamatatos/" target="_blank">Efstathios Stamatatos</a></p>
-                <p style="font-size:10pt">University of the Aegean</p>
-              </div>
-            </div>
-        </div>
-        -->
-    </div>
-
-
-    <footer>
-        <p class="pull-right">© pan.webis.de</p>
     </footer>
+</main>
 
-</div> <!-- /container -->
-
-<script src="../../js/jquery.js"></script>
-<script src="../../js/bootstrap.min.js"></script>
-<script src="../../js/prettify.js"></script>
-<script>
-    !function ($) {
-        $(function () {
-            window.prettyPrint && prettyPrint()
-        })
-    }(window.jQuery)
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
 </script>
-
-<script>
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', 'UA-70770005-1', 'auto');
-    ga('send', 'pageview');
-
-</script>
-
-</body>
-</html>
-
+<script src="{{ 'js/thirdparty/fontawesome/fontawesome.min.js' | relative_url }}"></script>
+<script src="{{ 'js/thirdparty/fontawesome/solid.min.js' | relative_url }}"></script>
+<!--<script type="text/x-mathjax-config">-->
+<!--MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});-->
+<!--</script>-->

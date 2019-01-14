@@ -1,380 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+---
+layout: default
+nav_active: publications
+title: PAN Publications
+description: Publications by PAN participants and overview papers
+---
 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>PAN</title> 
-
-<link href="css/bootstrap.min.css" rel="stylesheet" />
-<link href="css/prettify.css" rel="stylesheet" />
-<link href="css/pan.css" rel="stylesheet" />
-<link href="https://www.uni-weimar.de/medien/webis/publications/bibentry-pan.css" rel="stylesheet" />
-
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-  <script src="js/html5shiv.js"></script>
-  <script src="js/respond.min.js"></script>
-<![endif]-->
-
-<link rel="shortcut icon" href="clef15/pan15-figures/pan-icon-16x16.ico">
-<!--
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
-<link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
--->
-
-<style>
-.navbar {
-  margin-bottom: 0;
-}
-
-.jumbotron {
-  margin-bottom: 0;
-  border-bottom: 1px solid #bbb;
-}
-</style>
-
-</head>
-<body>
-
-<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="index.html"><img src="clef15/pan15-figures/pan-logo-small-lightgrey.png" alt="PAN" style="margin-top:-5px"></a>
-  </div>
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="tasks.html">Tasks</a></li>
-      <li><a href="data.html">Data</a></li>
-      <li><a href="technology.html">Technology</a></li>
-      <li class="active"><a href="publications.html">Publications</a></li>
-      <li><a href="events.html">Events</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </div>
-</nav>
-
-<div class="container-fluid introduction">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12">
+<main>
+    <header class="uk-section uk-section-muted">
+        <div class="uk-container">
             <h1>Publications</h1>
-            <p class="lead">All participants of PAN's shared tasks are invited to share their insights in the form of scientific papers. The papers comprise high-level descriptions of the digital text forensics technologies invented by participants to solve a given task. They are typically published in the context of conferences that host PAN's events, or as dedicated workshop proceedings.</p>
-            <p>
-              <a class="btn btn-primary btn-large" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfR_xoBuGU3q7o3EYPoItN28UPuZENjs3wlWYEX_EdRGUyRfA/viewform">Register now</a>
-              <a class="btn btn-default btn-large" href="events.html">Next: Events</a>
-              <span class="badge"><span id="registered-total">0</span> already signed up</span>
-            </p>
-          </div>
+            <p class="uk-text-lead">All participants of PAN's shared tasks are invited to share their insights in the
+                form of
+                scientific papers. The papers comprise high-level descriptions of the digital text forensics
+                technologies
+                invented by participants to solve a given task. They are typically published in the context of
+                conferences that
+                host PAN's events, or as dedicated workshop proceedings.</p>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
+    </header>
 
-<div class="container-fluid authorship strong">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 text-center">
-            <h1>Views</h1>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container-fluid research-field authorship publications-view-browser">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-6 col-lg-3">
-            <button id="publications-view-by-year" class="btn btn-default btn-lg btn-block selected">
-              <span class="hidden-xs">Publications</span>
-              by Year
-            </button>
-          </div>
-          <div class="col-xs-6 col-lg-3">
-            <button id="publications-view-by-author" class="btn btn-default btn-lg btn-block">
-              <span class="hidden-xs">Publications</span>
-              by Author
-            </button>
-          </div>
-          <div class="hidden-lg">&nbsp;</div>
-          <div class="col-xs-6 col-lg-3">
-            <div id="publications-view-by-downloads-button-wrapper" class="publications-view-by-downloads btn-group">
-              <button id="publications-view-by-downloads" type="button" class="btn btn-default btn-lg">
-                <span class="hidden-xs">Publications</span>
-                by Downloads
-              </button>
-              <button id="publications-view-by-downloads-dropdown" type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="caret"></span>
-                <span class="sr-only">Toggle Dropdown</span>
-              </button>
-              <ul class="dropdown-menu">
-                <li><a id="publications-view-by-downloads-last-day" href="#">last day</a></li>
-                <li><a id="publications-view-by-downloads-last-week" href="#">last week</a></li>
-                <li><a id="publications-view-by-downloads-last-month" href="#">last month</a></li>
-                <li><a id="publications-view-by-downloads-last-year" href="#">last year</a></li>
-              </ul>
+    <div class="uk-section uk-section-default">
+        <!--div class="uk-container">
+            <div id="search-control" class="uk-margin-medium">
+                <input type="text" class="uk-input" id="bib-filter-field" placeholder="Type here to filter&hellip;"/>
             </div>
-          </div>
-          <div class="col-xs-6 col-lg-3">
-            <button id="publications-view-by-topic" class="btn btn-default btn-lg btn-block">
-              <span class="hidden-xs">Publications</span>
-              by Task
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+        </div-->
 
-<div class="container-fluid originality strong">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 text-center">
-            <h1 id="publications-view-title">Publications by Year</h1>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container-fluid research-field originality">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="container">
-        <div class="row">
-          <div id="publications-view" class="col-xs-12">
+        <div class="uk-container uk-margin-medium-top publications-list" id="publications-view">
             Loading...
-          </div>
         </div>
-      </div>
     </div>
-  </div>
-</div>
+</main>
 
-</div>
-
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script type="text/javascript">
-  $('.jumbotron').tooltip({
-    selector: "[data-toggle=tooltip]",
-    container: "body"
-  })
-</script>
-<script src="js/prettify.js"></script>
+<script src="https://webis.de/js/bibentry.js?{{site.time | date: '%s'}}"></script>
+<script src="https://webis.de/js/bibentry-webis-de.js?{{site.time | date: '%s'}}"></script>
 <script>
-  !function ($) {
-    $(function(){
-      window.prettyPrint && prettyPrint()   
-    })
-  }(window.jQuery)
-</script>
+    const publicationsViewSelector = "#publications-view";
 
-<!-- Update the registration statistics. -->
-<script type="text/javascript">
-  $.ajax({
-    url: "https://spreadsheets.google.com/feeds/cells/0AlwcskAJGamSdEN2ZUQ4Uk44cW13XzQ4UDRNTDR0V3c/od5/public/basic?min-row=5&min-col=1&max-row=1&max-col=1&alt=json",
-    cache: false,
-    dataType: "json"
-  }).done(function(json) {
-    $(json["feed"]["entry"]).each(function() {
-      var title = this["title"]["$t"];
-      var content = this["content"]["$t"];
-      switch (title) {
-      case "A1":
-        $("#registered-total").text(content)
-      case "A2":
-        $("#registered-plagiarism-detection").text(content)
-      case "A3":
-        $("#registered-author-identification").text(content)
-      case "A4":
-        $("#registered-author-profiling").text(content)
-      case "A5":
-        $("#registered-countries").text(content)
-      }
+    let fetchPublicationsViewHtml = (url) => {
+        $(publicationsViewSelector).empty();
+        $(publicationsViewSelector).text("Loading...");
+        $(publicationsViewSelector).load(url + " #webis-pub-database",
+            (response, status, xhr) => {
+                if (status === "error") {
+                    const msg = "Sorry but there was an error: ";
+                    $(publicationsViewSelector).html(msg + xhr.status + " " + xhr.statusText);
+                }
+            }
+        );
+    };
+
+    $.ajaxSetup({
+        // Disable caching of AJAX responses
+        cache: false
     });
-  });
+
+    $(document).ready(function () {
+        fetchPublicationsViewHtml("https://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-year");
+    });
 </script>
-
-<script type="text/javascript">
-var url1                    = "https://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php";
-var byYearUrl               = url1 + "?filter=by-year";
-var byAuthorUrl             = url1 + "?filter=by-author";
-var byTopicUrl              = url1 + "?filter=by-topic";
-var url2                    = "https://www.uni-weimar.de/medien/webis/publications/pub-by-download-pan.php";
-var byDownloadsLastDayUrl   = url2 + "?days=1"
-var byDownloadsLastWeekUrl  = url2 + "?days=7"
-var byDownloadsLastMonthUrl = url2 + "?days=31"
-var byDownloadsLastYearUrl  = url2 + "?days=365"
-
-
-var publicationsViewId      = "publications-view";
-var publicationsViewTitleId = "publications-view-title";
-
-var publicationsViewSelector      = "#" + publicationsViewId;
-var publicationsViewTitleSelector = "#" + publicationsViewTitleId;
-
-var byYearBtnId              = "publications-view-by-year";
-var byAuthorBtnId            = "publications-view-by-author";
-var byDownloadsBtnId         = "publications-view-by-downloads";
-var byDownloadsBtnDropdownId = "publications-view-by-downloads-dropdown";
-var byDownloadsBtnWrapperId  = "publications-view-by-downloads-button-wrapper";
-var byTopicBtnId             = "publications-view-by-topic";
-
-var byYearBtnSelector              = "#" + byYearBtnId;
-var byAuthorBtnSelector            = "#" + byAuthorBtnId;
-var byDownloadsBtnSelector         = "#" + byDownloadsBtnId;
-var byDownloadsBtnDropdownSelector = "#" + byDownloadsBtnDropdownId;
-var byDownloadsBtnWrapperSelector  = "#" + byDownloadsBtnWrapperId;
-var byTopicBtnSelector             = "#" + byTopicBtnId;
-var allViewBtnsSelector            = [byYearBtnSelector, 
-                                      byAuthorBtnSelector, 
-                                      byDownloadsBtnSelector,
-                                      byTopicBtnSelector].join();
-var allViewBtnsAndDropdownSelector = [allViewBtnsSelector,
-                                      byDownloadsBtnDropdownSelector].join();
-
-var byDownloadsLastDayLnkId     = "publications-view-by-downloads-last-day";
-var byDownloadsLastWeekId       = "publications-view-by-downloads-last-week";
-var byDownloadsLastMonthLnkId   = "publications-view-by-downloads-last-month";
-var byDownloadsLastYearLnkId    = "publications-view-by-downloads-last-year";
-
-var byDownloadsLastDayLnkSelector     = "#" + byDownloadsLastDayLnkId;
-var byDownloadsLastWeekSelector       = "#" + byDownloadsLastWeekId;
-var byDownloadsLastMonthLnkSelector   = "#" + byDownloadsLastMonthLnkId;
-var byDownloadsLastYearLnkSelector    = "#" + byDownloadsLastYearLnkId;
-var allByDownloadsLnksSelector        = [byDownloadsLastDayLnkSelector,
-                                         byDownloadsLastWeekSelector,
-                                         byDownloadsLastMonthLnkSelector,
-                                         byDownloadsLastYearLnkSelector].join();
-
-var attrId        = "id";
-var classSelected = "selected";
-
-$.ajaxSetup ({
-    // Disable caching of AJAX responses
-    cache: false
-});
-
-$(document).ready(function() {
-  fetchPublicationsViewHtml(byYearUrl);
-});
-
-$(allViewBtnsSelector).click(function(){
-  $(allViewBtnsAndDropdownSelector).removeClass(classSelected);
-  $(allByDownloadsLnksSelector).removeClass(classSelected);
-  $(this).addClass(classSelected);
-  if ($(this).attr(attrId) === byDownloadsBtnId) {
-    $(byDownloadsBtnDropdownSelector).addClass(classSelected);
-  }
-  var title = $(this).text();
-  switch($(this).attr(attrId)) {
-  case byYearBtnId:
-    fetchPublicationsViewHtml(byYearUrl, title);
-    break;
-  case byAuthorBtnId:
-    fetchPublicationsViewHtml(byAuthorUrl, title);
-    break;
-  case byDownloadsBtnId:
-    title = title + " (" + $(byDownloadsLastMonthLnkSelector).text() + ")";
-    fetchPublicationsViewHtml(byDownloadsLastMonthUrl, title);
-    $(allByDownloadsLnksSelector).removeClass(classSelected);
-    $(byDownloadsLastMonthLnkSelector).addClass(classSelected);
-    break;
-  case byTopicBtnId:
-    fetchPublicationsViewHtml(byTopicUrl, title);
-    break;
-  }
-});
-
-$(allByDownloadsLnksSelector).click(function(){
-  $(allViewBtnsAndDropdownSelector).removeClass(classSelected);
-  $(byDownloadsBtnSelector).addClass(classSelected);
-  $(byDownloadsBtnDropdownSelector).addClass(classSelected);
-  $(allByDownloadsLnksSelector).removeClass(classSelected);
-  $(this).addClass(classSelected);
-  var title = $(byDownloadsBtnSelector).text();
-  title = title + " (" + $(this).text() + ")";
-  switch($(this).attr(attrId)) {
-  case byDownloadsLastDayLnkId:
-    fetchPublicationsViewHtml(byDownloadsLastDayUrl, title);
-    break;
-  case byDownloadsLastWeekId:
-    fetchPublicationsViewHtml(byDownloadsLastWeekUrl, title);
-    break;
-  case byDownloadsLastMonthLnkId:
-    fetchPublicationsViewHtml(byDownloadsLastMonthUrl, title);
-    break;
-  case byDownloadsLastYearLnkId:
-    fetchPublicationsViewHtml(byDownloadsLastYearUrl, title);
-    break;
-  }
-});
-
-function fetchPublicationsViewHtml(url, title) {
-  if (typeof title !== "undefined") {
-    $(publicationsViewTitleSelector).text(title);
-  }
-  $(publicationsViewSelector).empty();
-  $(publicationsViewSelector).text("Loading...");
-  $(publicationsViewSelector).load(url + " #webis-pub-database", 
-    function (response, status, xhr) {
-      if ( status == "error" ) {
-        var msg = "Sorry but there was an error: ";
-        $(publicationsViewSelector).html(msg + xhr.status + " " + xhr.statusText);
-      }
-    }
-  );
-}
-
-// Hack to reset the selected class due to Bootstrap removing it without reason.
-$(byDownloadsBtnWrapperSelector).on('shown.bs.dropdown', function() {
-  if ($(byDownloadsBtnDropdownSelector).hasClass(classSelected)) {
-    $(byDownloadsBtnSelector).addClass(classSelected);
-  }
-});
-$(byDownloadsBtnWrapperSelector).on('hidden.bs.dropdown', function() {
-  if ($(byDownloadsBtnDropdownSelector).hasClass(classSelected)) {
-    $(byDownloadsBtnSelector).addClass(classSelected);
-  }
-});
-</script>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-70770005-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
-</body>
-</html>
-
