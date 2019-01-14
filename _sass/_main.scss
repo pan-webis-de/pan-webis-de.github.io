@@ -43,14 +43,11 @@ svg.text-logo text {
     width: 100%;
 }
 
-.uk-card-title {
-    hyphens: none;
-}
-
 .thumbnail-card-grid {
     & > * {
         width: 100%;
         box-sizing: border-box;
+        hyphens: none;
 
         @media (min-width: $breakpoint-medium) {
             width: 50%;
