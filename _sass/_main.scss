@@ -17,11 +17,6 @@ iframe {
     max-width: 100%;
 }
 
-.video-container {
-    margin-left: -$global-small-gutter;
-    margin-right: -$global-small-gutter;
-}
-
 :not(pre) > code {
     white-space: normal;
 }
@@ -273,6 +268,13 @@ a:target {
 
     .uk-nav a {
         padding-top: 2px;
+    }
+}
+
+@media (max-width: $breakpoint-medium) {
+    .video-container {
+        margin-left: -$global-small-gutter;
+        margin-right: -$global-small-gutter;
     }
 }
 
