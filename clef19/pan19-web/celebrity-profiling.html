@@ -56,16 +56,21 @@ description: PAN @ CLEF 2019 - Celebrity Profiling
     <div class="uk-section uk-section-default">
         <div class="uk-container uk-text-justify">
             <h2>Task</h2>
-            <p>Celebrities are among the most prolific users of social media, promoting their personas and rallying
-                followers. This activity is closely tied to genuine writing samples, rendering them worthy research
-                subjects in many respects, not least author profiling.</p>
+            <div class="uk-column-1-2@l">
+                <p>Celebrities are among the most prolific users of social media, promoting their personas and rallying
+                    followers. This activity is closely tied to genuine writing samples, rendering them worthy research
+                    subjects in many respects, not least author profiling.</p>
 
-            <p>The Celebrity Profiling task this year is to predict four traits of a celebrity from their social
-                media communication. The traits are the degree of fame, occupation, age, and gender. The social media
-                communication is given as the teaser messages from past tweets. The goal is to develop a piece of
-                software which predicts celebrity traits from the teaser history.</p>
+                <p>The Celebrity Profiling task this year is to predict four traits of a celebrity from their social
+                    media communication. The traits are the degree of fame, occupation, age, and gender. The social media
+                    communication is given as the teaser messages from past tweets. The goal is to develop a piece of
+                    software which predicts celebrity traits from the teaser history.</p>
+            </div>
         </div>
-        <div class="uk-container uk-text-justify uk-margin-large-top">
+        <div class="uk-container uk-margin-medium">
+            <hr class="uk-divider-icon">
+        </div>
+        <div class="uk-container uk-text-justify">
             <div class="uk-child-width-1-2@m" data-uk-grid="masonry: true">
 
                 <!-- Left -->
@@ -84,7 +89,7 @@ description: PAN @ CLEF 2019 - Celebrity Profiling
 
                     <h3 class="uk-margin-small-top">Input Format</h3>
                     The input file contains the cid and a list of all teaser messages for each celebrity.
-                    <pre id="feeds-ndjson-example" class="prettyprint uk-margin-remove-bottom"><code class="lang-json">{"cid": 1234, "text": ["a teaser", "another teaser", ...]}
+                    <pre id="feeds-ndjson-example" class="prettyprint linenums uk-margin-remove-bottom"><code class="lang-json">{"cid": 1234, "text": ["a teaser", "another teaser", ...]}
 {"cid": 5678, "text": ["a teaser", "another teaser", ...]}
 ...</code></pre>
                     <div class="uk-text-small uk-text-muted uk-text-right">feeds.ndjson</div>
@@ -93,7 +98,7 @@ description: PAN @ CLEF 2019 - Celebrity Profiling
 
                     The output file contains the cid and and a value for each trait for each celebrity from the input
                     file.
-                    <pre id="labels-ndjson-example" class="prettyprint uk-margin-remove-bottom"><code class="lang-json">{"cid": 1234, "fame": "wellknown", "occupation": "sports", "gender": "female", "age": 28}
+                    <pre id="labels-ndjson-example" class="prettyprint linenums uk-margin-remove-bottom"><code class="lang-json">{"cid": 1234, "fame": "wellknown", "occupation": "sports", "gender": "female", "age": 28}
 {"cid": 5678, "fame": "regional", "occupation": "professional", "gender": "male", "age": 54}
 ...</code></pre>
                     <div class="uk-text-small uk-text-muted uk-text-right">labels.ndjson</div>
