@@ -57,128 +57,70 @@ description: PAN @ CLEF 2019 - Workshop Submission
         </div>
     </header>
 
-    <!-- Dates -->
-    <div class="uk-section">
+    <div class="uk-section uk-text-justify">
         <div class="uk-container">
-            <div class="uk-grid-medium" data-uk-grid>
-                <div class="uk-width-1-2@m">
-                    <h2 class="page-header">Important Dates
-                        <span class="uk-text-muted uk-text-lead">Hawaii time zone</span>
+            <div class="uk-child-width-1-2@m" data-uk-grid="masonry: true">
+                <div>
+                    <h2>Benefits for Early Birds</h2>
+                    <p>
+                        If you submit a working prototype of your software before the <strong>Early Bird software
+                        submission deadline</strong>,
+                        we will <strong>pre-evaluate</strong> it on a subset of your task's test data and notify you of
+                        your performance.
+                        Based on the pre-evaluation, you may revise and resubmit your software for the full
+                        evaluation by April 15, 2019.
+                    </p>
+                    <p>
+                        If you register for the CLEF conference by their tentative early bird registration, you may
+                        do so at a <strong>reduced fee</strong>.
+                    </p>
+
+                </div>
+                <div>
+                    <h2>Software Submission
+                        <span class="uk-text-lead">
+                        [<a href="https://www.tira.io/static/tira-vm-user-guide.pdf">See the TIRA User Guide</a>]
+                    </span>
                     </h2>
-                    <table class="uk-table uk-table-divider uk-table-small uk-table-hover uk-table-justify uk-table-condensed">
-                        <tr>
-                            <td>March 15, 2019</td>
-                            <td>Early bird software submission</td>
-                        </tr>
-                        <tr>
-                            <td>April 15, 2019</td>
-                            <td>TIRA evaluation phase opens</td>
-                        </tr>
-                        <tr>
-                            <td>May 11, 2019</td>
-                            <td>TIRA evaluation phase deadline</td>
-                        </tr>
-                        <tr>
-                            <td>May 24, 2019</td>
-                            <td>Participant paper submission</td>
-                        </tr>
-                        <tr>
-                            <td>June 07, 2019</td>
-                            <td>Peer review notification</td>
-                        </tr>
-                        <tr>
-                            <td>June 28, 2019</td>
-                            <td>Camery-ready participant papers submission</td>
-                        </tr>
-                        <tr>
-                            <td>tba</td>
-                            <td>Early bird conference registration</td>
-                        </tr>
-                        <tr>
-                            <td>September 09-12, 2019</td>
-                            <td>Conference</td>
-                        </tr>
-                    </table>
+                    <p>PAN uses <a href="https://www.tira.io">TIRA</a> for all submissions. After registration, you will
+                        get remote access to a TIRA virtual machine (Windows or Linux) to deploy
+                        your task software in. The software must be executable from the command line and not require
+                        Internet
+                        access during the evaluation period. Note that you retain full copyright of your software, but
+                        agree to grant us usage rights only for the purpose of the competition.
+                    </p>
+                    <p>
+                        If not noted otherwise, your software must be executable from command line and take the
+                        directory path for
+                        input and output data respectively as arguments:
+                    </p>
+                    <pre class="prettyprint"><code class="lang-bash">mySoftware -i input/data/directory -o output/data/directory</code></pre>
+
                 </div>
-                <div class="uk-width-1-4@m">
-                    <h2>Quicklinks</h2>
-                    <ul class="uk-list uk-list-divider uk-text-lead">
-                        <li>
-                            <a target="_blank"
-                               href="https://docs.google.com/forms/d/e/1FAIpQLSfR_xoBuGU3q7o3EYPoItN28UPuZENjs3wlWYEX_EdRGUyRfA/viewform">Register
-                                now for CLEF 2019</a>
-                        </li>
-                        <li>
-                            <a href="pan19-notebook-templates.zip">Download Notebook Templates</a>
-                        </li>
-                        <li>
-                            <a href="https://easychair.org/conferences/?conf=clef2019">Submit Notebook Paper</a>
-                        </li>
-                        <li>
-                            <a href="http://clef2019.clef-initiative.eu/index.php?page=Pages/InstructionsforCLEF2019WorkingNotes.html">Notebook
-                                Submission guidelines</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="uk-width-1-4@m">
-                    <h2>Donate</h2>
-                    <p>Support PAN by making a donation.</p>
 
-                    <p>Organizing PAN entails a significant investment of time and money on our part. If you
-                        wish to support us, please consider making a donation.</p>
-
-                    {% include donation-form.html %}
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="uk-section uk-padding-small">
-        <div class="uk-container">
-            <div class="uk-column-1-2@l uk-text-justify">
-
-                <h2>Benefits for Early Birds</h2>
-                <p>
-                    If you submit a working prototype of your software by <strong>March 15, 2019</strong>,
-                    we
-                    will <strong>pre-evaluate</strong> it on a subset of your task's test data and notify you of
-                    your
-                    performance. Based on the pre-evaluation, you may revise and resubmit your software for the full
-                    evaluation by April 15, 2019.
-                </p>
-                <p>
-                    If you register for the CLEF conference by their tentative early bird registration, you may
-                    do so at a <strong>reduced fee</strong>.
-                </p>
-
-
-                <h2>Notebooks
-                    <span class="uk-text-lead">
-                    <a href="pan19-notebook-templates.zip">Download templates</a>
+                <div>
+                    <h2>Notebook Submission
+                        <span class="uk-text-lead">
+                    [<a href="pan19-notebook-templates.zip">Download Template</a>][<a
+                                href="https://easychair.org/conferences/?conf=clef2019">Submit Notebook</a>]
                 </span>
-                </h2>
-                <p>We ask you to submit a notebook paper describing your approach. Please prepare the notebook
-                    as outlined below. For your convenience, we provide a template for Latex and Word.</p>
+                    </h2>
+                    <p>We ask you to submit a notebook paper for each task you participated in, describing your
+                        approach.
+                        Your notebooks will be published as part of the CLEF conference proceedings. Submission of
+                        notebooks is done electronically through <a
+                                href="https://easychair.org/conferences/?conf=clef2019">Easychair</a>. Please follow the
+                        <a class="btn btn-default"
+                           href="http://clef2019.clef-initiative.eu/index.php?page=Pages/InstructionsforCLEF2019WorkingNotes.html">Submission
+                            guidelines</a></p>
 
-                <p>Please prepare a notebook paper which gives a concise description of your approach. If you
-                    submitted softwares for more than one task, you may submit one notebook each. Your notebook will
-                    be accepted if it fulfills basic quality criteria, and it will be published as part of the CLEF
-                    conference proceedings.</p>
-                <p>The deadline for submitting your notebook is <strong>May 31, 2019</strong>. Although there is no
-                    strict page limit, we ask you to write no more than 12 pages. The notebook must follow the
-                    Springer LNCS style guide. Please describe only the approach you implemented to solve the task.
-                </p>
-                <p>To prepare your notebook paper, we have prepared templates for both Latex and Microsoft Word
-                    which follow the LNCS guidelines.</p>
+                    <p>The deadline for notebook submission is the <strong>May 31, 2019</strong>.
+                        The notebook must follow the Springer LNCS style guide. Please describe only the approach you
+                        implemented to solve the task. Although there is no
+                        strict page limit, we ask you to write no more than 12 pages. For your convenience, we provide a
+                        <a href="pan19-notebook-templates.zip">template for Latex and Word.</a></p>
+                </div>
 
-
-                <h2>Notebook Submission</h2>
-                <p>Submission of notebooks is to be done electronically through the <a
-                        href="https://easychair.org/conferences/?conf=clef2019">Easychair system</a>.</p>
-                <p>Please follow the submission guidelines.</p>
-
-                <p><a class="btn btn-default"
-                      href="http://clef2019.clef-initiative.eu/index.php?page=Pages/InstructionsforCLEF2019WorkingNotes.html">Submission
-                    guidelines</a></p>
 
             </div>
         </div>
