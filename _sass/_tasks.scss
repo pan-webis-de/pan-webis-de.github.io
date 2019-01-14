@@ -52,16 +52,19 @@
     .keynote-title {
         font-size: $text-lead-font-size;
         font-weight: bold;
+        text-align: left;
     }
 
     .keynote-speaker {
         font-size: $text-lead-font-size;
+        text-align: left;
     }
 
     .keynote-affiliation {
         font-size: $text-small-font-size;
         margin-top: 5px;
         color: $global-muted-color;
+        text-align: left;
     }
 
     .speaker-image {
