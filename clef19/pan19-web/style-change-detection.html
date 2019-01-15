@@ -50,12 +50,12 @@ description: PAN @ CLEF 2019 - Style Change Detection
                 For a realistic author identification system it is therefore crucial to at first determine whether a document
                 is single- or multiauthored.</p>
             <p>To this end, previous PAN editions aimed to analyze multi-authored documents. As it has been shown that it is a
-                hard problem to reliably identify individual authors and their contribtuion within a single document (<a
-                    href="../../clef16/pan16-web/author-identification.html">Author Diarization, 2016</a>;
+                hard problem to reliably identify individual authors and their contribution within a single document (<a
+                        href="../../clef16/pan16-web/author-identification.html">Author Diarization, 2016</a>;
                 <a href="../../clef17/pan17-web/author-identification.html">Style Breach Detection, 2017</a>), last year's
                 task substantially relaxed the problem by asking only for binary decision (single- or multi-authored).
                 Considering the promising results achieved by the submitted approaches (see the
-                <a href="../../clef18/pan18-web/proceedings.html">overview paper</a> for details), we continue last year's
+                <a href="http://ceur-ws.org/Vol-2125/invited_paper_2.pdf">overview paper</a> for details), we continue last year's
                 task and additionally ask participants to predict the number of involved authors.</p>
 
             <p>Given a document, participants thus should apply intrinsic style analyses to hierarchically answer
@@ -78,8 +78,71 @@ description: PAN @ CLEF 2019 - Style Change Detection
                 changes, resulting from arbitrarily many authors.</p>
 
             <h2>Development Phase</h2>
-            <p>To develop your algorithms, a data set including corresponding solutions is provided.</p>
-            <p><i>Details will be announced soon.</i></p>
+            <p>To develop your algorithms, a data set including corresponding solutions is provided (<i>download will be available soon)</i>:</p>
+            <ul class="uk-list uk-list-bullet">
+                <li>a <strong>training</strong> set: contains 50% of the whole dataset and includes solutions.
+                    Use this set to feed/train your models.
+                </li>
+                <li>a <strong>validation</strong> set: contains 25% of the whole dataset and includes solutions.
+                    Use this set to evaluate and optimize your models.
+                </li>
+                <li>a <strong>test</strong> set: contains 25% of the whole dataset and does not include
+                    solutions. This set is used for evaluation (see later).
+                </li>
+            </ul>
+
+            <p>Like last year, the whole data set is based on user posts from various sites of the
+                <a href="https://stackexchange.com">StackExchange network</a>, covering different topics and
+                containing approximately 300 to 2000 tokens per document.</p>
+
+            <!--<ul class="uk-list list-inline">
+                <li>
+                    <a class="uk-button uk-button-primary" target="_blank"
+                       href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-18/pan18-data/pan18-style-change-detection-training-dataset-2018-01-31.zip">Download
+                        training set</a>
+                </li>
+                <li>
+                    <a class="uk-button uk-button-primary" target="_blank"
+                       href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-18/pan18-data/pan18-style-change-detection-validation-dataset-2018-01-31.zip">Download
+                        validation set</a>
+                </li>
+                <li>
+                    <a class="uk-button uk-button-primary" target="_blank"
+                       href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-18/pan18-data/pan18-style-change-detection-test-dataset-2018-01-31.zip">Download
+                        test set</a>
+                </li>
+            </ul>-->
+
+            <p>For each problem instance X, two files are provided:
+            <ul class="uk-list uk-list-bullet">
+                <li><code>problem-X.txt</code> contains the actual text</li>
+                <li><code>problem-X.truth</code> contains the ground truth, i.e., the correct solution in
+                    <a href="http://www.json.org/">JSON</a> format:
+                    <pre class="prettyprint"><code class="lang-json">{
+    "authors": number_of_authors,
+    "structure": [author_segment_1, ..., author_segment_3],
+    "switches": [
+        character_pos_switch_segment_1, ...,
+        character_pos_switch_segment_n,
+    ]
+}</code></pre></li></ul>
+
+            <p>An example for a multi-author document could look as follows:</p>
+            <pre class="prettyprint"><code class="lang-json">{
+	"authors": 4,
+	"structure": ["A1", "A2", "A4", "A2", "A4", "A2", "A3", "A2", "A4"],
+	"switches": [805, 1552, 2827, 3584, 4340, 5489, 7564, 8714]
+}</code></pre>
+
+            whereas a single-author document would have exactly the following form:</p>
+            <pre class="prettyprint"><code class="lang-json">{
+	"authors": 1,
+	"structure": ["A1"],
+	"switches": []
+}</code></pre>
+
+            <p>Note that the <i>structure</i> as well as the <i>switches</i> are provided only as additional resources for the development of your algorithms, i.e., they are <strong>not expected to be predicted</strong>.</p>
+
 
             <p>To tackle the problem, you can develop novel approaches, extend existing algorithms from last year's task or
                 adapt approaches from related problems such as <b>intrinsic plagiarism detection</b> or <b>text segmentation</b>.
@@ -101,14 +164,34 @@ description: PAN @ CLEF 2019 - Style Change Detection
             <p>In general, the data structure during the evaluation phase will be similar to that in the
                 training phase, with the exception that the ground truth files are missing.</p>
 
-            <p><i>Details will be announced as soon as the dataset is ready.</i></p>
+            <p>For each given problem
+                <code>problem-X.txt</code> your software should output the missing solution file
+                <code>problem-X.truth</code>, containing a JSON object with <strong>a single property</strong>:</p>
+
+            <pre class="prettyprint"><code class="lang-json">{
+    "authors": number_of_authors
+}</code></pre>
 
             <h2>Performance Measures</h2>
             <p>The performance of the submitted approaches will be ranked by a combined measure incorporating both the
-                accuracy of distinguishing single- from multi-author documents and the correctness of the predicted number of authors.</p>
-            <p><i>Details will be anounced soon.</i></p>
+                accuracy of distinguishing single- from multi-author documents and the correctness of the predicted number of authors:</p>
+            <ul>
+                <li><strong>accuracy</strong> will measure the performance of correctly separating single-author (1 author) from multi-author (> 1 author) documents</li>
+                <li>The <strong>Ordinal Classification Index (OCI)</strong> will be used to measure the error of predicting the number of authors <strong>for multi-author documents</strong> (i.e., only for multi-author documents and not for single-author documents). OCI has been proposed by Cardoso and Sousa in their paper <i>Measuring the performance of ordinal classification</i>. It is computed directly from the confusion matrix and yields a value between 0 and 1, being 0 the best value (perfect prediction).</li>
+                <li>The <strong>final ranking</strong> is finally computed as the average of the classification accuracy and the (inverted) OCI score:
+                    $$ \text{rank} = {\text{accuracy} + (1-\text{OCI}) \over {2}} $$
+                    <i>A reference implementation will be provided soon.</i>
+                </li>
+            </ul>
 
-            <h2>Submission</h2>
+
+
+
+            <h2>Submission
+                <span class="uk-text-lead">
+                        [<a href="{{ '/clef19/pan19-web/submission.html' | relative_url }}">Submit software to PAN</a>]
+                    </span>
+            </h2>
             <p>We ask you to prepare your software so that it can be executed via command line calls. The
                 command shall take as input (i) an absolute path to the directory of the evaluation corpus and
                 (ii) an absolute path to an empty output directory:</p>
@@ -119,17 +202,8 @@ description: PAN @ CLEF 2019 - Style Change Detection
                 the <code>OUTPUT-DIRECTORY</code> For instance, you read <code>EVALUATION-DIRECTORY/problem-12.txt</code>,
                 process it and write your results to <code>OUTPUT-DIRECTORY/problem-12.truth</code>.</p>
 
-            <p>You can choose freely among the available programming languages and among the operating systems
-                Microsoft Windows and Ubuntu. We will ask you to deploy your software onto a virtual machine
-                that will be made accessible to you after registration. You will be able to reach the virtual
-                machine via ssh and via remote desktop. More information about how to access the virtual
-                machines can be found in the user guide below:</p>
-
-            <p><a class="uk-button uk-button-primary" href="../../clef15/pan15-web/pan15-virtual-machine-user-guide.pdf">PAN Virtual
-                Machine User Guide »</a></p>
-
-            <p>Once deployed in your virtual machine, we ask you to access TIRA at <a href="http://www.tira.io">www.tira.io</a>,
-                where you can self-evaluate your software on the test data.</p>
+            <p>In general, this task follows PAN's software submission strategy described <a
+                    href="{{ '/clef19/pan19-web/submission.html' | relative_url }}">here</a>.</p>
 
             <p><strong>Note:</strong> By submitting your software you retain full copyrights. You agree to grant
                 us usage rights only for the purpose of the PAN competition. We agree not to share your software
@@ -150,6 +224,7 @@ description: PAN @ CLEF 2019 - Style Change Detection
                     <a href="../../clef16/pan16-web/proceedings.html">PAN@CLEF'16</a> (<i>Clustering by
                     Authorship Within and Across Documents</i> and <i>Author Diarization</i> section)
                 </li>
+                <li>J. Cardoso and R. Sousa. Measuring the performance of ordinal classification. International Journal of Pattern Recognition and Artificial Intelligence 25.08, pp. 1173-1195, 2011</li>
                 <!--<li>Marti A. Hearst. <a href="http://anthology.aclweb.org/J/J97/J97-1003.pdf">TextTiling:
                     Segmenting Text into Multi-paragraph Subtopic Passages.</a>. In Computational Linguistics,
                     Volume 23, Issue 1, pages 33-64, 1997.
@@ -192,4 +267,13 @@ description: PAN @ CLEF 2019 - Style Change Detection
             {% include organizations/clef-organizations-section.html year=2019 %}
         </div>
     </footer>
+</main>
+
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+<script src="{{ 'js/thirdparty/fontawesome/fontawesome.min.js' | relative_url }}"></script>
+<script src="{{ 'js/thirdparty/fontawesome/solid.min.js' | relative_url }}"></script>
+
+
 </main>
