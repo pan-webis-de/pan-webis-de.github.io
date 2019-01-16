@@ -1,155 +1,148 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+---
+layout: default
+nav_active: tasks
+title: PAN @ CLEF 2017 - Author Profiling
+description: PAN @ CLEF 2017 - Author Profiling
+---
 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<main>
+    <header class="uk-section uk-section-muted">
 
-<title>PAN 2017</title> 
+        <nav class="uk-container">
+            <div class="uk-align-right uk-visible@m uk-text-muted">
+                <a class="uk-button" href="{{ 'clef16/pan16-web/author-profiling.html' | relative_url }}"
+                   data-uk-icon="chevron-left"></a>
+                CLEF 2017
+                <a class="uk-button uk-padding-remove-right"
+                   href="{{ 'clef18/pan18-web/author-profiling.html' | relative_url }}"
+                   data-uk-icon="chevron-right"></a>
+            </div>
 
-<link href="../../css/bootstrap.min.css" rel="stylesheet" />
-<link href="../../css/prettify.css" rel="stylesheet" />
+            <ul class="uk-text-muted uk-tab uk-margin-remove-top">
+                <li><a href="{{ '/clef17/pan17-web/index.html' | relative_url }}">Overview</a></li>
+                <li><a href="{{ '/clef17/pan17-web/submission.html' | relative_url }}">Submission</a></li>
+                <li class="uk-active">
+                    <a href="#">Tasks <span class="uk-margin-small-left"
+                                            data-uk-icon="icon: chevron-down"></span></a>
+                    <div class="uk-dropdown" data-uk-dropdown="mode: click">
+                        <ul class="uk-nav uk-dropdown-nav">
+                            <li><a href="{{ '/clef17/pan17-web/author-identification.html' | relative_url }}">Author
+                                Identification</a></li>
+                            <li class="uk-active"><a
+                                    href="{{ '/clef17/pan17-web/author-profiling.html' | relative_url }}">Author
+                                Profiling</a></li>
+                            <li><a href="{{ '/clef17/pan17-web/author-obfuscation.html' | relative_url }}">Author
+                                Obfuscation</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="{{ '/clef17/pan17-web/program.html' | relative_url }}">Program</a></li>
+                <li><a href="{{ '/clef17/pan17-web/proceedings.html' | relative_url }}">Proceedings</a></li>
+            </ul>
+        </nav>
 
-<style>
-.navbar .navbar-nav {
-  font-weight: bold;
-}
-</style>
+        <div class="uk-container uk-margin-small">
+            {% include current-register-quicklink.html year=2017 %}
+            <h1 class="uk-margin-small">Author Profiling</h1>
+            <div class="page-header-meta">CLEF @ PAN 2017</div>
 
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-  <script src="../../js/html5shiv.js"></script>
-  <script src="../../js/respond.min.js"></script>
-<![endif]-->
+            <div class="uk-align-right uk-margin-remove-bottom">
+                <a href="http://www.meaningcloud.com/" target="_blank">
+                    <img src="../pan17-figures/logo-meaningcloud.png" style="height: 70px" alt="MeaningCloud">
+                </a>
+                <div class="uk-text-small uk-text-muted uk-text-right">Sponsor</div>
+            </div>
 
-<link rel="shortcut icon" href="../pan17-figures/pan-icon-16x16.ico">
-<!--
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
-<link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
--->
-
-</head>
-<body>
-
-<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="../../index.html"><img src="../pan17-figures/pan-logo-small-lightgrey.png" alt="PAN" style="margin-top:-5px"></a>
-  </div>
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="../../index.html">Home</a></li>
-      <li><a href="index.html">PAN @ CLEF 2017:</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="proceedings.html">Proceedings</a></li>
-      <li class="dropdown active">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tasks <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="author-identification.html">Author Identification</a></li>
-          <li class="active"><a href="author-profiling.html">Author Profiling</a></li>
-          <li><a href="author-obfuscation.html">Author Obfuscation</a></li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</nav>
-
-<div class="container">
-
-  <div class="row">
-    <div class="col-xs-12">
-      <h1 id="task-description" class="page-header">
-        Author Profiling
-        <div class="btn-group">
-          <a role="button" class="btn btn-default" href="../../clef16/pan16-web/author-profiling.html"><span class="glyphicon glyphicon-chevron-left" style="color:grey;"></span></a>
-          <span role="button" class="btn btn-default" disabled="disabled">2017</span>
-          <a role="button" class="btn btn-default" href="../../clef18/pan18-web/author-profiling.html"><span class="glyphicon glyphicon-chevron-right" style="color:grey;"></span></a>
+            <p class="uk-text-lead">Authorship analysis deals with the classification of texts into classes based on the
+                stylistic choices of
+                their authors.</p>
         </div>
-      </h1>
-      <!--<div class="thumbnail pull-right" style="text-align:right;margin-left:15px;"><a href="http://www.adobe.com/" target="_blank"><img src="../pan16-figures/logo-adobe.png" alt="Adobe" style="max-height:150px"></a><div style="font-size:7pt;margin-right:13px;margin-top:2px;">Sponsor</div></div>-->
-      <div class="thumbnail pull-right" style="text-align:right;margin-left:15px;"><a href="http://www.meaningcloud.com/" target="_blank"><img src="../pan17-figures/logo-meaningcloud.png" alt="MeaningCloud" style="max-height:150px"></a><div style="font-size:7pt;margin-top:-3px;">Sponsor</div></div>
-      <p>Authorship analysis deals with the classification of texts into classes based on the stylistic choices of their authors. Beyond the author identification and author verification tasks where the style of individual authors is examined, author profiling distinguishes between classes of authors studying their sociolect aspect, that is, how language is shared by people. This helps in identifying profiling aspects such as gender, age, native language, or personality type. Author profiling is a problem of growing importance in applications in forensics, security, and marketing. E.g., from a forensic linguistics perspective one would like being able to know the linguistic profile of the author of a harassing text message (language used by a certain type of people) and identify certain characteristics (language as evidence). Similarly, from a marketing viewpoint, companies may be interested in knowing, on the basis of the analysis of blogs and online product reviews, the demographics of people that like or dislike their products. The focus is on author profiling in social media since we are mainly interested in everyday language and how it reflects basic social and personality processes.</p>
-      
-      
-      <div class="panel panel-default">
-        <div class="panel-heading">Award</div>
-        <div class="panel-body">
-          <p>We are happy to announce that the best performing team at the 5th International Competition on Author Profiling will be awarded 300,- Euro sponsored by <a href="http://www.meaningcloud.com/" target="_blank">MeaningCloud</a>.</p>
-          
-	<ul><li>
-		Angelo Basile, Gareth Dwyer, Maria Medvedeva, Josine Rawee, Hessel Haagsma, and Malvina Nissim. University of Groningen, Netherlands.
-          </li></ul>
-          <a href="https://s3.amazonaws.com/autoritas.pan/PAN17-Award-Angelo-Basile-Paolo-Rosso-Francisco-Rangel.jpg" target="_blank">
-          <img src="https://s3.amazonaws.com/autoritas.pan/PAN17-Award-Angelo-Basile-Paolo-Rosso-Francisco-Rangel.jpg" width="350px" />
-          </a>
-          <p>Congratulations!</p>
-        </div>
-      </div>
-      
-      
-      <div class="panel panel-default">
-        <div class="panel-heading">Task</div>
-        <div class="panel-body"><p>
-		Gender and language variety identification in Twitter. Demographics traits such as gender and 
-		language variety have so far investigated separately. In this task we will provided participantes 
-		with a Twitter corpus annotated with authors' gender and their specific variation of their native language:
-		<ul>
-			<li>English (Australia, Canada, Great Britain, Ireland, New Zealand, United States)</li>
-			<li>Spanish (Argentina, Chile, Colombia, Mexico, Peru, Spain, Venezuela)</li>
-			<li>Portuguese (Brazil, Portugal)</li>
-			<li>Arabic (Egypt, Gulf, Levantine, Maghrebi)&nbsp;&nbsp;&nbsp;&nbsp; <span><a href="../pan17-figures/ar-secure.jpg" target="_blank"><img src="../pan17-figures/ar-secure.jpg" style="width:240px" /></a></span></li>
-		</ul>
-		</p>
-	      <p><b>Although we suggest to participate in both subtasks (gender and language identification) 
-		      and in all languages, it is possible participating only in one of them and in some of the languages.</b></p>
+    </header>
 
-<!--<p>Three languages will be addressed: English, Spanish and Dutch.</p>-->
-        </div>
-      </div>
-    
-    	  <div class="panel panel-default">
-      <div class="panel-heading">Training corpus</div>
-      <div class="panel-body"><p>
-	To develop your software, we provide you with a training data set that consists of Twitter tweets in English, Spanish, Portuguese and Arabic, labeled with gender and language variety.</p>
-        <p><a class="btn btn-default" target="_blank" href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-17/pan17-data/pan17-author-profiling-training-dataset-2017-03-10-password-protected.zip">Download corpus</a> (Updated March 10, 2017)</p>
+    <div class="uk-section">
+        <div class="uk-container uk-column-1-2@l uk-text-justify">
+            <h2>Introduction</h2>
+            <p>Authorship analysis deals with the classification of texts into classes based on the stylistic choices of
+                their authors. Beyond the author identification and author verification tasks where the style of
+                individual authors is examined, author profiling distinguishes between classes of authors studying their
+                sociolect aspect, that is, how language is shared by people. This helps in identifying profiling aspects
+                such as gender, age, native language, or personality type. Author profiling is a problem of growing
+                importance in applications in forensics, security, and marketing. E.g., from a forensic linguistics
+                perspective one would like being able to know the linguistic profile of the author of a harassing text
+                message (language used by a certain type of people) and identify certain characteristics (language as
+                evidence). Similarly, from a marketing viewpoint, companies may be interested in knowing, on the basis
+                of the analysis of blogs and online product reviews, the demographics of people that like or dislike
+                their products. The focus is on author profiling in social media since we are mainly interested in
+                everyday language and how it reflects basic social and personality processes.</p>
 
-<!--<p> The dataset is labeled with gender and language variety.</p>-->
+            <h2>Award</h2>
+            <p>We are happy to announce that the best performing team at the 5th International Competition on Author
+                Profiling will be awarded 300,- Euro sponsored by <a href="http://www.meaningcloud.com/"
+                                                                     target="_blank">MeaningCloud</a>.</p>
 
-	      
- <!--       <p><b>Remark.</b> Due to Twitter's privacy policy we cannot provide tweets directly, but only URLs referring to them. You will have to download them yourself. For your convenience, we provide a download software for this. We expect participants to extract gender and age information only from the textual part of a tweet and to discard any other meta information that may be provided by Twitter's API. When we evaluate your software at our site, we do not expect it downloads tweets. We will do this beforehand.</p>
-        <p><a class="btn btn-default" target="_blank" href="https://www.uni-weimar.de/medien/webis/events/pan-16/pan16-code/pan16-author-profiling-twitter-downloader.zip">Download software</a></p>
--->
-	      
-	<!--      More information soon... -->
-	      <p>
-		  Info about additional training material (although domains are different):
-		      <a href="http://ttg.uni-saarland.de/resources/DSLCC" target="_blank">http://ttg.uni-saarland.de/resources/DSLCC</a>
-	      </p>
-      </div>
-    </div>
-	  
-	  <div class="panel panel-default">
-      <div class="panel-heading">Test corpus</div>
-      <div class="panel-body"><p>
-        <p><a class="btn btn-default" target="_blank" href="https://s3.amazonaws.com/autoritas.pan/pan17-author-profiling-test-2017-03-16.zip">Download test corpus + truth files</a> (Updated March 16, 2017)</p>
-      </div>
-    </div>
+            <ul>
+                <li>
+                    Angelo Basile, Gareth Dwyer, Maria Medvedeva, Josine Rawee, Hessel Haagsma, and Malvina Nissim.
+                    University of Groningen, Netherlands.
+                </li>
+            </ul>
+            <a href="https://s3.amazonaws.com/autoritas.pan/PAN17-Award-Angelo-Basile-Paolo-Rosso-Francisco-Rangel.jpg"
+               target="_blank">
+                <img src="https://s3.amazonaws.com/autoritas.pan/PAN17-Award-Angelo-Basile-Paolo-Rosso-Francisco-Rangel.jpg"
+                     width="350px"/>
+            </a>
+            <p>Congratulations!</p>
+
+            <h2>Task</h2>
+            <p>Gender and language variety identification in Twitter. Demographics traits such as gender and
+                language variety have so far investigated separately. In this task we will provided participantes
+                with a Twitter corpus annotated with authors' gender and their specific variation of their native
+                language:
+            <ul>
+                <li>English (Australia, Canada, Great Britain, Ireland, New Zealand, United States)</li>
+                <li>Spanish (Argentina, Chile, Colombia, Mexico, Peru, Spain, Venezuela)</li>
+                <li>Portuguese (Brazil, Portugal)</li>
+                <li>Arabic (Egypt, Gulf, Levantine, Maghrebi)&nbsp;&nbsp;&nbsp;&nbsp; <span><a
+                        href="../pan17-figures/ar-secure.jpg" target="_blank"><img src="../pan17-figures/ar-secure.jpg"
+                                                                                   style="width:240px"/></a></span></li>
+            </ul>
+            </p>
+            <p><b>Although we suggest to participate in both subtasks (gender and language identification)
+                and in all languages, it is possible participating only in one of them and in some of the languages.</b>
+            </p>
 
 
-	  <div class="panel panel-default">
-      <div class="panel-heading">Output</div>
-      <div class="panel-body">
-        <p>Your software must take as input the absolute path to an unpacked dataset, and has to output for each document of the dataset a corresponding XML file that looks like this:</p>
-  <pre class="prettyprint lang-xml" style="overflow-x: auto;">
+            <h2>Training Corpus</h2>
+            To develop your software, we provide you with a training data set that consists of Twitter tweets in
+            English, Spanish, Portuguese and Arabic, labeled with gender and language variety.</p>
+            <p><a class="uk-button uk-button-primary" target="_blank"
+                  href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-17/pan17-data/pan17-author-profiling-training-dataset-2017-03-10-password-protected.zip">Download
+                corpus</a> (Updated March 10, 2017)</p>
+
+            <!--<p> The dataset is labeled with gender and language variety.</p>-->
+
+
+            <!--       <p><b>Remark.</b> Due to Twitter's privacy policy we cannot provide tweets directly, but only URLs referring to them. You will have to download them yourself. For your convenience, we provide a download software for this. We expect participants to extract gender and age information only from the textual part of a tweet and to discard any other meta information that may be provided by Twitter's API. When we evaluate your software at our site, we do not expect it downloads tweets. We will do this beforehand.</p>
+                   <p><a class="btn btn-default" target="_blank" href="https://www.uni-weimar.de/medien/webis/events/pan-16/pan16-code/pan16-author-profiling-twitter-downloader.zip">Download software</a></p>
+           -->
+
+            <!--      More information soon... -->
+            <p>
+                Info about additional training material (although domains are different):
+                <a href="http://ttg.uni-saarland.de/resources/DSLCC" target="_blank">http://ttg.uni-saarland.de/resources/DSLCC</a>
+            </p>
+
+
+            <h2>Test Corpus</h2>
+            <p><a class="uk-button uk-button-primary" target="_blank"
+                  href="https://s3.amazonaws.com/autoritas.pan/pan17-author-profiling-test-2017-03-16.zip">Download test
+                corpus + truth files</a> (Updated March 16, 2017)</p>
+
+
+            <h2>Output</h2>
+            <p>Your software must take as input the absolute path to an unpacked dataset, and has to output for each
+                document of the dataset a corresponding XML file that looks like this:</p>
+            <pre class="prettyprint lang-xml" style="overflow-x: auto;">
   &lt;author id="author-id"
 	  lang="en|es|pt|ar"
 	  variety="australia|canada|great britain|ireland|new zealand|united states|
@@ -159,346 +152,1117 @@
 	  gender="male|female"
   /&gt;
   </pre>
-        <p>The naming of the output files is up to you, we recommend to use the author-id as filename and "xml" as extension.</p>
-	      <p><b>IMPORTANT!</b> Languages should not be mixed. A folder should be created for each language and place inside only the files with the prediction for this language. </p>
-      </div>
+            <p>The naming of the output files is up to you, we recommend to use the author-id as filename and "xml" as
+                extension.</p>
+            <p><b>IMPORTANT!</b> Languages should not be mixed. A folder should be created for each language and place
+                inside only the files with the prediction for this language. </p>
+
+
+            <h2>Performance Measures</h2>
+            <p>The performance of your author profiling solution will be ranked by
+                accuracy.</p>
+
+            <p>For each language, we will calculate individual accuracies for gender and variety identification.
+                Then, we will calculate the accuracy when BOTH variety and gender are properly predicted together.
+                Finally, we will average the accuracy values per language to obtain the final ranking.
+            </p>
+
+            <h2>Submission</h2>
+            <p>We ask you to prepare your software so that it can be executed via command line calls.
+                <strong>More details will be released here soon.</strong>
+            </p>
+            <p>You can choose freely among the available programming languages and among the operating systems Microsoft
+                Windows and Ubuntu. We will ask you to deploy your software onto a virtual machine that will be made
+                accessible to you after registration. You will be able to reach the virtual machine via ssh and via
+                remote desktop. More information about how to access the virtual machines can be found in the user guide
+                below:</p>
+            <p><a class="uk-button uk-button-primary" href="http://www.tira.io/static/tira-vm-user-guide.pdf">PAN Virtual Machine
+                User Guide »</a></p>
+            <p>Once deployed in your virtual machine, we ask you to access TIRA at <a href="http://www.tira.io">www.tira.io</a>,
+                where you can self-evaluate your software on the test data.</p>
+            <p><strong>Note:</strong> By submitting your software you retain full copyrights. You agree to grant us
+                usage rights only for the purpose of the PAN competition. We agree not to share your software with a
+                third party or use it for other purposes than the PAN competition.</p>
+
+        </div>
     </div>
 
+    <div class="uk-section uk-section-default">
+        <div class="uk-container">
+            <h2>Results</h2>
+            <p>The following tables list the performances achieved by the participating teams in the different
+                subtasks:</p>
+            <p>We provide with three baselines:
+            <ul>
+                <li>LDR-baseline: It is described in A Low Dimensionality Representation for Language Variety
+                    Identification. In: Postproc. 17th Int. Conf. on Comput. Linguistics and Intelligent Text
+                    Processing, CICLing-2016, Springer-Verlag, LNCS(), arXiv:1705.10754
+                </li>
+                <li>BOW-baseline: A common bag-of-words with the 1000 most frequent ones</li>
+                <li>STAT-baseline: A statistical baseline (majority class or random choice)</li>
+            </ul>
 
-	 
-    <div class="panel panel-default">
-      <div class="panel-heading">Performance Measures</div>
-      <div class="panel-body">
 
-<p>The performance of your author profiling solution will be ranked by
-accuracy.</p>
+            <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+                <thead>
+                <tr>
+                    <th colspan="6" style="text-align:center">GLOBAL RANKING</th>
+                </tr>
+                <tr>
+                    <th>RANK</th>
+                    <th>TEAM</th>
+                    <th>GENDER</th>
+                    <th>VARIETY</th>
+                    <th>JOINT</th>
+                    <th>AVERAGE</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Basile et al.</td>
+                    <td>0.8253</td>
+                    <td>0.9184</td>
+                    <td>0.8361</td>
+                    <td>0.8599</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Martinc et al.</td>
+                    <td>0.8224</td>
+                    <td>0.9085</td>
+                    <td>0.8285</td>
+                    <td>0.8531</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Tellez et al.</td>
+                    <td>0.8097</td>
+                    <td>0.9171</td>
+                    <td>0.8258</td>
+                    <td>0.8509</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Miura et al.</td>
+                    <td>0.8127</td>
+                    <td>0.8982</td>
+                    <td>0.8162</td>
+                    <td>0.8424</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>López-Monroy et al.</td>
+                    <td>0.8047</td>
+                    <td>0.8986</td>
+                    <td>0.8111</td>
+                    <td>0.8381</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Markov et al.</td>
+                    <td>0.7957</td>
+                    <td>0.9056</td>
+                    <td>0.8097</td>
+                    <td>0.8370</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Poulston et al.</td>
+                    <td>0.7974</td>
+                    <td>0.8786</td>
+                    <td>0.7942</td>
+                    <td>0.8234</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Sierra et al.</td>
+                    <td>0.7641</td>
+                    <td>0.8911</td>
+                    <td>0.7822</td>
+                    <td>0.8125</td>
+                </tr>
+                <tr style="color:grey; font-style:italic">
+                    <td></td>
+                    <td>LDR-baseline</td>
+                    <td>0.7325</td>
+                    <td>0.9187</td>
+                    <td>0.7750</td>
+                    <td>0.8087</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Ogaltsov & Romanov</td>
+                    <td>0.7669</td>
+                    <td>0.8591</td>
+                    <td>0.7653</td>
+                    <td>0.7971</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Franco-Salvador et al.</td>
+                    <td>0.7667</td>
+                    <td>0.8508</td>
+                    <td>0.7582</td>
+                    <td>0.7919</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>Schaetti</td>
+                    <td>0.7207</td>
+                    <td>0.8864</td>
+                    <td>0.7511</td>
+                    <td>0.7861</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>Kodiyan et al.</td>
+                    <td>0.7531</td>
+                    <td>0.8522</td>
+                    <td>0.7509</td>
+                    <td>0.7854</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>Ciobanu et al.</td>
+                    <td>0.7504</td>
+                    <td>0.8524</td>
+                    <td>0.7498</td>
+                    <td>0.7842</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>Kheng et al.</td>
+                    <td>0.7002</td>
+                    <td>0.8513</td>
+                    <td>0.7176</td>
+                    <td>0.7564</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>Ganesh*</td>
+                    <td>0.7342</td>
+                    <td>0.7626</td>
+                    <td>0.6881</td>
+                    <td>0.7283</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>Kocher & Savoy</td>
+                    <td>0.7178</td>
+                    <td>0.7661</td>
+                    <td>0.6813</td>
+                    <td>0.7217</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>Ignatov et al.</td>
+                    <td>0.6917</td>
+                    <td>0.7024</td>
+                    <td>0.6270</td>
+                    <td>0.6737</td>
+                </tr>
+                <tr style="color:grey; font-style:italic">
+                    <td></td>
+                    <td>BOW-baseline</td>
+                    <td>0.6763</td>
+                    <td>0.6907</td>
+                    <td>0.6195</td>
+                    <td>0.6622</td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>Khan</td>
+                    <td>0.6252</td>
+                    <td>0.5296</td>
+                    <td>0.4952</td>
+                    <td>0.5500</td>
+                </tr>
+                <tr>
+                    <td>19</td>
+                    <td>Ribeiro-Oliveira et al.</td>
+                    <td>0.3666</td>
+                    <td>0.4141</td>
+                    <td>0.3092</td>
+                    <td>0.3633</td>
+                </tr>
+                <tr style="color:grey; font-style:italic">
+                    <td></td>
+                    <td>STAT-baseline</td>
+                    <td>0.5000</td>
+                    <td>0.2649</td>
+                    <td>0.2991</td>
+                    <td>0.3547</td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>Alrifai et al.</td>
+                    <td>0.1806</td>
+                    <td>0.1888</td>
+                    <td>0.1701</td>
+                    <td>0.1798</td>
+                </tr>
+                <tr>
+                    <td>21</td>
+                    <td>Bouzazi*</td>
+                    <td>0.1530</td>
+                    <td>0.0931</td>
+                    <td>0.1027</td>
+                    <td>0.1163</td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td>Adame et al.</td>
+                    <td>0.1353</td>
+                    <td>0.0476</td>
+                    <td>0.0695</td>
+                    <td>0.0841</td>
+                </tr>
+                </tbody>
+            </table>
 
-<p>For each language, we will calculate individual accuracies for gender and variety identification. 
-	Then, we will calculate the accuracy when BOTH variety and gender are properly predicted together.
-	Finally, we will average the accuracy values per language to obtain the final ranking.
-	      </p>
+
+            <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+                <thead>
+                <tr>
+                    <th colspan="7" style="text-align:center">VARIETY RANKING</th>
+                </tr>
+                <tr>
+                    <th>RANK</th>
+                    <th>TEAM</th>
+                    <th>ARABIC</th>
+                    <th>ENGLISH</th>
+                    <th>PORTUGUESE</th>
+                    <th>SPANISH</th>
+                    <th>AVERAGE</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr style="color:grey; font-style:italic">
+                    <td></td>
+                    <td>LDR-baseline</td>
+                    <td>0.8250</td>
+                    <td>0.8996</td>
+                    <td>0.9875</td>
+                    <td>0.9625</td>
+                    <td>0.9187</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Basile et al.</td>
+                    <td>0.8313</td>
+                    <td>0.8988</td>
+                    <td>0.9813</td>
+                    <td>0.9621</td>
+                    <td>0.9184</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Tellez et al.</td>
+                    <td>0.8275</td>
+                    <td>0.9004</td>
+                    <td>0.9850</td>
+                    <td>0.9554</td>
+                    <td>0.9171</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Martinc et al.</td>
+                    <td>0.8288</td>
+                    <td>0.8688</td>
+                    <td>0.9838</td>
+                    <td>0.9525</td>
+                    <td>0.9085</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Markov et al.</td>
+                    <td>0.8169</td>
+                    <td>0.8767</td>
+                    <td>0.9850</td>
+                    <td>0.9439</td>
+                    <td>0.9056</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>López-Monroy et al.</td>
+                    <td>0.8119</td>
+                    <td>0.8567</td>
+                    <td>0.9825</td>
+                    <td>0.9432</td>
+                    <td>0.8986</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Miura et al.</td>
+                    <td>0.8125</td>
+                    <td>0.8717</td>
+                    <td>0.9813</td>
+                    <td>0.9271</td>
+                    <td>0.8982</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Sierra et al.</td>
+                    <td>0.7950</td>
+                    <td>0.8392</td>
+                    <td>0.9850</td>
+                    <td>0.9450</td>
+                    <td>0.8911</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Schaetti</td>
+                    <td>0.8131</td>
+                    <td>0.8150</td>
+                    <td>0.9838</td>
+                    <td>0.9336</td>
+                    <td>0.8864</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Poulston et al.</td>
+                    <td>0.7975</td>
+                    <td>0.8038</td>
+                    <td>0.9763</td>
+                    <td>0.9368</td>
+                    <td>0.8786</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Ogaltsov & Romanov</td>
+                    <td>0.7556</td>
+                    <td>0.8092</td>
+                    <td>0.9725</td>
+                    <td>0.8989</td>
+                    <td>0.8591</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>Ciobanu et al.</td>
+                    <td>0.7569</td>
+                    <td>0.7746</td>
+                    <td>0.9788</td>
+                    <td>0.8993</td>
+                    <td>0.8524</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>Kodiyan et al.</td>
+                    <td>0.7688</td>
+                    <td>0.7908</td>
+                    <td>0.9350</td>
+                    <td>0.9143</td>
+                    <td>0.8522</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>Kheng et al.</td>
+                    <td>0.7544</td>
+                    <td>0.7588</td>
+                    <td>0.9750</td>
+                    <td>0.9168</td>
+                    <td>0.8513</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>Franco-Salvador et al.</td>
+                    <td>0.7656</td>
+                    <td>0.7588</td>
+                    <td>0.9788</td>
+                    <td>0.9000</td>
+                    <td>0.8508</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>Kocher & Savoy</td>
+                    <td>0.7188</td>
+                    <td>0.6521</td>
+                    <td>0.9725</td>
+                    <td>0.7211</td>
+                    <td>0.7661</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>Ganesh*</td>
+                    <td>0.7144</td>
+                    <td>0.6021</td>
+                    <td>0.9650</td>
+                    <td>0.7689</td>
+                    <td>0.7626</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>Ignatov et al.</td>
+                    <td>0.4488</td>
+                    <td>0.5813</td>
+                    <td>0.9763</td>
+                    <td>0.8032</td>
+                    <td>0.7024</td>
+                </tr>
+                <tr style="color:grey; font-style:italic">
+                    <td></td>
+                    <td>BOW-baseline</td>
+                    <td>0.3394</td>
+                    <td>0.6592</td>
+                    <td>0.9712</td>
+                    <td>0.7929</td>
+                    <td>0.6907</td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>Khan</td>
+                    <td>0.5844</td>
+                    <td>0.2779</td>
+                    <td>0.9063</td>
+                    <td>0.3496</td>
+                    <td>0.5296</td>
+                </tr>
+                <tr>
+                    <td>19</td>
+                    <td>Ribeiro-Oliveira et al.</td>
+                    <td>0.6713</td>
+                    <td></td>
+                    <td>0.9850</td>
+                    <td></td>
+                    <td>0.4141</td>
+                </tr>
+                <tr style="color:grey; font-style:italic">
+                    <td></td>
+                    <td>STAT-baseline</td>
+                    <td>0.2500</td>
+                    <td>0.1667</td>
+                    <td>0.5000</td>
+                    <td>0.1429</td>
+                    <td>0.2649</td>
+                </tr>
+
+                <tr>
+                    <td>20</td>
+                    <td>Alrifai et al.</td>
+                    <td>0.7550</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>0.1888</td>
+                </tr>
+                <tr>
+                    <td>21</td>
+                    <td>Bouzazi*</td>
+                    <td></td>
+                    <td>0.3725</td>
+                    <td></td>
+                    <td></td>
+                    <td>0.0931</td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td>Adame et al.</td>
+                    <td></td>
+                    <td>0.1904</td>
+                    <td></td>
+                    <td></td>
+                    <td>0.0476</td>
+                </tr>
+                </tbody>
+            </table>
 
 
-</div>
+            <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+                <thead>
+                <tr>
+                    <th colspan="7" style="text-align:center">GENDER RANKING</th>
+                </tr>
+                <tr>
+                    <th>RANK</th>
+                    <th>TEAM</th>
+                    <th>ARABIC</th>
+                    <th>ENGLISH</th>
+                    <th>PORTUGUESE</th>
+                    <th>SPANISH</th>
+                    <th>AVERAGE</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Basile et al.</td>
+                    <td>0.8006</td>
+                    <td>0.8233</td>
+                    <td>0.8450</td>
+                    <td>0.8321</td>
+                    <td>0.8253</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Martinc et al.</td>
+                    <td>0.8031</td>
+                    <td>0.8071</td>
+                    <td>0.8600</td>
+                    <td>0.8193</td>
+                    <td>0.8224</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Miura et al.</td>
+                    <td>0.7644</td>
+                    <td>0.8046</td>
+                    <td>0.8700</td>
+                    <td>0.8118</td>
+                    <td>0.8127</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Tellez et al.</td>
+                    <td>0.7838</td>
+                    <td>0.8054</td>
+                    <td>0.8538</td>
+                    <td>0.7957</td>
+                    <td>0.8097</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>López-Monroy et al.</td>
+                    <td>0.7763</td>
+                    <td>0.8171</td>
+                    <td>0.8238</td>
+                    <td>0.8014</td>
+                    <td>0.8047</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Poulston et al.</td>
+                    <td>0.7738</td>
+                    <td>0.7829</td>
+                    <td>0.8388</td>
+                    <td>0.7939</td>
+                    <td>0.7974</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Markov et al.</td>
+                    <td>0.7719</td>
+                    <td>0.8133</td>
+                    <td>0.7863</td>
+                    <td>0.8114</td>
+                    <td>0.7957</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Ogaltsov & Romanov</td>
+                    <td>0.7213</td>
+                    <td>0.7875</td>
+                    <td>0.7988</td>
+                    <td>0.7600</td>
+                    <td>0.7669</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Franco-Salvador et al.</td>
+                    <td>0.7300</td>
+                    <td>0.7958</td>
+                    <td>0.7688</td>
+                    <td>0.7721</td>
+                    <td>0.7667</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Sierra et al.</td>
+                    <td>0.6819</td>
+                    <td>0.7821</td>
+                    <td>0.8225</td>
+                    <td>0.7700</td>
+                    <td>0.7641</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>Kodiyan et al.</td>
+                    <td>0.7150</td>
+                    <td>0.7888</td>
+                    <td>0.7813</td>
+                    <td>0.7271</td>
+                    <td>0.7531</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>Ciobanu et al.</td>
+                    <td>0.7131</td>
+                    <td>0.7642</td>
+                    <td>0.7713</td>
+                    <td>0.7529</td>
+                    <td>0.7504</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>Ganesh*</td>
+                    <td>0.6794</td>
+                    <td>0.7829</td>
+                    <td>0.7538</td>
+                    <td>0.7207</td>
+                    <td>0.7342</td>
+                </tr>
+                <tr style="color:grey; font-style:italic">
+                    <td></td>
+                    <td>LDR-baseline</td>
+                    <td>0.7044</td>
+                    <td>0.7220</td>
+                    <td>0.7863</td>
+                    <td>0.7171</td>
+                    <td>0.7325</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>Schaetti</td>
+                    <td>0.6769</td>
+                    <td>0.7483</td>
+                    <td>0.7425</td>
+                    <td>0.7150</td>
+                    <td>0.7207</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>Kocher & Savoy</td>
+                    <td>0.6913</td>
+                    <td>0.7163</td>
+                    <td>0.7788</td>
+                    <td>0.6846</td>
+                    <td>0.7178</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>Kheng et al.</td>
+                    <td>0.6856</td>
+                    <td>0.7546</td>
+                    <td>0.6638</td>
+                    <td>0.6968</td>
+                    <td>0.7002</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>Ignatov et al.</td>
+                    <td>0.6425</td>
+                    <td>0.7446</td>
+                    <td>0.6850</td>
+                    <td>0.6946</td>
+                    <td>0.6917</td>
+                </tr>
+                <tr style="color:grey; font-style:italic">
+                    <td></td>
+                    <td>BOW-baseline</td>
+                    <td>0.5300</td>
+                    <td>0.7075</td>
+                    <td>0.7812</td>
+                    <td>0.6864</td>
+                    <td>0.6763</td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>Khan</td>
+                    <td>0.5863</td>
+                    <td>0.6692</td>
+                    <td>0.6100</td>
+                    <td>0.6354</td>
+                    <td>0.6252</td>
+                </tr>
+                <tr style="color:grey; font-style:italic">
+                    <td></td>
+                    <td>STAT-baseline</td>
+                    <td>0.5000</td>
+                    <td>0.5000</td>
+                    <td>0.5000</td>
+                    <td>0.5000</td>
+                    <td>0.5000</td>
+                </tr>
+                <tr>
+                    <td>19</td>
+                    <td>Ribeiro-Oliveira et al.</td>
+                    <td>0.7013</td>
+                    <td></td>
+                    <td>0.7650</td>
+                    <td></td>
+                    <td>0.3666</td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>Alrifai et al.</td>
+                    <td>0.7225</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>0.1806</td>
+                </tr>
+                <tr>
+                    <td>21</td>
+                    <td>Bouzazi*</td>
+                    <td></td>
+                    <td>0.6121</td>
+                    <td></td>
+                    <td></td>
+                    <td>0.1530</td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td>Adame et al.</td>
+                    <td></td>
+                    <td>0.5413</td>
+                    <td></td>
+                    <td></td>
+                    <td>0.1353</td>
+                </tr>
+                </tbody>
+            </table>
+
+
+            <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+                <thead>
+                <tr>
+                    <th colspan="7" style="text-align:center">JOINT RANKING</th>
+                </tr>
+                <tr>
+                    <th>RANK</th>
+                    <th>TEAM</th>
+                    <th>ARABIC</th>
+                    <th>ENGLISH</th>
+                    <th>PORTUGUESE</th>
+                    <th>SPANISH</th>
+                    <th>AVERAGE</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Basile et al.</td>
+                    <td>0.6831</td>
+                    <td>0.7429</td>
+                    <td>0.8288</td>
+                    <td>0.8036</td>
+                    <td>0.7646</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Martinc et al.</td>
+                    <td>0.6825</td>
+                    <td>0.7042</td>
+                    <td>0.8463</td>
+                    <td>0.7850</td>
+                    <td>0.7545</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Tellez et al.</td>
+                    <td>0.6713</td>
+                    <td>0.7267</td>
+                    <td>0.8425</td>
+                    <td>0.7621</td>
+                    <td>0.7507</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Miura et al.</td>
+                    <td>0.6419</td>
+                    <td>0.6992</td>
+                    <td>0.8575</td>
+                    <td>0.7518</td>
+                    <td>0.7376</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>López-Monroy et al.</td>
+                    <td>0.6475</td>
+                    <td>0.7029</td>
+                    <td>0.8100</td>
+                    <td>0.7604</td>
+                    <td>0.7302</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Markov et al.</td>
+                    <td>0.6525</td>
+                    <td>0.7125</td>
+                    <td>0.7750</td>
+                    <td>0.7704</td>
+                    <td>0.7276</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Poulston et al.</td>
+                    <td>0.6356</td>
+                    <td>0.6254</td>
+                    <td>0.8188</td>
+                    <td>0.7471</td>
+                    <td>0.7067</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Sierra et al.</td>
+                    <td>0.5694</td>
+                    <td>0.6567</td>
+                    <td>0.8113</td>
+                    <td>0.7279</td>
+                    <td>0.6913</td>
+                </tr>
+                <tr style="color:grey; font-style:italic">
+                    <td></td>
+                    <td>LDR-baseline</td>
+                    <td>0.5888</td>
+                    <td>0.6357</td>
+                    <td>0.7763</td>
+                    <td>0.6943</td>
+                    <td>0.6738</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Ogaltsov & Romanov</td>
+                    <td>0.5731</td>
+                    <td>0.6450</td>
+                    <td>0.7775</td>
+                    <td>0.6846</td>
+                    <td>0.6701</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Franco-Salvador et al.</td>
+                    <td>0.5688</td>
+                    <td>0.6046</td>
+                    <td>0.7525</td>
+                    <td>0.7021</td>
+                    <td>0.6570</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>Kodiyan et al.</td>
+                    <td>0.5688</td>
+                    <td>0.6263</td>
+                    <td>0.7300</td>
+                    <td>0.6646</td>
+                    <td>0.6474</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>Ciobanu et al.</td>
+                    <td>0.5619</td>
+                    <td>0.5904</td>
+                    <td>0.7575</td>
+                    <td>0.6764</td>
+                    <td>0.6466</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>Schaetti</td>
+                    <td>0.5681</td>
+                    <td>0.6150</td>
+                    <td>0.7300</td>
+                    <td>0.6718</td>
+                    <td>0.6462</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>Kheng et al.</td>
+                    <td>0.5475</td>
+                    <td>0.5704</td>
+                    <td>0.6475</td>
+                    <td>0.6400</td>
+                    <td>0.6014</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>Ganesh*</td>
+                    <td>0.5075</td>
+                    <td>0.4713</td>
+                    <td>0.7300</td>
+                    <td>0.5614</td>
+                    <td>0.5676</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>Kocher & Savoy</td>
+                    <td>0.5206</td>
+                    <td>0.4650</td>
+                    <td>0.7575</td>
+                    <td>0.4971</td>
+                    <td>0.5601</td>
+                </tr>
+                <tr style="color:grey; font-style:italic">
+                    <td></td>
+                    <td>BOW-baseline</td>
+                    <td>0.1794</td>
+                    <td>0.4713</td>
+                    <td>0.7588</td>
+                    <td>0.5561</td>
+                    <td>0.4914</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>Ignatov et al.</td>
+                    <td>0.2875</td>
+                    <td>0.4333</td>
+                    <td>0.6675</td>
+                    <td>0.5593</td>
+                    <td>0.4869</td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>Khan</td>
+                    <td>0.3650</td>
+                    <td>0.1900</td>
+                    <td>0.5488</td>
+                    <td>0.2189</td>
+                    <td>0.3307</td>
+                </tr>
+                <tr>
+                    <td>19</td>
+                    <td>Ribeiro-Oliveira et al.</td>
+                    <td>0.4831</td>
+                    <td></td>
+                    <td>0.7538</td>
+                    <td></td>
+                    <td>0.3092</td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>Alrifai et al.</td>
+                    <td>0.5638</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>0.1410</td>
+                </tr>
+                <tr style="color:grey; font-style:italic">
+                    <td></td>
+                    <td>STAT-baseline</td>
+                    <td>0.1250</td>
+                    <td>0.0833</td>
+                    <td>0.2500</td>
+                    <td>0.0714</td>
+                    <td>0.1324</td>
+                </tr>
+                <tr>
+                    <td>21</td>
+                    <td>Bouzazi*</td>
+                    <td></td>
+                    <td>0.2479</td>
+                    <td></td>
+                    <td></td>
+                    <td>0.0620</td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td>Adame et al.</td>
+                    <td></td>
+                    <td>0.1017</td>
+                    <td></td>
+                    <td></td>
+                    <td>0.0254</td>
+                </tr>
+                </tbody>
+            </table>
+
+
+            <h2>Related Work and Corpora</h2>
+            <p>We refer you to:</p>
+            <ul class="uk-list uk-list-bullet">
+                <li>Francisco Rangel, Paolo Rosso, Ben Verhoeven, Walter Daelemans, Martin Pottast, Benno Stein. <a
+                        href="http://ceur-ws.org/Vol-1609/16090750.pdf" target="_blank">Overview of the 4th Author
+                    Profiling Task at PAN 2016: Cross-Genre Evaluations.</a> In: Balog K., Capellato L., Ferro N.,
+                    Macdonald C. (Eds.) CLEF 2016 Labs and Workshops, Notebook Papers. CEUR Workshop Proceedings.
+                    CEUR-WS.org, vol. 1609, pp. 750-784
+                </li>
+                <li>Francisco Rangel, Fabio Celli, Paolo Rosso, Martin Pottast, Benno Stein, Walter Daelemans. <a
+                        href="https://github.com/autoritas/RD-Lab/blob/master/doc/papers/2015%20-%20PAN/pan15-ap-overview.pdf"
+                        target="_blank">Overview of the 3rd Author Profiling Task at PAN 2015.</a>In: Linda Cappelato
+                    and Nicola Ferro and Gareth Jones and Eric San Juan (Eds.): CLEF 2015 Labs and Workshops, Notebook
+                    Papers, 8-11 September, Toulouse, France. CEUR Workshop Proceedings. ISSN 1613-0073,
+                    http://ceur-ws.org/Vol-1391/,2015.
+                </li>
+                <li>Francisco Rangel, Paolo Rosso, Irina Chugur, Martin Potthast, Martin Trenkmann, Benno Stein, Ben
+                    Verhoeven, Walter Daelemans. <a href="http://ceur-ws.org/Vol-1180/CLEF2014wn-Pan-RangelEt2014.pdf"
+                                                    target="_blank">Overview of the 2nd Author Profiling Task at PAN
+                        2014.</a> In: Cappellato L., Ferro N., Halvey M., Kraaij W. (Eds.) CLEF 2014 Labs and Workshops,
+                    Notebook Papers. CEUR-WS.org, vol. 1180, pp. 898-827.
+                </li>
+                <li>Francisco Rangel, Paolo Rosso, Moshe Koppel, Efstatios Stamatatos, Giacomo Inches. <a
+                        href="http://ceur-ws.org/Vol-1179/CLEF2013wn-PAN-RangelEt2013.pdf" target="_blank">Overview of
+                    the Author Profiling Task at PAN 2013.</a> In: Forner P., Navigli R., Tufis D. (Eds.)Notebook Papers
+                    of CLEF 2013 LABs and Workshops. CEUR-WS.org, vol. 1179
+                </li>
+
+                <li>Marcos Zampieri, Shervin Malmasi, Nikola Ljubešic, Preslav Nakov, Ahmed Ali, Jörg Tiedemann, Yves
+                    Scherrer, Noëmi Aepli. <a href="http://web.science.mq.edu.au/~smalmasi/vardial4/pdf/VarDial01.pdf"
+                                              target="_blank">Findings of the VarDial Evaluation Campaign 2017.</a>
+                    Proceedings of the Fourth Workshop on NLP for Similar Languages, Varieties and Dialects (VarDial).
+                    pp. 1-15. Valencia, Spain.
+                </li>
+                <li>Shervin Malmasi, Marcos Zampieri, Nikola Ljubešic, Preslav Nakov, Ahmed Ali, Jörg Tiedemann. <a
+                        href="http://aclweb.org/anthology/W/W16/W16-4801.pdf" target="_blank">Discriminating between
+                    Similar Languages and Arabic Dialect Identification: A Report on the Third DSL Shared Task.</a>
+                    Proceedings of the Third Workshop on NLP for Similar Languages, Varieties and Dialects (VarDial).
+                    pp. 1-14. Osaka, Japan.
+                </li>
+                <li>Marcos Zampieri, Liling Tan, Nikola Ljubešic, Jörg Tiedemann, Preslav Nakov. <a
+                        href="http://aclweb.org/anthology/W/W15/W15-5401.pdf" target="_blank">Overview of the DSL Shared
+                    Task 2015.</a> Proceedings of the Joint Workshop on Language Technology for Closely Related
+                    Languages, Varieties and Dialects (LT4VarDial). pp. 1-9. Hissar, Bulgaria.
+                </li>
+
+                <li>Francisco Rangel, Paolo Rosso. <a
+                        href="http://www.sciencedirect.com/science/article/pii/S0306457315000783" target="_blank">On the
+                    Impact of Emotions on Author Profiling.</a> In: Information Processing &amp; Management, vol. 52,
+                    issue 1, pp. 73-92
+                </li>
+                <li>Francisco Rangel, Marc Franco-Salvador, Paolo Rosso. <a
+                        href="https://github.com/autoritas/RD-Lab/raw/master/doc/papers/2016%20-%20CICLing/paper_87.pdf"
+                        target="_blank">A Low Dimensionality Representation for Language Variety Identification.</a> In:
+                    Postproc. 17th Int. Conf. on Comput. Linguistics and Intelligent Text Processing, CICLing-2016,
+                    Springer-Verlag, LNCS(), arXiv:1705.10754
+                </li>
+
+
+                <li>S. Argamon, M. Koppel, J. Pennebaker and J. Schler (2009), <a
+                        href="http://u.cs.biu.ac.il/~koppel/papers/AuthorshipProfiling-cacm-final.pdf" target="_blank">Automatically
+                    profiling the author of an anonymous text</a>, Communications of the ACM 52 (2): 119–123.
+                </li>
+                <li>J. Pennebaker (2011). The secret life of pronouns: What our words say about us. New York: Bloomsbury
+                    Publishing, 2011.
+                </li>
+
+                <li>
+                    <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-16/pan16-data/pan16-author-profiling-training-dataset-2016-04-25.zip"
+                       target="_blank">PAN-AP-16 corpus - Author Profiling Shared Task</a></li>
+                <li>
+                    <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-15/pan15-data/pan15-author-profiling-training-dataset-2015-04-23-password-protected.zip"
+                       target="_blank">PAN-AP-15 corpus - Author Profiling Shared Task</a></li>
+                <li>
+                    <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-14/pan14-data/pan14-author-profiling-training-corpus-2014-04-16.zip"
+                       target="_blank">PAN-AP-14 corpus - Author Profiling Shared Task</a></li>
+                <li>
+                    <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-author-profiling-training-corpus-2013-01-09.zip"
+                       target="_blank">PAN-AP-13 corpus - Author Profiling Shared Task</a></li>
+                <li><a href="http://u.cs.biu.ac.il/~koppel/BlogCorpus.htm" target="_blank">The Blog Authorship
+                    Corpus</a></li>
+                <li><a href="http://ttg.uni-saarland.de/resources/DSLCC" target="_blank">DSL Corpus Collection</a></li>
+            </ul>
+        </div>
     </div>
 
-	  <div class="panel panel-default">
-      <div class="panel-heading">Submission</div>
-      <div class="panel-body">
-        <p>We ask you to prepare your software so that it can be executed via command line calls. <stonger>More details will be released here soon.</stronger></p>
-        <p>You can choose freely among the available programming languages and among the operating systems Microsoft Windows and Ubuntu. We will ask you to deploy your software onto a virtual machine that will be made accessible to you after registration. You will be able to reach the virtual machine via ssh and via remote desktop. More information about how to access the virtual machines can be found in the user guide below:</p>
-        <p><a class="btn btn-default" href="http://www.tira.io/static/tira-vm-user-guide.pdf">PAN Virtual Machine User Guide »</a></p>
-        <p>Once deployed in your virtual machine, we ask you to access TIRA at <a href="http://www.tira.io">www.tira.io</a>, where you can self-evaluate your software on the test data.</p>
-        <p><strong>Note:</strong> By submitting your software you retain full copyrights. You agree to grant us usage rights only for the purpose of the PAN competition. We agree not to share your software with a third party or use it for other purposes than the PAN competition.</p>
-      </div>
-	  </div>
-	  
-	  
-	  
-	  <!--<div class="panel panel-default">
-      <div class="panel-heading">How to parametrise the evaluator?</div>
-      <div class="panel-body">
-        <p>The evaluator works at language level and requieres the following parameters:</p>
-	      <ul>
-		      <li>Path to the folder where the prediction is placed. This folder should contain the files with the prediction for a particular language.</li>
-		      <li>Path to the truth file for the corresponding language. It depends on the set (training, test) and the language:<br>
-			      <ul>
-				      <li>
-					      <b>Training</b>: Complete path to the training folder, including language, followed by truth.txt<br>
-					      E.g. pan17-author-profiling-training-2017-03-10/en/truth.txt
-				      </li>
-				      <li>
-					      <b>Test</b>: Path to the language specific truth file<br>
-					      E.g. pan17-author-profiling-test-2017-03-16/en.txt
-				      </li>
-			      </ul>
-		      </li>
-		      <li>Path to the folder where the evaluation output will be placed.</li>
-	      </ul>
-      </div>
-	  </div>-->
+    <footer class="uk-section uk-section-muted">
+        <div class="uk-container">
 
-    <div class="panel panel-default">
-      <div class="panel-heading">Results</div>
-      <div class="panel-body">
-        <p>The following tables list the performances achieved by the participating teams in the different subtasks:</p>
-	      <p>We provide with three baselines:
-	      <ul>
-		   <li>LDR-baseline: It is described in  A Low Dimensionality Representation for Language Variety Identification.</a> In: Postproc. 17th Int. Conf. on Comput. Linguistics and Intelligent Text Processing, CICLing-2016, Springer-Verlag, LNCS(), arXiv:1705.10754</li>
-	    		<li>BOW-baseline: A common bag-of-words with the 1000 most frequent ones</li>
-	    		<li>STAT-baseline: A statistical baseline (majority class or random choice)</li>
-	      </ul>
-	      
-	      </p>
-        <table class="table table-condensed" style="font-size:small;">
-          <thead>
-<tr><th colspan="6" style="text-align:center">GLOBAL RANKING</th></tr>
-<tr><th>RANK</th><th>TEAM</th><th>GENDER</th><th>VARIETY</th><th>JOINT</th><th>AVERAGE</th></tr>
-</thead>
-<tbody>
-<tr><td>1</td><td>Basile et al.</td><td>0.8253</td><td>0.9184</td><td>0.8361</td><td>0.8599</td></tr>
-<tr><td>2</td><td>Martinc et al.</td><td>0.8224</td><td>0.9085</td><td>0.8285</td><td>0.8531</td></tr>
-<tr><td>3</td><td>Tellez et al.</td><td>0.8097</td><td>0.9171</td><td>0.8258</td><td>0.8509</td></tr>
-<tr><td>4</td><td>Miura et al.</td><td>0.8127</td><td>0.8982</td><td>0.8162</td><td>0.8424</td></tr>
-<tr><td>5</td><td>López-Monroy et al.</td><td>0.8047</td><td>0.8986</td><td>0.8111</td><td>0.8381</td></tr>
-<tr><td>6</td><td>Markov et al.</td><td>0.7957</td><td>0.9056</td><td>0.8097</td><td>0.8370</td></tr>
-<tr><td>7</td><td>Poulston et al.</td><td>0.7974</td><td>0.8786</td><td>0.7942</td><td>0.8234</td></tr>
-<tr><td>8</td><td>Sierra et al.</td><td>0.7641</td><td>0.8911</td><td>0.7822</td><td>0.8125</td></tr>
-<tr style="color:grey; font-style:italic"><td></td><td>LDR-baseline</td><td>0.7325</td><td>0.9187</td><td>0.7750</td><td>0.8087</td></tr>
-<tr><td>9</td><td>Ogaltsov & Romanov</td><td>0.7669</td><td>0.8591</td><td>0.7653</td><td>0.7971</td></tr>
-<tr><td>10</td><td>Franco-Salvador et al.</td><td>0.7667</td><td>0.8508</td><td>0.7582</td><td>0.7919</td></tr>
-<tr><td>11</td><td>Schaetti</td><td>0.7207</td><td>0.8864</td><td>0.7511</td><td>0.7861</td></tr>
-<tr><td>12</td><td>Kodiyan et al.</td><td>0.7531</td><td>0.8522</td><td>0.7509</td><td>0.7854</td></tr>
-<tr><td>13</td><td>Ciobanu et al.</td><td>0.7504</td><td>0.8524</td><td>0.7498</td><td>0.7842</td></tr>
-<tr><td>14</td><td>Kheng et al.</td><td>0.7002</td><td>0.8513</td><td>0.7176</td><td>0.7564</td></tr>
-<tr><td>15</td><td>Ganesh*</td><td>0.7342</td><td>0.7626</td><td>0.6881</td><td>0.7283</td></tr>
-<tr><td>16</td><td>Kocher & Savoy</td><td>0.7178</td><td>0.7661</td><td>0.6813</td><td>0.7217</td></tr>
-<tr><td>17</td><td>Ignatov et al.</td><td>0.6917</td><td>0.7024</td><td>0.6270</td><td>0.6737</td></tr>
-<tr style="color:grey; font-style:italic"><td></td><td>BOW-baseline</td><td>0.6763</td><td>0.6907</td><td>0.6195</td><td>0.6622</td></tr>
-<tr><td>18</td><td>Khan</td><td>0.6252</td><td>0.5296</td><td>0.4952</td><td>0.5500</td></tr>
-<tr><td>19</td><td>Ribeiro-Oliveira et al.</td><td>0.3666</td><td>0.4141</td><td>0.3092</td><td>0.3633</td></tr>
-	<tr style="color:grey; font-style:italic"><td></td><td>STAT-baseline</td><td>0.5000</td><td>0.2649</td><td>0.2991</td><td>0.3547</td></tr>
-<tr><td>20</td><td>Alrifai et al.</td><td>0.1806</td><td>0.1888</td><td>0.1701</td><td>0.1798</td></tr>
-<tr><td>21</td><td>Bouzazi*</td><td>0.1530</td><td>0.0931</td><td>0.1027</td><td>0.1163</td></tr>
-<tr><td>22</td><td>Adame et al.</td><td>0.1353</td><td>0.0476</td><td>0.0695</td><td>0.0841</td></tr>
-</tbody>
-        </table>
-	      
-	<br/>
-	       <table class="table table-condensed" style="font-size:small;">
-		   <thead>
-<tr><th colspan="7" style="text-align:center">VARIETY RANKING</th></tr>
-<tr><th>RANK</th><th>TEAM</th><th>ARABIC</th><th>ENGLISH</th><th>PORTUGUESE</th><th>SPANISH</th><th>AVERAGE</th></tr>
-</thead>
-<tbody>
-<tr style="color:grey; font-style:italic"><td></td><td>LDR-baseline</td><td>0.8250</td><td>0.8996</td><td>0.9875</td><td>0.9625</td><td>0.9187</td></tr>
-<tr><td>1</td><td>Basile et al.</td><td>0.8313</td><td>0.8988</td><td>0.9813</td><td>0.9621</td><td>0.9184</td></tr>
-<tr><td>2</td><td>Tellez et al.</td><td>0.8275</td><td>0.9004</td><td>0.9850</td><td>0.9554</td><td>0.9171</td></tr>
-<tr><td>3</td><td>Martinc et al.</td><td>0.8288</td><td>0.8688</td><td>0.9838</td><td>0.9525</td><td>0.9085</td></tr>
-<tr><td>4</td><td>Markov et al.</td><td>0.8169</td><td>0.8767</td><td>0.9850</td><td>0.9439</td><td>0.9056</td></tr>
-<tr><td>5</td><td>López-Monroy et al.</td><td>0.8119</td><td>0.8567</td><td>0.9825</td><td>0.9432</td><td>0.8986</td></tr>
-<tr><td>6</td><td>Miura et al.</td><td>0.8125</td><td>0.8717</td><td>0.9813</td><td>0.9271</td><td>0.8982</td></tr>
-<tr><td>7</td><td>Sierra et al.</td><td>0.7950</td><td>0.8392</td><td>0.9850</td><td>0.9450</td><td>0.8911</td></tr>
-<tr><td>8</td><td>Schaetti</td><td>0.8131</td><td>0.8150</td><td>0.9838</td><td>0.9336</td><td>0.8864</td></tr>
-<tr><td>9</td><td>Poulston et al.</td><td>0.7975</td><td>0.8038</td><td>0.9763</td><td>0.9368</td><td>0.8786</td></tr>
-<tr><td>10</td><td>Ogaltsov & Romanov</td><td>0.7556</td><td>0.8092</td><td>0.9725</td><td>0.8989</td><td>0.8591</td></tr>
-<tr><td>11</td><td>Ciobanu et al.</td><td>0.7569</td><td>0.7746</td><td>0.9788</td><td>0.8993</td><td>0.8524</td></tr>
-<tr><td>12</td><td>Kodiyan et al.</td><td>0.7688</td><td>0.7908</td><td>0.9350</td><td>0.9143</td><td>0.8522</td></tr>
-<tr><td>13</td><td>Kheng et al.</td><td>0.7544</td><td>0.7588</td><td>0.9750</td><td>0.9168</td><td>0.8513</td></tr>
-<tr><td>14</td><td>Franco-Salvador et al.</td><td>0.7656</td><td>0.7588</td><td>0.9788</td><td>0.9000</td><td>0.8508</td></tr>
-<tr><td>15</td><td>Kocher & Savoy</td><td>0.7188</td><td>0.6521</td><td>0.9725</td><td>0.7211</td><td>0.7661</td></tr>
-<tr><td>16</td><td>Ganesh*</td><td>0.7144</td><td>0.6021</td><td>0.9650</td><td>0.7689</td><td>0.7626</td></tr>
-<tr><td>17</td><td>Ignatov et al.</td><td>0.4488</td><td>0.5813</td><td>0.9763</td><td>0.8032</td><td>0.7024</td></tr>
-<tr style="color:grey; font-style:italic"><td></td><td>BOW-baseline</td><td>0.3394</td><td>0.6592</td><td>0.9712</td><td>0.7929</td><td>0.6907</td></tr>
-<tr><td>18</td><td>Khan</td><td>0.5844</td><td>0.2779</td><td>0.9063</td><td>0.3496</td><td>0.5296</td></tr>
-<tr><td>19</td><td>Ribeiro-Oliveira et al.</td><td>0.6713</td><td></td><td>0.9850</td><td></td><td>0.4141</td></tr>
-	<tr style="color:grey; font-style:italic"><td></td><td>STAT-baseline</td><td>0.2500</td><td>0.1667</td><td>0.5000</td><td>0.1429</td><td>0.2649</td></tr>
+            <h2>Task Chair</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/rosso.html %}
+            </div>
 
-<tr><td>20</td><td>Alrifai et al.</td><td>0.7550</td><td></td><td></td><td></td><td>0.1888</td></tr>
-<tr><td>21</td><td>Bouzazi*</td><td></td><td>0.3725</td><td></td><td></td><td>0.0931</td></tr>
-<tr><td>22</td><td>Adame et al.</td><td></td><td>0.1904</td><td></td><td></td><td>0.0476</td></tr>
-</tbody>    
-	</table>
-	
-	<br/>
-	       <table class="table table-condensed" style="font-size:small;">
-		       <thead>
-<tr><th colspan="7" style="text-align:center">GENDER RANKING</th></tr>
-<tr><th>RANK</th><th>TEAM</th><th>ARABIC</th><th>ENGLISH</th><th>PORTUGUESE</th><th>SPANISH</th><th>AVERAGE</th></tr>
-</thead>
-<tbody>
-<tr><td>1</td><td>Basile et al.</td><td>0.8006</td><td>0.8233</td><td>0.8450</td><td>0.8321</td><td>0.8253</td></tr>
-<tr><td>2</td><td>Martinc et al.</td><td>0.8031</td><td>0.8071</td><td>0.8600</td><td>0.8193</td><td>0.8224</td></tr>
-<tr><td>3</td><td>Miura et al.</td><td>0.7644</td><td>0.8046</td><td>0.8700</td><td>0.8118</td><td>0.8127</td></tr>
-<tr><td>4</td><td>Tellez et al.</td><td>0.7838</td><td>0.8054</td><td>0.8538</td><td>0.7957</td><td>0.8097</td></tr>
-<tr><td>5</td><td>López-Monroy et al.</td><td>0.7763</td><td>0.8171</td><td>0.8238</td><td>0.8014</td><td>0.8047</td></tr>
-<tr><td>6</td><td>Poulston et al.</td><td>0.7738</td><td>0.7829</td><td>0.8388</td><td>0.7939</td><td>0.7974</td></tr>
-<tr><td>7</td><td>Markov et al.</td><td>0.7719</td><td>0.8133</td><td>0.7863</td><td>0.8114</td><td>0.7957</td></tr>
-<tr><td>8</td><td>Ogaltsov & Romanov</td><td>0.7213</td><td>0.7875</td><td>0.7988</td><td>0.7600</td><td>0.7669</td></tr>
-<tr><td>9</td><td>Franco-Salvador et al.</td><td>0.7300</td><td>0.7958</td><td>0.7688</td><td>0.7721</td><td>0.7667</td></tr>
-<tr><td>10</td><td>Sierra et al.</td><td>0.6819</td><td>0.7821</td><td>0.8225</td><td>0.7700</td><td>0.7641</td></tr>
-<tr><td>11</td><td>Kodiyan et al.</td><td>0.7150</td><td>0.7888</td><td>0.7813</td><td>0.7271</td><td>0.7531</td></tr>
-<tr><td>12</td><td>Ciobanu et al.</td><td>0.7131</td><td>0.7642</td><td>0.7713</td><td>0.7529</td><td>0.7504</td></tr>
-<tr><td>13</td><td>Ganesh*</td><td>0.6794</td><td>0.7829</td><td>0.7538</td><td>0.7207</td><td>0.7342</td></tr>
-<tr style="color:grey; font-style:italic"><td></td><td>LDR-baseline</td><td>0.7044</td><td>0.7220</td><td>0.7863</td><td>0.7171</td><td>0.7325</td></tr>
-<tr><td>14</td><td>Schaetti</td><td>0.6769</td><td>0.7483</td><td>0.7425</td><td>0.7150</td><td>0.7207</td></tr>
-<tr><td>15</td><td>Kocher & Savoy</td><td>0.6913</td><td>0.7163</td><td>0.7788</td><td>0.6846</td><td>0.7178</td></tr>
-<tr><td>16</td><td>Kheng et al.</td><td>0.6856</td><td>0.7546</td><td>0.6638</td><td>0.6968</td><td>0.7002</td></tr>
-<tr><td>17</td><td>Ignatov et al.</td><td>0.6425</td><td>0.7446</td><td>0.6850</td><td>0.6946</td><td>0.6917</td></tr>
-<tr style="color:grey; font-style:italic"><td></td><td>BOW-baseline</td><td>0.5300</td><td>0.7075</td><td>0.7812</td><td>0.6864</td><td>0.6763</td></tr>
-<tr><td>18</td><td>Khan</td><td>0.5863</td><td>0.6692</td><td>0.6100</td><td>0.6354</td><td>0.6252</td></tr>
-<tr style="color:grey; font-style:italic"><td></td><td>STAT-baseline</td><td>0.5000</td><td>0.5000</td><td>0.5000</td><td>0.5000</td><td>0.5000</td></tr>
-<tr><td>19</td><td>Ribeiro-Oliveira et al.</td><td>0.7013</td><td></td><td>0.7650</td><td></td><td>0.3666</td></tr>
-<tr><td>20</td><td>Alrifai et al.</td><td>0.7225</td><td></td><td></td><td></td><td>0.1806</td></tr>
-<tr><td>21</td><td>Bouzazi*</td><td></td><td>0.6121</td><td></td><td></td><td>0.1530</td></tr>
-<tr><td>22</td><td>Adame et al.</td><td></td><td>0.5413</td><td></td><td></td><td>0.1353</td></tr>
-</tbody>
-	</table>
-	      
-	      <br/>
-	       <table class="table table-condensed" style="font-size:small;">
-		       <thead>
-<tr><th colspan="7" style="text-align:center">JOINT RANKING</th></tr>
-<tr><th>RANK</th><th>TEAM</th><th>ARABIC</th><th>ENGLISH</th><th>PORTUGUESE</th><th>SPANISH</th><th>AVERAGE</th></tr>
-</thead>
-<tbody>
-<tr><td>1</td><td>Basile et al.</td><td>0.6831</td><td>0.7429</td><td>0.8288</td><td>0.8036</td><td>0.7646</td></tr>
-<tr><td>2</td><td>Martinc et al.</td><td>0.6825</td><td>0.7042</td><td>0.8463</td><td>0.7850</td><td>0.7545</td></tr>
-<tr><td>3</td><td>Tellez et al.</td><td>0.6713</td><td>0.7267</td><td>0.8425</td><td>0.7621</td><td>0.7507</td></tr>
-<tr><td>4</td><td>Miura et al.</td><td>0.6419</td><td>0.6992</td><td>0.8575</td><td>0.7518</td><td>0.7376</td></tr>
-<tr><td>5</td><td>López-Monroy et al.</td><td>0.6475</td><td>0.7029</td><td>0.8100</td><td>0.7604</td><td>0.7302</td></tr>
-<tr><td>6</td><td>Markov et al.</td><td>0.6525</td><td>0.7125</td><td>0.7750</td><td>0.7704</td><td>0.7276</td></tr>
-<tr><td>7</td><td>Poulston et al.</td><td>0.6356</td><td>0.6254</td><td>0.8188</td><td>0.7471</td><td>0.7067</td></tr>
-<tr><td>8</td><td>Sierra et al.</td><td>0.5694</td><td>0.6567</td><td>0.8113</td><td>0.7279</td><td>0.6913</td></tr>
-<tr style="color:grey; font-style:italic"><td></td><td>LDR-baseline</td><td>0.5888</td><td>0.6357</td><td>0.7763</td><td>0.6943</td><td>0.6738</td></tr>
-<tr><td>9</td><td>Ogaltsov & Romanov</td><td>0.5731</td><td>0.6450</td><td>0.7775</td><td>0.6846</td><td>0.6701</td></tr>
-<tr><td>10</td><td>Franco-Salvador et al.</td><td>0.5688</td><td>0.6046</td><td>0.7525</td><td>0.7021</td><td>0.6570</td></tr>
-<tr><td>11</td><td>Kodiyan et al.</td><td>0.5688</td><td>0.6263</td><td>0.7300</td><td>0.6646</td><td>0.6474</td></tr>
-<tr><td>12</td><td>Ciobanu et al.</td><td>0.5619</td><td>0.5904</td><td>0.7575</td><td>0.6764</td><td>0.6466</td></tr>
-<tr><td>13</td><td>Schaetti</td><td>0.5681</td><td>0.6150</td><td>0.7300</td><td>0.6718</td><td>0.6462</td></tr>
-<tr><td>14</td><td>Kheng et al.</td><td>0.5475</td><td>0.5704</td><td>0.6475</td><td>0.6400</td><td>0.6014</td></tr>
-<tr><td>15</td><td>Ganesh*</td><td>0.5075</td><td>0.4713</td><td>0.7300</td><td>0.5614</td><td>0.5676</td></tr>
-<tr><td>16</td><td>Kocher & Savoy</td><td>0.5206</td><td>0.4650</td><td>0.7575</td><td>0.4971</td><td>0.5601</td></tr>
-<tr style="color:grey; font-style:italic"><td></td><td>BOW-baseline</td><td>0.1794</td><td>0.4713</td><td>0.7588</td><td>0.5561</td><td>0.4914</td></tr>
-<tr><td>17</td><td>Ignatov et al.</td><td>0.2875</td><td>0.4333</td><td>0.6675</td><td>0.5593</td><td>0.4869</td></tr>
-<tr><td>18</td><td>Khan</td><td>0.3650</td><td>0.1900</td><td>0.5488</td><td>0.2189</td><td>0.3307</td></tr>
-<tr><td>19</td><td>Ribeiro-Oliveira et al.</td><td>0.4831</td><td></td><td>0.7538</td><td></td><td>0.3092</td></tr>
-<tr><td>20</td><td>Alrifai et al.</td><td>0.5638</td><td></td><td></td><td></td><td>0.1410</td></tr>
-<tr style="color:grey; font-style:italic"><td></td><td>STAT-baseline</td><td>0.1250</td><td>0.0833</td><td>0.2500</td><td>0.0714</td><td>0.1324</td></tr>
-<tr><td>21</td><td>Bouzazi*</td><td></td><td>0.2479</td><td></td><td></td><td>0.0620</td></tr>
-<tr><td>22</td><td>Adame et al.</td><td></td><td>0.1017</td><td></td><td></td><td>0.0254</td></tr>
-</tbody>
-	      </table>
-	
-	
-	
-        <!--<p>A more detailed analysis of the detection performances can be found in the overview paper accompanying this task.</p>
-        <p>
-	        <a class="btn btn-default" href="../pan15-papers-final/pan15-author-profiling/rangel15-overview.pdf#page=8">Learn more »</a>
-        </p>-->
-
-      </div>
-    </div>
-
-	
-	
-    <div class="panel panel-default">
-      <div class="panel-heading">Related Work and Corpora</div>
-      <div class="panel-body">
-        <p>We refer you to:</p>
-        <ul>	
-		<li>Francisco Rangel, Paolo Rosso, Ben Verhoeven, Walter Daelemans, Martin Pottast, Benno Stein. <a href="http://ceur-ws.org/Vol-1609/16090750.pdf" target="_blank">Overview of the 4th Author Profiling Task at PAN 2016: Cross-Genre Evaluations.</a> In: Balog K., Capellato L., Ferro N., Macdonald C. (Eds.) CLEF 2016 Labs and Workshops, Notebook Papers. CEUR Workshop Proceedings. CEUR-WS.org, vol. 1609, pp. 750-784</li>
-		<li>Francisco Rangel, Fabio Celli, Paolo Rosso, Martin Pottast, Benno Stein, Walter Daelemans. <a href="https://github.com/autoritas/RD-Lab/blob/master/doc/papers/2015%20-%20PAN/pan15-ap-overview.pdf" target="_blank">Overview of the 3rd Author Profiling Task at PAN 2015.</a>In: Linda Cappelato and Nicola Ferro and Gareth Jones and Eric San Juan (Eds.): CLEF 2015 Labs and Workshops, Notebook Papers, 8-11 September, Toulouse, France. CEUR Workshop Proceedings. ISSN 1613-0073, http://ceur-ws.org/Vol-1391/,2015.</li>
-		<li>Francisco Rangel, Paolo Rosso, Irina Chugur, Martin Potthast, Martin Trenkmann, Benno Stein, Ben Verhoeven, Walter Daelemans. <a href="http://ceur-ws.org/Vol-1180/CLEF2014wn-Pan-RangelEt2014.pdf" target="_blank">Overview of the 2nd Author Profiling Task at PAN 2014.</a> In: Cappellato L., Ferro N., Halvey M., Kraaij W. (Eds.) CLEF 2014 Labs and Workshops, Notebook Papers. CEUR-WS.org, vol. 1180, pp. 898-827.</li>
-		<li>Francisco Rangel, Paolo Rosso, Moshe Koppel, Efstatios Stamatatos, Giacomo Inches. <a href="http://ceur-ws.org/Vol-1179/CLEF2013wn-PAN-RangelEt2013.pdf" target="_blank">Overview of the Author Profiling Task at PAN 2013.</a> In: Forner P., Navigli R., Tufis D. (Eds.)Notebook Papers of CLEF 2013 LABs and Workshops. CEUR-WS.org, vol. 1179</li>
-
-		<li>Marcos Zampieri, Shervin Malmasi, Nikola Ljubešic, Preslav Nakov, Ahmed Ali, Jörg Tiedemann, Yves Scherrer, Noëmi Aepli. <a href="http://web.science.mq.edu.au/~smalmasi/vardial4/pdf/VarDial01.pdf" target="_blank">Findings of the VarDial Evaluation Campaign 2017.</a> Proceedings of the Fourth Workshop on NLP for Similar Languages, Varieties and Dialects (VarDial). pp. 1-15. Valencia, Spain.</li>
-		<li>Shervin Malmasi, Marcos Zampieri, Nikola Ljubešic, Preslav Nakov, Ahmed Ali, Jörg Tiedemann. <a href="http://aclweb.org/anthology/W/W16/W16-4801.pdf" target="_blank">Discriminating between Similar Languages and Arabic Dialect Identification: A Report on the Third DSL Shared Task.</a> Proceedings of the Third Workshop on NLP for Similar Languages, Varieties and Dialects (VarDial). pp. 1-14. Osaka, Japan.</li>
-		<li>Marcos Zampieri, Liling Tan, Nikola Ljubešic, Jörg Tiedemann, Preslav Nakov. <a href="http://aclweb.org/anthology/W/W15/W15-5401.pdf" target="_blank">Overview of the DSL Shared Task 2015.</a> Proceedings of the Joint Workshop on Language Technology for Closely Related Languages, Varieties and Dialects (LT4VarDial). pp. 1-9. Hissar, Bulgaria.</li>
-		
-		<li>Francisco Rangel, Paolo Rosso. <a href="http://www.sciencedirect.com/science/article/pii/S0306457315000783" target="_blank">On the Impact of Emotions on Author Profiling.</a> In: Information Processing &amp; Management, vol. 52, issue 1, pp. 73-92</li>
-		<li>Francisco Rangel, Marc Franco-Salvador, Paolo Rosso. <a href="https://github.com/autoritas/RD-Lab/raw/master/doc/papers/2016%20-%20CICLing/paper_87.pdf" target="_blank">A Low Dimensionality Representation for Language Variety Identification.</a> In: Postproc. 17th Int. Conf. on Comput. Linguistics and Intelligent Text Processing, CICLing-2016, Springer-Verlag, LNCS(), arXiv:1705.10754</li>
-
-		
-		<li>S. Argamon, M. Koppel, J. Pennebaker and J. Schler (2009), <a href="http://u.cs.biu.ac.il/~koppel/papers/AuthorshipProfiling-cacm-final.pdf" target="_blank">Automatically profiling the author of an anonymous text</a>, Communications of the ACM 52 (2): 119–123.</li>
-		<li>J. Pennebaker (2011). The secret life of pronouns: What our words say about us. New York: Bloomsbury Publishing, 2011.</li>
-
-		<li><a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-16/pan16-data/pan16-author-profiling-training-dataset-2016-04-25.zip" target="_blank">PAN-AP-16 corpus - Author Profiling Shared Task</a></li>
-		<li><a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-15/pan15-data/pan15-author-profiling-training-dataset-2015-04-23-password-protected.zip" target="_blank">PAN-AP-15 corpus - Author Profiling Shared Task</a></li>
-		<li><a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-14/pan14-data/pan14-author-profiling-training-corpus-2014-04-16.zip" target="_blank">PAN-AP-14 corpus - Author Profiling Shared Task</a></li>
-		<li><a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-author-profiling-training-corpus-2013-01-09.zip" target="_blank">PAN-AP-13 corpus - Author Profiling Shared Task</a></li>
-		<li><a href="http://u.cs.biu.ac.il/~koppel/BlogCorpus.htm" target="_blank">The Blog Authorship Corpus</a></li>
-		<li><a href="http://ttg.uni-saarland.de/resources/DSLCC" target="_blank">DSL Corpus Collection</a></li>
-	</ul>
-      </div>
-    </div>
-  </div>
- 
-
-  <div id="task-committee" class="row" style="padding-top:60px;">
-    <div class="col-xs-12">
-      <h1 class="page-header">Task Chair</h1>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-6 col-sm-3">
-      <div class="thumbnail" style="text-align:center;">
-        <a href="http://users.dsic.upv.es/~prosso/" target="_blank"><img src="../pan17-figures/paolo.jpg" class="img-rounded" alt="Paolo Rosso"></a>
-        <p style="white-space:nowrap"><a href="http://users.dsic.upv.es/~prosso/" target="_blank">Paolo Rosso</a></p>
-        <p style="font-size:10pt">Universitat Polit&egrave;cnica de Val&egrave;ncia</p>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12">
-      <h2>Task Committee</h2>
-    </div>
-  </div>
-  <div class="row">
-	<div class="col-xs-6 col-sm-3">
-      <div class="thumbnail" style="text-align:center;">
-        <a href="http://www.kicorangel.com" target="_blank"><img src="../pan17-figures/francisco.jpg" class="img-rounded" alt="Francisco Rangel"></a>
-        <p><a href="http://www.kicorangel.com" target="_blank">Francisco Rangel</a></p>
-        <p style="font-size:10pt">Autoritas Consulting</p>
-      </div>
-    </div>
-    <div class="col-xs-6 col-sm-3">
-      <div class="thumbnail" style="text-align:center;">
-        <a href="http://www.webis.de" target="_blank"><img src="../pan17-figures/benno.jpg" class="img-rounded" alt="Benno Stein"></a>
-        <p style="white-space:nowrap"><a href="http://www.webis.de" target="_blank">Benno Stein</a></p>
-        <p style="font-size:10pt">Bauhaus-Universit&auml;t Weimar</p>
-      </div>
-    </div>
-    <div class="col-xs-6 col-sm-3">
-      <div class="thumbnail" style="text-align:center;">
-        <a href="https://www.uni-weimar.de/medien/webis/people" target="_blank"><img src="../pan17-figures/martin.jpg" class="img-rounded" alt="Martin Potthast"></a>
-        <p style="white-space:nowrap"><a href="https://www.uni-weimar.de/medien/webis/people" target="_blank">Martin Potthast</a></p>
-        <p style="font-size:10pt">Bauhaus-Universit&auml;t Weimar</p>
-      </div>
-    </div>
-    <div class="col-xs-6 col-sm-3">
-      <div class="thumbnail" style="text-align:center;">
-        <a href="http://www.clips.ua.ac.be/~walter/" target="_blank"><img src="../pan17-figures/walter.jpg" class="img-rounded" alt="Walter Daelemans"></a>
-        <p style="white-space:nowrap"><a href="http://www.clips.ua.ac.be/~walter/" target="_blank">Walter Daelemans</a></p>
-        <p style="font-size:10pt">University of Antwerp</p>
-      </div>
-    </div>
-    <div class="col-xs-6 col-sm-3">
-      <div class="thumbnail" style="text-align:center;">
-        <a href="http://www.icsd.aegean.gr/lecturers/stamatatos/" target="_blank"><img src="../pan17-figures/stathis.jpg" class="img-rounded" alt="Efstathios Stamatatos"></a>
-        <p><a href="http://www.icsd.aegean.gr/lecturers/stamatatos/" target="_blank">Efstathios Stamatatos</a></p>
-        <p style="font-size:10pt">University of the Aegean</p>
-      </div>
-    </div>
-  </div>
-  <footer>
-    <p class="pull-right">© pan.webis.de</p>
-  </footer>
-
-</div> <!-- /container -->
-
-<script src="../../js/jquery.js"></script>
-<script src="../../js/bootstrap.min.js"></script>
-<script src="../../js/prettify.js"></script>
-<script>
-  !function ($) {
-    $(function(){
-      window.prettyPrint && prettyPrint()   
-    })
-  }(window.jQuery)
-</script>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-70770005-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
-</body>
-</html>
-
+            <h2>Task Committee</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/rangel.html %}
+                {% include people-cards/stein.html %}
+                {% include people-cards/potthast.html %}
+                {% include people-cards/daelemans.html %}
+                {% include people-cards/stamatatos.html %}
+            </div>
+        </div>
+        <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+            {% include organizations/clef-organizations-section.html year=2017 %}
+        </div>
+    </footer>
+</main>

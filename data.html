@@ -1,478 +1,707 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+---
+layout: default
+nav_active: data
+title: Shared Tasks @ PAN
+description: PAN Shared Tasks Overview
+additional_css: [ '/css/dataTables.uikit.min.css' ]
+---
 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>PAN</title> 
-
-<link href="css/bootstrap.min.css" rel="stylesheet" />
-<link href="css/prettify.css" rel="stylesheet" />
-<link href="css/pan.css" rel="stylesheet" />
-
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-  <script src="js/html5shiv.js"></script>
-  <script src="js/respond.min.js"></script>
-<![endif]-->
-
-<link rel="shortcut icon" href="clef15/pan15-figures/pan-icon-16x16.ico">
-<!--
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
-<link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
--->
-
-<style>
-.navbar {
-  margin-bottom: 0;
-}
-
-.jumbotron {
-  margin-bottom: 0;
-  border-bottom: 1px solid #bbb;
-}
-
-.jumbotron.authorship {
-  border-bottom: 1px solid #82007d;
-}
-
-.jumbotron.originality {
-  border-bottom: 1px solid #094599;
-}
-
-.jumbotron.trust {
-  border-bottom: 1px solid #ad3c00;
-}
-</style>
-
-</head>
-<body>
-
-<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="index.html"><img src="clef15/pan15-figures/pan-logo-small-lightgrey.png" alt="PAN" style="margin-top:-5px"></a>
-  </div>
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="tasks.html">Tasks</a></li>
-      <li class="active"><a href="data.html">Data</a></li>
-      <li><a href="technology.html">Technology</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="events.html">Events</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </div>
-</nav>
-
-<div class="container-fluid introduction">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12">
+<main>
+    <header class="uk-section uk-section-muted">
+        <div class="uk-container">
             <h1>Evaluation Data</h1>
-            <p class="lead">Key ingredient to evaluation are data. For PAN's shared tasks on digital text forensics, a number of datasets have been compiled and used to evaluate dozens of approaches. Using these datasets in your research ensures comparability. You are welcome to submit datasets of your own making to PAN's shared tasks.</p>
-            <p>
-              <a class="btn btn-primary btn-large" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfR_xoBuGU3q7o3EYPoItN28UPuZENjs3wlWYEX_EdRGUyRfA/viewform">Register now</a>
-              <a class="btn btn-default btn-large" href="technology.html">Next: Technology</a>
-              <span class="badge"><span id="registered-total">0</span> already signed up</span>
-            </p>
-          </div>
+            <p class="uk-text-lead">Key ingredient to evaluation are data. For PAN's shared tasks on digital text
+                forensics, a number of datasets have been compiled and used to evaluate dozens of approaches. Using
+                these datasets in your research ensures comparability. You are welcome to submit datasets of your
+                own making to PAN's shared tasks.</p>
         </div>
-      </div>
+    </header>
+
+    <div class="uk-section uk-section-default">
+        <div class="uk-container">
+            <h2 id="task-authorship"><a href="#task-authorship" class="uk-link-heading">Authorship (14 datasets)</a>
+            </h2>
+
+            <table id="pan-corpora-identification"
+                   class="uk-margin-medium uk-table uk-table-divider uk-table-small uk-table-hover">
+                <thead>
+                <tr>
+                    <th colspan="8">
+                        Author Identification
+                        <a href="#" class="uk-float-right uk-link-reset" data-uk-icon="chevron-up"></a>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="header">Name</th>
+                    <th class="header">Downloads</th>
+                    <th class="header numeric">Year</th>
+                    <th class="header numeric">Size&nbsp;[bytes]</th>
+                    <th class="header numeric">Size</th>
+                    <th class="header">Task</th>
+                    <th class="header">Extras</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr id="corpus-c50-attribution">
+                    <td>C50-Attribution</td>
+                    <td>[<a href="mailto:pan@webis.de?subject=Dataset request">joint</a>]</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>Authorship Attribution</td>
+                    <td></td>
+                </tr>
+                <tr id="corpus-c10-attribution">
+                    <td>C10-Attribution</td>
+                    <td>[<a href="mailto:pan@webis.de?subject=Dataset request">joint</a>]</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>Authorship Attribution</td>
+                    <td></td>
+                </tr>
+                <tr id="corpus-pan12-attribution">
+                    <td>PAN12-Attribution</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-12/pan12-data/pan12-authorship-attribution-training-corpus-2012-03-28.zip">training</a>]
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-12/pan12-data/pan12-authorship-attribution-test-corpus-2012-05-24.zip">test</a>]
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-12/pan12-data/pan12-authorship-attribution-dataset-2015-10-20.zip">joint</a>]
+                    </td>
+                    <td class="numeric">2012</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>Authorship Attribution</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=juola_2012">bib</a>]
+                    </td>
+                </tr>
+                <tr id="corpus-pan11-attribution">
+                    <td>PAN12-Attribution</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-11/pan11-data/pan11-author-identification-training-corpus-2011-04-08.zip">training</a>]
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-11/pan11-data/pan11-author-identification-test-corpus-2011-05-23.zip">test</a>]
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-11/pan11-data/pan11-authorship-attribution-dataset-2015-10-20.zip">joint</a>]
+                    </td>
+                    <td class="numeric">2011</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>Authorship Attribution</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=argamon_2011">bib</a>]
+                    </td>
+                </tr>
+                <tr id="corpus-pan15-verification">
+                    <td>PAN15-Verification</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-15/pan15-data/pan15-authorship-verification-training-dataset-2015-04-19.zip">training</a>]
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-15/pan15-data/pan15-authorship-verification-test-dataset2-2015-04-19.zip">test</a>]
+                    </td>
+                    <td class="numeric">2015</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>Authorship Verification</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=stamatatos_2015">bib</a>]
+                    </td>
+                </tr>
+                <tr id="corpus-pan14-verification">
+                    <td>PAN14-Verification</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-14/pan14-data/pan14-authorship-verification-training-corpus-2014-04-22.zip">training</a>]
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-14/pan14-data/pan14-authorship-verification-test-corpus2-2014-04-22.zip">test</a>]
+                    </td>
+                    <td class="numeric">2014</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>Authorship Verification</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=stamatatos_2014">bib</a>]
+                    </td>
+                </tr>
+                <tr id="corpus-pan13-verification">
+                    <td>PAN13-Verification</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-authorship-verification-training-corpus-2013-02-01.zip">training</a>]
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-authorship-verification-test-corpus2-2013-05-29.zip">test</a>]
+                    </td>
+                    <td class="numeric">2013</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>Authorship Verification</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=juola_2013">bib</a>]
+                    </td>
+                </tr>
+                <tr id="corpus-pan17-clustering">
+                    <td>PAN17-Clustering</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-17/pan17-data/pan17-author-clustering-training-dataset-2017-02-15.zip">training</a>]
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-17/pan17-data/pan17-author-clustering-test-dataset-2017-03-14.zip">test</a>]
+                    </td>
+                    <td class="numeric">2017</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>Authorship Verification</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=stein_2017l">bib</a>]
+                    </td>
+                </tr>
+                <tr id="corpus-pan16-clustering">
+                    <td>PAN17-Clustering</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-16/pan16-data/pan16-author-clustering-training-dataset-2016-02-17.zip">training</a>]
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-16/pan16-data/pan16-author-clustering-test-dataset2-2016-04-12.zip">test</a>]
+                    </td>
+                    <td class="numeric">2016</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>Authorship Verification</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=stein_2016j">bib</a>]
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table id="pan-corpora-profiling"
+                   class="uk-margin-medium uk-table uk-table-divider uk-table-small uk-table-hover">
+                <thead>
+                <tr>
+                    <th colspan="8">
+                        Author Profiling
+                        <a href="#" class="uk-float-right uk-link-reset" data-uk-icon="chevron-up"></a>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="header">Name</th>
+                    <th class="header">Downloads</th>
+                    <th class="header numeric">Year</th>
+                    <th class="header numeric">Size&nbsp;[bytes]</th>
+                    <th class="header numeric">Size</th>
+                    <th class="header">Task</th>
+                    <th class="header">Extras</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr id="corpus-pan15-gender-prediction">
+                    <td>PAN15-Gender-Prediction</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-15/pan15-data/pan15-author-profiling-training-dataset-2015-04-23-password-protected.zip">training</a>]
+                    </td>
+                    <td class="numeric">2015</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>Gender Prediction</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=rangel_2015">bib</a>]
+                    </td>
+                </tr>
+                <tr id="corpus-pan14-gender-prediction">
+                    <td>PAN14-Gender-Prediction</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-14/pan14-data/pan14-author-profiling-training-corpus-2014-04-16.zip">training</a>]
+                    </td>
+                    <td class="numeric">2014</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>Gender Prediction</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=rangel_2014">bib</a>]
+                    </td>
+                </tr>
+                <tr id="corpus-pan13-gender-prediction">
+                    <td>PAN13-Gender-Prediction</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-author-profiling-training-corpus-2013-01-09.zip">training</a>]
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-author-profiling-test-corpus2-2013-04-29.zip">test</a>]
+                    </td>
+                    <td class="numeric">2013</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>Gender Prediction</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=rangel_2013">bib</a>]
+                    </td>
+                </tr>
+                <tr id="corpus-pan15-age-prediction">
+                    <td>PAN15-Age-Prediction</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-15/pan15-data/pan15-author-profiling-training-dataset-2015-04-23-password-protected.zip">training</a>]
+                    </td>
+                    <td class="numeric">2015</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>Age Prediction</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=rangel_2015">bib</a>]
+                    </td>
+                </tr>
+                <tr id="corpus-pan14-age-prediction">
+                    <td>PAN14-Age-Prediction</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-14/pan14-data/pan14-author-profiling-training-corpus-2014-04-16.zip">training</a>]
+                    </td>
+                    <td class="numeric">2014</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>Age Prediction</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=rangel_2014">bib</a>]
+                    </td>
+                </tr>
+                <tr id="corpus-pan13-age-prediction">
+                    <td>PAN13-Age-Prediction</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-author-profiling-training-corpus-2013-01-09.zip">training</a>]
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-author-profiling-test-corpus2-2013-04-29.zip">test</a>]
+                    </td>
+                    <td class="numeric">2013</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>Age Prediction</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=rangel_2013">bib</a>]
+                    </td>
+                </tr>
+                <tr id="corpus-pan15-personality-prediction">
+                    <td>PAN15-Personality-Prediction</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-15/pan15-data/pan15-author-profiling-training-dataset-2015-04-23-password-protected.zip">training</a>]
+                    </td>
+                    <td class="numeric">2015</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>Age Prediction</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=rangel_2015">bib</a>]
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <h2 id="task-trust"><a href="#task-trust" class="uk-link-heading">Trust (4 datasets)</a></h2>
+
+            <table id="pan-corpora-credibility"
+                   class="uk-margin-medium uk-table uk-table-divider uk-table-small uk-table-hover">
+                <thead>
+                <tr>
+                    <th colspan="8">
+                        Credibility Analysis
+                        <a href="#" class="uk-float-right uk-link-reset" data-uk-icon="chevron-up"></a>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="header">Name</th>
+                    <th class="header">Downloads</th>
+                    <th class="header numeric">Year</th>
+                    <th class="header numeric">Size&nbsp;[bytes]</th>
+                    <th class="header numeric">Size</th>
+                    <th class="header">Task</th>
+                    <th class="header">Extras</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr id="corpus-pan11-wikipedia-vandalism">
+                    <td>PAN11-Wikipedia-Vandalism</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-11/pan11-data/pan11-wikipedia-vandalism-detection-training-corpus-2011-03-15.zip">training</a>]
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-11/pan11-data/pan11-wikipedia-vandalism-detection-test-corpus-2011-05-17.zip">test</a>]
+                    </td>
+                    <td class="numeric">2010</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>Authorship Attribution</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=potthast_2011a">bib</a>]
+                    </td>
+                </tr>
+                <tr id="corpus-pan10-wikipedia-vandalism">
+                    <td>PAN10-Wikipedia-Vandalism</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-10/pan10-data/pan10-wikipedia-vandalism-detection-training-corpus-2010-03-15.zip">training</a>]
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-10/pan10-data/pan10-wikipedia-vandalism-detection-test-corpus-2010-05-16.zip">test</a>]
+                    </td>
+                    <td class="numeric">2011</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>Authorship Attribution</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=stein_2010u">bib</a>]
+                    </td>
+                </tr>
+                <tr id="corpus-pan12-wikipedia-quality-flaw">
+                    <td>PAN12-Wikipedia-Quality-Flaw-Prediction</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-12/pan12-data/pan12-wikipedia-quality-flaw-prediction-training-corpus-2012-03-19.zip">training</a>]
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-12/pan12-data/pan12-wikipedia-quality-flaw-prediction-test-corpus-2012-05-18.zip">test</a>]
+                    </td>
+                    <td class="numeric">2012</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>Authorship Attribution</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=stein_2012u">bib</a>]
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table id="pan-corpora-deception-detection"
+                   class="uk-margin-medium uk-table uk-table-divider uk-table-small uk-table-hover">
+                <thead>
+                <tr>
+                    <th colspan="8">
+                        Deception Detection
+                        <a href="#" class="uk-float-right uk-link-reset" data-uk-icon="chevron-up"></a>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="header">Name</th>
+                    <th class="header">Downloads</th>
+                    <th class="header numeric">Year</th>
+                    <th class="header numeric">Size&nbsp;[bytes]</th>
+                    <th class="header numeric">Size</th>
+                    <th class="header">Task</th>
+                    <th class="header">Extras</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr id="corpus-pan12-deception-detection">
+                    <td>PAN12-Deception-Detection</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-12/pan12-data/pan12-sexual-predator-identification-training-corpus-2012-05-01.zip">training</a>]
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-12/pan12-data/pan12-sexual-predator-identification-test-corpus-2012-05-21.zip">test</a>]
+                    </td>
+                    <td class="numeric">2012</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>Authorship Attribution</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=inches_2012">bib</a>]
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <h2 id="task-originality"><a href="#task-originality" class="uk-link-heading">Originality (20 datasets)</a>
+            </h2>
+
+            <table id="pan-corpora-text-reuse-detection"
+                   class="uk-margin-medium uk-table uk-table-divider uk-table-small uk-table-hover">
+                <thead>
+                <tr>
+                    <th colspan="8">
+                        Text Reuse Detection (aka Plagiarism Detection)
+                        <a href="#" class="uk-float-right uk-link-reset" data-uk-icon="chevron-up"></a>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="header">Name</th>
+                    <th class="header">Downloads</th>
+                    <th class="header numeric">Year</th>
+                    <th class="header numeric">Size&nbsp;[bytes]</th>
+                    <th class="header numeric">Size</th>
+                    <th class="header">Task</th>
+                    <th class="header">Extras</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr id="corpus-pan12-source-retrieval">
+                    <td>PAN12-Source-Retrieval</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-12/pan12-data/pan12-source-retrieval-training-corpus-2012-03-31.zip">training</a>]
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-12/pan12-data/pan12-source-retrieval-test-corpus-2012-07-01.zip">test</a>]
+                    </td>
+                    <td class="numeric">2012</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>Source Retrieval</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=stein_2012t">bib</a>]
+                    </td>
+                </tr>
+                <tr id="corpus-pan13-source-retrieval">
+                    <td>PAN13-Source-Retrieval</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-source-retrieval-training-corpus-2014-12-01.zip">training</a>]
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-source-retrieval-test-corpus2-2014-12-01.zip">test</a>]
+                    </td>
+                    <td class="numeric">2013</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>Source Retrieval</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=stein_2013h">bib</a>]
+                    </td>
+                </tr>
+                <tr id="corpus-pan14-source-retrieval">
+                    <td>PAN14-Source-Retrieval</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-14/pan14-data/pan14-source-retrieval-training-corpus-2014-12-01.zip">training</a>]
+                    </td>
+                    <td class="numeric">2014</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>Source Retrieval</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=stein_2014k">bib</a>]
+                    </td>
+                </tr>
+                <tr id="corpus-pan15-source-retrieval">
+                    <td>PAN15-Source-Retrieval</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-14/pan14-data/pan14-source-retrieval-training-corpus-2014-12-01.zip">training</a>]
+                    </td>
+                    <td class="numeric">2015</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>Source Retrieval</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=stein_2015j">bib</a>]
+                    </td>
+                </tr>
+                <tr id="corpus-pan12-text-alignment">
+                    <td>PAN12-Text-Alignment</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-12/pan12-data/pan12-text-alignment-training-corpus-2012-03-16.zip">training</a>]
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-12/pan12-data/pan12-text-alignment-test-corpus-2012-08-12.zip">test</a>]
+                    </td>
+                    <td class="numeric">2012</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>Text Alignment</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=stein_2012t">bib</a>]
+                    </td>
+                </tr>
+                <tr id="corpus-pan13-text-alignment">
+                    <td>PAN13-Text-Alignment</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-text-alignment-training-corpus-2013-01-21.zip">training</a>]
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-text-alignment-test-corpus2-2013-01-21.zip">test</a>]
+                    </td>
+                    <td class="numeric">2013</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>Text Alignment</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=stein_2013h">bib</a>]
+                    </td>
+                </tr>
+                <tr id="corpus-pan14-text-alignment">
+                    <td>PAN14-Text-Alignment</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-text-alignment-training-corpus-2013-01-21.zip">training</a>]
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-text-alignment-test-corpus2-2013-01-21.zip">test</a>]
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-14/pan14-data/pan14-text-alignment-test-corpus3-2014-05-14.zip">supplemental
+                        test</a>]
+                    </td>
+                    <td class="numeric">2014</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>Text Alignment</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=stein_2014k">bib</a>]
+                    </td>
+                </tr>
+                <tr id="corpus-alvi15-text-alignment">
+                    <td>Alvi15-Text-Alignment-en-fa</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-15/pan15-data/pan15-text-alignment-training-dataset-alvi15-english-2015-05-24.zip">training</a>]
+                    </td>
+                    <td class="numeric">2015</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>Text Alignment</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=alvi_2015">bib</a>]
+                    </td>
+                </tr>
+                <tr id="corpus-cheema15-text-alignment">
+                    <td>Cheema15-Text-Alignment-en</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-15/pan15-data/pan15-text-alignment-training-dataset-cheema15-english-2015-05-24.zip">training</a>]
+                    </td>
+                    <td class="numeric">2015</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>Text Alignment</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=cheema_2015">bib</a>]
+                    </td>
+                </tr>
+                <tr id="corpus-hanfi15-text-alignment">
+                    <td>Hanfi15-Text-Alignment-en-ur</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-15/pan15-data/pan15-text-alignment-training-dataset-hanif15-english-urdu-2015-05-24.zip">training</a>]
+                    </td>
+                    <td class="numeric">2015</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>Text Alignment</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=hanif_2015">bib</a>]
+                    </td>
+                </tr>
+                <tr id="corpus-khoshnavataher15-text-alignment">
+                    <td>Khoshnavataher15-Text-Alignment-fa</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-15/pan15-data/pan15-text-alignment-training-dataset-khoshnavataher15-persian-2015-05-24.zip">training</a>]
+                    </td>
+                    <td class="numeric">2015</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>Text Alignment</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=khoshnavataher_2015">bib</a>]
+                    </td>
+                </tr>
+                <tr id="corpus-kong15-text-alignment">
+                    <td>Kong15-Text-Alignment-zh</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-15/pan15-data/pan15-text-alignment-training-dataset-kong15-chinese-2015-07-07.zip">training</a>]
+                    </td>
+                    <td class="numeric">2015</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>Text Alignment</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=kong_2015">bib</a>]
+                    </td>
+                </tr>
+                <tr id="corpus-mohtaij15-text-alignment">
+                    <td>Mohtaij15-Text-Alignment-en</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-15/pan15-data/pan15-text-alignment-training-dataset-mohtaj15-english-2015-05-24.zip">training</a>]
+                    </td>
+                    <td class="numeric">2015</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>Text Alignment</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=mohtaj_2015">bib</a>]
+                    </td>
+                </tr>
+                <tr id="corpus-palkovskii15-text-alignment">
+                    <td>Palkovskii15-Text-Alignment-en</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-15/pan15-data/pan15-text-alignment-training-dataset-palkovskii15-english-2015-05-24.zip">training</a>]
+                    </td>
+                    <td class="numeric">2015</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>Text Alignment</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=stein_2015k">bib</a>]
+                    </td>
+                </tr>
+                <tr id="corpus-pan09-intrinsic-plagiarism-detection">
+                    <td>PAN09-Intrinsic-Plagiarism-Detection</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-09/pan09-data/pan09-intrinsic-plagiarism-detection-training-corpus-2009-03-29.zip">training</a>]
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-09/pan09-data/pan09-intrinsic-plagiarism-detection-test-corpus-2009-05-21.zip">test</a>]
+                    </td>
+                    <td class="numeric">2009</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>Intrinsic Plagiarism Detection</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries.php?bibkey=stein_2010p">bib</a>]
+                    </td>
+                </tr>
+                <tr id="corpus-pan11-intrinsic-plagiarism-detection">
+                    <td>PAN11-Intrinsic-Plagiarism-Detection</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/en/media/chairs/webis/corpora/corpus-pan-pc-10/">training</a>]
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-11/pan11-data/pan11-intrinsic-plagiarism-detection-test-corpus-2011-05-13.zip">test</a>]
+                    </td>
+                    <td class="numeric">2011</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>Intrinsic Plagiarism Detection</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=stein_2011t">bib</a>]
+                    </td>
+                </tr>
+                <tr id="corpus-pan09-external-plagiarism-detection">
+                    <td>PAN09-External-Plagiarism-Detection</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-09/pan09-data/pan09-external-plagiarism-detection-training-corpus-2009-03-30.zip">training</a>]
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-09/pan09-data/pan09-external-plagiarism-detection-test-corpus-2009-05-21.zip">test</a>]
+                    </td>
+                    <td class="numeric">2009</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>External Plagiarism Detection</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries.php?bibkey=stein_2010p">bib</a>]
+                    </td>
+                </tr>
+                <tr id="corpus-pan10-external-plagiarism-detection">
+                    <td>PAN10-External-Plagiarism-Detection</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/en/media/chairs/webis/corpora/corpus-pan-pc-09/">training</a>]
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-10/pan10-data/pan10-plagiarism-detection-test-corpus-2010-05-17.zip">test</a>]
+                    </td>
+                    <td class="numeric">2010</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>External Plagiarism Detection</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=stein_2010t">bib</a>]
+                    </td>
+                </tr>
+                <tr id="corpus-pan11-external-plagiarism-detection">
+                    <td>PAN11-External-Plagiarism-Detection</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/en/media/chairs/webis/corpora/corpus-pan-pc-10/">training</a>]
+                        [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-11/pan11-data/pan11-external-plagiarism-detection-test-corpus-2011-05-13.zip">test</a>]
+                    </td>
+                    <td class="numeric">2011</td>
+                    <td class="numeric"></td>
+                    <td class="numeric"></td>
+                    <td>External Plagiarism Detection</td>
+                    <td>
+                        [<a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=stein_2011t">bib</a>]
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
     </div>
-  </div>
-</div>
 
-<div class="container-fluid authorship strong collapsible" data-toggle="collapse" data-target="#authorship-collapse" aria-expanded="false" aria-controls="authorship-collapse">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 text-center">
-            <h1>
-              <div class="pull-right"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div>
-              Authorship
-              <small>(14 datasets)</small>
-            </h1>
-          </div>
+    <div class="uk-section uk-section-default">
+        <div class="uk-container">
+            <h2 id="task-submit-data">Submit Data</h2>
+
+            <p class="uk-text-lead">Got a new dataset for one of PAN's task? We welcome the
+                submission of new datasets to all tasks. As long as the dataset is formatted
+                the same way as the other datasets for the same task, all software submitted
+                by previous participants on that task can be run against it.</p>
+
+            <a class="uk-button uk-button-primary" href="mailto:pan@webis.de">Submit now</a>
         </div>
-      </div>
     </div>
-  </div>
-</div>
+</main>
 
-<div class="collapse" id="authorship-collapse">
-
-<div class="container-fluid research-field authorship">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12">
-            <h2>Author Identification</h2>
-            <p class="lead"></p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4 task">
-            <h3>Authorship Attribution</h3>
-            <p>Datasets that comprise texts of questioned authorship and texts from candidate authors.</p>
-            <p>PAN11: <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-11/pan11-data/pan11-author-identification-training-corpus-2011-04-08.zip">training</a>, <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-11/pan11-data/pan11-author-identification-test-corpus-2011-05-23.zip">test</a>, <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-11/pan11-data/pan11-authorship-attribution-dataset-2015-10-20.zip">joint dataset</a>, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=argamon_2011">bib</a></p>
-            <p>PAN12: <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-12/pan12-data/pan12-authorship-attribution-training-corpus-2012-03-28.zip">training</a>, <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-12/pan12-data/pan12-authorship-attribution-test-corpus-2012-05-24.zip">test</a>, <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-12/pan12-data/pan12-authorship-attribution-dataset-2015-10-20.zip">joint dataset</a>, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=juola_2012">bib</a></p>
-            <p>C10: <a href="mailto:pan@webis.de?subject=Dataset request">joint dataset</a>, <a href="">bib</a></p>
-            <p>C50: <a href="mailto:pan@webis.de?subject=Dataset request">joint dataset</a>, <a href="">bib</a></p>
-          </div>
-          <div class="col-md-4 task">
-            <h3>Authorship Verification</h3>
-            <p>Datasets that comprise sets of documents, where one is questioned to be from the same author as the others.</p>
-            <p>PAN13: <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-authorship-verification-training-corpus-2013-02-01.zip">training</a>, <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-authorship-verification-test-corpus2-2013-05-29.zip">test</a>, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=juola_2013">bib</a></p>
-            <p>PAN14: <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-14/pan14-data/pan14-authorship-verification-training-corpus-2014-04-22.zip">training</a>, <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-14/pan14-data/pan14-authorship-verification-test-corpus2-2014-04-22.zip">test</a>, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=stamatatos_2014">bib</a></p>
-            <p>PAN15: <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-15/pan15-data/pan15-authorship-verification-training-dataset-2015-04-19.zip">training</a>, <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-15/pan15-data/pan15-authorship-verification-test-dataset2-2015-04-19.zip">test</a>, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=stamatatos_2015">bib</a></p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4 task">
-            <h3>Author Clustering</h3>
-            <p>Datasets that comprise sets of documents that can be clustered by authorship.</p>
-            <p>PAN16: <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-16/pan16-data/pan16-author-clustering-training-dataset-2016-02-17.zip">training</a>, <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-16/pan16-data/pan16-author-clustering-test-dataset2-2016-04-12.zip">test</a>, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=stein_2016j">bib</a></p>
-            <p>PAN17: <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-17/pan17-data/pan17-author-clustering-training-dataset-2017-02-15.zip">training</a>, <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-17/pan17-data/pan17-author-clustering-test-dataset-2017-03-14.zip">test</a>, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=stein_2017l">bib</a></p>
-          </div>
-          <div class="col-md-4 task">
-            <h3>Author Linking</h3>
-            <p>Datasets are being prepared for PAN @ CLEF 2016.</p>
-          </div>
-          <div class="col-md-4 task">
-            <h3>Author Diarization</h3>
-            <p>Datasets are being prepared for PAN @ CLEF 2016.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container-fluid research-field authorship">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12">
-            <h2>Author Profiling</h2>
-            <p class="lead"></p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4 task">
-            <h3>Gender Prediction</h3>
-            <p>Datasets that comprise sets of texts from the same author with annotations as to their gender.</p>
-            <p>PAN13: <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-author-profiling-training-corpus-2013-01-09.zip">training</a>, <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-author-profiling-test-corpus2-2013-04-29.zip">test</a>, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=rangel_2013">bib</a></p>
-            <p>PAN14: <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-14/pan14-data/pan14-author-profiling-training-corpus-2014-04-16.zip">training</a>, test, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=rangel_2014">bib</a></p>
-            <p>PAN15: <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-15/pan15-data/pan15-author-profiling-training-dataset-2015-04-23-password-protected.zip">training</a>, test, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=rangel_2015">bib</a></p>
-          </div>
-          <div class="col-md-4 task">
-            <h3>Age Prediction</h3>
-            <p>Datasets that comprise sets of texts from the same author with annotations as to their age.</p>
-            <p>PAN13: <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-author-profiling-training-corpus-2013-01-09.zip">training</a>, <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-author-profiling-test-corpus2-2013-04-29.zip">test</a>, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=rangel_2013">bib</a></p>
-            <p>PAN14: <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-14/pan14-data/pan14-author-profiling-training-corpus-2014-04-16.zip">training</a>, test, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=rangel_2014">bib</a></p>
-            <p>PAN15: <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-15/pan15-data/pan15-author-profiling-training-dataset-2015-04-23-password-protected.zip">training</a>, test, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=rangel_2015">bib</a></p>
-          </div>
-          <div class="col-md-4 task">
-            <h3>Personality Prediction</h3>
-            <p>Datasets that comprise sets of texts from the same author with annotations as to their BIG5 personality type.</p>
-            <p>PAN15: <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-15/pan15-data/pan15-author-profiling-training-dataset-2015-04-23-password-protected.zip">training</a>, test, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=rangel_2015">bib</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container-fluid research-field authorship">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12">
-            <h2>Author Obfuscation</h2>
-            <p class="lead"></p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4 task">
-            <h3>Author Masking</h3>
-            <p>Datasets are being prepared for PAN @ CLEF 2016.</p>
-          </div>
-          <div class="col-md-4 task">
-            <h3>Author Imitation</h3>
-            <p>Datasets are being prepared for PAN @ CLEF 2016.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-</div>
-
-<div class="container-fluid originality strong collapsible" data-toggle="collapse" data-target="#originality-collapse" aria-expanded="false" aria-controls="originality-collapse">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 text-center">
-            <h1>
-              <div class="pull-right"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div>
-              Originality
-              <small>(20 datasets)</small>
-            </h1>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div  class="collapse" id="originality-collapse">
-
-<div class="container-fluid research-field originality">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12">
-            <h2>Text Reuse Detection (aka Plagiarism Detection)</h2>
-            <p class="lead"></p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4 task">
-            <h3>Source Retrieval</h3>
-            <p>Datasets that comprise documents with text reused from the ClueWeb.</p>
-            <p>PAN12: <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-12/pan12-data/pan12-source-retrieval-training-corpus-2012-03-31.zip">training</a>, <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-12/pan12-data/pan12-source-retrieval-test-corpus-2012-07-01.zip">test</a>, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=stein_2012t">bib</a></p>
-            <p>PAN13: <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-source-retrieval-training-corpus-2014-12-01.zip">training</a>, <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-source-retrieval-test-corpus2-2014-12-01.zip">test</a>, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=stein_2013h">bib</a></p>
-            <p>PAN14: <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-14/pan14-data/pan14-source-retrieval-training-corpus-2014-12-01.zip">training</a>, test, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=stein_2014k">bib</a></p>
-            <p>PAN15: <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-14/pan14-data/pan14-source-retrieval-training-corpus-2014-12-01.zip">training</a>, test, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=stein_2015j">bib</a></p>
-          </div>
-          <div class="col-md-4 task">
-            <h3>Text Alignment</h3>
-            <p>Datasets that comprise pairs of documents that may share reused text.</p>
-            <p>PAN12: <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-12/pan12-data/pan12-text-alignment-training-corpus-2012-03-16.zip">training</a>, <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-12/pan12-data/pan12-text-alignment-test-corpus-2012-08-12.zip">test</a>, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=stein_2012t">bib</a></p>
-            <p>PAN13: <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-text-alignment-training-corpus-2013-01-21.zip">training</a>, <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-text-alignment-test-corpus2-2013-01-21.zip">test</a>, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=stein_2013h">bib</a></p>
-            <p>PAN14: <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-text-alignment-training-corpus-2013-01-21.zip">training</a>, <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-text-alignment-test-corpus2-2013-01-21.zip">test</a>, <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-14/pan14-data/pan14-text-alignment-test-corpus3-2014-05-14.zip">supplemental test</a>, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=stein_2014k">bib</a></p>
-            <p>Alvi15: <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-15/pan15-data/pan15-text-alignment-training-dataset-alvi15-english-2015-05-24.zip">training</a>, test, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=alvi_2015">bib</a></p>
-            <p>Asghari15: <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-15/pan15-data/pan15-text-alignment-training-dataset-asghari15-english-persian-2015-05-24.zip">training</a>, test, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=asghari_2015">bib</a></p>
-            <p>Cheema15: <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-15/pan15-data/pan15-text-alignment-training-dataset-cheema15-english-2015-05-24.zip">training</a>, test, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=cheema_2015">bib</a></p>
-            <p>Hanif15: <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-15/pan15-data/pan15-text-alignment-training-dataset-hanif15-english-urdu-2015-05-24.zip">training</a>, test, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=hanif_2015">bib</a></p>
-            <p>Khoshnavataher15: <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-15/pan15-data/pan15-text-alignment-training-dataset-khoshnavataher15-persian-2015-05-24.zip">training</a>, test, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=khoshnavataher_2015">bib</a></p>
-            <p>Kong15: <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-15/pan15-data/pan15-text-alignment-training-dataset-kong15-chinese-2015-07-07.zip">training</a>, test, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=kong_2015">bib</a></p>
-            <p>Mohtaij15: <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-15/pan15-data/pan15-text-alignment-training-dataset-mohtaj15-english-2015-05-24.zip">training</a>, test, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=mohtaj_2015">bib</a></p>
-            <p>Palkovskii15: <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-15/pan15-data/pan15-text-alignment-training-dataset-palkovskii15-english-2015-05-24.zip">training</a>, test, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=stein_2015k">bib</a></p>
-          </div>
-          <div class="col-md-4 task">
-            <h3>Intrinsic Plagiarism Detection</h3>
-            <p>Datasets that comprise documents with text reuse.</p>
-            <p>PAN09: <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-09/pan09-data/pan09-intrinsic-plagiarism-detection-training-corpus-2009-03-29.zip">training</a>, <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-09/pan09-data/pan09-intrinsic-plagiarism-detection-test-corpus-2009-05-21.zip">test</a>, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries.php?bibkey=stein_2010p">bib</a></p>
-            <p>PAN11: <a href="https://www.uni-weimar.de/en/media/chairs/webis/corpora/corpus-pan-pc-10/">training</a>, <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-11/pan11-data/pan11-intrinsic-plagiarism-detection-test-corpus-2011-05-13.zip">test</a>, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=stein_2011t">bib</a></p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4 task">
-            <h3>Cross-language Text Reuse Detection</h3>
-            <p></p>
-          </div>
-          <div class="col-md-4 task">
-            <h3>External Plagiarism Detection</h3>
-            <p>Datasets that comprise documents with text reuse and large collections of potential source documents.</p>
-            <p>PAN09: <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-09/pan09-data/pan09-external-plagiarism-detection-training-corpus-2009-03-30.zip">training</a>, <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-09/pan09-data/pan09-external-plagiarism-detection-test-corpus-2009-05-21.zip">test</a>, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries.php?bibkey=stein_2010p">bib</a></p>
-            <p>PAN10: <a href="https://www.uni-weimar.de/en/media/chairs/webis/corpora/corpus-pan-pc-09/">training</a>, <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-10/pan10-data/pan10-plagiarism-detection-test-corpus-2010-05-17.zip">test</a>, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=stein_2010t">bib</a></p>
-            <p>PAN11: <a href="https://www.uni-weimar.de/en/media/chairs/webis/corpora/corpus-pan-pc-10/">training</a>, <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-11/pan11-data/pan11-external-plagiarism-detection-test-corpus-2011-05-13.zip">test</a>, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=stein_2011t">bib</a></p>
-          </div>
-          <div class="col-md-4 task">
-            <h3>Source Code Reuse Detection</h3>
-            <p></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-</div>
-
-<div class="container-fluid trust strong collapsible" data-toggle="collapse" data-target="#trust-collapse" aria-expanded="false" aria-controls="trust-collapse">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 text-center">
-            <h1>
-              <div class="pull-right"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div>
-              Trust
-              <small>(4 datasets)</small>
-            </h1>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div  class="collapse" id="trust-collapse">
-
-<div class="container-fluid research-field trust">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12">
-            <h2>Credibility Analysis</h2>
-            <p class="lead"></p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4 task">
-            <h3>Wikipedia Vandalism Detection</h3>
-            <p>Datasets that comprise samples of Wikipedia edits and annotations whether or not they are vandalism.</p>
-            <p>PAN10: <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-10/pan10-data/pan10-wikipedia-vandalism-detection-training-corpus-2010-03-15.zip">training</a>, <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-10/pan10-data/pan10-wikipedia-vandalism-detection-test-corpus-2010-05-16.zip">test</a>, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=stein_2010u">bib</a></p>
-            <p>PAN11: <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-11/pan11-data/pan11-wikipedia-vandalism-detection-training-corpus-2011-03-15.zip">training</a>, <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-11/pan11-data/pan11-wikipedia-vandalism-detection-test-corpus-2011-05-17.zip">test</a>, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=potthast_2011a">bib</a></p>
-          </div>
-          <div class="col-md-4 task">
-            <h3>Wikipedia Quality Flaw Prediction</h3>
-            <p>Datasets that comprise samples of Wikipedia articles and annotations with regard to quality flaws.</p>
-            <p>PAN12: <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-12/pan12-data/pan12-wikipedia-quality-flaw-prediction-training-corpus-2012-03-19.zip">training</a>, <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-12/pan12-data/pan12-wikipedia-quality-flaw-prediction-test-corpus-2012-05-18.zip">test</a>, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=stein_2012u">bib</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container-fluid research-field trust">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12">
-            <h2>Credibility Analysis</h2>
-            <p class="lead"></p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4 task">
-            <h3>Sexual Predator Identification</h3>
-            <p>Datasets that comprise conversations with sexual content, where one party pretends to be a minor.</p>
-            <p>PAN12: <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-12/pan12-data/pan12-sexual-predator-identification-training-corpus-2012-05-01.zip">training</a>, <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-12/pan12-data/pan12-sexual-predator-identification-test-corpus-2012-05-21.zip">test</a>, <a href="https://www.uni-weimar.de/medien/webis/publications/bibentries-pan.php?bibkey=inches_2012">bib</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-</div>
-
-<div class="container-fluid introduction">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12">
-            <h1>Submit Data</h1>
-            <p class="lead">Got a new dataset for one of PAN's task? We welcome the submission of new datasets to all tasks. As long as the dataset is formatted the same way as the other datasets for the same task, all software submitted by previous participants on that task can be run against it.</p>
-            <p>
-              <a class="btn btn-primary btn-large" href="mailto:pan@webis.de">Submit now</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-</div>
-
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script type="text/javascript">
-  $('.jumbotron').tooltip({
-    selector: "[data-toggle=tooltip]",
-    container: "body"
-  })
-</script>
-<script src="js/prettify.js"></script>
+<script src="{{ 'js/thirdparty/datatables.net/jquery.dataTables.min.js' | relative_url }}"></script>
+<script src="{{ 'js/dataTables/dataTables.uikit.min.js' | relative_url }}"></script>
+<script src="{{ 'js/dataTables/file-size.js' | relative_url }}"></script>
+<script src="{{ 'js/dataTables/unit-size.js' | relative_url }}"></script>
 <script>
-  !function ($) {
-    $(function(){
-      window.prettyPrint && prettyPrint()   
+    $(document).ready(function () {
+        $('.uk-table').DataTable({
+            paging: false,
+            searching: false,
+            info: false,
+            autoWidth: false,
+            columnDefs: [
+                {'type': 'file-size', 'targets': 3},
+                {'type': 'unit-size', 'targets': 4}
+            ]
+        });
     })
-  }(window.jQuery)
 </script>
-
-<script>
-$(".collapse").on("show.bs.collapse", function(){
-  $(this).prev(".container-fluid")
-         .find(".glyphicon")
-         .removeClass("glyphicon-chevron-down")
-         .addClass("glyphicon-chevron-up");
-});  
-$(".collapse").on("hide.bs.collapse", function(){
-  $(this).prev(".container-fluid")
-         .find(".glyphicon")
-         .removeClass("glyphicon-chevron-up")
-         .addClass("glyphicon-chevron-down");
-});
-</script>
-
-<!-- Update the registration statistics. -->
-<script type="text/javascript">
-  $.ajax({
-    url: "https://spreadsheets.google.com/feeds/cells/0AlwcskAJGamSdEN2ZUQ4Uk44cW13XzQ4UDRNTDR0V3c/od5/public/basic?min-row=5&min-col=1&max-row=1&max-col=1&alt=json",
-    cache: false,
-    dataType: "json"
-  }).done(function(json) {
-    $(json["feed"]["entry"]).each(function() {
-      var title = this["title"]["$t"];
-      var content = this["content"]["$t"];
-      switch (title) {
-      case "A1":
-        $("#registered-total").text(content)
-      case "A2":
-        $("#registered-plagiarism-detection").text(content)
-      case "A3":
-        $("#registered-author-identification").text(content)
-      case "A4":
-        $("#registered-author-profiling").text(content)
-      case "A5":
-        $("#registered-countries").text(content)
-      }
-    });
-  });
-</script>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-70770005-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
-</body>
-</html>
-
+<script src="{{ 'js/thirdparty/fontawesome/fontawesome.min.js' | relative_url }}"></script>
+<script src="{{ 'js/thirdparty/fontawesome/solid.min.js' | relative_url }}"></script>

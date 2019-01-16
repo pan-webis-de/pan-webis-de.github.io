@@ -1,407 +1,279 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+---
+layout: default
+nav_active: tasks
+title: PAN @ CLEF 2019 - Style Change Detection
+description: PAN @ CLEF 2019 - Style Change Detection
+---
 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<main>
+    <header class="uk-section uk-section-muted">
+        <nav class="uk-container">
+            <div class="uk-align-right uk-visible@m uk-text-muted">
+                <a class="uk-button" href="{{ 'clef18/pan18-web/author-identification.html' | relative_url }}" data-uk-icon="chevron-left"></a>
+                CLEF 2019
+                <a class="uk-button uk-disabled uk-padding-remove-right" href="#"
+                   data-uk-icon="chevron-right"></a>
+            </div>
 
-    <title>PAN 2019</title>
+            <ul class="uk-text-muted uk-tab uk-margin-remove-top">
+                <li><a href="{{ '/clef19/pan19-web/index.html' | relative_url }}">Overview</a></li>
+                <li><a href="{{ '/clef19/pan19-web/submission.html' | relative_url }}">Submission</a></li>
+                <li class="uk-active">
+                    <a href="#">Tasks <span class="uk-margin-small-left" data-uk-icon="icon: chevron-down"></span></a>
+                    <div class="uk-dropdown" data-uk-dropdown="mode: click">
+                        <ul class="uk-nav uk-dropdown-nav">
+                            <li><a href="{{ '/clef19/pan19-web/author-profiling.html' | relative_url }}">Bots and Gender Profiling</a></li>
+                            <li><a href="{{ '/clef19/pan19-web/celebrity-profiling.html' | relative_url }}">Celebrity Profiling</a></li>
+                            <li><a href="{{ '/clef19/pan19-web/author-identification.html' | relative_url }}">Cross-domain Authorship Attribution</a></li>
+                            <li class="uk-active"><a href="{{ '/clef19/pan19-web/style-change-detection.html' | relative_url }}">Style Change Detection</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="{{ '/clef19/pan19-web/program.html' | relative_url }}">Program</a></li>
+                <li><a href="{{ '/clef19/pan19-web/proceedings.html' | relative_url }}">Proceedings</a></li>
+            </ul>
+        </nav>
 
-    <link href="../../css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="../../css/prettify.css" rel="stylesheet"/>
+        <div class="uk-container uk-margin-small">
+            {% include current-register-quicklink.html year=2019 %}
 
-    <style>
-        .navbar .navbar-nav {
-            font-weight: bold;
-        }
-    </style>
+            <h1 class="uk-margin-small">Style Change Detection</h1>
+            <div class="page-header-meta">CLEF @ PAN 2019</div>
+        </div>
+    </header>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="../../js/html5shiv.js"></script>
-    <script src="../../js/respond.min.js"></script>
-    <![endif]-->
+    <div class="uk-section">
+        <div class="uk-container uk-column-1-2@l uk-text-justify">
+            <h2>Introduction</h2>
+            <p>Many approaches have been proposed recently to identify <i>the</i> author of a given document. Thereby, one fact
+                is often silently assumed: i.e., that the given document is indeed written by only author.
+                For a realistic author identification system it is therefore crucial to at first determine whether a document
+                is single- or multiauthored.</p>
+            <p>To this end, previous PAN editions aimed to analyze multi-authored documents. As it has been shown that it is a
+                hard problem to reliably identify individual authors and their contribution within a single document (<a
+                        href="../../clef16/pan16-web/author-identification.html">Author Diarization, 2016</a>;
+                <a href="../../clef17/pan17-web/author-identification.html">Style Breach Detection, 2017</a>), last year's
+                task substantially relaxed the problem by asking only for binary decision (single- or multi-authored).
+                Considering the promising results achieved by the submitted approaches (see the
+                <a href="http://ceur-ws.org/Vol-2125/invited_paper_2.pdf">overview paper</a> for details), we continue last year's
+                task and additionally ask participants to predict the number of involved authors.</p>
 
-    <link rel="shortcut icon" href="../pan19-figures/pan-icon-16x16.ico">
-    <!--
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
-    -->
+            <p>Given a document, participants thus should apply intrinsic style analyses to hierarchically answer
+                the following questions:</p>
 
-</head>
-<body>
+            <ol>
+                <li>Is the document written by one or more authors, i.e., do style changes exist or not?</li>
+                <li>If it is multi-authored, how many authors have collaborated?</li>
+            </ol>
 
-<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="../../index.html"><img src="../pan19-figures/pan-logo-small-lightgrey.png"
-                                                             alt="PAN" style="margin-top:-5px"></a>
-    </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="../../index.html">Home</a></li>
-            <li><a href="index.html">PAN @ CLEF 2019:</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="proceedings.html">Proceedings</a></li>
-            <li class="dropdown active">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                   aria-expanded="false">Tasks <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="author-profiling.html">Bots and Gender Profiling</a></li>
-                    <li><a href="celebrity-profiling.html">Celebrity Profiling</a></li>
-                    <li><a href="author-identification.html">Cross-domain Authorship Attribution</a></li>
-                    <li class="active"><a href="style-change-detection.html">Style Change Detection</a></li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-</nav>
+            <p>The following figure illustrates some possible scenarios and the expected output:</p>
+            <img src="../pan19-figures/style-change-detection-19-example.png"/>
 
-<div class="container">
+            <p>Note that it is irrelevant to identify the number of style changes or the specific positions where the authorships change.</p>
 
-    <div class="row">
-        <div class="col-xs-12">
-            <h1 id="task-description" class="page-header">
-                Style Change Detection
-                <div class="btn-group">
-                    <a role="button" class="btn btn-default"
-                       href="../../clef18/pan18-web/author-identification.html"><span
-                            class="glyphicon glyphicon-chevron-left" style="color:grey;"></span></a>
-                    <span role="button" class="btn btn-default" disabled="disabled">2019</span>
-                    <span role="button" class="btn btn-default" disabled="disabled"><span
-                            class="glyphicon glyphicon-chevron-right" style="color:grey;"></span></span>
-                </div>
-            </h1>
-            <!--
-            <div class="thumbnail pull-right" style="text-align:right;margin-left:15px;"><a href="http://www.adobe.com/" target="_blank"><img src="../pan18-figures/logo-adobe.png" alt="Adobe" style="max-height:150px"></a><div style="font-size:7pt;margin-right:13px;margin-top:2px;">Sponsor</div></div>
-            -->
-            <ul class="nav nav-pills visible-xs">
-                <li><a href="#author-clustering" class="btn btn-large"><span
-                        class="glyphicon glyphicon-chevron-down"></span> Author Clustering</a></li>
-                <li><a href="#author-diarization" class="btn btn-large"><span
-                        class="glyphicon glyphicon-chevron-down"></span> Style Breach Detection</a></li>
+            <h2>Task</h2>
+            <p>Given a document, determine whether it contains style changes or not, i.e., if it was written by
+                a single or multiple authors. If it is written by more than one author, determine the number of involved collaborators.</p>
+            <p>All documents are provided in English and may contain zero up to arbitrarily many style
+                changes, resulting from arbitrarily many authors.</p>
+
+            <h2>Development Phase</h2>
+            <p>To develop your algorithms, a data set including corresponding solutions is provided (<i>download will be available soon)</i>:</p>
+            <ul class="uk-list uk-list-bullet">
+                <li>a <strong>training</strong> set: contains 50% of the whole dataset and includes solutions.
+                    Use this set to feed/train your models.
+                </li>
+                <li>a <strong>validation</strong> set: contains 25% of the whole dataset and includes solutions.
+                    Use this set to evaluate and optimize your models.
+                </li>
+                <li>a <strong>test</strong> set: contains 25% of the whole dataset and does not include
+                    solutions. This set is used for evaluation (see later).
+                </li>
+            </ul>
+
+            <p>Like last year, the whole data set is based on user posts from various sites of the
+                <a href="https://stackexchange.com">StackExchange network</a>, covering different topics and
+                containing approximately 300 to 2000 tokens per document.</p>
+
+            <!--<ul class="uk-list list-inline">
+                <li>
+                    <a class="uk-button uk-button-primary" target="_blank"
+                       href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-18/pan18-data/pan18-style-change-detection-training-dataset-2018-01-31.zip">Download
+                        training set</a>
+                </li>
+                <li>
+                    <a class="uk-button uk-button-primary" target="_blank"
+                       href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-18/pan18-data/pan18-style-change-detection-validation-dataset-2018-01-31.zip">Download
+                        validation set</a>
+                </li>
+                <li>
+                    <a class="uk-button uk-button-primary" target="_blank"
+                       href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-18/pan18-data/pan18-style-change-detection-test-dataset-2018-01-31.zip">Download
+                        test set</a>
+                </li>
+            </ul>-->
+
+            <p>For each problem instance X, two files are provided:
+            <ul class="uk-list uk-list-bullet">
+                <li><code>problem-X.txt</code> contains the actual text</li>
+                <li><code>problem-X.truth</code> contains the ground truth, i.e., the correct solution in
+                    <a href="http://www.json.org/">JSON</a> format:
+                    <pre class="prettyprint"><code class="lang-json">{
+    "authors": number_of_authors,
+    "structure": [author_segment_1, ..., author_segment_3],
+    "switches": [
+        character_pos_switch_segment_1, ...,
+        character_pos_switch_segment_n,
+    ]
+}</code></pre></li></ul>
+
+            <p>An example for a multi-author document could look as follows:</p>
+            <pre class="prettyprint"><code class="lang-json">{
+	"authors": 4,
+	"structure": ["A1", "A2", "A4", "A2", "A4", "A2", "A3", "A2", "A4"],
+	"switches": [805, 1552, 2827, 3584, 4340, 5489, 7564, 8714]
+}</code></pre>
+
+            whereas a single-author document would have exactly the following form:</p>
+            <pre class="prettyprint"><code class="lang-json">{
+	"authors": 1,
+	"structure": ["A1"],
+	"switches": []
+}</code></pre>
+
+            <p>Note that the <i>structure</i> as well as the <i>switches</i> are provided only as additional resources for the development of your algorithms, i.e., they are <strong>not expected to be predicted</strong>.</p>
+
+
+            <p>To tackle the problem, you can develop novel approaches, extend existing algorithms from last year's task or
+                adapt approaches from related problems such as <b>intrinsic plagiarism detection</b> or <b>text segmentation</b>.
+                You are also free to additionally evaluate your approaches on last year's training/validation/test dataset
+                (for the number of authors use the corresponding meta data).</p>
+
+            <h2>Evaluation Phase</h2>
+            <p>Once you finished tuning your approach to achieve satisfying performance on the training corpus,
+                your software will be tested on the evaluation corpus (test data set). You can expect the test data
+                set to be similar to the validation data set, i.e., also based on StackExchange user posts and of
+                similar size as the validation set. During the competition, the evaluation corpus will not be
+                released publicly. Instead, we ask you to <strong>submit your software</strong> for evaluation at
+                our site as described below.</p>
+            <p>After the competition, the evaluation corpus will become available including ground truth data.
+                This way, you have all the necessities to evaluate your approach on your own, yet being comparable
+                to those who took part in the competition.</p>
+
+            <h2>Output</h2>
+            <p>In general, the data structure during the evaluation phase will be similar to that in the
+                training phase, with the exception that the ground truth files are missing.</p>
+
+            <p>For each given problem
+                <code>problem-X.txt</code> your software should output the missing solution file
+                <code>problem-X.truth</code>, containing a JSON object with <strong>a single property</strong>:</p>
+
+            <pre class="prettyprint"><code class="lang-json">{
+    "authors": number_of_authors
+}</code></pre>
+
+            <h2>Performance Measures</h2>
+            <p>The performance of the submitted approaches will be ranked by a combined measure incorporating both the
+                accuracy of distinguishing single- from multi-author documents and the correctness of the predicted number of authors:</p>
+            <ul>
+                <li><strong>accuracy</strong> will measure the performance of correctly separating single-author (1 author) from multi-author (> 1 author) documents</li>
+                <li>The <strong>Ordinal Classification Index (OCI)</strong> will be used to measure the error of predicting the number of authors <strong>for multi-author documents</strong> (i.e., only for multi-author documents and not for single-author documents). OCI has been proposed by Cardoso and Sousa in their paper <i>Measuring the performance of ordinal classification</i>. It is computed directly from the confusion matrix and yields a value between 0 and 1, being 0 the best value (perfect prediction).</li>
+                <li>The <strong>final ranking</strong> is finally computed as the average of the classification accuracy and the (inverted) OCI score:
+                    $$ \text{rank} = {\text{accuracy} + (1-\text{OCI}) \over {2}} $$
+                    <i>A reference implementation will be provided soon.</i>
+                </li>
+            </ul>
+
+
+
+
+            <h2>Submission
+                <span class="uk-text-lead">
+                        [<a href="{{ '/clef19/pan19-web/submission.html' | relative_url }}">Submit software to PAN</a>]
+                    </span>
+            </h2>
+            <p>We ask you to prepare your software so that it can be executed via command line calls. The
+                command shall take as input (i) an absolute path to the directory of the evaluation corpus and
+                (ii) an absolute path to an empty output directory:</p>
+            <pre class="prettyprint"><code class="lang-bash">mySoftware -i EVALUATION-DIRECTORY -o OUTPUT-DIRECTORY</code></pre>
+
+            <p>Within <code>EVALUATION-DIRECTORY</code>, you will find a list of problem instances, i.e., <code>[filename].txt</code> files.
+                For each problem instance you should produce the solution file <code>[filename].truth</code> in
+                the <code>OUTPUT-DIRECTORY</code> For instance, you read <code>EVALUATION-DIRECTORY/problem-12.txt</code>,
+                process it and write your results to <code>OUTPUT-DIRECTORY/problem-12.truth</code>.</p>
+
+            <p>In general, this task follows PAN's software submission strategy described <a
+                    href="{{ '/clef19/pan19-web/submission.html' | relative_url }}">here</a>.</p>
+
+            <p><strong>Note:</strong> By submitting your software you retain full copyrights. You agree to grant
+                us usage rights only for the purpose of the PAN competition. We agree not to share your software
+                with a third party or use it for other purposes than the PAN competition.</p>
+
+            <h2>Related Work</h2>
+            <p>We refer you to:</p>
+            <ul>
+                <li>
+                    <a href="../../clef18/pan18-web/proceedings.html">PAN@CLEF'18</a> (<i>Overview of the Author
+                    Identification Task at PAN-2018: Cross-domain Authorship Attribution and Style Change Detection</i>)
+                </li>
+                <li>
+                    <a href="../../clef17/pan17-web/proceedings.html">PAN@CLEF'17</a> (<i>Overview of the Author
+                    Identification Task at PAN-2017</i> and <i>Style Breach Detection</i> section)
+                </li>
+                <li>
+                    <a href="../../clef16/pan16-web/proceedings.html">PAN@CLEF'16</a> (<i>Clustering by
+                    Authorship Within and Across Documents</i> and <i>Author Diarization</i> section)
+                </li>
+                <li>J. Cardoso and R. Sousa. Measuring the performance of ordinal classification. International Journal of Pattern Recognition and Artificial Intelligence 25.08, pp. 1173-1195, 2011</li>
+                <!--<li>Marti A. Hearst. <a href="http://anthology.aclweb.org/J/J97/J97-1003.pdf">TextTiling:
+                    Segmenting Text into Multi-paragraph Subtopic Passages.</a>. In Computational Linguistics,
+                    Volume 23, Issue 1, pages 33-64, 1997.
+                </li>-->
+                <li>Benno Stein, Nedim Lipka and Peter Prettenhofer. <a
+                        href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2011a.pdf">Intrinsic
+                    Plagiarism Analysis</a>. In Language Resources and Evaluation, Volume 45, Issue 1, pages
+                    63–82, 2011.
+                </li>
+                <!--<li>
+                    Patrick Juola. <a href="http://portal.acm.org/citation.cfm?id=1373451">Authorship
+                    Attribution</a>. In Foundations and Trends in Information Retrieval, Volume 1, Issue 3,
+                    March 2008.
+                </li>-->
+                <li>
+                    Efstathios Stamatatos. <a href="http://onlinelibrary.wiley.com/doi/10.1002/asi.21001/full">A
+                    Survey of Modern Authorship Attribution Methods</a>.
+                    Journal of the American Society for Information Science and Technology, Volume 60, Issue 3,
+                    pages 538-556, March 2009.
+                </li>
             </ul>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-sm-12">
-            <div id="flavour-text-style-change-detection">
-                <p>Many approaches have been proposed recently to identify <i>the</i> author of a given document. Thereby, one fact is often silently assumed: i.e., that the given document is indeed written by only author.
-                    For a realistic author identification system it is therefore crucial to at first determine whether a document is single- or multiauthored.
-                </p>
-                <p>To this end, previous PAN editions aimed to analyze multi-authored documents. As it has been shown that it is a hard problem to reliably identify individual authors and their contribtuion within a single document (<a
-                        href="../../clef16/pan16-web/author-identification.html">Author Diarization, 2016</a>; <a href="../../clef17/pan17-web/author-identification.html">Style Breach Detection, 2017</a>), last year's task substantially relaxed the problem by asking only for binary decision (single- or multi-authored). Considering the promising results achieved by the submitted approaches (see the <a href="../../clef18/pan18-web/proceedings.html">overview paper</a> for details), we continue last year's task and additionally ask participants to predict the number of involved authors.</p>
-
-                <p>Given a document, participants thus should apply intrinsic style analyses to hierarchically answer the following questions:
-                    <ol>
-                        <li>Is the document written by one or more authors, i.e., do style changes exist or not?</li>
-                        <li>If it is multi-authored, how many authors have collaborated?</li>
-                </ol>
-
-                <p>
-                    The following figure illustrates some possible scenarios and the expected output:</p>
-                <p align="center" style="margin: 30px 0"><img class="img-responsive" src="../pan19-figures/style-change-detection-19-example.png"/></p>
-
-                <p>Note that it is irrelevant to identify the number of style changes or the specific positions where the authorships change.</p>
-
+    <!-- Footer -->
+    <footer class="uk-section uk-section-muted">
+        <div class="uk-container">
+            <h2>Task Chair</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/tschuggnall.html %}
             </div>
-
-                        <div class="panel panel-default">
-
-                            <div class="panel-heading">Task</div>
-                            <div class="panel-body">
-                                <p>Given a document, determine whether it contains style changes or not, i.e., if it was written by
-                                    a single or multiple authors. If it is written by more than one author, determine the number of involved collaborators.</p>
-                                <p>All documents are provided in English and may contain zero up to arbitrarily many style
-                                    changes, resulting from arbitrarily many authors.</p>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">Development Phase</div>
-                            <div class="panel-body">
-                                <p>To develop your algorithms, a data set including corresponding solutions is provided.</p>
-                                <p><i>Details will be announced soon.</i></p>
-                                <!--<p>To develop your algorithms, a data set including corresponding solutions is provided:</p>
-                                <ul>
-                                    <li>a <strong>training</strong> set: contains 50% of the whole dataset and includes solutions.
-                                        Use this set to feed/train your models.
-                                    </li>
-                                    <li>a <strong>validation</strong> set: contains 25% of the whole dataset and includes solutions.
-                                        Use this set to evaluate and optimize your models.
-                                    </li>
-                                    <li>a <strong>test</strong> set: contains 25% of the whole dataset and does not include
-                                        solutions. This set is used for evaluation (see later).
-                                    </li>
-                                </ul>
-                                <p>The whole data set is based on user posts from various sites of the <a
-                                        href="https://stackexchange.com">StackExchange network</a>, covering different topics and
-                                    containing approximately 300 to 1000 tokens per document. Moreover and for your convenience,
-                                    within the training/validation data set the exact locations of all style changes are provided,
-                                    as they may be helpful to develop your algorithms.</p>-->
-
-                                <p>To tackle the problem, you can develop novel approaches, extend existing algorithms from last year's task or adapt approaches from related problems such as <b>intrinsic plagiarism detection</b> or <b>text segmentation</b>. You are also free to additionally evaluate your approaches on last year's training/validation/test dataset (for the number of authors use the corresponding meta data).</p>
-
-                                <!--<p><a class="btn btn-default" target="_blank"
-                                      href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-18/pan18-data/pan18-style-change-detection-training-dataset-2018-01-31.zip">Download
-                                    training set</a></p>
-                                <p><a class="btn btn-default" target="_blank"
-                                      href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-18/pan18-data/pan18-style-change-detection-validation-dataset-2018-01-31.zip">Download
-                                    validation set</a></p>
-                                <p><a class="btn btn-default" target="_blank"
-                                      href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-18/pan18-data/pan18-style-change-detection-test-dataset-2018-01-31.zip">Download
-                                    test set</a></p>
-
-                                <p>Additionally, we provide detailed meta data about each problem of all data sets, including
-                                    topics/subtopics, author distributions or average segment lengths.</p>
-
-                                <p><a class="btn btn-default" target="_blank"
-                                      href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-18/pan18-data/pan18-style-change-detection-meta-data-2018-06-21.zip">Download
-                                    meta data</a></p>
-
-                                <p style="margin-top: 30px">For each problem instance X, two files are provided:</p>
-                                <ul>
-                                    <li><code>problem-X.txt</code> contains the actual text</li>
-                                    <li><code>problem-X.truth</code> contains the ground truth, i.e., the correct solution in <a
-                                            href="http://www.json.org/">JSON</a> format:
-                                        <pre class="prettyprint lang-py" style="overflow-x:auto">
-            {
-                "changes": true/false,
-                "positions": [
-                    character_position_change_1,
-                    character_position_change_2,
-                    …
-                ]
-            }
-            </pre>
-
-                                        <p>
-                                            If present, the absolute character positions of the first non-whitespace character of
-                                            the new segment is provided in the solution (<code>positions</code>). Please note that
-                                            this information is only for development purposes and not used for the evaluation.</p>
-                                    </li>
-                                </ul>-->
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">Evaluation Phase</div>
-                            <div class="panel-body">
-                                Once you finished tuning your approach to achieve satisfying performance on the training corpus,
-                                your software will be tested on the evaluation corpus (test data set). You can expect the test data
-                                set to be similar to the validation data set, i.e., also based on StackExchange user posts and of
-                                similar size as the validation set. During the competition, the evaluation corpus will not be
-                                released publicly. Instead, we ask you to <strong>submit your software</strong> for evaluation at
-                                our site as described below.
-                                <br>After the competition, the evaluation corpus will become available including ground truth data.
-                                This way, you have all the necessities to evaluate your approach on your own, yet being comparable
-                                to those who took part in the competition.
-
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">Output</div>
-                            <div class="panel-body">
-                                <p>
-                                    In general, the data structure during the evaluation phase will be similar to that in the
-                                    training phase, with the exception that the ground truth files are missing.</p>
-                                <p><i>Details will be announced as soon as the dataset is ready.</i></p>
-                                    <p>
-                                    <!--Thus, for each given
-                                    problem <code>problem-X.txt</code> your software should output the missing solution file <code>problem-X.truth</code>.
-                                    The output should be a JSON object containing of a single property:
-                                <pre class="prettyprint lang-py" style="overflow-x:auto">
-            {
-                "changes": true/false
-            }
-            </pre>
-                                Output <code>"changes" : true</code> if there are style changes in the document, and <code>"changes"
-                                : false</code> otherwise.-->
-                                </p>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">Performance Measures</div>
-                            <div class="panel-body">
-                                <p>The performance of the submitted approaches will be ranked by a combined measure incorporating both the accuracy of distinguishing single- from multi-author documents and the correctness of the predicted number of authors.</p>
-                                <p><i>Details will be anounced soon.</i></p>
-                                <!--<p>For your convenience, we provide the evaluator script written in Python.</p>
-                                <p><a class="btn btn-default" href="../pan19-code/pan19_scd_evaluator.py">Download script</a></p>
-                                <p>It takes three parameters: an input directory (the data set), an inputRun directory (your
-                                    computed predictions) and an output directory where the results file is written to. In addition
-                                    to the <code>accuracy</code> achieved over the whole input directory, also an <code>accuracy_solved</code>
-                                    is computed that considers only solved problem instances (i.e., if you only solved two problem
-                                    instances and were correct both times, the <code>accuracy_solved</code> would be 100%). Please
-                                    note that this measure is only for developing purposes and that <code>accuracy</code> over all
-                                    items will be used for the final evaluation.</p>-->
-
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">Submission</div>
-                            <div class="panel-body">
-                                <p>We ask you to prepare your software so that it can be executed via command line calls. The
-                                    command shall take as input (i) an absolute path to the directory of the evaluation corpus and
-                                    (ii) an absolute path to an empty output directory:</p>
-                                <pre class="prettyprint lang-py" style="overflow-x:auto"> mySoftware -i EVALUATION-DIRECTORY -o OUTPUT-DIRECTORY
-            </pre>
-                                <p>Within <code>EVALUATION-DIRECTORY</code>, you will find a list of problem instances, i.e., <code>[filename].txt</code>
-                                    files.
-                                    For each problem instance you should produce the solution file <code>[filename].truth</code> in
-                                    the <code>OUTPUT-DIRECTORY</code> For instance, you read <code>EVALUATION-DIRECTORY/problem-12.txt</code>,
-                                    process it and write your results to <code>OUTPUT-DIRECTORY/problem-12.truth</code>.</p>
-
-                                <p>You can choose freely among the available programming languages and among the operating systems
-                                    Microsoft Windows and Ubuntu. We will ask you to deploy your software onto a virtual machine
-                                    that will be made accessible to you after registration. You will be able to reach the virtual
-                                    machine via ssh and via remote desktop. More information about how to access the virtual
-                                    machines can be found in the user guide below:</p>
-                                <p><a class="btn btn-default" href="../../clef15/pan15-web/pan15-virtual-machine-user-guide.pdf">PAN Virtual Machine User
-                                    Guide »</a></p>
-                                <p>Once deployed in your virtual machine, we ask you to access TIRA at <a href="http://www.tira.io">www.tira.io</a>,
-                                    where you can self-evaluate your software on the test data.</p>
-                                <p><strong>Note:</strong> By submitting your software you retain full copyrights. You agree to grant
-                                    us usage rights only for the purpose of the PAN competition. We agree not to share your software
-                                    with a third party or use it for other purposes than the PAN competition.</p>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">Related Work</div>
-                            <div class="panel-body">
-                                <p>We refer you to:</p>
-                                <ul>
-                                    <li>
-                                        <a href="../../clef18/pan18-web/proceedings.html">PAN@CLEF'18</a> (<i>Overview of the Author Identification Task at PAN-2018: Cross-domain Authorship Attribution and Style Change Detection</i>)
-                                    </li>
-                                    <li>
-                                        <a href="../../clef17/pan17-web/proceedings.html">PAN@CLEF'17</a> (<i>Overview of the Author
-                                        Identification Task at PAN-2017</i> and <i>Style Breach Detection</i> section)
-                                    </li>
-                                    <li>
-                                        <a href="../../clef16/pan16-web/proceedings.html">PAN@CLEF'16</a> (<i>Clustering by
-                                        Authorship Within and Across Documents</i> and <i>Author Diarization</i> section)
-                                    </li>
-                                    <!--<li>Marti A. Hearst. <a href="http://anthology.aclweb.org/J/J97/J97-1003.pdf">TextTiling:
-                                        Segmenting Text into Multi-paragraph Subtopic Passages.</a>. In Computational Linguistics,
-                                        Volume 23, Issue 1, pages 33-64, 1997.
-                                    </li>-->
-                                    <li>Benno Stein, Nedim Lipka and Peter Prettenhofer. <a
-                                            href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2011a.pdf">Intrinsic
-                                        Plagiarism Analysis</a>. In Language Resources and Evaluation, Volume 45, Issue 1, pages
-                                        63–82, 2011.
-                                    </li>
-                                    <!--<li>
-                                        Patrick Juola. <a href="http://portal.acm.org/citation.cfm?id=1373451">Authorship
-                                        Attribution</a>. In Foundations and Trends in Information Retrieval, Volume 1, Issue 3,
-                                        March 2008.
-                                    </li>-->
-                                    <li>
-                                        Efstathios Stamatatos. <a href="http://onlinelibrary.wiley.com/doi/10.1002/asi.21001/full">A
-                                        Survey of Modern Authorship Attribution Methods</a>.
-                                        Journal of the American Society for Information Science and Technology, Volume 60, Issue 3,
-                                        pages 538-556, March 2009.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-
-
-            <div id="task-committee-stylebreachdetection" class="row">
-                <div class="col-xs-12">
-                    <h2 class="page-header">Task Chair</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-3">
-                    <div class="thumbnail" style="text-align:center;">
-                        <a href="http://dbis-informatik.uibk.ac.at/1-1-Home.html" target="_blank"><img
-                                src="../pan19-figures/michael.png" class="img-rounded" alt="Michael Tschuggnall"></a>
-                        <p><a href="http://dbis-informatik.uibk.ac.at/1-1-Home.html" target="_blank">Michael
-                            Tschuggnall</a></p>
-                        <p style="font-size:10pt">University of Innsbruck</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12">
-                    <h2>Task Committee</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-3">
-                    <div class="thumbnail" style="text-align:center;">
-                        <a href="http://dbis-informatik.uibk.ac.at/1-1-Home.html" target="_blank"><img
-                                src="../pan19-figures/guenther.jpg" class="img-rounded" alt="G&uuml;nther Specht"></a>
-                        <p><a href="http://dbis-informatik.uibk.ac.at/1-1-Home.html" target="_blank">G&uuml;nther
-                            Specht</a></p>
-                        <p style="font-size:10pt">University of Innsbruck</p>
-                    </div>
-                </div>
-                <div class="col-xs-3">
-                    <div class="thumbnail" style="text-align:center;">
-                        <a href="https://www.uni-weimar.de/medien/webis/people" target="_blank"><img
-                                src="../pan19-figures/martin.jpg" class="img-rounded" alt="Martin Potthast"></a>
-                        <p style="white-space:nowrap"><a href="https://www.uni-weimar.de/medien/webis/people"
-                                                         target="_blank">Martin Potthast</a></p>
-                        <p style="font-size:10pt">Bauhaus-Universit&auml;t Weimar</p>
-                    </div>
-                </div>
-                <div class="col-xs-3">
-                    <div class="thumbnail" style="text-align:center;">
-                        <a href="http://www.webis.de" target="_blank"><img src="../pan19-figures/benno.jpg"
-                                                                           class="img-rounded" alt="Benno Stein"></a>
-                        <p style="white-space:nowrap"><a href="http://www.webis.de" target="_blank">Benno Stein</a></p>
-                        <p style="font-size:10pt">Bauhaus-Universit&auml;t Weimar</p>
-                    </div>
-                </div>
+            <h2>Task Committee</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/specht.html %}
+                {% include people-cards/potthast.html %}
+                {% include people-cards/stein.html %}
             </div>
         </div>
-    </div>
-
-    <footer>
-        <p class="pull-right">© pan.webis.de</p>
+        <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+            {% include organizations/clef-organizations-section.html year=2019 %}
+        </div>
     </footer>
+</main>
 
-</div> <!-- /container -->
-
-<script src="../../js/jquery.js"></script>
-<script src="../../js/bootstrap.min.js"></script>
-<script src="../../js/prettify.js"></script>
-<script>
-    !function ($) {
-        $(function () {
-            window.prettyPrint && prettyPrint()
-        })
-    }(window.jQuery)
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
 </script>
+<script src="{{ 'js/thirdparty/fontawesome/fontawesome.min.js' | relative_url }}"></script>
+<script src="{{ 'js/thirdparty/fontawesome/solid.min.js' | relative_url }}"></script>
 
-<script>
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', 'UA-70770005-1', 'auto');
-    ga('send', 'pageview');
-
-</script>
-
-</body>
-</html>
-
+</main>

@@ -1,0 +1,303 @@
+// Main style definitions
+
+// Fix for jumpy scroll position (see https://github.com/uikit/uikit/issues/1379)
+body {
+    overflow: hidden;
+    overflow-x: auto;
+}
+
+html {
+    overflow-y: auto;
+}
+
+em {
+    color: $global-emphasis-color;
+}
+
+iframe {
+    max-width: 100%;
+}
+
+:not(pre) > code {
+    white-space: normal;
+}
+
+.list-inline li {
+    display: inline-block;
+}
+
+.background-secondary-lighter {
+    background-color: $global-secondary-background-lighter;
+}
+
+.background-muted-darker {
+    background-color: darken($global-muted-background, 5);
+}
+
+.background-muted-striped {
+    &:nth-child(2n + 1) {
+        background-color: $global-muted-background;
+    }
+
+    &:nth-child(2n) {
+        background-color: darken($global-muted-background, 5);
+    }
+}
+
+svg.text-logo text {
+    width: 100%;
+}
+
+.thumbnail-card-grid {
+    & > * {
+        width: 100%;
+        box-sizing: border-box;
+        hyphens: none;
+
+        @media (min-width: $breakpoint-medium) {
+            width: 50%;
+        }
+        @media (min-width: $breakpoint-large) {
+            width: 25%;
+        }
+    }
+
+    .uk-card {
+        padding: $padding-small-padding;
+    }
+
+    .thumbnail-left {
+        margin: -$padding-small-padding;
+        margin-right: $padding-small-padding;
+        float: left;
+        height: calc(100% + #{2 * $padding-small-padding});
+
+        img, svg {
+            height: 100%;
+            min-height: 145px;
+            width: 110px;
+            object-fit: cover;
+        }
+    }
+
+    .thumbnail-top {
+        text-align: center;
+        margin-bottom: $padding-small-padding;
+        height: 140px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        img, svg {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+}
+
+.vertical-divider-left {
+     margin-left: 1rem;
+     padding-left: 1rem;
+     border-left: $global-border-width solid lighten($global-muted-color, 23);
+ }
+
+.page-header-meta {
+    color: $global-muted-color;
+    font-size: 1.1rem;
+}
+
+.global-nav {
+    border-bottom: 1px solid lighten($global-secondary-background, 25);
+
+    .uk-logo {
+        height: 1.9rem;
+        padding-right: 20px;
+    }
+
+    .uk-navbar-nav li:first-child > a {
+        padding-left: 0;
+    }
+
+    .uk-navbar-nav li:last-child > a {
+        padding-right: 0;
+    }
+}
+
+.page-sub-nav {
+    display: inline-block;
+    margin-left: 1rem;
+
+    & > li {
+        display: inline-block;
+
+        &:not(:first-child) {
+            @extend .vertical-divider-left;
+        }
+    }
+
+    a {
+        color: $global-muted-color;
+    }
+}
+
+.uk-navbar-nav {
+    & > li > a {
+        .uk-light & {
+            color: rgba(255, 255, 255, .75);
+
+            &:hover, &:focus, &.uk-open[aria-expanded] {
+                color: #fff;
+            }
+        }
+    }
+
+    & > .nav-group-start {
+        padding-left: 2.3 * $navbar-nav-item-padding-horizontal;
+    }
+
+    & > .uk-active > a {
+        color: #fff;
+    }
+
+    & > li [data-uk-icon] {
+        color: rgba(255, 255, 255, .9);
+        margin-left: 3px;
+        margin-right: -5px;
+    }
+}
+
+.uk-navbar-dropdown {
+    background-color: $global-muted-background;
+
+    a {
+        font-size: 1rem;
+    }
+
+    a:hover, a:focus {
+        text-decoration: underline;
+    }
+}
+
+.uk-navbar-dropdown-grid div:first-child ul {
+    padding-left: 2 * $padding-small-padding;
+}
+
+.nav-left-open-category {
+    background-color: $global-background;
+    padding: $list-margin-top $padding-small-padding $list-margin-top 2 * $padding-small-padding;
+    margin-left: -$padding-small-padding * 2;
+    margin-right: -$padding-small-padding * 2;
+    border: 1px solid $global-border;
+    z-index: 1000;
+    position: relative;
+    border-left: none;
+    border-right: 0;
+    font-size: 1rem;
+
+    &:after /*, &:before */
+    {
+        content: " ";
+        display: block;
+        height: 0;
+        width: 0;
+        border-left: floor(($global-line-height * 16px + $list-margin-top) / 2) + 1 solid $global-background;
+        border-top: floor(($global-line-height * 16px + $list-margin-top) / 2) + 1 solid transparent;
+        border-bottom: floor(($global-line-height * 16px + $list-margin-top) / 2) + 1 solid transparent;
+        position: absolute;
+        top: 0;
+        right: -($padding-small-padding) - 1;
+    }
+
+    // comment in for triangle in navigation
+    //&:before {
+    //    border-left: floor(($global-line-height * 16px + $list-margin-top) / 2) + 2 solid $global-border;
+    //    border-top: floor(($global-line-height * 16px + $list-margin-top) / 2) + 2 solid transparent;
+    //    border-bottom: floor(($global-line-height * 16px + $list-margin-top) / 2) + 2 solid transparent;
+    //    top: -1px;
+    //    right: -($padding-small-padding) - 2;
+    //}
+}
+
+.nav-right-open-sub {
+    background-color: $global-background;
+    margin-left: -$padding-small-padding;
+    padding-left: 2 * $padding-small-padding;
+}
+
+.uk-offcanvas-bar .uk-nav-primary > li {
+    .uk-nav-sub li {
+        font-size: 1.1rem;
+    }
+}
+
+// Scroll fix for anchors
+a:target {
+    display: block;
+    position: relative;
+    top: -$navbar-nav-item-height;
+    visibility: hidden;
+}
+
+.uk-navbar-dropdown-nav > li > a {
+    color: $global-color;
+}
+
+[class*='uk-navbar-dropdown-bottom'] {
+    margin-top: 1px;
+}
+
+.section-header {
+    text-transform: $section-header-text-transform;
+}
+
+
+.footer-section {
+    margin-bottom: 0;
+    padding: $global-gutter 0;
+
+    @extend .uk-text-small;
+    @extend .uk-text-muted;
+
+    a {
+        @extend .uk-text-muted;
+    }
+
+    a:hover, a:focus {
+        text-decoration: underline;
+    }
+
+    .uk-nav a {
+        padding-top: 2px;
+    }
+}
+
+@media (max-width: $breakpoint-medium) {
+    .video-container {
+        margin-left: -$global-small-gutter;
+        margin-right: -$global-small-gutter;
+    }
+}
+
+@media (min-width: $breakpoint-medium) {
+    .footer-link-column {
+        max-width: 13rem;
+        min-width: 11rem;
+    }
+
+    .footer-link-column .uk-nav-header {
+        min-height: 3em;
+    }
+}
+
+@media (min-width: $breakpoint-large) {
+    .uk-margin-large-left\@l {
+        margin-left: $margin-large-margin !important;
+    }
+}
+
+@media (min-width: $breakpoint-xlarge) {
+    .uk-margin-large-left\@xl {
+        margin-left: $margin-large-margin !important;
+    }
+}

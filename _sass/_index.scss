@@ -1,0 +1,14 @@
+.page-index {
+    background: $global-secondary-background-lighter url("../img/pan-logo-index-page.png") no-repeat top right;
+
+    .footer-section, .footer-section a {
+        color: $inverse-global-color !important;
+        background: none;
+    }
+}
+
+.index-cover {
+    margin-top: 6vh;
+    margin-bottom: 8vh;
+    hyphens: none;
+}
