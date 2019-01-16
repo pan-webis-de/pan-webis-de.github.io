@@ -3,7 +3,7 @@ PR['registerLangHandler'](
         [
             [PR['PR_PUNCTUATION'], /^[|<>!\\]/, null, '|<>!\\'],
             [PR['PR_COMMENT'], /^#[^\r\n]*/, null, '#'],
-            ['lang-sh', /^\$\(([^)])\)/, null, '$'],
+            ['lang-cmd', /^\$\(([^)])\)/, null, '$'],
             [PR['PR_TAG'], /^\$(?:[\w_]+\b|{[^}]+})/, null, '$'],
         ],
         [
