@@ -184,7 +184,6 @@ description: PAN @ CLEF 2019 - Style Change Detection
                 <li>The <strong>Ordinal Classification Index (OCI)</strong> will be used to measure the error of predicting the number of authors <strong>for multi-author documents</strong> (i.e., only for multi-author documents and not for single-author documents). OCI has been proposed by Cardoso and Sousa in their paper <i>Measuring the performance of ordinal classification</i>. It is computed directly from the confusion matrix and yields a value between 0 and 1, being 0 the best value (perfect prediction).</li>
                 <li>The <strong>final ranking</strong> is finally computed as the average of the classification accuracy and the (inverted) OCI score:
                     $$ \text{rank} = {\text{accuracy} + (1-\text{OCI}) \over {2}} $$
-                    <i>A reference implementation will be provided soon.</i>
                 </li>
             </ul>
 
