@@ -53,6 +53,7 @@ svg.text-logo text {
         width: 100%;
         box-sizing: border-box;
         hyphens: none;
+        -webkit-hyphens: none;
 
         @media (min-width: $breakpoint-medium) {
             width: 50%;
