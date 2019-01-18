@@ -54,11 +54,10 @@ description: PAN @ CLEF 2019 - Cross-domain Authorship Attribution
             <p>Given a set of documents (known fanfics) by a small number (up to 10) of candidate authors, identify the authors of another set of documents (unknown fanfics) in another target domain. Each candidate author has contributed at least one of the unknown fanfics, which all belong to the same target fandom. Some of the fanfics in the target domain were not written by any of the candidate authors. The known fanfics belong to several fandoms (excluding the target fandom), although not necessarily the same for all candidate authors. An equal number of known fanfics per candidate author is provided. In contrast, the unknown fanfics are not equally distributed over the authors. The text-length of fanfics varies from 500 to 1,000 tokens. All documents are in the same language that may be <strong>English, French, Italian, or Spanish</strong>.</p>
 
     <div class="panel panel-default">
-      <div class="panel-heading">Development Phase</div>
+      <h2>Development Phase</h2>
       <div class="panel-body"><p>To develop your software, we provide you with a corpus with highly similar characteristics to the evaluation corpus. It comprises a set of cross-domain authorship attribution problems in each of the following 5 languages: English, French, Italian, Polish, and Spanish. Note that we specifically avoid to use the term 'training corpus' because <strong>the sets of candidate authors of the development and the evaluation corpora are not overlapping</strong>. Therefore, your approach should not be designed to particularly handle the candidate authors of the development corpus. </p>
 	  <p>Each problem consists of a set of known fanfics by each candidate author and a set of unknown fanfics located in separate folders. The file <code>problem-info.json</code> that can be found in the main folder of each problem, shows the name of folder of unknown documents and the list of names of candidate author folders. </p>
 	<pre class="prettyprint lang-py" style="overflow-x:auto">
-
 {
     "unknown-folder": "unknown",
     "candidate-authors": [
@@ -70,7 +69,6 @@ description: PAN @ CLEF 2019 - Cross-domain Authorship Attribution
 	</pre>
 	  <p>The fanfics of known authorship belong to several fandoms (excluding the target fandom). The file <code>fandom-info.json</code> (it can be found in the main folder of each problem) provides information about the fandom of all fanfics of known authorsihp, as follows. </p>
 	<pre class="prettyprint lang-py" style="overflow-x:auto">
-
 [
         { "author-name": "candidate00001",
 	  "known-text": "known00001.txt",
@@ -83,7 +81,6 @@ description: PAN @ CLEF 2019 - Cross-domain Authorship Attribution
 </pre>
 	<p>The true author of each unknown document can be seen in the file <code>ground-truth.json</code>, also found in the main folder of each problem. Note that all unknown documents that are not written by any of the candidate authors belong to the <code>&lt;UNK&gt;</code> class.</p>
 	<pre class="prettyprint lang-py" style="overflow-x:auto">
-
 {
     "ground_truth": [
         { "unknown-text": "unknown00001.txt",
@@ -112,7 +109,7 @@ description: PAN @ CLEF 2019 - Cross-domain Authorship Attribution
 </div> 
     </div>
     <div class="panel panel-default">
-      <div class="panel-heading">Baselines</div>
+      <h2>Baselines</h2>
       <div class="panel-body">
 	<p>We provide the implementation of baseline methods that can help you estimate the efficacy of your approach. It is also possible for you to start from a baseline method and attempt to improve it for that specific task. The following baselines are available:</p>
 	      <p>BASELINE-SVM: This is a language-independent authorship attribution approach based on a character 3-gram representation and a linear SVM classifier with a reject option. It estimates the probabilities of output classes and assigns an unknown document to the &lt;UNK&gt; class when the difference of the top two candidates is less than a threshold. </p>
@@ -121,14 +118,14 @@ description: PAN @ CLEF 2019 - Cross-domain Authorship Attribution
 	<p><a class="btn btn-default" target="_blank" href="../pan19-code/pan19-cdaa-baseline-compressor.py">Download BASELINE-COMPRESSOR</a> </p>
        </div></div>
     <div class="panel panel-default">
-      <div class="panel-heading">Evaluation Phase</div>
+      <h2>Evaluation Phase</h2>
       <div class="panel-body">Once you finished tuning your approach to achieve satisfying performance on the development corpus, your software will be tested on the evaluation corpus. During the competition, the evaluation corpus will not be released publicly. Instead, we ask you to <strong>submit your software</strong> for evaluation at our site as described below.
 <p>After the competition, the evaluation corpus will become available including ground truth data. This way, you have all the necessities to evaluate your approach on your own, yet being comparable to those who took part in the competition. </p>
-<p><a class="btn btn-default" target="_blank" href="">Download evaluation corpus</a> </p>
-	<p>This is a password-protected file (use the same password as for the development corpus). </p>
+<!-- <p><a class="btn btn-default" target="_blank" href="">Download evaluation corpus</a> </p>
+	<p>This is a password-protected file (use the same password as for the development corpus). </p> -->
 	    </div></div>
     <div class="panel panel-default">
-      <div class="panel-heading">Output</div>
+      <h2>Output</h2>
       <div class="panel-body">
 <p>Your system should produce one output file for each authorship attribution problem in <a href="http://www.json.org/">JSON</a>. The name of the output files should be <code>answers-PROBLEMNAME.json</code> (e.g., <code>answers-problem00001.json</code>, <code>answers-problem00002.json</code>) including the list of unknown documents and their predicted author:</p>
 
@@ -143,14 +140,14 @@ description: PAN @ CLEF 2019 - Cross-domain Authorship Attribution
 </pre>
 </div></div>
     <div class="panel panel-default">
-      <div class="panel-heading">Performance Measures</div>
+      <h2>Performance Measures</h2>
       <div class="panel-body">
 	  <p>The submissions will be evaluated in each attribution problem separately based on their <strong>open-set macro-averaged F1 score</strong> (calculated over the training classes, that is when &lt;UNK&gt; is excluded) <a href="https://link.springer.com/article/10.1007/s10994-016-5610-8">(Mendes et al. 2017)</a>. Participants will be ranked according to their average open-set macro-F1 across all attribution problems of the evaluation corpus. </p>
 	  <p>We provide you with a Python script that calculates macro-F1 for a collection of attribution problems:</p>
 	  <p><a class="btn btn-default" target="_blank" href="../pan19-code/pan19-cdaa-evaluator.py">Download evaluation script</a> </p>
 	</div></div>
 	  <div class="panel panel-default">
-      <div class="panel-heading">Submission</div>
+      <h2>Submission</h2>
       <div class="panel-body">
         <p>We ask you to prepare your software so that it can be executed via command line calls. The command shall take as input (i) an absolute path to the directory of the evaluation corpus and (ii) an absolute path to an existing empty output directory:</p>
 	<pre class="prettyprint lang-py" style="overflow-x:auto">
