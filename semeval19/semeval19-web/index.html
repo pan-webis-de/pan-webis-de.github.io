@@ -38,59 +38,64 @@ description: PAN @ SemEval 2019 - Hyperpartisan News Detection
     </div>
 
     <div class="uk-section uk-section-default">
-        <div class="uk-container uk-column-1-2@l uk-text-justify">
-            <h2>Task</h2>
-            <p>Given a news article text, decide whether it follows a
-                <a href="https://www.merriam-webster.com/dictionary/partisan" target="_blank">hyperpartisan</a>
-                argumentation, i.e., whether it exhibits blind, prejudiced, or unreasoning allegiance to one party, faction,
-                cause, or person.</p>
+        <div class="uk-container uk-text-justify">
+            <div class="uk-grid uk-child-width-1-2@l" data-uk-grid>
+                <div>
+                    <h2>Task</h2>
+                    <p>Given a news article text, decide whether it follows a
+                        <a href="https://www.merriam-webster.com/dictionary/partisan" target="_blank">hyperpartisan</a>
+                        argumentation, i.e., whether it exhibits blind, prejudiced, or unreasoning allegiance to one party, faction,
+                        cause, or person.</p>
 
-            <h2>Data</h2>
-            <p>Upon <a href="https://goo.gl/forms/cWtOVsjmRYfNkBnC3" target="_blank">registration</a>, we provide a two-part
-                <a href="https://zenodo.org/record/1489920" target="_blank">dataset</a> of articles for training your algorithm
-                (may take up to 24 hours). We continuously clean the dataset (also based on your feedback) and will send you new
-                versions as they come out.</p>
+                    <h2>Data</h2>
+                    <p>Upon <a href="https://goo.gl/forms/cWtOVsjmRYfNkBnC3" target="_blank">registration</a>, we provide a two-part
+                        <a href="https://zenodo.org/record/1489920" target="_blank">dataset</a> of articles for training your algorithm
+                        (may take up to 24 hours). We continuously clean the dataset (also based on your feedback) and will send you new
+                        versions as they come out.</p>
 
-            <h2>Registration</h2>
-            <p>Register yourself or your team <a href="https://goo.gl/forms/cWtOVsjmRYfNkBnC3" target="_blank">here</a>.
-                This task will use the
-                <a href="https://groups.google.com/forum/#!forum/pan-workshop-series" target="_blank">PAN mailing list</a>
-                for communication, so please sign up there to ask questions to us or other participants. If you have
-                specific requests, please write to the
-                <a href="mailto:semeval-pan-2019-organizers@googlegroups.com" target="_blank">organizer's mailing list</a>.</p>
+                    <h2>Registration</h2>
+                    <p>Register yourself or your team <a href="https://goo.gl/forms/cWtOVsjmRYfNkBnC3" target="_blank">here</a>.
+                        This task will use the
+                        <a href="https://groups.google.com/forum/#!forum/pan-workshop-series" target="_blank">PAN mailing list</a>
+                        for communication, so please sign up there to ask questions to us or other participants. If you have
+                        specific requests, please write to the
+                        <a href="mailto:semeval-pan-2019-organizers@googlegroups.com" target="_blank">organizer's mailing list</a>.</p>
 
-            <h2>Submission</h2>
-            <p>When you registered, you will get remote access to a virtual machine (Windows or Linux) to deploy the task
-                software in. Your software must be executable from the command line and not require Internet access during
-                the evaluation period.</p>
-            <p>Note that you retain full copyrights of your software, but agree to grant us usage rights only for the
-                purpose of the competition.</p>
-            <p>We provide a <a target="_blank" href="../semeval19-code/semeval-pan-2019-random-baseline.py">random baseline</a>
-                to illustrate the output of a submission and a
-                <a target="_blank" href="../semeval19-code/semeval-pan-2019-tf-extractor.py">term frequency extractor</a>
-                to illustrate how to read the dataset. For features, see the
-                <a target="_blank" href="https://github.com/webis-de/ACL-18">code</a> from our
-                <a target="_blank" href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2018i.pdf">ACL'18
-                    publication</a> for inspiration.</p>
+                    <h2>Submission</h2>
+                    <p>When you registered, you will get remote access to a virtual machine (Windows or Linux) to deploy the task
+                        software in. Your software must be executable from the command line and not require Internet access during
+                        the evaluation period.</p>
+                    <p>Note that you retain full copyrights of your software, but agree to grant us usage rights only for the
+                        purpose of the competition.</p>
+                    <p>We provide a <a target="_blank" href="../semeval19-code/semeval-pan-2019-random-baseline.py">random baseline</a>
+                        to illustrate the output of a submission and a
+                        <a target="_blank" href="../semeval19-code/semeval-pan-2019-tf-extractor.py">term frequency extractor</a>
+                        to illustrate how to read the dataset. For features, see the
+                        <a target="_blank" href="https://github.com/webis-de/ACL-18">code</a> from our
+                        <a target="_blank" href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2018i.pdf">ACL'18
+                            publication</a> for inspiration.</p>
+                </div>
+                <div>
+                    <h2>Evaluation (13 Dec 2018, 23 Jan 2019 (both AoE))</h2>
+                    <p>You will self-evaluate your software using <a href="tira.html">TIRA</a>. Main performance measure will
+                        be accuracy on a balanced set of articles. In addition, we will measure precision, recall, and F1-score
+                        for the hyperpartisan class
+                        (<a target="_blank" href="../semeval19-code/semeval-pan-2019-evaluator.py">evaluation script</a>).</p>
+                    <p>You will be able to designate up to three test-data runs for this competition: one submitted before
+                        13&nbsp;Dec ("Early Bird") and two more submitted before 23&nbsp;Jan.</p>
+                    <p>After evaluation, participants are required to submit and review task description papers following the
+                        <a href="http://alt.qcri.org/semeval2019/" target="_blank">SemEval timeline</a>.</p>
+                    <p>Leaderboards:
+                        [<a href="https://www.tira.io/task/hyperpartisan-news-detection/dataset/pan19-hyperpartisan-news-detection-by-article-test-dataset-2018-12-07/" target="_blank">labels-by-article (main)</a>]
+                        [<a href="https://www.tira.io/task/hyperpartisan-news-detection/dataset/pan19-hyperpartisan-news-detection-by-publisher-test-dataset-2018-12-12/" target="_blank">labels-by-publisher</a>]</p>
 
-            <h2>Evaluation (13 Dec 2018, 23 Jan 2019 (both AoE))</h2>
-            <p>You will self-evaluate your software using <a href="tira.html">TIRA</a>. Main performance measure will
-                be accuracy on a balanced set of articles. In addition, we will measure precision, recall, and F1-score
-                for the hyperpartisan class
-                (<a target="_blank" href="../semeval19-code/semeval-pan-2019-evaluator.py">evaluation script</a>).</p>
-            <p>You will be able to designate up to three test-data runs for this competition: one submitted before
-                13&nbsp;Dec ("Early Bird") and two more submitted before 23&nbsp;Jan.</p>
-            <p>After evaluation, participants are required to submit and review task description papers following the
-                <a href="http://alt.qcri.org/semeval2019/" target="_blank">SemEval timeline</a>.</p>
-            <p>Leaderboards:
-                [<a href="https://www.tira.io/task/hyperpartisan-news-detection/dataset/pan19-hyperpartisan-news-detection-by-article-test-dataset-2018-12-07/" target="_blank">labels-by-article (main)</a>]
-                [<a href="https://www.tira.io/task/hyperpartisan-news-detection/dataset/pan19-hyperpartisan-news-detection-by-publisher-test-dataset-2018-12-12/" target="_blank">labels-by-publisher</a>]</p>
-
-            <h2>Grand Prize (Jun 2019)</h2>
-            <p>We want to encourage developers to share their software so that everyone can profit from their work. We
-                are thus excited to announce a <b>grand prize of $1,000</b> to the best-performing submission that ha
-                its code published open source before the SemEval conference (which is held at
-                <a href="https://naacl2019.org/" target="_blank">NAACL-HLT</a> on June 6-7 in Minneapolis, USA).</p>
+                    <h2>Grand Prize (Jun 2019)</h2>
+                    <p>We want to encourage developers to share their software so that everyone can profit from their work. We
+                        are thus excited to announce a <b>grand prize of $1,000</b> to the best-performing submission that ha
+                        its code published open source before the SemEval conference (which is held at
+                        <a href="https://naacl2019.org/" target="_blank">NAACL-HLT</a> on June 6-7 in Minneapolis, USA).</p>
+                </div>
+            </div>
         </div> <!-- /container -->
     </div>
 

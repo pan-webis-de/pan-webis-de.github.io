@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-# Evaluation script for the Cross-Domain Authorship Attribution task @PAN2018.
+# Evaluation script for the Cross-Domain Authorship Attribution task @PAN2019.
 We use the F1 metric (macro-average) as implemented in scikit-learn:
 http://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html
 We include the following ad hoc rules:
@@ -20,14 +20,14 @@ Dependencies:
 - scikit-learn
 
 Usage from the command line:
->>> python pan18-cdaa-evaluator.py -i COLLECTION -a ANSWERS -o OUTPUT
+>>> python pan19-cdaa-evaluator.py -i COLLECTION -a ANSWERS -o OUTPUT
 where
     COLLECTION is the path to the main folder of the evaluation collection
     ANSWERS is the path to the answers folder of a submitted method
     OUTPUT is the path to the folder where the results of the evaluation will be saved
 
 Example: 
->>> python pan18-cdaa-evaluator.py -i "/mydata/pan18-cdaa-development-corpus" -a "/mydata/pan18-answers" -o "/mydata/pan18-evaluation"
+>>> python pan19-cdaa-evaluator.py -i "/mydata/pan19-cdaa-development-corpus" -a "/mydata/pan19-answers" -o "/mydata/pan19-evaluation"
 
 # References:
 @article{scikit-learn,
@@ -103,22 +103,27 @@ def eval_measures(gt, pred):
     # get F1 for individual classes (and suppress warnings):
     with warnings.catch_warnings():
         warnings.simplefilter('ignore')
+        labels=list(set(gold_author_ints))
+        # Exclude the <UNK> class
+        for x in labels:
+            if encoder.inverse_transform(x)=='<UNK>':
+                labels.remove(x)
         f1 = f1_score(gold_author_ints,
                   silver_author_ints,
-                  labels=list(set(gold_author_ints)),
+                  labels,
                   average='macro')
         precision = precision_score(gold_author_ints,
                   silver_author_ints,
-                  labels=list(set(gold_author_ints)),
+                  labels,
                   average='macro')
         recall = recall_score(gold_author_ints,
                   silver_author_ints,
-                  labels=list(set(gold_author_ints)),
+                  labels,
                   average='macro')
         accuracy = accuracy_score(gold_author_ints,
                   silver_author_ints)
 
-    return f1,precision,recall,accuracy
+    return f1,precision,recall
 
 def evaluate(ground_truth_file,predictions_file):
     # Calculates evaluation measures for a single attribution problem
@@ -132,8 +137,8 @@ def evaluate(ground_truth_file,predictions_file):
         for attrib in json.load(f):
             if attrib['unknown-text'] not in pred:
                 pred[attrib['unknown-text']] = attrib['predicted-author']
-    f1,precision,recall,accuracy =  eval_measures(gt,pred)
-    return f1, precision, recall, accuracy
+    f1,precision,recall =  eval_measures(gt,pred)
+    return round(f1,3), round(precision,3), round(recall,3)
 
 def evaluate_all(path_collection,path_answers,path_out):
     # Calculates evaluation measures for a PAN-18 collection of attribution problems
@@ -145,9 +150,9 @@ def evaluate_all(path_collection,path_answers,path_out):
             problems.append(attrib['problem-name'])
     scores=[];
     for problem in problems:
-        f1,precision,recall,accuracy=evaluate(path_collection+os.sep+problem+os.sep+'ground-truth.json',path_answers+os.sep+'answers-'+problem+'.json')
+        f1,precision,recall=evaluate(path_collection+os.sep+problem+os.sep+'ground-truth.json',path_answers+os.sep+'answers-'+problem+'.json')
         scores.append(f1)
-        data.append({'problem-name': problem, 'macro-f1': round(f1,3), 'macro-precision': round(precision,3), 'macro-recall': round(recall,3), 'micro-accuracy': round(accuracy,3)})
+        data.append({'problem-name': problem, 'macro-f1': round(f1,3), 'macro-precision': round(precision,3), 'macro-recall': round(recall,3)})
         print(str(problem),'Macro-F1:',round(f1,3))
     overall_score=sum(scores)/len(scores)
     # Saving data to output files (out.json and evaluation.prototext)
@@ -159,7 +164,7 @@ def evaluate_all(path_collection,path_answers,path_out):
         f.write(prototext)
         
 def main():
-    parser = argparse.ArgumentParser(description='Evaluation script AA@PAN2018')
+    parser = argparse.ArgumentParser(description='Evaluation script AA@PAN2019')
     parser.add_argument('-i', type=str,
                         help='Path to evaluation collection')
     parser.add_argument('-a', type=str,
