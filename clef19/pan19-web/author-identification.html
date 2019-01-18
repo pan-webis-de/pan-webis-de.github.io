@@ -114,10 +114,12 @@ description: PAN @ CLEF 2019 - Cross-domain Authorship Attribution
       <h2>Baselines</h2>
       <div class="panel-body">
 	<p>We provide the implementation of baseline methods that can help you estimate the efficacy of your approach. It is also possible for you to start from a baseline method and attempt to improve it for that specific task. The following baselines are available:</p>
+	 <ul> <li>
 	      <p><strong>BASELINE-SVM</strong>: This is a language-independent authorship attribution approach based on a character 3-gram representation and a linear SVM classifier with a reject option. It estimates the probabilities of output classes and assigns an unknown document to the &lt;UNK&gt; class when the difference of the top two candidates is less than a threshold. </p>
-	<p><a class="btn btn-default" target="_blank" href="../pan19-code/pan19-cdaa-baseline-svm.py">Download BASELINE-SVM</a> </p>
-	      <p><strong>BASELINE-COMPRESSOR</strong>: Another language-independent approach that uses text compression to estimate the distance of an unknown document to each of the candidate authors. It assigns an unknown document to the &lt;UNK&gt; class when the difference between the two most likely candidates is lower than a threshold.</p>
-	<p><a class="btn btn-default" target="_blank" href="../pan19-code/pan19-cdaa-baseline-compressor.py">Download BASELINE-COMPRESSOR</a> </p>
+	<p><a class="btn btn-default" target="_blank" href="../pan19-code/pan19-cdaa-baseline-svm.py">Download BASELINE-SVM</a> </p>  </li>
+	  <li> <p><strong>BASELINE-COMPRESSOR</strong>: Another language-independent approach that uses text compression to estimate the distance of an unknown document to each of the candidate authors. It assigns an unknown document to the &lt;UNK&gt; class when the difference between the two most likely candidates is lower than a threshold.</p>
+	<p><a class="btn btn-default" target="_blank" href="../pan19-code/pan19-cdaa-baseline-compressor.py">Download BASELINE-COMPRESSOR</a> </p> </li>
+	</ul>
        </div></div>
     <div class="panel panel-default">
       <h2>Evaluation Phase</h2>
