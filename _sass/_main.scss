@@ -8,6 +8,11 @@ body {
 
 html {
     overflow-y: auto;
+
+    @media(-webkit-min-device-pixel-ratio: 2.0), (min-resolution: 192dpi) {
+        font-size: $global-hidpi-font-size;
+        line-height: $global-hidpi-line-height;
+    }
 }
 
 em {
