@@ -239,6 +239,11 @@ svg.text-logo text {
     padding-left: 2 * $padding-small-padding;
 }
 
+.desktop-nav {
+    // made visible by media query later
+    display: none;
+}
+
 .uk-offcanvas-bar .uk-nav-primary > li {
     .uk-nav-sub li {
         font-size: 1.1rem;
@@ -301,6 +306,14 @@ a:target {
 
     .footer-link-column .uk-nav-header {
         min-height: 3em;
+    }
+
+    .mobile-nav {
+        display: none;
+    }
+
+    .desktop-nav {
+        display: block;
     }
 }
 
