@@ -23,6 +23,14 @@ iframe {
     max-width: 100%;
 }
 
+.uk-tab {
+    line-height: $text-meta-line-height;
+
+    &:before {
+        bottom: 1px;    // small offset fix
+    }
+}
+
 :not(pre) > code {
     white-space: normal;
 }
