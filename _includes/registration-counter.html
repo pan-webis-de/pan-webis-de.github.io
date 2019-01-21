@@ -11,34 +11,32 @@
         cache: false,
         dataType: "json"
     }).done((json) => {
-        $(json["feed"]["entry"]).each(function () {
-            {% endraw %}{% if include.apiVersion == "v4" %}{% raw %}
-            counterElement.prop('registrationCount', 0).animate({
-                registrationCount: json.values[0][0]
-            }, {
-                duration: 1200,
-                step: (value) => {
-                    counterElement.text(Math.ceil(value));
-                }
-            });
-
-            {% endraw %}{% elsif include.apiVersion == "v3" %}{% raw %}
-
-            $(json["feed"]["entry"]).each(function () {
-                if (this["title"]["$t"] === "A1") {
-                    counterElement.prop('registrationCount', 0).animate({
-                        registrationCount: this["content"]["$t"]
-                    }, {
-                        duration: 1200,
-                        step: (value) => {
-                            counterElement.text(Math.ceil(value));
-                        }
-                    });
-                }
-            });
-
-            {% endraw %}{% endif %}{% raw %}
+        {% endraw %}{% if include.apiVersion == "v4" %}{% raw %}
+        counterElement.prop('registrationCount', 0).animate({
+            registrationCount: json.values[0][0]
+        }, {
+            duration: 1200,
+            step: (value) => {
+                counterElement.text(Math.ceil(value));
+            }
         });
+
+        {% endraw %}{% elsif include.apiVersion == "v3" %}{% raw %}
+
+        $(json["feed"]["entry"]).each(function () {
+            if (this["title"]["$t"] === "A1") {
+                counterElement.prop('registrationCount', 0).animate({
+                    registrationCount: this["content"]["$t"]
+                }, {
+                    duration: 1200,
+                    step: (value) => {
+                        counterElement.text(Math.ceil(value));
+                    }
+                });
+            }
+        });
+
+        {% endraw %}{% endif %}{% raw %}
     });
 </script>{% endraw %}
 {% else %}
