@@ -1,7 +1,7 @@
-<span class="registrations{% if include.class %} {{ include.class }}{% endif %}">
 {% if include.year == 2019 %}
+<span class="registrations{% if include.class %} {{ include.class }}{% endif %}">
     <span id="registration-counter">0</span> already signed up
-
+</span>
 {% raw %}<script>
     // update the registration statistics.
     let counterElement = $("#registration-counter");
@@ -42,4 +42,3 @@
 {% else %}
     PAN Workshop Overview {{ include.year }} @ CLEF
 {% endif %}
-</span>
