@@ -23,11 +23,6 @@ iframe {
     max-width: 100%;
 }
 
-.dpi-fix {
-    // fix font-scaling issue at certain DPIs
-    font-size: $global-font-size - 1;
-}
-
 :not(pre) > code {
     white-space: normal;
 }
