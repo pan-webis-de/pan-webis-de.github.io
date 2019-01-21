@@ -26,8 +26,8 @@ iframe {
 .uk-tab {
     line-height: $text-meta-line-height;
 
-    &:before {
-        bottom: 1px;    // small offset fix
+    .uk-icon {
+        height: 1em;    // fix for vertically shifted .uk-active highlight
     }
 }
 
