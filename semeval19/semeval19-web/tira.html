@@ -23,7 +23,6 @@ description: PAN @ SemEval 2019 - Hyperpartisan News Detection
             <h1 class="uk-margin-small">Tira Guide</h1>
             <div class="page-header-meta">
                 PAN @ SemEval 2019
-                <span class="registrations vertical-divider-left"><span id="registration-counter">0</span> registrations</span>
             </div>
         </div>
     </header>
@@ -120,23 +119,3 @@ description: PAN @ SemEval 2019 - Hyperpartisan News Detection
 
     </div>
 </main>
-
-<script>
-    // update the registration statistics.
-    let counterElement = $("#registration-counter");
-
-    $.ajax({
-        url: "https://sheets.googleapis.com/v4/spreadsheets/1UC-V-PyNAzMA_hW6jtATe5HLIDP1mFkaseUrhnQdG-U/values/public%21A1?key=AIzaSyCR55jq22qAYeaQssNvQKLvEBpcw22ivcY",
-        cache: false,
-        dataType: "json"
-    }).done((json) => {
-        counterElement.prop('registrationCount', 0).animate({
-            registrationCount: json.values[0][0]
-        }, {
-            duration: 1200,
-            step: (value) => {
-                counterElement.text(Math.ceil(value));
-            }
-        });
-    });
-</script>
