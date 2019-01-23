@@ -110,11 +110,11 @@ svg.text-logo text {
     }
 }
 
-.vertical-divider-left {
-     margin-left: 1rem;
-     padding-left: 1rem;
-     border-left: $global-border-width solid lighten($global-muted-color, 23);
- }
+.vertical-inline-divider {
+    margin: 0 1rem;
+    width: 0;
+    border-left: $global-border-width solid lighten($global-muted-color, 23);
+}
 
 .page-header-meta {
     color: $global-muted-color;
@@ -135,23 +135,6 @@ svg.text-logo text {
 
     .uk-navbar-nav li:last-child > a {
         padding-right: 0;
-    }
-}
-
-.page-sub-nav {
-    display: inline-block;
-    margin-left: 1rem;
-
-    & > li {
-        display: inline-block;
-
-        &:not(:first-child) {
-            @extend .vertical-divider-left;
-        }
-    }
-
-    a {
-        color: $global-muted-color;
     }
 }
 
