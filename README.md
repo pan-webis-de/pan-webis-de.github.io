@@ -77,7 +77,7 @@ variable, look for its name in `_sass/uikit/components` and redefine it in
 `_sass/_variables.scss`.
 
 ## Update Dependencies
-This repository depends on [webis-de-commons](https://github.com/webis-de/webis-de-common),
+This repository depends on [webis-de-commons](https://github.com/webis-de/webis-de-commons),
 a collection of modular Jekyll templates and Sass styles for the Webis website theme
 and other third-party dependencies (UIkit, Fontawesome, jQuery, etc.).
 

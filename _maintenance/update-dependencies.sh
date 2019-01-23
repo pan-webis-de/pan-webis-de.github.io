@@ -5,6 +5,6 @@ cd ${maintenance}/..
 
 
 echo "Updating Webis commons.."
-git submodule update --recursive --remote
+git submodule update --init --recursive --remote
 
 cd ${maintenance}
