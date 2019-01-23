@@ -9,7 +9,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Webis
+title: PAN
 baseurl: ""
 url: "https://pan.webis.de"
 

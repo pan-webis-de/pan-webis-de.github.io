@@ -1,0 +1,48 @@
+.thumbnail-card-grid {
+    & > * {
+        width: 100%;
+        box-sizing: border-box;
+        hyphens: none;
+        -webkit-hyphens: none;
+
+        @media (min-width: $breakpoint-medium) {
+            width: 50%;
+        }
+        @media (min-width: $breakpoint-large) {
+            width: 25%;
+        }
+    }
+
+    .uk-card {
+        padding: $padding-small-padding;
+    }
+
+    .thumbnail-left {
+        margin: -$padding-small-padding;
+        margin-right: $padding-small-padding;
+        float: left;
+        height: calc(100% + #{2 * $padding-small-padding});
+
+        img, svg {
+            height: 100%;
+            min-height: 145px;
+            width: 110px;
+            object-fit: cover;
+        }
+    }
+
+    .thumbnail-top {
+        text-align: center;
+        margin-bottom: $padding-small-padding;
+        height: 140px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        img, svg {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+}

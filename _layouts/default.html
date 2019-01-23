@@ -14,9 +14,9 @@
     {%- endfor %}
 </head>
 <body class="uk-offcanvas-content page-{{ page.nav_active }}">
-<script src="{{ '/js/hyphenate/hyphenate.min.js' | relative_url }}"></script>
-<script src="{{ '/js/thirdparty/uikit/uikit.min.js' | relative_url }}"></script>
-<script src="{{ '/js/thirdparty/uikit/uikit-icons.min.js' | relative_url }}"></script>
+<script src="{{ '/commons/js/hyphenate/hyphenate.min.js' | relative_url }}"></script>
+<script src="{{ '/commons/js/thirdparty/uikit/uikit.min.js' | relative_url }}"></script>
+<script src="{{ '/commons/js/thirdparty/uikit/uikit-icons.min.js' | relative_url }}"></script>
 
 <div id="offcanvas-nav" class="uk-hidden@m" data-uk-offcanvas="overlay: true; flip: true;">
     <div class="uk-offcanvas-bar">
@@ -86,7 +86,7 @@
 
 <div class="uk-background-secondary mobile-nav global-nav">
     <div class="uk-navbar-container uk-navbar-transparent uk-container uk-light mobile-nav-toggle" data-uk-navbar>
-        <div class="">
+        <div class="uk-navbar-left">
             <ul class="uk-navbar-nav">
                 <li{% if page.nav_active == "index" %} class="uk-active"{% endif %}>
                     <a href="{{ '/' | relative_url }}"><img src="{{ '/img/pan-logo-small-lightgrey.svg' | relative_url }}" alt="PAN Logo" class="uk-logo"></a>
@@ -101,7 +101,7 @@
     </div>
 </div>
 
-<script src="{{ '/js/thirdparty/jquery/jquery.min.js' | relative_url }}"></script>
+<script src="{{ '/commons/js/thirdparty/jquery/jquery.min.js' | relative_url }}"></script>
 <div data-uk-height-viewport="expand: true">
 {{ content }}
 </div>
@@ -117,11 +117,11 @@
     </div>
 </footer>
 
-<script src="{{ '/js/thirdparty/code-prettify/prettify.js' | relative_url }}"></script>
-<script src="{{ '/js/thirdparty/code-prettify/lang-proto.js' | relative_url }}"></script>
-<script src="{{ '/js/thirdparty/code-prettify/lang-wiki.js' | relative_url }}"></script>
-<script src="{{ '/js/thirdparty/code-prettify/lang-yaml.js' | relative_url }}"></script>
-<script src="{{ '/js/code-prettify/lang-cmd.js' | relative_url }}"></script>
+<script src="{{ '/commons/js/thirdparty/code-prettify/prettify.js' | relative_url }}"></script>
+<script src="{{ '/commons/js/thirdparty/code-prettify/lang-proto.js' | relative_url }}"></script>
+<script src="{{ '/commons/js/thirdparty/code-prettify/lang-wiki.js' | relative_url }}"></script>
+<script src="{{ '/commons/js/thirdparty/code-prettify/lang-yaml.js' | relative_url }}"></script>
+<script src="{{ '/commons/js/code-prettify/lang-cmd.js' | relative_url }}"></script>
 <script>
     UIkit.util.ready(() => {
         PR.prettyPrint();
