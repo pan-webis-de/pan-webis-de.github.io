@@ -12,6 +12,7 @@
         dataType: "json"
     }).done((json) => {
         {% endraw %}{% if include.apiVersion == "v4" %}{% raw %}
+
         counterElement.prop('registrationCount', 0).animate({
             registrationCount: json.values[0][0]
         }, {
@@ -40,5 +41,5 @@
     });
 </script>{% endraw %}
 {% else %}
-    PAN Workshop Overview {{ include.year }} @ CLEF
+    PAN Workshop {{ include.year }}
 {% endif %}
