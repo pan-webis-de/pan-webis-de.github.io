@@ -11,7 +11,12 @@ description: PAN Shared Tasks Overview
             <div>
                 {% include current-register-quicklink.html year=2019 %}
                 <h1 class="uk-margin-small">Shared Tasks @ PAN</h1>
-                <div class="page-header-meta registrations"><span id="registration-counter">0</span> already signed up</div>
+                <div class="page-header-meta">
+                    {% include registration-counter.html
+                        year=2019
+                        apiVersion="v3"
+                        url="https://spreadsheets.google.com/feeds/cells/0AlwcskAJGamSdEN2ZUQ4Uk44cW13XzQ4UDRNTDR0V3c/od5/public/basic?min-row=5&min-col=1&max-row=1&max-col=1&alt=json" %}
+                </div>
             </div>
         </div>
 
@@ -314,29 +319,3 @@ description: PAN Shared Tasks Overview
         </div>
     </section>
 </main>
-
-<script>
-    // update the registration statistics.
-    let counterElement = $("#registration-counter");
-
-    $.ajax({
-        url: "https://spreadsheets.google.com/feeds/cells/0AlwcskAJGamSdEN2ZUQ4Uk44cW13XzQ4UDRNTDR0V3c/od5/public/basic?min-row=5&min-col=1&max-row=1&max-col=1&alt=json",
-        cache: false,
-        dataType: "json"
-    }).done((json) => {
-        $(json["feed"]["entry"]).each(function () {
-            let title = this["title"]["$t"];
-            let content = this["content"]["$t"];
-            if (title === "A1") {
-                counterElement.prop('registrationCount', 0).animate({
-                    registrationCount: content
-                }, {
-                    duration: 1200,
-                    step: (value) => {
-                        counterElement.text(Math.ceil(value));
-                    }
-                });
-            }
-        });
-    });
-</script>
