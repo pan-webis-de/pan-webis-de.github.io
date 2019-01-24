@@ -2,16 +2,16 @@
 <span class="registrations">
     <span id="registration-counter">0</span> already signed up
 </span>
-{% raw %}<script>
+<script>
     // update the registration statistics.
     let counterElement = $("#registration-counter");
 
     $.ajax({
-        url: "{% endraw %}{{ include.url }}{% raw %}",
+        url: "{{ include.url }}",
         cache: false,
         dataType: "json"
     }).done((json) => {
-        {% endraw %}{% if include.apiVersion == "v4" %}{% raw %}
+        {% if include.apiVersion == "v4" %}
 
         counterElement.prop('registrationCount', 0).animate({
             registrationCount: json.values[0][0]
@@ -22,7 +22,7 @@
             }
         });
 
-        {% endraw %}{% elsif include.apiVersion == "v3" %}{% raw %}
+        {% elsif include.apiVersion == "v3" %}
 
         $(json["feed"]["entry"]).each(function () {
             if (this["title"]["$t"] === "A1") {
@@ -37,9 +37,9 @@
             }
         });
 
-        {% endraw %}{% endif %}{% raw %}
+        {% endif %}
     });
-</script>{% endraw %}
+</script>
 {% else %}
     PAN Workshop {{ include.year }}
 {% endif %}
