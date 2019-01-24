@@ -18,11 +18,11 @@
 <script src="{{ '/commons/js/thirdparty/uikit/uikit.min.js' | relative_url }}"></script>
 <script src="{{ '/commons/js/thirdparty/uikit/uikit-icons.min.js' | relative_url }}"></script>
 
-<div id="offcanvas-nav" class="uk-hidden@m" data-uk-offcanvas="overlay: true; flip: true;">
+<div id="offcanvas-nav" class="mobile-nav" data-uk-offcanvas="overlay: true; flip: true;">
     <div class="uk-offcanvas-bar">
         <button class="uk-offcanvas-close" type="button" data-uk-close></button>
 
-        <!-- Mobile navigation -->
+        <!-- Off-canvas mobile navigation -->
         <nav class="uk-margin-large-top">
             <ul class="uk-nav uk-nav-primary uk-nav-parent-icon" data-uk-nav>
                 <li{% if page.nav_active == "tasks" %} class="uk-active"{% endif %}>
@@ -48,8 +48,7 @@
     </div>
 </div>
 
-<div class="uk-background-secondary desktop-nav global-nav">
-    <!-- Desktop navigation -->
+<div class="uk-background-secondary global-nav" data-uk-sticky>
     <nav class="uk-navbar-container uk-navbar-transparent uk-container uk-light" data-uk-navbar="mode: click">
         <div class="uk-navbar-left">
             <ul class="uk-navbar-nav">
@@ -59,7 +58,14 @@
             </ul>
         </div>
 
-        <div class="uk-navbar-right">
+        <!-- Mobile navigation toggle button -->
+        <div class="uk-navbar-right mobile-nav">
+            <button class="uk-button uk-navbar-item uk-light uk-button-large" type="button" data-uk-icon="icon: menu"
+                    data-uk-toggle="target: #offcanvas-nav"></button>
+        </div>
+
+        <!-- Desktop navigation -->
+        <div class="uk-navbar-right desktop-nav">
             <ul class="uk-navbar-nav">
                 <li class="nav-group-start{% if page.nav_active == "tasks" %} uk-active{% endif %}">
                     <a href="{{ '/tasks.html' | relative_url }}">Tasks</a>
@@ -82,23 +88,6 @@
             </ul>
         </div>
     </nav>
-</div>
-
-<div class="uk-background-secondary mobile-nav global-nav">
-    <div class="uk-navbar-container uk-navbar-transparent uk-container uk-light mobile-nav-toggle" data-uk-navbar>
-        <div class="uk-navbar-left">
-            <ul class="uk-navbar-nav">
-                <li{% if page.nav_active == "index" %} class="uk-active"{% endif %}>
-                    <a href="{{ '/' | relative_url }}"><img src="{{ '/img/pan-logo-small-lightgrey.svg' | relative_url }}" alt="PAN Logo" class="uk-logo"></a>
-                </li>
-            </ul>
-        </div>
-
-        <div class="uk-navbar-right">
-            <button class="uk-button uk-navbar-item uk-light uk-button-large" type="button" data-uk-icon="icon: menu"
-                    data-uk-toggle="target: #offcanvas-nav"></button>
-        </div>
-    </div>
 </div>
 
 <script src="{{ '/commons/js/thirdparty/jquery/jquery.min.js' | relative_url }}"></script>
@@ -154,7 +143,7 @@
             (i[r].q = i[r].q || []).push(arguments)
         }, i[r].l = 1 * new Date();
         a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
+        m = s.getElementsByTagName(o)[0];
         a.async = 1;
         a.src = g;
         m.parentNode.insertBefore(a, m)
