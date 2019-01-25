@@ -85,12 +85,12 @@ description: PAN @ CLEF 2019 - Celebrity Profiling
                     <p>The training dataset contains of two files: a <code>feeds.ndjson</code> as input and a <code>labels.ndjson</code>
                         as output.
                         Each file lists all celebrities as JSON objects, one per line and identified by the
-                        <code>cid</code> key.</p>
+                        <code>id</code> key.</p>
 
                     <h3 class="uk-margin-small-top">Input Format</h3>
                     The input file contains the cid and a list of all teaser messages for each celebrity.
-                    <pre id="feeds-ndjson-example" class="prettyprint linenums uk-margin-remove-bottom"><code class="lang-json">{"cid": 1234, "text": ["a teaser", "another teaser", ...]}
-{"cid": 5678, "text": ["a teaser", "another teaser", ...]}
+                    <pre id="feeds-ndjson-example" class="prettyprint linenums uk-margin-remove-bottom"><code class="lang-json">{"id": 1234, "text": ["a tweet", "another tweet", ...]}
+{"cid": 5678, "text": ["a tweet", "another tweet", ...]}
 ...</code></pre>
                     <div class="uk-text-small uk-text-muted uk-text-right">feeds.ndjson</div>
 
@@ -98,13 +98,13 @@ description: PAN @ CLEF 2019 - Celebrity Profiling
 
                     The output file contains the cid and and a value for each trait for each celebrity from the input
                     file.
-                    <pre id="labels-ndjson-example" class="prettyprint linenums uk-margin-remove-bottom"><code class="lang-json">{"cid": 1234, "fame": "wellknown", "occupation": "sports", "gender": "female", "age": 28}
-{"cid": 5678, "fame": "regional", "occupation": "professional", "gender": "male", "age": 54}
+                    <pre id="labels-ndjson-example" class="prettyprint linenums uk-margin-remove-bottom"><code class="lang-json">{"id": 1234, "fame": "wellknown", "occupation": "sports", "gender": "female", "birthyear": 2002}
+{"id": 5678, "fame": "regional", "occupation": "professional", "gender": "male", "birthyear": 1990}
 ...</code></pre>
                     <div class="uk-text-small uk-text-muted uk-text-right">labels.ndjson</div>
 
                     The following values are possible for each of the traits:
-                    <pre class="prettyprint uk-margin-remove-bottom"><code class="lang-pascal">fame        := {regional, wellknown, superstar}
+                    <pre class="prettyprint uk-margin-remove-bottom"><code class="lang-pascal">fame        := {risingstar, star, superstar}
 occupation  := {sports, performers, creators, politics, management,
                 academia, professionals, religion}
 birthyear   := {1940, ..., 2012}
