@@ -98,7 +98,22 @@ description: PAN @ CLEF 2019 - Bots and Gender Profiling
                         [<a href="https://s3.amazonaws.com/autoritas.pan/pan19-author-profiling-training-2019-01-28.zip">Download Training Data</a>]
                     </span>
                     </h2>
+                    <h2>Input</h2>
                     
+                    <h2>Output</h2>
+                        <p>Your software must take as input the absolute path to an unpacked dataset, and has to output 
+                            for each document of the dataset a corresponding XML file that looks like this:</p>
+                        <pre class="prettyprint lang-xml" style="overflow-x: auto;">
+                              &lt;author id="author-id"
+                                  lang="en|es"
+                                  type="bot|human"
+                                  gender="bot|male|female"
+                              /&gt;
+                              </pre>
+                        <p>The naming of the output files is up to you. However, we recommend to use the author-id as 
+                            filename and "xml" as extension.</p>
+                        <p><b>IMPORTANT!</b> Languages should not be mixed. A folder should be created for each language 
+                            and place inside only the files with the prediction for this language. </p>
                 </div>
 
 
@@ -107,7 +122,11 @@ description: PAN @ CLEF 2019 - Bots and Gender Profiling
 
 
                     <h2>Evaluation</h2>
-
+                        The performance of your author profiling solution will be ranked by accuracy. 
+                        For each language, we will calculate individual accuracies. Firstly, we will calculate the accuracy
+                        of identifying bots vs. human. Then, in case of humans, we will calculate the accuracy of identifying
+                        males vs. females. Finally, we will average the accuracy values per language to obtain the final 
+                        ranking.
                     
                     <h2>Submission
                         <span class="uk-text-lead">
@@ -117,11 +136,12 @@ description: PAN @ CLEF 2019 - Bots and Gender Profiling
                     
                     <p>This task follows PAN's software submission strategy described <a
                             href="{{ '/clef19/pan19-web/submission.html' | relative_url }}">here</a>.</p>
-
+                        <p>This task follows PAN's software submission strategy described <a
+                            href="{{ '/clef19/pan19-web/submission.html' | relative_url }}">here</a>.</p>
+                    
                     <h2>Related Work</h2>
                     <ul>
-                        <li>
-                            
+                        <li>                         
                         </li>
                     </ul>
                 </div>
