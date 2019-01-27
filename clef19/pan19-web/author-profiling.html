@@ -109,36 +109,36 @@ description: PAN @ CLEF 2019 - Bots and Gender Profiling
                     </ul>
                     The format of the XML files is:<br/>
                     <pre class="prettyprint lang-xml" style="overflow-x: auto;">
-                    &lt;author lang="en"&gt;
-	                    &lt;documents&gt;
-                            &lt;document&gt;<![CDATA[RT @poisonchallis: OMG this genuinely is the recurring nightmare I’ve been having. A chase for tinned food. Really wish I hadn’t seen that…]]>&lt;/document&gt;
-                            &lt;document&gt;<![CDATA[RT @Alasdair_CM: I've been thinking a lot about Doctor Who lately, and Becky's impending anniversary. This is a letter I wrote to Steven Mo…]]>&lt;/document&gt;
-                            ...
-                        &lt;/documents&gt;
-                    &lt;/author&gt;
+	&lt;author lang="en"&gt;
+	    &lt;documents&gt;
+		    &lt;document&gt;<![CDATA[RT @poisonchallis: OMG this genuinely is the recurring nightmare I’ve been having. A chase for tinned food. Really wish I hadn’t seen that…]]>&lt;/document&gt;
+		    &lt;document&gt;<![CDATA[RT @Alasdair_CM: I've been thinking a lot about Doctor Who lately, and Becky's impending anniversary. This is a letter I wrote to Steven Mo…]]>&lt;/document&gt;
+		    ...
+		&lt;/documents&gt;
+	&lt;/author&gt;
                               </pre>
                     
                     The format of the truth.txt file is as follows. The first column corresponds to the author id. The second 
                     and third columns contains the truth for the human/bot and bot/male/female tasks.<br>
                     <pre class="prettyprint lang-xml" style="overflow-x: auto;">
-                    b2d5748083d6fdffec6c2d68d4d4442d:::bot:::bot
-                    2bed15d46872169dc7deaf8d2b43a56:::bot:::bot
-                    8234ac5cca1aed3f9029277b2cb851b:::human:::female
-                    5ccd228e21485568016b4ee82deb0d28:::human:::female
-                    60d068f9cafb656431e62a6542de2dc0:::human:::male
-                    c6e5e9c92fb338dc0e029d9ea22a4358:::human:::male
-                    ...
+	b2d5748083d6fdffec6c2d68d4d4442d:::bot:::bot
+	2bed15d46872169dc7deaf8d2b43a56:::bot:::bot
+	8234ac5cca1aed3f9029277b2cb851b:::human:::female
+	5ccd228e21485568016b4ee82deb0d28:::human:::female
+	60d068f9cafb656431e62a6542de2dc0:::human:::male
+	c6e5e9c92fb338dc0e029d9ea22a4358:::human:::male
+	...
                               </pre>
                     
                     <h3 class="uk-margin-small-top">Output</h3>
                         <p>Your software must take as input the absolute path to an unpacked dataset, and has to output 
                             for each document of the dataset a corresponding XML file that looks like this:</p>
                         <pre class="prettyprint lang-xml" style="overflow-x: auto;">
-                    &lt;author id="author-id"
-                      lang="en|es"
-                      type="bot|human"
-                      gender="bot|male|female"
-                    /&gt;
+	&lt;author id="author-id"
+		lang="en|es"
+		type="bot|human"
+		gender="bot|male|female"
+	/&gt;
                               </pre>
                         <p>The naming of the output files is up to you. However, we recommend to use the author-id as 
                             filename and "xml" as extension.</p>
