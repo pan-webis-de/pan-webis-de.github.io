@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 
 """Calculates the measures for the PAN19 hyperpartisan news detection task"""
-# Version: 2018-12-14
+# Version: 2019-01-29
 
 # Parameters:
 # --inputDataset=<directory>
 #   Directory that contains the ground truth XML file with the articles for which a prediction should have been made.
 # --inputRun=<directory>
-#   Directory that contains the prediction for the articles in the ground truth XML file. The format of the XML file should be, one article per line:
+#   Directory that contains the prediction for the articles in the ground truth XML file. The format of the .txt file should be, one article per line:
 #     <article id> <prediction> [<confidence>]
 #   where:
 #     - article id   corresponds to the "id" attribute of the "article" element in the articles and ground truth files
@@ -83,7 +83,7 @@ class HyperpartisanNewsGroundTruthHandler(xml.sax.ContentHandler):
         if name == "article":
             articleId = attrs.getValue("id")
             hyperpartisan = attrs.getValue("hyperpartisan")
-            groundTruth[articleId] = hyperpartisan
+            groundTruth[articleId] = hyperpartisan.lower()
 
 
 ########## MAIN ##########
@@ -115,7 +115,8 @@ def main(inputDataset, inputRun, outputDir):
                     if (len(values) > 2):
                         confidence = values[2]
                     
-                    hyperpartisan = groundTruth[articleId].lower()
+                    hyperpartisan = groundTruth[articleId]
+                    del groundTruth[articleId]
                     if hyperpartisan == "true":
                         if prediction == "true":
                             truePositivesCount += 1
@@ -128,29 +129,37 @@ def main(inputDataset, inputRun, outputDir):
                             trueNegativesCount += 1
 
     predictionCount = truePositivesCount + trueNegativesCount + falsePositivesCount + falseNegativesCount
-    if predictionCount < len(groundTruth):
-        print("Missing %s predictions\n" % (len(groundTruth) - predictionCount))
-    else:
-        print("true positives: %s" % truePositivesCount)
-        print("true negatives: %s" % trueNegativesCount)
-        print("false positives: %s" % falsePositivesCount)
-        print("false negatives: %s\n" % falseNegativesCount)
+    if len(groundTruth) > 0:
+        missing = len(groundTruth)
+        print("WARNING: Missing %s predictions that will be treated as non-hyperpartisan\n" % len(groundTruth))
+        for articleId, hyperpartisan in groundTruth.items():
+            predictionCount += 1
+            # prediction is by default false
+            if hyperpartisan == "true":
+                falseNegativesCount += 1
+            else:
+                trueNegativesCount += 1
 
-        accuracy  = (truePositivesCount + trueNegativesCount) / predictionCount
-        precision = truePositivesCount / (truePositivesCount + falsePositivesCount)
-        recall    = truePositivesCount / (truePositivesCount + falseNegativesCount)
-        f1        = 2 * precision * recall / (precision + recall)
+    print("true positives: %s" % truePositivesCount)
+    print("true negatives: %s" % trueNegativesCount)
+    print("false positives: %s" % falsePositivesCount)
+    print("false negatives: %s\n" % falseNegativesCount)
 
-        outStr = getMeasureString("accuracy", accuracy)
-        outStr += "\n" + getMeasureString("precision", precision)
-        outStr += "\n" + getMeasureString("recall", recall)
-        outStr += "\n" + getMeasureString("f1", f1)
-        print(outStr)
+    accuracy  = (truePositivesCount + trueNegativesCount) / predictionCount
+    precision = truePositivesCount / (truePositivesCount + falsePositivesCount)
+    recall    = truePositivesCount / (truePositivesCount + falseNegativesCount)
+    f1        = 2 * precision * recall / (precision + recall)
 
-        with open(outputDir + "/" + evaluationOutputFileName, 'w') as outFile:
-            outFile.write(outStr)
+    outStr = getMeasureString("accuracy", accuracy)
+    outStr += "\n" + getMeasureString("precision", precision)
+    outStr += "\n" + getMeasureString("recall", recall)
+    outStr += "\n" + getMeasureString("f1", f1)
+    print(outStr)
 
-        print("\nThe results have been written to the output folder.")
+    with open(outputDir + "/" + evaluationOutputFileName, 'w') as outFile:
+        outFile.write(outStr)
+
+    print("\nThe results have been written to the output folder.")
 
 
 if __name__ == '__main__':
