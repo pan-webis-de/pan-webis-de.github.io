@@ -6,168 +6,132 @@ description: PAN @ SemEval 2019 - Hyperpartisan News Detection
 ---
 
 <main>
-    <header class="uk-section uk-section-muted">
-        <nav class="uk-container uk-margin-medium-bottom">
-            <ul class="uk-text-muted uk-tab uk-margin-remove-top">
-                <li class="uk-active"><a href="{{ '/semeval19/semeval19-web/index.html' | relative_url }}">Task Overview</a></li>
-                <li>
-                    <a href="{{ '/semeval19/semeval19-web/tira.html' | relative_url }}">Tira Guide</a>
-                </li>
-            </ul>
-        </nav>
+<header class="uk-section uk-section-muted">
+<nav class="uk-container uk-margin-medium-bottom">
+<ul class="uk-text-muted uk-tab uk-margin-remove-top">
+<li class="uk-active">
+<a href="index.html">Task Overview</a>
+</li>
+<li>
+<a href="leaderboard.html">Leaderboard</a>
+</li>
+<li>
+<a href="tira.html">Tira Guide</a>
+</li>
+</ul>
+</nav>
 
-        <div class="uk-container">
-            {% include current-register-quicklink.html url="https://goo.gl/forms/cWtOVsjmRYfNkBnC3" %}
+<div class="uk-container">
+<h1 class="uk-margin-small">Hyperpartisan News Detection</h1>
+<div class="page-header-meta">
+PAN @ SemEval 2019
+</div>
+</div>
+</header>
 
-            <h1 class="uk-margin-small">Hyperpartisan News Detection</h1>
-            <div class="page-header-meta">
-                <span>PAN @ SemEval 2019</span>
-                <span class="vertical-inline-divider"></span>
-                {% include registration-counter.html
-                    year=2019
-                    apiVersion="v4"
-                    url="https://sheets.googleapis.com/v4/spreadsheets/1UC-V-PyNAzMA_hW6jtATe5HLIDP1mFkaseUrhnQdG-U/values/public%21A1?key=AIzaSyCR55jq22qAYeaQssNvQKLvEBpcw22ivcY" %}
-            </div>
-        </div>
-    </header>
+<div class="uk-section uk-section-secondary uk-padding-remove">
+<div class="uk-container">
+<div class="uk-text-center">
+<div class="video-container">
+<div id="video"></div>
+</div>
+</div>
+</div>
+</div>
 
-    <div class="uk-section uk-section-secondary uk-padding-remove">
-        <div class="uk-container">
-            <div class="uk-text-center">
-                <div class="video-container">
-                    <div id="video"></div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="uk-section uk-section-default">
+<div class="uk-container uk-text-justify">
+<div class="uk-grid uk-child-width-1-2@l" data-uk-grid>
+<div>
+<h2>Task</h2>
+<p>Given a news article text, decide whether it follows a <a href="https://www.merriam-webster.com/dictionary/partisan" target="_blank">hyperpartisan</a> argumentation, i.e., whether it exhibits blind, prejudiced, or unreasoning allegiance to one party, faction, cause, or person.</p>
+<p>Thanks to the 322~teams who registered for this task!</p>
 
-    <div class="uk-section uk-section-default">
-        <div class="uk-container uk-text-justify">
-            <div class="uk-grid uk-child-width-1-2@l" data-uk-grid>
-                <div>
-                    <h2>Task</h2>
-                    <p>Given a news article text, decide whether it follows a
-                        <a href="https://www.merriam-webster.com/dictionary/partisan" target="_blank">hyperpartisan</a>
-                        argumentation, i.e., whether it exhibits blind, prejudiced, or unreasoning allegiance to one party, faction,
-                        cause, or person.</p>
+<h2>Data</h2>
+<p>The competition is over, but you can still request access to the data on <a href="https://zenodo.org/record/1489920" target="_blank">Zenodo</a>.</p>
 
-                    <h2>Data</h2>
-                    <p>Upon <a href="https://goo.gl/forms/cWtOVsjmRYfNkBnC3" target="_blank">registration</a>, we provide a two-part
-                        <a href="https://zenodo.org/record/1489920" target="_blank">dataset</a> of articles for training your algorithm
-                        (may take up to 24 hours). We continuously clean the dataset (also based on your feedback) and will send you new
-                        versions as they come out.</p>
+<h2>Evaluation</h2>
+<p>Main performance measure is accuracy on a balanced set of articles. In addition, we will measure precision, recall, and F1-score for the hyperpartisan class (<a target="_blank" href="../semeval19-code/semeval-pan-2019-evaluator.py">evaluation script</a>). Please find the SemEval leaderboard <a href="leaderboard.html">here</a>.</p>
+<p>Participants for SemEval are required to submit and review task description papers following the <a href="http://alt.qcri.org/semeval2019/" target="_blank">SemEval timeline</a>.</p>
+</div>
+<div>
+<h2>Grand Prize (Jun 2019)</h2>
+<p>We want to encourage developers to share their software so that everyone can profit from their work. We are thus excited to announce a <b>grand prize of $1,000</b> to the best-performing submission that ha its code published open source before the SemEval conference (which is held at <a href="https://naacl2019.org/" target="_blank">NAACL-HLT</a> on June 6-7 in Minneapolis, USA).</p>
 
-                    <h2>Registration</h2>
-                    <p>Register yourself or your team <a href="https://goo.gl/forms/cWtOVsjmRYfNkBnC3" target="_blank">here</a>.
-                        This task will use the
-                        <a href="https://groups.google.com/forum/#!forum/pan-workshop-series" target="_blank">PAN mailing list</a>
-                        for communication, so please sign up there to ask questions to us or other participants. If you have
-                        specific requests, please write to the
-                        <a href="mailto:semeval-pan-2019-organizers@googlegroups.com" target="_blank">organizer's mailing list</a>.</p>
+<h2>Ongoing Submissions</h2>
+<p>In case you want your new approach to be scored and listed next to the others [<a href="https://www.tira.io/task/hyperpartisan-news-detection/dataset/pan19-hyperpartisan-news-detection-by-article-test-dataset-2018-12-07/" target="_blank">labels-by-article</a>, <a href="https://www.tira.io/task/hyperpartisan-news-detection/dataset/pan19-hyperpartisan-news-detection-by-publisher-test-dataset-2018-12-12/" target="_blank">labels-by-publisher</a>], please send a mail to the <a href="mailto:semeval-pan-2019-organizers@googlegroups.com" target="_blank">organizer's mailing list</a> with your choice of a operating system (Ubuntu/Windows) and <a href="list-of-fictional-journalists.txt" target="_blank">code name</a> and we will provide you with a virtual machine. You can find help <a href="tira.html">here</a> and on the <a href="https://groups.google.com/forum/#!forum/pan-workshop-series" target="_blank">PAN mailing list</a>.</p>
+<p>Your software must be executable from the command line and not require Internet access during the evaluation. Note that you retain full copyrights of your software, but agree to grant us usage rights only for the purpose of the competition.</p>
+<p>We provide a <a target="_blank" href="../semeval19-code/semeval-pan-2019-random-baseline.py">random baseline</a> to illustrate the output of a submission and a <a target="_blank" href="../semeval19-code/semeval-pan-2019-tf-extractor.py">term frequency extractor</a> to illustrate how to read the dataset. For features, see the <a target="_blank" href="https://github.com/webis-de/ACL-18">code</a> from our <a target="_blank" href="https://webis.de/publications.html#filter:A+Stylometric+Inquiry+into+Hyperpartisan+and+Fake+News">ACL'18 publication</a> for inspiration.</p>
+</div>
+</div>
+</div> <!-- /container -->
+</div>
 
-                    <h2>Submission</h2>
-                    <p>When you registered, you will get remote access to a virtual machine (Windows or Linux) to deploy the task
-                        software in. Your software must be executable from the command line and not require Internet access during
-                        the evaluation period.</p>
-                    <p>Note that you retain full copyrights of your software, but agree to grant us usage rights only for the
-                        purpose of the competition.</p>
-                    <p>We provide a <a target="_blank" href="../semeval19-code/semeval-pan-2019-random-baseline.py">random baseline</a>
-                        to illustrate the output of a submission and a
-                        <a target="_blank" href="../semeval19-code/semeval-pan-2019-tf-extractor.py">term frequency extractor</a>
-                        to illustrate how to read the dataset. For features, see the
-                        <a target="_blank" href="https://github.com/webis-de/ACL-18">code</a> from our
-                        <a target="_blank" href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2018i.pdf">ACL'18
-                            publication</a> for inspiration.</p>
-                </div>
-                <div>
-                    <h2>Evaluation (13 Dec 2018, 23 Jan 2019 (both AoE))</h2>
-                    <p>You will self-evaluate your software using <a href="tira.html">TIRA</a>. Main performance measure will
-                        be accuracy on a balanced set of articles. In addition, we will measure precision, recall, and F1-score
-                        for the hyperpartisan class
-                        (<a target="_blank" href="../semeval19-code/semeval-pan-2019-evaluator.py">evaluation script</a>).</p>
-                    <p>You will be able to designate up to three test-data runs for this competition: one submitted before
-                        13&nbsp;Dec ("Early Bird") and two more submitted before 23&nbsp;Jan.</p>
-                    <p>After evaluation, participants are required to submit and review task description papers following the
-                        <a href="http://alt.qcri.org/semeval2019/" target="_blank">SemEval timeline</a>.</p>
-                    <p>Leaderboards:
-                        [<a href="https://www.tira.io/task/hyperpartisan-news-detection/dataset/pan19-hyperpartisan-news-detection-by-article-test-dataset-2018-12-07/" target="_blank">labels-by-article (main)</a>]
-                        [<a href="https://www.tira.io/task/hyperpartisan-news-detection/dataset/pan19-hyperpartisan-news-detection-by-publisher-test-dataset-2018-12-12/" target="_blank">labels-by-publisher</a>]</p>
+<div class="uk-section uk-section-muted">
+<div class="uk-container">
 
-                    <h2>Grand Prize (Jun 2019)</h2>
-                    <p>We want to encourage developers to share their software so that everyone can profit from their work. We
-                        are thus excited to announce a <b>grand prize of $1,000</b> to the best-performing submission that ha
-                        its code published open source before the SemEval conference (which is held at
-                        <a href="https://naacl2019.org/" target="_blank">NAACL-HLT</a> on June 6-7 in Minneapolis, USA).</p>
-                </div>
-            </div>
-        </div> <!-- /container -->
-    </div>
+<h2>Task Committee</h2>
 
-    <div class="uk-section uk-section-muted">
-        <div class="uk-container">
+<div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+{% include people-cards/kiesel.html %}
+{% include people-cards/potthast.html %}
+{% include people-cards/mestre.html %}
+{% include people-cards/shukla.html %}
+{% include people-cards/stein.html %}
+{% include people-cards/corney.html %}
+{% include people-cards/vincent.html %}
+{% include people-cards/adineh.html %}
+</div>
 
-            <h2>Task Committee</h2>
+<div class="uk-container uk-padding-large">
+<h2>Organizations</h2>
 
-            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
-                {% include people-cards/kiesel.html %}
-                {% include people-cards/potthast.html %}
-                {% include people-cards/mestre.html %}
-                {% include people-cards/shukla.html %}
-                {% include people-cards/stein.html %}
-                {% include people-cards/corney.html %}
-                {% include people-cards/vincent.html %}
-                {% include people-cards/adineh.html %}
-            </div>
+<div class="task-chair-organizations">
+<div>
+<a href="https://webis.de" target="_blank" class="uk-link-reset">
+<svg viewBox="0 0 65 20">
+<image x="0" y="0" href="../semeval19-figures/webis-logo_w52.png" height="20" width="20"/>
+<text x="25" y="15" style="fill: #404754;">Webis</text>
+</svg>
+</a>
+</div>
+<div>
+<a href="https://factmata.com" target="_blank" class="uk-link-reset">
+<img src="../semeval19-figures/factmata-logo.png">
+</a>
+</div>
+</div>
 
-            <div class="uk-container uk-padding-large">
-                <h2>Organizations</h2>
+</div> <!-- /container -->
+</div>
 
-                <div class="task-chair-organizations">
-                    <div>
-                        <a href="https://webis.de" target="_blank" class="uk-link-reset">
-                            <svg viewBox="0 0 65 20">
-                                <image x="0" y="0" href="../semeval19-figures/webis-logo_w52.png" height="20" width="20"/>
-                                <text x="25" y="15" style="fill: #404754;">Webis</text>
-                            </svg>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="https://factmata.com" target="_blank" class="uk-link-reset">
-                            <img src="../semeval19-figures/factmata-logo.png">
-                        </a>
-                    </div>
-                </div>
-
-            </div> <!-- /container -->
-        </div>
-
-    </div>
+</div>
 </main>
 
 <script>
-    const tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-    const firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+const tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+const firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-    let player;
+let player;
 
-    onYouTubeIframeAPIReady = () => {
-        player = new YT.Player('video', {
-            videoId: 'e-9MvqHMh6I',
-            playerVars: {
-                'enablejsapi': 1,
-                'rel': 0,
-                'origin': 'https://pan.webis.de'
-            },
-            events: {
-                'onReady': onPlayerReady,
-            }
-        });
-    };
+onYouTubeIframeAPIReady = () => {
+player = new YT.Player('video', {
+videoId: 'e-9MvqHMh6I',
+playerVars: {
+'enablejsapi': 1,
+'rel': 0,
+'origin': 'https://pan.webis.de'
+},
+events: {
+'onReady': onPlayerReady,
+}
+});
+};
 
-    onPlayerReady = (event) => {
-        event.target.mute();
-        event.target.playVideo();
-    };
+onPlayerReady = (event) => {
+event.target.mute();
+event.target.playVideo();
+};
 </script>
