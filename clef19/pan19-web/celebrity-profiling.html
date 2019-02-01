@@ -26,7 +26,8 @@ description: PAN @ CLEF 2019 - Celebrity Profiling
                         <ul class="uk-nav uk-dropdown-nav">
                             <li><a href="{{ '/clef19/pan19-web/author-profiling.html' | relative_url }}">Bots and Gender
                                 Profiling</a></li>
-                            <li class="uk-active"><a href="{{ '/clef19/pan19-web/celebrity-profiling.html' | relative_url }}">Celebrity
+                            <li class="uk-active"><a
+                                    href="{{ '/clef19/pan19-web/celebrity-profiling.html' | relative_url }}">Celebrity
                                 Profiling</a></li>
                             <li><a href="{{ '/clef19/pan19-web/author-identification.html' | relative_url }}">Cross-domain
                                 Authorship Attribution</a></li>
@@ -62,7 +63,8 @@ description: PAN @ CLEF 2019 - Celebrity Profiling
                     subjects in many respects, not least author profiling.</p>
 
                 <p>The Celebrity Profiling task this year is to predict four traits of a celebrity from their social
-                    media communication. The traits are the degree of fame, occupation, age, and gender. The social media
+                    media communication. The traits are the degree of fame, occupation, age, and gender. The social
+                    media
                     communication is given as the teaser messages from past tweets. The goal is to develop a piece of
                     software which predicts celebrity traits from the teaser history.</p>
             </div>
@@ -89,7 +91,8 @@ description: PAN @ CLEF 2019 - Celebrity Profiling
 
                     <h3 class="uk-margin-small-top">Input Format</h3>
                     The input file contains the cid and a list of all teaser messages for each celebrity.
-                    <pre id="feeds-ndjson-example" class="prettyprint linenums uk-margin-remove-bottom"><code class="lang-json">{"id": 1234, "text": ["a tweet", "another tweet", ...]}
+                    <pre id="feeds-ndjson-example" class="prettyprint linenums uk-margin-remove-bottom"><code
+                            class="lang-json">{"id": 1234, "text": ["a tweet", "another tweet", ...]}
 {"id": 5678, "text": ["a tweet", "another tweet", ...]}
 ...</code></pre>
                     <div class="uk-text-small uk-text-muted uk-text-right">feeds.ndjson</div>
@@ -98,7 +101,8 @@ description: PAN @ CLEF 2019 - Celebrity Profiling
 
                     The output file contains the cid and and a value for each trait for each celebrity from the input
                     file.
-                    <pre id="labels-ndjson-example" class="prettyprint linenums uk-margin-remove-bottom"><code class="lang-json">{"id": 1234, "fame": "wellknown", "occupation": "sports", "gender": "female", "birthyear": 2002}
+                    <pre id="labels-ndjson-example" class="prettyprint linenums uk-margin-remove-bottom"><code
+                            class="lang-json">{"id": 1234, "fame": "wellknown", "occupation": "sports", "gender": "female", "birthyear": 2002}
 {"id": 5678, "fame": "regional", "occupation": "professional", "gender": "male", "birthyear": 1990}
 ...</code></pre>
                     <div class="uk-text-small uk-text-muted uk-text-right">labels.ndjson</div>
@@ -116,19 +120,28 @@ gender      := {male, female, nonbinary}</code></pre>
 
                 <!-- Right -->
                 <div>
-
-
-                    <h2>Evaluation <span class="uk-text-lead">[<a href="#">Download Evaluation Script</a>]</span>
+                    <h2>Evaluation <span class="uk-text-lead">[<a
+                            href="{{ '/clef19/pan19-code/pan19_celebs_evaluator.py' | relative_url }}">Evaluation Script</a>][<a
+                            href="{{ '/clef19/pan19-code/pan19_celebs_evaluator_tests.py' | relative_url }}">Unittests</a>]</span>
                     </h2>
 
                     <p>Submissions are judged by a combined metric <code>cRank</code>, which is the harmonic mean of
                         each label's metric.
-                        Fame, occupation, and gender are judged by their respective F<sub>1</sub>. Age is judged by Mean
-                        Squared Error.</p>
 
-                    $$ \text{cRank} = {4 \over {\frac{1}{\text{F}_{1, \text{fame}}} + \frac{1}{\text{F}_{1,
-                    \text{occupation}}} + \frac{1}{\text{F}_{1, \text{gender}}} + \frac{1}{\text{MSE}_{\text{age}}}}} $$
+                        $$ \text{cRank} = {4 \over {\frac{1}{\text{F}_{1, \text{fame}}} + \frac{1}{\text{F}_{1,
+                        \text{occupation}}} + \frac{1}{\text{F}_{1, \text{gender}}} +
+                        \frac{1}{\text{F}_{1, \text{age}}}}} $$
 
+                        All traits are judged by their respective F<sub>1</sub>. Precision and recall of
+                        <code>birthyear</code>
+                        are calculated leniently. If a prediction is within an m-window of the truth, it is counted as correct:
+
+                        $$ \text{true birthyear} - m \le \text{predicted birthyear} \le \text{true birthyear} + m$$
+
+                        The window size m is based on the birth year and increases linearly from about 2 years for 2012 to
+                        about 9 years for 1940.
+
+                    </p>
                     <h2>Submission
                         <span class="uk-text-lead">
                         [<a href="{{ '/clef19/pan19-web/submission.html' | relative_url }}">Submit software to PAN</a>]
