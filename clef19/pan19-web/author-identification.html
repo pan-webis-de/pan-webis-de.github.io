@@ -180,6 +180,13 @@ description: PAN @ CLEF 2019 - Cross-domain Authorship Attribution
                             difference between the two most likely candidates is lower than a threshold.</p>
                             <p><a class="uk-button uk-button-primary" target="_blank"
                                   href="../pan19-code/pan19-cdaa-baseline-compressor.py">Download BASELINE-COMPRESSOR</a></p></li>
+                        <li><p><strong>BASELINE-IMPOSTERS</strong>: This baseline offers an implementation of the language-independent "imposters" approach for authorship verification, based on character tetragram features. During a bootstrapped procedure, the technique iteratively compares an unknown text to each candidate author's stylistic profile, as well as to a set of imposter documents, on the basis of a random feature set. If the highest ranking candidate author does not pass a fixed similarity threshold after this procedure, the document is assigned to the <code>&lt;UNK&gt;</code> class and left unattributed.</p>
+                            <p><a class="uk-button uk-button-primary" target="_blank"
+                                  href="../pan19-code/pan19-cdaa-baseline-imposters.py">Download BASELINE-IMPOSTERS</a></p>
+			    <p>We also provide a set of imposter documents required by this baseline approach for each of the four languages. This is a password-protected file (use the same password as for the development corpus).</p>
+                            <p><a class="uk-button uk-button-primary" target="_blank"
+                                  href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-19/pan19-data/pan19-cross-domain-authorship-attribution-impostors-2019-01-23-password-protected.zip">Download BASELINE-IMPOSTERS</a></p>
+			    </li>
                     </ul>
 
                     <h2>Evaluation Phase</h2>
