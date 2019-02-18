@@ -107,7 +107,7 @@ description: PAN @ CLEF 2019 - Bots and Gender Profiling
 
                     <h2>Data
                         <span class="uk-text-lead">
-                        [<a href="https://s3.amazonaws.com/autoritas.pan/pan19-author-profiling-training-2019-01-28.zip">Download Training Data</a>]
+                        [<a href="https://s3.amazonaws.com/autoritas.pan/pan19-author-profiling-training-2019-02-18.zip">Download Training Data</a>]
                     </span>
                     </h2>
                     <!--To obtain the password to uncompress the dataset, you must contact: <a href="mailto:pan@webis.de">pan@webis.de</a>-->
@@ -156,7 +156,8 @@ description: PAN @ CLEF 2019 - Bots and Gender Profiling
                             filename and "xml" as extension.</p>
                         <p><b>IMPORTANT!</b> Languages should not be mixed. A folder should be created for each language 
                             and place inside only the files with the prediction for this language. </p>
-                
+			<p><b>IMPORTANT!</b>In order to avoid overfitting when experimenting with the training set, 
+				we recommend you to use the provided split train/dev (files truth-train.txt and truth-dev.txt).</p>
 
 		     <h2>Evaluation</h2>
                         The performance of your author profiling solution will be ranked by accuracy. 
