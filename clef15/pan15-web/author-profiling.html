@@ -1,135 +1,128 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+---
+layout: default
+nav_active: tasks
+title: PAN at CLEF 2015 - Author Profiling
+description: PAN at CLEF 2015 - Author Profiling
+---
 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<main>
+    <header class="uk-section uk-section-muted">
 
-<title>PAN 2015</title> 
+        <nav class="uk-container">
+            <div class="uk-align-right uk-visible@m uk-text-muted">
+                <a class="uk-button" href="{{ 'clef14/pan14-web/author-profiling.html' | relative_url }}"
+                   data-uk-icon="chevron-left"></a>
+                CLEF 2015
+                <a class="uk-button uk-padding-remove-right"
+                   href="{{ 'clef16/pan16-web/author-profiling.html' | relative_url }}"
+                   data-uk-icon="chevron-right"></a>
+            </div>
 
-<link href="../../css/bootstrap.min.css" rel="stylesheet" />
-<link href="../../css/prettify.css" rel="stylesheet" />
+            <ul class="uk-text-muted uk-tab uk-margin-remove-top">
+                <li><a href="{{ '/clef15/pan15-web/index.html' | relative_url }}">Overview</a></li>
+                <li><a href="{{ '/clef15/pan15-web/keynotes.html' | relative_url }}">Keynotes</a></li>
+                <li><a href="{{ '/clef15/pan15-web/program.html' | relative_url }}">Program</a></li>
+                <li class="uk-active">
+                    <a href="#">Tasks <span class="uk-margin-small-left"
+                                            data-uk-icon="icon: chevron-down"></span></a>
+                    <div class="uk-dropdown" data-uk-dropdown="mode: click">
+                        <ul class="uk-nav uk-dropdown-nav">
+                            <li><a href="{{ '/clef15/pan15-web/author-identification.html' | relative_url }}">Author
+                                Identification</a></li>
+                            <li class="uk-active"><a
+                                    href="{{ '/clef15/pan15-web/author-profiling.html' | relative_url }}">Author
+                                Profiling</a></li>
+                            <li><a href="{{ '/clef15/pan15-web/plagiarism-detection.html' | relative_url }}">Plagiarism
+                                Detection</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="{{ '/clef15/pan15-web/submission.html' | relative_url }}">Submission</a></li>
+                <li><a href="{{ '/clef15/pan15-web/proceedings.html' | relative_url }}">Proceedings</a></li>
+            </ul>
+        </nav>
 
-<style>
-.navbar .navbar-nav {
-  font-weight: bold;
-}
-</style>
+        <div class="uk-container uk-margin-small">
+            {% include current-register-quicklink.html year=2015 %}
+            <h1 class="uk-margin-small">Author Profiling</h1>
+            <div class="page-header-meta">PAN at CLEF 2015</div>
 
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-  <script src="../../js/html5shiv.js"></script>
-  <script src="../../js/respond.min.js"></script>
-<![endif]-->
+            <div class="uk-align-right uk-margin-remove-bottom">
+                <a href="http://www.meaningcloud.com/" target="_blank">
+                    <img src="../pan15-figures/logo-meaningcloud.png" style="height: 70px" alt="MeaningCloud">
+                </a>
+                <div class="uk-text-small uk-text-muted uk-text-right">Sponsor</div>
+            </div>
 
-<link rel="shortcut icon" href="../pan15-figures/pan-icon-16x16.ico">
-<!--
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
-<link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
--->
-
-</head>
-<body>
-
-<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="../../index.html"><img src="../pan15-figures/pan-logo-small-lightgrey.png" alt="PAN" style="margin-top:-5px"></a>
-  </div>
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="../../index.html">Home</a></li>
-      <li><a href="index.html">PAN @ CLEF 2015:</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="proceedings.html">Proceedings</a></li>
-      <li class="dropdown active">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tasks <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="plagiarism-detection.html">Plagiarism Detection</a></li>
-          <li><a href="author-identification.html">Author Identification</a></li>
-          <li class="active"><a href="author-profiling.html">Author Profiling</a></li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</nav>
-
-<div class="container">
-
-  <div class="row">
-    <div class="col-xs-12">
-      <h1 id="task-description" class="page-header">
-        Author Profiling
-        <div class="btn-group">
-          <a role="button" class="btn btn-default" href="../../clef14/pan14-web/author-profiling.html"><span class="glyphicon glyphicon-chevron-left" style="color:grey;"></span></a>
-          <span role="button" class="btn btn-default" disabled="disabled">2015</span>
-          <a role="button" class="btn btn-default" href="../../clef16/pan16-web/author-profiling.html"><span class="glyphicon glyphicon-chevron-right" style="color:grey;"></span></a>
+            <p class="uk-text-lead">Authorship analysis deals with the classification of texts into classes based on the
+                stylistic choices of
+                their authors.</p>
         </div>
-      </h1>
+    </header>
 
-      <div class="thumbnail pull-right" style="text-align:right;margin-left:15px;"><a href="http://www.meaningcloud.com/" target="_blank"><img src="../pan15-figures/logo-meaningcloud.png" alt="MeaningCloud" style="max-height:150px"></a><div style="font-size:7pt;margin-top:-3px;">Sponsor</div></div>
-	
-      <p>Authorship analysis deals with the classification of texts into classes based on the stylistic choices of their authors. Beyond the author identification and author verification tasks where the style of individual authors is examined, author profiling distinguishes between classes of authors studying their sociolect aspect, that is, how language is shared by people. This helps in identifying profiling aspects such as gender, age, native language, or personality type. Author profiling is a problem of growing importance in applications in forensics, security, and marketing. E.g., from a forensic linguistics perspective one would like being able to know the linguistic profile of the author of a harassing text message (language used by a certain type of people) and identify certain characteristics (language as evidence). Similarly, from a marketing viewpoint, companies may be interested in knowing, on the basis of the analysis of blogs and online product reviews, the demographics of people that like or dislike their products. The focus is on author profiling in social media since we are mainly interested in everyday language and how it reflects basic social and personality processes.</p>
-      
-      <div class="panel panel-default">
-        <div class="panel-heading">Award</div>
-        <div class="panel-body">
-          <p>We are happy to announce that the best performing team at the 3rd International Competition on Author Profiling will be awarded 300,- Euro sponsored by <a href="http://www.meaningcloud.com/" target="_blank">MeaningCloud</a>.</p>
-          <ul><li>
-          Miguel Ángel Álvarez Carmona, Adrián Pastor López Monroy, Manuel Montes y Gómez and Luis Villaseñor Pineda
-from INAOE, Mexico
-          </li></ul>
-          <p>Congratulations!</p>
-        </div>
-      </div>
-      
-      <div class="panel panel-default">
-        <div class="panel-heading">Task</div>
-        <div class="panel-body"><p>This task is about predicting an author's demographics from her writing. Participants will be provided with Twitter tweets in English and Spanish to predict age, gender and personality traits. Moreover, they will be provided also with tweets in Italian and Dutch and asked to predict the gender and personality. </p>
-        </div>
-      </div>
+    <div class="uk-section">
+        <div class="uk-container uk-column-1-2@l uk-text-justify">
 
-	  <div class="panel panel-default">
-      <div class="panel-heading">Training corpus</div>
-      <div class="panel-body"><p>
+            <h2>Author Profiling</h2>
+            <p>Authorship analysis deals with the classification of texts into classes based on the stylistic choices of
+                their authors. Beyond the author identification and author verification tasks where the style of
+                individual
+                authors is examined, author profiling distinguishes between classes of authors studying their sociolect
+                aspect, that is, how language is shared by people. This helps in identifying profiling aspects such as
+                gender, age, native language, or personality type. Author profiling is a problem of growing importance
+                in
+                applications in forensics, security, and marketing. E.g., from a forensic linguistics perspective one
+                would
+                like being able to know the linguistic profile of the author of a harassing text message (language used
+                by a
+                certain type of people) and identify certain characteristics (language as evidence). Similarly, from a
+                marketing viewpoint, companies may be interested in knowing, on the basis of the analysis of blogs and
+                online product reviews, the demographics of people that like or dislike their products. The focus is on
+                author profiling in social media since we are mainly interested in everyday language and how it reflects
+                basic social and personality processes.</p>
 
-To develop your software, we provide you with a training data set that consists of Twitter tweets in English, Spanish, Italian and Dutch.</p>
-        <p><a class="btn btn-default" target="_blank" href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-15/pan15-data/pan15-author-profiling-training-dataset-2015-04-23-password-protected.zip">Download corpus</a> (Updated April 23, 2015. The file is password-protected. To obtain the password, you need to register first.)</p>
+            <h3>Award</h3>
+            <p>We are happy to announce that the best performing team at the 3rd International Competition on Author
+                Profiling will be awarded 300,- Euro sponsored by <a href="http://www.meaningcloud.com/"
+                                                                     target="_blank">MeaningCloud</a>.</p>
+            <ul>
+                <li>
+                    Miguel Ángel Álvarez Carmona, Adrián Pastor López Monroy, Manuel Montes y Gómez and Luis Villaseñor
+                    Pineda
+                    from INAOE, Mexico
+                </li>
+            </ul>
+            <p>Congratulations!</p>
 
-<p>With regard to age, we will consider the following classes: 18-24, 25-34, 35-49, 50-xx.</p>
+            <h3>Task</h3>
+            <p>This task is about predicting an author's demographics from her writing. Participants will be provided
+                with Twitter tweets in English and Spanish to predict age, gender and personality traits. Moreover, they
+                will be provided also with tweets in Italian and Dutch and asked to predict the gender and
+                personality. </p>
 
-<p>With regard to personality traits, for each trait we will provide scores (between -0.5 and 0.5).</p>
+            <h3>Training Corpus</h3>
+            <p>
 
-<!--
-To develop your software for age and gender identification, we provide you with a training data set that consists of blog posts, Twitter tweets and social media texts written in both English and Spanish as well as hotel reviews written in English. With regard to age, we will consider the following classes: 18-24, 25-34, 35-49, 50-64, 65-xx.</p>
-        <p><a class="btn btn-default" target="_blank" href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-14/pan14-data/pan14-author-profiling-training-corpus-2014-04-16.zip">Download corpus</a> (updated on April 16, 2014)</p>
-        <p><b>Remark.</b> Due to Twitter's privacy policy we cannot provide tweets directly, but only URLs referring to them. You will have to download them yourself. For your convenience, we provide a download software for this. We expect participants to extract gender and age information only from the textual part of a tweet and to discard any other meta information that may be provided by Twitter's API. When we evaluate your software at our site, we do not expect it downloads tweets. We will do this beforehand.</p>
-        <p><a class="btn btn-default" target="_blank" href="../pan15-code/pan15-author-profiling-twitter-downloader.zip">Download software</a></p>
--->      </div>
-    </div>
+                To develop your software, we provide you with a training data set that consists of Twitter tweets in
+                English, Spanish, Italian and Dutch.</p>
+            <p><a class="uk-button uk-button-primary" target="_blank"
+                  href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-15/pan15-data/pan15-author-profiling-training-dataset-2015-04-23-password-protected.zip">Download
+                corpus</a> (Updated April 23, 2015. The file is password-protected. To obtain the password, you need to
+                register first.)</p>
 
-	    <div class="panel panel-default">
-      <div class="panel-heading">Test corpus</div>
-      <div class="panel-body"><p>
-        <p><a class="btn btn-default" target="_blank" href="https://s3.amazonaws.com/autoritas.pan/pan-ap2015-test.zip">Download test corpus + truth files</a></p>
-      </div>
-    </div>
-	    
+            <p>With regard to age, we will consider the following classes: 18-24, 25-34, 35-49, 50-xx.</p>
 
-	  <div class="panel panel-default">
-      <div class="panel-heading">Output</div>
-      <div class="panel-body">
-        <p>Your software must take as input the absolute path to an unpacked dataset, and has to output for each document of the dataset a corresponding XML file that looks like this:</p>
-  <pre class="prettyprint lang-xml" style="overflow-x: auto;">
+            <p>With regard to personality traits, for each trait we will provide scores (between -0.5 and 0.5).</p>
+
+            <h3>Test Corpus</h3>
+            <p><a class="uk-button uk-button-primary" target="_blank"
+                  href="https://s3.amazonaws.com/autoritas.pan/pan-ap2015-test.zip">Download test corpus + truth
+                files</a></p>
+
+            <h3>Output</h3>
+            <p>Your software must take as input the absolute path to an unpacked dataset, and has to output for each
+                document of the dataset a corresponding XML file that looks like this:</p>
+            <pre class="prettyprint lang-xml" style="overflow-x: auto;">
   &lt;author id="{author-id}"
 	  type="twitter"
 	  lang="en|es|it|nl"
@@ -142,208 +135,281 @@ To develop your software for age and gender identification, we provide you with 
 	  open="-0.5 to +0.5"
   /&gt;
   </pre>
-        <p>The naming of the output files is up to you, we recommend to use the author-id as filename and "xml" as extension.</p>
-      </div>
-    </div>
-	  <div class="panel panel-default">
-      <div class="panel-heading">Performance Measures</div>
-      <div class="panel-body">
-
-<p>The performance of your author profiling solution for age and gender will be ranked by accuracy.</p>
-<p>For personality identification the average Root Mean Squared Error (RMSE) will be used.</p>
-<p>For obtaining a global ranking, we apply the following formula: global_ranking = ((1-RMSE) + joint_accuracy)/ 2</p>
+            <p>The naming of the output files is up to you, we recommend to use the author-id as filename and "xml" as
+                extension.</p>
 
 
-</div>
-    </div>
-	  <div class="panel panel-default">
-      <div class="panel-heading">Submission</div>
-      <div class="panel-body">
-        <p>We ask you to prepare your software so that it can be executed via command line calls. To maximize the sustainability of software submissions for this task, we encourage you to prepare your software so it can be re-trained on demand, i.e., by offering two commands, one for training, and one for testing. This way, your software can be reused on future evaluation corpora as well as on private collections submitted to PAN by via our data submission initiative.</p>
-        <p>The training command shall take as input (i) an absolute path to a training corpus formated as described above, and (ii) an absolute path to an empty output directory:</p>
-        <pre class="prettyprint lang-c" style="overflow-x:auto">
+            <h3>Performance Measures</h3>
+            <p>The performance of your author profiling solution for age and gender will be ranked by accuracy.</p>
+            <p>For personality identification the average Root Mean Squared Error (RMSE) will be used.</p>
+            <p>For obtaining a global ranking, we apply the following formula: global_ranking = ((1-RMSE) +
+                joint_accuracy)/ 2</p>
+
+
+            <h3>Submission</h3>
+            <p>We ask you to prepare your software so that it can be executed via command line calls. To maximize the
+                sustainability of software submissions for this task, we encourage you to prepare your software so it
+                can be re-trained on demand, i.e., by offering two commands, one for training, and one for testing. This
+                way, your software can be reused on future evaluation corpora as well as on private collections
+                submitted to PAN by via our data submission initiative.</p>
+            <p>The training command shall take as input (i) an absolute path to a training corpus formated as described
+                above, and (ii) an absolute path to an empty output directory:</p>
+            <pre class="prettyprint lang-c" style="overflow-x:auto">
 > myTrainingSoftware <b>-i</b> path/to/training/corpus <b>-o</b> path/to/output/directory
 </pre>
-        <p>Based on the training corpus, and perhaps based on its language and genre found within, your software shall train a classification model, and save the trained model to the specified output directory in serialized or binary form.</p>
-        <p>The testing command shall take as input (i) an absolute path to a test corpus (not containing the ground truth) (ii) an absolute path to a previously trained classification model, and (iii) an absolute path to an empty output directory:</p>
-        <pre class="prettyprint lang-py" style="overflow-x:auto">
+            <p>Based on the training corpus, and perhaps based on its language and genre found within, your software
+                shall train a classification model, and save the trained model to the specified output directory in
+                serialized or binary form.</p>
+            <p>The testing command shall take as input (i) an absolute path to a test corpus (not containing the ground
+                truth) (ii) an absolute path to a previously trained classification model, and (iii) an absolute path to
+                an empty output directory:</p>
+            <pre class="prettyprint lang-py" style="overflow-x:auto">
 > myTestingSoftware <b>-i</b> path/to/test/corpus <b>-m</b> path/to/classification/model <b>-o</b> path/to/output/directory
 </pre>
-        <p>Based on the classification model, the software shall classifiy each case found in the test corpus and write an output file as described above to the output directory.</p>
-        <p>However, <b>offering a command for training is optional</b>, so if you face difficulties in doing so, you may skip the training command and omit the model option <b>-m</b> from the testing command.</p>
-        <p>You can choose freely among the available programming languages and among the operating systems Microsoft Windows and Ubuntu. We will ask you to deploy your software onto a virtual machine that will be made accessible to you after registration. You will be able to reach the virtual machine via ssh and via remote desktop. More information about how to access the virtual machines can be found in the user guide below:</p>
-        <p><a class="btn btn-default" href="pan15-virtual-machine-user-guide.pdf">PAN Virtual Machine User Guide »</a></p>
-        <p>Once deployed in your virtual machine, we ask you to access TIRA at <a href="http://www.tira.io">www.tira.io</a>, where you can self-evaluate your software on the test data.</p>
-        <p><strong>Note:</strong> By submitting your software you retain full copyrights. You agree to grant us usage rights only for the purpose of the PAN competition. We agree not to share your software with a third party or use it for other purposes than the PAN competition.</p>
-      </div>
+            <p>Based on the classification model, the software shall classifiy each case found in the test corpus and
+                write an output file as described above to the output directory.</p>
+            <p>However, <b>offering a command for training is optional</b>, so if you face difficulties in doing so, you
+                may skip the training command and omit the model option <b>-m</b> from the testing command.</p>
+            <p>You can choose freely among the available programming languages and among the operating systems Microsoft
+                Windows and Ubuntu. We will ask you to deploy your software onto a virtual machine that will be made
+                accessible to you after registration. You will be able to reach the virtual machine via ssh and via
+                remote desktop. More information about how to access the virtual machines can be found in the user guide
+                below:</p>
+            <p><a class="uk-button uk-button-primary" href="pan15-virtual-machine-user-guide.pdf">PAN Virtual Machine User Guide
+                »</a></p>
+            <p>Once deployed in your virtual machine, we ask you to access TIRA at <a href="http://www.tira.io">www.tira.io</a>,
+                where you can self-evaluate your software on the test data.</p>
+            <p><strong>Note:</strong> By submitting your software you retain full copyrights. You agree to grant us
+                usage rights only for the purpose of the PAN competition. We agree not to share your software with a
+                third party or use it for other purposes than the PAN competition.</p>
+
+
+        </div>
     </div>
 
-    <div class="panel panel-default">
-      <div class="panel-heading">Results</div>
-      <div class="panel-body">
-        <p>The following table lists the performances achieved by the participating teams:</p>
-        <table class="table table-condensed" style="font-size:small;">
-          <thead>
-            <tr><th colspan="2" style="text-align:center">Author profiling performance</th></tr>
-            <tr><th style="white-space:nowrap">Avg. Accuracy</th><th>Team</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>0.8404</td><td>Miguel Ángel Álvarez Carmona, Adrián Pastor López Monroy, Manuel Montes y Gómez, Luis Villaseñor Pineda and Hugo Jair Escalante. INAOE Mexico.</td></tr>
-            <tr><td>0.8346</td><td>Carlos E. González Gallardo, Azucena Montes Redón,  Gerardo Eugenio Sierra Martínez, José Antonio Nuñez Juárez, Adolfo Jonathan Salinas López and Juan Rodrigo Ek Catzin. UNAM Mexico.</td></tr>
-            <tr><td>0.8078</td><td>Andreas Grivas, Anastasia Krithara and George Giannakopoulos. NCSR Demokritos, Greece.</td></tr>
-            <tr><td>0.7875</td><td>Mirco Kocher. University of Neuchâtel, Switzerland.</td></tr>
-            <tr><td>0.7755</td><td>Octavia Maria Sulea and Daniel Dichiu. Bitdefender and University of Bucharest, Romania.</td></tr>
-            <tr><td>0.7584</td><td>Lesly Miculicich. University of Necuhatel, Switzerland.</td></tr>
-            <tr><td>0.7338</td><td>Scot Nowson, Julien Perez, Caroline Brun, Shachar Mirkin and Claude Roux. Xerox Research Centre Europe, France.</td></tr>
-            <tr><td>0.7223</td><td>Edson Roberto Duarte Weren. Brazil.</td></tr>
-            <tr><td>0.7130</td><td>Adam Poulston, Mark Stevenson and Kalina Bontcheva. University of Sheffield, United Kingdom.</td></tr>
-            <tr><td>0.7061</td><td>Suraj Maharjan and Thamar Solorio. University of Houston. United States.</td></tr>
-            <tr><td>0.6960</td><td>Caitlin McCollister, Bo Lou and Shu Huang. University of Kansas, United States.</td></tr>
-            <tr><td>0.6875</td><td>Mounica Arroju, Aftab Hassan and Golnoosh Farnadi. University of Washington Tacoma, United States.</td></tr>
-            <tr><td>0.6857</td><td>Mayte Gimenez, Delia Irazú Hernández and Ferran Plá. Universitat Politècnica de València, Spain.</td></tr>
-            <tr><td>0.6809</td><td>Alberto Bartoli, Andrea De Lorenzo, Alessandra Laderchi, Eric Medvet and Fabiano Tarlao. University of Trieste, Italy.</td></tr>
-            <tr><td>0.6685</td><td>Ifrah Pervaz, Iqra Ameer, Abdul Sittar, Rao Muhammad Adeel Nawab. COMSATS Institute of Information Technology, Pakistan.</td></tr>
-            <tr><td>0.6495</td><td>Fahad Najib, Waqas Arshad Cheema and Rao Muhammad Adeel Nawab. Comsats Lahore, Pakistan.</td></tr>
-            <tr><td>0.6401</td><td>Piotr Przybyla and Pawel Teisseyre. Polish Academy of Sciences, Poland.</td></tr>
-            <tr><td>0.6204</td><td>Alonso Palomino Garibay, Adolfo T. Camacho González, Ricardo A. Fierro Villaneda, Irazú Hernández Farias, Davide Buscaldi and Ivan Vladimir Meza Ruiz. UNAM, Mexico.</td></tr>
-            <tr><td>0.6178</td><td>Roy Bayot, Teresa Gonçalves and Paolo Quaresma. Universidade de Évora, Portugal.</td></tr>
-            <tr><td>*</td><td>Hafiz Rizwan Iqbal, Muhammad Adnan Ashraf and Rao Muhammad Adeel Nawab. Pakistan.</td></tr>
-            <tr><td>*</td><td>Yasen Kiprov, Momchil Hardalov, Preslav Nakov and Ivan Koychev. Sofia University "St. Kliment Ohridski", Bulgaria.</td></tr>
-            <tr><td>*</td><td>Juan Pablo Posadas Durán, Ilia Markov, Helena Gómez Adorno, Grigori Sidorov, Ildar Batyrshin, Alexander Gelbukh and Obdulia Pichardo Lagunas. National Polytechnic Institute, Mexico.</td></tr>
-          </tbody>
-        </table>
-        <p>* Results have been omitted for these teams since they participated in some languages only.</p>
-        <p>A more detailed analysis of the detection performances can be found in the overview paper accompanying this task.</p>
-        <p>
-	        <a class="btn btn-default" href="https://www.uni-weimar.de/medien/webis/events/pan-15/pan15-papers-final/pan15-author-profiling/rangel15-overview.pdf#page=8">Learn more »</a>
-        </p>
-      </div>
+    <div class="uk-section uk-section-default">
+        <div class="uk-container">
+            <h2>Results</h2>
+            <p>The following table lists the performances achieved by the participating teams:</p>
+
+            <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+                <thead>
+                <tr>
+                    <th colspan="2" style="text-align:center">Author profiling performance</th>
+                </tr>
+                <tr>
+                    <th style="white-space:nowrap">Avg. Accuracy</th>
+                    <th>Team</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>0.8404</td>
+                    <td>Miguel Ángel Álvarez Carmona, Adrián Pastor López Monroy, Manuel Montes y Gómez, Luis Villaseñor
+                        Pineda and Hugo Jair Escalante. INAOE Mexico.
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.8346</td>
+                    <td>Carlos E. González Gallardo, Azucena Montes Redón, Gerardo Eugenio Sierra Martínez, José Antonio
+                        Nuñez Juárez, Adolfo Jonathan Salinas López and Juan Rodrigo Ek Catzin. UNAM Mexico.
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.8078</td>
+                    <td>Andreas Grivas, Anastasia Krithara and George Giannakopoulos. NCSR Demokritos, Greece.</td>
+                </tr>
+                <tr>
+                    <td>0.7875</td>
+                    <td>Mirco Kocher. University of Neuchâtel, Switzerland.</td>
+                </tr>
+                <tr>
+                    <td>0.7755</td>
+                    <td>Octavia Maria Sulea and Daniel Dichiu. Bitdefender and University of Bucharest, Romania.</td>
+                </tr>
+                <tr>
+                    <td>0.7584</td>
+                    <td>Lesly Miculicich. University of Necuhatel, Switzerland.</td>
+                </tr>
+                <tr>
+                    <td>0.7338</td>
+                    <td>Scot Nowson, Julien Perez, Caroline Brun, Shachar Mirkin and Claude Roux. Xerox Research Centre
+                        Europe, France.
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.7223</td>
+                    <td>Edson Roberto Duarte Weren. Brazil.</td>
+                </tr>
+                <tr>
+                    <td>0.7130</td>
+                    <td>Adam Poulston, Mark Stevenson and Kalina Bontcheva. University of Sheffield, United Kingdom.
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.7061</td>
+                    <td>Suraj Maharjan and Thamar Solorio. University of Houston. United States.</td>
+                </tr>
+                <tr>
+                    <td>0.6960</td>
+                    <td>Caitlin McCollister, Bo Lou and Shu Huang. University of Kansas, United States.</td>
+                </tr>
+                <tr>
+                    <td>0.6875</td>
+                    <td>Mounica Arroju, Aftab Hassan and Golnoosh Farnadi. University of Washington Tacoma, United
+                        States.
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.6857</td>
+                    <td>Mayte Gimenez, Delia Irazú Hernández and Ferran Plá. Universitat Politècnica de València,
+                        Spain.
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.6809</td>
+                    <td>Alberto Bartoli, Andrea De Lorenzo, Alessandra Laderchi, Eric Medvet and Fabiano Tarlao.
+                        University of Trieste, Italy.
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.6685</td>
+                    <td>Ifrah Pervaz, Iqra Ameer, Abdul Sittar, Rao Muhammad Adeel Nawab. COMSATS Institute of
+                        Information Technology, Pakistan.
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.6495</td>
+                    <td>Fahad Najib, Waqas Arshad Cheema and Rao Muhammad Adeel Nawab. Comsats Lahore, Pakistan.</td>
+                </tr>
+                <tr>
+                    <td>0.6401</td>
+                    <td>Piotr Przybyla and Pawel Teisseyre. Polish Academy of Sciences, Poland.</td>
+                </tr>
+                <tr>
+                    <td>0.6204</td>
+                    <td>Alonso Palomino Garibay, Adolfo T. Camacho González, Ricardo A. Fierro Villaneda, Irazú
+                        Hernández Farias, Davide Buscaldi and Ivan Vladimir Meza Ruiz. UNAM, Mexico.
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.6178</td>
+                    <td>Roy Bayot, Teresa Gonçalves and Paolo Quaresma. Universidade de Évora, Portugal.</td>
+                </tr>
+                <tr>
+                    <td>*</td>
+                    <td>Hafiz Rizwan Iqbal, Muhammad Adnan Ashraf and Rao Muhammad Adeel Nawab. Pakistan.</td>
+                </tr>
+                <tr>
+                    <td>*</td>
+                    <td>Yasen Kiprov, Momchil Hardalov, Preslav Nakov and Ivan Koychev. Sofia University "St. Kliment
+                        Ohridski", Bulgaria.
+                    </td>
+                </tr>
+                <tr>
+                    <td>*</td>
+                    <td>Juan Pablo Posadas Durán, Ilia Markov, Helena Gómez Adorno, Grigori Sidorov, Ildar Batyrshin,
+                        Alexander Gelbukh and Obdulia Pichardo Lagunas. National Polytechnic Institute, Mexico.
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <p>* Results have been omitted for these teams since they participated in some languages only.</p>
+            <p>A more detailed analysis of the detection performances can be found in the overview paper accompanying
+                this task.</p>
+            <p>
+                <a class="uk-button uk-button-primary"
+                   href="https://www.uni-weimar.de/medien/webis/events/pan-15/pan15-papers-final/pan15-author-profiling/rangel15-overview.pdf#page=8">Learn
+                    more »</a>
+            </p>
+
+            <h2>Related Work and Corpora</h2>
+            <p>We refer you to:</p>
+            <ul>
+                <li>Fabio Celli, Bruno Lepri, Joan-Isaac Biel, Daniel Gatica-Perez, Giuseppe Riccardi, Fabio Pianesi. <a
+                        href="http://clic.cimec.unitn.it/fabio/wk02cpr-celli.pdf" target="_blank">The Workshop on
+                    Computational Personality Recognition 2014.</a> Proceedings of ACM Multimedia 2014: 1245-1246.
+                </li>
+                <li>Francisco Rangel, Paolo Rosso, Moshe Koppel, Efstatios Stamatatos, Giacomo Inches. <a
+                        href="http://ceur-ws.org/Vol-1179/CLEF2013wn-PAN-RangelEt2013.pdf" target="_blank">Overview of
+                    the Author Profiling Task at PAN 2013.</a> In: Forner P., Navigli R., Tufis D. (Eds.)Notebook Papers
+                    of CLEF 2013 LABs and Workshops. CEUR-WS.org, vol. 1179
+                </li>
+                <li>Francisco Rangel, Paolo Rosso, Irina Chugur, Martin Potthast, Martin Trenkmann, Benno Stein, Ben
+                    Verhoeven, Walter Daelemans. <a href="http://ceur-ws.org/Vol-1180/CLEF2014wn-Pan-RangelEt2014.pdf"
+                                                    target="_blank">Overview of the 2nd Author Profiling Task at PAN
+                        2014.</a> In: Cappellato L., Ferro N., Halvey M., Kraaij W. (Eds.) CLEF 2014 Labs and Workshops,
+                    Notebook Papers. CEUR-WS.org, vol. 1180, pp. 898-827.
+                </li>
+                <li>S. Argamon, M. Koppel, J. Pennebaker and J. Schler (2009), <a
+                        href="http://u.cs.biu.ac.il/~koppel/papers/AuthorshipProfiling-cacm-final.pdf" target="_blank">Automatically
+                    profiling the author of an anonymous text</a>, Communications of the ACM 52 (2): 119–123.
+                </li>
+                <li>J. Schler, Moshe Koppel, S. Argamon and J. Pennebaker (2006), <a
+                        href="http://u.cs.biu.ac.il/~koppel/papers/springsymp-blogs-07.10.05-final.pdf" target="_blank">Effects
+                    of Age and Gender on Blogging</a>, in Proc. of AAAI Spring Symposium on Computational Approaches for
+                    Analyzing Weblogs, March 2006.
+                </li>
+                <li>M.Koppel, S. Argamon and A. Shimoni (2003), <a
+                        href="http://u.cs.biu.ac.il/~koppel/papers/male-female-llc-final.pdf" target="_blank">Automatically
+                    categorizing written texts by author gender</a>, Literary and Linguistic Computing 17(4), November
+                    2002, pp. 401-412.
+                </li>
+
+                <li>J. Pennebaker (2011). The secret life of pronouns: What our words say about us. New York: Bloomsbury
+                    Publishing, 2011.
+                </li>
+
+                <li><a href="http://mypersonality.org/wiki/doku.php?id=wcpr13" target="_blank">Workshop on Computational
+                    Personality Recognition 2013</a></li>
+
+                <li><a href="https://sites.google.com/site/wcprst/home/wcpr14#data" target="_blank">Workshop on
+                    Computational Personality Recognition 2014</a></li>
+
+                <li>
+                    <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-author-profiling-training-corpus-2013-01-09.zip"
+                       target="_blank">PAN-AP-13 corpus - Author Profiling Shared Task</a></li>
+                <li>
+                    <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-14/pan14-data/pan14-author-profiling-training-corpus-2014-04-16.zip"
+                       target="_blank">PAN-AP-14 corpus - Author Profiling Shared Task</a></li>
+                <li><a href="http://u.cs.biu.ac.il/~koppel/BlogCorpus.htm" target="_blank">The Blog Authorship
+                    Corpus</a></li>
+                <li><a href="http://mypersonality.org/wiki/lib/exe/fetch.php?media=wiki:mypersonality_final.zip"
+                       target="_blank">Mypersonality dataset</a></li>
+
+                <li><a href="http://mypersonality.org/wiki/lib/exe/fetch.php?media=wiki:essays.zip" target="_blank">Essays
+                    dataset</a></li>
+
+                <li><a href="http://clic.cimec.unitn.it/fabio/wcpr14/mobile_data_wcpr14final.zip" target="_blank">Mobile
+                    dataset</a></li>
+
+                <li><a href="https://www.idiap.ch/dataset/youtube-personality" target="_blank">Youtube dataset
+                    (request)</a></li>
+            </ul>
+
+        </div>
     </div>
 
-    <div class="panel panel-default">
-      <div class="panel-heading">Related Work and Corpora</div>
-      <div class="panel-body">
-        <p>We refer you to:</p>
-        <ul>
-		<li>Fabio Celli, Bruno Lepri, Joan-Isaac Biel, Daniel Gatica-Perez, Giuseppe Riccardi, Fabio Pianesi. <a href="http://clic.cimec.unitn.it/fabio/wk02cpr-celli.pdf" target="_blank">The Workshop on Computational Personality Recognition 2014.</a> Proceedings of ACM Multimedia 2014: 1245-1246.</li>
-		<li>Francisco Rangel, Paolo Rosso, Moshe Koppel, Efstatios Stamatatos, Giacomo Inches. <a href="http://ceur-ws.org/Vol-1179/CLEF2013wn-PAN-RangelEt2013.pdf" target="_blank">Overview of the Author Profiling Task at PAN 2013.</a> In: Forner P., Navigli R., Tufis D. (Eds.)Notebook Papers of CLEF 2013 LABs and Workshops. CEUR-WS.org, vol. 1179</li>
-		<li>Francisco Rangel, Paolo Rosso, Irina Chugur, Martin Potthast, Martin Trenkmann, Benno Stein, Ben Verhoeven, Walter Daelemans. <a href="http://ceur-ws.org/Vol-1180/CLEF2014wn-Pan-RangelEt2014.pdf" target="_blank">Overview of the 2nd Author Profiling Task at PAN 2014.</a> In: Cappellato L., Ferro N., Halvey M., Kraaij W. (Eds.) CLEF 2014 Labs and Workshops, Notebook Papers. CEUR-WS.org, vol. 1180, pp. 898-827.</li>
-		<li>S. Argamon, M. Koppel, J. Pennebaker and J. Schler (2009), <a href="http://u.cs.biu.ac.il/~koppel/papers/AuthorshipProfiling-cacm-final.pdf" target="_blank">Automatically profiling the author of an anonymous text</a>, Communications of the ACM 52 (2): 119–123.</li>
-        <li>J. Schler, Moshe Koppel, S. Argamon and J. Pennebaker (2006), <a href="http://u.cs.biu.ac.il/~koppel/papers/springsymp-blogs-07.10.05-final.pdf" target="_blank">Effects of Age and Gender on Blogging</a>,  in Proc. of AAAI Spring Symposium on Computational Approaches for Analyzing Weblogs, March 2006.</li>
-        <li>M.Koppel, S. Argamon and A. Shimoni (2003), <a href="http://u.cs.biu.ac.il/~koppel/papers/male-female-llc-final.pdf" target="_blank">Automatically categorizing written texts by author gender</a>, Literary and Linguistic Computing 17(4), November 2002, pp. 401-412.</li>
+    <footer class="uk-section uk-section-muted">
+        <div class="uk-container">
 
-		<li>J. Pennebaker (2011). The secret life of pronouns: What our words say about us. New York: Bloomsbury Publishing, 2011.</li>
+            <h2>Task Chair</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/rosso.html %}
+            </div>
 
-		<li><a href="http://mypersonality.org/wiki/doku.php?id=wcpr13" target="_blank">Workshop on Computational Personality Recognition 2013</a></li>
-
-		<li><a href="https://sites.google.com/site/wcprst/home/wcpr14#data" target="_blank">Workshop on Computational Personality Recognition 2014</a></li>
-
-		<li><a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-author-profiling-training-corpus-2013-01-09.zip" target="_blank">PAN-AP-13 corpus - Author Profiling Shared Task</a></li>
-		<li><a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-14/pan14-data/pan14-author-profiling-training-corpus-2014-04-16.zip" target="_blank">PAN-AP-14 corpus - Author Profiling Shared Task</a></li>
-		<li><a href="http://u.cs.biu.ac.il/~koppel/BlogCorpus.htm" target="_blank">The Blog Authorship Corpus</a></li>
-		<li><a href="http://mypersonality.org/wiki/lib/exe/fetch.php?media=wiki:mypersonality_final.zip" target="_blank">Mypersonality dataset</a></li>
-
-		<li><a href="http://mypersonality.org/wiki/lib/exe/fetch.php?media=wiki:essays.zip" target="_blank">Essays dataset</a></li>
-
-		<li><a href="http://clic.cimec.unitn.it/fabio/wcpr14/mobile_data_wcpr14final.zip" target="_blank">Mobile dataset</a></li>
-
-		<li><a href="https://www.idiap.ch/dataset/youtube-personality" target="_blank">Youtube dataset (request)</a></li>
-	</ul>
-      </div>
-    </div>
-  </div>
-
-  <div id="task-committee" class="row" style="padding-top:60px;">
-    <div class="col-xs-12">
-      <h1 class="page-header">Task Chair</h1>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-6 col-sm-3">
-      <div class="thumbnail" style="text-align:center;">
-        <a href="http://users.dsic.upv.es/~prosso/" target="_blank"><img src="../pan15-figures/paolo.jpg" class="img-rounded" alt="Paolo Rosso"></a>
-        <p style="white-space:nowrap"><a href="http://users.dsic.upv.es/~prosso/" target="_blank">Paolo Rosso</a></p>
-        <p style="font-size:10pt">Universitat Polit&egrave;cnica de Val&egrave;ncia</p>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12">
-      <h2>Task Committee</h2>
-    </div>
-  </div>
-  <div class="row">
-	<div class="col-xs-6 col-sm-3">
-      <div class="thumbnail" style="text-align:center;">
-        <a href="http://www.kicorangel.com" target="_blank"><img src="../pan15-figures/francisco.jpg" class="img-rounded" alt="Francisco Rangel"></a>
-        <p><a href="http://www.kicorangel.com" target="_blank">Francisco Rangel</a></p>
-        <p style="font-size:10pt">Autoritas Consulting</p>
-      </div>
-    </div>
-    <div class="col-xs-6 col-sm-3">
-      <div class="thumbnail" style="text-align:center;">
-        <a href="http://clic.cimec.unitn.it/fabio/" target="_blank"><img src="../pan15-figures/fabio.jpg" class="img-rounded" alt="Fabio Celli"></a>
-        <p><a href="http://clic.cimec.unitn.it/fabio/" target="_blank">Fabio Celli</a></p>
-        <p style="font-size:10pt">University of Trento</p>
-      </div>
-    </div>
-    <div class="col-xs-6 col-sm-3">
-      <div class="thumbnail" style="text-align:center;">
-        <a href="http://www.webis.de" target="_blank"><img src="../pan15-figures/benno.jpg" class="img-rounded" alt="Benno Stein"></a>
-        <p style="white-space:nowrap"><a href="http://www.webis.de" target="_blank">Benno Stein</a></p>
-        <p style="font-size:10pt">Bauhaus-Universit&auml;t Weimar</p>
-      </div>
-    </div>
-    <div class="col-xs-6 col-sm-3">
-      <div class="thumbnail" style="text-align:center;">
-        <a href="https://www.uni-weimar.de/medien/webis/people" target="_blank"><img src="../pan15-figures/martin.jpg" class="img-rounded" alt="Martin Potthast"></a>
-        <p style="white-space:nowrap"><a href="https://www.uni-weimar.de/medien/webis/people" target="_blank">Martin Potthast</a></p>
-        <p style="font-size:10pt">Bauhaus-Universit&auml;t Weimar</p>
-      </div>
-    </div>
-    <div class="col-xs-6 col-sm-3">
-      <div class="thumbnail" style="text-align:center;">
-        <a href="http://www.clips.ua.ac.be/~walter/" target="_blank"><img src="../pan15-figures/walter.jpg" class="img-rounded" alt="Walter Daelemans"></a>
-        <p style="white-space:nowrap"><a href="http://www.clips.ua.ac.be/~walter/" target="_blank">Walter Daelemans</a></p>
-        <p style="font-size:10pt">University of Antwerp</p>
-      </div>
-    </div>
-    <div class="col-xs-6 col-sm-3">
-      <div class="thumbnail" style="text-align:center;">
-        <a href="http://www.icsd.aegean.gr/lecturers/stamatatos/" target="_blank"><img src="../pan15-figures/stathis.jpg" class="img-rounded" alt="Efstathios Stamatatos"></a>
-        <p><a href="http://www.icsd.aegean.gr/lecturers/stamatatos/" target="_blank">Efstathios Stamatatos</a></p>
-        <p style="font-size:10pt">University of the Aegean</p>
-      </div>
-    </div>
-  </div>
-  <footer>
-    <p class="pull-right">© pan.webis.de</p>
-  </footer>
-
-</div> <!-- /container -->
-
-<script src="../../js/jquery.js"></script>
-<script src="../../js/bootstrap.min.js"></script>
-<script src="../../js/prettify.js"></script>
-<script>
-  !function ($) {
-    $(function(){
-      window.prettyPrint && prettyPrint()   
-    })
-  }(window.jQuery)
-</script>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-70770005-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
-</body>
-</html>
-
+            <h2>Task Committee</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/rangel.html %}
+                {% include people-cards/celli.html %}
+                {% include people-cards/stein.html %}
+                {% include people-cards/potthast.html %}
+                {% include people-cards/daelemans.html %}
+                {% include people-cards/stamatatos.html %}
+            </div>
+        </div>
+        <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+            {% include organizations/clef-organizations-section.html year=2015 %}
+        </div>
+    </footer>
+</main>
