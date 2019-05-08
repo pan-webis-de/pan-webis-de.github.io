@@ -1,0 +1,177 @@
+---
+layout: default
+nav_active: tasks
+title: PAN @ CLEF 2017
+description: PAN @ CLEF 2017
+---
+
+<main>
+    <header class="uk-section uk-section-muted">
+        <nav class="uk-container">
+            <div class="uk-align-right uk-visible@m uk-text-muted">
+                <a class="uk-button" href="{{ 'clef16/pan16-web/keynotes.html' | relative_url }}"
+                   data-uk-icon="chevron-left"></a>
+                CLEF 2017
+                <a class="uk-button uk-padding-remove-right"
+                   href="{{ 'clef18/pan18-web/keynotes.html' | relative_url }}"
+                   data-uk-icon="chevron-right"></a>
+            </div>
+
+            <ul class="uk-text-muted uk-tab uk-margin-remove-top">
+                <li><a href="{{ '/clef17/pan17-web/index.html' | relative_url }}">Overview</a></li>
+                <li class="uk-active"><a href="{{ '/clef17/pan17-web/keynotes.html' | relative_url }}">Keynotes</a></li>
+                <li><a href="{{ '/clef17/pan17-web/program.html' | relative_url }}">Program</a></li>
+                <li>
+                    <a href="#">Tasks <span class="uk-margin-small-left"
+                                            data-uk-icon="icon: chevron-down"></span></a>
+                    <div class="uk-dropdown" data-uk-dropdown="mode: click">
+                        <ul class="uk-nav uk-dropdown-nav">
+                            <li><a href="{{ '/clef17/pan17-web/author-identification.html' | relative_url }}">Author
+                                Identification</a></li>
+                            <li><a href="{{ '/clef17/pan17-web/author-profiling.html' | relative_url }}">Author
+                                Profiling</a></li>
+                            <li><a href="{{ '/clef17/pan17-web/author-obfuscation.html' | relative_url }}">Author
+                                Obfuscation</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="{{ '/clef17/pan17-web/submission.html' | relative_url }}">Submission</a></li>
+                <li><a href="{{ '/clef17/pan17-web/proceedings.html' | relative_url }}">Proceedings</a></li>
+            </ul>
+        </nav>
+
+        <div class="uk-container uk-margin-small">
+            {% include current-register-quicklink.html year=2017 %}
+
+            <h1 class="uk-margin-small">Workshop Keynotes</h1>
+        </div>
+
+        <div class="uk-container uk-margin-medium">
+            <p class="uk-text-lead">PAN is co-located with the CLEF conference and will be held from September 09 to 12,
+                2017.</p>
+        </div>
+
+    </header>
+    
+    <div class="uk-section">
+        <div class="uk-container uk-margin-large uk-text-justify">
+            <div class="uk-grid uk-child-width-1-2@l" data-uk-grid>
+                <article class="keynote">
+                    <header class="keynote-header">
+                        <div class="keynote-speaker-image">
+                            <img src="{{ '/clef17/pan17-figures/rossano.png' | relative_url }}" alt="Rossano Schifanella">
+                        </div>
+                        <div class="keynote-meta">
+                            <div class="keynote-title">Profiling the sensorial, emotional and ironic life of a city</div>
+                            <div class="keynote-speaker"><a href="http://www.di.unito.it/~schifane/" target="_blank">Rossano Schifanella</a></div>
+                            <div class="keynote-affiliation">University of Turin</div>
+                        </div>
+                    </header>
+                    <div class="keynote-body">
+                        <p>Researchers have used large quantities of online data to study dynamics in novel ways. Consider
+                            the specific case of online networked individuals sharing geo-located, multimodal, pieces of
+                            information in social media platforms, e.g., users of Twitter, Instagram, Facebook. Can their
+                            social dynamics be used to unveil the hidden dimensions that regulate the social life of our
+                            cities? To answer this question, our research has focused on understanding how people
+                            psychologically experience cities and, as a result, we have created new mapping tools that
+                            capture the aesthetic, olfactory and sonic layers of our cities, modeling happiness and use of
+                            figurative language, e.g., irony. The work presented in this talk mixes data mining, urban
+                            informatics, and computational social science to study how these dimensions relate to
+                            demographic, e.g., age or gender, and socio-economic factors, e.g., education, crime, race, or
+                            wealth, that characterize the profile of the modern urban fabric.</p>
+
+                        <footer>
+                            <div class="keynote-bio" id="keynote-bio-1">
+                                <p>Rossano Schifanella is an Assistant Professor in Computer Science at
+                                    the University of Turin, Italy, where he is a member of the Applied Research on Computational
+                                    Complex Systems group. He is a visiting scientist at Nokia Bell Labs, Cambridge, UK, and a
+                                    former visiting scientist at Yahoo Labs and at the Center for Complex Networks and Systems
+                                    Research at Indiana University where he was applying computational methods to model social
+                                    behavior in online platforms. His research embraces the creative energy of a range of
+                                    disciplines across technology, computational social science, data visualization, and urban
+                                    informatics. He is passionate about building new mapping tools that capture the sensorial layers
+                                    of a city, and designing computational frameworks to model aesthetics, creativity, and
+                                    figurative language in social media.</p>
+
+                                <a href="#" class="read-more" data-uk-toggle="target: #keynote-bio-1; cls: expanded">Read more&hellip;</a>
+                                <a href="#" class="read-less" data-uk-toggle="target: #keynote-bio-1; cls: expanded">Read less&hellip;</a>
+                            </div>
+                        </footer>
+                    </div>
+                </article>
+
+                <article class="keynote">
+                    <header class="keynote-header">
+                        <div class="keynote-speaker-image">
+                            <img src="{{ '/clef17/pan17-figures/tatjana.jpg' | relative_url }}" alt="Tatiana Litvinova">
+                        </div>
+                        <div class="keynote-meta">
+                            <div class="keynote-title">RusProfiling: Analyzing Russian written texts to detect deception and
+                                identify the author’s personality and gender</div>
+                            <div class="keynote-speaker"><a href="http://en.rusprofilinglab.ru/" target="_blank">Tatiana Litvinova</a></div>
+                            <div class="keynote-affiliation">RusProfiling Lab</div>
+                        </div>
+                    </header>
+                    <div class="keynote-body">
+                        <p>Authorship profiling and text-based deception detection have been the focus of attention in
+                            recent years, partly because of a rapid growth of Internet communication and necessity to detect
+                            fraud in online reviews and dating profiles, reveal suicidal tendencies in authors of texts on
+                            social media, as well as to assess who likes/dislikes these or those products and services
+                            (male, female, extroverts…) using linguistic analysis of their reviews, etc. Industrial
+                            companies are in need of techniques for quick and valid assessment of candidates’ intelligence
+                            and personality, and analyzing texts could provide such opportunities. Author profiling and
+                            deception detection domain is rapidly developing but not for Slavic languages. They have long
+                            been beyond the scope of relevant studies, which is largely due to the fact that there were no
+                            corresponding text corpora available and no efficient methods of natural language processing in
+                            place. In this keynote we present the results of the research aimed at deception detection and
+                            personality and gender recognition in Russian written texts. In this research RusPersonality was
+                            used, which is by far the largest corpus of written texts in Slavic languages with rich metadata
+                            (information on the authors of the texts – gender, age, occupation, scores on different
+                            personality traits, results of neuropsychological assessment, etc. and information on the texts
+                            – genre, topic, deceptive/truthful, etc.). The second source of material for research conducted
+                            in RusProfiling Lab is social media. In most of the experiments topic-independent features were
+                            used. Special attention in the talk will be paid to the estimation of a likelihood of
+                            self-destructive (including suicidal as the most severe form) behavior using linguistic analyses
+                            of writing. The keynote concludes by encouraging a discussion on the necessity to seek for
+                            topic-independent and language-independent features in authorship profiling and for explanation
+                            of the estimated correlations between linguistics parameters of written texts and
+                            characteristics of their authors.</p>
+
+                        <footer>
+                            <div class="keynote-bio" id="keynote-bio-2">
+                                <p>Tatiana Litvinova is head of Corpus Sociolinguistics and Authorship
+                                    Profiling Lab (RusProfiling Lab). This is a joint laboratory of Voronezh State University
+                                    (Voronezh, Russia), Voronezh State Pedagogical University (Voronezh, Russia) and The Kurchatov
+                                    Institute (Moscow, Russia). The studies conducted in RusProfiling Lab and dedicated to
+                                    authorship profiling and deception detection have been funded by leading Russian scientific
+                                    funds. Lab is also in collaboration with industrial companies to get real-world data and to
+                                    develop authorship profiling techniques that would come in handy in HR. Tatiana has a PhD in
+                                    Russian Linguistics from Voronezh State University (Voronezh, Russia). She is one of the
+                                    organizers of RusProfiling Shared Task on Gender Prediction in Cross-Genre perspective which
+                                    will be held in conjunction with FIRE in December 2017.</p>
+
+                                <a href="#" class="read-more" data-uk-toggle="target: #keynote-bio-2; cls: expanded">Read more&hellip;</a>
+                                <a href="#" class="read-less" data-uk-toggle="target: #keynote-bio-2; cls: expanded">Read less&hellip;</a>
+                            </div>
+                        </footer>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>  <!-- section -->
+
+    <footer class="uk-section uk-section-muted">
+        <div class="uk-container">
+            <h2>Organizing Committee</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/potthast.html %}
+                {% include people-cards/stein.html %}
+                {% include people-cards/rosso.html %}
+                {% include people-cards/stamatatos.html %}
+            </div>
+        </div>
+        <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+            {% include organizations/clef-organizations-section.html year=2017 %}
+        </div>
+    </footer>
+</main>
