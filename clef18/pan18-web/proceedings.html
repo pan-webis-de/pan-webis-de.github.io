@@ -4,7 +4,11 @@ nav_active: tasks
 title: Proceedings of PAN 2018
 description: Proceedings of PAN @ CLEF 2018
 ---
-
+<style>
+    h2.year {
+        display: none;
+    }
+</style>
 <main>
     <header class="uk-section uk-section-muted">
         <nav class="uk-container">
@@ -99,4 +103,5 @@ description: Proceedings of PAN @ CLEF 2018
     includeBibentries(document.getElementById("publications-list-scd"), "year:2018,publisher:CEUR-WS.org,tags:style-change-detection");
     includeBibentries(document.getElementById("publications-list-ap"), "year:2018,publisher:CEUR-WS.org,tags:author-profiling");
     includeBibentries(document.getElementById("publications-list-am"), "year:2018,publisher:CEUR-WS.org,tags:author-masking");
+    $("#year").addClass("uk-hidden")
 </script>
