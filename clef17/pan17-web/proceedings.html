@@ -4,7 +4,11 @@ nav_active: tasks
 title: Proceedings of PAN 2017
 description: Proceedings of PAN @ CLEF 2017
 ---
-
+<style>
+    h2.year {
+        display: none;
+    }
+</style>
 <main>
     <header class="uk-section uk-section-muted">
         <nav class="uk-container">
@@ -50,24 +54,19 @@ description: Proceedings of PAN @ CLEF 2017
     </header>
 
     <div class="uk-section">
-        <div class="uk-container">
-            <h2>Overview Papers</h2>
-            <div id="proceedings-overviews" class="col-xs-12"></div>
-
+        <div class="uk-container uk-margin-medium publications-list">
+            <h2>Overview</h2>
+            <div id="publications-list-overview"></div>
             <h2>Keynotes</h2>
-            <div id="proceedings-talks" class="col-xs-12"></div>
-
-            <h2>Author Clustering</h2>
-            <div id="proceedings-notebooks-author-clustering" class="col-xs-12"></div>
-
-            <h2>Style Breach Detection</h2>
-            <div id="proceedings-notebooks-style-breach-detection" class="col-xs-12"></div>
-
-            <h2>Author Masking</h2>
-            <div id="proceedings-notebooks-author-masking" class="col-xs-12"></div>
-
+            <div id="publications-list-keynotes"></div>
             <h2>Author Profiling: Gender and Language Variety Identification</h2>
-            <div id="proceedings-notebooks-author-profiling" class="col-xs-12"></div>
+            <div id="publications-list-ap"></div>
+            <h2>Author Masking</h2>
+            <div id="publications-list-am"></div>
+            <h2>Author Clustering</h2>
+            <div id="publications-list-ac"></div>
+            <h2>Style Breach Detection</h2>
+            <div id="publications-list-sbd"></div>
         </div>
     </div>
 
@@ -87,31 +86,14 @@ description: Proceedings of PAN @ CLEF 2017
     </footer>
 </main>
 
+<script src="{{ '/js/bibentry.js' | relative_url }}?{{site.time | date: '%s'}}"></script>
+<!--<script src="{{ '/js/bibentry-pan.js' | relative_url }}?{{site.time | date: '%s'}}"></script>-->
 <script>
-var urlOverview = "https://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2017,overview&exclude=talk";
-var urlTalks    = "https://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2017,talk";
-var urlTask1    = "https://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2017,author-clustering&exclude=overview";
-var urlTask2    = "https://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2017,style-breach-detection&exclude=overview";
-var urlTask3    = "https://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2017,author-masking&exclude=overview";
-var urlTask4    = "https://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2017,author-profiling&exclude=overview";
-$(document).ready(function() {
-  fetchPublicationsViewHtml(urlOverview, "#proceedings-overviews");
-  fetchPublicationsViewHtml(urlTalks, "#proceedings-talks");
-  fetchPublicationsViewHtml(urlTask1, "#proceedings-notebooks-author-clustering");
-  fetchPublicationsViewHtml(urlTask2, "#proceedings-notebooks-style-breach-detection");
-  fetchPublicationsViewHtml(urlTask3, "#proceedings-notebooks-author-masking");
-  fetchPublicationsViewHtml(urlTask4, "#proceedings-notebooks-author-profiling");
-});
-function fetchPublicationsViewHtml(url, selector) {
-  $(selector).empty();
-  $(selector).text("Loading...");
-  $(selector).load(url + " #webis-pub-database",
-    function (response, status, xhr) {
-      if ( status == "error" ) {
-        var msg = "Sorry but there was an error: ";
-        $(publicationsViewSelector).html(msg + xhr.status + " " + xhr.statusText);
-      }
-    }
-  );
-}
+    includeBibentries(document.getElementById("publications-list-overview"), "year:2017,publisher:CEUR-WS.org,tags:overview");
+    includeBibentries(document.getElementById("publications-list-keynotes"), "year:2017,tags:keynote");
+    includeBibentries(document.getElementById("publications-list-ac"), "year:2017,publisher:CEUR-WS.org,tags:author-clustering");
+    includeBibentries(document.getElementById("publications-list-sbd"), "year:2017,publisher:CEUR-WS.org,tags:style-breach-detection");
+    includeBibentries(document.getElementById("publications-list-ap"), "year:2017,publisher:CEUR-WS.org,tags:author-profiling");
+    includeBibentries(document.getElementById("publications-list-am"), "year:2017,publisher:CEUR-WS.org,tags:author-masking");
+    $("#year").addClass("uk-hidden")
 </script>

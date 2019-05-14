@@ -4,7 +4,11 @@ nav_active: tasks
 title: PAN @ CLEF 2019 - Proceedings
 description: PAN @ CLEF 2019 - Proceedings
 ---
-
+<style>
+    h2.year {
+        display: none;
+    }
+</style>
 <main>
     <header class="uk-section uk-section-muted">
         <nav class="uk-container">
@@ -47,24 +51,19 @@ description: PAN @ CLEF 2019 - Proceedings
     </header>
 
     <div class="uk-section">
-        <div class="uk-container">
-            <h2>Overview Papers</h2>
-            <div id="proceedings-overviews" class="col-xs-12"></div>
-
+        <div class="uk-container uk-margin-medium publications-list">
+            <h2>Overview</h2>
+            <div id="publications-list-overview"></div>
             <h2>Keynotes</h2>
-            <div id="proceedings-talks" class="col-xs-12"></div>
-
-            <h2>Cross-domain Authorship Attribution</h2>
-            <div id="proceedings-notebooks-authorship-attribution" class="col-xs-12"></div>
-
-            <h2>Style Change Detection</h2>
-            <div id="proceedings-notebooks-style-change-detection" class="col-xs-12"></div>
-
+            <div id="publications-list-keynotes"></div>
             <h2>Bots and Gender Profiling</h2>
-            <div id="proceedings-notebooks-bots-profiling" class="col-xs-12"></div>
-
+            <div id="publications-list-ap"></div>
             <h2>Celebrity Profiling</h2>
-            <div id="proceedings-notebooks-celebrity-profiling" class="col-xs-12"></div>
+            <div id="publications-list-cp"></div>
+            <h2>Cross-domain Authorship Attribution</h2>
+            <div id="publications-list-cdaa"></div>
+            <h2>Style Change Detection</h2>
+            <div id="publications-list-scd"></div>
         </div>
     </div>
 
@@ -85,33 +84,14 @@ description: PAN @ CLEF 2019 - Proceedings
 
 </main>
 
+<script src="{{ '/js/bibentry.js' | relative_url }}?{{site.time | date: '%s'}}"></script>
+<!--<script src="{{ '/js/bibentry-pan.js' | relative_url }}?{{site.time | date: '%s'}}"></script>-->
 <script>
-    let urlOverview = "https://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2019,overview&exclude=talk";
-    let urlTalks = "https://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2019,talk";
-    let urlTask1 = "https://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2019,authorship-attribution&exclude=overview";
-    let urlTask2 = "https://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2019,style-change-detection&exclude=overview";
-    let urlTask3 = "https://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2019,bots-profiling&exclude=overview";
-    let urlTask4 = "https://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2019,celebrity-profiling&exclude=overview";
-
-    $(document).ready(function () {
-        fetchPublicationsViewHtml(urlOverview, "#proceedings-overviews");
-        fetchPublicationsViewHtml(urlTalks, "#proceedings-talks");
-        fetchPublicationsViewHtml(urlTask1, "#proceedings-notebooks-authorship-attribution");
-        fetchPublicationsViewHtml(urlTask2, "#proceedings-notebooks-style-change-detection");
-        fetchPublicationsViewHtml(urlTask3, "#proceedings-notebooks-bots-profiling");
-        fetchPublicationsViewHtml(urlTask4, "#proceedings-notebooks-celebrity-profiling");
-    });
-
-    function fetchPublicationsViewHtml(url, selector) {
-        $(selector).empty();
-        $(selector).text("Loading...");
-        $(selector).load(url + " #webis-pub-database",
-            function (response, status, xhr) {
-                if (status === "error") {
-                    let msg = "Sorry but there was an error: ";
-                    $(publicationsViewSelector).html(msg + xhr.status + " " + xhr.statusText);
-                }
-            }
-        );
-    }
+    includeBibentries(document.getElementById("publications-list-overview"), "year:2019,publisher:CEUR-WS.org,tags:overview");
+    includeBibentries(document.getElementById("publications-list-keynotes"), "year:2019,tags:keynote");
+    includeBibentries(document.getElementById("publications-list-cdaa"), "year:2019,publisher:CEUR-WS.org,tags:authorship-attribution");
+    includeBibentries(document.getElementById("publications-list-scd"), "year:2019,publisher:CEUR-WS.org,tags:style-change-detection");
+    includeBibentries(document.getElementById("publications-list-ap"), "year:2019,publisher:CEUR-WS.org,tags:author-profiling");
+    includeBibentries(document.getElementById("publications-list-cp"), "year:2019,publisher:CEUR-WS.org,tags:celebrity-profiling");
+    $("#year").addClass("uk-hidden")
 </script>

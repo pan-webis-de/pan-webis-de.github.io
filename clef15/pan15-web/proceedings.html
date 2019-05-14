@@ -4,7 +4,11 @@ nav_active: tasks
 title: Proceedings of PAN 2015
 description: Proceedings of PAN at CLEF 2015
 ---
-
+<style>
+    h2.year {
+        display: none;
+    }
+</style>
 <main>
     <header class="uk-section uk-section-muted">
         <nav class="uk-container">
@@ -49,26 +53,20 @@ description: Proceedings of PAN at CLEF 2015
             </div>
         </div>
     </header>
-
     <div class="uk-section">
-        <div class="uk-container">
-            <h2>Overview Papers</h2>
-            <div id="proceedings-overviews"></div>
-
+        <div class="uk-container uk-margin-medium publications-list">
+            <h2>Overview</h2>
+            <div id="publications-list-overview"></div>
             <h2>Keynotes</h2>
-            <div id="proceedings-talks"></div>
-
-            <h2>Plagiarism Detection: Source Retrieval</h2>
-            <div id="proceedings-notebooks-source-retrieval"></div>
-
-            <h2>Plagiarism Detection: Text Alignment</h2>
-            <div id="proceedings-notebooks-text-alignment"></div>
-
-            <h2>Authorship Verification</h2>
-            <div id="proceedings-notebooks-authorship-verification"></div>
-
+            <div id="publications-list-keynotes"></div>
             <h2>Author Profiling: Age Prediction, Gender Prediction, and Personality Prediction</h2>
-            <div id="proceedings-notebooks-author-profiling"></div>
+            <div id="publications-list-ap"></div>
+            <h2>Authorship Verification</h2>
+            <div id="publications-list-av"></div>
+            <h2>Plagiarism Detection: Source Retrieval</h2>
+            <div id="publications-list-sr"></div>
+            <h2>Plagiarism Detection: Text Alignment</h2>
+            <div id="publications-list-ta"></div>
         </div>
     </div>
 
@@ -88,33 +86,13 @@ description: Proceedings of PAN at CLEF 2015
     </footer>
 </main>
 
+<script src="{{ '/js/bibentry.js' | relative_url }}?{{site.time | date: '%s'}}"></script>
+<!--<script src="{{ '/js/bibentry-pan.js' | relative_url }}?{{site.time | date: '%s'}}"></script>-->
 <script>
-    var urlOverview = "https://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2015,overview&exclude=talk";
-    var urlTalks = "https://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2015,talk";
-    var urlTask1 = "https://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2015,source-retrieval&exclude=overview";
-    var urlTask2 = "https://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2015,text-alignment&exclude=overview";
-    var urlTask3 = "https://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2015,authorship-verification&exclude=overview";
-    var urlTask4 = "https://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-tags&tags=clef,2015,author-profiling&exclude=overview";
-
-    $(document).ready(function () {
-        fetchPublicationsViewHtml(urlOverview, "#proceedings-overviews");
-        fetchPublicationsViewHtml(urlTalks, "#proceedings-talks");
-        fetchPublicationsViewHtml(urlTask1, "#proceedings-notebooks-source-retrieval");
-        fetchPublicationsViewHtml(urlTask2, "#proceedings-notebooks-text-alignment");
-        fetchPublicationsViewHtml(urlTask3, "#proceedings-notebooks-authorship-verification");
-        fetchPublicationsViewHtml(urlTask4, "#proceedings-notebooks-author-profiling");
-    });
-
-    function fetchPublicationsViewHtml(url, selector) {
-        $(selector).empty();
-        $(selector).text("Loading...");
-        $(selector).load(url + " #webis-pub-database",
-            function (response, status, xhr) {
-                if (status == "error") {
-                    var msg = "Sorry but there was an error: ";
-                    $(publicationsViewSelector).html(msg + xhr.status + " " + xhr.statusText);
-                }
-            }
-        );
-    }
+    includeBibentries(document.getElementById("publications-list-overview"), "year:2016,publisher:CEUR-WS.org,tags:overview");
+    includeBibentries(document.getElementById("publications-list-keynotes"), "year:2016,tags:keynote");
+    includeBibentries(document.getElementById("publications-list-av"), "year:2016,publisher:CEUR-WS.org,tags:author-identification");
+    includeBibentries(document.getElementById("publications-list-sr"), "year:2016,publisher:CEUR-WS.org,tags:source-retrieval");
+    includeBibentries(document.getElementById("publications-list-ap"), "year:2016,publisher:CEUR-WS.org,tags:author-profiling");
+    includeBibentries(document.getElementById("publications-list-ta"), "year:2016,publisher:CEUR-WS.org,tags:text-alignment");
 </script>
