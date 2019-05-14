@@ -52,14 +52,15 @@ description: Proceedings of PAN @ CLEF 2018
     </header>
 
     <div class="uk-section">
-        <div class="uk-container uk-margin-medium">
-            <h1>Proceedings</h1>
-            <div id="search-control">
-                <input type="text" class="uk-input" id="bib-filter-field" placeholder="Type here to filter&hellip;"/>
-            </div>
-        </div>
+        <!-- TODO fix needed -->
+        <!--<div class="uk-container uk-margin-medium">-->
+            <!--<div id="search-control">-->
+                <!--<input type="text" class="uk-input" id="bib-filter-field" placeholder="Type here to filter&hellip;"/>-->
+            <!--</div>-->
+        <!--</div>-->
         <div class="uk-container uk-margin-medium publications-list">
-            {% include bib-pan/bib-pan-18.html %}
+            <div id="publications-list">
+            </div>
         </div>
     </div>
 
@@ -80,4 +81,7 @@ description: Proceedings of PAN @ CLEF 2018
 </main>
 
 <script src="{{ '/js/bibentry.js' | relative_url }}?{{site.time | date: '%s'}}"></script>
-<script src="{{ '/js/bibentry-pan.js' | relative_url }}?{{site.time | date: '%s'}}"></script>
+<!--<script src="{{ '/js/bibentry-pan.js' | relative_url }}?{{site.time | date: '%s'}}"></script>-->
+<script>
+    includeBibentries(document.getElementById("publications-list"), "year:2018,publisher:CEUR-WS.org");
+</script>

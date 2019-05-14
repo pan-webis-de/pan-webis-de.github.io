@@ -19,43 +19,18 @@ description: Publications by PAN participants and overview papers
         </div>
     </header>
 
-    <div class="uk-section uk-section-default">
-        <!--div class="uk-container">
-            <div id="search-control" class="uk-margin-medium">
+    <div class="uk-section">
+        <div class="uk-container uk-margin-medium">
+            <div id="search-control">
                 <input type="text" class="uk-input" id="bib-filter-field" placeholder="Type here to filter&hellip;"/>
             </div>
-        </div-->
-
-        <div class="uk-container uk-margin-medium-top publications-list" id="publications-view">
-            Loading...
+        </div>
+        <div class="uk-container uk-margin-medium publications-list">
+            {% include bib-pan.html%}
         </div>
     </div>
 </main>
 
-<script src="https://webis.de/js/bibentry.js?{{site.time | date: '%s'}}"></script>
-<script src="https://webis.de/js/bibentry-webis-de.js?{{site.time | date: '%s'}}"></script>
-<script>
-    const publicationsViewSelector = "#publications-view";
 
-    let fetchPublicationsViewHtml = (url) => {
-        $(publicationsViewSelector).empty();
-        $(publicationsViewSelector).text("Loading...");
-        $(publicationsViewSelector).load(url + " #webis-pub-database",
-            (response, status, xhr) => {
-                if (status === "error") {
-                    const msg = "Sorry but there was an error: ";
-                    $(publicationsViewSelector).html(msg + xhr.status + " " + xhr.statusText);
-                }
-            }
-        );
-    };
-
-    $.ajaxSetup({
-        // Disable caching of AJAX responses
-        cache: false
-    });
-
-    $(document).ready(function () {
-        fetchPublicationsViewHtml("https://www.uni-weimar.de/medien/webis/publications/pub-database-pan.php?filter=by-year");
-    });
-</script>
+<script src="{{ '/js/bibentry.js' | relative_url }}?{{site.time | date: '%s'}}"></script>
+<script src="{{ '/js/bibentry-pan.js' | relative_url }}?{{site.time | date: '%s'}}"></script>

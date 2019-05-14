@@ -29,7 +29,6 @@ containsQuery = (entry, queryWords) => {
 doFilter = (doc, query) => {
     const years = doc.querySelectorAll(".year-entry");
     query = query.trim();
-
     let filteredAll = false;
 
     if (query === "") {
@@ -94,7 +93,7 @@ activateBibtexToggle = (doc) => {
 //   parentElement: element to which the bibentries should be added
 //   query:         filter query as used on the webis.de page
 //   source:        URL of the page the contains the bibentries
-includeBibentries = (parentElement, query = "", source = "https://webis.de/publications.html") => {
+includeBibentries = (parentElement, query = "", source = "https://pan.webis.de/publications.html") => {
     parentElement.innerText = "Loading...";
 
     /* add style sheet if not added already */
