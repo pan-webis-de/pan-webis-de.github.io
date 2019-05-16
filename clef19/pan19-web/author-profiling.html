@@ -384,8 +384,8 @@ description: PAN @ CLEF 2019 - Bots and Gender Profiling
             </table>
 		
 		<ul>
-			<li>MAJORITY: The predicted class coincides with the majority class</li>
-			<li>RANDOM: A random prediction for each instance</li>
+			<li>MAJORITY: The predicted class coincides with the majority class.</li>
+			<li>RANDOM: A random prediction for each instance.</li>
 			<li>CHAR N-GRAMS:
 				<ul>
 					<li>BOTS-EN: 500 characters 5-grams + Random Forest</li>
@@ -402,7 +402,7 @@ description: PAN @ CLEF 2019 - Bots and Gender Profiling
 					<li>GENDER-ES: 200 words 1-grams + Random Forest</li>
 				</ul>
 			</li>
-			<li>WORD EMBEDDINGS: Text represented by averaging the word embeddings 
+			<li>WORD EMBEDDINGS: Text represented by averaging the word embeddings. 
 				<ul>
 					<li>BOTS-EN: glove.twitter.27B.200d + Random Forest</li>
 					<li>BOTS-ES: fasttext-wikipedia + J48</li>
@@ -412,10 +412,10 @@ description: PAN @ CLEF 2019 - Bots and Gender Profiling
 			</li>
 			<li>LDSE: Low Dimensionality Statistical Embedding described in: Rangel, F., Rosso, P., Franco, M. A Low Dimensionality Representation for Language Variety Identification. In: Proceedings of the 17th International Conference on Intelligent Text Processing and Computational Linguistics (CICLing’16), Springer-Verlag, LNCS(9624), pp. 156-169, 2018
 				<ul>
-					<li>BOTS-EN: </li>
-					<li>BOTS-ES: </li>
-					<li>GENDER-EN: </li>
-					<li>GENDER-ES: </li>
+					<li>BOTS-EN: LDSE.v2 (MinFreq=10, MinSize=1) + Naive Bayes</li>
+					<li>BOTS-ES: LDSE.v1 (MinFreq=10, MinSize=1) + Naive Bayes</li>
+					<li>GENDER-EN: LDSE.v1 (MinFreq=10, MinSize=3) + BayesNet</li>
+					<li>GENDER-ES: LDSE.v1 (MinFreq=2, MinSize=1) + Naive Bayes</li>
 				</ul>
 			</li>
 			
