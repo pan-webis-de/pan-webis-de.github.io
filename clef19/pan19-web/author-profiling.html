@@ -351,6 +351,28 @@ description: PAN @ CLEF 2019 - Bots and Gender Profiling
 			<td>0.3716</td>
 			<td>0.3700</td>
 		</tr>
+		
+		<tr>
+			<td>CHAR N-GRAMS</td>
+			<td>0.9360</td>
+			<td>0.8972</td>
+			<td>0.7920</td>
+			<td>0.7289</td>
+		</tr>
+		<tr>
+			<td>WORD N-GRAMS</td>
+			<td>0.9356</td>
+			<td>0.8833</td>
+			<td>0.7989</td>
+			<td>0.7244</td>
+		</tr>
+		<tr>
+			<td>WORD EMBEDDINGS</td>
+			<td>0.9030</td>
+			<td>0.8444</td>
+			<td>0.7879</td>
+			<td>0.7156</td>
+		</tr>
 		<tr>
 			<td>LDSE</td>
 			<td>0.9054</td>
@@ -358,29 +380,45 @@ description: PAN @ CLEF 2019 - Bots and Gender Profiling
 			<td>0.7800</td>
 			<td>0.6900</td>
 		</tr>
-		<tr>
-			<td>char nGrams</td>
-			<td>0.9360</td>
-			<td>0.8972</td>
-			<td>0.7920</td>
-			<td>0.7289</td>
-		</tr>
-		<tr>
-			<td>word nGrams</td>
-			<td>0.9356</td>
-			<td>0.8833</td>
-			<td>0.7989</td>
-			<td>0.7244</td>
-		</tr>
-		<tr>
-			<td>W2V</td>
-			<td>0.9030</td>
-			<td>0.8444</td>
-			<td>0.7879</td>
-			<td>0.7156</td>
-		</tr>
 		</tbody>
             </table>
+		
+		<ul>
+			<li>MAJORITY: The predicted class coincides with the majority class</li>
+			<li>RANDOM: A random prediction for each instance</li>
+			<li>CHAR N-GRAMS:
+				<ul>
+					<li>BOTS-EN: 500 character 5-grams + Random Forest</li>
+					<li>BOTS-ES: </li>
+					<li>GENDER-EN: </li>
+					<li>GENDER-ES: </li>
+				</ul>
+			</li>
+			<li>WORD N-GRAMS:
+				<ul>
+					<li>BOTS-EN: 200 word 1-grams + Random Forest</li>
+					<li>BOTS-ES: </li>
+					<li>GENDER-EN: </li>
+					<li>GENDER-ES: </li>
+				</ul>
+			</li>
+			<li>WORD EMBEDDINGS: Text represented by averaging the word embeddings 
+				<ul>
+					<li>BOTS-EN: </li>
+					<li>BOTS-ES: </li>
+					<li>GENDER-EN: </li>
+					<li>GENDER-ES: </li>
+				</ul>
+			</li>
+			<li>LDSE: Low Dimensionality Statistical Embedding described in: Rangel, F., Rosso, P., Franco, M. A Low Dimensionality Representation for Language Variety Identification. In: Proceedings of the 17th International Conference on Intelligent Text Processing and Computational Linguistics (CICLing’16), Springer-Verlag, LNCS(9624), pp. 156-169, 2018
+				<ul>
+					<li>BOTS-EN: </li>
+					<li>BOTS-ES: </li>
+					<li>GENDER-EN: </li>
+					<li>GENDER-ES: </li>
+				</ul>
+			</li>
+			
 	    </div>
     </div>
 
