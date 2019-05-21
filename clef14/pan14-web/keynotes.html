@@ -1,0 +1,173 @@
+---
+layout: default
+nav_active: tasks
+title: PAN @ CLEF 2014
+description: PAN @ CLEF 2014
+---
+
+<main>
+    <header class="uk-section uk-section-muted">
+        <nav class="uk-container">
+            <div class="uk-align-right uk-visible@m uk-text-muted">
+                <a class="uk-button" href="{{ 'clef13/pan13-web/keynotes.html' | relative_url }}"
+                   data-uk-icon="chevron-left"></a>
+                CLEF 2014
+                <a class="uk-button uk-padding-remove-right"
+                   href="{{ 'clef15/pan15-web/keynotes.html' | relative_url }}"
+                   data-uk-icon="chevron-right"></a>
+            </div>
+
+            <ul class="uk-text-muted uk-tab uk-margin-remove-top">
+                <li><a href="{{ '/clef14/pan14-web/index.html' | relative_url }}">Overview</a></li>
+                <li class="uk-active"><a href="{{ '/clef14/pan14-web/keynotes.html' | relative_url }}">Keynotes</a></li>
+                <li><a href="{{ '/clef14/pan14-web/program.html' | relative_url }}">Program</a></li>
+                <li>
+                    <a href="#">Tasks <span class="uk-margin-small-left" data-uk-icon="icon: chevron-down"></span></a>
+                    <div class="uk-dropdown" data-uk-dropdown="mode: click">
+                        <ul class="uk-nav uk-dropdown-nav">
+                            <li><a href="{{ '/clef14/pan14-web/author-identification.html' | relative_url }}">Author
+                                Identification</a></li>
+                            <li><a href="{{ '/clef14/pan14-web/author-profiling.html' | relative_url }}">Author
+                                Profiling</a></li>
+                            <li><a href="{{ '/clef14/pan14-web/plagiarism-detection.html' | relative_url }}">Plagiarism
+                                Detection</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="{{ '/clef14/pan14-web/submission.html' | relative_url }}">Submission</a></li>
+                <li><a href="{{ '/clef14/pan14-web/proceedings.html' | relative_url }}">Proceedings</a></li>
+            </ul>
+        </nav>
+
+        <div class="uk-container uk-margin-small">
+            {% include current-register-quicklink.html year=2014 %}
+
+            <h1 class="uk-margin-small">Workshop Keynotes</h1>
+        </div>
+
+        <div class="uk-container uk-margin-medium">
+            <p class="uk-text-lead">PAN is co-located with the CLEF conference and will be held from September 08 to 11,
+                2014.</p>
+        </div>
+
+    </header>
+
+    <!-- Tasks -->
+    <div class="uk-section">
+        <!-- Keynotes -->
+        <div class="uk-container uk-margin-large uk-text-justify">
+            <div class="uk-grid uk-child-width-1-2@l" data-uk-grid>
+                <article class="keynote">
+                    <header class="keynote-header">
+                        <div class="keynote-speaker-image">
+                            <img src="{{ '/clef14/pan14-figures/paul.jpg' | relative_url }}"
+                                 alt="Paul Clough">
+                        </div>
+                        <div class="keynote-meta">
+                            <div class="keynote-title">
+                                Proving Ownership: The Case of "Wag in a Bag"
+                            </div>
+                            <div class="keynote-speaker"><a
+                                    href="http://ir.shef.ac.uk/cloughie/" target="_blank">Paul Clough</a></div>
+                            <div class="keynote-affiliation">The University of Sheffield</div>
+                        </div>
+                    </header>
+                    <div class="keynote-body">
+                        <p>Recently I was asked to assist in a text attribution problem: the illegitimate reuse of text
+                            (and images) from the web pages of a small business. When the offender was approached about
+                            committing possible plagiarism their response was ?prove it?. This talk will describe how I
+                            approached the problem of proving ownership and the challenges it entailed. I will describe
+                            the experiences gained from working on the EPSRC-funded Measuring Text Reuse (METER) project
+                            with the UK Press Association, along with the current text attribution literature, that
+                            informed my textual analysis. I will also demonstrate how freely available resources can be
+                            used to tackle this kind of problem. In the end was I successful: did the offender admit
+                            their guilt? You?ll have to attend the talk to find out!
+                        </p>
+
+                        <footer>
+                            <div class="keynote-bio" id="keynote-bio-1">
+                                <p>Paul Clough is a Reader in Information Retrieval at the University of Sheffield. Paul
+                                    joined the university in 1999 working as a Research Assistant in the Department of
+                                    Computer Science in collaboration with the Journalism Department and the British
+                                    Press Association on a project entitled ?Measuring Text Reuse?. Following various
+                                    interests in NLP and Information Retrieval, Paul worked as a researcher on a range
+                                    of projects until 2005 when he became a Lecturer in the Information School. Paul is
+                                    now head of the Information Retrieval research group and coordinator for a new
+                                    Masters programme in Data Science. He has continued teaching and researching various
+                                    aspects of data management and information storage and retrieval. Paul has published
+                                    over 100 peer-reviewed articles, including a co-authored Springer book on
+                                    multilingual information retrieval.</p>
+
+                                <a href="#" class="read-more" data-uk-toggle="target: #keynote-bio-1; cls: expanded">Read
+                                    more&hellip;</a>
+                                <a href="#" class="read-less" data-uk-toggle="target: #keynote-bio-1; cls: expanded">Read
+                                    less&hellip;</a>
+                            </div>
+                        </footer>
+                    </div>
+                </article>
+                <article class="keynote">
+                    <header class="keynote-header">
+                        <div class="keynote-speaker-image">
+                            <img src="{{ '/clef14/pan14-figures/fabio.jpg' | relative_url }}" alt="Fabio Celli">
+                        </div>
+                        <div class="keynote-meta">
+                            <div class="keynote-title">
+                                Unsupervised Personality Recognition from Text: Possible Applications
+                            </div>
+                            <div class="keynote-speaker"><a href="http://personality.altervista.org/fabio.htm"
+                                                            target="_blank">Fabio Celli</a></div>
+                            <div class="keynote-affiliation">University of Trento</div>
+                        </div>
+                    </header>
+                    <div class="keynote-body">
+                        <p>Personality recognition from text consists in the automatic classification of authors'
+                            personality traits from pieces of text they wrote. Classifier's predictions can be compared
+                            against gold standard labels, obtained by means of personality assessments like the Big5
+                            personality test. Until recently, the extraction of personality types was limited to blogs
+                            and offline texts, while in recent years there is a strong interest in the scientific
+                            community about the extraction of personality from various sources, such as online social
+                            networks, speech and video. Current approaches to Personality Recognition are based on
+                            supervised learning, but this has several limitations, for example the cost of data
+                            annotation, the lack of domain adaptability and multilinguality. We present an unsupervised
+                            method for personality recognition from text and some of its applications in Social network
+                            analysis as well as in other NLP tasks.
+                        </p>
+
+                        <footer>
+                            <div class="keynote-bio" id="keynote-bio-2">
+                                <p>Fabio Celli, 1981, is a computational linguist and data miner. He got a degree in
+                                    communication studies at the University of Urbino, in linguistics at the University
+                                    of Bologna, and a PhD in cognitive science at the Center for Mind and Brain Sciences
+                                    (CIMeC), University of Trento. He is one of the organizers of the Workshop on
+                                    Computational Personality Recognition. His PhD thesis, Adaptive Personality
+                                    Recognition from Text, has been published by Lambert Academic Publishing. He also
+                                    loves contemporary art and electronic music.</p>
+
+                                <a href="#" class="read-more" data-uk-toggle="target: #keynote-bio-2; cls: expanded">Read
+                                    more&hellip;</a>
+                                <a href="#" class="read-less" data-uk-toggle="target: #keynote-bio-2; cls: expanded">Read
+                                    less&hellip;</a>
+                            </div>
+                        </footer>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>  <!-- section -->
+
+    <footer class="uk-section uk-section-muted">
+        <div class="uk-container">
+            <h2>Organizing Committee</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/potthast.html %}
+                {% include people-cards/stein.html %}
+                {% include people-cards/rosso.html %}
+                {% include people-cards/stamatatos.html %}
+            </div>
+        </div>
+        <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+            {% include organizations/clef-organizations-section.html year=2014 %}
+        </div>
+    </footer>
+</main>
