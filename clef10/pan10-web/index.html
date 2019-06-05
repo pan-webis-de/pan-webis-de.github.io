@@ -1,174 +1,168 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+---
+layout: default
+nav_active: tasks
+title: PAN at CLEF 2010
+description: PAN at CLEF 2010
+---
 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<main>
+    <header class="uk-section uk-section-muted">
+        <nav class="uk-container">
+            <div class="uk-align-right uk-visible@m uk-text-muted">
+                <a class="uk-button"  data-uk-icon="chevron-left" disabled></a>
+                CLEF 2010
+                <a class="uk-button uk-padding-remove-right" href="{{ 'clef11/pan11-web/index.html' | relative_url }}"
+                   data-uk-icon="chevron-right"></a>
+            </div>
 
-<title>PAN 2010</title> 
+            <ul class="uk-text-muted uk-tab uk-margin-remove-top">
+                <li class="uk-active"><a href="{{ '/clef10/pan10-web/index.html' | relative_url }}">Overview</a></li>
+                <li><a disabled>Keynotes</a></li>
+                <li><a href="{{ '/clef10/pan10-web/program.html' | relative_url }}">Program</a></li>
+                <li>
+                    <a href="#">Tasks <span class="uk-margin-small-left"
+                                            data-uk-icon="icon: chevron-down"></span></a>
+                    <div class="uk-dropdown" data-uk-dropdown="mode: click">
+                        <ul class="uk-nav uk-dropdown-nav">
+                            <li><a href="{{ '/clef10/pan10-web/wikipedia-vandalism-detection.html' | relative_url }}">
+                                Wikipedia Vandalism Detection</a></li>
+                            <li><a href="{{ '/clef10/pan10-web/plagiarism-detection.html' | relative_url }}">Plagiarism
+                                Detection</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="{{ '/clef10/pan10-web/submission.html' | relative_url }}">Submission</a></li>
+                <li><a href="{{ '/clef10/pan10-web/proceedings.html' | relative_url }}">Proceedings</a></li>
+            </ul>
+        </nav>
 
-<link href="../../css/bootstrap.min.css" rel="stylesheet" />
-<link href="../../css/prettify.css" rel="stylesheet" />
+        <div class="uk-container uk-margin-small">
+            {% include current-register-quicklink.html year=2010 %}
 
-<style>
-.navbar .navbar-nav {
-  font-weight: bold;
-}
-</style>
+            <h1 class="uk-margin-small">PAN at CLEF 2010</h1>
+            <div class="page-header-meta">
+                {% include registration-counter.html year=2010 apiVersion="v3" url="" %}
+            </div>
+        </div>
 
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-  <script src="../../js/html5shiv.js"></script>
-  <script src="../../js/respond.min.js"></script>
-<![endif]-->
+        <div class="uk-container uk-margin-medium">
+            <div class="uk-align-right uk-margin-remove-bottom">
+            </div>
+            <p class="uk-text-lead uk-margin-remove-top">
+                This is the 4th evaluation lab on uncovering plagiarism, authorship, and social software misuse. PAN
+                will be held as part of the <a href="http://clef2010.clef-initiative.eu" target="_blank">CLEF
+                conference</a> in Padua, Italy, on September 20-23, 2010.
+                Evaluations will commence <a href="{{ '/clef10/pan10-web/submission.html' | relative_url }}">from
+                January till June</a>.
+                We invite you to take part in any of the two tasks shown below.
+            </p>
+        </div>
+    </header>
 
-<link rel="shortcut icon" href="../pan10-figures/pan-icon-16x16.ico">
-<!--
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
-<link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
--->
+    <div class="uk-section">
+        <div class="uk-container">
+            <div class="uk-grid uk-grid-large uk-grid-divider uk-child-width-1-2@m uk-child-width-1-2@s" data-uk-grid>
+                <div>
+                    <h2>Wikipedia Vandalism Detection
+                        <div class="uk-text-muted uk-text-lead"><a
+                                href="{{ '/clef10/pan10-web/wikipedia-vandalism-detection.html' | relative_url }}">Learn
+                            more</a>
+                        </div>
+                    </h2>
+                    <p>Given a Wikipedia edit, is it well-intentioned?</p>
+                    <p>This task is concerned with preventing "any addition, removal, or change of content made in a
+                        deliberate attempt to compromise the integrity of Wikipedia," which defines vandalism on
+                        Wikipedia. Given a set of edits on Wikipedia articles, the task is to separate the
+                        ill-intentioned edits from the well-intentioned edits.</p>
+                </div>
+                <div>
+                    <h2>Plagiarism Detection
+                        <div class="uk-text-muted uk-text-lead"><a
+                                href="{{ '/clef10/pan10-web/plagiarism-detection.html' | relative_url }}">Learn more</a>
+                        </div>
+                    </h2>
+                    <p>Given a document, is it an original?</p>
+                    <p>This task is divided into <strong>external detection</strong> and <strong>intrinsic
+                        detection</strong>.
+                        External detection is about searching for sources of a suspicious document. Intrinsic detection
+                        is about identifying plagiarized passages via breaches of writing style.
+                    </p>
+                </div>
+            </div>
+        </div>
 
-</head>
-<body>
+        <div class="uk-container uk-margin-medium">
+            <hr class="uk-divider-icon">
+        </div>
 
-<nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom:0px;">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="../../index.html"><img src="../pan10-figures/pan-logo-small-lightgrey.png" alt="PAN" style="margin-top:-5px"></a>
-  </div>
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="../../index.html">Home</a></li>
-      <li class="active"><a href="index.html">PAN @ CLEF 2010:</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="proceedings.html">Proceedings</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tasks <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="plagiarism-detection.html">Plagiarism Detection</a></li>
-          <li><a href="wikipedia-vandalism-detection.html">Wikipedia Vandalism Detection</a></li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</nav>
+        <!-- Important Dates -->
+        <div class="uk-container uk-margin-large">
+            <div class="uk-grid-medium" data-uk-grid>
+                <div class="uk-width-1-2@m">
+                    <h2 class="page-header" id="important-dates">Important Dates
+                        <span class="uk-text-muted uk-text-lead">Hawaii time zone</span>
+                    </h2>
+                    <table class="uk-table uk-table-divider uk-table-small uk-table-hover uk-table-justify uk-table-condensed">
 
-<div class="jumbotron" style="background-image:url('../pan10-figures/pan-fingerprint.png');background-repeat:no-repeat;background-position:right top;">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <h1>
-          PAN @ CLEF 2010
-          <a href="../../sepln09/pan09-web/index.html"><small data-toggle="tooltip" title="Previous year" class="glyphicon glyphicon-chevron-left"></small></a>
-          <a href="../../clef11/pan11-web/index.html"><small data-toggle="tooltip" title="Next year" class="glyphicon glyphicon-chevron-right"></small></a>
-        </h1>
-        <p>This is the 4th evaluation lab on uncovering plagiarism, authorship, and social software misuse. PAN has been part of the <a href="http://clef2010.clef-initiative.eu" target="_blank">CLEF conference</a> in Padua, Italy, on September 20-23, 2010. Evaluations commenced <a href="about.html#important-dates">from January till June</a> in the two tasks shown below.</p>
-        <p><a class="btn btn-primary btn-large" href="about.html#proceedings">Proceedings »</a></p>
-      </div>
-    </div>
-  </div>
-</div>
+		<tr><td style="border-top:none;">closed</td><td style="border-top:none;">Registration</td></tr>
+		<tr><td style="vertical-align:top;text-decoration:line-through;">Mar 14, 2010</td><td>Training corpora release</td></tr>
+		<tr><td style="text-decoration:line-through;">May 15, 2010</td><td>Registration closes</td></tr>
+    <tr><td style="text-decoration:line-through;">May 16, 2010</td><td>Test corpora release</td></tr>
+		<tr><td style="text-decoration:line-through;">Jun 23, 2010</td><td>Result submission deadline</td></tr>
+		<tr><td style="text-decoration:line-through;">Jun 30, 2010</td><td>Notification of performance</td></tr>
+		<tr><td style="text-decoration:line-through;">Jul 15, 2010</td><td>Paper submission deadline</td></tr>
+		<tr><td style="text-decoration:line-through;">Aug 02, 2010</td><td>Notification of reviews</td></tr>
+		<tr><td style="text-decoration:line-through;">Aug 15, 2010</td><td>Final paper deadline</td></tr>
+		<tr><td style="text-decoration:line-through;">Sep 20-23, 2010</td><td>Evaluation Lab</td></tr>
+                    </table>
+                </div>
+                <div class="uk-width-1-4@m">
+                    <h2>Quicklinks</h2>
+                    <ul class="uk-list uk-list-divider">
+                        <li>
+                            <a target="_blank"
+                               href="https://docs.google.com/forms/d/e/1FAIpQLSfR_xoBuGU3q7o3EYPoItN28UPuZENjs3wlWYEX_EdRGUyRfA/viewform">Register
+                                for CLEF</a>
+                        </li>
+                        <li>
+                            <a href="pan10-notebook-templates.zip">Download Notebook Templates</a>
+                        </li>
+                        <li>
+                            <a href="https://easychair.org/conferences/?conf=clef2010">Submit Notebook Paper</a>
+                        </li>
+                        <li>
+                            <a href="http://clef2010.clef-initiative.eu/index.php?page=Pages/InstructionsforCLEF2010WorkingNotes.html">Notebook
+                                Submission guidelines</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="uk-width-1-4@m">
+                    <h2>Donate</h2>
+                    <p>Support PAN by making a donation.</p>
 
-<div class="container" style="padding-top:20px;">
+                    <p>Organizing PAN entails a significant investment of time and money on our part. If you
+                        wish to support us, please consider making a donation.</p>
 
-<!-- Tasks -->
-<div class="row">
-  <div class="col-sm-6">
-    <h3>Plagiarism Detection</h3>
-    <div class="pull-right" style="padding:0 10px;text-align:center;"><a href="http://labs.yahoo.com/" target="_blank"><img width="160px" src="../pan10-figures/logo-yahoo-research.jpg" alt="Yahoo! Research"></a><div style="font-size:7pt;margin-top:-3px;">Sponsor</div></div>
-    <p>Given a document, is it an original?</p>
-    <p>This task incorporates <strong>external detection</strong> and <strong>intrinsic detection</strong>. External detection is about searching for sources of a suspicious document. Intrinsic detection is about identifying plagiarized passages via breaches of writing style.</p>
-    <p><a class="btn btn-default" href="plagiarism-detection.html">Learn more »</a></p>
-  </div>
-  <div class="col-sm-6">
-    <h3>Wikipedia Vandalism Detection</h3>
-    <p>Given a Wikipedia edit, is it well-intentioned?</p>
-    <p>This task is concerned with preventing "any addition, removal, or change of content made in a deliberate attempt to compromise the integrity of Wikipedia," which defines vandalism on Wikipedia. Given a set of edits on Wikipedia articles, the task is to separate the ill-intentioned edits from the well-intentioned edits.</p>
-    <p><a class="btn btn-default" href="wikipedia-vandalism-detection.html">Learn more »</a></p>
-  </div>
-</div>
+                    {% include donation-form.html %}
+                </div>
+            </div>
+        </div>
+    </div>  <!-- section -->
 
-<div class="row" style="padding-top:60px;">
-  <div class="col-md-1"></div>
-  <div class="col-xs-6 col-sm-4 col-md-2"><a href="http://www.webis.de" target="_blank" class="thumbnail" style="border:none;min-height:75px;"><img src="../pan10-figures/logo-bauhaus-universitaet-weimar.png" alt="Bauhaus-Universtät Weimar logo" class="img-responsive" style="max-height:50px;"></a></div>
-  <div class="col-xs-6 col-sm-4 col-md-2"><a href="http://www.upv.es" target="_blank" class="thumbnail" style="border:none;min-height:75px;"><img src="../pan10-figures/logo-universitat-politecnica-de-valencia.png" alt="Universitat Politecnica de Valencia logo" class="img-responsive" style="max-height:50px;"></a></div>
-  <div class="col-xs-6 col-sm-4 col-md-2"><a href="http://www.aegean.gr" target="_blank" class="thumbnail" style="border:none;min-height:75px;"><img src="../pan10-figures/logo-university-of-the-aegean.gif" alt="University of the Aegean logo" class="img-responsive" style="max-height:50px;"></a></div>
-  <div class="col-xs-6 col-sm-4 col-md-2"><a href="http://cordis.europa.eu/projects/rcn/99075_en.html" target="_blank" class="thumbnail" style="border:none;min-height:75px;"><img src="../pan10-figures/logo-wiqei.png" alt="WiQ-Ei logo" class="img-responsive" style="max-height:50px;"></a></div>
-  <div class="col-xs-6 col-sm-4 col-md-2"><a href="http://clef2010.clef-initiative.eu" target="_blank" class="thumbnail" style="border:none;min-height:75px;"><img src="../pan10-figures/logo-clef10.png" alt="CLEF'10 logo" class="img-responsive" style="max-height:50px;"></a></div>
-  <div class="col-md-1"></div>
-</div>
-
-<footer>
-  <p class="pull-right">© pan.webis.de</p>
-</footer>
-
-</div>
-
-<script src="../../js/jquery.js"></script>
-<script src="../../js/bootstrap.min.js"></script>
-<script type="text/javascript">
-  $('.jumbotron').tooltip({
-    selector: "[data-toggle=tooltip]",
-    container: "body"
-  })
-</script>
-<script src="../../js/prettify.js"></script>
-<script>
-  !function ($) {
-    $(function(){
-      window.prettyPrint && prettyPrint()   
-    })
-  }(window.jQuery)
-</script>
-
-<!-- Update the registration statistics. -->
-<!--
-<script type="text/javascript">
-  $.ajax({
-    url: "https://spreadsheets.google.com/feeds/cells/0AlwcskAJGamSdEN2ZUQ4Uk44cW13XzQ4UDRNTDR0V3c/od5/public/basic?min-row=5&min-col=1&max-row=1&max-col=1&alt=json",
-    cache: false,
-    dataType: "json"
-  }).done(function(json) {
-    $(json["feed"]["entry"]).each(function() {
-      var title = this["title"]["$t"];
-      var content = this["content"]["$t"];
-      switch (title) {
-      case "A1":
-        $("#registered-total").text(content)
-      case "A2":
-        $("#registered-plagiarism-detection").text(content)
-      case "A3":
-        $("#registered-author-identification").text(content)
-      case "A4":
-        $("#registered-author-profiling").text(content)
-      case "A5":
-        $("#registered-countries").text(content)
-      }
-    });
-  });
-</script>
--->
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-70770005-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
-</body>
-</html>
-
+    <footer class="uk-section uk-section-muted">
+        <div class="uk-container">
+            <h2>Organizing Committee</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/potthast.html %}
+                {% include people-cards/stein.html %}
+                {% include people-cards/barron-cedeno.html %}
+                {% include people-cards/rosso.html %}
+                {% include people-cards/stamatatos.html %}
+                {% include people-cards/koppel.html %}
+            </div>
+        </div>
+        <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+            {% include organizations/clef-organizations-section.html year=2010 %}
+        </div>
+    </footer>
+</main>
