@@ -1,139 +1,139 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+---
+layout: default
+nav_active: tasks
+title: PAN at CLEF 2012 - Author Identification
+description: PAN at CLEF 2012 - Author Identification
+---
 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<main>
+    <header class="uk-section uk-section-muted">
 
-<title>PAN 2012</title> 
+        <nav class="uk-container">
+            <div class="uk-align-right uk-visible@m uk-text-muted">
+                <a class="uk-button" href="{{ 'clef11/pan11-web/author-identification.html' | relative_url }}"
+                   data-uk-icon="chevron-left"></a>
+                CLEF 2012
+                <a class="uk-button uk-padding-remove-right"
+                   href="{{ 'clef13/pan13-web/author-identification.html' | relative_url }}"
+                   data-uk-icon="chevron-right"></a>
+            </div>
 
-<link href="../../css/bootstrap.min.css" rel="stylesheet" />
-<link href="../../css/prettify.css" rel="stylesheet" />
+            <ul class="uk-text-muted uk-tab uk-margin-remove-top">
+                <li><a href="{{ '/clef12/pan12-web/index.html' | relative_url }}">Overview</a></li>
+                <li><a href="{{ '/clef12/pan12-web/keynotes.html' | relative_url }}">Keynotes</a></li>
+                <li><a href="{{ '/clef12/pan12-web/program.html' | relative_url }}">Program</a></li>
+                <li class="uk-active">
+                    <a href="#">Tasks <span class="uk-margin-small-left"
+                                            data-uk-icon="icon: chevron-down"></span></a>
+                    <div class="uk-dropdown" data-uk-dropdown="mode: click">
+                        <ul class="uk-nav uk-dropdown-nav">
+                            <li class="uk-active"><a
+                                    href="{{ '/clef12/pan12-web/author-identification.html' | relative_url }}">Author
+                                Identification</a></li>
+                            <li>
+                                <a href="{{ '/clef12/pan12-web/wikipedia-quality-flaw-prediction.html' | relative_url }}">Wikipedia
+                                    Quality Flaw Prediction</a></li>
+                            <li><a href="{{ '/clef12/pan12-web/plagiarism-detection.html' | relative_url }}">Plagiarism
+                                Detection</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="{{ '/clef12/pan12-web/submission.html' | relative_url }}">Submission</a></li>
+                <li><a href="{{ '/clef12/pan12-web/proceedings.html' | relative_url }}">Proceedings</a></li>
+            </ul>
+        </nav>
 
-<style>
-.navbar .navbar-nav {
-  font-weight: bold;
-}
-</style>
+        <div class="uk-container uk-margin-small">
+            {% include current-register-quicklink.html year=2012 %}
+            <h1 class="uk-margin-small">Author Identification</h1>
+            <div class="page-header-meta">PAN at CLEF 2012</div>
+        </div>
 
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-  <script src="../../js/html5shiv.js"></script>
-  <script src="../../js/respond.min.js"></script>
-<![endif]-->
+        <div class="uk-container uk-margin-medium">
+            <p class="uk-text-lead">This task is divided into <strong>authorship attribution</strong> and <strong>sexual
+                predator identification</strong>. You can choose to solve one or both of them.</p>
+        </div>
+    </header>
 
-<link rel="shortcut icon" href="../pan12-figures/pan-icon-16x16.ico">
-<!--
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
-<link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
--->
+    <section>
+        <div class="uk-section">
+            <div class="uk-container">
+                <div class="uk-column-1-2@l uk-text-justify">
+                    <h2>Authorship Attribution</h2>
 
-</head>
-<body>
+                    <h3>Task</h3>
+                    <p>
+                        Within the traditional authorship tasks there are different flavors:
+                    </p>
+                    <ul>
+                        <li>
+                            <p>Traditional (closed-class /open-class, with varying numbers of candidate authors)
+                                authorship attribution. Within the closed class you will be given a closed set of
+                                candidate authors
+                                and are asked to identify which one of them is the author of an anonymous text. Withing
+                                the open
+                                class you have to consider also that it might be that none of the candidates is the real
+                                author of the document.
+                            </p>
+                        </li>
+                        <li>
+                            <p>Authorship clustering/intrinsic plagiarism: in this problem you are given a text (which,
+                                for simplicity, is segmented into a sequence of "paragraphs") and are asked to cluster
+                                the
+                                paragraphs into exactly two clusters: one that includes paragraphs written by the "main"
+                                author of the text and another that includes all paragraphs written by anybody else.
+                                (Thus,
+                                this year the intrinsic plagiarism has been moved from the plagiarism task to the author
+                                identification track.).</p>
+                    </ul>
 
-<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="../../index.html"><img src="../pan12-figures/pan-logo-small-lightgrey.png" alt="PAN" style="margin-top:-5px"></a>
-  </div>
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="../../index.html">Home</a></li>
-      <li><a href="index.html">PAN @ CLEF 2012:</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="proceedings.html">Proceedings</a></li>
-      <li class="dropdown active">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tasks <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="plagiarism-detection.html">Plagiarism Detection</a></li>
-          <li class="active"><a href="author-identification.html">Author Identification</a></li>
-          <li><a href="wikipedia-quality-flaw-prediction.html">Wikipedia Quality Flaw Prediction</a></li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</nav>
+                    <h3>Training Corpus</h3>
+                    <p>To develop your software, we provide you with a training corpus that comprises several different
+                        common attribution and clustering scenarios.</p>
+                    <p>
+                        <a class="uk-button uk-button-primary"
+                           href="https://www.uni-weimar.de/medien/webis/events/pan-12/pan12-papers-final/pan12-author-identification/juola12-overview.pdf#page=2">Learn
+                            more »</a>
+                        <a class="uk-button uk-button-primary" target="_blank"
+                           href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-12/pan12-data/pan12-authorship-attribution-training-corpus-2012-03-28.zip">Download
+                            corpus</a>
+                    </p>
 
-<div class="container">
 
-<div class="row">
-  <div class="col-xs-12">
-    <h1 id="task-description" class="page-header">
-      Author Identification
-      <div class="btn-group">
-        <a role="button" class="btn btn-default" href="../../clef11/pan11-web/author-identification.html"><span class="glyphicon glyphicon-chevron-left" style="color:grey;"></span></a>
-        <span role="button" class="btn btn-default" disabled="disabled">2012</span>
-        <a role="button" class="btn btn-default" href="../../clef13/pan13-web/author-identification.html"><span class="glyphicon glyphicon-chevron-right" style="color:grey;"></span></a>
-      </div>
-    </h1>
-    <p class="lead">This task is divided into <strong>authorship attribution</strong> and <strong>sexual predator identification</strong>. You can choose to solve one or both of them.</p>
-    <ul class="nav nav-pills visible-xs">
-      <li><a href="#source-retrieval" class="btn btn-large"><span class="glyphicon glyphicon-chevron-down"></span> Authorship Attribution</a></li>
-      <li><a href="#text-alignment" class="btn btn-large"><span class="glyphicon glyphicon-chevron-down"></span> Sexual Predator Identification</a></li>
-    </ul>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-sm-6">
-    <h2 id="source-retrieval">Authorship Attribution</h2>
-    <div class="panel panel-default">
-      <div class="panel-heading">Task</div>
-      <div class="panel-body">
-        <p>
-        Within the traditional authorship tasks there are different flavors:
-        <ul>
-        <li><p>Traditional (closed-class /open-class, with varying numbers of candidate authors) authorship attribution. Within the closed class you will be given a closed set of candidate authors and are asked to identify which one of them is the author of an anonymous text.  Withing the open class you have to consider also that it might be that none of the candidates is the real author of the document.<p>
-        </li><li><p>Authorship clustering/intrinsic plagiarism: in this problem you are given a text (which, for simplicity, is segmented into a sequence of "paragraphs") and are asked to cluster the paragraphs into exactly two clusters: one that includes paragraphs written by the "main" author of the text and another that includes all paragraphs written by anybody else. (Thus, this year the intrinsic plagiarism has been moved from the plagiarism task to the author identification track.).</p>
-        </ul>
-        </p>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">Training Corpus</div>
-      <div class="panel-body">
-        <p>To develop your software, we provide you with a training corpus that comprises several different common attribution and clustering scenarios.</p>
-        <p>
-          <a class="btn btn-default" href="https://www.uni-weimar.de/medien/webis/events/pan-12/pan12-papers-final/pan12-author-identification/juola12-overview.pdf#page=2">Learn more »</a>
-          <a class="btn btn-default" target="_blank" href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-12/pan12-data/pan12-authorship-attribution-training-corpus-2012-03-28.zip">Download corpus</a>
-        </p>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">Output</div>
-      <div class="panel-body">
-        <p>
-        As per repeated requests, here is a sample submission format to use for the Traditional Authorship Attribution Competition for PAN/CLEF. Please note that following this format is not mandatory and we will continue to accept anything we can interpret.
-        </p><p>
-        For traditional authorship problems (e.g. problem A), use the following (all words in ALL CAPS should be filled out appropriately):
-<pre class="prettyprint lang-py" style="overflow-x:auto">
+                    <h3>Output</h3>
+                    <p>
+                        As per repeated requests, here is a sample submission format to use for the Traditional
+                        Authorship Attribution Competition for PAN/CLEF. Please note that following this format is not
+                        mandatory and we will continue to accept anything we can interpret.
+                    </p>
+                    <p>
+                        For traditional authorship problems (e.g. problem A), use the following (all words in ALL CAPS
+                        should be filled out appropriately):</p>
+                    <pre class="prettyprint lang-py" style="overflow-x:auto">
 team TEAM NAME : run RUN NUMBER
 task TASK IDENTIFIER
 file TEST FILE = AUTHOR IDENTIFIER
 file TEST FILE = AUTHOR IDENTIFIER
 ...
 </pre>
-        </p><p>
-        For problems E and F, there are no designated sample authors, so we recommend listing paragraph numbers.   Author identifier is optional and arbitrary -- if it makes you feel better to talk about authors A and B or authors 1 and 2 you can insert it into the appropriate field.  Any paragraphs not listed will be assumed to be part of an unnamed default author.
-<pre class="prettyprint lang-py" style="overflow-x:auto">
+                    <p>
+                        For problems E and F, there are no designated sample authors, so we recommend listing paragraph
+                        numbers. Author identifier is optional and arbitrary -- if it makes you feel better to talk
+                        about
+                        authors A and B or authors 1 and 2 you can insert it into the appropriate field. Any paragraphs
+                        not
+                        listed will be assumed to be part of an unnamed default author.</p>
+                    <pre class="prettyprint lang-py" style="overflow-x:auto">
 team TEAM NAME : run RUN NUMBER
 task TASK IDENTIFIER
 file TEST FILE = AUTHOR IDENTIFIER (PARAGRAPH LIST)
 file TEST FILE = AUTHOR IDENTIFIER
 ...
 </pre>
-        </p><p>
-        For example:
-<pre class="prettyprint lang-py" style="overflow-x:auto">
+                    <p>
+                        For example:
+                    </p>
+                    <pre class="prettyprint lang-py" style="overflow-x:auto">
 team Jacob : run 1
 task B
 file 12Btest01.txt = A
@@ -162,137 +162,223 @@ task F
 file 12Ftest01.txt = (1,2,3,6,7)
 file 12Ftest01.txt = (4,5)
 </pre>
-        </p><p>
-        In this sample file, we consider anything not listed in task F (paragraphs 8 and beyond) to be a third, unnamed author.
-        </p>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">Performance Measures</div>
-      <div class="panel-body">
-        <p>The performance of your authorship attribution will be judged by average precision, recall, and F1 over all authors in the given training set.</p>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">Test Corpus</div>
-      <div class="panel-body">
-        <p>Once you finished tuning your approach to achieve satisfying performance on the training corpus, you should run your software on the test corpus.</p>
-        <p>During the competition, the test corpus will not be released publicly. Instead, we ask you to submit your software for evaluation at our site as described below.</p>
-        <p>After the competition, the test corpus is available including ground truth data. This way, you have all the necessities to evaluate your approach on your own, yet being comparable to those who took part in the competition.</p>
-        <p>
-          <a class="btn btn-default" target="_blank" href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-12/pan12-data/pan12-authorship-attribution-test-corpus-2012-05-24.zip">Download corpus</a>
-        </p>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">Submission</div>
-      <div class="panel-body">
-        <p>To submit your test run for evaluation, we ask you to send a Zip archive containing the output of your software when run on the test corpus to <a href="mailto:pan@webis.de">pan@webis.de</a>.</p>
-        <p>Should the Zip archive be too large to be sent via mail, please upload it to a file hoster of your choosing and share a download link with us.</p>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">Results</div>
-      <div class="panel-body">
-        <p>The following table lists the performances achieved by the participating teams:</p>
-        <table class="table table-condensed rule" style="font-size:small;">
-        <thead>
-        <tr><th colspan="2" style="text-align:center">Authorship attribution performance</th></tr>
-        <tr><th>Overall</th><th>Participant</th></tr>
-        </thead>
-        <tbody>
-        <tr><td>86.37</td><td>Marius Popescu* and Cristian Grozea°<br/>°Fraunhofer FIRST, Germany, and *University of Bucharest, Romania</td></tr>
-        <tr><td>83.40</td><td>Navot Akiva<br/>Bar Ilan University, Israel</td></tr>
-        <tr><td>82.41</td><td>Michael Ryan and John Noecker Jr<br/>Duquesne University, USA</td></tr>
-        <tr><td>70.81</td><td>Ludovic Tanguy, Franck Sajous, Basilio Calderone, and Nabil Hathout<br/>CLLE-ERSS: CNRS and University of Toulouse, France</td></tr>
-        <tr><td>62.13</td><td>Esteban Castillo°, Darnes Vilariño°, David Pinto°, Iván Olmos°, Jesús A. González*, and Maya Carrillo°<br/>°Benemérita Universidad Autónoma de Puebla and *Instituto Nacional de Astrofísica, Óptica y Electrónica (INAOE), Mexico</td></tr>
-        <tr><td>59.77</td><td>François-Marie Giraud and Thierry Artières<br/>LIP6, Université Pierre et Marie Curie (UPMC), France</td></tr>
-        <tr><td>58.35</td><td>Upendra Sapkota and Thamar Solorio<br/>University of Alabama at Birmingham, USA</td></tr>
-        <tr><td>57.55</td><td>Ramon de Graaff° and Cor J. Veenman*<br/>°Leiden University and *Netherlands Forensics Institute, The Netherlands</td></tr>
-        <tr><td>57.40</td><td>Stefan Ruseti and Traian Rebedea<br/>University Politehnica of Bucharest, Romania</td></tr>
-        <tr><td>54.88</td><td>Anna Vartapetiance and Lee Gillam<br/>University of Surrey, UK</td></tr>
-        <tr><td>43.18</td><td>Roman Kern°*, Stefan Klampfl*, Mario Zechner*<br/>°Graz University of Technology and *Know-Center GmbH, Austria</td></tr>
-        <tr><td>16.63</td><td>Julian Brooke and Graeme Hirst<br/>University of Toronto, Canada</td></tr>
-        </tbody>
-        </table>
-        <p>A more detailed analysis of the detection performances can be found in the overview paper accompanying this task.</p>
-        <p>
-          <a class="btn btn-default" href="pan12-authorship-attribution-evaluation-results.xlsx">Complete performances (Excel)</a>
-          <a class="btn btn-default" href="https://www.uni-weimar.de/medien/webis/events/pan-12/pan12-papers-final/pan12-author-identification/juola12-overview.pdf#page=5">Learn more »</a>
-        </p>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">Related Work</div>
-      <div class="panel-body">
-        <p>
-        For an overview of approaches to automated authorship attribution, we refer you to recent survey papers in the area:
-        </p>
-        <ul>
-        <li>
-        Patrick Juola. <a href="http://portal.acm.org/citation.cfm?id=1373451" target="_blank">Authorship Attribution</a>. In Foundations and Trends in Information Retrieval, Volume 1, Issue 3, December 2006.
-        </li><li>
-        Moshe Koppel, Jonathan Schler, and Shlomo Argamon. <a href="http://onlinelibrary.wiley.com/doi/10.1002/asi.20961/full" target="_blank">Computational Methods in Authorship Attribution</a>. Journal of the American Society for Information Science and Technology, Volume 60, Issue 1, pages 9-26, January 2009.
-        </li><li>
-        Efstathios Stamatatos. <a href="http://onlinelibrary.wiley.com/doi/10.1002/asi.21001/full" target="_blank">A Survey of Modern Authorship Attribution Methods</a>. Journal of the American Society for Information Science and Technology, Volume 60, Issue 3, pages 538-556, March 2009.
-        </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <h2 id="text-alignment">Sexual Predator Identification</h2>
-    <div class="panel panel-default">
-      <div class="panel-heading">Task</div>
-      <div class="panel-body">
-        <p>
-        The goal of this sub-task is to identify classes of authors, namely online predators. You will be given chat logs involving two (or more) people and have to determine who is the one trying to convince the other(s) to provide some sexual favour. You will also need to identify the particular conversation where the person exploits his bad behavior.
-        </p><p>
-        The task can therefore be divided into two parts:
-        </p><p>
-        <ol>
-          <li>Identify the predators (within all the users)</li>
-          <li>Identify the part (the lines) of the predator conversations which are the most distinctive of the predator bad behavior</li>
-        </ol>
-        </p><p>
-        Given the public nature of the dataset, we ask the participants not to use external or online resources for resolving this task (e.g. search engines) but to extract evidence from the provided datasets only. 
-        </p>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">Training Corpus</div>
-      <div class="panel-body">
-        <p>To develop your software, we provide you with a training corpus that consisting of chat logs where minors and adults pretending to minors are chatting.</p>
-        <p>
-          <a class="btn btn-default" href="https://www.uni-weimar.de/medien/webis/events/pan-12/pan12-papers-final/pan12-author-identification/inches12-overview.pdf#page=2">Learn more »</a>
-          <a class="btn btn-default" target="_blank" href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-12/pan12-data/pan12-sexual-predator-identification-training-corpus-2012-05-01.zip">Download corpus</a>
-        </p>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">Output</div>
-      <div class="panel-body">
-        <p>
-        For each of the two parts we require a different format.
-        </p><p>
-        <ol>
-        <li>
-        <p>Identify the predators (within all the users).</p>
-        <p>Participants should update a text file containing an user-id per line, of those identified as predator only:</p>
-        <p>
-<pre class="prettyprint lang-py" style="overflow-x:auto">...
+                    <p>
+                        In this sample file, we consider anything not listed in task F (paragraphs 8 and beyond) to be a
+                        third, unnamed author.
+                    </p>
+
+
+                    <h3>Performance Measures</h3>
+                    <p>The performance of your authorship attribution will be judged by average precision, recall, and
+                        F1 over all authors in the given training set.</p>
+
+
+                    <h3>Test Corpus</h3>
+                    <p>Once you finished tuning your approach to achieve satisfying performance on the training corpus,
+                        you should run your software on the test corpus.</p>
+                    <p>During the competition, the test corpus will not be released publicly. Instead, we ask you to
+                        submit your software for evaluation at our site as described below.</p>
+                    <p>After the competition, the test corpus is available including ground truth data. This way, you
+                        have all the necessities to evaluate your approach on your own, yet being comparable to those
+                        who took part in the competition.</p>
+                    <p>
+                        <a class="uk-button uk-button-primary" target="_blank"
+                           href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-12/pan12-data/pan12-authorship-attribution-test-corpus-2012-05-24.zip">Download
+                            corpus</a>
+                    </p>
+
+
+                    <h3>Submission</h3>
+                    <p>To submit your test run for evaluation, we ask you to send a Zip archive containing the output of
+                        your software when run on the test corpus to <a href="mailto:pan@webis.de">pan@webis.de</a>.</p>
+                    <p>Should the Zip archive be too large to be sent via mail, please upload it to a file hoster of
+                        your choosing and share a download link with us.</p>
+
+
+                    <h3>Results</h3>
+                    <p>The following table lists the performances achieved by the participating teams:</p>
+                    <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+                        <thead>
+                        <tr>
+                            <th colspan="2" style="text-align:center">Authorship attribution performance</th>
+                        </tr>
+                        <tr>
+                            <th>Overall</th>
+                            <th>Participant</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>86.37</td>
+                            <td>Marius Popescu* and Cristian Grozea°<br/>°Fraunhofer FIRST, Germany, and *University of
+                                Bucharest, Romania
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>83.40</td>
+                            <td>Navot Akiva<br/>Bar Ilan University, Israel</td>
+                        </tr>
+                        <tr>
+                            <td>82.41</td>
+                            <td>Michael Ryan and John Noecker Jr<br/>Duquesne University, USA</td>
+                        </tr>
+                        <tr>
+                            <td>70.81</td>
+                            <td>Ludovic Tanguy, Franck Sajous, Basilio Calderone, and Nabil Hathout<br/>CLLE-ERSS: CNRS
+                                and University of Toulouse, France
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>62.13</td>
+                            <td>Esteban Castillo°, Darnes Vilariño°, David Pinto°, Iván Olmos°, Jesús A. González*, and
+                                Maya Carrillo°<br/>°Benemérita Universidad Autónoma de Puebla and *Instituto Nacional de
+                                Astrofísica, Óptica y Electrónica (INAOE), Mexico
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>59.77</td>
+                            <td>François-Marie Giraud and Thierry Artières<br/>LIP6, Université Pierre et Marie Curie
+                                (UPMC), France
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>58.35</td>
+                            <td>Upendra Sapkota and Thamar Solorio<br/>University of Alabama at Birmingham, USA</td>
+                        </tr>
+                        <tr>
+                            <td>57.55</td>
+                            <td>Ramon de Graaff° and Cor J. Veenman*<br/>°Leiden University and *Netherlands Forensics
+                                Institute, The Netherlands
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>57.40</td>
+                            <td>Stefan Ruseti and Traian Rebedea<br/>University Politehnica of Bucharest, Romania</td>
+                        </tr>
+                        <tr>
+                            <td>54.88</td>
+                            <td>Anna Vartapetiance and Lee Gillam<br/>University of Surrey, UK</td>
+                        </tr>
+                        <tr>
+                            <td>43.18</td>
+                            <td>Roman Kern°*, Stefan Klampfl*, Mario Zechner*<br/>°Graz University of Technology and
+                                *Know-Center GmbH, Austria
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>16.63</td>
+                            <td>Julian Brooke and Graeme Hirst<br/>University of Toronto, Canada</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <p>A more detailed analysis of the detection performances can be found in the overview paper
+                        accompanying this task.</p>
+                    <p>
+                        <a class="uk-button uk-button-primary"
+                           href="pan12-authorship-attribution-evaluation-results.xlsx">Complete
+                            performances (Excel)</a>
+                        <a class="uk-button uk-button-primary"
+                           href="https://www.uni-weimar.de/medien/webis/events/pan-12/pan12-papers-final/pan12-author-identification/juola12-overview.pdf#page=5">Learn
+                            more »</a>
+                    </p>
+
+
+                    <h3>Related Work</h3>
+                    <p>
+                        For an overview of approaches to automated authorship attribution, we refer you to recent survey
+                        papers in the area:
+                    </p>
+                    <ul>
+                        <li>
+                            Patrick Juola. <a href="http://portal.acm.org/citation.cfm?id=1373451" target="_blank">Authorship
+                            Attribution</a>. In Foundations and Trends in Information Retrieval, Volume 1, Issue 3,
+                            December 2006.
+                        </li>
+                        <li>
+                            Moshe Koppel, Jonathan Schler, and Shlomo Argamon. <a
+                                href="http://onlinelibrary.wiley.com/doi/10.1002/asi.20961/full" target="_blank">Computational
+                            Methods in Authorship Attribution</a>. Journal of the American Society for Information
+                            Science and Technology, Volume 60, Issue 1, pages 9-26, January 2009.
+                        </li>
+                        <li>
+                            Efstathios Stamatatos. <a href="http://onlinelibrary.wiley.com/doi/10.1002/asi.21001/full"
+                                                      target="_blank">A Survey of Modern Authorship Attribution
+                            Methods</a>. Journal of the American Society for Information Science and Technology, Volume
+                            60, Issue 3, pages 538-556, March 2009.
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="uk-section">
+            <div class="uk-container">
+                <div class="uk-column-1-2@l uk-text-justify">
+                    <h2>Sexual Predator Identification</h2>
+
+                    <h3>Task</h3>
+                    <p>
+                        The goal of this sub-task is to identify classes of authors, namely online predators. You will
+                        be given chat logs involving two (or more) people and have to determine who is the one trying to
+                        convince the other(s) to provide some sexual favour. You will also need to identify the
+                        particular conversation where the person exploits his bad behavior.
+                    </p>
+                    <p>
+                        The task can therefore be divided into two parts:
+                    </p>
+                    <ol>
+                        <li>Identify the predators (within all the users)</li>
+                        <li>Identify the part (the lines) of the predator conversations which are the most distinctive
+                            of the predator bad behavior
+                        </li>
+                    </ol>
+                    <p>
+                        Given the public nature of the dataset, we ask the participants not to use external or online
+                        resources for resolving this task (e.g. search engines) but to extract evidence from the
+                        provided
+                        datasets only.
+                    </p>
+
+
+                    <h3>Training Corpus</h3>
+                    <p>To develop your software, we provide you with a training corpus that consisting of chat logs
+                        where minors and adults pretending to minors are chatting.</p>
+                    <p>
+                        <a class="uk-button uk-button-primary"
+                           href="https://www.uni-weimar.de/medien/webis/events/pan-12/pan12-papers-final/pan12-author-identification/inches12-overview.pdf#page=2">Learn
+                            more »</a>
+                        <a class="uk-button uk-button-primary" target="_blank"
+                           href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-12/pan12-data/pan12-sexual-predator-identification-training-corpus-2012-05-01.zip">Download
+                            corpus</a>
+                    </p>
+
+
+                    <h3>Output</h3>
+                    <p>
+                        For each of the two parts we require a different format.
+                    </p>
+                    <p><strong>Identify the predators (within all the users).</strong></p>
+                    <p>Participants should update a text file containing an user-id per line, of those identified as
+                        predator only:</p>
+                    <p>
+                    <pre class="prettyprint lang-py" style="overflow-x:auto">...
 a7c5056a2c30e2dc637907f448934ca3
 58f15bbb100bbeb6963b4b967ce04bdf
 e040eb115e3f7ad3824e93141665fc2a
 3d57ed3fac066fa4f8a52432db51c019
 ...
 </pre>
-        </p>
-        </li>
-        <li>
-        <p>Identify the part (the lines) of the predator conversations which are the most distinctive of the predator bad behavior.</p>
-        <p>Participants should update an xml file similar to the corpus ones, containing conversation-ids and message line numbers considered suspicious (line numbers together with all the others message information: author, time, text):
-<pre class="prettyprint lang-xml" style="overflow-x:auto">&lt;conversations&gt;
+
+                    <p><strong>Identify the part (the lines) of the predator conversations which are the most
+                        distinctive of
+                        the predator bad behavior.</strong></p>
+                    <p>Participants should update an xml file similar to the corpus ones, containing
+                        conversation-ids and message line numbers considered suspicious (line numbers together with
+                        all the others message information: author, time, text):
+                    <pre class="prettyprint lang-xml" style="overflow-x:auto">&lt;conversations&gt;
   ...
   &lt;conversation id=&quot;0042762e26ed295a8576806f5548cad9&quot;&gt;
     &lt;message line=&quot;3&quot;&gt;
@@ -323,178 +409,257 @@ e040eb115e3f7ad3824e93141665fc2a
   ...
 &lt;conversations&gt;
 </pre>
-        </li>
-        </ol>
-        </p>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">Performance Measures</div>
-      <div class="panel-body">
-        <p>The performance of your predator identification will be judged by average precision, recall, and F over all persons involved and lines of the conversations. In addition, we consider F0.5 for predator identification, and F3 for predator line identification, which will be used to rank participants, respectively.</p>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">Test Corpus</div>
-      <div class="panel-body">
-        <p>Once you finished tuning your approach to achieve satisfying performance on the training corpus, you should run your software on the test corpus.</p>
-        <p>During the competition, the test corpus will not be released publicly. Instead, we ask you to submit your software for evaluation at our site as described below.</p>
-        <p>After the competition, the test corpus is available including ground truth data. This way, you have all the necessities to evaluate your approach on your own, yet being comparable to those who took part in the competition.</p>
-        <p>
-          <a class="btn btn-default" target="_blank" href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-12/pan12-data/pan12-sexual-predator-identification-test-corpus-2012-05-21.zip">Download corpus</a>
-        </p>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">Submission</div>
-      <div class="panel-body">
-        <p>To submit your test run for evaluation, we ask you to send a Zip archive containing the output of your software when run on the test corpus to <a href="mailto:pan@webis.de">pan@webis.de</a>.</p>
-        <p>Should the Zip archive be too large to be sent via mail, please upload it to a file hoster of your choosing and share a download link with us.</p>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">Results</div>
-      <div class="panel-body">
-        <p>The following tables list the performances achieved by the participating teams:</p>
-        <table class="table table-condensed rule" style="font-size:small;">
-        <thead>
-        <tr><th colspan="2" style="text-align:center">Sexual predator identification performance: 1) identify predators</th></tr>
-        <tr><th>F0.5</th><th>Participant</th></tr>
-        </thead>
-        <tbody>
-        <tr><td>0.9346</td><td>Esaú Villatoro-Tello°*, Antonio Juárez-González°, Hugo J. Escalante°, Manuel Montes-y-Gómez°, and Luis Villaseñor-Pineda°<br/>°Instituto Nacional de Astrofísica, Óptica y Electrónica (INAOE) and *Universidad Autónoma Metropolitana, Mexico</td></tr>
-        <tr><td>0.9168</td><td>Tim Snider<br/>Porfiau Inc., Canada</td></tr>
-        <tr><td>0.8691</td><td>Javier Parapar°, David E. Losada*, and Alvaro Barreiro°<br/>°University of A Coruña and *Universidade de Santiago de Compostela, Spain</td></tr>
-        <tr><td>0.8652</td><td>Colin Morris and Graeme Hirst<br/>University of Toronto, Canada</td></tr>
-        <tr><td>0.8638</td><td>Gunnar Eriksson and Jussi Karlgren<br/>Gavagai AB, Sweden</td></tr>
-        <tr><td>0.8137</td><td>Claudia Peersman, Frederik Vaassen, Vincent Van Asch, and Walter Daelemans<br/>University of Antwerp, Netherlands</td></tr>
-        <tr><td>0.7316</td><td>Cristian Grozea° and Marius Popescu*<br/>°Fraunhofer FIRST, Germany, and *University of Bucharest, Romania</td></tr>
-        <tr><td>0.7060</td><td>Rachel Sitarz<br/>Purdue University, USA</td></tr>
-        <tr><td>0.5537</td><td>Anna Vartapetiance and Lee Gillam<br/>University of Surrey, UK</td></tr>
-        <tr><td>0.3946</td><td>April Kontostathis°, Andy Garron*, Kelly Reynolds^, Will West^, and Lynne Edwards°<br/>°Ursinus College, *The University of Maryland, and ^Lehigh University, USA</td></tr>
-        <tr><td>0.2554</td><td>In-Su Kang°, Chul-Kyu Kim°, Shin-Jae Kang*, and Seung-Hoon Na^<br/>°Kyungsung University, *Daegu University, and ^Electronics and Telecommunications Research Institute, South Korea</td></tr>
-        <tr><td>0.1791</td><td>Roman Kern°*, Stefan Klampfl*, Mario Zechner*<br/>°Graz University of Technology and *Know-Center GmbH, Austria</td></tr>
-        <tr><td>0.0316</td><td>Dasha Bogdanova° and Paolo Rosso*<br/>°University of Saint Petersburg, Russia, and *Universitat Politècnica de València, Spain</td></tr>
-        <tr><td>0.0250</td><td>Sriram Prasath Elango<br/>KTH/Gavagai, Sweden</td></tr>
-        <tr><td>0.0232</td><td>Darnes Vilariño, Esteban Castillo, David Pinto, Iván Olmos, Saul León<br/> Benemérita Universidad Autónoma de Puebla, Mexico</td></tr>
-        <tr><td>0.0059</td><td>José María Gómez Hidalgo° and Andrés Alfonso Caurcel Díaz*<br/>°Optenet and *Universidad Politécnica de Madrid, Spain</td></tr>
-        </tbody>
-        </table>
-        <table class="table table-condensed rule" style="font-size:small;">
-        <thead>
-        <tr><th colspan="2" style="text-align:center">Sexual predator identification performance: 2) identify predator lines</th></tr>
-        <tr><th>F3</th><th>Participant</th></tr>
-        </thead>
-        <tbody>
-        <tr><td>0.4762</td><td>Cristian Grozea° and Marius Popescu*<br/>°Fraunhofer FIRST, Germany, and *University of Bucharest, Romania</td></tr>
-        <tr><td>0.4174</td><td>April Kontostathis°, Andy Garron*, Kelly Reynolds^, Will West^, and Lynne Edwards°<br/>°Ursinus College, *The University of Maryland, and ^Lehigh University, USA</td></tr>
-        <tr><td>0.2679</td><td>Claudia Peersman, Frederik Vaassen, Vincent Van Asch, and Walter Daelemans<br/>University of Antwerp, Netherlands</td></tr>
-        <tr><td>0.2364</td><td>Rachel Sitarz<br/>Purdue University, USA</td></tr>
-        <tr><td>0.1986</td><td>Colin Morris and Graeme Hirst<br/>University of Toronto, Canada</td></tr>
-        <tr><td>0.1838</td><td>Roman Kern°*, Stefan Klampfl*, Mario Zechner*<br/>°Graz University of Technology and *Know-Center GmbH, Austria</td></tr>
-        <tr><td>0.1633</td><td>Gunnar Eriksson and Jussi Karlgren<br/>Gavagai AB, Sweden</td></tr>
-        <tr><td>0.0770</td><td>Sriram Prasath Elango<br/>KTH/Gavagai, Sweden</td></tr>
-        <tr><td>0.0174</td><td>Javier Parapar°, David E. Losada*, and Alvaro Barreiro°<br/>°University of A Coruña and *Universidade de Santiago de Compostela, Spain</td></tr>
-        <tr><td>0.0154</td><td>Anna Vartapetiance and Lee Gillam<br/>University of Surrey, UK</td></tr>
-        <tr><td>0.0074</td><td>Darnes Vilariño, Esteban Castillo, David Pinto, Iván Olmos, Saul León<br/> Benemérita Universidad Autónoma de Puebla, Mexico</td></tr>
-        <tr><td>0.0007</td><td>Dasha Bogdanova° and Paolo Rosso*<br/>°University of Saint Petersburg, Russia, and *Universitat Politècnica de València, Spain</td></tr>
-        <tr><td>0.0002</td><td>Esaú Villatoro-Tello°*, Antonio Juárez-González°, Hugo J. Escalante°, Manuel Montes-y-Gómez°, and Luis Villaseñor-Pineda°<br/>°Instituto Nacional de Astrofísica, Óptica y Electrónica (INAOE) and *Universidad Autónoma Metropolitana, Mexico</td></tr>
-        <tr><td>0.0000</td><td>José María Gómez Hidalgo° and Andrés Alfonso Caurcel Díaz*<br/>°Optenet and *Universidad Politécnica de Madrid, Spain</td></tr>
-        </tbody>
-        </table>
-        <p>A more detailed analysis of the detection performances with respect to precision, recall, and granularity can be found in the overview paper accompanying this task.</p>
-        <p><a class="btn btn-default" href="https://www.uni-weimar.de/medien/webis/events/pan-12/pan12-papers-final/pan12-author-identification/inches12-overview.pdf#page=9">Learn more »</a></p>
-      </div>
-    </div>
-  </div>
-</div>
 
-<div id="task-committee" class="row" style="padding-top:60px;">
-  <div class="col-xs-12">
-    <h1 class="page-header">Task Chair</h1>
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-6 col-sm-3">
-    <div class="thumbnail" style="text-align:center;">
-      <a href="http://www.mathcs.duq.edu/~juola/" target="_blank"><img src="../pan12-figures/patrick.jpg" class="img-rounded" alt="Patrick Juola"></a>
-      <p style="white-space:nowrap"><a href="http://www.mathcs.duq.edu/~juola/" target="_blank">Patrick Juola</a></p>
-      <p style="font-size:10pt">Duquesne University</p>
-    </div>
-  </div>
-  <div class="col-xs-6 col-sm-3">
-    <div class="thumbnail" style="text-align:center;">
-      <a href="http://www.giacomo.inches.ch" target="_blank"><img src="../pan12-figures/giacomo.jpg" class="img-rounded" alt="Giacomo Inches"></a>
-      <p><a href="http://www.giacomo.inches.ch" target="_blank">Giacomo Inches</a></p>
-      <p style="font-size:10pt">University of Lugano</p>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-    <h2>Task Committee</h2>
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-6 col-sm-3">
-    <div class="thumbnail" style="text-align:center;">
-      <a href="http://www.icsd.aegean.gr/lecturers/stamatatos/" target="_blank"><img src="../pan12-figures/stathis.jpg" class="img-rounded" alt="Efstathios Stamatatos"></a>
-      <p><a href="http://www.icsd.aegean.gr/lecturers/stamatatos/" target="_blank">Efstathios Stamatatos</a></p>
-      <p style="font-size:10pt">University of the Aegean</p>
-    </div>
-  </div>
 
-  <div class="col-xs-6 col-sm-3">
-    <div class="thumbnail" style="text-align:center;">
-      <a href="https://about.me/shlomoargamon" target="_blank"><img src="../pan12-figures/shlomo.jpg" class="img-rounded" alt="Shlomo Argamon"></a>
-      <p style="white-space:nowrap"><a href="https://about.me/shlomoargamon" target="_blank">Shlomo Argamon</a></p>
-      <p style="font-size:10pt">Illinois Institute of Technology</p>
-    </div>
-  </div>
-  <div class="col-xs-6 col-sm-3">
-    <div class="thumbnail" style="text-align:center;">
-      <a href="http://u.cs.biu.ac.il/~koppel/" target="_blank"><img src="../pan12-figures/moshe.jpg" class="img-rounded" alt="Moshe Koppel"></a>
-      <p style="white-space:nowrap"><a href="http://u.cs.biu.ac.il/~koppel/" target="_blank">Moshe Koppel</a></p>
-      <p style="font-size:10pt">Bar-Ilan University</p>
-    </div>
-  </div>
-  <div class="col-xs-6 col-sm-3">
-    <div class="thumbnail" style="text-align:center;">
-      <a href="https://sites.google.com/site/fcrestani/" target="_blank"><img src="../pan12-figures/fabio.jpg" class="img-rounded" alt="Fabio Crestani"></a>
-      <p><a href="https://sites.google.com/site/fcrestani/" target="_blank">Fabio Crestani</a></p>
-      <p style="font-size:10pt">University of Lugano</p>
-    </div>
-  </div>
-</div>
+                    <h3>Performance Measures</h3>
+                    <p>The performance of your predator identification will be judged by average precision, recall, and
+                        F over all persons involved and lines of the conversations. In addition, we consider F0.5 for
+                        predator identification, and F3 for predator line identification, which will be used to rank
+                        participants, respectively.</p>
 
-<footer>
-  <p class="pull-right">© pan.webis.de</p>
-</footer>
+                    <h3>Test Corpus</h3>
+                    <p>Once you finished tuning your approach to achieve satisfying performance on the training corpus,
+                        you should run your software on the test corpus.</p>
+                    <p>During the competition, the test corpus will not be released publicly. Instead, we ask you to
+                        submit your software for evaluation at our site as described below.</p>
+                    <p>After the competition, the test corpus is available including ground truth data. This way, you
+                        have all the necessities to evaluate your approach on your own, yet being comparable to those
+                        who took part in the competition.</p>
+                    <p>
+                        <a class="uk-button uk-button-primary" target="_blank"
+                           href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-12/pan12-data/pan12-sexual-predator-identification-test-corpus-2012-05-21.zip">Download
+                            corpus</a>
+                    </p>
 
-</div> <!-- /container -->
 
-<script src="../../js/jquery.js"></script>
-<script src="../../js/bootstrap.min.js"></script>
-<script src="../../js/prettify.js"></script>
-<script>
-  !function ($) {
-    $(function(){
-      window.prettyPrint && prettyPrint()   
-    })
-  }(window.jQuery)
-</script>
+                    <h3>Submission</h3>
+                    <p>To submit your test run for evaluation, we ask you to send a Zip archive containing the output of
+                        your software when run on the test corpus to <a href="mailto:pan@webis.de">pan@webis.de</a>.</p>
+                    <p>Should the Zip archive be too large to be sent via mail, please upload it to a file hoster of
+                        your choosing and share a download link with us.</p>
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-70770005-1', 'auto');
-  ga('send', 'pageview');
+                    <h3>Results</h3>
+                    <p>The following table lists the performances achieved by the participating teams:</p>
+                    <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+                        <thead>
+                        <tr>
+                            <th colspan="2" style="text-align:center">Sexual predator identification performance: 1)
+                                identify predators
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>F0.5</th>
+                            <th>Participant</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>0.9346</td>
+                            <td>Esaú Villatoro-Tello°*, Antonio Juárez-González°, Hugo J. Escalante°, Manuel
+                                Montes-y-Gómez°, and Luis Villaseñor-Pineda°<br/>°Instituto Nacional de Astrofísica,
+                                Óptica y Electrónica (INAOE) and *Universidad Autónoma Metropolitana, Mexico
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>0.9168</td>
+                            <td>Tim Snider<br/>Porfiau Inc., Canada</td>
+                        </tr>
+                        <tr>
+                            <td>0.8691</td>
+                            <td>Javier Parapar°, David E. Losada*, and Alvaro Barreiro°<br/>°University of A Coruña and
+                                *Universidade de Santiago de Compostela, Spain
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>0.8652</td>
+                            <td>Colin Morris and Graeme Hirst<br/>University of Toronto, Canada</td>
+                        </tr>
+                        <tr>
+                            <td>0.8638</td>
+                            <td>Gunnar Eriksson and Jussi Karlgren<br/>Gavagai AB, Sweden</td>
+                        </tr>
+                        <tr>
+                            <td>0.8137</td>
+                            <td>Claudia Peersman, Frederik Vaassen, Vincent Van Asch, and Walter Daelemans<br/>University
+                                of Antwerp, Netherlands
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>0.7316</td>
+                            <td>Cristian Grozea° and Marius Popescu*<br/>°Fraunhofer FIRST, Germany, and *University of
+                                Bucharest, Romania
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>0.7060</td>
+                            <td>Rachel Sitarz<br/>Purdue University, USA</td>
+                        </tr>
+                        <tr>
+                            <td>0.5537</td>
+                            <td>Anna Vartapetiance and Lee Gillam<br/>University of Surrey, UK</td>
+                        </tr>
+                        <tr>
+                            <td>0.3946</td>
+                            <td>April Kontostathis°, Andy Garron*, Kelly Reynolds^, Will West^, and Lynne Edwards°<br/>°Ursinus
+                                College, *The University of Maryland, and ^Lehigh University, USA
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>0.2554</td>
+                            <td>In-Su Kang°, Chul-Kyu Kim°, Shin-Jae Kang*, and Seung-Hoon Na^<br/>°Kyungsung
+                                University, *Daegu University, and ^Electronics and Telecommunications Research
+                                Institute, South Korea
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>0.1791</td>
+                            <td>Roman Kern°*, Stefan Klampfl*, Mario Zechner*<br/>°Graz University of Technology and
+                                *Know-Center GmbH, Austria
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>0.0316</td>
+                            <td>Dasha Bogdanova° and Paolo Rosso*<br/>°University of Saint Petersburg, Russia, and
+                                *Universitat Politècnica de València, Spain
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>0.0250</td>
+                            <td>Sriram Prasath Elango<br/>KTH/Gavagai, Sweden</td>
+                        </tr>
+                        <tr>
+                            <td>0.0232</td>
+                            <td>Darnes Vilariño, Esteban Castillo, David Pinto, Iván Olmos, Saul León<br/> Benemérita
+                                Universidad Autónoma de Puebla, Mexico
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>0.0059</td>
+                            <td>José María Gómez Hidalgo° and Andrés Alfonso Caurcel Díaz*<br/>°Optenet and *Universidad
+                                Politécnica de Madrid, Spain
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+                        <thead>
+                        <tr>
+                            <th colspan="2" style="text-align:center">Sexual predator identification performance: 2)
+                                identify predator lines
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>F3</th>
+                            <th>Participant</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>0.4762</td>
+                            <td>Cristian Grozea° and Marius Popescu*<br/>°Fraunhofer FIRST, Germany, and *University of
+                                Bucharest, Romania
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>0.4174</td>
+                            <td>April Kontostathis°, Andy Garron*, Kelly Reynolds^, Will West^, and Lynne Edwards°<br/>°Ursinus
+                                College, *The University of Maryland, and ^Lehigh University, USA
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>0.2679</td>
+                            <td>Claudia Peersman, Frederik Vaassen, Vincent Van Asch, and Walter Daelemans<br/>University
+                                of Antwerp, Netherlands
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>0.2364</td>
+                            <td>Rachel Sitarz<br/>Purdue University, USA</td>
+                        </tr>
+                        <tr>
+                            <td>0.1986</td>
+                            <td>Colin Morris and Graeme Hirst<br/>University of Toronto, Canada</td>
+                        </tr>
+                        <tr>
+                            <td>0.1838</td>
+                            <td>Roman Kern°*, Stefan Klampfl*, Mario Zechner*<br/>°Graz University of Technology and
+                                *Know-Center GmbH, Austria
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>0.1633</td>
+                            <td>Gunnar Eriksson and Jussi Karlgren<br/>Gavagai AB, Sweden</td>
+                        </tr>
+                        <tr>
+                            <td>0.0770</td>
+                            <td>Sriram Prasath Elango<br/>KTH/Gavagai, Sweden</td>
+                        </tr>
+                        <tr>
+                            <td>0.0174</td>
+                            <td>Javier Parapar°, David E. Losada*, and Alvaro Barreiro°<br/>°University of A Coruña and
+                                *Universidade de Santiago de Compostela, Spain
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>0.0154</td>
+                            <td>Anna Vartapetiance and Lee Gillam<br/>University of Surrey, UK</td>
+                        </tr>
+                        <tr>
+                            <td>0.0074</td>
+                            <td>Darnes Vilariño, Esteban Castillo, David Pinto, Iván Olmos, Saul León<br/> Benemérita
+                                Universidad Autónoma de Puebla, Mexico
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>0.0007</td>
+                            <td>Dasha Bogdanova° and Paolo Rosso*<br/>°University of Saint Petersburg, Russia, and
+                                *Universitat Politècnica de València, Spain
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>0.0002</td>
+                            <td>Esaú Villatoro-Tello°*, Antonio Juárez-González°, Hugo J. Escalante°, Manuel
+                                Montes-y-Gómez°, and Luis Villaseñor-Pineda°<br/>°Instituto Nacional de Astrofísica,
+                                Óptica y Electrónica (INAOE) and *Universidad Autónoma Metropolitana, Mexico
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>0.0000</td>
+                            <td>José María Gómez Hidalgo° and Andrés Alfonso Caurcel Díaz*<br/>°Optenet and *Universidad
+                                Politécnica de Madrid, Spain
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
 
-</script>
+                    <p>A more detailed analysis of the detection performances with respect to precision, recall, and
+                        granularity can be found in the overview paper accompanying this task.</p>
+                    <p><a class="uk-button uk-button-primary"
+                          href="https://www.uni-weimar.de/medien/webis/events/pan-12/pan12-papers-final/pan12-author-identification/inches12-overview.pdf#page=9">Learn
+                        more »</a></p>
 
-</body>
-</html>
+                </div>
+            </div>
+        </div>
 
+        <div class="uk-section uk-section-muted">
+            <div class="uk-container">
+
+                <h2>Task Chair</h2>
+                <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                    {% include people-cards/juola.html %}
+                    {% include people-cards/inches.html %}
+                </div>
+
+                <h2>Task Committee</h2>
+                <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                    {% include people-cards/stamatatos.html %}
+                    {% include people-cards/argamon.html %}
+                    {% include people-cards/koppel.html %}
+                    {% include people-cards/crestani.html %}
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
