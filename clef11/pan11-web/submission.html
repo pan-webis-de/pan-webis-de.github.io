@@ -1,0 +1,144 @@
+---
+layout: default
+nav_active: tasks
+title: PAN at CLEF 2011 - Workshop Submission
+description: PAN at CLEF 2011 - Workshop Submission
+---
+
+<main>
+    <header class="uk-section uk-section-muted">
+        <nav class="uk-container">
+            <div class="uk-align-right uk-visible@m uk-text-muted">
+                <a class="uk-button" href="{{ 'clef10/pan10-web/submission.html' | relative_url }}"
+                   data-uk-icon="chevron-left"></a>
+                CLEF 2011
+                <a class="uk-button uk-padding-remove-right" href="{{ 'clef12/pan12-web/submission.html' | relative_url }}"
+                   data-uk-icon="chevron-right"></a>
+            </div>
+
+            <ul class="uk-text-muted uk-tab uk-margin-remove-top">
+                <li><a href="{{ '/clef11/pan11-web/index.html' | relative_url }}">Overview</a></li>
+                <li><a href="{{ '/clef11/pan11-web/keynotes.html' | relative_url }}">Keynotes</a></li>
+                <li><a href="{{ '/clef11/pan11-web/program.html' | relative_url }}">Program</a></li>
+                <li>
+                    <a href="#">Tasks <span class="uk-margin-small-left"
+                                            data-uk-icon="icon: chevron-down"></span></a>
+                    <div class="uk-dropdown" data-uk-dropdown="mode: click">
+                        <ul class="uk-nav uk-dropdown-nav">
+                            <li><a href="{{ '/clef11/pan11-web/author-identification.html' | relative_url }}">Author
+                                Identification</a></li>
+
+                            <li><a href="{{ '/clef11/pan11-web/wikipedia-vandalism-detection.html' | relative_url }}">
+                                Wikipedia Vandalism Detection</a></li>
+                            <li><a href="{{ '/clef11/pan11-web/plagiarism-detection.html' | relative_url }}">Plagiarism
+                                Detection</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="uk-active"><a href="{{ '/clef11/pan11-web/submission.html' | relative_url }}">Submission</a></li>
+                <li><a href="{{ '/clef11/pan11-web/proceedings.html' | relative_url }}">Proceedings</a></li>
+            </ul>
+        </nav>
+
+        <div class="uk-container uk-margin-small">
+            {% include current-register-quicklink.html year=2011 %}
+
+            <h1 class="uk-margin-small">Workshop Submission</h1>
+            <div class="page-header-meta">PAN at CLEF 2011</div>
+        </div>
+
+        <div class="uk-container uk-margin-medium">
+            <p class="uk-text-lead">PAN is co-located with the CLEF conference and will be held from September 19 to 22,
+                2011.</p>
+        </div>
+    </header>
+
+    <div class="uk-section uk-text-justify">
+        <div class="uk-container">
+            <div class="uk-child-width-1-2@m" data-uk-grid="masonry: true">
+                <div>
+                    <h2>Benefits for Early Birds</h2>
+                    <p>
+                        If you submit a working prototype of your software before the <strong>Early Bird software
+                        submission deadline</strong>,
+                        we will <strong>pre-evaluate</strong> it on a subset of your task's test data and notify you of
+                        your performance.
+                        Based on the pre-evaluation, you may revise and resubmit your software for the full
+                        evaluation by March 1, 2011.
+                    </p>
+                    <p>
+                        If you register for the CLEF conference by their tentative early bird registration, you may
+                        do so at a <strong>reduced fee</strong>.
+                    </p>
+
+                </div>
+                <div>
+                    <h2>Software Submission
+                        <span class="uk-text-lead">
+                        [<a href="https://www.tira.io/static/tira-vm-user-guide.pdf">See the TIRA User Guide</a>]
+                    </span>
+                    </h2>
+                    <p>PAN uses <a href="https://www.tira.io">TIRA</a> for all submissions. After registration, you will
+                        get remote access to a TIRA virtual machine (Windows or Linux) to deploy
+                        your task software in. The software must be executable from the command line and not require
+                        Internet
+                        access during the evaluation period. Note that you retain full copyright of your software, but
+                        agree to grant us usage rights only for the purpose of the competition.
+                    </p>
+                    <p>
+                        If not noted otherwise, your software must be executable from command line and take the
+                        directory path for
+                        input and output data respectively as arguments:
+                    </p>
+                    <pre class="prettyprint"><code class="lang-cmd">mySoftware -i input/data/directory -o output/data/directory</code></pre>
+
+                </div>
+
+                <div>
+                    <h2>Notebook Submission
+                        <span class="uk-text-lead">
+                    [<a href="pan11-notebook-templates.zip">Download Template</a>][<a
+                                href="https://easychair.org/conferences/?conf=clef2011">Submit Notebook</a>]
+                </span>
+                    </h2>
+                    <p>We ask you to submit a notebook paper for each task you participated in, describing your
+                        approach.
+                        Your notebooks will be published as part of the CLEF conference proceedings. Submission of
+                        notebooks is done electronically through <a
+                                href="https://easychair.org/conferences/?conf=clef2011">Easychair</a>. Please follow the
+                        <a class="btn btn-default"
+                           href="http://clef2011.clef-initiative.eu/index.php?page=Pages/InstructionsforCLEF2011WorkingNotes.html">Submission
+                            guidelines</a></p>
+
+                    <p>The deadline for notebook submission is the <strong>June 11, 2011</strong>.
+                        The notebook must follow the Springer LNCS style guide. Please describe only the approach you
+                        implemented to solve the task. Although there is no
+                        strict page limit, we ask you to write no more than 11 pages. For your convenience, we provide a
+                        <a href="pan11-notebook-templates.zip">template for Latex and Word.</a></p>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="uk-section uk-section-muted">
+        <div class="uk-container">
+            <h2>Organizing Committee</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/potthast.html %}
+                {% include people-cards/stein.html %}
+                {% include people-cards/barron-cedeno.html %}
+                {% include people-cards/rosso.html %}
+                {% include people-cards/stamatatos.html %}
+                {% include people-cards/juola.html %}
+                {% include people-cards/argamon.html %}
+                {% include people-cards/koppel.html %}
+            </div>
+        </div>
+        <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+            {% include organizations/clef-organizations-section.html year=2011 %}
+        </div>
+    </footer>
+</main>
