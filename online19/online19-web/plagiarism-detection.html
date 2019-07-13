@@ -1,0 +1,244 @@
+---
+layout: default
+nav_active: tasks
+title: PAN @ Online 2019 - Plagiarism Detection
+description: PAN @ Online 2019 - Plagiarism Detection
+---
+
+<main>
+    <header class="uk-section uk-section-muted">
+        <nav class="uk-container">
+            <div class="uk-align-right uk-visible@m uk-text-muted">
+                <a class="uk-button" href="{{ 'clef13/pan13-web/plagiarism-detection.html' | relative_url }}"
+                   data-uk-icon="chevron-left"></a>
+                Online 2019
+                <a class="uk-button uk-padding-remove-right" href="{{ 'clef15/pan15-web/plagiarism-detection.html' | relative_url }}"
+                   data-uk-icon="chevron-right"></a>
+            </div>
+
+            <ul class="uk-text-muted uk-tab uk-margin-remove-top">
+                <li><a href="{{ '/clef14/pan14-web/index.html' | relative_url }}">Overview</a></li>
+                <li><a href="{{ '/clef14/pan14-web/keynotes.html' | relative_url }}">Keynotes</a></li>
+                <li><a href="{{ '/clef14/pan14-web/program.html' | relative_url }}">Program</a></li>
+                <li class="uk-active">
+                    <a href="#">Tasks <span class="uk-margin-small-left"
+                                            data-uk-icon="icon: chevron-down"></span></a>
+                    <div class="uk-dropdown" data-uk-dropdown="mode: click">
+                        <ul class="uk-nav uk-dropdown-nav">
+                            <li><a href="{{ '/clef14/pan14-web/author-identification.html' | relative_url }}">Author
+                                Identification</a></li>
+                            <li><a href="{{ '/clef14/pan14-web/author-profiling.html' | relative_url }}">Author
+                                Profiling</a></li>
+                            <li class="uk-active"><a
+                                    href="{{ '/clef14/pan14-web/plagiarism-detection.html' | relative_url }}">Plagiarism
+                                Detection</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="{{ '/clef14/pan14-web/submission.html' | relative_url }}">Submission</a></li>
+                <li><a href="{{ '/clef14/pan14-web/proceedings.html' | relative_url }}">Proceedings</a></li>
+            </ul>
+        </nav>
+
+        <div class="uk-container uk-margin-small">
+            {% include current-register-quicklink.html year=2014 %}
+            <h1 class="uk-margin-small">Plagiarism Detection</h1>
+            <div class="page-header-meta">PAN @ Online 2019</div>
+        </div>
+
+        <div class="uk-container uk-margin-medium">
+            <p class="uk-text-lead">This task is divided into <a href="#source-retrieval">source retrieval</a> and
+                <a href="# text-alignment"> text alignment</a>. Only the text alignment task is available as of today.</p>
+        </div>
+    </header>
+
+    <section>
+        <div class="uk-section">
+            <div class="uk-container">
+                <div class="uk-column-1-2@l uk-text-justify">
+                    <h2 id="source-retrieval">Source Retrieval</h2>
+                    <p>
+                        At this stage, we will focus on the text alignment task alone. Stay tuned, as we will try to have source retrieval up soon!
+                    </p>
+
+                    <p>
+                        If you are interested in the source retrieval, consider the proceedings and overview of the <a
+                                    href="{{ '../../clef14/pan14-web/plagiarism-detection.html' | relative_url }}">CLEF 2014 edition</a> of the task (and former editions all the way up to 2009).
+                    </p>
+                    <p></p>
+                    <br/>
+    </section>
+
+    <section>
+        <div class="uk-section">
+            <div class="uk-container">
+                <div class="uk-column-1-2@l uk-text-justify">
+                    <h2 id="text-alignment">Text Alignment
+                    </h2>
+
+                    <h3>Task</h3>
+                    <p>Given a pair of documents, your task is to identify all contiguous maximal-length passages of
+                        reused text between them.</p>
+
+                    <h3>Training Corpus</h3>
+                    <p>To develop your software, we provide you with a training corpus that consists of pairs of
+                        documents, one of which may contain passages of text reused from the other. The reused text is
+                        subject to various kinds of (automatic) obfuscation to hide the fact it has been reused.</p>
+                    <p>
+                        <a class="uk-button uk-button-primary"
+                           href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2010p.pdf#page=4">Learn
+                            more »</a>
+                        <a class="uk-button uk-button-primary" target="_blank"
+                           href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-text-alignment-training-corpus-2013-01-21.zip">Download
+                            corpus</a>
+                    </p>
+                    <h3>Baseline</h3>
+                    <p>For your convenience, we provide a baseline program written in Python.</p>
+                    <p><a class="uk-button uk-button-primary" href="../../clef12/pan12-code/pan12-text-alignment-baseline.py">Download
+                        program</a></p>
+                    <p>The program loops through the document pairs of a corpus and records the detection results in XML
+                        files. The XML files are valid with respect to the output format described below. You may use
+                        the source code for getting started with your own approach.</p>
+
+                    <h3>Output</h3>
+                    <p>Enclosed in the evaluation corpora, a file named <code>pairs</code> is found, which lists all
+                        pairs of suspicious documents and source documents to be compared. For each pair <code>suspicious-documentXYZ.txt</code>
+                        and <code>source-documentABC.txt</code>, your plagiarism detector shall output an XML file
+                        <code>suspicious-documentXYZ-source-documentABC.xml</code> which contains meta information about
+                        the plagiarism cases detected within:</p>
+                    <pre class="prettyprint lang-xml" style="overflow-x:auto"><nobr>&lt;document reference="suspicious-documentXYZ.txt"&gt;</nobr>
+&lt;feature
+  name="detected-plagiarism"
+  this_offset="5"
+  this_length="1000"
+&nbsp;&nbsp;<nobr>source_reference="source-documentABC.txt"</nobr>
+  source_offset="100"
+  source_length="1000"
+/&gt;
+&lt;feature ... /&gt;
+...
+&lt;/document&gt;</pre>
+                    <p>For example, the above file would specify an aligned passage of text between <code>suspicious-documentXYZ.txt</code>
+                        and <code>source-documentABC.txt</code>, and that it is of length 1000 characters, starting at
+                        character offset 5 in the suspicious document and at character offset 100 in the source
+                        document.</p>
+
+                    <h3>Performance Measures</h3>
+                    <p>Performance will be measured using macro-averaged precision and recall, granularity, and the
+                        plagdet score, which is a combination of the first three measures. For your convenience, we
+                        provide a reference implementation of the measures written in Python.</p>
+                    <p>
+                        <a class="uk-button uk-button-primary"
+                           href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2010p.pdf#page=2">Learn
+                            more »</a>
+                        <a class="uk-button uk-button-primary"
+                           href="../../sepln09/pan09-code/pan09-plagiarism-detection-performance-measures.py">Download
+                            measures</a>
+                    </p>
+
+                    <h3>Test Corpus</h3>
+                    <p>Once you finished tuning your approach to achieve satisfying performance on the training corpus,
+                        you should run your software on the test corpus.</p>
+                    <p>During the competition, the test corpus will not be released publicly. Instead, we ask you to
+                        submit your software for evaluation at our site as described below.</p>
+                    <p>After the competition, the test corpus is available including ground truth data. This way, you
+                        have all the necessities to evaluate your approach on your own, yet being comparable to those
+                        who took part in the competition.</p>
+                    <p>
+                        <a class="uk-button uk-button-primary" target="_blank"
+                           href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-text-alignment-test-corpus1-2013-03-08.zip">Download
+                            corpus 1</a>
+                        <a class="uk-button uk-button-primary" target="_blank"
+                           href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-text-alignment-test-corpus2-2013-01-21.zip">Download
+                            corpus 2</a>
+                        <a class="uk-button uk-button-primary" target="_blank"
+                           href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-14/pan14-data/pan14-text-alignment-test-corpus3-2014-05-14.zip">Download
+                            corpus 3</a>
+                    </p>
+
+                    <h3>Submission</h3>
+                    <p>We ask you to prepare your software so that it can be executed via a command line call.</p>
+                    <pre class="prettyprint lang-c" style="overflow-x:auto">
+> mySoftware <b>-i</b> path/to/corpus <b>-o</b> path/to/output/directory
+</pre>
+                    <p>You can choose freely among the available programming languages and among the operating systems
+                        Microsoft Windows 7 and Ubuntu 12.04. We will ask you to deploy your software onto a virtual
+                        machine that will be made accessible to you after registration. You will be able to reach the
+                        virtual machine via ssh and via remote desktop. More information about how to access the virtual
+                        machines can be found in the user guide below</p>
+                    <p><a class="uk-button uk-button-primary" href="pan14-virtual-machine-user-guide.pdf">PAN Virtual Machine User
+                        Guide »</a></p>
+                    <p>Once deployed in your virtual machine, your can move to submit your software. Before doing so, we
+                        provide your with a software submission readiness tester. Please use this tester to verify that
+                        your software works. Since we will be calling your software automatically in much the same ways
+                        as the tester does, this lowers the risk ot errors.</p>
+                    <p><a class="uk-button uk-button-primary" href="../pan14-code/pan-software-submission-readiness-tester.zip">Download
+                        PAN Software Submission Readiness Tester</a></p>
+                    <p>When your software is submission-ready, please mail the filled out <code>submission.txt</code>
+                        file found along the software submission readiness tester to <a href="mailto:pan@webis.de">pan@webis.de</a>.
+                    </p>
+                    <p><strong>Note:</strong> By submitting your software you retain full copyrights. You agree to grant
+                        us usage rights only for the purpose of the PAN competition. We agree not to share your software
+                        with a third party or use it for other purposes than the PAN competition.</p>
+
+                  
+
+                    <h3>Related Work</h3>
+                    <p>The text alignment task has been run since PAN'09; here is a quick list of the respective
+                        proceedings and overviews:</p>
+                    <ul>
+                        <li>
+                            <a href="../../clef14/pan14-web/proceedings.html">PAN @ CLEF'14</a> (<a
+                                href="https://webis.de/downloads/publications/papers/stein_2014k.pdf">overview
+                            paper</a>),
+                        </li>
+                        <li>
+                            <a href="../../clef13/pan13-web/proceedings.html">PAN @ CLEF'13</a> (<a
+                                href="https://webis.de/downloads/publications/papers/stein_2013h.pdf">overview
+                            paper</a>),
+                        </li>
+                        <li>
+                            <a href="../../clef12/pan12-web/proceedings.html">PAN @ CLEF'12</a> (<a
+                                href="https://webis.de/downloads/publications/papers/stein_2012t.pdf">overview
+                            paper</a>),
+                        </li>
+                        <li>
+                            <a href="../../clef11/pan11-web/proceedings.html">PAN @ CLEF'11</a> (<a
+                                href="https://webis.de/downloads/publications/papers/stein_2011t.pdf">overview
+                            paper</a>),
+                        </li>
+                        <li>
+                            <a href="../../clef10/pan10-web/proceedings.html">PAN @ CLEF'10</a> (<a
+                                href="https://webis.de/downloads/publications/papers/stein_2010t.pdf">overview
+                            paper</a>), and
+                        </li>
+                        <li>
+                            <a href="../../sepln09/pan09-web/proceedings.html">PAN @ SEPLN'09</a> (<a
+                                href="https://webis.de/downloads/publications/papers/stein_2009e.pdf">overview
+                            paper</a>).
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>  <!-- section -->
+
+        <div class="uk-section uk-section-muted">
+            <div class="uk-container">
+
+                <h2>Task Editor</h2>
+                <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                   {% include people-cards/barron-cedeno.html %} 
+                </div>
+
+                <h2>Task Committee</h2>
+                <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                    {% include people-cards/syed.html %}
+                    {% include people-cards/potthast.html %}
+                </div>
+            </div>
+            <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+                {% include organizations/clef-organizations-section.html year=2014 %}
+            </div>
+        </div>
+    </section>
+</main>
