@@ -89,6 +89,32 @@
   margin-top: 50px;
 }
 
+.task-chair-organizations {
+  text-align:center
+ }
+ @media (min-width: 1200px) {
+  .task-chair-organizations {
+   margin-left:auto;
+   margin-right:auto
+  }
+ }
+ .task-chair-organizations>* {
+  height:60px;
+  display:inline-block;
+  padding:30px
+ }
+ .task-chair-organizations img,
+ .task-chair-organizations svg {
+  height:100%
+ }
+ .task-chair-organizations .logo-font {
+  display:inline-block;
+  padding-left:15px;
+  font-size:2.5em;
+  vertical-align:middle;
+  color:#555
+ }
+
 #organizational {
   background-color: #f8f9fa;
 }
