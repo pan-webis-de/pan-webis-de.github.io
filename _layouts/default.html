@@ -37,7 +37,7 @@
                 <li{% if page.nav_active == "publications" %} class="uk-active"{% endif %}>
                     <a href="{{ '/publications.html' | relative_url }}">Publications</a>
                 </li>
-                <li{% if page.nav_active == "contact" %} class="uk-active"{% endif %}>
+                <li{% if page.nav_active == "organization" %} class="uk-active"{% endif %}>
                     <a href="{{ '/organization.html' | relative_url }}">Organization</a>
                 </li>
             </ul>
@@ -73,10 +73,10 @@
                 <li{% if page.nav_active == "data" %} class="uk-active"{% endif %} class="uk-parent">
                     <a href="{{ '/data.html' | relative_url }}">Data</a>
                 </li>
-                <li{% if page.nav_active == "publications" %} class="uk-active"{% endif %}>
+                <li class="nav-group-start{% if page.nav_active == 'publications' %} uk-active{% endif %}">
                     <a href="{{ '/publications.html' | relative_url }}">Publications</a>
                 </li>
-                <li{% if page.nav_active == "contact" %} class="uk-active"{% endif %}>
+                <li{% if page.nav_active == "organization" %} class="uk-active"{% endif %}>
                     <a href="{{ '/organization.html' | relative_url }}">Organization</a>
                 </li>
             </ul>
