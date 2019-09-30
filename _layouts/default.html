@@ -26,22 +26,19 @@
         <nav class="uk-margin-large-top">
             <ul class="uk-nav uk-nav-primary uk-nav-parent-icon" data-uk-nav>
                 <li{% if page.nav_active == "tasks" %} class="uk-active"{% endif %}>
-                    <a href="{{ '/tasks.html' | relative_url }}">Tasks</a>
-                </li>
-                <li{% if page.nav_active == "data" %} class="uk-active"{% endif %}>
-                    <a href="{{ '/data.html' | relative_url }}">Data</a>
-                </li>
-                <li{% if page.nav_active == "technology" %} class="uk-active"{% endif %}>
-                    <a href="{{ '/technology.html' | relative_url }}">Technology</a>
-                </li>
-                <li{% if page.nav_active == "publications" %} class="uk-active"{% endif %}>
-                    <a href="{{ '/publications.html' | relative_url }}">Publications</a>
+                    <a href="{{ '/tasks.html' | relative_url }}">Shared Tasks</a>
                 </li>
                 <li{% if page.nav_active == "events" %} class="uk-active"{% endif %}>
                     <a href="{{ '/events.html' | relative_url }}">Events</a>
                 </li>
+                <li{% if page.nav_active == "data" %} class="uk-active"{% endif %}>
+                    <a href="{{ '/data.html' | relative_url }}">Data</a>
+                </li>
+                <li{% if page.nav_active == "publications" %} class="uk-active"{% endif %}>
+                    <a href="{{ '/publications.html' | relative_url }}">Publications</a>
+                </li>
                 <li{% if page.nav_active == "contact" %} class="uk-active"{% endif %}>
-                    <a href="{{ '/contact.html' | relative_url }}">Contact</a>
+                    <a href="{{ '/organization.html' | relative_url }}">Organization</a>
                 </li>
             </ul>
         </nav>
@@ -68,22 +65,19 @@
         <div class="uk-navbar-right desktop-nav">
             <ul class="uk-navbar-nav">
                 <li class="nav-group-start{% if page.nav_active == "tasks" %} uk-active{% endif %}">
-                    <a href="{{ '/tasks.html' | relative_url }}">Tasks</a>
-                </li>
-                <li{% if page.nav_active == "data" %} class="uk-active"{% endif %} class="uk-parent">
-                    <a href="{{ '/data.html' | relative_url }}">Data</a>
-                </li>
-                <li{% if page.nav_active == "technology" %} class="uk-active"{% endif %}>
-                    <a href="{{ '/technology.html' | relative_url }}">Technology</a>
-                </li>
-                <li{% if page.nav_active == "publications" %} class="uk-active"{% endif %}>
-                    <a href="{{ '/publications.html' | relative_url }}">Publications</a>
+                    <a href="{{ '/tasks.html' | relative_url }}">Shared Tasks</a>
                 </li>
                 <li{% if page.nav_active == "events" %} class="uk-active"{% endif %}>
                     <a href="{{ '/events.html' | relative_url }}">Events</a>
                 </li>
+                <li{% if page.nav_active == "data" %} class="uk-active"{% endif %} class="uk-parent">
+                    <a href="{{ '/data.html' | relative_url }}">Data</a>
+                </li>
+                <li{% if page.nav_active == "publications" %} class="uk-active"{% endif %}>
+                    <a href="{{ '/publications.html' | relative_url }}">Publications</a>
+                </li>
                 <li{% if page.nav_active == "contact" %} class="uk-active"{% endif %}>
-                    <a href="{{ '/contact.html' | relative_url }}">Contact</a>
+                    <a href="{{ '/organization.html' | relative_url }}">Organization</a>
                 </li>
             </ul>
         </div>

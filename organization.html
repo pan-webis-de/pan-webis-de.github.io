@@ -1,0 +1,98 @@
+---
+layout: default
+nav_active: contact
+title: PAN Contact
+description: Contact PAN
+---
+
+<main class="uk-section uk-section-default uk-padding-remove-bottom">
+    <div class="uk-container">
+        <h1>Organization</h1>
+        <ul class="uk-list">
+            <li><span data-uk-icon="chevron-down"></span> <a href="#contact">Contact</a></li>
+            <li><span data-uk-icon="chevron-down"></span> <a href="#participation-guide">Participation guide</a></li>
+            <li><span data-uk-icon="chevron-down"></span> <a href="#technology">Technology</a></li>
+            <li><span data-uk-icon="chevron-down"></span> <a href="#subission-terms">Terms for submissions</a></li>
+            <li><span data-uk-icon="chevron-down"></span> <a href="#join-pan">Join PAN</a></li>
+        </ul>
+    </div>
+
+    <div class="uk-container uk-margin-medium">
+        <h2><a id="contact"></a>Contact</h2>
+        <ul>
+            <li>Organizer mailing list for inquiries: <a href="mailto:pan@webis.de">pan@webis.de</a></li>
+            <li>Public <a href="http://groups.google.com/group/pan-workshop-series">Google Groups</a></li>
+        </ul>
+
+        <h2><a id="participation-guide"></a>Participation guide</h2>
+        <ol>
+            <li>
+                Register for a <a href="{{ '/tasks.html' | relative_url }}">task</a> and get the data.
+            </li>
+            <li>
+                <a href="mailto:pan@webis.de?subject=Request%20Virtual%20Machine%20on%20TIRA&body=Hi%20PAN%20organizers%2C%0A%0AI%20would%20like%20request%20access%20to%20a%20virtual%20machine%20on%20TIRA.%0A%0AMy%20preferred%20%20GitHub%20name%3A%0A%0A%3CENTER%20YOUR%20GITHUB%20NAME%20HERE%3E%0A%0ACheers!">
+                    Request a virtual machine</a> on Tira.
+            </li>
+            <li>
+                <a href="https://webis.de/downloads/publications/papers/stein_2014j.pdf#page=4">Deploy your software</a>.
+                [<a href="https://webis.de/downloads/publications/papers/stein_2014j.pdf">Why submit software?</a>]
+            </li>
+            <li>
+                Prepare your notebook for submission in the workshop proceedings.
+            </li>
+            <li>
+                Get in touch with us to release your code in the PAN repository: <a href="https://github.com/pan-webis-de">
+                github.com/pan-webis-de</a>
+            </li>
+        </ol>
+        <h2><a id="technology"></a>Technology</h2>
+        <ul>
+            <li>
+                Evaluation Platform: <a href="https://www.tira.io/">tira.io</a>
+            </li>
+            <li>
+                Open source proceedings at <a href="https://github.com/pan-webis-de">Github</a>
+            </li>
+        </ul>
+
+        <h2><a id="subission-terms"></a>Terms for submissions</h2>
+        <ul>
+            <li><strong>Authors retain copyright</strong> of their software and code.</li>
+            <li><strong>Authors provide usage rights</strong> to PAN and TIRA for the purpose of evaluation.</li>
+            <li>Authors may <strong>revoke usage rights</strong> at any time.</li>
+            <li>Use of TIRA is at the <strong>author's risk</strong>.</li>
+            <li>The choice of license rests with the authors. <strong>Respect the license</strong>.</li>
+            <li>When you use some code, <strong>cite the authors</strong>. If you don't know how, ask.</li>
+        </ul>
+        <h2><a id="join-pan"></a>Join PAN</h2>
+        <p>
+            PAN is a community-driven effort. If you want to help push forward the digital text forensics. There's a
+            number of ways in which you can contribute.
+        </p>
+        <ul>
+            <li>
+                Participate in a task.
+            </li>
+            <li>
+                Submit a new dataset for an existing task.
+            </li>
+            <li>
+                Organize an event.
+            </li>
+        </ul>
+    </div>
+
+    <div class="uk-section uk-section-muted">
+        <div class="uk-container">
+
+            <h2>Committee</h2>
+
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/potthast.html %}
+                {% include people-cards/stein.html %}
+                {% include people-cards/rosso.html %}
+                {% include people-cards/stamatatos.html %}
+            </div>
+        </div>
+    </div>
+</main>
