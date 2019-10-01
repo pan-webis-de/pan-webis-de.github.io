@@ -6,45 +6,21 @@ description: PAN @ CLEF 2019 - Style Change Detection
 ---
 
 <main>
+
     <header class="uk-section uk-section-muted">
-        <nav class="uk-container">
-            <div class="uk-align-right uk-visible@m uk-text-muted">
-                <a class="uk-button" href="{{ 'clef18/pan18-web/author-identification.html' | relative_url }}"
-                   data-uk-icon="chevron-left"></a>
-                CLEF 2019
-                <a class="uk-button uk-padding-remove-right" href="{{ 'clef20/pan20-web/author-identification.html' | relative_url }}"
-                   data-uk-icon="chevron-right"></a>
-            </div>
-
-            <ul class="uk-text-muted uk-tab uk-margin-remove-top">
-                <li><a href="{{ '/clef19/pan19-web/index.html' | relative_url }}">Overview</a></li>
-                <li><a href="{{ '/clef19/pan19-web/keynotes.html' | relative_url }}">Keynotes</a></li>
-                <li><a href="{{ '/clef19/pan19-web/program.html' | relative_url }}">Program</a></li>
-                <li class="uk-active">
-                    <a href="#">Tasks <span class="uk-margin-small-left" data-uk-icon="icon: chevron-down"></span></a>
-                    <div class="uk-dropdown" data-uk-dropdown="mode: click">
-                        <ul class="uk-nav uk-dropdown-nav">
-                            <li><a href="{{ '/clef19/pan19-web/author-profiling.html' | relative_url }}">Bots and Gender
-                                Profiling</a></li>
-                            <li><a href="{{ '/clef19/pan19-web/celebrity-profiling.html' | relative_url }}">Celebrity
-                                Profiling</a></li>
-                            <li><a href="{{ '/clef19/pan19-web/author-identification.html' | relative_url }}">Cross-domain
-                                Authorship Attribution</a></li>
-                            <li class="uk-active"><a href="{{ '/clef19/pan19-web/style-change-detection.html' | relative_url }}">Style
-                                Change Detection</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a href="{{ '/clef19/pan19-web/submission.html' | relative_url }}">Submission</a></li>
-                <li><a href="{{ '/clef19/pan19-web/proceedings.html' | relative_url }}">Proceedings</a></li>
-            </ul>
-        </nav>
-
         <div class="uk-container uk-margin-small">
-            {% include current-register-quicklink.html year=2019 %}
+            <div class="uk-align-right uk-visible@m uk-text-muted">
+                {% include current-register-quicklink.html year=2019 %}
+            </div>
+            <h1 class="uk-margin-small">Style Change Detection
+                <span class="uk-text-muted uk-text-large">
+                <a class="uk-button uk-padding-remove uk-margin-small-right uk-margin-small-left"
+                   data-uk-icon="chevron-left" href="{{ 'clef18/pan18-web/author-identification.html' | relative_url }}"></a>
+                    <a href="{{ 'clef19/pan19-web/index.html' | relative_url }}">CLEF 2019</a>
 
-            <h1 class="uk-margin-small">Style Change Detection</h1>
-            <div class="page-header-meta">PAN @ CLEF 2019</div>
+                <a class="uk-button uk-padding-remove uk-margin-small-left"
+                   href="{{ 'clef20/pan20-web/style-change-detection.html' | relative_url }}"
+                   data-uk-icon="chevron-right"></a></span></h1>
         </div>
     </header>
 

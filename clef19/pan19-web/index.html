@@ -7,52 +7,30 @@ description: PAN @ CLEF 2019
 
 <main>
     <header class="uk-section uk-section-muted">
-        <nav class="uk-container">
-            <div class="uk-align-right uk-visible@m uk-text-muted">
-                <a class="uk-button" href="{{ 'clef18/pan18-web/index.html' | relative_url }}"
-                   data-uk-icon="chevron-left"></a>
-                CLEF 2019
-                <a class="uk-button uk-padding-remove-right" href="{{ 'clef20/pan20-web/index.html' | relative_url }}"
-                   data-uk-icon="chevron-right"></a>
-            </div>
-
-            <ul class="uk-text-muted uk-tab uk-margin-remove-top">
-                <li class="uk-active"><a href="{{ '/clef19/pan19-web/index.html' | relative_url }}">Overview</a></li>
-                <li><a href="{{ '/clef19/pan19-web/keynotes.html' | relative_url }}">Keynotes</a></li>
-                <li><a href="{{ '/clef19/pan19-web/program.html' | relative_url }}">Program</a></li>
-                <li>
-                    <a href="#">Tasks <span class="uk-margin-small-left" data-uk-icon="icon: chevron-down"></span></a>
-                    <div class="uk-dropdown" data-uk-dropdown="mode: click">
-                        <ul class="uk-nav uk-dropdown-nav">
-                            <li><a href="{{ '/clef19/pan19-web/author-profiling.html' | relative_url }}">Bots and Gender
-                                Profiling</a></li>
-                            <li><a href="{{ '/clef19/pan19-web/celebrity-profiling.html' | relative_url }}">Celebrity
-                                Profiling</a></li>
-                            <li><a href="{{ '/clef19/pan19-web/author-identification.html' | relative_url }}">Cross-domain
-                                Authorship Attribution</a></li>
-                            <li><a href="{{ '/clef19/pan19-web/style-change-detection.html' | relative_url }}">Style
-                                Change Detection</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a href="{{ '/clef19/pan19-web/submission.html' | relative_url }}">Submission</a></li>
-                <li><a href="{{ '/clef19/pan19-web/proceedings.html' | relative_url }}">Proceedings</a></li>
-            </ul>
-        </nav>
 
         <div class="uk-container uk-margin-small">
             {% include current-register-quicklink.html year=2019 %}
 
-            <h1 class="uk-margin-small">PAN @ CLEF 2019</h1>
+            <h1 class="uk-margin-small">PAN @ CLEF
+                <span class="uk-text-muted">
+                <a class="uk-button uk-padding-remove uk-margin-small-left"
+                   href="{{ 'clef18/pan18-web/index.html' | relative_url }}"
+                   data-uk-icon="chevron-left"></a>
+                    <a href="{{ 'clef19/pan19-web/index.html' | relative_url }}">2019</a>
+                <a class="uk-button uk-padding-remove"
+                   href="{{ 'clef20/pan20-web/index.html' | relative_url }}"
+                   data-uk-icon="chevron-right"></a></span>
+            </h1>
             <div class="page-header-meta">
-            {% include registration-counter.html
+                {% include registration-counter.html
                 year=2019
                 apiVersion="v3"
-                url="https://spreadsheets.google.com/feeds/cells/0AlwcskAJGamSdEN2ZUQ4Uk44cW13XzQ4UDRNTDR0V3c/od5/public/basic?min-row=5&min-col=1&max-row=1&max-col=1&alt=json" %}
+                url="https://spreadsheets.google.com/feeds/cells/0AlwcskAJGamSdEN2ZUQ4Uk44cW13XzQ4UDRNTDR0V3c/od5/public/basic?min-row=5&min-col=1&max-row=1&max-col=1&alt=json"
+                %}
             </div>
         </div>
 
-        <div class="uk-container uk-margin-medium">
+        <div class="uk-container uk-margin-medium uk-margin-remove-vertical">
             <div class="uk-align-right uk-margin-remove-bottom">
                 <a href="https://www.symanto.net/" target="_blank">
                     <img src="../pan19-figures/Symanto-PsychologyAI.png" style="height: 40px" alt="Symanto">
@@ -63,15 +41,26 @@ description: PAN @ CLEF 2019
                 of the
                 <a href="http://clef2019.clef-initiative.eu" target="_blank">CLEF conference</a> in Lugano,
                 Switzerland, on September 09-12, 2019. Evaluations will commence
-                <a href="{{ '/clef19/pan19-web/submission.html' | relative_url }}">from January till June</a>. We invite you to take part in
+                <a href="{{ '/clef19/pan19-web/submission.html' | relative_url }}">from January till June</a>. We invite
+                you to take part in
                 any of the tasks shown below.
             </p>
         </div>
 
     </header>
 
-    <!-- Tasks -->
+
     <div class="uk-section">
+        <!-- Navigation -->
+        <div class="uk-container">
+            <span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#index-important-dates">Important
+            Dates</a>
+            <span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right"
+                                                        href="#index-keynotes">Keynotes</a>
+            <span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#index-program">Program</a>
+        </div>
+
+        <!-- Tasks -->
         <div class="uk-container uk-margin-large">
             <div class="uk-grid uk-grid-large uk-grid-divider uk-child-width-1-2@m" data-uk-grid>
                 <div>
@@ -80,7 +69,8 @@ description: PAN @ CLEF 2019
                             <a href="{{ '/clef19/pan19-web/author-profiling.html' | relative_url }}">Learn more</a>
                         </span>
                     </h2>
-                    <p class="uk-margin-small-top">Given a Twitter feed, determine whether its <b>author</b> is a bot or a human. 
+                    <p class="uk-margin-small-top">Given a Twitter feed, determine whether its <b>author</b> is a bot or
+                        a human.
                         In case of human, identify her/his gender.</p>
                 </div>
                 <div>
@@ -90,7 +80,7 @@ description: PAN @ CLEF 2019
                         </span>
                     </h2>
                     <p class="uk-margin-small-top">Given the Twitter feed of a celebrity, determine their fame,
-                occupation, age, and gender.</p>
+                        occupation, age, and gender.</p>
                 </div>
                 <div>
                     <h2>Cross-Domain Authorship Attribution
@@ -106,12 +96,14 @@ description: PAN @ CLEF 2019
                             <a href="{{ '/clef19/pan19-web/style-change-detection.html' | relative_url }}">Learn more</a>
                         </span>
                     </h2>
-                    <p class="uk-margin-small-top">Given a document, decide whether it is <strong>single-</strong> or <strong>multi-authored</strong>. If it is multi-authored, determine the number of involved authors.</p>
+                    <p class="uk-margin-small-top">Given a document, decide whether it is <strong>single-</strong> or
+                        <strong>multi-authored</strong>. If it is multi-authored, determine the number of involved
+                        authors.</p>
                 </div>
             </div>
         </div>
 
-
+        <!-- Divider -->
         <div class="uk-container uk-margin-medium">
             <hr class="uk-divider-icon">
         </div>
@@ -120,7 +112,7 @@ description: PAN @ CLEF 2019
         <div class="uk-container uk-margin-large">
             <div class="uk-grid-medium" data-uk-grid>
                 <div class="uk-width-1-2@m">
-                    <h2 class="page-header" id="important-dates">Important Dates
+                    <h2 class="page-header" id="index-important-dates">Important Dates
                         <span class="uk-text-muted uk-text-lead">Hawaii time zone</span>
                     </h2>
                     <table class="uk-table uk-table-divider uk-table-small uk-table-hover uk-table-justify uk-table-condensed">
@@ -189,7 +181,432 @@ description: PAN @ CLEF 2019
                 </div>
             </div>
         </div>
-    </div>  <!-- section -->
+
+        <!-- Keynotes -->
+        <div class="uk-container uk-margin-large uk-text-justify">
+
+            <h2 class="page-header" id="index-keynotes">Keynotes</h2>
+            <div class="uk-grid uk-child-width-1-2@l" data-uk-grid>
+                <article class="keynote">
+                    <header class="keynote-header">
+                        <div class="keynote-speaker-image">
+                            <img src="{{ '/clef19/pan19-figures/GiancarloRuffo.jpg' | relative_url }}"
+                                 alt="Giancarlo Ruffo">
+                        </div>
+                        <div class="keynote-meta">
+                            <div class="keynote-title">Hoax vs fact checking: understanding and predicting the diffusion
+                                of
+                                low quality information on communication networks
+                            </div>
+                            <div class="keynote-speaker"><a href="http://www.di.unito.it/~ruffo/" target="_blank">Giancarlo
+                                Ruffo</a></div>
+                            <div class="keynote-affiliation">University of Turin, Italy</div>
+                        </div>
+                    </header>
+                    <div class="keynote-body">
+                        <p>The Internet and online social networks have amplified information
+                            diffusion processes, but at the same time, they provide fertile ground
+                            for the spread of misinformation, rumors, and hoaxes. The goal of this
+                            work is to introduce a simple modeling framework to study these
+                            phenomena: following the epidemic approach and motivated by results in
+                            literature, we look at misinformation as an instance of the more
+                            general concept of information diffusion, and we propose an adaption
+                            of the classic SIS (Susceptible-Infected-Susceptible) model to the
+                            case of misinformation by adding two essential socio-cognitive
+                            features: forgetting and competition with fact-checking efforts.
+                            First, we focus on how the availability of debunking information may
+                            contain the misinformation diffusion. Our approach allows to
+                            quantitatively gauge the minimal reaction necessary to eradicate a
+                            hoax. Second, we simulate the spreading dynamics on networks with two
+                            communities of gullible and skeptic users, with different propensities
+                            to believe hoaxes and a segregation parameter that represents the
+                            sparsity of links between the two communities. Simulations show that
+                            segregation plays an important role in the diffusion of
+                            misinformation, but can have different effects varying other
+                            parameters. Finally, we validate our model on Twitter data (both fake
+                            news and debunking), obtaining good results. Our encouraging findings
+                            suggest that fact-checking can be still considered useful in fighting
+                            misinformation, but also that the structure of the underlying social
+                            network is very important in the spreading process evolution, then
+                            further investigation in this direction is absolutely necessary in
+                            order to develop new tools and solutions to limit the diffusion of
+                            fake news.
+                        </p>
+
+                        <footer>
+                            <div class="keynote-bio" id="keynote-bio-1">
+                                <p>Giancarlo Ruffo, Ph.D, is Associate Professor of Computer Science at
+                                    the University of Turin, Italy from 2006, Adjunct Professor at Schools
+                                    of Informatics and Computing from 2011, Indiana University, ISI fellow
+                                    (awarded by ISI Foundation) from 2015, and coordinator of the master's
+                                    degree program in "Networks and Computational Systems" (Reti e Sistemi
+                                    Informatici) at University of Turin. His current research interests
+                                    fall in the multidisciplinary research area of Computational Social
+                                    Science and Network Science, with focus on data visualization and
+                                    data-driven approaches to model the diffusion of misinformation,
+                                    opinion polarization in social media. He also investigated research
+                                    problems on web and data mining, recommendation systems, social media,
+                                    distributed applications, peer-to-peer systems, security, and
+                                    micro-payment schemes. He is the principal investigator of ARCS group
+                                    http://arcs.di.unito.it, and he has led several research projects. He
+                                    has published about 50 peer-reviewed papers in international journals
+                                    and conferences. Aside his academic work, he has been involved in many
+                                    other professional activities as free-lance consultant in the last 20
+                                    years. In 2013 he co-founded NetAtlas s.r.l., a tech company
+                                    specialized in data modeling, analysis and management, data
+                                    visualization, and ICT solutions.</p>
+
+                                <a href="#" class="read-more" data-uk-toggle="target: #keynote-bio-1; cls: expanded">Read
+                                    more&hellip;</a>
+                                <a href="#" class="read-less" data-uk-toggle="target: #keynote-bio-1; cls: expanded">Read
+                                    less&hellip;</a>
+                            </div>
+                        </footer>
+                    </div>
+                </article>
+
+
+                <article class="keynote">
+                    <header class="keynote-header">
+                        <div class="keynote-speaker-image">
+                            <img src="{{ '/clef19/pan19-figures/PreslavNakov.jpg' | relative_url }}"
+                                 alt="Preslav Nakov">
+                        </div>
+                        <div class="keynote-meta">
+                            <div class="keynote-title">Exposing Paid Opinion Manipulation Trolls</div>
+                            <div class="keynote-speaker"><a
+                                    href="https://www.qcri.org/our-people/bio?pid=35&par=acc&name=PreslavNakov"
+                                    target="_blank">Preslav Nakov</a></div>
+                            <div class="keynote-affiliation">Qatar Computing Research Institute (QCRI), HBKU</div>
+                        </div>
+                    </header>
+                    <div class="keynote-body">
+                        <p>The practice of using opinion manipulation trolls has been reality since the rise
+                            of Internet and community forums. It has been shown that user opinions about products,
+                            companies and politics can be influenced by posts by other users in online forums and
+                            social networks. This makes it easy for companies and political parties to gain
+                            popularity by paying for "reputation management" to people or companies that write in
+                            discussion forums and social networks fake opinions from fake profiles.
+                        </p>
+                        <p>A natural question is whether such trolls can be found and exposed automatically.
+                            This is hard as there is no enough data to train a classifier; yet, it is possible
+                            to obtain some test data, as such trolls are sometimes caught and widely exposed.
+                            Yet, one still needs training data. We solve the problem by assuming that a user who
+                            is called a troll by several different people is likely to be one, and one who has
+                            never been called a troll is unlikely to be such. We compare the profiles of (i) paid
+                            trolls vs. (ii) "mentioned" trolls vs. (iii) non-trolls, and we further show that a
+                            classifier trained to distinguish (ii) from (iii) does quite well also at telling apart
+                            (i) from (iii).
+                        </p>
+
+                        <footer>
+                            <div class="keynote-bio" id="keynote-bio-2">
+                                <p>Preslav Nakov, Ph.D, is a Principal Scientist at the Qatar Computing
+                                    Research Institute (QCRI), HBKU. His research interests include
+                                    computational linguistics, "fake news" detection, fact-checking,
+                                    machine translation, question answering, sentiment analysis, lexical
+                                    semantics, Web as a corpus, and biomedical text processing. At QCRI,
+                                    he leads the Tanbih project, developed in collaboration with MIT,
+                                    which aims to limit the effect of "fake news", propaganda and media
+                                    bias by making users aware of what they are reading. Dr. Nakov is the
+                                    Secretary of ACL SIGLEX and ACL SIGSLAV, and a member of the EACL
+                                    advisory board. He also serves on the editorial boards of the Journals
+                                    of Transactions of the Association for Computational Linguistics,
+                                    Computer Speech and Language, Natural Language Engineering, AI
+                                    Communications, and Frontiers in AI. Dr. Nakov received his PhD from
+                                    the University of California at Berkeley (supported by a Fulbright
+                                    grant). He is the recipient of the Bulgarian President's John
+                                    Atanasoff award, named after the inventor of the first automatic
+                                    electronic digital computer.</p>
+
+                                <a href="#" class="read-more" data-uk-toggle="target: #keynote-bio-2; cls: expanded">Read
+                                    more&hellip;</a>
+                                <a href="#" class="read-less" data-uk-toggle="target: #keynote-bio-2; cls: expanded">Read
+                                    less&hellip;</a>
+                            </div>
+                        </footer>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <!-- Program -->
+        <div class="uk-container uk-margin-large">
+            <h2 id="index-program">Program
+                <span class="uk-text-lead">
+                <a href="http://clef2019.clef-initiative.eu/index.php?page=Pages/conference_session.html">View full conference program</a>
+            </span>
+            </h2>
+            <table class="uk-table uk-table-divider uk-table-small uk-table-striped">
+                <thead>
+                </thead>
+                <tfoot>
+                <tr>
+                    <td colspan="2"><span style="display:none">.</span></td>
+                </tr>
+                </tfoot>
+                <tbody>
+                <tr>
+                    <td colspan="2"><b>September 9</b></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><b>Best of Labs at Auditorium</b></td>
+                </tr>
+                <tr>
+                    <td>13:45-15:00</td>
+                    <td>An Ensemble Approach to Cross-Domain Authorship Attribution<br>
+                        <i>José Custódio and Ivandre Paraboni </i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><b>Labs Presentations at Auditorium</b></td>
+                </tr>
+                <tr>
+                    <td>15:45-16:00</td>
+                    <td>Overview of PAN 2019: Bots and Gender Profiling, Celebrity Profiling, Cross-domain Authorship
+                        Attribution and Style Change Detection
+                        <br>
+                        <i>Walter Daelemans, Mike Kestemont, Enrique Manjavacas, Martin Potthast, Francisco Manuel
+                            Rangel Pardo, Paolo Rosso, Günther Specht, Efstathios Stamatatos, Benno Stein, Michael
+                            Tschuggnall, Matti Wiegmann and Eva Zangerle</i></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><b>September 10</b></td>
+                </tr>
+                <tr>
+                    <td>
+                        13:30-15:00
+                    </td>
+                    <td><b>Session 1 at A31</b>, Chair: Martin Potthast</td>
+                </tr>
+                <tr>
+                    <td>12:00 - 13:30</td>
+                    <td><b>Poster Session</b> during Lunch</td>
+                </tr>
+                <tr>
+                    <td>13:30-13:40</td>
+                    <td>PAN 2019 Welcome<br/><i>Martin Potthast</i></td>
+                </tr>
+                <tr>
+                    <td>13:40-14:40</td>
+                    <td>Keynote: Exposing Paid Opinion Manipulation Trolls<br/><i>Preslav Nakov</i></td>
+                </tr>
+                <tr>
+                    <td>14:40-15:00</td>
+                    <td>Overview of the Shared Task on Bots and Gender Profiling in Twitter<br/><i>Francisco Rangel and
+                        Paolo Rosso</i>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>15:00-15:30</td>
+                    <td><b>Break</b></td>
+                </tr>
+                <tr>
+                    <td>
+                        15:30-16:30
+                    </td>
+                    <td><b>Session 2 at A31</b>, Chair: Francisco Rangel</td>
+                </tr>
+
+                <tr>
+                    <td>15:30-15:35</td>
+                    <td>Award in Bots and Gender Profiling by <b>The Logic Value</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td>15:35-15:50</td>
+                    <td>Using N-grams to detect Bots on Twitter
+                        <br/><i>Juan Pizarro</i></td>
+                </tr>
+                <tr>
+                    <td>15:50-16:10</td>
+                    <td>Supervised Classification of Twitter Accounts Based on Textual Content of Tweets<br/><i>Fredrik
+                        Johansson</i></td>
+                </tr>
+                <tr>
+                    <td>16:10-16:30</td>
+                    <td>Overview of the Celebrity Profiling Task<br><i>Matti Wiegmann</i></td>
+                </tr>
+                <tr>
+                    <td>
+                        16:30-17:30
+                    </td>
+                    <td><b>Session 3 at A31</b>, Chair: Paolo Rosso</td>
+                </tr>
+                <tr>
+                    <td>16:30-17:30</td>
+                    <td>Keynote: Hoax vs fact checking: understanding and predicting the diffusion of low quality
+                        information on communication networks
+                        <br><i>Giancarlo Ruffo</i></td>
+                </tr>
+                <tr>
+                    <td>18:30-22:00</td>
+                    <td><b>Conference Dinner</b></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><b>September 11</b></td>
+                </tr>
+                <tr>
+                    <td>12:00 - 13:30</td>
+                    <td><b>Poster Session</b> during Lunch</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Multi-channel Open-set Cross-domain Authorship Attribution
+                        <br/><i>José Custódio and Ivandre Paraboni</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Bot and Gender detection of Twitter accounts using Distortion and LSA
+                        <br/><i>Andrea Bacciu, Massimo La Morgia, Alessandro Mei, Eugenio Nerio Nemmi, Valerio Neri, and
+                            Julinda Stefa</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>FOI Cross-Domain Authorship Attribution for Criminal Investigations
+                        <br/><i>Fredrik Johansson and Tim Isbister</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>UniNE at PAN-CLEF 2019: Bots and Gender Task
+                        <br/><i>Catherine Ikae, Sukanya Nath, Jacques Savoy</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Combined CNN+RNN Bot and Gender Profiling
+                        <br/><i>Rafael Felipe Sandroni Dias and Ivandré Paraboni</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Detecting bot accounts on Twitter by measuring message predictability
+                        <br/><i>Piotr Przybyła</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Bots and gender profiling using masking techniques
+                        <br/><i>Victor Jimenez-Villar, Javier Sánchez-Junquera, Manuel Montes-y-Gómez, Luis
+                            Villaseñor-Pineda, and Simone Paolo Ponzetto</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>An evolutionary approach to build user representations for profiling of bots and humans in
+                        Twitter
+                        <br/><i>Roberto López-Santillán, Luis Carlos González-Gurrola, Manuel Montes-y-Gómez, Graciela
+                            Ramírez-Alonso, and Olanda Prieto-Ordaz</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Naive-Bayesian Classification for Bot Detection in Twitter
+                        <br/><i>Pablo Gamallo and Sattam Almatarneh</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Unsupervised pretraining for text classification using siamese transfer learning
+                        <br/><i>Maximilian Bryan and J. Nathanael Philipp</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Author profiling using semantic and syntactic features
+                        <br/><i>György Kovács, Vanda Balogh, Kumar Shridhar, Purvanshi Mehta, and Pedro Alonso</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Profiling Twitter users using autogenerated features invariant to data distribution
+                        <br/><i>Tiziano Fagni and Maurizio Tesconi</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Bots and Gender Profiling using a Multi-layer Architecture
+                        <br/><i>Régis Goubin, Dorian Lefeuvre, Alaa Alhamzeh, Jelena Mitrovic, Elod Egyed-Zsigmond, and
+                            Leopold Ghemmogne Fossi</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Bots and Gender Profiling on Twitter using Sociolinguistic Features
+                        <br/><i>Edwin Puertas, Luis Gabriel Moreno-Sandoval, Flor Miriam Plaza-del-Arco, Jorge Andres
+                            Alvarado-Valencia, Alexandra Pomares-Quimbaya, and L.Alfonso Ureña-López</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Bots and gender profiling with convolutional hierarchical recurrent neural network
+                        <br/><i>Juraj Petrik, Daniela Chuda</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Celebrity Profiling on Twitter using Sociolinguistic Features
+                        <br/><i>Luis Gabriel Moreno-Sandoval, Edwin Puertas, Flor Miriam Plaza-del-Arco, Alexandra
+                            Pomares-Quimbaya, Jorge Andres Alvarado-Valencia, and L. Alfonso Ureña-López</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>A Hierarchical Neural Network Approach for Bots and Gender Profiling
+                        <br/><i>Andrea Cimino and Felice dell’Orletta</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Bots and Gender Profiling using Character Bigrams
+                        <br/><i>Daniel Yacob Espinosa, Helena Gómez-Adorno, and Grigori Sidorov</i></td>
+                </tr>
+                <tr>
+                    <td>15:30-16:30</td>
+                    <td><b>Session 4 at A31</b>, Chair: Efstathios Stamatatos</td>
+                </tr>
+                <tr>
+                    <td>15:30-15:45</td>
+                    <td>Overview of the Style Change Detection Task<br><i>Eva Zangerle</i></td>
+                </tr>
+                <tr>
+                    <td>15:45-16:00</td>
+                    <td>Style Change Detection by Threshold Based and Window Merge Clustering Methods<br><i>Sukanya
+                        Nath</i></td>
+                </tr>
+                <tr>
+                    <td>16:00-16:15</td>
+                    <td>Twitter User Profiling: Bot and Gender Identification
+                        <br/><i>Dijana Kosmajac and Vlado Keselj</i></td>
+                </tr>
+                <tr>
+                    <td>16:15-16:30</td>
+                    <td>Twitter feeds profiling with TF-IDF<br><i>Juraj Petrik and Daniela Chuda</i></td>
+                </tr>
+                <tr>
+                    <td>16:30-16:50</td>
+                    <td>Overview of the Cross-domain Authorship Attribution Task<br><i>Mike Kestemont</i></td>
+                </tr>
+                <tr>
+                    <td>16:50-17:10</td>
+                    <td>Cross-Domain Authorship Attribution Combining Instance Based and Profile-Based Features<br><i>Andrea
+                        Bacciu, Massimo La Morgia, Alessandro Mei, Eugenio Nerio Nemmi, Valerio Neri, Julinda Stefa</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>17:10-17:30</td>
+                    <td>Community discussion</td>
+                </tr>
+                <tr>
+                    <td>18:30-20:30</td>
+                    <td><b>Civic Reception</b></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><b>September 12</b></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><b>Best of CLEF for Industry at Auditorium</b></td>
+                </tr>
+                <tr>
+                    <td>14:00-14:30</td>
+                    <td>Shared Tasks for Industry: Experiment Platforms and Author Profiling
+                        <br><i>Martin Potthast and Francisco Rangel</i></td>
+                </tr>
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
 
     <footer class="uk-section uk-section-muted">
         <div class="uk-container">
