@@ -14,25 +14,17 @@ description: PAN @ CLEF 2019 - Celebrity Profiling
                 </span>
             </h1>
             <ul class="uk-list">
-                <li><span data-uk-icon="chevron-down"></span>
-                    <a class="uk-margin-small-right" href="#celebrity-profiling-19-task">Task</a></li>
-                <li><span data-uk-icon="chevron-down"></span>
-                    <a class="uk-margin-small-right" href="#celebrity-profiling-19-data">Data</a></li>
-                <li><span data-uk-icon="chevron-down"></span>
-                    <a class="uk-margin-small-right" href="#celebrity-profiling-19-evaluation">Evaluation</a></li>
-                <li><span data-uk-icon="chevron-down"></span>
-                    <a class="uk-margin-small-right" href="#celebrity-profiling-19-submission">Submission</a></li>
-                <li><span data-uk-icon="chevron-down"></span>
-                    <a class="uk-margin-small-right" href="#celebrity-profiling-19-results">Results</a></li>
-                <li><span data-uk-icon="chevron-down"></span>
-                    <a class="uk-margin-small-right" href="#celebrity-profiling-19-related-work">Related Work</a></li>
-                <li><span data-uk-icon="chevron-down"></span>
-                    <a class="uk-margin-small-right" href="#celebrity-profiling-19-task-committee">Task Committee</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#celebrity-profiling-19-task">Task</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#celebrity-profiling-19-data">Data</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#celebrity-profiling-19-evaluation">Evaluation</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#celebrity-profiling-19-submission">Submission</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#celebrity-profiling-19-results">Results</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#celebrity-profiling-19-related-work">Related Work</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#celebrity-profiling-19-task-committee">Task Committee</a></li>
             </ul>
         </div>
 
         <div class="uk-container uk-margin-medium">
-
 
             <h2 id="celebrity-profiling-19-task">Task</h2>
             <div class="uk-child-width-1-2@m" data-uk-grid>
@@ -81,82 +73,61 @@ description: PAN @ CLEF 2019 - Celebrity Profiling
                 </div>
             </div>
 
-
-            <h2 id="celebrity-profiling-19-data">Data
-                <span class="uk-text-lead">
-                [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-19/pan19-data/pan19-celebrity-profiling-training-dataset-2019-01-31.zip">Download Training Data</a>]
-                </span>
-            </h2>
+            <h2 id="celebrity-profiling-19-data">Data <span class="uk-text-lead"> [<a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-19/pan19-data/pan19-celebrity-profiling-training-dataset-2019-01-31.zip">Download Training Data</a>]</span></h2>
             <p>The training dataset contains of two files: a <code>feeds.ndjson</code> as input and a <code>labels.ndjson</code>
-                as output.
-                Each file lists all celebrities as JSON objects, one per line and identified by the
-                <code>id</code> key.</p>
+                as output. Each file lists all celebrities as JSON objects, one per line and identified by the <code>id</code> key.</p>
 
             <h3 class="uk-margin-small-top">Input Format</h3>
             The input file contains the cid and a list of all teaser messages for each celebrity.
-            <pre id="feeds-ndjson-example" class="prettyprint linenums uk-margin-remove-bottom"><code
-                    class="lang-json">{"id": 1234, "text": ["a tweet", "another tweet", ...]}
+            <pre id="feeds-ndjson-example" class="prettyprint linenums uk-margin-remove-bottom"><code class="lang-json">
+{"id": 1234, "text": ["a tweet", "another tweet", ...]}
 {"id": 5678, "text": ["a tweet", "another tweet", ...]}
-...</code></pre>
+...
+            </code></pre>
             <div class="uk-text-small uk-text-muted uk-text-right">feeds.ndjson</div>
 
             <h3 class="uk-margin-small-top">Output Format</h3>
-
-            The output file contains the cid and and a value for each trait for each celebrity from the input
-            file.
-            <pre id="labels-ndjson-example" class="prettyprint linenums uk-margin-remove-bottom"><code
-                    class="lang-json">{"id": 1234, "fame": "star", "occupation": "sports", "gender": "female", "birthyear": 2002}
+            The output file contains the cid and and a value for each trait for each celebrity from the input file.
+            <pre id="labels-ndjson-example" class="prettyprint linenums uk-margin-remove-bottom"><code class="lang-json">
+{"id": 1234, "fame": "star", "occupation": "sports", "gender": "female", "birthyear": 2002}
 {"id": 5678, "fame": "rising", "occupation": "professional", "gender": "male", "birthyear": 1990}
-...</code></pre>
+...
+            </code></pre>
             <div class="uk-text-small uk-text-muted uk-text-right">labels.ndjson</div>
-
             The following values are possible for each of the traits:
-            <pre class="prettyprint uk-margin-remove-bottom"><code class="lang-pascal">fame        := {rising, star, superstar}
+            <pre class="prettyprint uk-margin-remove-bottom"><code class="lang-pascal">
+fame        := {rising, star, superstar}
 occupation  := {sports, performer, creator, politics, manager,
             science, professional, religious}
 birthyear   := {1940, ..., 2012}
-gender      := {male, female, nonbinary}</code></pre>
+gender      := {male, female, nonbinary}
+            </code></pre>
             <div class="uk-text-small uk-text-muted uk-text-right">possible value instances for each label</div>
 
-            <h2 id="celebrity-profiling-19-evaluation">Evaluation <span class="uk-text-lead">[<a
-                    href="{{ '/clef19/pan19-code/pan19_celebrity_profiling_evaluator_2019_04_11.py' | relative_url }}">Evaluation Script</a>][<a
-                    href="{{ '/clef19/pan19-code/pan19_celebs_evaluator_tests.py' | relative_url }}">Unittests</a>]</span>
-            </h2>
-            <p>Submissions are judged by a combined metric <code>cRank</code>, which is the harmonic mean of
-                each label's metric.
+            <h2 id="celebrity-profiling-19-evaluation">Evaluation <span class="uk-text-lead">
+                [<a href="{{ '/clef19/pan19-code/pan19_celebrity_profiling_evaluator_2019_04_11.py' | relative_url }}">Evaluation Script</a>]
+                [<a href="{{ '/clef19/pan19-code/pan19_celebs_evaluator_tests.py' | relative_url }}">Unittests</a>]</span></h2>
+            <p>Submissions are judged by a combined metric <code>cRank</code>, which is the harmonic mean of each label's metric.
 
                 $$ \text{cRank} = {4 \over {\frac{1}{\text{F}_{1, \text{fame}}} + \frac{1}{\text{F}_{1,
                 \text{occupation}}} + \frac{1}{\text{F}_{1, \text{gender}}} +
                 \frac{1}{\text{F}_{1, \text{age}}}}} $$
 
-                All traits are judged by their respective F<sub>1</sub>. Precision and recall of
-                <code>birthyear</code>
-                are calculated leniently. If a prediction is within an m-window of the truth, it is counted as
-                correct:
+                All traits are judged by their respective F<sub>1</sub>. Precision and recall of <code>birthyear</code>
+                are calculated leniently. If a prediction is within an m-window of the truth, it is counted as correct:
 
                 $$ \text{true birthyear} - m \le \text{predicted birthyear} \le \text{true birthyear} + m$$
 
-                The window size m is based on the birth year and increases linearly from about 2 years for 2012
-                to
-                about 9 years for 1940.
-
+                The window size m is based on the birth year and increases linearly from about 2 years for 2012 to about 9 years for 1940.
             </p>
 
-
-            <h2 id="celebrity-profiling-19-submission">Submission
-                <span class="uk-text-lead">
-                [<a href="{{ '/clef19/pan19-web/submission.html' | relative_url }}">Submit software to PAN</a>]
-            </span>
-            </h2>
+            <h2 id="celebrity-profiling-19-submission">Submission <span class="uk-text-lead">
+                [<a href="{{ '/clef19/pan19-web/submission.html' | relative_url }}">Submit software to PAN</a>]</span></h2>
             <p>For evaluation, your software will read a <code>feeds.ndjson</code> file from a given directory
-                and write a valid <code>labels.ndjson</code> with your predictions to a given output directory.
-            </p>
-            <p>This task follows PAN's software submission strategy described <a
-                    href="{{ '/clef19/pan19-web/submission.html' | relative_url }}">here</a>.</p>
+                and write a valid <code>labels.ndjson</code> with your predictions to a given output directory.</p>
+            <p>This task follows PAN's software submission strategy described <a href="{{ '/clef19/pan19-web/submission.html' | relative_url }}">here</a>.</p>
 
-            <h2 id="celebrity-profiling-19-results">Results
-                <span class="uk-text-lead">[<a href="https://docs.google.com/spreadsheets/d/1-H4XJEwb7l3EOLZunAPS81DY84WuET6p4vHKUREvW6Q/edit?usp=sharing">Extended Overview</a>]</span>
-            </h2>
+            <h2 id="celebrity-profiling-19-results">Results <span class="uk-text-lead">[<a href="https://docs.google.com/spreadsheets/d/1-H4XJEwb7l3EOLZunAPS81DY84WuET6p4vHKUREvW6Q/edit?usp=sharing">Extended Overview</a>]</span></h2>
             <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
                 <thead>
                 <tr>
@@ -326,18 +297,11 @@ gender      := {male, female, nonbinary}</code></pre>
                 </tbody>
             </table>
 
-
             <h2 id="celebrity-profiling-19-related-work">Related Work</h2>
             <ul>
-                <li>
-                    Matti Wiegmann, Benno Stein, Martin Potthast.
-                    <a href="https://webis.de/downloads/publications/papers/stein_2019n.pdf">
-                        Celebrity Profiling</a>. To appear in 57th Annual Meeting of the Association
-                    for Computational Linguistics (ACL 2019), July 2019. Association for
-                    Computational Linguistics.
-                </li>
+                <li>Matti Wiegmann, Benno Stein, Martin Potthast. <a href="https://webis.de/downloads/publications/papers/stein_2019n.pdf">
+                        Celebrity Profiling</a>. To appear in 57th Annual Meeting of the Association for Computational Linguistics (ACL 2019), July 2019. Association for Computational Linguistics. </li>
             </ul>
-
 
             <h2 id="celebrity-profiling-19-task-committee">Task Committee</h2>
             <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
