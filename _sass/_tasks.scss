@@ -4,17 +4,18 @@
 }
 
 .uk-card:target {
-  animation: highlight 4s ease;
+  //animation: highlight 4s ease;
+  background: $task-card-target-color;
 
   .uk-button-default {
     background: $global-background;
   }
 }
-@keyframes highlight {
-  0% { background: $table-entry-target-color; }
-  25% { background: $table-entry-target-color; }
-  100% { background: $global-background; }
-}
+//@keyframes highlight {
+//  0% { background: $table-entry-target-color; }
+//  25% { background: $table-entry-target-color; }
+//  100% { background: $global-background; }
+//}
 
 .task-chair-organizations {
   text-align: center;
