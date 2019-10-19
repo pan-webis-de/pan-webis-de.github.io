@@ -9,9 +9,9 @@
     <link rel="icon" type="image/png" href="{{ '/img/pan-icon-16x16.ico' | relative_url }}">
 
     <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}?{{site.time | date: '%s'}}">
-    {%- for css in page.additional_css %}
+    {% for css in page.additional_css %}
     <link rel="stylesheet" href="{{ css | relative_url }}?{{site.time | date: '%s'}}">
-    {%- endfor %}
+    {% endfor %}
 </head>
 <body class="uk-offcanvas-content page-{{ page.nav_active }}">
 <script src="{{ '/commons/js/hyphenate/hyphenate.min.js' | relative_url }}"></script>

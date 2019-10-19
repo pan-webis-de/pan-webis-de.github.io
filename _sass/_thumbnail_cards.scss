@@ -45,4 +45,22 @@
             object-fit: contain;
         }
     }
+
+    .thumbnail-fill {
+        display: flex;
+        height: calc(145px - #{2 * $padding-small-padding});
+
+        img, svg {
+            object-fit: contain;
+        }
+    }
+
+
+    .thumbnail-card-logo {
+        width: 100px;
+        max-height: 100px;
+        margin-bottom: $padding-small-padding;
+        margin-right: $padding-small-padding;
+
+    }
 }

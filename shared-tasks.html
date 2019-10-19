@@ -21,13 +21,13 @@ description: PAN Shared Tasks Overview
 
             <div class="uk-grid uk-grid-match uk-grid-small uk-child-width-1-3@l uk-child-width-1-2@m" data-uk-grid>
                 <div>
-                    <div class="uk-card uk-card-body uk-card-default">
-                        <h4 id="task-authorship-attribution" class="uk-card-title">Authorship Attribution <span
-                                class="uk-badge">active</span></h4>
+                    <div id="task-authorship-attribution" class="uk-card uk-card-body uk-card-default">
+                        <h4 class="uk-card-title">Authorship Attribution</h4>
+<!--                            <span class="uk-badge">active</span>-->
                         <p>Given a document and a set of candidate authors, determine which of them wrote the
                             document.</p>
                         <ul class="uk-list list-inline">
-                            <li><a class="uk-button uk-button-small uk-button-primary"
+                            <li><a class="uk-button uk-button-small uk-button-default"
                                    href="clef20/pan20-web/author-identification.html">2020</a></li>
                             <li><a class="uk-button uk-button-small uk-button-default"
                                    href="clef19/pan19-web/author-identification.html">2019</a></li>
@@ -40,40 +40,9 @@ description: PAN Shared Tasks Overview
                         </ul>
                     </div>
                 </div>
-                <div>
-                    <div class="uk-card uk-card-body uk-card-default">
-                        <h4 id="task-authorship-style-change-detection" class="uk-card-title">Style Change Detection
-                            <span class="uk-badge">active</span></h4>
-                        <p>Given a document, determine whether it was written by a single or multiple authors.</p>
-                        <ul class="uk-list list-inline">
-                            <li><a class="uk-button uk-button-small uk-button-primary"
-                                   href="clef20/pan20-web/style-change-detection.html">2020</a></li>
-                            <li><a class="uk-button uk-button-small uk-button-default"
-                                   href="clef19/pan19-web/style-change-detection.html">2019</a></li>
-                            <li><a class="uk-button uk-button-small uk-button-default"
-                                   href="clef18/pan18-web/author-identification.html">2018</a></li>
-                            <li><a class="uk-button uk-button-small uk-button-default"
-                                   href="clef17/pan17-web/author-identification.html">2017</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div>
-                    <div class="uk-card uk-card-body uk-card-default">
-                        <h4 id="task-authorship-verification" class="uk-card-title">Authorship Verification</h4>
-                        <p>Given a pair of documents, determine whether they are written by the same author.</p>
-                        <ul class="uk-list list-inline">
-                            <li><a class="uk-button uk-button-small uk-button-default"
-                                   href="clef15/pan15-web/author-identification.html">2015</a></li>
-                            <li><a class="uk-button uk-button-small uk-button-default"
-                                   href="clef14/pan14-web/author-identification.html">2014</a></li>
-                            <li><a class="uk-button uk-button-small uk-button-default"
-                                   href="clef13/pan13-web/author-identification.html">2013</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div>
-                    <div class="uk-card uk-card-body uk-card-default">
-                        <h4 id="task-authorship-clustering" class="uk-card-title">Author Clustering</h4>
+                 <div>
+                    <div id="task-authorship-clustering" class="uk-card uk-card-body uk-card-default">
+                        <h4 class="uk-card-title">Author Clustering</h4>
                         <p>Given a set of documents, group them by authorship.</p>
                         <ul class="uk-list list-inline">
                             <li><a class="uk-button uk-button-small uk-button-default"
@@ -84,8 +53,8 @@ description: PAN Shared Tasks Overview
                     </div>
                 </div>
                 <div>
-                    <div class="uk-card uk-card-body uk-card-default">
-                        <h4 id="task-authorship-diarization" class="uk-card-title">Author Diarization</h4>
+                    <div id="task-authorship-diarization"  class="uk-card uk-card-body uk-card-default">
+                        <h4 class="uk-card-title">Author Diarization</h4>
                         <p>Given a document, identify and group parts that have been written by the same author.</p>
                         <ul class="uk-list list-inline">
                             <li><a class="uk-button uk-button-small uk-button-default"
@@ -93,13 +62,27 @@ description: PAN Shared Tasks Overview
                         </ul>
                     </div>
                 </div>
-                <div>
-                    <div class="uk-card uk-card-body uk-card-default">
-                        <h4 id="task-authorship-prediction" class="uk-card-title">Gender Prediction <span
-                                class="uk-badge">active</span></h4>
-                        <p>Given a document, determine its author's gender.</p>
+                 <div>
+                    <div id="task-authorship-masking"  class="uk-card uk-card-body uk-card-default">
+                        <h4 class="uk-card-title">Author Masking</h4>
+                        <p>Given a document and a set of documents from the same author, paraphrase the former so
+                            that its author cannot be identified, anymore.</p>
                         <ul class="uk-list list-inline">
-                            <li><a class="uk-button uk-button-small uk-button-primary"
+                            <li><a class="uk-button uk-button-small uk-button-default"
+                                   href="clef18/pan18-web/author-obfuscation.html">2018</a></li>
+                            <li><a class="uk-button uk-button-small uk-button-default"
+                                   href="clef17/pan17-web/author-obfuscation.html">2017</a></li>
+                            <li><a class="uk-button uk-button-small uk-button-default"
+                                   href="clef16/pan16-web/author-obfuscation.html">2016</a></li>
+                        </ul>
+                    </div>
+                </div>
+                 <div>
+                    <div id="task-authorship-profiling"  class="uk-card uk-card-body uk-card-default">
+                        <h4 class="uk-card-title">Author Profiling</h4>
+                        <p>Given a document, determine traits like age, gender, or personality of it's author.</p>
+                        <ul class="uk-list list-inline">
+                            <li><a class="uk-button uk-button-small uk-button-default"
                                    href="clef20/pan20-web/author-profiling.html">2020</a></li>
                             <li><a class="uk-button uk-button-small uk-button-default"
                                    href="clef19/pan19-web/author-profiling.html">2019</a></li>
@@ -119,12 +102,25 @@ description: PAN Shared Tasks Overview
                     </div>
                 </div>
                 <div>
-                    <div class="uk-card uk-card-body uk-card-default">
-                        <h4 id="task-celebrity-profiling" class="uk-card-title">Celebrity Profiling <span
-                                class="uk-badge">active</span></h4>
+                    <div id="task-authorship-verification"  class="uk-card uk-card-body uk-card-default">
+                        <h4 class="uk-card-title">Authorship Verification</h4>
+                        <p>Given a pair of documents, determine whether they are written by the same author.</p>
+                        <ul class="uk-list list-inline">
+                            <li><a class="uk-button uk-button-small uk-button-default"
+                                   href="clef15/pan15-web/author-identification.html">2015</a></li>
+                            <li><a class="uk-button uk-button-small uk-button-default"
+                                   href="clef14/pan14-web/author-identification.html">2014</a></li>
+                            <li><a class="uk-button uk-button-small uk-button-default"
+                                   href="clef13/pan13-web/author-identification.html">2013</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div id="task-authorship-celebrity" class="uk-card uk-card-body uk-card-default">
+                        <h4 class="uk-card-title">Celebrity Profiling</h4>
                         <p>Given a social media feed, determine the owners traits.</p>
                         <ul class="uk-list list-inline">
-                            <li><a class="uk-button uk-button-small uk-button-primary"
+                            <li><a class="uk-button uk-button-small uk-button-default"
                                    href="clef20/pan20-web/celebrity-profiling.html">2020</a></li>
                             <li><a class="uk-button uk-button-small uk-button-default"
                                    href="clef19/pan19-web/celebrity-profiling.html">2019</a></li>
@@ -132,60 +128,24 @@ description: PAN Shared Tasks Overview
                     </div>
                 </div>
                 <div>
-                    <div class="uk-card uk-card-body uk-card-default">
-                        <h4 id="task-authorship-language-prediction" class="uk-card-title">Language Prediction</h4>
-                        <p>Given a document, determine its author's specific variation of their native language.</p>
+                    <div id="task-authorship-style-change" class="uk-card uk-card-body uk-card-default">
+                        <h4 class="uk-card-title">Style Change Detection</h4>
+                        <p>Given a document, determine whether it was written by a single or multiple authors.</p>
                         <ul class="uk-list list-inline">
                             <li><a class="uk-button uk-button-small uk-button-default"
-                                   href="clef17/pan17-web/author-profiling.html">2017</a></li>
+                                   href="clef20/pan20-web/style-change-detection.html">2020</a></li>
+                            <li><a class="uk-button uk-button-small uk-button-default"
+                                   href="clef19/pan19-web/style-change-detection.html">2019</a></li>
+                            <li><a class="uk-button uk-button-small uk-button-default"
+                                   href="clef18/pan18-web/author-identification.html">2018</a></li>
+                            <li><a class="uk-button uk-button-small uk-button-default"
+                                   href="clef17/pan17-web/author-identification.html">2017</a></li>
                         </ul>
                     </div>
                 </div>
                 <div>
-                    <div class="uk-card uk-card-body uk-card-default">
-                        <h4 id="task-authorship-agre-prediction" class="uk-card-title">Age Prediction</h4>
-                        <p>Given a document, determine its author's age.</p>
-                        <ul class="uk-list list-inline">
-                            <li><a class="uk-button uk-button-small uk-button-default"
-                                   href="clef16/pan16-web/author-profiling.html">2016</a></li>
-                            <li><a class="uk-button uk-button-small uk-button-default"
-                                   href="clef15/pan15-web/author-profiling.html">2015</a></li>
-                            <li><a class="uk-button uk-button-small uk-button-default"
-                                   href="clef14/pan14-web/author-profiling.html">2014</a></li>
-                            <li><a class="uk-button uk-button-small uk-button-default"
-                                   href="clef13/pan13-web/author-profiling.html">2013</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div>
-                    <div class="uk-card uk-card-body uk-card-default">
-                        <h4 id="task-authorship-personality-prediction" class="uk-card-title">Personality
-                            Prediction</h4>
-                        <p>Given a document, determine its author's personality type.</p>
-                        <ul class="uk-list list-inline">
-                            <li><a class="uk-button uk-button-small uk-button-default"
-                                   href="clef15/pan15-web/author-profiling.html">2015</a></li>
-                        </ul>
-                    </div>
-                </div>
-                 <div>
-                    <div class="uk-card uk-card-body uk-card-default">
-                        <h4 id="task-authorship-masking" class="uk-card-title">Author Masking</h4>
-                        <p>Given a document and a set of documents from the same author, paraphrase the former so
-                            that its author cannot be identified, anymore.</p>
-                        <ul class="uk-list list-inline">
-                            <li><a class="uk-button uk-button-small uk-button-default"
-                                   href="clef18/pan18-web/author-obfuscation.html">2018</a></li>
-                            <li><a class="uk-button uk-button-small uk-button-default"
-                                   href="clef17/pan17-web/author-obfuscation.html">2017</a></li>
-                            <li><a class="uk-button uk-button-small uk-button-default"
-                                   href="clef16/pan16-web/author-obfuscation.html">2016</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div>
-                    <div class="uk-card uk-card-body uk-card-default">
-                        <h4 id="task-authorship-obfuscation-evaluation" class="uk-card-title">Obfuscation
+                    <div id="task-authorship-obfuscation-evaluation" class="uk-card uk-card-body uk-card-default">
+                        <h4 class="uk-card-title">Obfuscation
                             Evaluation</h4>
                         <p>Devise and implement performance measures that quantify safeness, soundness, and/or
                             sensibleness of an obfuscation software.</p>
@@ -199,6 +159,16 @@ description: PAN Shared Tasks Overview
                         </ul>
                     </div>
                 </div>
+<!--                <div>-->
+<!--                    <div class="uk-card uk-card-body uk-card-default">-->
+<!--                        <h4 id="task-authorship-language-prediction" class="uk-card-title">Language Prediction</h4>-->
+<!--                        <p>Given a document, determine its author's specific variation of their native language.</p>-->
+<!--                        <ul class="uk-list list-inline">-->
+<!--                            <li><a class="uk-button uk-button-small uk-button-default"-->
+<!--                                   href="clef17/pan17-web/author-profiling.html">2017</a></li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                </div>-->
             </div>
         </div>
         <div class="uk-container uk-margin-medium-bottom">
@@ -207,32 +177,29 @@ description: PAN Shared Tasks Overview
 
             <div class="uk-grid uk-grid-match uk-grid-small uk-child-width-1-3@l uk-child-width-1-2@m" data-uk-grid>
                 <div>
-                    <div class="uk-card uk-card-body uk-card-default">
-                        <h4 id="task-ethics-hyperpartisan-new-detection">Hyperpartisan News Detection <span
-                                class="uk-badge">active</span></h4>
+                    <div id="task-ethics-hyperpartisan-new-detection" class="uk-card uk-card-body uk-card-default">
+                        <h4 class="uk-card-title">Hyperpartisan News Detection</h4>
                         <p>Given a news article, predict whether it is hyperpartisan or not.</p>
                         <ul class="uk-list list-inline">
-                            <li><a class="uk-button uk-button-small uk-button-primary"
+                            <li><a class="uk-button uk-button-small uk-button-default"
                                    href="semeval19/semeval19-web/index.html">2019</a></li>
                         </ul>
                     </div>
                 </div>
                 <div>
-                    <div class="uk-card uk-card-body uk-card-default">
-                        <h4 id="task-ethics-wikipedia-vandalism-detection" class="uk-card-title">Wikipedia Vandalism
-                            Detection</h4>
-                        <p>Given an edit on a Wikipedia article, determine whether it is vandalism.</p>
+                    <div id="task-ethics-sexual-predator-detection" class="uk-card uk-card-body uk-card-default">
+                        <h4 class="uk-card-title">Sexual Predator
+                            Identification</h4>
+                        <p>Given a chat log between two people, determine whether one pretends to be a child.</p>
                         <ul class="uk-list list-inline">
                             <li><a class="uk-button uk-button-small uk-button-default"
-                                   href="clef11/pan11-web/wikipedia-vandalism-detection.html">2011</a></li>
-                            <li><a class="uk-button uk-button-small uk-button-default"
-                                   href="clef10/pan10-web/wikipedia-vandalism-detection.html">2010</a></li>
+                                   href="clef12/pan12-web/author-identification.html">2012</a></li>
                         </ul>
                     </div>
                 </div>
                 <div>
-                    <div class="uk-card uk-card-body uk-card-default">
-                        <h4 id="task-ethics-wikipedia-quality-flaw-prediction" class="uk-card-title">Wikipedia Quality
+                    <div id="task-ethics-wikipedia-quality-flaw-prediction" class="uk-card uk-card-body uk-card-default">
+                        <h4 class="uk-card-title">Wikipedia Quality
                             Flaw Prediction</h4>
                         <p>Given a Wikipedia article, predict whether it comprises quality flaws, and if so,
                             which.</p>
@@ -243,13 +210,15 @@ description: PAN Shared Tasks Overview
                     </div>
                 </div>
                 <div>
-                    <div class="uk-card uk-card-body uk-card-default">
-                        <h4 id="task-ethics-sexual-predator-detection" class="uk-card-title">Sexual Predator
-                            Identification</h4>
-                        <p>Given a chat log between two people, determine whether one pretends to be a child.</p>
+                    <div id="task-ethics-wikipedia-vandalism-detection" class="uk-card uk-card-body uk-card-default">
+                        <h4 class="uk-card-title">Wikipedia Vandalism
+                            Detection</h4>
+                        <p>Given an edit on a Wikipedia article, determine whether it is vandalism.</p>
                         <ul class="uk-list list-inline">
                             <li><a class="uk-button uk-button-small uk-button-default"
-                                   href="clef12/pan12-web/author-identification.html">2012</a></li>
+                                   href="clef11/pan11-web/wikipedia-vandalism-detection.html">2011</a></li>
+                            <li><a class="uk-button uk-button-small uk-button-default"
+                                   href="clef10/pan10-web/wikipedia-vandalism-detection.html">2010</a></li>
                         </ul>
                     </div>
                 </div>
@@ -261,8 +230,59 @@ description: PAN Shared Tasks Overview
 
             <div class="uk-grid uk-grid-match uk-grid-small uk-child-width-1-3@l uk-child-width-1-2@m" data-uk-grid>
                 <div>
-                    <div class="uk-card uk-card-body uk-card-default">
-                        <h4 id="task-originality-source-retrieval" class="uk-card-title">Source Retrieval</h4>
+                    <div id="task-originality-cross-language-text-reuse-detection" class="uk-card uk-card-body uk-card-default">
+                        <h4 class="uk-card-title">
+                            Cross-language Text Reuse Detection</h4>
+                        <p>Given a document in one language and a set of documents from another, determine whether
+                            parts of the former have been reused by translation from the latter.</p>
+                        <ul class="uk-list list-inline">
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div id="task-originality-external-plagiarism-detection" class="uk-card uk-card-body uk-card-default">
+                        <h4 class="uk-card-title">External
+                            Plagiarism Detection</h4>
+                        <p>Given a document and a set of documents, determine whether parts of the former have been
+                            reused from the latter.</p>
+                        <ul class="uk-list list-inline">
+                            <li><a class="uk-button uk-button-small uk-button-default"
+                                   href="clef11/pan11-web/plagiarism-detection.html">2011</a></li>
+                            <li><a class="uk-button uk-button-small uk-button-default"
+                                   href="clef10/pan10-web/plagiarism-detection.html">2010</a></li>
+                            <li><a class="uk-button uk-button-small uk-button-default"
+                                   href="sepln09/pan09-web/plagiarism-detection.html">2009</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div id="task-originality-intrinsic-plagiarism-detection" class="uk-card uk-card-body uk-card-default">
+                        <h4 class="uk-card-title">Intrinsic
+                            Plagiarism Detection</h4>
+                        <p>Given a document, determine if parts of it have been written by different authors.</p>
+                        <ul class="uk-list list-inline">
+                            <li><a class="uk-button uk-button-small uk-button-default"
+                                   href="clef11/pan11-web/plagiarism-detection.html">2011</a></li>
+                            <li><a class="uk-button uk-button-small uk-button-default"
+                                   href="clef10/pan10-web/plagiarism-detection.html">2010</a></li>
+                            <li><a class="uk-button uk-button-small uk-button-default"
+                                   href="sepln09/pan09-web/plagiarism-detection.html">2009</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div id="task-originality-source-code-reuse-detection" class="uk-card uk-card-body uk-card-default">
+                        <h4 class="uk-card-title">Source Code Reuse
+                            Detection</h4>
+                        <p>Given a piece of code and code repository, determine whether parts of the former have
+                            been reused from the latter.</p>
+                        <ul class="uk-list list-inline">
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div id="task-originality-source-retrieval" class="uk-card uk-card-body uk-card-default">
+                        <h4 class="uk-card-title">Source Retrieval</h4>
                         <p>Given a document and a search engine, retrieve likely candidates from which text might
                             have been reused in the document, while minimizing retrieval costs.</p>
                         <ul class="uk-list list-inline">
@@ -278,8 +298,8 @@ description: PAN Shared Tasks Overview
                     </div>
                 </div>
                 <div>
-                    <div class="uk-card uk-card-body uk-card-default">
-                        <h4 id="task-originality-text-alignment" class="uk-card-title">Text Alignment</h4>
+                    <div id="task-originality-text-alignment" class="uk-card uk-card-body uk-card-default">
+                        <h4 class="uk-card-title">Text Alignment</h4>
                         <p>Given a pair of documents, exracts all pairs of reused passages of maximal length.</p>
                         <ul class="uk-list list-inline">
                             <li><a class="uk-button uk-button-small uk-button-default"
@@ -290,57 +310,6 @@ description: PAN Shared Tasks Overview
                                    href="clef13/pan13-web/plagiarism-detection.html">2013</a></li>
                             <li><a class="uk-button uk-button-small uk-button-default"
                                    href="clef12/pan12-web/plagiarism-detection.html">2012</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div>
-                    <div class="uk-card uk-card-body uk-card-default">
-                        <h4 id="task-originality-intrinsic-plagiarism-detection" class="uk-card-title">Intrinsic
-                            Plagiarism Detection</h4>
-                        <p>Given a document, determine if parts of it have been written by different authors.</p>
-                        <ul class="uk-list list-inline">
-                            <li><a class="uk-button uk-button-small uk-button-default"
-                                   href="clef11/pan11-web/plagiarism-detection.html">2011</a></li>
-                            <li><a class="uk-button uk-button-small uk-button-default"
-                                   href="clef10/pan10-web/plagiarism-detection.html">2010</a></li>
-                            <li><a class="uk-button uk-button-small uk-button-default"
-                                   href="sepln09/pan09-web/plagiarism-detection.html">2009</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div>
-                    <div class="uk-card uk-card-body uk-card-default">
-                        <h4 id="task-originality-cross-language-text-reuse-detection" class="uk-card-title">
-                            Cross-language Text Reuse Detection</h4>
-                        <p>Given a document in one language and a set of documents from another, determine whether
-                            parts of the former have been reused by translation from the latter.</p>
-                        <ul class="uk-list list-inline">
-                        </ul>
-                    </div>
-                </div>
-                <div>
-                    <div class="uk-card uk-card-body uk-card-default">
-                        <h4 id="task-originality-external-plagiarism-detection" class="uk-card-title">External
-                            Plagiarism Detection</h4>
-                        <p>Given a document and a set of documents, determine whether parts of the former have been
-                            reused from the latter.</p>
-                        <ul class="uk-list list-inline">
-                            <li><a class="uk-button uk-button-small uk-button-default"
-                                   href="clef11/pan11-web/plagiarism-detection.html">2011</a></li>
-                            <li><a class="uk-button uk-button-small uk-button-default"
-                                   href="clef10/pan10-web/plagiarism-detection.html">2010</a></li>
-                            <li><a class="uk-button uk-button-small uk-button-default"
-                                   href="sepln09/pan09-web/plagiarism-detection.html">2009</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div>
-                    <div class="uk-card uk-card-body uk-card-default">
-                        <h4 id="task-originality-source-code-reuse-detection" class="uk-card-title">Source Code Reuse
-                            Detection</h4>
-                        <p>Given a piece of code and code repository, determine whether parts of the former have
-                            been reused from the latter.</p>
-                        <ul class="uk-list list-inline">
                         </ul>
                     </div>
                 </div>

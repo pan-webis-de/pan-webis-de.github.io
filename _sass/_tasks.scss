@@ -3,6 +3,14 @@
     font-size: 1.1rem;
 }
 
+.uk-card:target {
+    background: $table-task-card-target-color;
+
+    .uk-button-default {
+        background: $global-background;
+    }
+}
+
 .task-chair-organizations {
     text-align: center;
 
