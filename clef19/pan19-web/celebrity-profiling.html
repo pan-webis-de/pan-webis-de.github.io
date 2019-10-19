@@ -26,13 +26,13 @@ description: Celebrity Profiling 2019
             <h2 id="synopsis">Synopsis</h2>
             <ul>
                 <li>Task: Given a celebrity's Twitter feed, determine its owner's age, fame, gender, and occupation.</li>
-                <li><a href="{{ 'data.html#celebrity-profiling-2019' | relative_url }}">Training data</a>: collection of Twitter feeds as line-delimited JSON.</li>
+                <li>Training data: collection of Twitter feeds as line-delimited JSON. [<a href="{{ '../../data.html#corpus-pan19-celebrity-profiling' | relative_url }}">download</a>]</li>
                 <li>Output format: collection of predictions as line-delimited JSON. [verifier]</li>
                 <li>Performance measure: harmonic mean of the F1 measures of each of the four traits.
                     [<a href="{{ '/clef19/pan19-code/pan19_celebrity_profiling_evaluator_2019_04_11.py' | relative_url }}">code</a>]
                     [<a href="{{ '/clef19/pan19-code/pan19_celebs_evaluator_tests.py' | relative_url }}">tests</a>]
                 </li>
-                <li><a href="https://www.tira.io/task/celebrity-profiling/">TIRA</a>: evaluation platform where to submit your software.</li>
+                <li>Submission: Tira evaluation platform. [<a href="https://www.tira.io/task/celebrity-profiling/">submit</a>:]</li>
                 <li>Baselines: none.</li>
             </ul>
 
@@ -85,7 +85,6 @@ description: Celebrity Profiling 2019
             </div>
 
             <h2 id="data">Data</h2>
-            <p><a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-19/pan19-data/pan19-celebrity-profiling-training-dataset-2019-01-31.zip">Download Training Data</a></p>
             <p>The training dataset contains of two files: a <code>feeds.ndjson</code> as input and a <code>labels.ndjson</code>
                 as output. Each file lists all celebrities as JSON objects, one per line and identified by the <code>id</code> key.</p>
 
@@ -117,9 +116,7 @@ gender      := {male, female, nonbinary}
             <div class="uk-text-small uk-text-muted uk-text-right">possible value instances for each label</div>
 
             <h2 id="evaluation">Evaluation</h2>
-            <p><a href="{{ '/clef19/pan19-code/pan19_celebrity_profiling_evaluator_2019_04_11.py' | relative_url }}">Evaluation Script</a>,
-               <a href="{{ '/clef19/pan19-code/pan19_celebs_evaluator_tests.py' | relative_url }}">Unittests</a></p>
-            <p>Submissions are judged by a combined metric <code>cRank</code>, which is the harmonic mean of each label's metric.
+             <p>Submissions are judged by a combined metric <code>cRank</code>, which is the harmonic mean of each label's metric.
 
                 $$ \text{cRank} = {4 \over {\frac{1}{\text{F}_{1, \text{fame}}} + \frac{1}{\text{F}_{1,
                 \text{occupation}}} + \frac{1}{\text{F}_{1, \text{gender}}} +
@@ -134,10 +131,8 @@ gender      := {male, female, nonbinary}
             </p>
 
             <h2 id="submission">Submission</h2>
-            <p><a href="{{ '/clef19/pan19-web/submission.html' | relative_url }}">Submit software to PAN</a></p>
             <p>For evaluation, your software will read a <code>feeds.ndjson</code> file from a given directory
                 and write a valid <code>labels.ndjson</code> with your predictions to a given output directory.</p>
-            <p>This task follows PAN's software submission strategy described <a href="{{ '/clef19/pan19-web/submission.html' | relative_url }}">here</a>.</p>
 
             <h2 id="results">Results</h2>
             <p><a href="https://docs.google.com/spreadsheets/d/1-H4XJEwb7l3EOLZunAPS81DY84WuET6p4vHKUREvW6Q/edit?usp=sharing">Extended Overview</a></p>
