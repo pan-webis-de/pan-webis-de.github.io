@@ -6,74 +6,53 @@ description: PAN @ CLEF 2020 - Celebrity Profiling
 ---
 
 <main>
-    <header class="uk-section uk-section-muted">
-        <nav class="uk-container">
-            <div class="uk-align-right uk-visible@m uk-text-muted">
-                <a class="uk-button" href="{{ '/clef19/pan19-web/celebrity-profiling.html' | relative_url }}"
-                   data-uk-icon="chevron-left"></a>
-                CLEF 2020
-                <a class="uk-button uk-disabled uk-padding-remove-right" href="#"
-                   data-uk-icon="chevron-right"></a>
-            </div>
-
-            <ul class="uk-text-muted uk-tab uk-margin-remove-top">
-                <li><a href="{{ '/clef20/pan20-web/index.html' | relative_url }}">Overview</a></li>
-                <li><a href="{{ '/clef20/pan20-web/keynotes.html' | relative_url }}">Keynotes</a></li>
-                <li><a href="{{ '/clef20/pan20-web/program.html' | relative_url }}">Program</a></li>
-                <li class="uk-active">
-                    <a href="#">Tasks <span class="uk-margin-small-left" data-uk-icon="icon: chevron-down"></span></a>
-                    <div class="uk-dropdown" data-uk-dropdown="mode: click">
-                        <ul class="uk-nav uk-dropdown-nav">
-                            <li class="uk-active"><a
-                                    href="{{ '/clef20/pan20-web/celebrity-profiling.html' | relative_url }}">Celebrity
-                                Profiling: Influencer Edition</a></li>
-                            <li><a href="{{ '/clef20/pan20-web/author-identification.html' | relative_url }}">Cross-domain
-                                Authorship Verification</a></li>
-                            <li><a href="{{ '/clef20/pan20-web/author-profiling.html' | relative_url }}">Profiling Fake
-                                News Spreaders on Twitter</a></li>
-                            <li><a href="{{ '/clef20/pan20-web/style-change-detection.html' | relative_url }}">Style
-                                Change Detection</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a href="{{ '/clef20/pan20-web/submission.html' | relative_url }}">Submission</a></li>
-                <li><a href="{{ '/clef20/pan20-web/proceedings.html' | relative_url }}">Proceedings</a></li>
-            </ul>
-        </nav>
-
+    <div class="uk-section uk-section-default">
         <div class="uk-container uk-margin-small">
-            {% include current-register-quicklink.html year=2020 %}
-
-            <h1 class="uk-margin-small">Celebrity Profiling: Influencer Edition</h1>
-            <div class="page-header-meta">PAN @ CLEF 2020</div>
+            <h1 class="uk-margin-remove-top">Celebrity Profiling: Influencer Edition 2020</h1>
+            <ul class="uk-list">
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
+<!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>-->
+<!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>-->
+<!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>-->
+<!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>-->
+<!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>-->
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
+            </ul>
         </div>
 
         <div class="uk-container uk-margin-medium">
-            <p class="uk-text-lead">Given tweets of followers, determine the demographics of the
-                followee.</p>
-        </div>
-    </header>
 
-    <div class="uk-section uk-section-default">
-        <div class="uk-container uk-text-justify">
+            <h2 id="synopsis">Synopsis</h2>
+            <ul>
+                <li>Task: Given tweets of followers, determine the demographics of the followee.</li>
+<!--                <li>Training data: collection of Twitter feeds as line-delimited JSON. [<a href="{{ '../../data.html#corpus-pan19-celebrity-profiling' | relative_url }}">download</a>]</li>-->
+<!--                <li>Output format: collection of predictions as line-delimited JSON. [verifier]</li>-->
+<!--                <li>Performance measure: harmonic mean of the F1 measures of each of the four traits.-->
+<!--                    [<a href="{{ '/clef19/pan19-code/pan19_celebrity_profiling_evaluator_2019_04_11.py' | relative_url }}">code</a>]-->
+<!--                    [<a href="{{ '/clef19/pan19-code/pan19_celebs_evaluator_tests.py' | relative_url }}">tests</a>]-->
+<!--                </li>-->
+<!--                <li>Submission: Tira evaluation platform. [<a href="https://www.tira.io/task/celebrity-profiling/">submit</a>]</li>-->
+<!--                <li>Baselines: none.</li>-->
+            </ul>
+
             Details will be announced later.
-        </div>
-    </div>
+           <h2 id="related-work">Related Work</h2>
+            <ul>
+                <li>Matti Wiegmann, Benno Stein, Martin Potthast. <a href="https://webis.de/downloads/publications/papers/stein_2019n.pdf">
+                        Celebrity Profiling</a>. To appear in 57th Annual Meeting of the Association for Computational Linguistics (ACL 2019), July 2019. Association for Computational Linguistics. </li>
+            </ul>
 
-    <!-- Footer -->
-    <footer class="uk-section uk-section-muted">
-        <div class="uk-container">
-            <h2>Task Committee</h2>
+
+            <h2 id="task-committee">Task Committee</h2>
             <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
                 {% include people-cards/wiegmann.html %}
                 {% include people-cards/stein.html %}
                 {% include people-cards/potthast.html %}
             </div>
-        </div>
-        <div class="uk-container uk-padding-large uk-padding-remove-bottom">
             {% include organizations/clef-organizations-section.html year=2020 %}
         </div>
-    </footer>
+    </div>
 </main>
 
 <script type="text/javascript" async

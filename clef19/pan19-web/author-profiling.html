@@ -6,131 +6,91 @@ description: PAN @ CLEF 2019 - Bots and Gender Profiling
 ---
 
 <main>
-    <header class="uk-section uk-section-muted">
+    <div class="uk-section uk-section-default">
         <div class="uk-container uk-margin-small">
-            <div class="uk-align-right uk-visible@m uk-text-muted">
-                {% include current-register-quicklink.html year=2019 %}
-            </div>
-            <div class="uk-align-right uk-margin-remove-vertical">
-                <a href="https://thelogicvalue.com/en/home/" target="_blank">
-                    <img src="../pan19-figures/logo-thelogicvalue.png" style="height: 130px" alt="The Logic Value">
-                </a>
-                <div class="uk-text-small uk-text-muted uk-text-right">Sponsor</div>
-            </div>
-            <h1 class="uk-margin-small">Bots and Gender Profiling
-                <span class="uk-text-muted uk-text-large">
-                <a class="uk-button uk-padding-remove uk-margin-small-right uk-margin-small-left"
-                   href="{{ '/clef18/pan18-web/author-profiling.html' | relative_url }}"
-                   data-uk-icon="chevron-left"></a>
-                    <a href="{{ '/clef19/pan19-web/index.html' | relative_url }}">CLEF 2019</a>
-
-                <a class="uk-button uk-padding-remove uk-margin-small-left"
-                   href="{{ '/clef20/pan20-web/author-profiling.html' | relative_url }}"
-                   data-uk-icon="chevron-right"></a></span></h1>
-            <p class="uk-text-lead">Given a Twitter feed, determine whether its <b>author</b> is a bot or a human.
-                In case of human, identify her/his gender.</p>
+            <h1 class="uk-margin-remove-top">Bots and Gender Profiling 2019</h1>
+            <ul class="uk-list">
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#award">Award</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#baselines">Baselines</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#sponsor">Sponsor</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
+            </ul>
         </div>
-    </header>
+        <div class="uk-container uk-margin-medium">
+            <h2 id="synopsis">Synopsis</h2>
+            <ul>
+                <li>Task: Given a Twitter feed, determine whether its author is a bot or a human. In case of human, identify her/his gender.</li>
+                <li>Training data: [<a href="https://s3.amazonaws.com/autoritas.pan/pan19-author-profiling-training-2019-02-18.zip">training data</a>]</li>
+                <li>Submission: Tira evaluation platform. [<a href="https://www.tira.io/task/author-profiling/">submit</a>]</li>
+            </ul>
+            <h2 id="task">Task</h2>
+            <p>Social media bots pose as humans to influence users with commercial, political or
+                ideological purposes. For example, bots could artificially inflate the popularity of
+                a product by promoting it and/or writing positive ratings, as well as undermine
+                the reputation of competitive products through negative valuations. The threat is
+                even greater when the purpose is political or ideological (see Brexit referendum or
+                US Presidential elections). Fearing the effect of this influence, the German
+                political parties have rejected the use of bots in their electoral campaign for the
+                general elections. Furthermore, bots are commonly related to fake news spreading.
+                Therefore, to approach the identification of bots from an author profiling perspective
+                is of high importance from the point of view of marketing, forensics and security.</p>
 
-    <div class="uk-section">
+            <p>After having addressed several aspects of <b>author profiling</b> in social media from 2013 to
+                2018
+                (age and gender, also together with personality, gender and language variety, and gender from
+                a multimodality perspective), this year we aim at investigating whether the author of a Twitter
+                feed
+                is a <b>bot</b> or a <b>human</b>. Furthermore, in case of human, to profile the <b>gender</b>
+                of the author.</p>
 
-        <div class="uk-container uk-text-justify">
-            <div class="uk-grid uk-child-width-1-2@l" data-uk-grid>
-                <div>
-                    <h2>Task</h2>
-                    <p>Social media bots pose as humans to influence users with commercial, political or
-                        ideological purposes. For example, bots could artificially inflate the popularity of
-                        a product by promoting it and/or writing positive ratings, as well as undermine
-                        the reputation of competitive products through negative valuations. The threat is
-                        even greater when the purpose is political or ideological (see Brexit referendum or
-                        US Presidential elections). Fearing the effect of this influence, the German
-                        political parties have rejected the use of bots in their electoral campaign for the
-                        general elections. Furthermore, bots are commonly related to fake news spreading.
-                        Therefore, to approach the identification of bots from an author profiling perspective
-                        is of high importance from the point of view of marketing, forensics and security.</p>
+            <p>As in previous years, we propose the task from a <b>multilingual</b> perspective:</p>
 
-                    <p>After having addressed several aspects of <b>author profiling</b> in social media from 2013 to
-                        2018
-                        (age and gender, also together with personality, gender and language variety, and gender from
-                        a multimodality perspective), this year we aim at investigating whether the author of a Twitter
-                        feed
-                        is a <b>bot</b> or a <b>human</b>. Furthermore, in case of human, to profile the <b>gender</b>
-                        of the author.</p>
+            <ul>
+                <li>English</li>
+                <li>Spanish</li>
+            </ul>
 
-                </div>  <!-- grid column -->
-                <div>
-                    <h2>&nbsp;</h2>
+            <b>NOTE:</b> Although we recommend to participate in both, bots and gender profiling, it is possible
+            to address just one problem, and for just one language: English or Spanish.
+            <p>
+                Unlike previous years and with the aim at maintaining a realistic scenario, we have not
+                performed any
+                cleaning action on the tweets: they remain as users tweeted them. This means that RTs have not
+                been removed
+                and tweets potentially in more than one language can appear.</p>
 
-                    <p>As in previous years, we propose the task from a <b>multilingual</b> perspective:</p>
+            <h2 id="award">Award</h2>
+            <p>We are happy to announce that the best performing team at the 7th International Competition on
+                Author Profiling will be awarded 300 Euro sponsored by
+                <a href="https://thelogicvalue.com/en/home/" target="_blank">The Logic Value</a>.</p>
 
-                    <ul>
-                        <li>English</li>
-                        <li>Spanish</li>
-                    </ul>
+            <p>Juan Pizarro, Universitat Politècnica de València, Spain.</p>
+            <!--            <a href="https://s3.amazonaws.com/autoritas.pan/PAN18-Author-Profiling-Award-Paolo-Rosso-Francisco-Rangel-Meaning-Cloud-Takumi-Takahashi.jpg"
+                           target="_blank">
+                            <img src="https://s3.amazonaws.com/autoritas.pan/PAN18-Author-Profiling-Award-Paolo-Rosso-Francisco-Rangel-Meaning-Cloud-Takumi-Takahashi.jpg">
+                        </a>-->
+            <p>Congratulations!</p>
+            <h2 id="data">Data</h2>
+            <!--To obtain the password to uncompress the dataset, you must contact: <a href="mailto:pan@webis.de">pan@webis.de</a>-->
 
-                    <b>NOTE:</b> Although we recommend to participate in both, bots and gender profiling, it is possible
-                    to address just one problem, and for just one language: English or Spanish.
-                    <p>
-                        Unlike previous years and with the aim at maintaining a realistic scenario, we have not
-                        performed any
-                        cleaning action on the tweets: they remain as users tweeted them. This means that RTs have not
-                        been removed
-                        and tweets potentially in more than one language can appear.</p>
-
-                </div> <!-- grid column -->
-            </div>  <!-- grid -->
-            <div class="uk-container uk-margin-medium">
-                <hr class="uk-divider-icon">
-            </div>
-
-
-            <div class="uk-grid uk-child-width-1-2@l" data-uk-grid>
-                <div>
-
-                    <h2>Award</h2>
-                    <p>We are happy to announce that the best performing team at the 7th International Competition on
-                        Author Profiling will be awarded 300 Euro sponsored by
-                        <a href="https://thelogicvalue.com/en/home/" target="_blank">The Logic Value</a>.</p>
-
-                    <p>Juan Pizarro, Universitat Politècnica de València, Spain.</p>
-                    <!--            <a href="https://s3.amazonaws.com/autoritas.pan/PAN18-Author-Profiling-Award-Paolo-Rosso-Francisco-Rangel-Meaning-Cloud-Takumi-Takahashi.jpg"
-                                   target="_blank">
-                                    <img src="https://s3.amazonaws.com/autoritas.pan/PAN18-Author-Profiling-Award-Paolo-Rosso-Francisco-Rangel-Meaning-Cloud-Takumi-Takahashi.jpg">
-                                </a>-->
-                    <p>Congratulations!</p>
-
-                </div> <!-- grid column -->
-            </div>  <!-- grid -->
-            <div class="uk-container uk-margin-medium">
-                <hr class="uk-divider-icon">
-            </div>
-
-
-            <div class="uk-container uk-text-justify">
-                <div class="uk-child-width-1-2@m" data-uk-grid="masonry: true">
-
-                    <!-- Left -->
-                    <div>
-
-
-                        <h2>Data
-                            <span class="uk-text-lead">
-                        [<a href="https://s3.amazonaws.com/autoritas.pan/pan19-author-profiling-training-2019-02-18.zip">Download Training Data</a>]
-                    </span>
-                        </h2>
-                        <!--To obtain the password to uncompress the dataset, you must contact: <a href="mailto:pan@webis.de">pan@webis.de</a>-->
-
-                        <h3 class="uk-margin-small-top">Input</h3>
-                        The uncompressed dataset consists in a folder per language (en, es). Each folder contains:
-                        <ul>
-                            <li>A XML file per author (Twitter user) with 100 tweets. The name of the XML file
-                                correspond to the
-                                unique author id.
-                            </li>
-                            <li>A truth.txt file with the list of authors and the ground truth.</li>
-                        </ul>
-                        The format of the XML files is:<br/>
-                        <pre class="prettyprint lang-xml" style="overflow-x: auto;">
+            <h3 class="uk-margin-small-top">Input</h3>
+            The uncompressed dataset consists in a folder per language (en, es). Each folder contains:
+            <ul>
+                <li>A XML file per author (Twitter user) with 100 tweets. The name of the XML file
+                    correspond to the
+                    unique author id.
+                </li>
+                <li>A truth.txt file with the list of authors and the ground truth.</li>
+            </ul>
+            The format of the XML files is:<br/>
+            <pre class="prettyprint lang-xml" style="overflow-x: auto;">
 	&lt;author lang="en"&gt;
 	    &lt;documents&gt;
 		    &lt;document&gt;Tweet 1 textual contents&lt;/document&gt;
@@ -140,10 +100,10 @@ description: PAN @ CLEF 2019 - Bots and Gender Profiling
 	&lt;/author&gt;
                               </pre>
 
-                        The format of the truth.txt file is as follows. The first column corresponds to the author id.
-                        The second
-                        and third columns contain the truth for the human/bot and bot/male/female tasks.<br>
-                        <pre class="prettyprint lang-xml" style="overflow-x: auto;">
+            The format of the truth.txt file is as follows. The first column corresponds to the author id.
+            The second
+            and third columns contain the truth for the human/bot and bot/male/female tasks.<br>
+            <pre class="prettyprint lang-xml" style="overflow-x: auto;">
 	b2d5748083d6fdffec6c2d68d4d4442d:::bot:::bot
 	2bed15d46872169dc7deaf8d2b43a56:::bot:::bot
 	8234ac5cca1aed3f9029277b2cb851b:::human:::female
@@ -153,896 +113,877 @@ description: PAN @ CLEF 2019 - Bots and Gender Profiling
 	...
                               </pre>
 
-                        <h3 class="uk-margin-small-top">Output</h3>
-                        <p>Your software must take as input the absolute path to an unpacked dataset, and has to output
-                            for each document of the dataset a corresponding XML file that looks like this:</p>
-                        <pre class="prettyprint lang-xml" style="overflow-x: auto;">
+            <h3 class="uk-margin-small-top">Output</h3>
+            <p>Your software must take as input the absolute path to an unpacked dataset, and has to output
+                for each document of the dataset a corresponding XML file that looks like this:</p>
+            <pre class="prettyprint lang-xml" style="overflow-x: auto;">
 	&lt;author id="author-id"
 		lang="en|es"
 		type="bot|human"
 		gender="bot|male|female"
 	/&gt;
                               </pre>
-                        <p>The naming of the output files is up to you. However, we recommend to use the author-id as
-                            filename and "xml" as extension.</p>
-                        <p><b>IMPORTANT!</b> Languages should not be mixed. A folder should be created for each language
-                            and place inside only the files with the prediction for this language. </p>
-                        <p><b>IMPORTANT!</b> In order to avoid overfitting when experimenting with the training set,
-                            we recommend you to use the provided split train/dev (files truth-train.txt and
-                            truth-dev.txt).</p>
+            <p>The naming of the output files is up to you. However, we recommend to use the author-id as
+                filename and "xml" as extension.</p>
+            <p><b>IMPORTANT!</b> Languages should not be mixed. A folder should be created for each language
+                and place inside only the files with the prediction for this language. </p>
+            <p><b>IMPORTANT!</b> In order to avoid overfitting when experimenting with the training set,
+                we recommend you to use the provided split train/dev (files truth-train.txt and
+                truth-dev.txt).</p>
 
-                        <h2>Evaluation</h2>
-                        The performance of your author profiling solution will be ranked by accuracy.
-                        For each language, we will calculate individual accuracies. Firstly, we will calculate the
-                        accuracy
-                        of identifying bots vs. human. Then, in case of humans, we will calculate the accuracy of
-                        identifying
-                        males vs. females. Finally, we will average the accuracy values per language to obtain the final
-                        ranking.
+            <h2 id="evaluation">Evaluation</h2>
+            The performance of your author profiling solution will be ranked by accuracy.
+            For each language, we will calculate individual accuracies. Firstly, we will calculate the
+            accuracy
+            of identifying bots vs. human. Then, in case of humans, we will calculate the accuracy of
+            identifying
+            males vs. females. Finally, we will average the accuracy values per language to obtain the final
+            ranking.
 
-                        <h2>Submission
-                            <span class="uk-text-lead">
-                        [<a href="{{ '/clef19/pan19-web/submission.html' | relative_url }}">Submit software to PAN</a>]
-                    </span>
-                        </h2>
+            <h2 id="submission">Submission</h2>
+            <p>This task follows PAN's software submission strategy described <a
+                    href="{{ '/clef19/pan19-web/submission.html' | relative_url }}">here</a>.</p>
 
-                        <p>This task follows PAN's software submission strategy described <a
-                                href="{{ '/clef19/pan19-web/submission.html' | relative_url }}">here</a>.</p>
-
-                    </div>
-                    <!-- Right -->
-                    <div>
-
-
-                        <h2>Related Work</h2>
-                        <ul>
-                            <li>Andre Guess, Jonathan Nagler, and Joshua Tucker.
-                                <a href="http://advances.sciencemag.org/content/5/1/eaau4586.abstract" target="_blank">
-                                    Less than you think: Prevalence and predictors of fake news dissemination on
-                                    Facebook.</a>
-                                Science Advances vol. 5 (2019)
-                            </li>
-                            <li>
-                                Kai Shu, Suhang Wang, and Huan Liu.
-                                <a href="http://www.public.asu.edu/~skai2/papers/fake_news_user.pdf" target="_blank">
-                                    Understanding user profiles on social media for fake news detection.
-                                </a>
-                                IEEE Conference on Multimedia Information Processing and Retrieval (MIPR), pp. 430--435
-                                (2018)
-                            </li>
-                            <li>
-                                Massimo Stella, Emilio Ferrara, and Manlio De Domenico.
-                                <a href="https://arxiv.org/abs/1802.07292" target="_blank">
-                                    Bots sustain and inflate striking opposition in online social systems.
-                                </a>
-                                arXiv preprint arXiv:1802.07292 (2018)
-                            </li>
-                            <li>
-                                Massimo Stella, Emilio Ferrara, and Manlio De Domenico.
-                                <a href="https://www.pnas.org/content/115/49/12435" target="_blank">
-                                    Bots increase exposure to negative and inflammatory content in online social
-                                    systems.
-                                </a>
-                                Proceedings of the National Academy of Sciences, vol. 115 (49), pp. 12435-12440 (2018)
-                            </li>
-                            <li>Gouzhu Dong and Huan Liu.
-                                <a href="https://www.taylorfrancis.com/books/9781351721271" target="_blank">
-                                    Feature Engineering for Machine Learning and Data Analytics.
-                                </a>
-                                CRC Press (2018). Chapter 12. Feature Engineering for Social Bot Detection.
-                                Onur Varol, Clayton A. Davis, Filippo Menczer, Alessandro Flammini.
-
-                            </li>
-                            <li>Emilio Ferrara, Onur Varol, Filippo Menczer, Alessandro Flammini.
-                                <a href="http://www.aaai.org/ocs/index.php/ICWSM/ICWSM16/paper/download/13034/12789"
-                                   target="_blank">
-                                    Detection of Promoted Social Media Campaigns.
-                                </a>
-                                The 10th International AAAI Conference on Web and Social Media - ICWSM, pp. 563-566
-                                (2016)
-                            </li>
-                            <li>Zakaria el Hjouji, D. Scott Hunter, Nicolas Guenon des Mesnards, Tauhid Zaman.
-                                <a href="https://arxiv.org/abs/1810.12398" target="_blank">
-                                    The Impact of Bots on Opinions in Social Networks.
-                                </a>
-                                arXiv preprint arXiv:1810.12398 (2018)
-                            </li>
-                            <li>John P. Dickerson, Vadim Kagan, V.S. Subrahmanian.
-                                <a href="https://dl.acm.org/citation.cfm?id=3191957" target="_blank">
-                                    Using Sentiment to Detect Bots on Twitter: Are Humans more Opionated than Bots?
-                                </a>
-                                Proceedings of the 2014 IEEE/ACM International Conference on Advances in Social Networks
-                                Analysis and Mining, pp. 620-627. IEEE Press. (2014)
-                            </li>
-                            <li>Kai-Cheng Yang, Onur Varol, Clayton A. Davis, Emilio Ferrara, Alessandro Flammini,
-                                Filippo Menczer.
-                                <a href="https://arxiv.org/abs/1901.00912" target="_blank">
-                                    Arming the Public with AI to Counter Social Bots.
-                                </a>
-                                arXiv preprint arXiv:1901.00912. 2019 Jan 3.
-                            </li>
-                            <li>Chiyu Cai, Linking Li, Daniel Zeng.
-                                <a href="https://ieeexplore.ieee.org/abstract/document/8004887/" target="_blank">
-                                    Behaviour Enhanced Deep Bot Detection in Social Media.
-                                </a>
-                                Intelligence and Security Informatics (ISI). 2017 IEEE International Conference, pp.
-                                128-130 (2017)
-                            </li>
-                            <li>Andrew Hall, Loren Terveen, Aaron Halfaker.
-                                <a href="https://dl.acm.org/citation.cfm?id=3274333" target="_blank">
-                                    Bot Detection in Wikidata Using Behavioral and Other Informal Cues.
-                                </a>
-                                Proceedings of the ACM on Human-Computer Interaction. 2018 Nov 1;2(CSCW):64.
-                            </li>
-                            <li>
-                                Mariona Taulé, M. Antonia Martí, Francisco Rangel, Paolo Rosso, Cistina Bosco, and
-                                Viviana Patti.
-                                <a href="https://iris.unito.it/bitstream/2318/1652739/1/Overview5.pdf" target="_blank">
-                                    Overview of the task on stance and gender detection in tweets on Catalan
-                                    independence at IberEval 2017.
-                                </a>
-                                In: 2nd Workshop on Evaluation of Human Language Technologies for Iberian Languages,
-                                IberEval 2017.
-                                CEUR Workshop Proceedings. CEUR-WS.org, vol. 1881.
-                            </li>
-                            <li>Francisco Rangel, Paolo Rosso, Martin Potthast, Benno Stein.
-                                <a href="http://ceur-ws.org/Vol-2125/invited_paper_15.pdf" target="_blank">Overview of
-                                    the 6th author profiling task at pan 2018: multimodal gender identification in
-                                    Twitter.</a>
-                                In: CLEF 2018 Labs and Workshops, Notebook
-                                Papers. CEUR Workshop Proceedings. CEUR-WS.org, vol. 2125.
-                            </li>
-                            <li>Francisco Rangel, Paolo Rosso, Martin Potthast, Benno Stein.
-                                <a href="http://ceur-ws.org/Vol-1866/invited_paper_11.pdf" target="_blank">Overview of
-                                    the 5th
-                                    Author Profiling Task at PAN 2017: Gender and Language Variety Identification in
-                                    Twitter.</a>
-                                In: Cappellato L., Ferro N., Goeuriot L, Mandl T. (Eds.) CLEF 2017 Labs and Workshops,
-                                Notebook
-                                Papers. CEUR Workshop Proceedings. CEUR-WS.org, vol. 1866.
-                            </li>
-                            <li>Francisco Rangel, Paolo Rosso, Ben Verhoeven, Walter Daelemans, Martin Pottast, Benno
-                                Stein.
-                                <a href="http://ceur-ws.org/Vol-1609/16090750.pdf" target="_blank">Overview of the 4th
-                                    Author
-                                    Profiling Task at PAN 2016: Cross-Genre Evaluations.</a> In: Balog K., Capellato L.,
-                                Ferro N.,
-                                Macdonald C. (Eds.) CLEF 2016 Labs and Workshops, Notebook Papers. CEUR Workshop
-                                Proceedings.
-                                CEUR-WS.org, vol. 1609, pp. 750-784
-                            </li>
-                            <li>Francisco Rangel, Fabio Celli, Paolo Rosso, Martin Pottast, Benno Stein, Walter
-                                Daelemans.
-                                <a href="https://github.com/autoritas/RD-Lab/blob/master/doc/papers/2015%20-%20PAN/pan15-ap-overview.pdf"
-                                   target="_blank">Overview of the 3rd Author Profiling Task at PAN 2015.</a>In: Linda
-                                Cappelato and Nicola Ferro and Gareth Jones and Eric San Juan (Eds.): CLEF 2015 Labs and
-                                Workshops, Notebook Papers, 8-11 September, Toulouse, France. CEUR Workshop Proceedings.
-                                ISSN
-                                1613-0073, http://ceur-ws.org/Vol-1391/,2015.
-                            </li>
-                            <li>Francisco Rangel, Paolo Rosso, Irina Chugur, Martin Potthast, Martin Trenkmann, Benno
-                                Stein, Ben
-                                Verhoeven, Walter Daelemans.
-                                <a href="http://ceur-ws.org/Vol-1180/CLEF2014wn-Pan-RangelEt2014.pdf" target="_blank">Overview
-                                    of the 2nd Author Profiling Task at PAN 2014.</a> In: Cappellato L., Ferro N.,
-                                Halvey M.,
-                                Kraaij W. (Eds.) CLEF 2014 Labs and Workshops, Notebook Papers. CEUR-WS.org, vol. 1180,
-                                pp.
-                                898-827.
-                            </li>
-                            <li>Francisco Rangel, Paolo Rosso, Moshe Koppel, Efstatios Stamatatos, Giacomo Inches.
-                                <a href="http://ceur-ws.org/Vol-1179/CLEF2013wn-PAN-RangelEt2013.pdf" target="_blank">Overview
-                                    of the Author Profiling Task at PAN 2013.</a> In: Forner P., Navigli R., Tufis D.
-                                (Eds.)Notebook
-                                Papers of CLEF 2013 LABs and Workshops. CEUR-WS.org, vol. 1179
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>  <!-- container -->
-        </div>
-
-        <div class="uk-section uk-section-default">
-            <div class="uk-container">
-                <h2>Results</h2>
-                <p>The following tables list the performances achieved by the participating teams in the different
-                    subtasks:
-
-                <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
-                    <thead>
-                    <tr>
-                        <th colspan="2"></th>
-                        <th colspan="2">BOTS vs. HUMAN</th>
-                        <th colspan="2">GENDER</th>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <th>POS</th>
-                        <th align="left">Team</th>
-                        <th>EN</th>
-                        <th>ES</th>
-                        <th>EN</th>
-                        <th>ES</th>
-                        <th>AVG</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td align="center">1</td>
-                        <td>Pizarro</td>
-                        <td align="center">0.9360</td>
-                        <td align="center">0.9333</td>
-                        <td align="center">0.8356</td>
-                        <td align="center">0.8172</td>
-                        <td align="center">0.8805</td>
-                    </tr>
-                    <tr>
-                        <td align="center">2</td>
-                        <td>Srinivasarao & Manu</td>
-                        <td align="center">0.9371</td>
-                        <td align="center">0.9061</td>
-                        <td align="center">0.8398</td>
-                        <td align="center">0.7967</td>
-                        <td align="center">0.8699</td>
-                    </tr>
-                    <tr>
-                        <td align="center">3</td>
-                        <td>Bacciu et al.</td>
-                        <td align="center">0.9432</td>
-                        <td align="center">0.9078</td>
-                        <td align="center">0.8417</td>
-                        <td align="center">0.7761</td>
-                        <td align="center">0.8672</td>
-                    </tr>
-                    <tr>
-                        <td align="center">4</td>
-                        <td>Jimenez-Villar et al.</td>
-                        <td align="center">0.9114</td>
-                        <td align="center">0.9211</td>
-                        <td align="center">0.8212</td>
-                        <td align="center">0.8100</td>
-                        <td align="center">0.8659</td>
-                    </tr>
-                    <tr>
-                        <td align="center">5</td>
-                        <td>Fernquist</td>
-                        <td align="center">0.9496</td>
-                        <td align="center">0.9061</td>
-                        <td align="center">0.8273</td>
-                        <td align="center">0.7667</td>
-                        <td align="center">0.8624</td>
-                    </tr>
-                    <tr>
-                        <td align="center">6</td>
-                        <td>Mahmood</td>
-                        <td align="center">0.9121</td>
-                        <td align="center">0.9167</td>
-                        <td align="center">0.8163</td>
-                        <td align="center">0.7950</td>
-                        <td align="center">0.8600</td>
-                    </tr>
-                    <tr>
-                        <td align="center">7</td>
-                        <td>Ipsas & Popescu</td>
-                        <td align="center">0.9345</td>
-                        <td align="center">0.8950</td>
-                        <td align="center">0.8265</td>
-                        <td align="center">0.7822</td>
-                        <td align="center">0.8596</td>
-                    </tr>
-                    <tr>
-                        <td align="center">8</td>
-                        <td>Vogel & Jiang</td>
-                        <td align="center">0.9201</td>
-                        <td align="center">0.9056</td>
-                        <td align="center">0.8167</td>
-                        <td align="center">0.7756</td>
-                        <td align="center">0.8545</td>
-                    </tr>
-                    <tr>
-                        <td align="center">9</td>
-                        <td>Johansson & Isbister</td>
-                        <td align="center">0.9595</td>
-                        <td align="center">0.8817</td>
-                        <td align="center">0.8379</td>
-                        <td align="center">0.7278</td>
-                        <td align="center">0.8517</td>
-                    </tr>
-                    <tr>
-                        <td align="center">10</td>
-                        <td>Goubin et al.</td>
-                        <td align="center">0.9034</td>
-                        <td align="center">0.8678</td>
-                        <td align="center">0.8333</td>
-                        <td align="center">0.7917</td>
-                        <td align="center">0.8491</td>
-                    </tr>
-                    <tr>
-                        <td align="center">11</td>
-                        <td>Polignano & de Pinto</td>
-                        <td align="center">0.9182</td>
-                        <td align="center">0.9156</td>
-                        <td align="center">0.7973</td>
-                        <td align="center">0.7417</td>
-                        <td align="center">0.8432</td>
-                    </tr>
-                    <tr>
-                        <td align="center">12</td>
-                        <td>Valencia et al.</td>
-                        <td align="center">0.9061</td>
-                        <td align="center">0.8606</td>
-                        <td align="center">0.8432</td>
-                        <td align="center">0.7539</td>
-                        <td align="center">0.8410</td>
-                    </tr>
-                    <tr>
-                        <td align="center">13</td>
-                        <td>Kosmajac & Keselj</td>
-                        <td align="center">0.9216</td>
-                        <td align="center">0.8956</td>
-                        <td align="center">0.7928</td>
-                        <td align="center">0.7494</td>
-                        <td align="center">0.8399</td>
-                    </tr>
-                    <tr>
-                        <td align="center">14</td>
-                        <td>Fagni & Tesconi</td>
-                        <td align="center">0.9148</td>
-                        <td align="center">0.9144</td>
-                        <td align="center">0.7670</td>
-                        <td align="center">0.7589</td>
-                        <td align="center">0.8388</td>
-                    </tr>
-                    <tr style="color:grey;font-style:italic">
-                        <td align="center"></td>
-                        <td>char nGrams</td>
-                        <td align="center">0.9360</td>
-                        <td align="center">0.8972</td>
-                        <td align="center">0.7920</td>
-                        <td align="center">0.7289</td>
-                        <td align="center">0.8385</td>
-                    </tr>
-                    <tr>
-                        <td align="center">15</td>
-                        <td>Glocker</td>
-                        <td align="center">0.9091</td>
-                        <td align="center">0.8767</td>
-                        <td align="center">0.8114</td>
-                        <td align="center">0.7467</td>
-                        <td align="center">0.8360</td>
-                    </tr>
-                    <tr style="color:grey;font-style:italic">
-                        <td align="center"></td>
-                        <td>word nGrams</td>
-                        <td align="center">0.9356</td>
-                        <td align="center">0.8833</td>
-                        <td align="center">0.7989</td>
-                        <td align="center">0.7244</td>
-                        <td align="center">0.8356</td>
-                    </tr>
-                    <tr>
-                        <td align="center">16</td>
-                        <td>Martinc et al.</td>
-                        <td align="center">0.8939</td>
-                        <td align="center">0.8744</td>
-                        <td align="center">0.7989</td>
-                        <td align="center">0.7572</td>
-                        <td align="center">0.8311</td>
-                    </tr>
-                    <tr>
-                        <td align="center">17</td>
-                        <td>Sanchis & Velez</td>
-                        <td align="center">0.9129</td>
-                        <td align="center">0.8756</td>
-                        <td align="center">0.8061</td>
-                        <td align="center">0.7233</td>
-                        <td align="center">0.8295</td>
-                    </tr>
-                    <tr>
-                        <td align="center">18</td>
-                        <td>Halvani & Marquardt</td>
-                        <td align="center">0.9159</td>
-                        <td align="center">0.8239</td>
-                        <td align="center">0.8273</td>
-                        <td align="center">0.7378</td>
-                        <td align="center">0.8262</td>
-                    </tr>
-                    <tr>
-                        <td align="center">19</td>
-                        <td>Ashraf et al.</td>
-                        <td align="center">0.9227</td>
-                        <td align="center">0.8839</td>
-                        <td align="center">0.7583</td>
-                        <td align="center">0.7261</td>
-                        <td align="center">0.8228</td>
-                    </tr>
-                    <tr>
-                        <td align="center">20</td>
-                        <td>Gishamer</td>
-                        <td align="center">0.9352</td>
-                        <td align="center">0.7922</td>
-                        <td align="center">0.8402</td>
-                        <td align="center">0.7122</td>
-                        <td align="center">0.8200</td>
-                    </tr>
-                    <tr>
-                        <td align="center">21</td>
-                        <td>Petrik & Chuda</td>
-                        <td align="center">0.9008</td>
-                        <td align="center">0.8689</td>
-                        <td align="center">0.7758</td>
-                        <td align="center">0.7250</td>
-                        <td align="center">0.8176</td>
-                    </tr>
-                    <tr>
-                        <td align="center">22</td>
-                        <td>Oliveira et al.</td>
-                        <td align="center">0.9057</td>
-                        <td align="center">0.8767</td>
-                        <td align="center">0.7686</td>
-                        <td align="center">0.7150</td>
-                        <td align="center">0.8165</td>
-                    </tr>
-                    <tr style="color:grey;font-style:italic">
-                        <td align="center"></td>
-                        <td>W2V</td>
-                        <td align="center">0.9030</td>
-                        <td align="center">0.8444</td>
-                        <td align="center">0.7879</td>
-                        <td align="center">0.7156</td>
-                        <td align="center">0.8127</td>
-                    </tr>
-                    <tr>
-                        <td align="center">23</td>
-                        <td>De La Peña & Prieto</td>
-                        <td align="center">0.9045</td>
-                        <td align="center">0.8578</td>
-                        <td align="center">0.7898</td>
-                        <td align="center">0.6967</td>
-                        <td align="center">0.8122</td>
-                    </tr>
-                    <tr>
-                        <td align="center">24</td>
-                        <td>López Santillán et al.</td>
-                        <td align="center">0.8867</td>
-                        <td align="center">0.8544</td>
-                        <td align="center">0.7773</td>
-                        <td align="center">0.7100</td>
-                        <td align="center">0.8071</td>
-                    </tr>
-                    <tr style="color:grey;font-style:italic">
-                        <td align="center"></td>
-                        <td>LDSE</td>
-                        <td align="center">0.9054</td>
-                        <td align="center">0.8372</td>
-                        <td align="center">0.7800</td>
-                        <td align="center">0.6900</td>
-                        <td align="center">0.8032</td>
-                    </tr>
-                    <tr>
-                        <td align="center">25</td>
-                        <td>Bolonyai et al.</td>
-                        <td align="center">0.9136</td>
-                        <td align="center">0.8389</td>
-                        <td align="center">0.7572</td>
-                        <td align="center">0.6956</td>
-                        <td align="center">0.8013</td>
-                    </tr>
-                    <tr>
-                        <td align="center">26</td>
-                        <td>Moryossef</td>
-                        <td align="center">0.8909</td>
-                        <td align="center">0.8378</td>
-                        <td align="center">0.7871</td>
-                        <td align="center">0.6894</td>
-                        <td align="center">0.8013</td>
-                    </tr>
-                    <tr>
-                        <td align="center">27</td>
-                        <td>Zhechev</td>
-                        <td align="center">0.8652</td>
-                        <td align="center">0.8706</td>
-                        <td align="center">0.7360</td>
-                        <td align="center">0.7178</td>
-                        <td align="center">0.7974</td>
-                    </tr>
-                    <tr>
-                        <td align="center">28</td>
-                        <td>Giachanou & Ghanem</td>
-                        <td align="center">0.9057</td>
-                        <td align="center">0.8556</td>
-                        <td align="center">0.7731</td>
-                        <td align="center">0.6478</td>
-                        <td align="center">0.7956</td>
-                    </tr>
-                    <tr>
-                        <td align="center">29</td>
-                        <td>Espinosa et al.</td>
-                        <td align="center">0.8413</td>
-                        <td align="center">0.7683</td>
-                        <td align="center">0.8413</td>
-                        <td align="center">0.7178</td>
-                        <td align="center">0.7922</td>
-                    </tr>
-                    <tr>
-                        <td align="center">30</td>
-                        <td>Rahgouy et al.</td>
-                        <td align="center">0.8621</td>
-                        <td align="center">0.8378</td>
-                        <td align="center">0.7636</td>
-                        <td align="center">0.7022</td>
-                        <td align="center">0.7914</td>
-                    </tr>
-                    <tr>
-                        <td align="center">31</td>
-                        <td>Onose et al.</td>
-                        <td align="center">0.8943</td>
-                        <td align="center">0.8483</td>
-                        <td align="center">0.7485</td>
-                        <td align="center">0.6711</td>
-                        <td align="center">0.7906</td>
-                    </tr>
-                    <tr>
-                        <td align="center">32</td>
-                        <td>Przybyla</td>
-                        <td align="center">0.9155</td>
-                        <td align="center">0.8844</td>
-                        <td align="center">0.6898</td>
-                        <td align="center">0.6533</td>
-                        <td align="center">0.7858</td>
-                    </tr>
-                    <tr>
-                        <td align="center">33</td>
-                        <td>Puertas et al.</td>
-                        <td align="center">0.8807</td>
-                        <td align="center">0.8061</td>
-                        <td align="center">0.7610</td>
-                        <td align="center">0.6944</td>
-                        <td align="center">0.7856</td>
-                    </tr>
-                    <tr>
-                        <td align="center">34</td>
-                        <td>Van Halteren</td>
-                        <td align="center">0.8962</td>
-                        <td align="center">0.8283</td>
-                        <td align="center">0.7420</td>
-                        <td align="center">0.6728</td>
-                        <td align="center">0.7848</td>
-                    </tr>
-                    <tr>
-                        <td align="center">35</td>
-                        <td>Gamallo & Almatarneh</td>
-                        <td align="center">0.8148</td>
-                        <td align="center">0.8767</td>
-                        <td align="center">0.7220</td>
-                        <td align="center">0.7056</td>
-                        <td align="center">0.7798</td>
-                    </tr>
-                    <tr>
-                        <td align="center">36</td>
-                        <td>Bryan & Philipp</td>
-                        <td align="center">0.8689</td>
-                        <td align="center">0.7883</td>
-                        <td align="center">0.6455</td>
-                        <td align="center">0.6056</td>
-                        <td align="center">0.7271</td>
-                    </tr>
-                    <tr>
-                        <td align="center">37</td>
-                        <td>Dias & Paraboni</td>
-                        <td align="center">0.8409</td>
-                        <td align="center">0.8211</td>
-                        <td align="center">0.5807</td>
-                        <td align="center">0.6467</td>
-                        <td align="center">0.7224</td>
-                    </tr>
-                    <tr>
-                        <td align="center">38</td>
-                        <td>Oliva & Masanet</td>
-                        <td align="center">0.9114</td>
-                        <td align="center">0.9111</td>
-                        <td align="center">0.4462</td>
-                        <td align="center">0.4589</td>
-                        <td align="center">0.6819</td>
-                    </tr>
-                    <tr>
-                        <td align="center">39</td>
-                        <td>Hacohen-Kerner et al.</td>
-                        <td align="center">0.4163</td>
-                        <td align="center">0.4744</td>
-                        <td align="center">0.7489</td>
-                        <td align="center">0.7378</td>
-                        <td align="center">0.5944</td>
-                    </tr>
-                    <tr>
-                        <td align="center">40</td>
-                        <td>Kloppenburg</td>
-                        <td align="center">0.5830</td>
-                        <td align="center">0.5389</td>
-                        <td align="center">0.4678</td>
-                        <td align="center">0.4483</td>
-                        <td align="center">0.5095</td>
-                    </tr>
-                    <tr style="color:grey;font-style:italic">
-                        <td align="center"></td>
-                        <td>MAJORITY</td>
-                        <td align="center">0.5000</td>
-                        <td align="center">0.5000</td>
-                        <td align="center">0.5000</td>
-                        <td align="center">0.5000</td>
-                        <td align="center">0.5000</td>
-                    </tr>
-                    <tr style="color:grey;font-style:italic">
-                        <td align="center"></td>
-                        <td>RANDOM</td>
-                        <td align="center">0.4905</td>
-                        <td align="center">0.4861</td>
-                        <td align="center">0.3716</td>
-                        <td align="center">0.3700</td>
-                        <td align="center">0.4296</td>
-                    </tr>
-                    <tr>
-                        <td align="center">41</td>
-                        <td>Bounaama & Amine</td>
-                        <td align="center">0.5008</td>
-                        <td align="center">0.5050</td>
-                        <td align="center">0.2511</td>
-                        <td align="center">0.2567</td>
-                        <td align="center">0.3784</td>
-                    </tr>
-                    <tr>
-                        <td align="center">42</td>
-                        <td>Joo & Hwang</td>
-                        <td align="center">0.9333</td>
-                        <td align="center">-</td>
-                        <td align="center">0.8360</td>
-                        <td align="center">-</td>
-                        <td align="center">0.4423</td>
-                    </tr>
-                    <tr>
-                        <td align="center">43</td>
-                        <td>Staykovski</td>
-                        <td align="center">0.9186</td>
-                        <td align="center">-</td>
-                        <td align="center">0.8174</td>
-                        <td align="center">-</td>
-                        <td align="center">0.4340</td>
-                    </tr>
-                    <tr>
-                        <td align="center">44</td>
-                        <td>Cimino & Dell'Orletta</td>
-                        <td align="center">0.9083</td>
-                        <td align="center">-</td>
-                        <td align="center">0.7898</td>
-                        <td align="center">-</td>
-                        <td align="center">0.4245</td>
-                    </tr>
-                    <tr>
-                        <td align="center">45</td>
-                        <td>Ikae et al.</td>
-                        <td align="center">0.9125</td>
-                        <td align="center">-</td>
-                        <td align="center">0.7371</td>
-                        <td align="center">-</td>
-                        <td align="center">0.4124</td>
-                    </tr>
-                    <tr>
-                        <td align="center">46</td>
-                        <td>Jeanneau</td>
-                        <td align="center">0.8924</td>
-                        <td align="center">-</td>
-                        <td align="center">0.7451</td>
-                        <td align="center">-</td>
-                        <td align="center">0.4094</td>
-                    </tr>
-                    <tr>
-                        <td align="center">47</td>
-                        <td>Zhang</td>
-                        <td align="center">0.8977</td>
-                        <td align="center">-</td>
-                        <td align="center">0.7197</td>
-                        <td align="center">-</td>
-                        <td align="center">0.4044</td>
-                    </tr>
-                    <tr>
-                        <td align="center">48</td>
-                        <td>Fahim et al.</td>
-                        <td align="center">0.8629</td>
-                        <td align="center">-</td>
-                        <td align="center">0.6837</td>
-                        <td align="center">-</td>
-                        <td align="center">0.3867</td>
-                    </tr>
-                    <tr>
-                        <td align="center">49</td>
-                        <td>Saborit</td>
-                        <td align="center">-</td>
-                        <td align="center">0.8100</td>
-                        <td align="center">-</td>
-                        <td align="center">0.6567</td>
-                        <td align="center">0.3667</td>
-                    </tr>
-                    <tr>
-                        <td align="center">50</td>
-                        <td>Saeed & Shirazi</td>
-                        <td align="center">0.7951</td>
-                        <td align="center">-</td>
-                        <td align="center">0.5655</td>
-                        <td align="center">-</td>
-                        <td align="center">0.3402</td>
-                    </tr>
-                    <tr>
-                        <td align="center">51</td>
-                        <td>Radarapu</td>
-                        <td align="center">0.7242</td>
-                        <td align="center">-</td>
-                        <td align="center">0.4951</td>
-                        <td align="center">-</td>
-                        <td align="center">0.3048</td>
-                    </tr>
-                    <tr>
-                        <td align="center">52</td>
-                        <td>Bennani-Smires</td>
-                        <td align="center">0.9159</td>
-                        <td align="center">-</td>
-                        <td align="center">-</td>
-                        <td align="center">-</td>
-                        <td align="center">0.2290</td>
-                    </tr>
-                    <tr>
-                        <td align="center">53</td>
-                        <td>Gupta</td>
-                        <td align="center">0.5007</td>
-                        <td align="center">-</td>
-                        <td align="center">0.4044</td>
-                        <td align="center">-</td>
-                        <td align="center">0.2263</td>
-                    </tr>
-                    <tr>
-                        <td align="center">54</td>
-                        <td>Qurdina</td>
-                        <td align="center">0.9034</td>
-                        <td align="center">-</td>
-                        <td align="center">-</td>
-                        <td align="center">-</td>
-                        <td align="center">0.2259</td>
-                    </tr>
-                    <tr>
-                        <td align="center">55</td>
-                        <td>Aroyehun</td>
-                        <td align="center">0.5000</td>
-                        <td align="center">-</td>
-                        <td align="center">-</td>
-                        <td align="center">-</td>
-                        <td align="center">0.1250</td>
-                    </tr>
-                    </tbody>
-                </table>
-
-
-                <!--The following table list the performances achieved by the baselines. We will publish the participants' performances
-                when the working notes reviews are sent:</p>
+            <h2 id="results">Results</h2>
+            <p>The following tables list the performances achieved by the participating teams in the different
+                subtasks:
 
             <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
-                    <thead>
-                    <tr>
-                        <th colspan="5">BASELINES RESULTS</th>
-                    </tr>
-            <tr>
-                <th rowspan=2>BASELINE</th>
-                <th colspan="2">BOTS VS. HUMAN</th>
-                <th colspan="2">GENDER</th>
-                    <tr>
-                        <th>ENGLISH</th>
-                        <th>SPANISH</th>
-                        <th>ENSLIGH</th>
-                        <th>SPANISH</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                <td>MAJORITY</td>
-                <td>0.5000</td>
-                <td>0.5000</td>
-                <td>0.5000</td>
-                <td>0.5000</td>
-            </tr>
-            <tr>
-                <td>RANDOM</td>
-                <td>0.4905</td>
-                <td>0.4861</td>
-                <td>0.3716</td>
-                <td>0.3700</td>
-            </tr>
+                <thead>
+                <tr>
+                    <th colspan="2"></th>
+                    <th colspan="2">BOTS vs. HUMAN</th>
+                    <th colspan="2">GENDER</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th>POS</th>
+                    <th align="left">Team</th>
+                    <th>EN</th>
+                    <th>ES</th>
+                    <th>EN</th>
+                    <th>ES</th>
+                    <th>AVG</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td align="center">1</td>
+                    <td>Pizarro</td>
+                    <td align="center">0.9360</td>
+                    <td align="center">0.9333</td>
+                    <td align="center">0.8356</td>
+                    <td align="center">0.8172</td>
+                    <td align="center">0.8805</td>
+                </tr>
+                <tr>
+                    <td align="center">2</td>
+                    <td>Srinivasarao & Manu</td>
+                    <td align="center">0.9371</td>
+                    <td align="center">0.9061</td>
+                    <td align="center">0.8398</td>
+                    <td align="center">0.7967</td>
+                    <td align="center">0.8699</td>
+                </tr>
+                <tr>
+                    <td align="center">3</td>
+                    <td>Bacciu et al.</td>
+                    <td align="center">0.9432</td>
+                    <td align="center">0.9078</td>
+                    <td align="center">0.8417</td>
+                    <td align="center">0.7761</td>
+                    <td align="center">0.8672</td>
+                </tr>
+                <tr>
+                    <td align="center">4</td>
+                    <td>Jimenez-Villar et al.</td>
+                    <td align="center">0.9114</td>
+                    <td align="center">0.9211</td>
+                    <td align="center">0.8212</td>
+                    <td align="center">0.8100</td>
+                    <td align="center">0.8659</td>
+                </tr>
+                <tr>
+                    <td align="center">5</td>
+                    <td>Fernquist</td>
+                    <td align="center">0.9496</td>
+                    <td align="center">0.9061</td>
+                    <td align="center">0.8273</td>
+                    <td align="center">0.7667</td>
+                    <td align="center">0.8624</td>
+                </tr>
+                <tr>
+                    <td align="center">6</td>
+                    <td>Mahmood</td>
+                    <td align="center">0.9121</td>
+                    <td align="center">0.9167</td>
+                    <td align="center">0.8163</td>
+                    <td align="center">0.7950</td>
+                    <td align="center">0.8600</td>
+                </tr>
+                <tr>
+                    <td align="center">7</td>
+                    <td>Ipsas & Popescu</td>
+                    <td align="center">0.9345</td>
+                    <td align="center">0.8950</td>
+                    <td align="center">0.8265</td>
+                    <td align="center">0.7822</td>
+                    <td align="center">0.8596</td>
+                </tr>
+                <tr>
+                    <td align="center">8</td>
+                    <td>Vogel & Jiang</td>
+                    <td align="center">0.9201</td>
+                    <td align="center">0.9056</td>
+                    <td align="center">0.8167</td>
+                    <td align="center">0.7756</td>
+                    <td align="center">0.8545</td>
+                </tr>
+                <tr>
+                    <td align="center">9</td>
+                    <td>Johansson & Isbister</td>
+                    <td align="center">0.9595</td>
+                    <td align="center">0.8817</td>
+                    <td align="center">0.8379</td>
+                    <td align="center">0.7278</td>
+                    <td align="center">0.8517</td>
+                </tr>
+                <tr>
+                    <td align="center">10</td>
+                    <td>Goubin et al.</td>
+                    <td align="center">0.9034</td>
+                    <td align="center">0.8678</td>
+                    <td align="center">0.8333</td>
+                    <td align="center">0.7917</td>
+                    <td align="center">0.8491</td>
+                </tr>
+                <tr>
+                    <td align="center">11</td>
+                    <td>Polignano & de Pinto</td>
+                    <td align="center">0.9182</td>
+                    <td align="center">0.9156</td>
+                    <td align="center">0.7973</td>
+                    <td align="center">0.7417</td>
+                    <td align="center">0.8432</td>
+                </tr>
+                <tr>
+                    <td align="center">12</td>
+                    <td>Valencia et al.</td>
+                    <td align="center">0.9061</td>
+                    <td align="center">0.8606</td>
+                    <td align="center">0.8432</td>
+                    <td align="center">0.7539</td>
+                    <td align="center">0.8410</td>
+                </tr>
+                <tr>
+                    <td align="center">13</td>
+                    <td>Kosmajac & Keselj</td>
+                    <td align="center">0.9216</td>
+                    <td align="center">0.8956</td>
+                    <td align="center">0.7928</td>
+                    <td align="center">0.7494</td>
+                    <td align="center">0.8399</td>
+                </tr>
+                <tr>
+                    <td align="center">14</td>
+                    <td>Fagni & Tesconi</td>
+                    <td align="center">0.9148</td>
+                    <td align="center">0.9144</td>
+                    <td align="center">0.7670</td>
+                    <td align="center">0.7589</td>
+                    <td align="center">0.8388</td>
+                </tr>
+                <tr style="color:grey;font-style:italic">
+                    <td align="center"></td>
+                    <td>char nGrams</td>
+                    <td align="center">0.9360</td>
+                    <td align="center">0.8972</td>
+                    <td align="center">0.7920</td>
+                    <td align="center">0.7289</td>
+                    <td align="center">0.8385</td>
+                </tr>
+                <tr>
+                    <td align="center">15</td>
+                    <td>Glocker</td>
+                    <td align="center">0.9091</td>
+                    <td align="center">0.8767</td>
+                    <td align="center">0.8114</td>
+                    <td align="center">0.7467</td>
+                    <td align="center">0.8360</td>
+                </tr>
+                <tr style="color:grey;font-style:italic">
+                    <td align="center"></td>
+                    <td>word nGrams</td>
+                    <td align="center">0.9356</td>
+                    <td align="center">0.8833</td>
+                    <td align="center">0.7989</td>
+                    <td align="center">0.7244</td>
+                    <td align="center">0.8356</td>
+                </tr>
+                <tr>
+                    <td align="center">16</td>
+                    <td>Martinc et al.</td>
+                    <td align="center">0.8939</td>
+                    <td align="center">0.8744</td>
+                    <td align="center">0.7989</td>
+                    <td align="center">0.7572</td>
+                    <td align="center">0.8311</td>
+                </tr>
+                <tr>
+                    <td align="center">17</td>
+                    <td>Sanchis & Velez</td>
+                    <td align="center">0.9129</td>
+                    <td align="center">0.8756</td>
+                    <td align="center">0.8061</td>
+                    <td align="center">0.7233</td>
+                    <td align="center">0.8295</td>
+                </tr>
+                <tr>
+                    <td align="center">18</td>
+                    <td>Halvani & Marquardt</td>
+                    <td align="center">0.9159</td>
+                    <td align="center">0.8239</td>
+                    <td align="center">0.8273</td>
+                    <td align="center">0.7378</td>
+                    <td align="center">0.8262</td>
+                </tr>
+                <tr>
+                    <td align="center">19</td>
+                    <td>Ashraf et al.</td>
+                    <td align="center">0.9227</td>
+                    <td align="center">0.8839</td>
+                    <td align="center">0.7583</td>
+                    <td align="center">0.7261</td>
+                    <td align="center">0.8228</td>
+                </tr>
+                <tr>
+                    <td align="center">20</td>
+                    <td>Gishamer</td>
+                    <td align="center">0.9352</td>
+                    <td align="center">0.7922</td>
+                    <td align="center">0.8402</td>
+                    <td align="center">0.7122</td>
+                    <td align="center">0.8200</td>
+                </tr>
+                <tr>
+                    <td align="center">21</td>
+                    <td>Petrik & Chuda</td>
+                    <td align="center">0.9008</td>
+                    <td align="center">0.8689</td>
+                    <td align="center">0.7758</td>
+                    <td align="center">0.7250</td>
+                    <td align="center">0.8176</td>
+                </tr>
+                <tr>
+                    <td align="center">22</td>
+                    <td>Oliveira et al.</td>
+                    <td align="center">0.9057</td>
+                    <td align="center">0.8767</td>
+                    <td align="center">0.7686</td>
+                    <td align="center">0.7150</td>
+                    <td align="center">0.8165</td>
+                </tr>
+                <tr style="color:grey;font-style:italic">
+                    <td align="center"></td>
+                    <td>W2V</td>
+                    <td align="center">0.9030</td>
+                    <td align="center">0.8444</td>
+                    <td align="center">0.7879</td>
+                    <td align="center">0.7156</td>
+                    <td align="center">0.8127</td>
+                </tr>
+                <tr>
+                    <td align="center">23</td>
+                    <td>De La Peña & Prieto</td>
+                    <td align="center">0.9045</td>
+                    <td align="center">0.8578</td>
+                    <td align="center">0.7898</td>
+                    <td align="center">0.6967</td>
+                    <td align="center">0.8122</td>
+                </tr>
+                <tr>
+                    <td align="center">24</td>
+                    <td>López Santillán et al.</td>
+                    <td align="center">0.8867</td>
+                    <td align="center">0.8544</td>
+                    <td align="center">0.7773</td>
+                    <td align="center">0.7100</td>
+                    <td align="center">0.8071</td>
+                </tr>
+                <tr style="color:grey;font-style:italic">
+                    <td align="center"></td>
+                    <td>LDSE</td>
+                    <td align="center">0.9054</td>
+                    <td align="center">0.8372</td>
+                    <td align="center">0.7800</td>
+                    <td align="center">0.6900</td>
+                    <td align="center">0.8032</td>
+                </tr>
+                <tr>
+                    <td align="center">25</td>
+                    <td>Bolonyai et al.</td>
+                    <td align="center">0.9136</td>
+                    <td align="center">0.8389</td>
+                    <td align="center">0.7572</td>
+                    <td align="center">0.6956</td>
+                    <td align="center">0.8013</td>
+                </tr>
+                <tr>
+                    <td align="center">26</td>
+                    <td>Moryossef</td>
+                    <td align="center">0.8909</td>
+                    <td align="center">0.8378</td>
+                    <td align="center">0.7871</td>
+                    <td align="center">0.6894</td>
+                    <td align="center">0.8013</td>
+                </tr>
+                <tr>
+                    <td align="center">27</td>
+                    <td>Zhechev</td>
+                    <td align="center">0.8652</td>
+                    <td align="center">0.8706</td>
+                    <td align="center">0.7360</td>
+                    <td align="center">0.7178</td>
+                    <td align="center">0.7974</td>
+                </tr>
+                <tr>
+                    <td align="center">28</td>
+                    <td>Giachanou & Ghanem</td>
+                    <td align="center">0.9057</td>
+                    <td align="center">0.8556</td>
+                    <td align="center">0.7731</td>
+                    <td align="center">0.6478</td>
+                    <td align="center">0.7956</td>
+                </tr>
+                <tr>
+                    <td align="center">29</td>
+                    <td>Espinosa et al.</td>
+                    <td align="center">0.8413</td>
+                    <td align="center">0.7683</td>
+                    <td align="center">0.8413</td>
+                    <td align="center">0.7178</td>
+                    <td align="center">0.7922</td>
+                </tr>
+                <tr>
+                    <td align="center">30</td>
+                    <td>Rahgouy et al.</td>
+                    <td align="center">0.8621</td>
+                    <td align="center">0.8378</td>
+                    <td align="center">0.7636</td>
+                    <td align="center">0.7022</td>
+                    <td align="center">0.7914</td>
+                </tr>
+                <tr>
+                    <td align="center">31</td>
+                    <td>Onose et al.</td>
+                    <td align="center">0.8943</td>
+                    <td align="center">0.8483</td>
+                    <td align="center">0.7485</td>
+                    <td align="center">0.6711</td>
+                    <td align="center">0.7906</td>
+                </tr>
+                <tr>
+                    <td align="center">32</td>
+                    <td>Przybyla</td>
+                    <td align="center">0.9155</td>
+                    <td align="center">0.8844</td>
+                    <td align="center">0.6898</td>
+                    <td align="center">0.6533</td>
+                    <td align="center">0.7858</td>
+                </tr>
+                <tr>
+                    <td align="center">33</td>
+                    <td>Puertas et al.</td>
+                    <td align="center">0.8807</td>
+                    <td align="center">0.8061</td>
+                    <td align="center">0.7610</td>
+                    <td align="center">0.6944</td>
+                    <td align="center">0.7856</td>
+                </tr>
+                <tr>
+                    <td align="center">34</td>
+                    <td>Van Halteren</td>
+                    <td align="center">0.8962</td>
+                    <td align="center">0.8283</td>
+                    <td align="center">0.7420</td>
+                    <td align="center">0.6728</td>
+                    <td align="center">0.7848</td>
+                </tr>
+                <tr>
+                    <td align="center">35</td>
+                    <td>Gamallo & Almatarneh</td>
+                    <td align="center">0.8148</td>
+                    <td align="center">0.8767</td>
+                    <td align="center">0.7220</td>
+                    <td align="center">0.7056</td>
+                    <td align="center">0.7798</td>
+                </tr>
+                <tr>
+                    <td align="center">36</td>
+                    <td>Bryan & Philipp</td>
+                    <td align="center">0.8689</td>
+                    <td align="center">0.7883</td>
+                    <td align="center">0.6455</td>
+                    <td align="center">0.6056</td>
+                    <td align="center">0.7271</td>
+                </tr>
+                <tr>
+                    <td align="center">37</td>
+                    <td>Dias & Paraboni</td>
+                    <td align="center">0.8409</td>
+                    <td align="center">0.8211</td>
+                    <td align="center">0.5807</td>
+                    <td align="center">0.6467</td>
+                    <td align="center">0.7224</td>
+                </tr>
+                <tr>
+                    <td align="center">38</td>
+                    <td>Oliva & Masanet</td>
+                    <td align="center">0.9114</td>
+                    <td align="center">0.9111</td>
+                    <td align="center">0.4462</td>
+                    <td align="center">0.4589</td>
+                    <td align="center">0.6819</td>
+                </tr>
+                <tr>
+                    <td align="center">39</td>
+                    <td>Hacohen-Kerner et al.</td>
+                    <td align="center">0.4163</td>
+                    <td align="center">0.4744</td>
+                    <td align="center">0.7489</td>
+                    <td align="center">0.7378</td>
+                    <td align="center">0.5944</td>
+                </tr>
+                <tr>
+                    <td align="center">40</td>
+                    <td>Kloppenburg</td>
+                    <td align="center">0.5830</td>
+                    <td align="center">0.5389</td>
+                    <td align="center">0.4678</td>
+                    <td align="center">0.4483</td>
+                    <td align="center">0.5095</td>
+                </tr>
+                <tr style="color:grey;font-style:italic">
+                    <td align="center"></td>
+                    <td>MAJORITY</td>
+                    <td align="center">0.5000</td>
+                    <td align="center">0.5000</td>
+                    <td align="center">0.5000</td>
+                    <td align="center">0.5000</td>
+                    <td align="center">0.5000</td>
+                </tr>
+                <tr style="color:grey;font-style:italic">
+                    <td align="center"></td>
+                    <td>RANDOM</td>
+                    <td align="center">0.4905</td>
+                    <td align="center">0.4861</td>
+                    <td align="center">0.3716</td>
+                    <td align="center">0.3700</td>
+                    <td align="center">0.4296</td>
+                </tr>
+                <tr>
+                    <td align="center">41</td>
+                    <td>Bounaama & Amine</td>
+                    <td align="center">0.5008</td>
+                    <td align="center">0.5050</td>
+                    <td align="center">0.2511</td>
+                    <td align="center">0.2567</td>
+                    <td align="center">0.3784</td>
+                </tr>
+                <tr>
+                    <td align="center">42</td>
+                    <td>Joo & Hwang</td>
+                    <td align="center">0.9333</td>
+                    <td align="center">-</td>
+                    <td align="center">0.8360</td>
+                    <td align="center">-</td>
+                    <td align="center">0.4423</td>
+                </tr>
+                <tr>
+                    <td align="center">43</td>
+                    <td>Staykovski</td>
+                    <td align="center">0.9186</td>
+                    <td align="center">-</td>
+                    <td align="center">0.8174</td>
+                    <td align="center">-</td>
+                    <td align="center">0.4340</td>
+                </tr>
+                <tr>
+                    <td align="center">44</td>
+                    <td>Cimino & Dell'Orletta</td>
+                    <td align="center">0.9083</td>
+                    <td align="center">-</td>
+                    <td align="center">0.7898</td>
+                    <td align="center">-</td>
+                    <td align="center">0.4245</td>
+                </tr>
+                <tr>
+                    <td align="center">45</td>
+                    <td>Ikae et al.</td>
+                    <td align="center">0.9125</td>
+                    <td align="center">-</td>
+                    <td align="center">0.7371</td>
+                    <td align="center">-</td>
+                    <td align="center">0.4124</td>
+                </tr>
+                <tr>
+                    <td align="center">46</td>
+                    <td>Jeanneau</td>
+                    <td align="center">0.8924</td>
+                    <td align="center">-</td>
+                    <td align="center">0.7451</td>
+                    <td align="center">-</td>
+                    <td align="center">0.4094</td>
+                </tr>
+                <tr>
+                    <td align="center">47</td>
+                    <td>Zhang</td>
+                    <td align="center">0.8977</td>
+                    <td align="center">-</td>
+                    <td align="center">0.7197</td>
+                    <td align="center">-</td>
+                    <td align="center">0.4044</td>
+                </tr>
+                <tr>
+                    <td align="center">48</td>
+                    <td>Fahim et al.</td>
+                    <td align="center">0.8629</td>
+                    <td align="center">-</td>
+                    <td align="center">0.6837</td>
+                    <td align="center">-</td>
+                    <td align="center">0.3867</td>
+                </tr>
+                <tr>
+                    <td align="center">49</td>
+                    <td>Saborit</td>
+                    <td align="center">-</td>
+                    <td align="center">0.8100</td>
+                    <td align="center">-</td>
+                    <td align="center">0.6567</td>
+                    <td align="center">0.3667</td>
+                </tr>
+                <tr>
+                    <td align="center">50</td>
+                    <td>Saeed & Shirazi</td>
+                    <td align="center">0.7951</td>
+                    <td align="center">-</td>
+                    <td align="center">0.5655</td>
+                    <td align="center">-</td>
+                    <td align="center">0.3402</td>
+                </tr>
+                <tr>
+                    <td align="center">51</td>
+                    <td>Radarapu</td>
+                    <td align="center">0.7242</td>
+                    <td align="center">-</td>
+                    <td align="center">0.4951</td>
+                    <td align="center">-</td>
+                    <td align="center">0.3048</td>
+                </tr>
+                <tr>
+                    <td align="center">52</td>
+                    <td>Bennani-Smires</td>
+                    <td align="center">0.9159</td>
+                    <td align="center">-</td>
+                    <td align="center">-</td>
+                    <td align="center">-</td>
+                    <td align="center">0.2290</td>
+                </tr>
+                <tr>
+                    <td align="center">53</td>
+                    <td>Gupta</td>
+                    <td align="center">0.5007</td>
+                    <td align="center">-</td>
+                    <td align="center">0.4044</td>
+                    <td align="center">-</td>
+                    <td align="center">0.2263</td>
+                </tr>
+                <tr>
+                    <td align="center">54</td>
+                    <td>Qurdina</td>
+                    <td align="center">0.9034</td>
+                    <td align="center">-</td>
+                    <td align="center">-</td>
+                    <td align="center">-</td>
+                    <td align="center">0.2259</td>
+                </tr>
+                <tr>
+                    <td align="center">55</td>
+                    <td>Aroyehun</td>
+                    <td align="center">0.5000</td>
+                    <td align="center">-</td>
+                    <td align="center">-</td>
+                    <td align="center">-</td>
+                    <td align="center">0.1250</td>
+                </tr>
+                </tbody>
+            </table>
 
-            <tr>
-                <td>CHAR N-GRAMS</td>
-                <td>0.9360</td>
-                <td>0.8972</td>
-                <td>0.7920</td>
-                <td>0.7289</td>
-            </tr>
-            <tr>
-                <td>WORD N-GRAMS</td>
-                <td>0.9356</td>
-                <td>0.8833</td>
-                <td>0.7989</td>
-                <td>0.7244</td>
-            </tr>
-            <tr>
-                <td>WORD EMBEDDINGS</td>
-                <td>0.9030</td>
-                <td>0.8444</td>
-                <td>0.7879</td>
-                <td>0.7156</td>
-            </tr>
-            <tr>
-                <td>LDSE</td>
-                <td>0.9054</td>
-                <td>0.8372</td>
-                <td>0.7800</td>
-                <td>0.6900</td>
-            </tr>
-            </tbody>
-                </table>-->
-                <hr/>
-                <h3>BASELINES SETUP</h3>
-                <ul>
-                    <li>MAJORITY: The predicted class coincides with the majority class.</li>
-                    <li>RANDOM: A random prediction for each instance.</li>
-                    <li>CHAR N-GRAMS:
-                        <ul>
-                            <li>BOTS-EN: 500 characters 5-grams + Random Forest</li>
-                            <li>BOTS-ES: 2,000 characters 5-grams + Random Forest</li>
-                            <li>GENDER-EN: 2,000 characters 4-grams + Random Forest</li>
-                            <li>GENDER-ES: 1,000 characters 5-grams + Random Forest</li>
-                        </ul>
-                    </li>
-                    <li>WORD N-GRAMS:
-                        <ul>
-                            <li>BOTS-EN: 200 words 1-grams + Random Forest</li>
-                            <li>BOTS-ES: 100 words 1-grams + Random Forest</li>
-                            <li>GENDER-EN: 200 words 1-grams + Random Forest</li>
-                            <li>GENDER-ES: 200 words 1-grams + Random Forest</li>
-                        </ul>
-                    </li>
-                    <li>WORD EMBEDDINGS: Text represented by averaging the word embeddings.
-                        <ul>
-                            <li>BOTS-EN: glove.twitter.27B.200d + Random Forest</li>
-                            <li>BOTS-ES: fasttext-wikipedia + J48</li>
-                            <li>GENDER-EN: glove.twitter.27B.100d + SVM</li>
-                            <li>GENDER-ES: fasttext-sbwc + SVM</li>
-                        </ul>
-                    </li>
-                    <li>LDSE: Low Dimensionality Statistical Embedding described in: Rangel, F., Rosso, P., Franco, M. A
-                        Low Dimensionality Representation for Language Variety Identification. In: Proceedings of the
-                        17th International Conference on Intelligent Text Processing and Computational Linguistics
-                        (CICLing’16), Springer-Verlag, LNCS(9624), pp. 156-169, 2018
-                        <ul>
-                            <li>BOTS-EN: LDSE.v2 (MinFreq=10, MinSize=1) + Naive Bayes</li>
-                            <li>BOTS-ES: LDSE.v1 (MinFreq=10, MinSize=1) + Naive Bayes</li>
-                            <li>GENDER-EN: LDSE.v1 (MinFreq=10, MinSize=3) + BayesNet</li>
-                            <li>GENDER-ES: LDSE.v1 (MinFreq=2, MinSize=1) + Naive Bayes</li>
-                        </ul>
-                    </li>
-                </ul>
-                <hr/>
-            </div>
-        </div>
 
-    </div>
+            <!--The following table list the performances achieved by the baselines. We will publish the participants' performances
+            when the working notes reviews are sent:</p>
 
-    <!-- Footer -->
-    <footer class="uk-section uk-section-muted">
-        <div class="uk-container">
-            <h2>Task Committee</h2>
+        <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+                <thead>
+                <tr>
+                    <th colspan="5">BASELINES RESULTS</th>
+                </tr>
+        <tr>
+            <th rowspan=2>BASELINE</th>
+            <th colspan="2">BOTS VS. HUMAN</th>
+            <th colspan="2">GENDER</th>
+                <tr>
+                    <th>ENGLISH</th>
+                    <th>SPANISH</th>
+                    <th>ENSLIGH</th>
+                    <th>SPANISH</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+            <td>MAJORITY</td>
+            <td>0.5000</td>
+            <td>0.5000</td>
+            <td>0.5000</td>
+            <td>0.5000</td>
+        </tr>
+        <tr>
+            <td>RANDOM</td>
+            <td>0.4905</td>
+            <td>0.4861</td>
+            <td>0.3716</td>
+            <td>0.3700</td>
+        </tr>
+
+        <tr>
+            <td>CHAR N-GRAMS</td>
+            <td>0.9360</td>
+            <td>0.8972</td>
+            <td>0.7920</td>
+            <td>0.7289</td>
+        </tr>
+        <tr>
+            <td>WORD N-GRAMS</td>
+            <td>0.9356</td>
+            <td>0.8833</td>
+            <td>0.7989</td>
+            <td>0.7244</td>
+        </tr>
+        <tr>
+            <td>WORD EMBEDDINGS</td>
+            <td>0.9030</td>
+            <td>0.8444</td>
+            <td>0.7879</td>
+            <td>0.7156</td>
+        </tr>
+        <tr>
+            <td>LDSE</td>
+            <td>0.9054</td>
+            <td>0.8372</td>
+            <td>0.7800</td>
+            <td>0.6900</td>
+        </tr>
+        </tbody>
+            </table>-->
+            <h2 id="baselines">Baselines</h2>
+            <ul>
+                <li>MAJORITY: The predicted class coincides with the majority class.</li>
+                <li>RANDOM: A random prediction for each instance.</li>
+                <li>CHAR N-GRAMS:
+                    <ul>
+                        <li>BOTS-EN: 500 characters 5-grams + Random Forest</li>
+                        <li>BOTS-ES: 2,000 characters 5-grams + Random Forest</li>
+                        <li>GENDER-EN: 2,000 characters 4-grams + Random Forest</li>
+                        <li>GENDER-ES: 1,000 characters 5-grams + Random Forest</li>
+                    </ul>
+                </li>
+                <li>WORD N-GRAMS:
+                    <ul>
+                        <li>BOTS-EN: 200 words 1-grams + Random Forest</li>
+                        <li>BOTS-ES: 100 words 1-grams + Random Forest</li>
+                        <li>GENDER-EN: 200 words 1-grams + Random Forest</li>
+                        <li>GENDER-ES: 200 words 1-grams + Random Forest</li>
+                    </ul>
+                </li>
+                <li>WORD EMBEDDINGS: Text represented by averaging the word embeddings.
+                    <ul>
+                        <li>BOTS-EN: glove.twitter.27B.200d + Random Forest</li>
+                        <li>BOTS-ES: fasttext-wikipedia + J48</li>
+                        <li>GENDER-EN: glove.twitter.27B.100d + SVM</li>
+                        <li>GENDER-ES: fasttext-sbwc + SVM</li>
+                    </ul>
+                </li>
+                <li>LDSE: Low Dimensionality Statistical Embedding described in: Rangel, F., Rosso, P., Franco, M. A
+                    Low Dimensionality Representation for Language Variety Identification. In: Proceedings of the
+                    17th International Conference on Intelligent Text Processing and Computational Linguistics
+                    (CICLing’16), Springer-Verlag, LNCS(9624), pp. 156-169, 2018
+                    <ul>
+                        <li>BOTS-EN: LDSE.v2 (MinFreq=10, MinSize=1) + Naive Bayes</li>
+                        <li>BOTS-ES: LDSE.v1 (MinFreq=10, MinSize=1) + Naive Bayes</li>
+                        <li>GENDER-EN: LDSE.v1 (MinFreq=10, MinSize=3) + BayesNet</li>
+                        <li>GENDER-ES: LDSE.v1 (MinFreq=2, MinSize=1) + Naive Bayes</li>
+                    </ul>
+                </li>
+            </ul>
+
+             <h2 id="related-work">Related Work</h2>
+            <ul>
+                <li>Andre Guess, Jonathan Nagler, and Joshua Tucker.
+                    <a href="http://advances.sciencemag.org/content/5/1/eaau4586.abstract" target="_blank">
+                        Less than you think: Prevalence and predictors of fake news dissemination on
+                        Facebook.</a>
+                    Science Advances vol. 5 (2019)
+                </li>
+                <li>
+                    Kai Shu, Suhang Wang, and Huan Liu.
+                    <a href="http://www.public.asu.edu/~skai2/papers/fake_news_user.pdf" target="_blank">
+                        Understanding user profiles on social media for fake news detection.
+                    </a>
+                    IEEE Conference on Multimedia Information Processing and Retrieval (MIPR), pp. 430--435
+                    (2018)
+                </li>
+                <li>
+                    Massimo Stella, Emilio Ferrara, and Manlio De Domenico.
+                    <a href="https://arxiv.org/abs/1802.07292" target="_blank">
+                        Bots sustain and inflate striking opposition in online social systems.
+                    </a>
+                    arXiv preprint arXiv:1802.07292 (2018)
+                </li>
+                <li>
+                    Massimo Stella, Emilio Ferrara, and Manlio De Domenico.
+                    <a href="https://www.pnas.org/content/115/49/12435" target="_blank">
+                        Bots increase exposure to negative and inflammatory content in online social
+                        systems.
+                    </a>
+                    Proceedings of the National Academy of Sciences, vol. 115 (49), pp. 12435-12440 (2018)
+                </li>
+                <li>Gouzhu Dong and Huan Liu.
+                    <a href="https://www.taylorfrancis.com/books/9781351721271" target="_blank">
+                        Feature Engineering for Machine Learning and Data Analytics.
+                    </a>
+                    CRC Press (2018). Chapter 12. Feature Engineering for Social Bot Detection.
+                    Onur Varol, Clayton A. Davis, Filippo Menczer, Alessandro Flammini.
+
+                </li>
+                <li>Emilio Ferrara, Onur Varol, Filippo Menczer, Alessandro Flammini.
+                    <a href="http://www.aaai.org/ocs/index.php/ICWSM/ICWSM16/paper/download/13034/12789"
+                       target="_blank">
+                        Detection of Promoted Social Media Campaigns.
+                    </a>
+                    The 10th International AAAI Conference on Web and Social Media - ICWSM, pp. 563-566
+                    (2016)
+                </li>
+                <li>Zakaria el Hjouji, D. Scott Hunter, Nicolas Guenon des Mesnards, Tauhid Zaman.
+                    <a href="https://arxiv.org/abs/1810.12398" target="_blank">
+                        The Impact of Bots on Opinions in Social Networks.
+                    </a>
+                    arXiv preprint arXiv:1810.12398 (2018)
+                </li>
+                <li>John P. Dickerson, Vadim Kagan, V.S. Subrahmanian.
+                    <a href="https://dl.acm.org/citation.cfm?id=3191957" target="_blank">
+                        Using Sentiment to Detect Bots on Twitter: Are Humans more Opionated than Bots?
+                    </a>
+                    Proceedings of the 2014 IEEE/ACM International Conference on Advances in Social Networks
+                    Analysis and Mining, pp. 620-627. IEEE Press. (2014)
+                </li>
+                <li>Kai-Cheng Yang, Onur Varol, Clayton A. Davis, Emilio Ferrara, Alessandro Flammini,
+                    Filippo Menczer.
+                    <a href="https://arxiv.org/abs/1901.00912" target="_blank">
+                        Arming the Public with AI to Counter Social Bots.
+                    </a>
+                    arXiv preprint arXiv:1901.00912. 2019 Jan 3.
+                </li>
+                <li>Chiyu Cai, Linking Li, Daniel Zeng.
+                    <a href="https://ieeexplore.ieee.org/abstract/document/8004887/" target="_blank">
+                        Behaviour Enhanced Deep Bot Detection in Social Media.
+                    </a>
+                    Intelligence and Security Informatics (ISI). 2017 IEEE International Conference, pp.
+                    128-130 (2017)
+                </li>
+                <li>Andrew Hall, Loren Terveen, Aaron Halfaker.
+                    <a href="https://dl.acm.org/citation.cfm?id=3274333" target="_blank">
+                        Bot Detection in Wikidata Using Behavioral and Other Informal Cues.
+                    </a>
+                    Proceedings of the ACM on Human-Computer Interaction. 2018 Nov 1;2(CSCW):64.
+                </li>
+                <li>
+                    Mariona Taulé, M. Antonia Martí, Francisco Rangel, Paolo Rosso, Cistina Bosco, and
+                    Viviana Patti.
+                    <a href="https://iris.unito.it/bitstream/2318/1652739/1/Overview5.pdf" target="_blank">
+                        Overview of the task on stance and gender detection in tweets on Catalan
+                        independence at IberEval 2017.
+                    </a>
+                    In: 2nd Workshop on Evaluation of Human Language Technologies for Iberian Languages,
+                    IberEval 2017.
+                    CEUR Workshop Proceedings. CEUR-WS.org, vol. 1881.
+                </li>
+                <li>Francisco Rangel, Paolo Rosso, Martin Potthast, Benno Stein.
+                    <a href="http://ceur-ws.org/Vol-2125/invited_paper_15.pdf" target="_blank">Overview of
+                        the 6th author profiling task at pan 2018: multimodal gender identification in
+                        Twitter.</a>
+                    In: CLEF 2018 Labs and Workshops, Notebook
+                    Papers. CEUR Workshop Proceedings. CEUR-WS.org, vol. 2125.
+                </li>
+                <li>Francisco Rangel, Paolo Rosso, Martin Potthast, Benno Stein.
+                    <a href="http://ceur-ws.org/Vol-1866/invited_paper_11.pdf" target="_blank">Overview of
+                        the 5th
+                        Author Profiling Task at PAN 2017: Gender and Language Variety Identification in
+                        Twitter.</a>
+                    In: Cappellato L., Ferro N., Goeuriot L, Mandl T. (Eds.) CLEF 2017 Labs and Workshops,
+                    Notebook
+                    Papers. CEUR Workshop Proceedings. CEUR-WS.org, vol. 1866.
+                </li>
+                <li>Francisco Rangel, Paolo Rosso, Ben Verhoeven, Walter Daelemans, Martin Pottast, Benno
+                    Stein.
+                    <a href="http://ceur-ws.org/Vol-1609/16090750.pdf" target="_blank">Overview of the 4th
+                        Author
+                        Profiling Task at PAN 2016: Cross-Genre Evaluations.</a> In: Balog K., Capellato L.,
+                    Ferro N.,
+                    Macdonald C. (Eds.) CLEF 2016 Labs and Workshops, Notebook Papers. CEUR Workshop
+                    Proceedings.
+                    CEUR-WS.org, vol. 1609, pp. 750-784
+                </li>
+                <li>Francisco Rangel, Fabio Celli, Paolo Rosso, Martin Pottast, Benno Stein, Walter
+                    Daelemans.
+                    <a href="https://github.com/autoritas/RD-Lab/blob/master/doc/papers/2015%20-%20PAN/pan15-ap-overview.pdf"
+                       target="_blank">Overview of the 3rd Author Profiling Task at PAN 2015.</a>In: Linda
+                    Cappelato and Nicola Ferro and Gareth Jones and Eric San Juan (Eds.): CLEF 2015 Labs and
+                    Workshops, Notebook Papers, 8-11 September, Toulouse, France. CEUR Workshop Proceedings.
+                    ISSN
+                    1613-0073, http://ceur-ws.org/Vol-1391/,2015.
+                </li>
+                <li>Francisco Rangel, Paolo Rosso, Irina Chugur, Martin Potthast, Martin Trenkmann, Benno
+                    Stein, Ben
+                    Verhoeven, Walter Daelemans.
+                    <a href="http://ceur-ws.org/Vol-1180/CLEF2014wn-Pan-RangelEt2014.pdf" target="_blank">Overview
+                        of the 2nd Author Profiling Task at PAN 2014.</a> In: Cappellato L., Ferro N.,
+                    Halvey M.,
+                    Kraaij W. (Eds.) CLEF 2014 Labs and Workshops, Notebook Papers. CEUR-WS.org, vol. 1180,
+                    pp.
+                    898-827.
+                </li>
+                <li>Francisco Rangel, Paolo Rosso, Moshe Koppel, Efstatios Stamatatos, Giacomo Inches.
+                    <a href="http://ceur-ws.org/Vol-1179/CLEF2013wn-PAN-RangelEt2013.pdf" target="_blank">Overview
+                        of the Author Profiling Task at PAN 2013.</a> In: Forner P., Navigli R., Tufis D.
+                    (Eds.)Notebook
+                    Papers of CLEF 2013 LABs and Workshops. CEUR-WS.org, vol. 1179
+                </li>
+            </ul>
+
+            <h2 id="sponsor">Sponsor</h2>
+            <a href="https://thelogicvalue.com/en/home/" target="_blank">
+                <img src="../pan19-figures/logo-thelogicvalue.png" style="height: 130px" alt="The Logic Value">
+            </a>
+
+            <h2 id="task-committee">Task Committee</h2>
             <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
                 {% include people-cards/rangel.html %}
                 {% include people-cards/rosso.html %}
             </div>
+            <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+                {% include organizations/clef-organizations-section.html year=2019 %}
+            </div>
         </div>
-        <div class="uk-container uk-padding-large uk-padding-remove-bottom">
-            {% include organizations/clef-organizations-section.html year=2019 %}
-        </div>
-    </footer>
+    </div>
+
 </main>

@@ -6,74 +6,83 @@ description: PAN @ CLEF 2020 - Style Change Detection
 ---
 
 <main>
-    <header class="uk-section uk-section-muted">
-        <nav class="uk-container">
-            <div class="uk-align-right uk-visible@m uk-text-muted">
-                <a class="uk-button" href="{{ '/clef19/pan19-web/style-change-detection.html' | relative_url }}"
-                   data-uk-icon="chevron-left"></a>
-                CLEF 2020
-                <a class="uk-button uk-disabled uk-padding-remove-right" href="#"
-                   data-uk-icon="chevron-right"></a>
-            </div>
-
-            <ul class="uk-text-muted uk-tab uk-margin-remove-top">
-                <li><a href="{{ '/clef20/pan20-web/index.html' | relative_url }}">Overview</a></li>
-                <li><a href="{{ '/clef20/pan20-web/keynotes.html' | relative_url }}">Keynotes</a></li>
-                <li><a href="{{ '/clef20/pan20-web/program.html' | relative_url }}">Program</a></li>
-                <li class="uk-active">
-                    <a href="#">Tasks <span class="uk-margin-small-left" data-uk-icon="icon: chevron-down"></span></a>
-                    <div class="uk-dropdown" data-uk-dropdown="mode: click">
-                        <ul class="uk-nav uk-dropdown-nav">
-                            <li><a href="{{ '/clef20/pan20-web/celebrity-profiling.html' | relative_url }}">Celebrity
-                                Profiling: Influencer Edition</a></li>
-                            <li><a href="{{ '/clef20/pan20-web/author-identification.html' | relative_url }}">Cross-domain
-                                Authorship Verification</a></li>
-                            <li><a href="{{ '/clef20/pan20-web/author-profiling.html' | relative_url }}">Profiling Fake
-                                News Spreaders on Twitter</a></li>
-                            <li class="uk-active"><a
-                                    href="{{ '/clef20/pan20-web/style-change-detection.html' | relative_url }}">Style
-                                Change Detection</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a href="{{ '/clef20/pan20-web/submission.html' | relative_url }}">Submission</a></li>
-                <li><a href="{{ '/clef20/pan20-web/proceedings.html' | relative_url }}">Proceedings</a></li>
-            </ul>
-        </nav>
-
+    <div class="uk-section uk-section-default">
         <div class="uk-container uk-margin-small">
-            {% include current-register-quicklink.html year=2020 %}
-
-            <h1 class="uk-margin-small">Style Change Detection</h1>
-            <div class="page-header-meta">PAN @ CLEF 2020</div>
-            <p class="uk-text-lead">Given two consecutive paragraphs, determine if there is a style
-                        change.</p>
+            <h1 class="uk-margin-remove-top">Style Change Detection 2020</h1>
+            <ul class="uk-list">
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
+                <!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>-->
+                <!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>-->
+                <!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>-->
+                <!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>-->
+                <!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>-->
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
+            </ul>
         </div>
-    </header>
 
-    <div class="uk-section">
-        <div class="uk-container uk-text-justify">
+        <div class="uk-container uk-margin-medium">
+
+            <h2 id="synopsis">Synopsis</h2>
+            <ul>
+                <li>Given two documents, determine if they are written by the same author.</li>
+<!--                <li>Training data [download]</li>-->
+<!--                <li>Output format [verifier]</li>-->
+<!--                <li>Performance measure</li>-->
+<!--                <li>Submission: Tira evaluation platform. [<a href="https://www.tira.io/task/authorship-verification/">submit</a>]</li>-->
+<!--                <li>Baselines: </li>-->
+            </ul>
             Details will be announced later.
-        </div>
-    </div>  <!-- section -->
-
-    <!-- Footer -->
-    <footer class="uk-section uk-section-muted">
-        <div class="uk-container">
-            <h2>Task Committee</h2>
+             <h2 id="related-work">Related Work</h2>
+            <ul>
+                <li>
+                    <a href="../../clef18/pan18-web/proceedings.html">PAN@CLEF'18</a> (<i>Overview of the Author
+                    Identification Task at PAN-2018: Cross-domain Authorship Attribution and Style Change
+                    Detection</i>)
+                </li>
+                <li>
+                    <a href="../../clef17/pan17-web/proceedings.html">PAN@CLEF'17</a> (<i>Overview of the Author
+                    Identification Task at PAN-2017</i> and <i>Style Breach Detection</i> section)
+                </li>
+                <li>
+                    <a href="../../clef16/pan16-web/proceedings.html">PAN@CLEF'16</a> (<i>Clustering by
+                    Authorship Within and Across Documents</i> and <i>Author Diarization</i> section)
+                </li>
+                <li>J. Cardoso and R. Sousa. Measuring the performance of ordinal classification. International
+                    Journal of Pattern Recognition and Artificial Intelligence 25.08, pp. 1173-1195, 2011
+                </li>
+                <!--<li>Marti A. Hearst. <a href="http://anthology.aclweb.org/J/J97/J97-1003.pdf">TextTiling:
+                    Segmenting Text into Multi-paragraph Subtopic Passages.</a>. In Computational Linguistics,
+                    Volume 23, Issue 1, pages 33-64, 1997.
+                </li>-->
+                <li>Benno Stein, Nedim Lipka and Peter Prettenhofer. <a
+                        href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2011a.pdf">Intrinsic
+                    Plagiarism Analysis</a>. In Language Resources and Evaluation, Volume 45, Issue 1, pages
+                    63?82, 2011.
+                </li>
+                <!--<li>
+                    Patrick Juola. <a href="http://portal.acm.org/citation.cfm?id=1373451">Authorship
+                    Attribution</a>. In Foundations and Trends in Information Retrieval, Volume 1, Issue 3,
+                    March 2008.
+                </li>-->
+                <li>
+                    Efstathios Stamatatos. <a href="http://onlinelibrary.wiley.com/doi/10.1002/asi.21001/full">A
+                    Survey of Modern Authorship Attribution Methods</a>.
+                    Journal of the American Society for Information Science and Technology, Volume 60, Issue 3,
+                    pages 538-556, March 2009.
+                </li>
+            </ul>
+            <h2 id="task-committee">Task Committee</h2>
             <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
                 {% include people-cards/zangerle.html %}
                 {% include people-cards/specht.html %}
                 {% include people-cards/potthast.html %}
                 {% include people-cards/stein.html %}
             </div>
+            <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+                {% include organizations/clef-organizations-section.html year=2019 %}
+            </div>
         </div>
-        <div class="uk-container uk-padding-large uk-padding-remove-bottom">
-            {% include organizations/clef-organizations-section.html year=2020 %}
-        </div>
-    </footer>
+    </div>
 </main>
 
-<script type="text/javascript" async
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
-</script>

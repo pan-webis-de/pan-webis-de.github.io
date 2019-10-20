@@ -5,79 +5,189 @@ title: PAN @ CLEF 2020 - Profiling Fake News Spreaders on Twitter
 description: PAN @ CLEF 2020 - Profiling Fake News Spreaders on Twitter
 ---
 
+
 <main>
-    <header class="uk-section uk-section-muted">
-        <nav class="uk-container">
-            <div class="uk-align-right uk-visible@m uk-text-muted">
-                <a class="uk-button" href="{{ '/clef19/pan19-web/author-profiling.html' | relative_url }}"
-                   data-uk-icon="chevron-left"></a>
-                CLEF 2020
-                <a class="uk-button uk-disabled uk-padding-remove-right" href="#"
-                   data-uk-icon="chevron-right"></a>
-            </div>
-
-            <ul class="uk-text-muted uk-tab uk-margin-remove-top">
-                <li><a href="{{ '/clef20/pan20-web/index.html' | relative_url }}">Overview</a></li>
-                <li><a href="{{ '/clef20/pan20-web/keynotes.html' | relative_url }}">Keynotes</a></li>
-                <li><a href="{{ '/clef20/pan20-web/program.html' | relative_url }}">Program</a></li>
-                <li class="uk-active">
-                    <a href="#">Tasks <span class="uk-margin-small-left" data-uk-icon="icon: chevron-down"></span></a>
-                    <div class="uk-dropdown" data-uk-dropdown="mode: click">
-                        <ul class="uk-nav uk-dropdown-nav">
-                            <li><a href="{{ '/clef20/pan20-web/celebrity-profiling.html' | relative_url }}">Celebrity
-                                Profiling: Influencer Edition</a></li>
-                            <li><a href="{{ '/clef20/pan20-web/author-identification.html' | relative_url }}">Cross-domain
-                                Authorship Verification</a></li>
-                            <li class="uk-active"><a
-                                    href="{{ '/clef20/pan20-web/author-profiling.html' | relative_url }}">Profiling Fake
-                                News Spreaders on Twitter</a></li>
-                            <li><a href="{{ '/clef20/pan20-web/style-change-detection.html' | relative_url }}">Style
-                                Change Detection</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a href="{{ '/clef20/pan20-web/submission.html' | relative_url }}">Submission</a></li>
-                <li><a href="{{ '/clef20/pan20-web/proceedings.html' | relative_url }}">Proceedings</a></li>
-            </ul>
-        </nav>
-
+    <div class="uk-section uk-section-default">
         <div class="uk-container uk-margin-small">
-            {% include current-register-quicklink.html year=2020 %}
-
-            <h1 class="uk-margin-small">Profiling Fake News Spreaders on Twitter</h1>
-            <div class="page-header-meta">PAN @ CLEF 2020</div>
-
-            <div class="uk-align-right uk-margin-remove-bottom">
-                <!--		<a href="https://thelogicvalue.com/en/home/" target="_blank">-->
-                <!--		    <img src="../pan20-figures/logo-thelogicvalue.png" style="height: 130px" alt="The Logic Value">-->
-                <!--		</a>-->
-                <!--		<div class="uk-text-small uk-text-muted uk-text-right">Sponsor</div>-->
-            </div>
-            <p class="uk-text-lead">Given a Twitter feed, determine whether its author is keen to be a 
-spreader of fake news.</p>
+            <h1 class="uk-margin-remove-top">Profiling Fake News Spreaders on Twitter 2020</h1>
+            <ul class="uk-list">
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
+                <!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>-->
+                <!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>-->
+                <!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>-->
+                <!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>-->
+                <!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>-->
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
+            </ul>
         </div>
-    </header>
 
-    <div class="uk-section">
+        <div class="uk-container uk-margin-medium">
 
-        <div class="uk-container uk-text-justify">
+            <h2 id="synopsis">Synopsis</h2>
+            <ul>
+                <li>Task: Given a Twitter feed, determine whether its author is keen to be a spreader of fake news.</li>
+<!--                <li>Training data [download]</li>-->
+<!--                <li>Output format [verifier]</li>-->
+<!--                <li>Performance measure</li>-->
+<!--                <li>Submission: Tira evaluation platform. [<a href="https://www.tira.io/task/authorship-verification/">submit</a>]</li>-->
+<!--                <li>Baselines: </li>-->
+            </ul>
             Details will be announced later.
-        </div>  <!-- container -->
-    </div>
+             <h2 id="related-work">Related Work</h2>
+            <ul>
+                <li>Andre Guess, Jonathan Nagler, and Joshua Tucker.
+                    <a href="http://advances.sciencemag.org/content/5/1/eaau4586.abstract" target="_blank">
+                        Less than you think: Prevalence and predictors of fake news dissemination on
+                        Facebook.</a>
+                    Science Advances vol. 5 (2019)
+                </li>
+                <li>
+                    Kai Shu, Suhang Wang, and Huan Liu.
+                    <a href="http://www.public.asu.edu/~skai2/papers/fake_news_user.pdf" target="_blank">
+                        Understanding user profiles on social media for fake news detection.
+                    </a>
+                    IEEE Conference on Multimedia Information Processing and Retrieval (MIPR), pp. 430--435
+                    (2018)
+                </li>
+                <li>
+                    Massimo Stella, Emilio Ferrara, and Manlio De Domenico.
+                    <a href="https://arxiv.org/abs/1802.07292" target="_blank">
+                        Bots sustain and inflate striking opposition in online social systems.
+                    </a>
+                    arXiv preprint arXiv:1802.07292 (2018)
+                </li>
+                <li>
+                    Massimo Stella, Emilio Ferrara, and Manlio De Domenico.
+                    <a href="https://www.pnas.org/content/115/49/12435" target="_blank">
+                        Bots increase exposure to negative and inflammatory content in online social
+                        systems.
+                    </a>
+                    Proceedings of the National Academy of Sciences, vol. 115 (49), pp. 12435-12440 (2018)
+                </li>
+                <li>Gouzhu Dong and Huan Liu.
+                    <a href="https://www.taylorfrancis.com/books/9781351721271" target="_blank">
+                        Feature Engineering for Machine Learning and Data Analytics.
+                    </a>
+                    CRC Press (2018). Chapter 12. Feature Engineering for Social Bot Detection.
+                    Onur Varol, Clayton A. Davis, Filippo Menczer, Alessandro Flammini.
 
-    <!-- Footer -->
-    <footer class="uk-section uk-section-muted">
-        <div class="uk-container">
-            <h2>Task Committee</h2>
+                </li>
+                <li>Emilio Ferrara, Onur Varol, Filippo Menczer, Alessandro Flammini.
+                    <a href="http://www.aaai.org/ocs/index.php/ICWSM/ICWSM16/paper/download/13034/12789"
+                       target="_blank">
+                        Detection of Promoted Social Media Campaigns.
+                    </a>
+                    The 10th International AAAI Conference on Web and Social Media - ICWSM, pp. 563-566
+                    (2016)
+                </li>
+                <li>Zakaria el Hjouji, D. Scott Hunter, Nicolas Guenon des Mesnards, Tauhid Zaman.
+                    <a href="https://arxiv.org/abs/1810.12398" target="_blank">
+                        The Impact of Bots on Opinions in Social Networks.
+                    </a>
+                    arXiv preprint arXiv:1810.12398 (2018)
+                </li>
+                <li>John P. Dickerson, Vadim Kagan, V.S. Subrahmanian.
+                    <a href="https://dl.acm.org/citation.cfm?id=3191957" target="_blank">
+                        Using Sentiment to Detect Bots on Twitter: Are Humans more Opionated than Bots?
+                    </a>
+                    Proceedings of the 2014 IEEE/ACM International Conference on Advances in Social Networks
+                    Analysis and Mining, pp. 620-627. IEEE Press. (2014)
+                </li>
+                <li>Kai-Cheng Yang, Onur Varol, Clayton A. Davis, Emilio Ferrara, Alessandro Flammini,
+                    Filippo Menczer.
+                    <a href="https://arxiv.org/abs/1901.00912" target="_blank">
+                        Arming the Public with AI to Counter Social Bots.
+                    </a>
+                    arXiv preprint arXiv:1901.00912. 2019 Jan 3.
+                </li>
+                <li>Chiyu Cai, Linking Li, Daniel Zeng.
+                    <a href="https://ieeexplore.ieee.org/abstract/document/8004887/" target="_blank">
+                        Behaviour Enhanced Deep Bot Detection in Social Media.
+                    </a>
+                    Intelligence and Security Informatics (ISI). 2017 IEEE International Conference, pp.
+                    128-130 (2017)
+                </li>
+                <li>Andrew Hall, Loren Terveen, Aaron Halfaker.
+                    <a href="https://dl.acm.org/citation.cfm?id=3274333" target="_blank">
+                        Bot Detection in Wikidata Using Behavioral and Other Informal Cues.
+                    </a>
+                    Proceedings of the ACM on Human-Computer Interaction. 2018 Nov 1;2(CSCW):64.
+                </li>
+                <li>
+                    Mariona Taulé, M. Antonia Martí, Francisco Rangel, Paolo Rosso, Cistina Bosco, and
+                    Viviana Patti.
+                    <a href="https://iris.unito.it/bitstream/2318/1652739/1/Overview5.pdf" target="_blank">
+                        Overview of the task on stance and gender detection in tweets on Catalan
+                        independence at IberEval 2017.
+                    </a>
+                    In: 2nd Workshop on Evaluation of Human Language Technologies for Iberian Languages,
+                    IberEval 2017.
+                    CEUR Workshop Proceedings. CEUR-WS.org, vol. 1881.
+                </li>
+                <li>Francisco Rangel, Paolo Rosso, Martin Potthast, Benno Stein.
+                    <a href="http://ceur-ws.org/Vol-2125/invited_paper_15.pdf" target="_blank">Overview of
+                        the 6th author profiling task at pan 2018: multimodal gender identification in
+                        Twitter.</a>
+                    In: CLEF 2018 Labs and Workshops, Notebook
+                    Papers. CEUR Workshop Proceedings. CEUR-WS.org, vol. 2125.
+                </li>
+                <li>Francisco Rangel, Paolo Rosso, Martin Potthast, Benno Stein.
+                    <a href="http://ceur-ws.org/Vol-1866/invited_paper_11.pdf" target="_blank">Overview of
+                        the 5th
+                        Author Profiling Task at PAN 2017: Gender and Language Variety Identification in
+                        Twitter.</a>
+                    In: Cappellato L., Ferro N., Goeuriot L, Mandl T. (Eds.) CLEF 2017 Labs and Workshops,
+                    Notebook
+                    Papers. CEUR Workshop Proceedings. CEUR-WS.org, vol. 1866.
+                </li>
+                <li>Francisco Rangel, Paolo Rosso, Ben Verhoeven, Walter Daelemans, Martin Pottast, Benno
+                    Stein.
+                    <a href="http://ceur-ws.org/Vol-1609/16090750.pdf" target="_blank">Overview of the 4th
+                        Author
+                        Profiling Task at PAN 2016: Cross-Genre Evaluations.</a> In: Balog K., Capellato L.,
+                    Ferro N.,
+                    Macdonald C. (Eds.) CLEF 2016 Labs and Workshops, Notebook Papers. CEUR Workshop
+                    Proceedings.
+                    CEUR-WS.org, vol. 1609, pp. 750-784
+                </li>
+                <li>Francisco Rangel, Fabio Celli, Paolo Rosso, Martin Pottast, Benno Stein, Walter
+                    Daelemans.
+                    <a href="https://github.com/autoritas/RD-Lab/blob/master/doc/papers/2015%20-%20PAN/pan15-ap-overview.pdf"
+                       target="_blank">Overview of the 3rd Author Profiling Task at PAN 2015.</a>In: Linda
+                    Cappelato and Nicola Ferro and Gareth Jones and Eric San Juan (Eds.): CLEF 2015 Labs and
+                    Workshops, Notebook Papers, 8-11 September, Toulouse, France. CEUR Workshop Proceedings.
+                    ISSN
+                    1613-0073, http://ceur-ws.org/Vol-1391/,2015.
+                </li>
+                <li>Francisco Rangel, Paolo Rosso, Irina Chugur, Martin Potthast, Martin Trenkmann, Benno
+                    Stein, Ben
+                    Verhoeven, Walter Daelemans.
+                    <a href="http://ceur-ws.org/Vol-1180/CLEF2014wn-Pan-RangelEt2014.pdf" target="_blank">Overview
+                        of the 2nd Author Profiling Task at PAN 2014.</a> In: Cappellato L., Ferro N.,
+                    Halvey M.,
+                    Kraaij W. (Eds.) CLEF 2014 Labs and Workshops, Notebook Papers. CEUR-WS.org, vol. 1180,
+                    pp.
+                    898-827.
+                </li>
+                <li>Francisco Rangel, Paolo Rosso, Moshe Koppel, Efstatios Stamatatos, Giacomo Inches.
+                    <a href="http://ceur-ws.org/Vol-1179/CLEF2013wn-PAN-RangelEt2013.pdf" target="_blank">Overview
+                        of the Author Profiling Task at PAN 2013.</a> In: Forner P., Navigli R., Tufis D.
+                    (Eds.)Notebook
+                    Papers of CLEF 2013 LABs and Workshops. CEUR-WS.org, vol. 1179
+                </li>
+            </ul>
+
+            <h2 id="task-committee">Task Committee</h2>
             <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
                 {% include people-cards/rangel.html %}
                 {% include people-cards/rosso.html %}
                 {% include people-cards/ghanem.html %}
                 {% include people-cards/giachanou.html %}
             </div>
+            <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+                {% include organizations/clef-organizations-section.html year=2019 %}
+            </div>
         </div>
-        <div class="uk-container uk-padding-large uk-padding-remove-bottom">
-            {% include organizations/clef-organizations-section.html year=2020 %}
-        </div>
-    </footer>
+    </div>
 </main>
