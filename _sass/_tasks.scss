@@ -3,9 +3,9 @@
   font-size: 1.1rem;
 }
 
-.uk-card:target {
+.highlight-target:target {
   //animation: highlight 4s ease;
-  background: $task-card-target-color;
+  background-color: $task-card-target-color;
 
   .uk-button-default {
     background: $global-background;
