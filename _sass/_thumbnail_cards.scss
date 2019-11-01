@@ -54,7 +54,7 @@
 
     .thumbnail-fill {
         display: flex;
-        height: calc(145px - #{2 * $padding-small-padding});
+        height: 120px;
 
         img, svg {
             object-fit: contain;
