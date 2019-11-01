@@ -16,6 +16,16 @@ description: PAN Shared Tasks Overview
             </ul>
         </div>
 
+        <div class="uk-container uk-margin-medium">
+            <div id="search-control">
+                <input type="text" class="uk-input" id="data-filter-field" placeholder="Type here to filter&hellip;"/>
+            </div>
+
+            <div id="filtered-all-message" class="uk-hidden uk-text-muted" aria-hidden="true">
+                None of our shared tasks match your filter.
+            </div>
+        </div>
+
         <div class="uk-container uk-margin-medium webis-data-table">
             <table class="uk-table uk-table-divider uk-table-small uk-table-hover targetable sortable">
                 <thead>
@@ -247,6 +257,6 @@ description: PAN Shared Tasks Overview
 
 <script src="{{ '/commons/js/thirdparty/jquery/jquery.slim.min.js' | relative_url }}"></script>
 <script src="{{ '/commons/js/table-sorting.js' | relative_url }}"></script>
-<script src="{{ '/js/data.js' | relative_url }}"></script>
+<script src="{{ '/js/shared-tasks.js' | relative_url }}"></script>
 <script src="{{ '/commons/js/thirdparty/fontawesome/fontawesome.min.js' | relative_url }}"></script>
 <script src="{{ '/commons/js/thirdparty/fontawesome/solid.min.js' | relative_url }}"></script>

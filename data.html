@@ -10,11 +10,24 @@ description: Datasets used in PAN shared tasks.
         <div class="uk-container uk-margin-medium-bottom">
             <h1>Data</h1>
             <ul class="uk-list">
-                <li><span data-uk-icon="chevron-down"></span> <a href="#authorship-analysis">Authorship Analysis</a></li>
-                <li><span data-uk-icon="chevron-down"></span> <a href="#computational-ethics">Computational Ethics</a></li>
+                <li><span data-uk-icon="chevron-down"></span> <a href="#authorship-analysis">Authorship Analysis</a>
+                </li>
+                <li><span data-uk-icon="chevron-down"></span> <a href="#computational-ethics">Computational Ethics</a>
+                </li>
                 <li><span data-uk-icon="chevron-down"></span> <a href="#originality">Originality</a></li>
             </ul>
         </div>
+
+        <div class="uk-container uk-margin-medium">
+            <div id="search-control">
+                <input type="text" class="uk-input" id="data-filter-field" placeholder="Type here to filter&hellip;"/>
+            </div>
+
+            <div id="filtered-all-message" class="uk-hidden uk-text-muted" aria-hidden="true">
+                None of our corpora match your filter.
+            </div>
+        </div>
+
         <div class="uk-container uk-margin-medium webis-data-table">
             <table class="uk-table uk-table-divider uk-table-small uk-table-hover sortable targetable">
                 <thead>

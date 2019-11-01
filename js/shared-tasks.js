@@ -1,8 +1,8 @@
 function containsQuery(entry, queryWords) {
     const attributes = {
       name: entry.children[1].textContent.toLowerCase(),
-      year: entry.children[3].textContent,
-      task: entry.children[6].textContent.toLowerCase()
+      task: entry.children[2].textContent.toLowerCase(),
+      edition: entry.children[3].textContent
     };
     for (let q = 0; q < queryWords.length; ++q) {
         let queryWord = queryWords[q].replace(/\+/g, " ");
