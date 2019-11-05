@@ -5,7 +5,7 @@ function containsQuery(entry, queryWords) {
       edition: entry.children[3].textContent
     };
     for (let q = 0; q < queryWords.length; ++q) {
-        let queryWord = queryWords[q].replace(/\+/g, " ");
+        let queryWord = queryWords[q].replace(/[^\x20-\x7E]/g, '');
         let found = false;
 
         const attributeSpecificatorPos = queryWord.indexOf(":");
