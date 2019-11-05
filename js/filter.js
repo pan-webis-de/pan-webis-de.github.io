@@ -43,7 +43,8 @@ function filterByQuery(query, groupSelector, elementSelector, attributeExtractor
         }
         filteredAll = false;
     } else {
-        const queryWords = query.toLowerCase().replace(/[^a-zдцья0-9-:+]/g, " ").split(/\s+/);
+        const queryWords = query.toLowerCase().replace(/[^a-zдцья0-9-:+]/g, " ").replace(/[^\x20-\x7E]/g, '')
+.split(/\s+/);
         for (let g = 0; g < groups.length; ++g) {
             const group = groups[g];
             let filteredAllOfGroup = true;
