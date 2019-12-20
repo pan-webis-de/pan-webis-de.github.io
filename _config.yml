@@ -10,8 +10,6 @@
 # in the templates via {{ site.myvariable }}.
 
 title: PAN
-baseurl: ""
-url: "https://pan.webis.de"
 
 # Build settings
 markdown: kramdown
@@ -28,9 +26,6 @@ exclude:
   - Gemfile.lock
   - node_modules
   - README.md
-  - commons/README.md
-  - commons/package.json
-  - commons/package-lock.json
 
 plugins:
   - jekyll-sitemap

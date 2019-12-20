@@ -14,9 +14,15 @@
     {% endfor %}
 </head>
 <body class="uk-offcanvas-content page-{{ page.nav_active }}">
-<script src="{{ '/commons/js/hyphenate/hyphenate.min.js' | relative_url }}"></script>
-<script src="{{ '/commons/js/thirdparty/uikit/uikit.min.js' | relative_url }}"></script>
-<script src="{{ '/commons/js/thirdparty/uikit/uikit-icons.min.js' | relative_url }}"></script>
+<script src="https://assets.webis.de/js/hyphenate/hyphenate.min.js"></script>
+<script src="https://assets.webis.de/js/thirdparty/uikit/uikit.min.js"></script>
+<script src="https://assets.webis.de/js/thirdparty/uikit/uikit-icons.min.js"></script>
+<script src="https://assets.webis.de/js/thirdparty/jquery/jquery.min.js"></script>
+<script src="https://assets.webis.de/js/thirdparty/code-prettify/prettify.js"></script>
+<script src="https://assets.webis.de/js/thirdparty/code-prettify/lang-proto.js"></script>
+<script src="https://assets.webis.de/js/thirdparty/code-prettify/lang-wiki.js"></script>
+<script src="https://assets.webis.de/js/thirdparty/code-prettify/lang-yaml.js"></script>
+<script src="https://assets.webis.de/js/code-prettify/lang-cmd.js"></script>
 
 <div id="offcanvas-nav" class="mobile-nav" data-uk-offcanvas="overlay: true; flip: true;">
     <div class="uk-offcanvas-bar">
@@ -84,7 +90,6 @@
     </nav>
 </div>
 
-<script src="{{ '/commons/js/thirdparty/jquery/jquery.min.js' | relative_url }}"></script>
 <div data-uk-height-viewport="expand: true">
 {{ content }}
 </div>
@@ -99,11 +104,6 @@
     </div>
 </footer>
 
-<script src="{{ '/commons/js/thirdparty/code-prettify/prettify.js' | relative_url }}"></script>
-<script src="{{ '/commons/js/thirdparty/code-prettify/lang-proto.js' | relative_url }}"></script>
-<script src="{{ '/commons/js/thirdparty/code-prettify/lang-wiki.js' | relative_url }}"></script>
-<script src="{{ '/commons/js/thirdparty/code-prettify/lang-yaml.js' | relative_url }}"></script>
-<script src="{{ '/commons/js/code-prettify/lang-cmd.js' | relative_url }}"></script>
 <script>
     UIkit.util.ready(() => {
         PR.prettyPrint();

@@ -3,15 +3,10 @@
 ---
 
 // Theme variable overrides
+@import url("https://assets.webis.de/css/style.css?{{site.time | date: '%s'}}");
 @import "../_sass/variables";
 
-// Webis styles
-@import "../commons/_sass/main";
-@import "../commons/_sass/prettyprint";
-@import "../commons/_sass/data_tables";
-@import "../commons/_sass/bibentry";
-
-// Custom styles
+// Styles
 @import "../_sass/index";
 @import "../_sass/tasks";
 @import "../_sass/thumbnail_cards";

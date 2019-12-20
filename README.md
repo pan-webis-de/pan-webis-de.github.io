@@ -28,10 +28,8 @@ To publish changes to the source files, push them to GitHub, which will
 take care of compiling them on its own.
 
 ## Sources Structure
-- `commons` Reusable styles of the Webis theme
 - `_includes` Includes to other source files (e.g. BibHTML)
 - `_layouts` The website's layout templates
-- `_maintenance` Maintenance scripts
 - `_sass` Sass source files for the website's CSS
 - `_site` Compiled HTML output files (not included in the repository)
 - `_src_data` Source data such as `.bib` files for generating the BibHTML
@@ -75,23 +73,3 @@ NOT edit anything under `_sass/uikit`. Any changes there will be overwritten
 next time UIkit is updated. Instead, if you want to modify the value of a layout
 variable, look for its name in `_sass/uikit/components` and redefine it in
 `_sass/_variables.scss`.
-
-## Update Dependencies
-This repository depends on [webis-de-commons](https://github.com/webis-de/webis-de-commons),
-a collection of modular Jekyll templates and Sass styles for the Webis website theme
-and other third-party dependencies (UIkit, Fontawesome, jQuery, etc.).
-
-These dependencies need to be cloned into the `commons` folder before you can
-compile the website. In order to initialize (or update) the dependencies into that
-folder, run the dependency update script like so:
-
-    ./_maintenance/update-dependencies.sh
-
-Afterwards, add the changes to your Git index
-    
-    git add -A
-
-and commit and push them
-
-    git commit -m "Commit message"
-    git push

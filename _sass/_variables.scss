@@ -3,3 +3,33 @@
 $navbar-breakpoint: 850px;
 $task-card-target-color: #d9e7f7;
 $table-entry-target-color: #d9e7f7;
+
+
+// other assets-variables used in dependent scss
+$global-secondary-background: #323232;
+$global-secondary-background-lighter: lighten($global-secondary-background, 6);
+
+$global-large-font-size: 1.5rem !default;
+$text-lead-font-size: $global-large-font-size !default;
+$global-small-font-size: 0.875rem !default;
+$text-small-font-size: $global-small-font-size !default;
+
+$global-emphasis-color: #333 !default;
+$text-lead-color: $global-emphasis-color !default;
+$global-inverse-color: #fff !default;
+$inverse-global-color: rgba($global-inverse-color, 0.7) !default;
+$global-color: #222;
+$global-muted-color: #666;
+$text-muted-color: $global-muted-color !default;
+
+$breakpoint-small: 640px !default;
+$breakpoint-medium: 960px !default;
+$breakpoint-large: 1200px !default;
+$breakpoint-xlarge: 1600px !default;
+
+$global-medium-gutter: 40px !default;
+$global-gutter: 30px !default;
+$padding-large-padding: $global-gutter !default;
+$global-small-gutter: 15px !default;
+$padding-small-padding: $global-small-gutter !default;
+$global-small-padding: 15px;

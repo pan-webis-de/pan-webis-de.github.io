@@ -3,7 +3,8 @@
 *.css.map
 _site/
 .sass-cache/
-.jekyll-metadata
+.jekyll-cache/
+.jekyll-metadata/
 yarn-error.log
 node_modules/
 .directory
