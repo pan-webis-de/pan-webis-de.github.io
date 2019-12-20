@@ -1,0 +1,250 @@
+---
+layout: default
+nav_active: shared-tasks
+title: PAN @ CLEF 2018 - Style Change Detection
+description: PAN @ CLEF 2018 - Style Change Detection
+---
+
+<main>
+    <div class="uk-section uk-section-default">
+        <div class="uk-container uk-margin-small">
+            <h1 class="uk-margin-remove-top">Style Change Detection 2018</h1>
+            <ul class="uk-list">
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#introduction">Introduction</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Development Phase</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#output">Output</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#performance-measures">Performance Measures</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
+            </ul>
+        </div>
+        <div class="uk-container uk-margin-medium">
+            <h2 id="synopsis">Synopsis</h2>
+            <ul>
+                <li>Task: Given a document, determine whether it contains style changes or not.</li>
+                <li>Input: [<a href="{{ '../../data.html#pan18-style-change-detection' | relative_url }}">data</a>]</li>
+                <li>Evaluation: [<a href="../pan18-code/pan18_scd_evaluator.py">code</a>] </li>
+                <li>Submission: [<a href="https://www.tira.io/task/style-breach-detection/">submit</a>]</li>
+            </ul>
+
+            <h2 id="introduction">Introduction</h2>
+            <p>While many approaches target the problem of identifying authors of whole documents, research on
+                investigating
+                multi-authored documents is sparse. In the last two PAN editions we therefore aimed to narrow
+                the gap by at first proposing a task to cluster by authors inside documents
+                (<a href="{{ '../../tasks.html#author-diarization' | relative_url }}">Author Diarization, 2016</a>).
+
+                Relaxing the problem, the follow-up task (<a href="{{ '../../tasks.html#style-change-detection' | relative_url }}">Style
+                    Breach Detection, 2017</a>) focused only on identifying <i>style breaches</i>, i.e., to find
+                text positions where the authorship and thus the style changes. Nevertheless, the results of
+                participants revealed relatively low accuracies and indicated that this task is still too hard to tackle.
+
+            <p>Consequently, this year we propose a <em>substantially simplified task</em>, while still being a
+                continuation of last year's task: The only question that should be answered by participants is whether there
+                <em>exists</em> a style change in a given document or not. Further, we changed the name to <em>Style
+                    <strong>Change</strong> Detection</em>, in order to reflect the task more intuitively.
+            </p>
+
+            Given a document, participants thus should apply intrinsic analyses to decide if the document is written
+            by one or more authors, i.e., if there exist style changes. While the precedent task demanded to
+            specifically locate the exact position of such changes, this year we only ask for a <b>binary
+            answer</b> per document:
+            <ul class="uk-list uk-list-bullet">
+                <li>
+                    <code>yes</code>: the document contains at least one style change (is written by at least
+                    two
+                    authors)
+                </li>
+                <li><code>no</code>: the document has no style changes (is written by a single author)</li>
+            </ul>
+
+            <p>In this sense it is irrelevant to identify the number of style changes, the specific positions,
+                or to build clusters of authors. You may adapt existing algorithms other problem types such as
+                <em>intrinsic plagiarism detection</em> or <em>text segmentation</em>. For example, if you
+                already have an intrinsic plagiarism detection system, you can apply your method on this task by outputting
+                <code>yes</code> if you
+                found a plagiarism case or <code>no</code> otherwise (please note that intrinsic plagiarism
+                detection methods may need adaptions as they naturally are not designed to handle uniformly distributed
+                author texts).
+            </p>
+
+            <p>The following figure illustrates some possible scenarios and the expected output:</p>
+            <p><img src="../pan18-figures/style-change-sample.png" alt="Text Alignment"></p>
+
+            <h2 id="task">Task</h2>
+            <p>Given a document, determine whether it contains style changes or not, i.e., if it was written by a
+                        single or multiple authors.</p>
+                    <p>All documents are provided in English and may contain zero up to arbitrarily many style changes.</p>
+
+            <h2 id="data">Development Phase</h2>
+            <p>To develop your algorithms, a data set including corresponding solutions is provided:</p>
+            <ul class="uk-list uk-list-bullet">
+                <li>a <strong>training</strong> set: contains 50% of the whole dataset and includes solutions.
+                    Use this set to feed/train your models.
+                </li>
+                <li>a <strong>validation</strong> set: contains 25% of the whole dataset and includes solutions.
+                    Use this set to evaluate and optimize your models.
+                </li>
+                <li>a <strong>test</strong> set: contains 25% of the whole dataset and does not include
+                    solutions. This set is used for evaluation (see later).
+                </li>
+            </ul>
+
+            <p>The whole data set is based on user posts from various sites of the
+                <a href="https://stackexchange.com">StackExchange network</a>, covering different topics and
+                containing approximately 300 to 1000 tokens per document. Moreover and for your convenience,
+                within the training/validation data set the exact locations of all style changes are provided,
+                as they may be helpful to develop your algorithms.</p>
+
+            <p>Additionally, we provide detailed meta data about each problem of all data sets, including
+                topics/subtopics, author distributions or average segment lengths.</p>
+
+            <p><a class="uk-button uk-button-primary" target="_blank"
+                  href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-18/pan18-data/pan18-style-change-detection-meta-data-2018-06-21.zip">Download
+                meta data</a></p>
+
+            <p>For each problem instance X, two files are provided:</p>
+            <ul class="uk-list uk-list-bullet">
+                <li><code>problem-X.txt</code> contains the actual text</li>
+                <li><code>problem-X.truth</code> contains the ground truth, i.e., the correct solution in
+                    <a href="http://www.json.org/">JSON</a> format:
+                    <pre class="prettyprint"><code class="lang-json">{
+    "changes": true/false,
+    "positions": [
+        character_position_change_1,
+        character_position_change_2,
+    ...
+    ]
+}</code></pre>
+                    <p>
+                        If present, the absolute character positions of the first non-whitespace character of
+                        the new segment is provided in the solution (<code>positions</code>). Please note that this
+                        information is only for development purposes and not used for the evaluation.</p>
+                </li>
+            </ul>
+
+
+            <h2>Evaluation Phase</h2>
+            <p>Once you finished tuning your approach to achieve satisfying performance on the training
+            corpus, your software will be tested on the evaluation corpus (test data set). You can expect the
+            test data set to be similar to the validation data set, i.e., also based on StackExchange user
+            posts and of similar size as the validation set. During the competition, the evaluation corpus will not
+            be released publicly. Instead, we ask you to <strong>submit your software</strong> for evaluation at our
+            site as described below.
+            After the competition, the evaluation corpus will become available including ground truth data.
+            This way, you have all the necessities to evaluate your approach on your own, yet being
+            comparable to
+            those who took part in the competition.</p>
+
+            <h2 id="output">Output</h2>
+             <p>In general, the data structure during the evaluation phase will be similar to that in the
+            training phase, with the exception that the ground truth files are missing. Thus, for each given problem
+            <code>problem-X.txt</code> your software should output the missing solution file
+            <code>problem-X.truth</code>.
+            The output should be a JSON object containing of a single property:</p>
+
+        <pre class="prettyprint"><code class="lang-json">{
+"changes": true/false
+}</code></pre>
+        <p>Output <code>"changes" : true</code> if there are style changes in the document, and <code>"changes"
+            :
+            false</code> otherwise.</p>
+
+
+            <h2  id="performance-measures">Performance Measures</h2>
+            <p>The performance of the approaches will simply be measured and ranked by computing the
+            <strong>accuracy</strong>.</p>
+            <p>It takes three parameters: an input directory (the data set), an inputRun directory (your
+                computed predictions) and an output directory where the results file is written to. In addition
+                to the
+                <code>accuracy</code>achieved over the whole input directory, also an
+                <code>accuracy_solved</code> is computed that
+                considers only solved problem instances (i.e., if you only solved two problem instances and were
+                correct both times, the <code>accuracy_solved</code> would be 100%). Please note that this
+                measure is only for developing purposes and that <code>accuracy</code> over all items will be
+                used for the final evaluation.</p>
+
+
+            <h2 id="submission">Submission</h2>
+            <p>We ask you to prepare your software so that it can be executed via command line calls. The command
+                shall take as input (i) an absolute path to the directory of the evaluation corpus and (ii) an
+                absolute path to an empty output directory:</p>
+            <pre class="prettyprint"><code class="lang-cmd">mySoftware -i EVALUATION-DIRECTORY -o OUTPUT-DIRECTORY</code></pre>
+
+            <p>Within <code>EVALUATION-DIRECTORY</code>, you will find a list of problem instances, i.e., <code>[filename].txt</code>files.
+                For each problem instance you should produce the solution file <code>[filename].truth</code> in
+                the<code>OUTPUT-DIRECTORY</code> For instance, you
+                read<code>EVALUATION-DIRECTORY/problem-12.txt</code>,
+                process it and write your results to <code>OUTPUT-DIRECTORY/problem-12.truth</code>.</p>
+
+            <p>You can choose freely among the available programming languages and among the operating systems
+                Microsoft Windows and Ubuntu. We will ask you to deploy your software onto a virtual machine
+                that will be made accessible to you after registration. You will be able to reach the virtual machine
+                via ssh and via remote desktop. More information about how to access the virtual machines can be
+                found in the user guide below:</p>
+            <p><a class="uk-button uk-button-primary"
+                  href="../../clef15/pan15-web/pan15-virtual-machine-user-guide.pdf">PAN Virtual Machine User
+                Guide</a>
+            </p>
+            <p>Once deployed in your virtual machine, we ask you to access TIRA at <a href="http://www.tira.io">www.tira.io</a>,
+                where you can self-evaluate your software on the test data.</p>
+
+            <p><strong>Note:</strong> By submitting your software you retain full copyrights. You agree to grant us
+                usage rights only for the purpose of the PAN competition. We agree not to share your software
+                with a third party or use it for other purposes than the PAN competition.</p>
+
+            <h2 id="related-work">Related Work</h2>
+            <ul class="uk-list uk-list-bullet">
+                <li>
+                    <a href="../../clef17/pan17-web/proceedings.html">PAN@CLEF'17</a> (<i>Overview of the Author
+                    Identification Task at PAN-2017</i> and <i>Style Breach Detection</i> section)
+                </li>
+                <li>
+                    <a href="../../clef16/pan16-web/proceedings.html">PAN@CLEF'16</a> (<i>Clustering by
+                    Authorship
+                    Within and Across Documents</i> and <i>Author Diarization</i> section)
+                </li>
+                <li>Marti A. Hearst. <a href="http://anthology.aclweb.org/J/J97/J97-1003.pdf">TextTiling:
+                    Segmenting Text into Multi-paragraph Subtopic Passages.</a>. In Computational Linguistics, Volume 23,
+                    Issue 1, pages 33-64, 1997.
+                </li>
+                <li>Benno Stein, Nedim Lipka and Peter Prettenhofer.
+                    <a href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2011a.pdf">Intrinsic
+                        Plagiarism Analysis</a>. In Language Resources and Evaluation, Volume 45, Issue 1, pages
+                    63–82, 2011.
+                </li>
+                <li>
+                    Patrick Juola. <a href="http://portal.acm.org/citation.cfm?id=1373451">Authorship
+                    Attribution</a>. In Foundations and Trends in Information Retrieval, Volume 1, Issue 3,
+                    March 2008.
+                </li>
+                <li>
+                    Efstathios Stamatatos. <a href="http://onlinelibrary.wiley.com/doi/10.1002/asi.21001/full">A
+                    Survey of Modern Authorship Attribution Methods</a>.
+                    Journal of the American Society for Information Science and Technology, Volume 60, Issue 3,
+                    pages 538-556, March 2009.
+                </li>
+            </ul>
+
+
+            <h2 id="task-committee">Task Committee</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/tschuggnall.html %}
+                {% include people-cards/specht.html %}
+                {% include people-cards/potthast.html %}
+                {% include people-cards/stein.html %}
+            </div>
+            <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+                {% include organizations/clef-organizations-section.html year=2019 %}
+            </div>
+
+        </div>  <!-- container -->
+    </div>  <!-- section -->
+</main>
+
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>

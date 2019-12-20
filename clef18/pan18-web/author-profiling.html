@@ -6,61 +6,31 @@ description: PAN @ CLEF 2018 - Author Profiling
 ---
 
 <main>
-    <header class="uk-section uk-section-muted">
-
-        <nav class="uk-container">
-            <div class="uk-align-right uk-visible@m uk-text-muted">
-                <a class="uk-button" href="{{ 'clef17/pan17-web/author-profiling.html' | relative_url }}"
-                   data-uk-icon="chevron-left"></a>
-                CLEF 2018
-                <a class="uk-button uk-padding-remove-right" href="{{ 'clef19/pan19-web/author-profiling.html' | relative_url }}"
-                   data-uk-icon="chevron-right"></a>
-            </div>
-
-            <ul class="uk-text-muted uk-tab uk-margin-remove-top">
-                <li><a href="{{ '/clef18/pan18-web/index.html' | relative_url }}">Overview</a></li>
-                <li><a href="{{ '/clef18/pan18-web/keynotes.html' | relative_url }}">Keynotes</a></li>
-                <li><a href="{{ '/clef18/pan18-web/program.html' | relative_url }}">Program</a></li>
-                <li class="uk-active">
-                    <a href="#">Tasks <span class="uk-margin-small-left"
-                                            data-uk-icon="icon: chevron-down"></span></a>
-                    <div class="uk-dropdown" data-uk-dropdown="mode: click">
-                        <ul class="uk-nav uk-dropdown-nav">
-                            <li><a href="{{ '/clef18/pan18-web/author-identification.html' | relative_url }}">Author
-                                Identification</a></li>
-                            <li class="uk-active"><a
-                                    href="{{ '/clef18/pan18-web/author-profiling.html' | relative_url }}">Author
-                                Profiling</a></li>
-                            <li><a href="{{ '/clef18/pan18-web/author-obfuscation.html' | relative_url }}">Author
-                                Obfuscation</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a href="{{ '/clef18/pan18-web/submission.html' | relative_url }}">Submission</a></li>
-                <li><a href="{{ '/clef18/pan18-web/proceedings.html' | relative_url }}">Proceedings</a></li>
-            </ul>
-        </nav>
-
+    <div class="uk-section uk-section-default">
         <div class="uk-container uk-margin-small">
-            {% include current-register-quicklink.html year=2018 %}
-            <h1 class="uk-margin-small">Author Profiling</h1>
-            <div class="page-header-meta">PAN @ CLEF 2018</div>
-
-            <div class="uk-align-right uk-margin-remove-bottom">
-                <a href="http://www.meaningcloud.com/" target="_blank">
-                    <img src="../pan18-figures/logo-meaningcloud.png" style="height: 70px" alt="MeaningCloud">
-                </a>
-                <div class="uk-text-small uk-text-muted uk-text-right">Sponsor</div>
-            </div>
-
-            <p class="uk-text-lead">Authorship analysis deals with the classification of texts into classes based on the stylistic choices of
-                their authors.</p>
+            <h1 class="uk-margin-remove-top">Bots and Gender Profiling 2018</h1>
+            <ul class="uk-list">
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#award">Award</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#sponsor">Sponsor</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
+            </ul>
         </div>
-    </header>
+        <div class="uk-container uk-margin-medium">
+            <h2 id="synopsis">Synopsis</h2>
+            <ul>
+                <li>Task: Given the text and images of a Twitter feed, determine identify the authors gender.</li>
+                <li>Input: [<a href="{{ '../../data.html#pan18-author-profiling' | relative_url }}">data</a>]</li>
+                <li>Submission: [<a href="https://www.tira.io/task/author-profiling/">submit</a>]</li>
+            </ul>
 
-    <div class="uk-section">
-        <div class="uk-container uk-column-1-2@l uk-text-justify">
-            <h2>Introduction</h2>
+            <h2 id="introduction">Introduction</h2>
             <p>Beyond the author identification and author verification tasks where the style of individual
                 authors is examined, author profiling distinguishes between classes of authors studying their sociolect
                 aspect, that is, how language is shared by people. This helps in identifying profiling aspects such as
@@ -73,7 +43,21 @@ description: PAN @ CLEF 2018 - Author Profiling
                 author profiling in social media since we are mainly interested in everyday language and how it reflects
                 basic social and personality processes.</p>
 
-            <h2>Award</h2>
+            <h2 id="task">Task</h2>
+           <p>This year the focus will be on gender identification in Twitter, where text and images
+                may be used as information sources. The languages addressed will be:</p>
+            <ul>
+                <li>English</li>
+                <li>Spanish</li>
+                <li>Arabic<br><a href="../pan17-figures/ar-secure.jpg" target="_blank">
+                    <img src="../pan18-figures/ar-secure.jpg" style="width:240px"/></a></li>
+            </ul>
+            <p>Although we suggest to participate in all the languages, it is possible participating only in some of
+                them.
+                Similarly, although we suggest to participate in both textual and image classification, it is
+                possible participating only in some of them.</p>
+
+            <h2 id="award">Award</h2>
             <p>We are happy to announce that the best performing team at the 6th International Competition on Author
                 Profiling will be awarded 300,- Euro sponsored by
                 <a href="http://www.meaningcloud.com/" target="_blank">MeaningCloud</a>.</p>
@@ -86,55 +70,11 @@ description: PAN @ CLEF 2018 - Author Profiling
             </a>
             <p>Congratulations!</p>
 
-            <h2>Task</h2>
-            <p>This year the focus will be on gender identification in Twitter, where text and images
-                may be used as information sources. The languages addressed will be:</p>
-            <ul>
-                <li>English</li>
-                <li>Spanish</li>
-                <li>Arabic<br><a href="../pan17-figures/ar-secure.jpg" target="_blank">
-                    <img src="../pan18-figures/ar-secure.jpg" style="width:240px"/></a></li>
-            </ul>
 
-            <p>Although we suggest to participate in all the languages, it is possible participating only in some of
-                them.
-                Similarly, although we suggest to participate in both textual and image classification, it is
-                possible participating only in some of them.</p>
-
-            <h2>Corpora</h2>
+            <h2 id="data">Data</h2>
             <p>To develop your software, we provide you with a training data set that consists of Twitter users labeled
                 with gender. For each author, a total of 100 tweets and 10 images are provided. Authors are grouped by
                 the language of their tweets: English, Arabic and Spanish.</p>
-
-            <div class="uk-grid uk-child-width-auto@s" data-uk-grid>
-                <div>
-                    <a class="uk-button uk-button-primary" target="_blank"
-                       href="https://s3.amazonaws.com/autoritas.pan/pan18-author-profiling-training-2018-02-27.zip">Download
-                        corpus</a>
-                    <div class="uk-text-small uk-text-muted">(Updated February 27, 2018)</div>
-
-                    <!--<p>The dataset is labeled with gender and language variety.</p>-->
-
-
-                    <!--       <p><b>Remark.</b> Due to Twitter's privacy policy we cannot provide tweets directly, but only URLs referring to them. You will have to download them yourself. For your convenience, we provide a download software for this. We expect participants to extract gender and age information only from the textual part of a tweet and to discard any other meta information that may be provided by Twitter's API. When we evaluate your software at our site, we do not expect it downloads tweets. We will do this beforehand.</p>
-                           <p><a class="btn btn-default" target="_blank" href="https://www.uni-weimar.de/medien/webis/events/pan-16/pan16-code/pan16-author-profiling-twitter-downloader.zip">Download software</a></p>
-                   -->
-
-                    <!--      More information soon... -->
-                    <!--	      <p>
-                              Info about additional training material (although domains are different):
-                                  <a href="http://ttg.uni-saarland.de/resources/DSLCC" target="_blank">http://ttg.uni-saarland.de/resources/DSLCC</a>
-                              </p>-->
-                </div>
-                <div>
-                    <a class="uk-button uk-button-primary" target="_blank"
-                       href="https://s3.amazonaws.com/autoritas.pan/pan18-author-profiling-test-2018-03-20.zip">Download
-                        test corpus + truth files</a>
-                    <div class="uk-text-small uk-text-muted">(Updated March 20, 2018)</div>
-                </div>
-            </div>
-
-            <h2>Output</h2>
             <p>Your software must take as input the absolute path to an unpacked dataset, and has to output for each
                 document of the dataset a corresponding XML file that looks like this:</p>
 
@@ -170,12 +110,13 @@ description: PAN @ CLEF 2018 - Author Profiling
                 and
                 place inside only the files with the prediction for this language.</p>
 
-            <h2>Performance Measures</h2>
+
+            <h2 id="evaluation">Evaluation</h2>
             <p>The performance of your author profiling solution will be ranked by
                 accuracy. For each language, we will calculate individual accuracies.
                 Then, we will average the accuracy values per language to obtain the final ranking.</p>
 
-            <h2>Submission</h2>
+            <h2 id="submission">Submission</h2>
             <p>We ask you to prepare your software so that it can be executed via command line calls.
                 <strong>More details will be released here soon.</strong>
             </p>
@@ -195,23 +136,10 @@ description: PAN @ CLEF 2018 - Author Profiling
             <p><strong>Note:</strong> By submitting your software you retain full copyrights. You agree to grant us
                 usage rights only for the purpose of the PAN competition. We agree not to share your software with a
                 third party or use it for other purposes than the PAN competition.</p>
-        </div>
-    </div>
 
-    <div class="uk-section uk-section-default">
-        <div class="uk-container">
-            <h2>Results</h2>
-            <p>The following tables list the performances achieved by the participating teams in the different
+            <h2 id="results">Results</h2>
+                        <p>The following tables list the performances achieved by the participating teams in the different
                 subtasks:</p>
-            <!-- <p>We provide with three baselines:</p>
-             <ul>
-                <li>LDR-baseline: It is described in  A Low Dimensionality Representation for Language Variety Identification.</a>
-              In: Postproc. 17th Int. Conf. on Comput. Linguistics and Intelligent Text Processing, CICLing-2016, Springer-Verlag, LNCS(), arXiv:1705.10754</li>
-                 <li>BOW-baseline: A common bag-of-words with the 1000 most frequent ones</li>
-                 <li>STAT-baseline: A statistical baseline (majority class or random choice)</li>
-             </ul>-->
-
-            <!-- Gloabal Ranking -->
 
             <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
                 <thead>
@@ -957,8 +885,7 @@ description: PAN @ CLEF 2018 - Author Profiling
             </table>
 
 
-            <h2>Related Work and Corpora</h2>
-            <p>We refer you to:</p>
+             <h2 id="related-work">Related Work</h2>
             <ul class="uk-list uk-list-bullet">
                 <li>Francisco Rangel, Paolo Rosso, Martin Potthast, Benno Stein.
                     <a href="http://ceur-ws.org/Vol-1866/invited_paper_11.pdf" target="_blank">Overview of the 5th
@@ -1025,27 +952,21 @@ description: PAN @ CLEF 2018 - Author Profiling
                 <li><a href="http://u.cs.biu.ac.il/~koppel/BlogCorpus.htm" target="_blank">The Blog Authorship
                     Corpus</a></li>
             </ul>
+
+            <h2 id="sponsor">Sponsor</h2>
+            <a href="http://www.meaningcloud.com/" target="_blank">
+                <img src="../pan18-figures/logo-meaningcloud.png" style="height: 130px" alt="MeaningCloud">
+            </a>
+
+            <h2 id="task-committee">Task Committee</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/rangel.html %}
+                {% include people-cards/rosso.html %}
+            </div>
+            <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+                {% include organizations/clef-organizations-section.html year=2019 %}
+            </div>
         </div>
     </div>
 
-    <footer class="uk-section uk-section-muted">
-        <div class="uk-container">
-
-            <h2>Task Chair</h2>
-            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
-                {% include people-cards/rosso.html %}
-            </div>
-
-            <h2>Task Committee</h2>
-            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
-                {% include people-cards/rangel.html %}
-                {% include people-cards/montes.html %}
-                {% include people-cards/potthast.html %}
-                {% include people-cards/stein.html %}
-            </div>
-        </div>
-        <div class="uk-container uk-padding-large uk-padding-remove-bottom">
-            {% include organizations/clef-organizations-section.html year=2018 %}
-        </div>
-    </footer>
 </main>

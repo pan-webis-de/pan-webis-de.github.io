@@ -6,194 +6,515 @@ description: PAN @ CLEF 2018
 ---
 
 <main>
-    <header class="uk-section uk-section-muted">
-        <nav class="uk-container">
-            <div class="uk-align-right uk-visible@m uk-text-muted">
-                <a class="uk-button" href="{{ 'clef17/pan17-web/index.html' | relative_url }}"
-                   data-uk-icon="chevron-left"></a>
-                CLEF 2018
-                <a class="uk-button uk-padding-remove-right" href="{{ 'clef19/pan19-web/index.html' | relative_url }}"
-                   data-uk-icon="chevron-right"></a>
-            </div>
-
-            <ul class="uk-text-muted uk-tab uk-margin-remove-top">
-                <li class="uk-active"><a href="{{ '/clef18/pan18-web/index.html' | relative_url }}">Overview</a></li>
-                <li><a href="{{ '/clef18/pan18-web/keynotes.html' | relative_url }}">Keynotes</a></li>
-                <li><a href="{{ '/clef18/pan18-web/program.html' | relative_url }}">Program</a></li>
-                <li>
-                    <a href="#">Tasks <span class="uk-margin-small-left"
-                                            data-uk-icon="icon: chevron-down"></span></a>
-                    <div class="uk-dropdown" data-uk-dropdown="mode: click">
-                        <ul class="uk-nav uk-dropdown-nav">
-                            <li><a href="{{ '/clef18/pan18-web/author-identification.html' | relative_url }}">Author
-                                Identification</a></li>
-                            <li><a href="{{ '/clef18/pan18-web/author-profiling.html' | relative_url }}">Author
-                                Profiling</a></li>
-                            <li><a href="{{ '/clef18/pan18-web/author-obfuscation.html' | relative_url }}">Author
-                                Obfuscation</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a href="{{ '/clef18/pan18-web/submission.html' | relative_url }}">Submission</a></li>
-                <li><a href="{{ '/clef18/pan18-web/proceedings.html' | relative_url }}">Proceedings</a></li>
-            </ul>
-        </nav>
-
-        <div class="uk-container uk-margin-small">
-            {% include current-register-quicklink.html year=2018 %}
-
-            <h1 class="uk-margin-small">PAN @ CLEF 2018</h1>
-            <div class="page-header-meta">
-                {% include registration-counter.html year=2018 apiVersion="v3" url="" %}
-            </div>
-        </div>
-
-        <div class="uk-container uk-margin-medium">
-            <div class="uk-align-right uk-margin-remove-bottom">
-                <a href="https://www.symanto.net/" target="_blank">
-                    <img src="../pan18-figures/logo-symanto.png" style="height: 40px" alt="Symanto">
-                </a>
-                <div class="uk-text-small uk-text-muted uk-text-right">Sponsor</div>
-            </div>
-            <p class="uk-text-lead">
-                This is the 18th evaluation lab on digital text forensics.
-                PAN will be held as part of the <a href="http://clef2018.clef-initiative.eu" target="_blank">CLEF
-                conference</a> in Avignon, France, on September 10-14, 2018.
-                Evaluations will commence <a href="{{ '/clef18/pan18-web/submission.html' | relative_url }}">from
-                January till June</a>.
-                We invite you to take part in any of the three tasks shown below.
-            </p>
-        </div>
-    </header>
-
-    <div class="uk-section">
+    <div class="uk-section uk-section-default">
         <div class="uk-container">
-            <div class="uk-grid uk-grid-large uk-grid-divider uk-child-width-1-3@m uk-child-width-1-2@s" data-uk-grid>
-                <div>
-                    <h2>Author Identification
-                        <div class="uk-text-muted uk-text-lead">
-                            <a href="{{ '/clef18/pan18-web/author-identification.html' | relative_url }}">Learn more</a>
-                        </div>
-                    </h2>
-                    <p>Given a document, who wrote it?</p>
-                    <p>One subtask focuses on <strong>cross-domain authorship attribution</strong> applied in
-                        fanfiction and another subtask focuses on <strong>style change detection</strong>.</p>
-                </div>
-                <div>
-                    <h2>Author Profiling
-                        <div class="uk-text-muted uk-text-lead"><a
-                                href="{{ '/clef18/pan18-web/author-profiling.html' | relative_url }}">Learn more</a></div>
-                    </h2>
-                    <p>Given a document, what're its author's traits?</p>
-                    <p>This task focuses on <strong>gender</strong>, whereas <strong>text and image</strong> may be
-                        used as information sources of tweets in English, Spanish and Arabic.</p>
-                </div>
-                <div>
-                    <h2>Author Obfuscation
-                        <div class="uk-text-muted uk-text-lead"><a
-                                href="{{ '/clef18/pan18-web/author-obfuscation.html' | relative_url }}">Learn more</a></div>
-                    </h2>
-                    <p>Given a document, hide its author.</p>
-                    <p>This task works against identification and profiling by automatically paraphrasing a text to
-                        obfuscate its author's style.
-                        The tasks offered are <strong>author masking</strong> and <strong>obfuscation
-                            evaluation</strong>.
-                    </p>
-                </div>
-            </div>
+            <h1 class="uk-margin-remove-top">PAN at CLEF 2019</h1>
+            <ul class="uk-list">
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#index-tasks">Shared Tasks</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#index-important-dates">Important Dates</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#index-keynotes">Keynotes</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#index-program">Program</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#index-sponsors">Sponsors</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#index-organizing-committee">Organizing Committee</a></li>
+            </ul>
         </div>
 
         <div class="uk-container uk-margin-medium">
-            <hr class="uk-divider-icon">
-        </div>
+            <h2 id="index-tasks" class="uk-margin-small-top">Shared Tasks</h2>
+            <ul>
+                <li><a href="{{ '../../shared-tasks.html#author-profiling' | relative_url }}">Author Profiling</a></li>
+                <li><a href="{{ '../../shared-tasks.html#author-masking' | relative_url }}">Author Obfuscation</a></li>
+                <li><a href="{{ '../../shared-tasks.html#authorship-attribution' | relative_url }}">Cross-domain Authorship Attribution</a></li>
+                <li><a href="{{ '../../shared-tasks.html#obfuscation-evaluation' | relative_url }}">Obfuscation Evaluation</a></li>
+                <li><a href="{{ '../../shared-tasks.html#style-change-detection' | relative_url }}">Style Change Detection</a></li>
+            </ul>
 
-         <!-- Important Dates -->
-        <div class="uk-container uk-margin-large">
-            <div class="uk-grid-medium" data-uk-grid>
-                <div class="uk-width-1-2@m">
-                    <h2 class="page-header" id="important-dates">Important Dates
-                        <span class="uk-text-muted uk-text-lead">Hawaii time zone</span>
-                    </h2>
-                    <table class="uk-table uk-table-divider uk-table-small uk-table-hover uk-table-justify uk-table-condensed">
-                        <tr>
-                            <td>March 30, 2018</td>
-                            <td>Early bird software submission (extended)</td>
-                        </tr>
-                        <tr>
-                            <td>April 15, 2018</td>
-                            <td>TIRA evaluation phase opens</td>
-                        </tr>
-                        <tr>
-                            <td>May 11, 2018</td>
-                            <td>TIRA evaluation phase deadline</td>
-                        </tr>
-                        <tr>
-                            <td>May 31, 2018</td>
-                            <td>Participant paper submission</td>
-                        </tr>
-                        <tr>
-                            <td>June 15, 2018</td>
-                            <td>Peer review notification</td>
-                        </tr>
-                        <tr>
-                            <td>June 29, 2018</td>
-                            <td>Camery-ready participant papers submission</td>
-                        </tr>
-                        <tr>
-                            <td>June 30, 2018</td>
-                            <td>Early bird conference registration</td>
-                        </tr>
-                        <tr>
-                            <td>September 10-14, 2018</td>
-                            <td>Conference</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="uk-width-1-4@m">
-                    <h2>Quicklinks</h2>
-                    <ul class="uk-list uk-list-divider">
-                        <li>
-                            <a target="_blank"
-                               href="https://docs.google.com/forms/d/e/1FAIpQLSfR_xoBuGU3q7o3EYPoItN28UPuZENjs3wlWYEX_EdRGUyRfA/viewform">Register
-                                for CLEF 2018</a>
-                        </li>
-                        <li>
-                            <a href="pan18-notebook-templates.zip">Download Notebook Templates</a>
-                        </li>
-                        <li>
-                            <a href="https://easychair.org/conferences/?conf=clef2018">Submit Notebook Paper</a>
-                        </li>
-                        <li>
-                            <a href="http://clef2018.clef-initiative.eu/index.php?page=Pages/InstructionsforCLEF2018WorkingNotes.html">Notebook
-                                Submission guidelines</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="uk-width-1-4@m">
-                    <h2>Donate</h2>
-                    <p>Support PAN by making a donation.</p>
+            <h2 id="index-important-dates" class="uk-margin-large-top">Important Dates</h2>
+            <ul>
+                <li> March 30, 2018: Early bird software submission</li>
+                <li> April 15, 2018: TIRA evaluation phase opens</li>
+                <li> May 11, 2018: TIRA evaluation phase deadline</li>
+                <li> May 31, 2018 <strong>(extended)</strong>: Paper submission:
+                    [<a href="../../pan-paper-template.zip">template</a>]
+                    [<a href="http://clef2018.clef-initiative.eu/index.php?page=Pages/InstructionsforCLEF2019WorkingNotes.html">guidelines</a>]
+                    [<a href="https://easychair.org/conferences/?conf=clef2018">submission</a>]
+                </li>
+                <li> June 15, 2018: Peer review notification</li>
+                <li> June 29, 2018: Camera-ready participant papers submission</li>
+                <li> June 30, 2018: Early bird conference registration</li>
+                <li> September 10-14, 2018: Conference</li>
+            </ul>
+            <p>The timezone of all deadlines is <a href="https://en.wikipedia.org/wiki/Anywhere_on_Earth">Anywhere on
+                Earth</a>.</p>
 
-                    <p>Organizing PAN entails a significant investment of time and money on our part. If you
-                        wish to support us, please consider making a donation.</p>
+            <h2 id="index-keynotes">Keynotes</h2>
+            <div class="uk-grid uk-child-width-1-2@l" data-uk-grid>
+                 <article class="keynote">
+                    <header class="keynote-header">
+                        <div class="keynote-speaker-image">
+                            <img src="{{ '/clef18/pan18-figures/david-losada.png' | relative_url }}" alt="David Losada">
+                        </div>
+                        <div class="keynote-meta">
+                            <div class="keynote-title">Profiling Depression and Anorexia in Social Media</div>
+                            <div class="keynote-speaker"><a href="http://tec.citius.usc.es/ir/" target="_blank">David Losada</a></div>
+                            <div class="keynote-affiliation">University of Santiago de Compostela (Spain)</div>
+                        </div>
+                    </header>
+                    <div class="keynote-body">
+                        <p>In this talk I will review some recent results regarding early detection
+                            of signs of
+                            depression and anorexia. Since 2017, we have been organizing eRisk, a CLEF lab that
+                            promotes the development of effective and efficient solutions for early risk prediction
+                            on the Internet. eRisk explores the evaluation methodology, effectiveness metrics and
+                            practical applications (particularly those related to health and safety) of early risk
+                            detection on the Internet. Early detection technologies can be employed in different
+                            areas, particularly those related to health and safety. For instance, early alerts could
+                            be sent when a predator starts interacting with a child for sexual purposes, or when a
+                            potential offender starts publishing antisocial threats on a blog, forum or social
+                            network. Our main goal is to pioneer a new interdisciplinary research area that would be
+                            potentially applicable to a wide variety of situations and to many different personal
+                            profiles. Examples include potential paedophiles, stalkers, individuals that could fall
+                            into the hands of criminal organisations, people with suicidal inclinations, or people
+                            susceptible to depression. In this talk, I will discuss the lessons learned over these
+                            two years and some future lines of work.
+                        </p>
 
-                    {% include donation-form.html %}
+                        <footer>
+                            <div class="keynote-bio" id="keynote-bio-1">
+                                <p>Dr. David E. Losada is an Associate Professor in Computer Science & Artificial
+                                    Intelligence at the University of Santiago de Compostela (Spain). He is currently the
+                                    Director of the Master's Programme on Big Data Analytics. David E. Losada received his BS in
+                                    Computer Science (with honors) in 1997, and his PhD in Computer Science (with
+                                    honors) in 2001, both from the University of A Coruña (Spain). From 2001 to 2002, he was
+                                    a lecturer in the San Pablo-CEU University (Spain) and, in 2003, he joined the Univ. of
+                                    Santiago de Compostela as a senior research fellow ("Ramón y Cajal" R&D programme). His
+                                    current research interests include a wide range of Information Retrieval (IR) and
+                                    related areas such as: early risk detection, text mining, IR evaluation, IR
+                                    probabilistic models, summarization, novelty detection, and sentence retrieval. Losada
+                                    is an active member of the IR community and he regularly serves in the Programme
+                                    Committee of prestigious international conferences such as SIGIR or ECIR. He has also
+                                    led several R&D projects and contracts in the area of search technologies. In 2011,
+                                    Losada was recognized with an ACM senior member award. David started the organization of
+                                    eRisk in 2017. eRisk is a CLEF lab that promotes the development of effective and
+                                    efficient solutions for early risk prediction on the Internet.</p>
+
+                                <a href="#" class="read-more" data-uk-toggle="target: #keynote-bio-1; cls: expanded">Read more&hellip;</a>
+                                <a href="#" class="read-less" data-uk-toggle="target: #keynote-bio-1; cls: expanded">Read less&hellip;</a>
+                            </div>
+                        </footer>
+                    </div>
+                </article>
+
+                <article class="keynote">
+                    <header class="keynote-header">
+                        <div class="keynote-speaker-image">
+                            <img src="{{ '/clef18/pan18-figures/aleksandr-farseev.jpg' | relative_url }}" alt="Aleksandr Farseev">
+                        </div>
+                        <div class="keynote-meta">
+                            <div class="keynote-title">Demystifying Psychometric Marketing: Multi-View Learning as a New Social Media User Profiling Standard</div>
+                            <div class="keynote-speaker"><a href="https://farseev.azurewebsites.net" target="_blank">Aleksandr Farseev</a></div>
+                            <div class="keynote-affiliation">SoMin.ai</div>
+                        </div>
+                    </header>
+                    <div class="keynote-body">
+                        <p>The drastic change in the Web was witnessed throughout the past decade,
+                            which saw an
+                            exponential growth in social networking services. Traditionally, social network users
+                            are encouraged to complete their profiles by explicitly providing their personal
+                            attributes such as age, gender, interests, etc. Such information is essential for
+                            Marketing, Facility Arrangement, or Candidate Assessment, but, unfortunately, often not
+                            publicly available. This gives rise to user profiling, which aims at automatic inference
+                            of individual user attributes based on their social network interactions. Considering
+                            that human beings frequently contribute multi-modal data in multiple online social
+                            networks at the same time, it is essential to implement inter-source complimentary
+                            multi-view learning techniques to perform automatic user profiling efficiently. In this
+                            talk, we will overview recent research attempts on learning across multiple social
+                            networks and data modalities for automatic user profiling. We will also give several
+                            practical examples of how Multi-View User Profiling helps SoMin.ai in boosting the
+                            efficiency of enterprises' marketing efforts.</p>
+                        <footer>
+                            <div class="keynote-bio" id="keynote-bio-2">
+                                <p>Aleksandr Farseev is an international
+                                researcher, entrepreneur and the founder of
+                                SoMin.ai, the Social Media Marketing platform driven by AI. He has obtained his Ph.D.
+                                degree from the National University of Singapore and currently holding an Adjunct
+                                Professor position at ITMO University, Russia. Apart from academic efforts, Aleksandr
+                                leads the AI research department at SoMin.ai - an AI-Driven Social Discovery and
+                                Influencer Marketing Platform. Aleksandr's research interests include Social Media
+                                Analytics, Multi-View Learning, and Automatic User Profiling. He is known as one of the
+                                    leading experts in Multi-View User Profile Learning.</p>
+
+                                <a href="#" class="read-more" data-uk-toggle="target: #keynote-bio-2; cls: expanded">Read more&hellip;</a>
+                                <a href="#" class="read-less" data-uk-toggle="target: #keynote-bio-2; cls: expanded">Read less&hellip;</a>
+                            </div>
+                        </footer>
+                    </div>
+                </article>
+
+                <article class="keynote">
+                    <header class="keynote-header">
+                        <div class="keynote-speaker-image">
+                            <img src="{{ '/clef18/pan18-figures/jahna-otterbacher.jpg' | relative_url }}" alt="Jahna Otterbacher">
+                        </div>
+                        <div class="keynote-meta">
+                            <div class="keynote-title">Competent Men and Warm Women: On the Detection and Origin of Gender Stereotyped Image Search Results</div>
+                            <div class="keynote-speaker"><a href="http://www.jahna-otterbacher.net/" target="_blank">Jahna Otterbacher</a></div>
+                            <div class="keynote-affiliation">Open University of Cyprus & Research Centre on Interactive Media, Smart Systems & Emerging Technologies Nicosia (Cyprus)</div>
+                        </div>
+                    </header>
+                    <div class="keynote-body">
+                        <p>There is much concern about algorithms that underlie information
+                            services and the view of
+                            the social world they present to users. Image search engines are known to perpetuate
+                            gender stereotypes, particularly surrounding professions (e.g., returning primarily
+                            images of men on a search for "engineer," although few, if any, men on a search for
+                            "nurse"). In the first part of the talk, I discuss the problem of detecting social
+                            biases in image search results. We developed a novel method for automatically examining
+                            the content and strength of gender stereotypes in image results, which is inspired by
+                            the trait adjective checklist method. In experiments with Microsoft Bing, we found that
+                            photos of women are more often retrieved for searches on warm character traits (e.g.,
+                            "emotional"), whereas agentic traits (e.g., "rational") typically result in more images
+                            of men. In the second part of the talk, I address questions surrounding the origin of
+                            social biases in search algorithms. I will argue that the quality of image metadata is a
+                            source of bias, as algorithms are typically trained on "gold standard," human-produced
+                            metadata. Specifically, in an experiment testing a commonly used crowdsourcing task for
+                            metadata generation, I will provide evidence that people's descriptions of men and women
+                            depicted in similar contexts differ in systematic ways that are predictable by theory.
+                            In conclusion, I shall argue that while the reproduction of social stereotypes in search
+                            algorithms is likely inevitable, there are ways to effectively raise users' awareness of
+                            biases in results.</p>
+                        <footer>
+                            <div class="keynote-bio" id="keynote-bio-3">
+                                <p>Jahna Otterbacher received her doctorate from the University of Michigan (Ann Arbor,
+                                    USA), where she was a member of the Computational Linguistics and Information Retrieval
+                                    (CLAIR) research group. She is currently Assistant Professor at the Open University of
+                                    Cyprus (OUC), Faculty of Pure and Applied Sciences, where she is the academic
+                                    coordinator of the MSc in Social Information Systems. Jahna also coordinates the Cyprus
+                                    Center for Algorithmic Transparency (CyCAT) at the OUC, a new initiative funded by the
+                                    H2020 Widespread Twinning program. The CyCAT seeks to promote transparency and
+                                    accountability in algorithmic systems that people routinely use, but that are rather
+                                    opaque to them (e.g., search engines), through three types of interventions - data-,
+                                    developer- and user-focused. In addition to her post at the OUC, Jahna holds a
+                                    concurrent appointment as team leader of the Transparency in Algorithms Group at RISE
+                                    (Research centre on Interactive media, Smart systems and Emerging technologies), a new
+                                    center of excellence and innovation in Nicosia, Cyprus, in collaboration with two
+                                    international Advanced Partners, UCL and MPI.</p>
+
+                                <a href="#" class="read-more" data-uk-toggle="target: #keynote-bio-3; cls: expanded">Read more&hellip;</a>
+                                <a href="#" class="read-less" data-uk-toggle="target: #keynote-bio-3; cls: expanded">Read less&hellip;</a>
+                            </div>
+                        </footer>
+                    </div>
+                </article>
+            </div>
+
+            <h2 id="index-program">Program</h2>
+            <p>PAN's program is part of the <a
+                    href="http://clef2018.clef-initiative.eu/index.php?page=Pages/programme.html">CLEF conference program</a>.</p>
+            <table class="uk-table uk-table-divider uk-table-small uk-table-striped">
+                <thead>
+                <!--<tr>-->
+                <!--<th colspan="2"><span style="display:none">.</span></th>-->
+                <!--</tr>-->
+                </thead>
+                <tfoot>
+                <tr>
+                    <td colspan="2"><span style="display:none">.</span></td>
+                </tr>
+                </tfoot>
+                <tbody>
+                <tr>
+                    <td colspan="2"><b>September 10</b></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <nobr>09:00-10:30</nobr>
+                    </td>
+                    <td><b>Labs Overviews</b></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Overview of PAN 2018: Author Identification, Author Profiling, and Author
+                        Obfuscation<br/><i>Efstathios
+                            Stamatatos, Francisco Rangel, Michael Tschuggnall, Benno Stein, Mike Kestemont, Paolo
+                            Rosso,
+                            Martin Potthast</i></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <nobr>11:00-12:30</nobr>
+                    </td>
+                    <td><b>Best of Labs 2017</b></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Hierarchical Clustering Analysis: The best-performing approach at PAN 2017 author clustering
+                        task<br/><i>Helena Gómez-Adorno, Carolina Martín-Del-Campo-Rodríguez, Grigori Sidorov,
+                            Yuridiana
+                            Alemán, Darnes Vilariño Ayala and David Pinto</i></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td><b>Session 1</b>, Chair: Paolo Rosso</td>
+                </tr>
+                <tr>
+                    <td>14:30-15:20</td>
+                    <td>Keynote: Profiling Depression and Anorexia in Social Media<br/><i>David Losada</i></td>
+                </tr>
+                <tr>
+                    <td>15:20-15:40</td>
+                    <td>Overview of the 6th Author Profiling Task at PAN 2018: Multimodal Gender Identification in
+                        Twitter<br/><i>Francisco Rangel, Paolo Rosso, Manuel Montes-y-Gómez, Martin Potthast, Benno
+                            Stein</i></td>
+                </tr>
+                <tr>
+                    <td>15:40-16:00</td>
+                    <td>Text and Image Synergy with Feature Cross Technique for Gender Identification<br/><i>Takumi
+                        Takahashi, Takuji Tahara, Koki Nagatani, Yasuhide Miura, Tomoki Taniguchi, Tomoko Ohkuma</i>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>16:00-16:30</td>
+                    <td>Break</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><b>Session 2</b>, Chair: Francisco Rangel</td>
+                </tr>
+
+                <tr>
+                    <td>16:30-16:50</td>
+                    <td>Gender Identification in Twitter using N-grams and LSA<br/><i>Saman Daneshvar, Diana
+                        Inkpen</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>16:50-17:10</td>
+                    <td>Character-based Convolutional Neural Network and ResNet18 for Twitter Author
+                        Profiling<br/><i>Nils
+                            Schaetti</i></td>
+                </tr>
+                <tr>
+                    <td>17:10-17:50</td>
+                    <td>Keynote: Demystifying Psychometric Marketing: Multi-View Learning as a New Social Media User
+                        Profiling Standard<br/><i>Aleksandr Farseev</i></td>
+                </tr>
+                <tr>
+                    <td>17:50-18:00</td>
+                    <td>Discussion</td>
+                </tr>
+
+                <tr>
+                    <td>19:00-23:00</td>
+                    <td>City Tour</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><b>September 11</b></td>
+                </tr>
+
+                <tr>
+                    <td>13:30-14:30</td>
+                    <td>Poster Session</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Author Profiling using Word Embeddings with Subword Information<br/><i>Rafael Felipe
+                        Sandroni
+                        Dias, Ivandré Paraboni</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Character-based Convolutional Neural Network for Style Change Detection<br/><i>Nils
+                        Schaetti</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Bidirectional Echo State Network-based Reservoir Computing for Cross-domain Authorship
+                        Attribution<br/><i>Nils Schaetti</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Gender Prediction From Tweets With Convolutional Neural Networks<br/><i>Erhan Sezerer, Ozan
+                        Polatbilek, Özge Sevgili, Selma Tekir</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>CIC-GIL Approach to Cross-domain Authorship Attribution<br/><i>Carolina
+                        Martín-Del-Campo-Rodríguez, Helena Gómez-Adorno, Grigori Sidorov, Ildar Batyrshin</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Complexity Measures and POS n-grams for Author Identification in Several Languages<br/><i>Rocío
+                        López-Anguita, Arturo Montejo-Ráez, Manuel C. Díaz-Galiano</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Authorship Profiling Without Using Topical Information<br/><i>Jussi Karlgren, Lewis
+                        Esposito,
+                        Chantal Gratton, Pentti Kanerva</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Authorship Attribution with Neural Networks and Multiple Features<br/><i>Łukasz Gągała</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Stacked Gender Prediction from Tweet Texts and Images<br/><i>Giovanni Ciccone, Arthur
+                        Sultan,
+                        Léa Laporte, Elöd Egyed-Zsigmond, Alaa Alhamzeh, Michael Granitzer</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Gender Identification through Multi-modal Tweet Analysis using MicroTC and Bag of Visual
+                        Words<br/><i>Eric S. Tellez, Sabino Miranda-Jiménez, Daniela Moctezuma, Mario Graff,
+                            Vladimir
+                            Salgado, José Ortiz-Bejar</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Multi-Language Neural Network Model with Advance Preprocessor for Gender Classification over
+                        Social Media<br/><i>Kashyap Raiyani, Teresa Gonçalves, Paulo Quaresma, Vítor Beires
+                            Nogueira</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Multilingual Author Profiling using LSTMs<br/><i>Roy Khristopher Bayot, Teresa Gonçalves</i>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td></td>
+                    <td><b>Session 3</b>, Chair: Efstathios Stamatatos</td>
+                </tr>
+                <tr>
+                    <td>14:30-14:50</td>
+                    <td>Overview of the Author Obfuscation Task at PAN 2018: A New Approach to Measuring Safety<br/><i>Martin
+                        Potthast, Felix Schremmer, Matthias Hagen, Benno Stein</i></td>
+                </tr>
+                <tr>
+                    <td>14:50-15:00</td>
+                    <td>UniNE at CLEF 2018: Author Masking<br/><i>Mirco Kocher, Jacques Savoy</i></td>
+                </tr>
+                <tr>
+                    <td>15:00-15:15</td>
+                    <td>Overview of the Author Identification Task at PAN-2018: Cross-domain Authorship
+                        Attribution<br/><i>Mike
+                            Kestemont, Efstathios Stamatatos, Walter Daelemans, Benno Stein, Martin Potthast</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>15:15-15:30</td>
+                    <td>EACH-USP Ensemble Cross-domain Authorship Attribution<br/><i>José Eleandro Custódio, Ivandré
+                        Paraboni</i></td>
+                </tr>
+                <tr>
+                    <td>15:30-15:45</td>
+                    <td>Dynamic Parameter Search for Cross-Domain Authorship Attribution<br/><i>Benjamin Murauer,
+                        Michael Tschuggnall, Günther Specht</i></td>
+                </tr>
+                <tr>
+                    <td>15:45-16:00</td>
+                    <td>Cross-Domain Authorship Attribution Based on Compression<br/><i>Oren Halvani, Lukas
+                        Graner</i>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>16:00-16:30</td>
+                    <td>Break</td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td><b>Session 4</b>, Chair: Mike Kestemont</td>
+                </tr>
+                <tr>
+                    <td>16:30-17:15</td>
+                    <td>Keynote: Competent Men and Warm Women: On the Detection and Origin of Gender Stereotyped
+                        Image
+                        Search Results<br/><i>Jahna Otterbacher</i></td>
+                </tr>
+                <tr>
+                    <td>17:15-17:30</td>
+                    <td>Overview of the Author Identification Task at PAN-2018: Style Change Detection<br/><i>Michael
+                        Tschuggnall, Günther Specht, Benno Stein, Martin Potthast</i></td>
+                </tr>
+                <tr>
+                    <td>17:30-17:45</td>
+                    <td>An Ensemble-Rich Multi-Aspect Approach Towards Robust Style Change Detection<br/><i>Dimitrina
+                        Zlatkova, Daniel Kopev, Kristiyan Mitov, Atanas Atanasov, Momchil Hardalov, Ivan Koychev,
+                        Preslav Nakov</i></td>
+                </tr>
+                <tr>
+                    <td>17:45-18:00</td>
+                    <td>Detecting a Change of Style using Text Statistics<br/><i>Kamil Safin, Aleksandr Ogaltsov</i>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>19:00-24:00</td>
+                    <td>Social Event: Théâtre des Halles</td>
+                </tr>
+
+                <tr>
+                    <td colspan="2"><b>September 12</b></td>
+                </tr>
+                <tr>
+                    <td>
+                        <nobr>08:00-10:30</nobr>
+                    </td>
+                    <td><b>Best of Labs 2017</b></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Simply the Best: Minimalist System Trumps Complex Models in Author Profiling<br/><i>Angelo
+                        Basile, Gareth Dwyer, Maria Medvedeva, Josine Rawee, Hessel Haagsma and Malvina Nissim</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>17:00-18:00</td>
+                    <td>2019 Labs Kickoff and Closing Discussion Forum</td>
+                </tr>
+
+                <tr>
+                    <td>19:00-24:00</td>
+                    <td>Social Event: Théâtre des Halles & Music Festival</td>
+                </tr>
+
+                </tbody>
+            </table>
+
+            <h2 id="index-sponsors">Sponsors</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <a href="https://www.symanto.net/" target="_blank" class="uk-link-reset">
+                            <div class="thumbnail-fill">
+                                <img src="../pan18-figures/symanto.png" alt="Symanto">
+                            </div>
+                        </a>
+                    </div>
                 </div>
+            </div>
+
+            <h2 id="index-organizing-committee">Organizing Committee</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/potthast.html %}
+                {% include people-cards/rosso.html %}
+                {% include people-cards/stamatatos.html %}
+                {% include people-cards/stein.html %}
+            </div>
+            <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+                {% include organizations/clef-organizations-section.html year=2019 %}
             </div>
         </div>
     </div>
-
-    <footer class="uk-section uk-section-muted">
-        <div class="uk-container">
-            <h2>Organizing Committee</h2>
-            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
-                {% include people-cards/potthast.html %}
-                {% include people-cards/stein.html %}
-                {% include people-cards/rosso.html %}
-                {% include people-cards/stamatatos.html %}
-            </div>
-        </div>
-        <div class="uk-container uk-padding-large uk-padding-remove-bottom">
-            {% include organizations/clef-organizations-section.html year=2018 %}
-        </div>
-    </footer>
 </main>
