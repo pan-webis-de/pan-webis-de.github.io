@@ -12,9 +12,9 @@ description: PAN @ CLEF 2020 - Profiling Fake News Spreaders on Twitter
             <h1 class="uk-margin-remove-top">Profiling Fake News Spreaders on Twitter</h1>
             <ul class="uk-list">
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
-                <!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>-->
-                <!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>-->
-                <!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>-->
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
                 <!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>-->
                 <!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>-->
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
@@ -34,6 +34,82 @@ description: PAN @ CLEF 2020 - Profiling Fake News Spreaders on Twitter
                 <li>Baseline: [code]</li>
             </ul>
             Details will be announced later.
+            
+            <h2 id="task">Task</h2>
+            <p> Fake news has become one of the main threats of our society. Although fake news is not a new phenomenon, 
+                the exponential growth of social media has offered an easy platform for their fast propagation. 
+                A great amount of fake news, and rumors are propagated in online social networks with the aim, usually, 
+                to deceive users and formulate specific opinions. Users play a critical role in the creation and propagation 
+                of fake news online by consuming and sharing articles with inaccurate information either intentionally or 
+                unintentionally. To this end, in this task, we aim at identifying fake news spreaders on social media as a 
+                first step towards preventing fake news from being propagated among online users.</p>
+            
+            <p> After having addressed several aspects of author profiling in social media from 2013 to 2019 
+                (bot detection, age and gender, also together with personality, gender and language variety, 
+                and gender from a multimodality perspective), this year we aim at investigating whether the author 
+                of a Twitter feed is a fake news spreader or real news spreader.</p>
+            
+            <p>As in previous years, we propose the task from a <b>multilingual</b> perspective:</p>
+
+            <ul>
+                <li>English</li>
+                <li>Spanish</li>
+            </ul>
+             
+            <b>NOTE:</b> Although we recommend to participate in both languages (English and Spanish), 
+            it is possible to address the problem just for one language.
+            
+<h2 id="data">Data</h2>
+
+<h3 class="uk-margin-small-top">Input</h3>
+            The uncompressed dataset consists in a folder per language (en, es). Each folder contains:
+            <ul>
+                <li>A XML file per author (Twitter user) with 100 tweets. The name of the XML file
+                    correspond to the unique author id.
+                </li>
+                <li>A truth.txt file with the list of authors and the ground truth.</li>
+            </ul>
+            The format of the XML files is:<br/>
+            <pre class="prettyprint lang-xml" style="overflow-x: auto;">
+    &lt;author lang="en"&gt;
+        &lt;documents&gt;
+            &lt;document&gt;Tweet 1 textual contents&lt;/document&gt;
+            &lt;document&gt;Tweet 2 textual contents&lt;/document&gt;
+            ...
+        &lt;/documents&gt;
+    &lt;/author&gt;
+      </pre>
+
+            The format of the truth.txt file is as follows. The first column corresponds to the author id. 
+            The second column contains the truth for the fakeSpreader/realSpreader task.<br>
+            <pre class="prettyprint lang-xml" style="overflow-x: auto;">
+    b2d5748083d6fdffec6c2d68d4d4442d:::fakeSpreader
+    2bed15d46872169dc7deaf8d2b43a56:::fakeSpreader
+    8234ac5cca1aed3f9029277b2cb851b:::realSpreader
+    5ccd228e21485568016b4ee82deb0d28:::fakeSpreader
+    60d068f9cafb656431e62a6542de2dc0:::realSpreader
+    ...
+    </pre>
+
+            <h3 class="uk-margin-small-top">Output</h3>
+            <p>Your software must take as input the absolute path to an unpacked dataset, and has to output
+                for each document of the dataset a corresponding XML file that looks like this:</p>
+            <pre class="prettyprint lang-xml" style="overflow-x: auto;">
+    &lt;author id="author-id"
+        lang="en|es"
+        type="realSpreader|fakeSpreader"
+    /&gt;
+                              </pre>
+            <p>The naming of the output files is up to you. However, we recommend to use the author-id as
+                filename and "xml" as extension.</p>
+            <p><b>IMPORTANT!</b> Languages should not be mixed. A folder should be created for each language
+                and place inside only the files with the prediction for this language. </p>
+       
+            <h2 id="evaluation">Evaluation</h2>
+            The performance of your system will be ranked by accuracy. 
+            For each language, we will calculate individual accuracies of identifying fake vs. real news spreaders. 
+            Finally, we will average the accuracy values per language to obtain the final ranking.
+    
              <h2 id="related-work">Related Work</h2>
             <ul>
                 <li>Andre Guess, Jonathan Nagler, and Joshua Tucker.
