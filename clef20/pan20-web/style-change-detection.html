@@ -88,11 +88,11 @@ test/
                 <li><code>problem-X.txt</code> contains the actual text, where paragraphs are denoted by <code>\n\n</code>.</li>
                 <li><code>truth-problem-X.json</code> contains the ground truth, i.e., the correct solution in JSON format:
                     <pre class="prettyprint linenums uk-margin-remove-bottom"><code class="lang-json">{
-                                "authors": <number of authors>,
-                                "structure": <order of authors in document>,
-                                "site": <source site>,
-                                "multi-author": <result (task 1)>,
-                                "changes": <result-array (task 2)>
+                                "authors": NUMBER_OF_AUTHORS,
+                                "structure": ORDER_OF_AUTHORS,
+                                "site": SOURCE_SITE,
+                                "multi-author": RESULT_TASK1,
+                                "changes": RESULT_ARRAY_TASK2
                             }</code></pre>
                     <p>The result for task 1 (key "multi-author") is a binary value (1 if the document is multi-authored, 0 if the document is single-authored). The result for task 2 (key "changes") is represented as an array, holding a binary for each pair of consecutive paragraphs within the document (0 if there was no style change, 1 if there was a style change). If the document is single-authored, the solution to task 2 is an array filled with 0s. Furthermore, we provide the order of authors contained in the document (e.g., <code>[A1, A2, A1]</code> for a two-author document), the total number of authors and the Stackoverflow site the texts were extracted from (i.e., topic).</p>
                     <p>An example of a multi-author document, where there was a style change between the third and fourth paragraph could look as follows (we only list the two relevant key/value pairs here):</p>
