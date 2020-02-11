@@ -18,13 +18,13 @@ class ParseError(Enum):
     TASK2_INVALID_LENGTH = 'Task 2 solution array length does not match number of paragraph pairs.'
 
 
-def check_solution_file_content(solution_file, problem_id, input_folder):
+def get_solution_file_check_result(solution_file, problem_id, input_folder):
     """
-    Checks solution files (json) for correct format
+    Checks solution file (json) for correct format
     :param solution_file: path to file to be checked
     :param problem_id: problem id for which solution is checked
     :param input_folder: path of folder holding input txt files
-    :return: None if no error occurred, ParseError if error occurred
+    :return: List of errors, empty list if no error occurred.
     """
 
     occurred_errors = []
@@ -44,6 +44,7 @@ def check_solution_file_content(solution_file, problem_id, input_folder):
         # solution for task 1 has to be 0 or 1.
         if (not isinstance(solution['multi-author'], int)) or (not solution['multi-author'] in [0, 1]):
             occurred_errors.append(ParseError.TASK1_INVALID_FORMAT)
+
 
     # solutions for task 2
     if 'changes' not in solution:
@@ -85,10 +86,13 @@ def check_output_files(problem_ids, output_path, input_folder):
     for problem_id in problem_ids:
         file_path = os.path.join(output_path, 'solution-problem-' + problem_id + '.json')
         if os.path.exists(file_path):
-            if check_solution_file_content(file_path, problem_id, input_folder):
+           errors = get_solution_file_check_result(file_path, problem_id, input_folder)
+           if not errors:
                 print(f"[problem {problem_id}]: OK")
+           else:
+                [print(f"[problem {problem_id}]: {x}") for x in errors]
         else:
-            raise OSError(f"[problem {problem_id}]: no solution file found")
+            print(f"[problem {problem_id}]: no solution file found")
 
 
 def get_problem_ids(input_folder):

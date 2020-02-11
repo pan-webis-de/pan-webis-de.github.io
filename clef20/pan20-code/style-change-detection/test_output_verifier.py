@@ -16,7 +16,7 @@ class OutputVerifierTest(unittest.TestCase):
         solution_file_path = os.path.join(self.test_dir_name, 'solution-1.json')
         with open(solution_file_path, 'w') as fh:
             fh.write('{"key1: x, ""key2": y')
-        self.assertEqual(output_verifier.check_solution_file_content(solution_file_path, '1', self.test_dir_name),
+        self.assertEqual(output_verifier.get_solution_file_check_result(solution_file_path, '1', self.test_dir_name),
                          [output_verifier.ParseError.INVALID_JSON])
 
     def test_file_content_task1_missing(self):
@@ -29,7 +29,7 @@ class OutputVerifierTest(unittest.TestCase):
         with warnings.catch_warnings(record=True) as warnings_occurred:
             # cause all warnings to always be triggered.
             warnings.simplefilter("always")
-            output_verifier.check_solution_file_content(solution_file_path, '1', self.test_dir_name)
+            output_verifier.get_solution_file_check_result(solution_file_path, '1', self.test_dir_name)
 
             self.assertEqual(len(warnings_occurred), 1)
             self.assertTrue(issubclass(warnings_occurred[-1].category, SyntaxWarning))
@@ -45,7 +45,7 @@ class OutputVerifierTest(unittest.TestCase):
         with warnings.catch_warnings(record=True) as warnings_occurred:
             # cause all warnings to always be triggered.
             warnings.simplefilter("always")
-            output_verifier.check_solution_file_content(solution_file_path, '1', self.test_dir_name)
+            output_verifier.get_solution_file_check_result(solution_file_path, '1', self.test_dir_name)
 
             self.assertEqual(len(warnings_occurred), 1)
             self.assertTrue(issubclass(warnings_occurred[-1].category, SyntaxWarning))
@@ -57,7 +57,7 @@ class OutputVerifierTest(unittest.TestCase):
         solution_file_path = os.path.join(self.test_dir_name, 'solution-1.json')
         with open(solution_file_path, 'w') as fh:
             json.dump(solution, fh)
-        self.assertEqual(output_verifier.check_solution_file_content(solution_file_path, '1', self.test_dir_name),
+        self.assertEqual(output_verifier.get_solution_file_check_result(solution_file_path, '1', self.test_dir_name),
                          [output_verifier.ParseError.TASK1_INVALID_FORMAT])
 
     def test_file_content_task1_format2(self):
@@ -66,7 +66,7 @@ class OutputVerifierTest(unittest.TestCase):
         solution_file_path = os.path.join(self.test_dir_name, 'solution-1.json')
         with open(solution_file_path, 'w') as fh:
             json.dump(solution, fh)
-        self.assertEqual(output_verifier.check_solution_file_content(solution_file_path, '1', self.test_dir_name),
+        self.assertEqual(output_verifier.get_solution_file_check_result(solution_file_path, '1', self.test_dir_name),
                          [])
 
     def test_file_content_task2_format1(self):
@@ -75,7 +75,7 @@ class OutputVerifierTest(unittest.TestCase):
         solution_file_path = os.path.join(self.test_dir_name, 'solution-problem-1.json')
         with open(solution_file_path, 'w') as fh:
             json.dump(solution, fh)
-        self.assertEqual(output_verifier.check_solution_file_content(solution_file_path, '1', self.test_dir_name),
+        self.assertEqual(output_verifier.get_solution_file_check_result(solution_file_path, '1', self.test_dir_name),
                          [output_verifier.ParseError.TASK2_INVALID_FORMAT])
 
     def test_file_content_task2_format2(self):
@@ -84,7 +84,7 @@ class OutputVerifierTest(unittest.TestCase):
         solution_file_path = os.path.join(self.test_dir_name, 'solution-problem-1.json')
         with open(solution_file_path, 'w') as fh:
             json.dump(solution, fh)
-        self.assertEqual(output_verifier.check_solution_file_content(solution_file_path, '1', self.test_dir_name),
+        self.assertEqual(output_verifier.get_solution_file_check_result(solution_file_path, '1', self.test_dir_name),
                          [])
 
     def test_file_content_task2_format3(self):
@@ -93,7 +93,7 @@ class OutputVerifierTest(unittest.TestCase):
         solution_file_path = os.path.join(self.test_dir_name, 'solution-problem-1.json')
         with open(solution_file_path, 'w') as fh:
             json.dump(solution, fh)
-        self.assertEqual(output_verifier.check_solution_file_content(solution_file_path, '1', self.test_dir_name),
+        self.assertEqual(output_verifier.get_solution_file_check_result(solution_file_path, '1', self.test_dir_name),
                          [output_verifier.ParseError.TASK2_INVALID_FORMAT])
 
 
@@ -103,7 +103,7 @@ class OutputVerifierTest(unittest.TestCase):
         solution_file_path = os.path.join(self.test_dir_name, 'solution-problem-1.json')
         with open(solution_file_path, 'w') as fh:
             json.dump(solution, fh)
-        self.assertEqual(output_verifier.check_solution_file_content(solution_file_path, '1', self.test_dir_name),
+        self.assertEqual(output_verifier.get_solution_file_check_result(solution_file_path, '1', self.test_dir_name),
                          [output_verifier.ParseError.TASK2_INVALID_LENGTH])
 
     def test_paragraph_count(self):

@@ -82,10 +82,10 @@ def main():
     truth = read_ground_truth_files(args.truth)
 
     task1_score = compute_task1_f1_score(truth, solutions)
-    print(f"score task 1: {task1_score:.2f}")
+    print(f"score task 1: {task1_score:.5f}")
 
     task2_score = compute_task2_f1_score(truth, solutions)
-    print(f"score task 2: {task2_score:.2f}")
+    print(f"score task 2: {task2_score:.5f}")
 
 
 if __name__ == "__main__":
