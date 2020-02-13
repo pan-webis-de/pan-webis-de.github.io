@@ -46,9 +46,8 @@ description: PAN @ CLEF 2020 - Profiling Fake News Spreaders on Twitter
             <p> After having addressed several aspects of author profiling in social 
                 media from 2013 to 2019 (bot detection, age and gender, also together
                 with personality, gender and language variety, and gender from a 
-                multimodality perspective), this year we aim at investigating whether
-                the author of a Twitter feed is potentially a fake news spreader or
-                real news spreader.</p>
+                multimodality perspective), this year we aim at investigating if it is possbile to discriminate authors 
+                that have shared some fake news in the past from those that, to the best of our knowledge, have never done it. </p>
             
             <p>As in previous years, we propose the task from a <b>multilingual</b> perspective:</p>
 
@@ -82,13 +81,13 @@ description: PAN @ CLEF 2020 - Profiling Fake News Spreaders on Twitter
       </pre>
 
             The format of the truth.txt file is as follows. The first column corresponds to the author id. 
-            The second column contains the truth for the fakeSpreader/realSpreader task.<br>
+            The second column contains the truth label.<br>
             <pre class="prettyprint lang-xml" style="overflow-x: auto;">
-    b2d5748083d6fdffec6c2d68d4d4442d:::fakeSpreader
-    2bed15d46872169dc7deaf8d2b43a56:::fakeSpreader
-    8234ac5cca1aed3f9029277b2cb851b:::realSpreader
-    5ccd228e21485568016b4ee82deb0d28:::fakeSpreader
-    60d068f9cafb656431e62a6542de2dc0:::realSpreader
+    b2d5748083d6fdffec6c2d68d4d4442d:::0
+    2bed15d46872169dc7deaf8d2b43a56:::0
+    8234ac5cca1aed3f9029277b2cb851b:::1
+    5ccd228e21485568016b4ee82deb0d28:::0
+    60d068f9cafb656431e62a6542de2dc0:::1
     ...
     </pre>
 
@@ -98,7 +97,7 @@ description: PAN @ CLEF 2020 - Profiling Fake News Spreaders on Twitter
             <pre class="prettyprint lang-xml" style="overflow-x: auto;">
     &lt;author id="author-id"
         lang="en|es"
-        type="realSpreader|fakeSpreader"
+        type="0|1"
     /&gt;
                               </pre>
             <p>The naming of the output files is up to you. However, we recommend to use the author-id as
@@ -108,13 +107,11 @@ description: PAN @ CLEF 2020 - Profiling Fake News Spreaders on Twitter
        
             <h2 id="evaluation">Evaluation</h2>
             The performance of your system will be ranked by accuracy. 
-            For each language, we will calculate individual accuracies of identifying fake vs. real news spreaders. 
+            For each language, we will calculate individual accuracies in discriminating between the two classes. 
             Finally, we will average the accuracy values per language to obtain the final ranking.
     
              <h2 id="related-work">Related Work</h2>
             <ul>
-                
-
                 
                 <li>Bilal Ghanem, Paolo Rosso, Francisco Rangel.
                     <a href="https://arxiv.org/abs/1908.09951" target="_blank">
