@@ -6,197 +6,422 @@ description: PAN at CLEF 2016
 ---
 
 <main>
-    <header class="uk-section uk-section-muted">
-        <nav class="uk-container">
-            <div class="uk-align-right uk-visible@m uk-text-muted">
-                <a class="uk-button" href="{{ 'clef15/pan15-web/index.html' | relative_url }}"
-                   data-uk-icon="chevron-left"></a>
-                CLEF 2016
-                <a class="uk-button uk-padding-remove-right" href="{{ 'clef17/pan17-web/index.html' | relative_url }}"
-                   data-uk-icon="chevron-right"></a>
-            </div>
-
-            <ul class="uk-text-muted uk-tab uk-margin-remove-top">
-                <li class="uk-active"><a href="{{ '/clef16/pan16-web/index.html' | relative_url }}">Overview</a></li>
-                <li><a href="{{ '/clef16/pan16-web/keynotes.html' | relative_url }}">Keynotes</a></li>
-                <li><a href="{{ '/clef16/pan16-web/program.html' | relative_url }}">Program</a></li>
-                <li>
-                    <a href="#">Tasks <span class="uk-margin-small-left"
-                                            data-uk-icon="icon: chevron-down"></span></a>
-                    <div class="uk-dropdown" data-uk-dropdown="mode: click">
-                        <ul class="uk-nav uk-dropdown-nav">
-                            <li><a href="{{ '/clef16/pan16-web/author-identification.html' | relative_url }}">Author
-                                Identification</a></li>
-                            <li><a href="{{ '/clef16/pan16-web/author-profiling.html' | relative_url }}">Author
-                                Profiling</a></li>
-                            <li><a href="{{ '/clef16/pan16-web/author-obfuscation.html' | relative_url }}">Author
-                                Obfuscation</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a href="{{ '/clef16/pan16-web/submission.html' | relative_url }}">Submission</a></li>
-                <li><a href="{{ 'publications.html#?q=year:2016' | relative_url }}">Proceedings</a></li>
+    <div class="uk-section uk-section-default">
+        <div class="uk-container">
+            <h1 class="uk-margin-remove-top">PAN at CLEF 2016</h1>
+            <ul class="uk-list">
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#index-tasks">Shared Tasks</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#index-important-dates">Important Dates</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#index-keynotes">Keynotes</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#index-program">Program</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#index-sponsors">Sponsors</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#index-organizing-committee">Organizing Committee</a></li>
             </ul>
-        </nav>
-
-        <div class="uk-container uk-margin-small">
-            {% include current-register-quicklink.html year=2016 %}
-
-            <h1 class="uk-margin-small">PAN at CLEF 2016</h1>
-            <div class="page-header-meta">
-                {% include registration-counter.html year=2016 apiVersion="v3" url="" %}
-            </div>
         </div>
 
         <div class="uk-container uk-margin-medium">
-            <div class="uk-align-right uk-margin-remove-bottom">
-                <a href="http://www.adobe.com/" target="_blank">
-                    <img src="../pan16-figures/logo-adobe.png" alt="Adobe" style="height: 100px">
-                </a>
-                <div class="uk-text-small uk-text-muted uk-text-right">Sponsor</div>
-            </div>
-            <p class="uk-text-lead uk-margin-remove-top">
-                This is the 15th evaluation lab on uncovering plagiarism, authorship, and social software misuse. PAN
-                will be held as part of the <a href="http://clef2016.clef-initiative.eu" target="_blank">CLEF
-                conference</a> in &Eacute;vora, Portugal, on September 5-8, 2016.
-                Evaluations will commence <a href="{{ '/clef16/pan16-web/submission.html' | relative_url }}">from
-                January till June</a>.
-                We invite you to take part in any of the three tasks shown below.
-            </p>
-        </div>
-    </header>
+            <h2 id="index-tasks" class="uk-margin-small-top">Shared Tasks</h2>
+            <ul>
+                <li><a href="{{ 'shared-tasks.html#authorship-clustering' | relative_url }}">Author Clustering</a></li>
+                <li><a href="{{ 'shared-tasks.html#author-diarization' | relative_url }}">Author Diarization</a></li>
+                <li><a href="{{ 'shared-tasks.html#author-profiling' | relative_url }}">Author Profiling</a></li>
+                <li><a href="{{ 'shared-tasks.html#author-masking' | relative_url }}">Author Masking</a></li>
+                <li><a href="{{ 'shared-tasks.html#obfuscation-evaluation' | relative_url }}">Obfuscation Evaluation</a></li>
+            </ul>
 
-    <div class="uk-section">
-        <div class="uk-container">
-            <div class="uk-grid uk-grid-large uk-grid-divider uk-child-width-1-3@m uk-child-width-1-2@s" data-uk-grid>
-                <div>
-                    <h2>Author Identification
-                        <div class="uk-text-muted uk-text-lead">
-                            <a href="{{ '/clef16/pan16-web/author-identification.html' | relative_url }}">Learn more</a>
+            <h2 id="index-important-dates" class="uk-margin-large-top">Important Dates</h2>
+            <ul>
+                <li> March 1, 2016: Early bird software submission</li>
+                <li> April 29, 2016: TIRA evaluation phase deadline</li>
+                <li> May 25, 2016 <strong>(extended)</strong>: Paper submission:
+                    [<a href="../../pan-paper-template.zip">template</a>]
+                    [<a href="http://clef2016.clef-initiative.eu/index.php?page=Pages/InstructionsforCLEF2016WorkingNotes.html">guidelines</a>]
+                    [<a href="https://easychair.org/conferences/?conf=clef2016">submission</a>]
+                </li>
+                <li> June 17, 2016: Peer review notification</li>
+                <li> July 1, 2016: Camera-ready participant papers submission</li>
+                <li> July 24, 2016: Early bird conference registration</li>
+                <li> September 5-8, 2016: Conference</li>
+            </ul>
+            <p>The timezone of all deadlines is <a href="https://en.wikipedia.org/wiki/Anywhere_on_Earth">Anywhere on
+                Earth</a>.</p>
+
+            <h2 id="index-keynotes">Keynotes</h2>
+            <div class="uk-grid uk-child-width-1-2@l" data-uk-grid>
+
+                <article class="keynote">
+                    <header class="keynote-header">
+                        <div class="keynote-speaker-image">
+                            <img src="{{ '/clef16/pan16-figures/rui.jpg' | relative_url }}" alt="Rui Sousa-Silva">
                         </div>
-                    </h2>
-                    <p>Given a document, who wrote it?</p>
-                    <p>This task focuses on <strong>author clustering</strong> and <strong>author diarization</strong>
-                        (also known as <strong>intrinsic plagiarism detection</strong>). Both tasks are concerned with
-                        measuring author similarity across and within texts.</p>
-                </div>
-                <div>
-                    <h2>Author Profiling
-                        <div class="uk-text-muted uk-text-lead"><a
-                                href="{{ '/clef16/pan16-web/author-profiling.html' | relative_url }}">Learn more</a>
+                        <div class="keynote-meta">
+                            <div class="keynote-title">
+                                Detecting translingual plagiarism: A forensic linguistic contribution
+                                to computational processing
+                            </div>
+                            <div class="keynote-speaker"><a href="http://www.linguisticaforense.pt/" target="_blank">Rui
+                                Sousa-Silva</a></div>
+                            <div class="keynote-affiliation">Universidade do Porto</div>
                         </div>
-                    </h2>
-                    <p>Given a document, what're its author's traits?</p>
-                    <p>This task is concerned with predicting an author's demographics from her writing. For example, an
-                        author's style may reveal her <strong>age and gender</strong>. </p>
-                </div>
+                    </header>
+                    <div class="keynote-body">
+                        <p>Plagiarism detection has evolved significantly in recent years, partly in response to the
+                            media
+                            attention attracted by high-profile plagiarism cases involving journalists and politicians.
+                            A
+                            culture of control has been establishing itself to guarantee integrity and honesty in all
+                            areas
+                            related to copyright and authorship, including implementation of policies, codes of conduct,
+                            tariffs of penalties, and matching detection software. The latter has dramatically improved
+                            alongside the technological developments over the years. Currently instances of linguistic
+                            plagiarism can easily be matched to the original, while pointing out differences between the
+                            plagiarised and the plagiarising texts. These methods work particularly well with same
+                            language
+                            texts; however, systematically detecting translingual plagiarism - i.e. where a derivative
+                            text
+                            copies from a source in another language without attribution - remains a problem area. This
+                            is
+                            especially so because the possibilities of combining language pairs are immense, thus
+                            requiring
+                            an enormous data processing power. This session presents illustrative cases of translingual
+                            plagiarism and discusses some of the approaches adopted by forensic linguists to investigate
+                            and
+                            prove that a certain translated text is an instance of plagiarism. The keynote concludes by
+                            encouraging a discussion of computational approaches that can be adopted to assist forensic
+                            linguists in their own investigation.
+                        </p>
+
+                        <footer>
+                            <div class="keynote-bio" id="keynote-bio-1">
+                                <p>Rui Sousa-Silva is assistant professor of the Faculty of Arts and
+                                    post-doctoral researcher at the Linguistics Centre (CLUP) of the University of
+                                    Porto, where he
+                                    is currently conducting his research into Forensic Linguistics and Cybercrime. He
+                                    has a PhD in
+                                    Applied Linguistics from Aston University (Birmingham, UK), where he submitted his
+                                    thesis on
+                                    Forensic Linguistics: ‘Detecting Plagiarism in the Forensic Linguistics Turn’. He
+                                    studied
+                                    cross-cultural attitudes to plagiarism, and proposed an original approach to
+                                    translingual
+                                    plagiarism detection. He also authored and co-authored several papers on
+                                    (computational)
+                                    authorship analysis, and is co-editor with Professor Malcolm Coulthard of the
+                                    recently founded
+                                    international bilingual biennial journal Language and Law / Linguagem e Direito.</p>
+
+                                <a href="#" class="read-more" data-uk-toggle="target: #keynote-bio-1; cls: expanded">Read
+                                    more&hellip;</a>
+                                <a href="#" class="read-less" data-uk-toggle="target: #keynote-bio-1; cls: expanded">Read
+                                    less&hellip;</a>
+                            </div>
+                        </footer>
+                    </div>
+                </article>
+            </div>
+
+            <h2 id="index-program">Program</h2>
+            <p>PAN's program is part of the <a
+                    href="http://clef2016.clef-initiative.eu/index.php?page=Pages/programme.html">CLEF conference program</a>.</p>
+
+            <table class="uk-table uk-table-divider uk-table-small uk-table-striped">
+                <tbody>
+                <tr>
+                    <td colspan="2"><b>September 5</b></td>
+                </tr>
+                <tr>
+                    <td>
+                        <nobr>13:30-16:10</nobr>
+                    </td>
+                    <td><b>Lab Overviews 1</b></td>
+                </tr>
+                <tr>
+                    <td>30 min. talk</td>
+                    <td>Overview of PAN'16 New Challenges for Authorship Analysis: Cross-genre Profiling, Clustering,
+                        Diarization, and Obfuscation<br/><i>Paolo Rosso, Francisco Rangel, Martin Potthast, Efstathios
+                            Stamatatos, Michael Tschuggnall and Benno Stein</i></td>
+                </tr>
+                <tr>
+                    <td>18:30-19:30</td>
+                    <td>Welcome Reception</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><b>September 6</b></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><b>Keynote + Author Obfuscation</b>, Chair: Paolo Rosso</td>
+                </tr>
+                <tr>
+                    <td>13:30-14:30</td>
+                    <td>Detecting Translingual Plagiarism: A Forensic Linguistic Contribution to Computational
+                        Processing<br/><i>Rui Sousa-Silva</i></td>
+                </tr>
+                <tr>
+                    <td>14:30-15:00</td>
+                    <td>Author Obfuscation: Attacking the State of the Art in Authorship Verification<br/><i>Martin
+                        Potthast, Matthias Hagen, Benno Stein</i></td>
+                </tr>
+                <tr>
+                    <td>15:00-15:20</td>
+                    <td>SU@PAN'2016: Author Obfuscation<br/><i>Tsvetomila Mihaylova, Georgi Karadjov, Yasen Kiprov,
+                        Georgi Georgiev, Ivan Koychev, and Preslav Nakov</i></td>
+                </tr>
+                <tr>
+                    <td>15:20-15:30</td>
+                    <td>Discussion</td>
+                </tr>
+                <tr>
+                    <td>15:30-16:15</td>
+                    <td>PAN Poster Session</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Authorship clustering using multi-headed recurrent neural networks<br/><i>Douglas Bagnall</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>UniNE at CLEF 2016: Author Clustering<br/><i>Mirco Kocher</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Methods for intrinsic plagiarism detection and author diarization<br/><i>Mikhail Kuznetsov,
+                        Anastasia Motrenko, Rita Kuznetsova, and Vadim Strijov</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Multi feature space combination for authorship clustering<br/><i>Muharram Mansoorizadeh,
+                        Mohammad Aminiyan, Taher Rahgooy, Mahdy Eskandari</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>ExploringWord Embeddings and Character N-Grams for Author Clustering<br/><i>Yunita Sari, Mark
+                        Stevenson</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Author Diarization Using Cluster-Distance Approach<br/><i>Abdul Sittar, Hafiz Rizwan Iqbal, and
+                        Rao Muhammad Adeel Nawab</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>A Big Increase in Known Unknowns: from Author Verification to Author Clustering<br/><i>Anna
+                        Vartapetiance and Lee Gillam</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Experiments in Authorship-Link Ranking and Complete Author Clustering<br/><i>Valentin
+                        Zmiycharov, Dimitar Alexandrov, Hristo Georgiev, Yasen Kiprov, Georgi Georgiev, Ivan Koychev,
+                        and Preslav Nakov</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Author Masking through Translation<br/><i>Yashwant Keswani, Harsh Trivedi, Parth Mehta, and
+                        Prasenjit Majumder</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Evaluating Safety, Soundness and Sensibleness of Obfuscation Systems<br/><i>Matthias Liebeck,
+                        Pashutan Modaresi, and Stefan Conrad</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Author obfuscation using WordNet and language models<br/><i>Muharram Mansoorizadeh, Taher
+                        Rahgooy, Mohammad Aminiyan, Mahdy Eskandari</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>SU@PAN'2016: Author Obfuscation<br/><i>Tsvetomila Mihaylova, Georgi Karadjov, Yasen Kiprov,
+                        Georgi Georgiev, Ivan Koychev, and Preslav Nakov</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Age and Gender Identification using Stacking for Classification<br/><i>Madhulika Agrawal and
+                        Teresa Gonçalves</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Cross-Genre Author Profile Prediction Using Stylometry-Based Approach<br/><i>Shaina Ashraf,
+                        Hafiz Rizwan Iqbal, Rao Muhammad Adeel Nawab</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Author Profiling Using Support Vector Machines<br/><i>Rodwan Bakkar Deyab, José Duarte, and
+                        Teresa Gonçalves</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Author Profiling using SVMs andWord Embedding Averages<br/><i>Roy Bayot and Teresa Gonçalves</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>CAPS: A Cross-genre Author Profiling System<br/><i>Ivan Bilan and Desislava Zhekova</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Author Profiling using Complementary Second Order Attributes and Stylometric Features<br/><i>Konstantinos
+                        Bougiatiotis and Anastasia Krithara</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>GronUP: Groningen User Profiling<br/><i>Mart Busger op Vollenbroek, Talvany Carlotto, Tim
+                        Kreutz, Maria Medvedeva, Chris Pool, Johannes Bjerva, Hessel Haagsma, and Malvina Nissim</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Using Machine Learning Algorithms for Author Profiling in Social Media<br/><i>Daniel Dichiu,
+                        Irina Rancea</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Statistical Semantics in Context Space: Amrita CEN@Author Profiling<br/><i>Barathi Ganesh HB,
+                        Anand Kumar M, and Soman KP</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Profile-based Approach for Age and Gender Identification<br/><i>Ma. José Garciarena Ucelay, Ma.
+                        Paula Villegas, Dario G. Funez, Leticia C. Cagnina, Marcelo L. Errecalde, Gabriela
+                        Ramírez-de-la-Rosa, and Esaú Villatoro-Tello</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>PANcakes Team: A Composite System of Genre-Agnostic Features For Author Profiling<br/><i>Pepa
+                        Gencheva, Martin Boyanov, Elena Deneva, Preslav Nakov, Yasen Kiprov1, Ivan Koychev1, and Georgi
+                        Georgiev</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>UniNE at CLEF 2016: Author Profiling<br/><i>Mirco Kocher, Jaques Savoy</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Adapting Cross-Genre Author Profiling to Language and Corpus<br/><i>Ilia Markov, Helena
+                        Gómez-Adorno, Grigori Sidorov, and Alexander Gelbukh</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Exploring the Effects of Cross-Genre Machine Learning for Author Profiling in PAN 2016<br/><i>Pashutan
+                        Modaresi, Matthias Liebeck, and Stefan Conrad</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Profiling microblog authors using concreteness and sentiment<br/><i>Oliver Pimas, Andi Rexha,
+                        Mark Kröll, and Roman Kern</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Cross-genre Age and Gender Identification in Social Media<br/><i>Anam Zahid, Aadarsh Sampath,
+                        Anindya Dey, Golnoosh Farnadi</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Derivative Approach for Plagiarism Source Retrieval<br/><i>Rhulani Maluleka</i></td>
+                </tr>
+                <tr>
+                    <td>19:45</td>
+                    <td>Conference Dinner</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><b>September 7</b></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><b>Author Profiling</b>, Chair: Francisco Rangel</td>
+                </tr>
+                <tr>
+                    <td>13:30-14:00</td>
+                    <td>Overview of the 4th Author Profiling Task at PAN 2016: Cross-Genre Evaluations<br/><i>Francisco
+                        Rangel, Paolo Rosso, Ben Verhoeven, Walter Daelemans, Martin Potthast, Benno Stein</i></td>
+                </tr>
+                <tr>
+                    <td>14:00-14:20</td>
+                    <td>GronUP: Groningen User Profiling<br/><i>Mart Busger op Vollenbroek, Talvany Carlotto, Tim
+                        Kreutz, Maria Medvedeva, Chris Pool, Johannes Bjerva, Hessel Haagsma, and Malvina Nissim</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>14:20-14:40</td>
+                    <td>Exploring the Effects of Cross-Genre Machine Learning for Author Profiling in PAN 2016<br/><i>Pashutan
+                        Modaresi, Matthias Liebeck, Stefan Conrad</i></td>
+                </tr>
+                <tr>
+                    <td>14:40-15:00</td>
+                    <td>CAPS: A Cross-Genre Author Profiling System<br/><i>Ivan Bilan, Desislava Zhekova</i></td>
+                </tr>
+                <tr>
+                    <td>15:00-15:20</td>
+                    <td>Author Profiling using Complementary Second Order Attributes and Stylometric Features<br/><i>Konstantinos
+                        Bougiatiotis and Anastasia Krithara</i></td>
+                </tr>
+                <tr>
+                    <td>15:20-15:30</td>
+                    <td>Discussion</td>
+                </tr>
+                <tr>
+                    <td>15:30-16:15</td>
+                    <td>Break</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><b>Author Identification</b>, Chair: Michael Tschuggnall</td>
+                </tr>
+                <tr>
+                    <td>16:15-17:00</td>
+                    <td>Clustering by Authorship Within and Across Documents<br/><i>Efstathios Stamatatos, Michael
+                        Tschuggnall, Ben Verhoeven, Walter Daelemans, Günther Specht, Benno Stein, and Martin
+                        Potthast</i></td>
+                </tr>
+                <tr>
+                    <td>17:00-17:20</td>
+                    <td>Authorship Clustering using Multi-headed Recurrent Neural Networks<br/><i>Douglas Bagnall</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>17:20-17:40</td>
+                    <td>UniNE at CLEF 2016: Author Clustering<br/><i>Mirco Kocher</i></td>
+                </tr>
+                <tr>
+                    <td>17:40-18:00</td>
+                    <td>Methods for Intrinsic Plagiarism Detection and Author Diarization<br/><i>Mikhail Kuznetsov,
+                        Anastasia Motrenko, Rita Kuznetsova, Vadim Strijov</i></td>
+                </tr>
+                <tr>
+                    <td>18:00-18:15</td>
+                    <td>Discussion</td>
+                </tr>
+                <tr>
+                    <td>19:45</td>
+                    <td>"Petiscos" and "Cante Alentejano"</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <h2 id="index-sponsors">Sponsors</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
                 <div>
-                    <h2>Author Obfuscation
-                        <div class="uk-text-muted uk-text-lead"><a
-                                href="{{ '/clef16/pan16-web/author-obfuscation.html' | relative_url }}">Learn more</a>
-                        </div>
-                    </h2>
-                    <p>Given a document, hide its author.</p>
-                    <p>This task works against identification and profiling by automatically paraphrasing a text to
-                        obfuscate its author's style. The tasks offered are <strong>author masking</strong> and <strong>obfuscation
-                            evaluation</strong>.
-                    </p>
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <a href="http://www.adobe.com/" target="_blank" class="uk-link-reset">
+                            <div class="thumbnail-fill">
+                                <img src="../pan16-figures/logo-adobe.png" alt="Adobe Logo">
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="uk-container uk-margin-medium">
-            <hr class="uk-divider-icon">
-        </div>
-
-        <!-- Important Dates -->
-        <div class="uk-container uk-margin-large">
-            <div class="uk-grid-medium" data-uk-grid>
-                <div class="uk-width-1-2@m">
-                    <h2 class="page-header" id="important-dates">Important Dates
-                        <span class="uk-text-muted uk-text-lead">Hawaii time zone</span>
-                    </h2>
-                    <table class="uk-table uk-table-divider uk-table-small uk-table-hover uk-table-justify uk-table-condensed">
-                        <tr>
-                            <td>March 1, 2016 (optional)</td>
-                            <td>Early bird software submission</td>
-                        </tr>
-                        <tr>
-                            <td><b>April 29, 2016 (extended)</b></td>
-                            <td>Final software submission</td>
-                        </tr>
-                        <tr>
-                            <td>May 13, 2016</td>
-                            <td>TIRA evaluation deadline</td>
-                        </tr>
-                        <tr>
-                            <td>May 25, 2016</td>
-                            <td>Notebook paper submission</td>
-                        </tr>
-                        <tr>
-                            <td>June 17, 2016</td>
-                            <td>Peer review notification</td>
-                        </tr>
-                        <tr>
-                            <td>July 1, 2016</td>
-                            <td>Camery-ready notbook submission</td>
-                        </tr>
-                        <tr>
-                            <td>July 24, 2016 (tentative)</td>
-                            <td>Early bird conference registration</td>
-                        </tr>
-                        <tr>
-                            <td>September 5-8, 2016</td>
-                            <td>Conference</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="uk-width-1-4@m">
-                    <h2>Quicklinks</h2>
-                    <ul class="uk-list uk-list-divider">
-                        <li>
-                            <a target="_blank"
-                               href="https://docs.google.com/forms/d/e/1FAIpQLSfR_xoBuGU3q7o3EYPoItN28UPuZENjs3wlWYEX_EdRGUyRfA/viewform">Register
-                                for CLEF</a>
-                        </li>
-                        <li>
-                            <a href="pan16-notebook-templates.zip">Download Notebook Templates</a>
-                        </li>
-                        <li>
-                            <a href="https://easychair.org/conferences/?conf=clef2016">Submit Notebook Paper</a>
-                        </li>
-                        <li>
-                            <a href="http://clef2016.clef-initiative.eu/index.php?page=Pages/InstructionsforCLEF2016WorkingNotes.html">Notebook
-                                Submission guidelines</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="uk-width-1-4@m">
-                    <h2>Donate</h2>
-                    <p>Support PAN by making a donation.</p>
-
-                    <p>Organizing PAN entails a significant investment of time and money on our part. If you
-                        wish to support us, please consider making a donation.</p>
-
-                    {% include donation-form.html %}
-                </div>
-            </div>
-        </div>
-
-    </div>  <!-- section -->
-
-    <footer class="uk-section uk-section-muted">
-        <div class="uk-container">
-            <h2>Organizing Committee</h2>
+            <h2 id="index-organizing-committee">Organizing Committee</h2>
             <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
                 {% include people-cards/potthast.html %}
-                {% include people-cards/stein.html %}
                 {% include people-cards/rosso.html %}
                 {% include people-cards/stamatatos.html %}
+                {% include people-cards/stein.html %}
+            </div>
+            <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+                {% include organizations/clef-organizations-section.html year=2016 %}
             </div>
         </div>
-        <div class="uk-container uk-padding-large uk-padding-remove-bottom">
-            {% include organizations/clef-organizations-section.html year=2016 %}
-        </div>
-    </footer>
+    </div>
 </main>

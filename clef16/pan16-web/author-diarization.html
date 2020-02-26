@@ -1,0 +1,303 @@
+---
+layout: default
+nav_active: tasks
+title: PAN at CLEF 2016 - Author Diarization
+description: PAN at CLEF 2016 - Author Diarization
+---
+
+<main>
+    <div class="uk-section uk-section-default">
+        <div class="uk-container uk-margin-small">
+            <h1 class="uk-margin-remove-top">Author Diarization 2016</h1>
+            <ul class="uk-list">
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#input">Input</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#output">Output</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
+            </ul>
+        </div>
+
+        <div class="uk-container uk-margin-medium">
+            <h2 id="synopsis">Synopsis</h2>
+            <ul>
+                <li>Task: Given a document, identify and group text fragments that correspond to individual authors.</li>
+                <li>Input: [<a href="{{ 'data.html#pan16-author-diarization' | relative_url }}">data</a>]</li>
+                <li>Submission: [<a href="https://www.tira.io/task/author-diarization/">submit</a>]</li>
+            </ul>
+
+            <h2 id="introduction">Introduction</h2>
+            <p>The term <i>author diarization</i> originates from the research field <strong>speaker
+                diarization</strong>, where approaches try to automatically identify and cluster different
+                speakers of an audio speech signal like a telephone conversation or a political TV debate by
+                processing and analyzing the audio frequency signal (an overview of approaches can be found, for
+                example, <a href="http://www1.icsi.berkeley.edu/~vinyals/Files/taslp2011a.pdf">here</a>).</p>
+            <p>Similar to such approaches, the task of <strong>author diarization</strong> in this PAN edition
+                is to identify different authors within a single document. Such documents may be the result of a
+                collaborative work (e.g., a combined master thesis written by two students, a scientific paper
+                written by four authors, …), or the result of plagiarism. The latter is thereby a special case,
+                where it can be assumed that the main text is written by one author and only some fragments are
+                by other writers (the plagiarized or intrusive sections). On the other hand, the contributions
+                of a collaboratively written document may be equally weighted, i.e., each author contributes to
+                the same extent.</p>
+
+            <h2 id="task">Task</h2>
+            <p>Given a document, identify and group text fragments that correspond to individual authors.
+                Similarly to the situation in speaker diarization approaches, where active speakers may change
+                at any time, you cannot assume that changes in authorship occur, for example, only on paragraph
+                boundaries. But you should rather be prepared to detect different authors at any text position.
+                An example could be as follows:</p>
+
+             <p style="margin-left:30px"><i>"<span style="color:RoyalBlue">She is also a successful businesswoman and an American icon,</span><span
+                            style="color:red"> was born in Jersey City to middle-class Polish-American parents and she earned a partial scholarship to …</span>"</i>
+                    </p>
+
+                    <p>Nevertheless, you may use paragraph boundaries or other useful metrics as heuristic to potential
+                        changes.</p>
+
+                    <p>To cover different variants of the problem, the task of this years PAN edition is split into
+                        three subproblems. For this year’s edition, all documents are provided in English.</p>
+
+                    <ul>
+                        <li><p><strong>Traditional intrinsic plagiarism detection</strong>: here, you can assume that
+                            there exists one main author who wrote at least 70% of the text. Up to the other 30% may be
+                            written by other authors. For this problem, you should build exactly two clusters: one
+                            containing the text fragments of the main author, and the other one containing the intrusive
+                            fragments. </p></li>
+                        <li><p><strong>Diarization with a given number (n) of authors</strong>: given a document, the
+                            task is to build exactly n clusters containing the contributions of the different writers.
+                            Thereby, each author may have contributed to an arbitrary, but non-zero extent.</p></li>
+                        <li><p><strong>Diarization with an unknown number of authors</strong>: finally, this variant
+                            covers the most challenging task, which is similar to the previous task, but without the
+                            information of knowing how many authors contributed to the document.</p></li>
+                    </ul>
+
+            <h2 id="input">Input</h2>
+            <p>The data set consists of three folders corresponding to each subtask. For each problem instance X
+                in each subtask, three files are provided:</p>
+            <ul>
+                <li><code>problem-X.txt</code> contains the actual text</li>
+                <li><code>problem-X.meta</code> contains meta information about the file in <a
+                        href="http://www.json.org/">JSON</a> format. It contains the<code>"language"</code>
+                    (which is always <strong>English</strong> this year), the problem <code>"type"</code>
+                    (<code>"plagiarism"</code> or <code>"diarization"</code>) and for the diarization problem
+                    with given number of authors additionally the correct number of authors
+                    (<code>"numAuthors"</code>)
+                </li>
+                <li><code>problem-X.truth</code> contains the ground truth, i.e., the correct solution in <a
+                        href="http://www.json.org/">JSON</a> format:
+                    <pre class="prettyprint lang-py" style="overflow-x:auto">
+{
+    "authors": [
+        [
+            {"from": fromCharPosition,
+            "to": toCharPosition},
+            …
+        ],
+        …
+    ]
+}
+</pre>
+
+                    <p>
+                        To identify the text fragments, the absolute character start/end positions within the
+                        document are used, whereby the document starts at character position 0.</p>
+
+                    <p>
+                        Note that for simplicity reasons the solutions for the <strong>intrinsic plagiarism
+                        task</strong> contains exactly 2 clusters: one for the main author and one combined for
+                        all other authors. Nevertheless, when producing the output, you are free to create as
+                        many clusters as you wish for the plagiarized sections.
+                    </p>
+
+                    <p>An example for an <strong>intrinsic plagiarism detection solution</strong> could look
+                        like this:
+                    <pre class="prettyprint lang-py" style="overflow-x:auto">
+{
+	"authors": [
+		[
+			{"from": 314, "to": 15769}
+		],
+		[
+			{"from": 0, "to": 313},
+			{"from": 15770, "to": 19602}
+		]
+	]
+}
+</pre>
+
+                    An example of the <strong>diarization solution</strong> of a document that was written by
+                    four authors could then look like this:</p>
+                    <pre class="prettyprint lang-py" style="overflow-x:auto">
+{
+    "authors": [
+        [
+            {"from": 123, "to": 400},
+            {"from": 598, "to": 680}
+        ],
+        [
+            {"from": 0, "to": 122}
+        ],
+        [
+            {"from": 401, "to": 597},
+            {"from": 681, "to": 1020},
+            {"from": 1101, "to": 1400}
+        ],
+        [
+            {"from": 1021, "to": 1100}
+        ]
+    ]
+}
+</pre>
+
+                    <p>Of course, in the actual evaluation phase the ground truth, i.e., the <code>problem-X.truth</code>
+                        file will be missing.</p>
+                </li>
+            </ul>
+
+            <h2 id="output">Output</h2>
+            <p>
+                In general, the data structure during the evaluation phase will be similar to that in the
+                training phase, with the exception that the ground truth files are missing.
+                This means, you can also use the information provided in the <code>problem-X.meta</code> file.
+                Your software should finally output the missing solution file <code>problem-X.truth</code> for
+                every problem instance X in the respective output folder (see Submission). The output syntax
+                should thereby be exactly like it is used in the training phase.
+            </p>
+
+            <p>In general, there is no difference in the output between the intrinisic plagiarism detection and
+                the diarization subtasks. Moreover, the <strong>order</strong> of the entries is <strong>not
+                    relevant</strong>.
+            <p>In the following, we provide you with some examples for both subtasks:</p>
+
+            <ul>
+                <li>
+                    <p>
+                        For the <strong>intrinsic plagiarism detection</strong> subtask, you should create one
+                        entry for the main author. For the plagiarized sections you are free to either combine
+                        them into one entry (like it is done in the training data) or split them into more
+                        entries. As an example, if you found 2 plagiarized sections in the file <code>problem-3.txt</code>,
+                        you should produce the file <code>problem-3.truth</code>, where both</p>
+                    <pre class="prettyprint lang-py" style="overflow-x:auto">
+{
+	"authors": [
+		[
+			{"from": 314, "to": 15769}
+		],
+		[
+			{"from": 0, "to": 313},
+			{"from": 15770, "to": 19602}
+		]
+	]
+}
+</pre>
+
+                    <p>and</p>
+
+                    <pre class="prettyprint lang-py" style="overflow-x:auto">
+{
+	"authors": [
+		[
+			{"from": 314, "to": 15769}
+		],
+		[
+			{"from": 0, "to": 313}
+        ],
+			{"from": 15770, "to": 19602}
+		]
+	]
+}
+</pre>
+                    <p>are valid solutions.</p>
+
+                </li>
+                <li>
+                    <p>
+                        For the <strong>diarization</strong> subtask, if you found 3 authors for the file <code>problem-12.txt</code>,
+                        you should produce the file <code>problem-12.truth</code> containing the solution like
+                        this:</p>
+                    <pre class="prettyprint lang-py" style="overflow-x:auto">
+{
+	"authors": [
+		[
+			{"from": 0, "to": 409},
+			{"from": 645, "to": 4893}
+		],
+		[
+			{"from": 410, "to": 644},
+			{"from": 4894, "to": 6716}
+		],
+		[
+			{"from": 6717, "to": 15036}
+		]
+	]
+}
+</pre>
+                </li>
+            </ul>
+
+            <h3>Performance Measures</h3>
+            <ul>
+                <li>
+                    To evaluate the quality of the intrinsic plagiarism detection algorithms, the <strong>micro-
+                    and macro-averaged F-score</strong> will be used
+                    (see <a href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2010p.pdf#page=2">this paper</a>).
+                </li>
+                <li>For the diarization algorithms, the <strong>BCubed F-score</strong> (<a
+                        href="http://nlp.uned.es/docs/amigo2007a.pdf">Amigo et al. 2007</a>) will be used.
+                </li>
+            </ul>
+
+
+
+            <h2 id="evaluation">Evaluation</h2>
+
+            Once you finished tuning your approach to achieve satisfying performance on the training corpus,
+            your software will be tested on the evaluation corpus. During the competition, the evaluation corpus
+            will not be released publicly. Instead, we ask you to <strong>submit your software</strong> for
+            evaluation at our site as described below.
+            <br>After the competition, the evaluation corpus will become available including ground truth data.
+            This way, you have all the necessities to evaluate your approach on your own, yet being comparable
+            to those who took part in the competition.
+
+            <h2 id="related-work">Related Work</h2>
+            <ul>
+                <li>
+                    <a href="{{ 'publications.html#?q=stein 2011' | relative_url }}">PAN@CLEF'11</a>
+                </li>
+                <li>
+                    <a href="{{ 'publications.html#?q=stein 2012' | relative_url }}">PAN@CLEF'12</a>
+                </li>
+                <li>Sven Meyer zu Eissen, Benno Stein. <a
+                        href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2006d.pdf">Intrinsic
+                    Plagiarism Detection</a>. In Advances in Information Retrieval. Proceedings of the 28th
+                    European Conference on IR Research (ECIR), pages 565-569, 2006
+                </li>
+                <li>
+                    Patrick Juola. <a href="http://portal.acm.org/citation.cfm?id=1373451">Authorship
+                    Attribution</a>. In Foundations and Trends in Information Retrieval, Volume 1, Issue 3,
+                    March 2008.
+                </li>
+                <li>
+                    Efstathios Stamatatos. <a href="http://onlinelibrary.wiley.com/doi/10.1002/asi.21001/full">A
+                    Survey of Modern Authorship Attribution Methods</a>.
+                    Journal of the American Society for Information Science and Technology, Volume 60, Issue 3,
+                    pages 538-556, March 2009.
+                </li>
+            </ul>
+
+            <h2 id="task-committee">Task Committee</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/tschuggnall.html %}
+                {% include people-cards/specht.html %}
+                {% include people-cards/potthast.html %}
+                {% include people-cards/stein.html %}
+            </div>
+            <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+                {% include organizations/clef-organizations-section.html year=2016 %}
+            </div>
+        </div>
+    </div>
+</main>
