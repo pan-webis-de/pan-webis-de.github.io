@@ -11,11 +11,10 @@ description: PAN @ CLEF 2020 - Celebrity Profiling
             <h1 class="uk-margin-remove-top">Celebrity Profiling 2020</h1>
             <ul class="uk-list">
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
-<!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>-->
-<!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>-->
-<!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>-->
-<!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>-->
-<!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>-->
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
             </ul>
@@ -26,14 +25,112 @@ description: PAN @ CLEF 2020 - Celebrity Profiling
             <h2 id="synopsis">Synopsis</h2>
             <ul>
                 <li>Task: Given the Twitter feeds of the followers, determine the occupation, age, and gender of a celebrity.</li>
-                <li>Input: [data]</li>
-                <li>Output: [example] [schema] [verifier]</li>
-                <li>Evaluation: [code]</li>
+                <li>Input: [<a href="{{ '../../data.html#pan20-celebrity-profiling' | relative_url }}">data</a>]</li>
+                <li>Evaluation: [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef20/celebrity-profiling" target="_blank">code</a>]</li>
                 <li>Submission: [<a href="https://www.tira.io/task/celebrity-profiling/">submit</a>]</li>
                 <li>Baseline: [code]</li>
             </ul>
 
-            Details will be announced later.
+            <h2 id="task">Task</h2>
+            <p>Author profiling technology predicts personal or demographic traits of an author based on the expression of
+                these traits in an authors text. A lang standing question in author profiling is, how much the assessed
+                expression used by algorithms depends on characteristics of an individual author and how much on the
+                expression of social groups and communities.</p>
+            <p>Celebrities are prolific and highly influential users on social media and they act as hubs for the like-minded.
+                The strong homophily within a celebrities community is an ideal condition to study the interplay of
+                author characteristics and community expression in author profiling and it
+                opens the way to predicting traits of users without own texts using only their follower network.</p>
+            <p>The Celebrity Profiling task this year is to develop a piece of software which predicts three demographics
+                of a celebrity from the text of their followers: occupation, age, and gender.</p>
+
+            <h2 id="data">Data</h2>
+            <p>The datasets contain three files: a <code>follower-feeds.ndjson</code> as input, a <code>labels.ndjson</code> as output,
+                and a <code>celebrity-feeds.ndjson</code> for additional study.
+                Each file lists all celebrities as JSON objects, one per line and identified by the <code>id</code> key.
+                The training dataset contains 1,920 celebrities and is balanced towards gender and occupation.
+                The test dataset contains 400 celebrities and is also balanced towards gender and occupation.
+                The supplement dataset contains the remaining 8,265 celebrities, but is not balanced in any way.
+            </p>
+            <p>
+                PLEASE NOTE: We do not provide the celebrity timelines for the test dataset.
+            </p>
+
+            <h3 class="uk-margin-small-top">Input Format</h3>
+            The <code>follower-feeds.ndjson</code> contains the english tweets of at least 10 followers for each celebrity, with at least 50 tweets each excluding retweets.
+            <pre id="feeds-ndjson-example" class="prettyprint linenums uk-margin-remove-bottom">
+<code class="lang-json">{"id": 1234, "text": [["a tweet of follower 1", "another tweet of follower 1", ...], ["a tweet of follower 2", ...], ...]}
+{"id": 5678, "text": [["a tweet of follower 1", "another tweet of follower 1", ...], ["a tweet of follower 2", ...], ...]}
+...</code></pre>
+            <div class="uk-text-small uk-text-muted uk-text-right">feeds.ndjson</div>
+
+            The <code>celebrity-feeds.ndjson</code> contains the Twitter timelines of the original celebrities, formatted as:
+            <pre id="celebs-ndjson-example" class="prettyprint linenums uk-margin-remove-bottom">
+<code class="lang-json">{"id": 1234, "text": ["a tweet of celebrity 1", "another tweet of celebrity 1", ...]}
+{"id": 5678, "text": ["a tweet of celebrity 2", "another tweet", ...]}
+...</code></pre>
+            <div class="uk-text-small uk-text-muted uk-text-right">celebrity-feeds.ndjson</div>
+
+            <h3 class="uk-margin-small-top">Output Format</h3>
+            The <code>labels.ndjson</code> contains the classes that should be predicted. A valid submission has to produce a <code>labels.ndjson</code> given the <code>follower-feeds.ndjson</code>
+                and contain an entry for each <code>id</code> given in the input.
+            <pre id="labels-ndjson-example" class="prettyprint linenums uk-margin-remove-bottom">
+<code class="lang-json">{"id": 1234, "occupation": "sports", "gender": "female", "birthyear": 2002}
+{"id": 5678, "occupation": "professional", "gender": "male", "birthyear": 1990}
+...</code></pre>
+            <div class="uk-text-small uk-text-muted uk-text-right">labels.ndjson</div>
+
+            The following values are possible for each of the traits:
+            <pre class="prettyprint uk-margin-remove-bottom">
+<code class="lang-pascal">occupation  := {sports, performer, creator, politics}
+birthyear   := {1940, ..., 1999}
+gender      := {male, female}</code></pre>
+            <div class="uk-text-small uk-text-muted uk-text-right">possible value instances for each label</div>
+
+
+            <h2 id="evaluation">Evaluation</h2>
+             <p>Submissions are judged by a combined metric <code>cRank</code>, which is the harmonic mean of each label's metric.
+
+                $$ \text{cRank} = {3 \over {\frac{1}{\text{F}_{1,
+                \text{occupation}}} + \frac{1}{\text{F}_{1, \text{gender}}} +
+                \frac{1}{\text{F}_{1, \text{age}}}}} $$
+
+                All traits are judged by their respective F<sub>1</sub>. Precision and recall of <code>birthyear</code>
+                are calculated leniently. If a prediction is within an m-window of the truth, it is counted as correct:
+
+                $$ \text{true birthyear} - m \le \text{predicted birthyear} \le \text{true birthyear} + m$$
+
+                The window size m is based on the birth year and increases linearly from about 3 years for 1999 to about 9 years for 1940.
+            </p>
+
+            <h2 id="results">Results</h2>
+            <p>Results will be announced after the competition.</p>
+            <!--
+            <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+                <thead>
+                <tr>
+                    <th>Team</th>
+                    <th colspan="4" align="center">test-dataset</th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th>cRank</th>
+                    <th>Gender</th>
+                    <th>Age</th>
+                    <th>Occupation</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>baseline-rand</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+            -->
+
            <h2 id="related-work">Related Work</h2>
             <ul>
                 <li>Matti Wiegmann, Benno Stein, Martin Potthast. <a href="https://webis.de/downloads/publications/papers/stein_2019n.pdf">
