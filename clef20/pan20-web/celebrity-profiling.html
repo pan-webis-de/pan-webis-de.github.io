@@ -49,14 +49,14 @@ description: PAN @ CLEF 2020 - Celebrity Profiling
                 Each file lists all celebrities as JSON objects, one per line and identified by the <code>id</code> key.
                 The training dataset contains 1,920 celebrities and is balanced towards gender and occupation.
                 The test dataset contains 400 celebrities and is also balanced towards gender and occupation.
-                The supplement dataset contains the remaining 8,265 celebrities, but is not balanced in any way.
+                The supplement dataset contains the remaining 8,265 celebrities but is not balanced in any way.
             </p>
             <p>
                 PLEASE NOTE: We do not provide the celebrity timelines for the test dataset.
             </p>
 
             <h3 class="uk-margin-small-top">Input Format</h3>
-            The <code>follower-feeds.ndjson</code> contains the english tweets of at least 10 followers for each celebrity, with at least 50 tweets each excluding retweets.
+            The <code>follower-feeds.ndjson</code> contains the English tweets of at least 10 followers for each celebrity, with at least 50 tweets each excluding retweets.
             <pre id="feeds-ndjson-example" class="prettyprint linenums uk-margin-remove-bottom">
 <code class="lang-json">{"id": 1234, "text": [["a tweet of follower 1", "another tweet of follower 1", ...], ["a tweet of follower 2", ...], ...]}
 {"id": 5678, "text": [["a tweet of follower 1", "another tweet of follower 1", ...], ["a tweet of follower 2", ...], ...]}
