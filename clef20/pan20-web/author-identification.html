@@ -11,11 +11,11 @@ description: PAN @ CLEF 2020 - Cross-domain Authorship Attribution
             <h1 class="uk-margin-remove-top">Authorship Verification 2020</h1>
             <ul class="uk-list">
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
-                <!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>-->
-                <!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>-->
-                <!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>-->
-                <!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>-->
-                <!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>-->
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
             </ul>
@@ -25,19 +25,44 @@ description: PAN @ CLEF 2020 - Cross-domain Authorship Attribution
 
             <h2 id="synopsis">Synopsis</h2>
             <ul>
-                <li>Given two documents, determine if they are written by the same author.</li>
+                <li>Given two texts, determine if they are written by the same author.</li>
                 <li>Input: [data]</li>
                 <li>Output: [verifier]</li>
                 <li>Evaluation: [code]</li>
                 <li>Submission: [<a href="https://www.tira.io/task/authorship-verification/">submit</a>]</li>
                 <li>Baseline: [code]</li>
             </ul>
-            Details will be announced later.
+            
+            <h2 id="task">Task</h2>
+            <p>Authorship verification is the task of deciding whether two texts have been written by the same author based on comparing the texts' writing styles.</p>
+            <p>
+              In the coming three years at PAN&nbsp;2020 to PAN&nbsp;2022, we develop a new experimental setup that addresses three key questions in authorship verification that have not been studied at scale to date:
+              <ul>
+              <li><p>Year 1 (PAN 2020): Closed-set verficiation.<br>Given a large training dataset comprising of known authors who have written about a given set of topics, the test dataset contains verification cases from a subset of the authors and topics found in the training data.</p></li>
+              <li><p>Year 2 (PAN 2021): Open-set verification.<br>Given the training dataset of Year&nbsp;1, the test dataset contains verification cases from previously unseen authors and topics.</p></li>
+              <li><p>Year 3 (PAN 2022): <em>Suprise task</em>.<br>The task of the last year of this evaluation cycle (to be announced at a later time) will be designed with an eye on realism and practical application.</p></li>
+              </ul>
+              This evaluation cycle on authorship verification provides for a renewed challenge of increasing difficulty within a large-scale evaluation. We invite you to plan ahead and participate in all three of these tasks.
+            </p>
+            
+            
+            <h2 id="task">Data</h2>
+            <p>More details will be shared soon.</p>
+            
+            <h2 id="task">Evaluation</h2>
+            <p>More details will be shared soon.</p>
+                        
+            <h2 id="task">Submission</h2>
+            <p>More details will be shared soon.</p> 
+            
+            <h2 id="task">Results</h2>
+            <p>More details will be shared soon.</p>
+            
             <h2 id="related-work">Related Work</h2>
             <ul>
                 <li>
                     <a href="http://ceur-ws.org/Vol-2125/invited_paper_2.pdf">Cross-domain Author identification
-                        task at PAN@CLEF'18</a> (closed-set cross-domain authorship attribution in fanfiction)
+                    task at PAN@CLEF'18</a> (closed-set cross-domain authorship attribution in fanfiction)
                 </li>
                 <li>
                     Patrick Juola. <a href="http://portal.acm.org/citation.cfm?id=1373451">Authorship
@@ -57,6 +82,7 @@ description: PAN @ CLEF 2020 - Cross-domain Authorship Attribution
                     pages 538-556, March 2009.
                 </li>
             </ul>
+
             <h2 id="task-committee">Task Committee</h2>
             <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
                 {% include people-cards/kestemont.html %}
