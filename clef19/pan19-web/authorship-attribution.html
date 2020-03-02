@@ -30,6 +30,7 @@ description: PAN @ CLEF 2019 - Cross-domain Authorship Attribution
                 <li>Input: [<a href="{{ '../../data.html#pan19-authorship-attribution' | relative_url }}">data</a>]</li>
                 <li>Evaluation: [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef19/authorship-attribution" target="_blank">code</a>]</li>
                 <li>Submission: [<a href="https://www.tira.io/task/authorship-attribution/">submit</a>]</li>
+                <li>Baselines: [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef19/authorship-attribution" target="_blank">code</a>]</li>
             </ul>
             <h2 id="introduction">Introduction</h2>
             <p>Authorship attribution is an important problem in information retrieval and computational
@@ -155,13 +156,6 @@ description: PAN @ CLEF 2019 - Cross-domain Authorship Attribution
  	  ...
 ]</code></pre>
 
-            <p><a class="uk-button uk-button-primary" target="_blank"
-                  href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-19/pan19-data/pan19-cross-domain-authorship-attribution-training-dataset-2019-01-23-password-protected.zip">Download
-                Development Corpus</a></p>
-            <p>This is a password-protected file. To obtain the password, first <a
-                    href=https://docs.google.com/forms/d/e/1FAIpQLSfR_xoBuGU3q7o3EYPoItN28UPuZENjs3wlWYEX_EdRGUyRfA/viewform>register</a>
-                for the author identification task at PAN-2019, and then <a
-                        href="mailto:pan@webis.de?Subject=PAN-19" target="_top">notify</a> PAN organizers. </p>
 
             <h2 id="baselines">Baselines</h2>
             <p>We provide the implementation of baseline methods that can help you estimate the efficacy of
@@ -175,17 +169,12 @@ description: PAN @ CLEF 2019 - Cross-domain Authorship Attribution
                         unknown document to the <code>&lt;UNK&gt;</code> class when the difference of the top
                         two
                         candidates is less than a threshold.</p>
-                    <p><a class="uk-button uk-button-primary" target="_blank"
-                          href="../pan19-code/pan19-cdaa-baseline-svm.py">Download BASELINE-SVM</a></p>
                 </li>
                 <li><p><strong>BASELINE-COMPRESSOR</strong>: Another language-independent approach that uses
                     text compression to estimate the distance of an unknown document to each of the
                     candidate authors. It assigns an unknown document to the <code>&lt;UNK&gt;</code> class when
                     the
                     difference between the two most likely candidates is lower than a threshold.</p>
-                    <p><a class="uk-button uk-button-primary" target="_blank"
-                          href="../pan19-code/pan19-cdaa-baseline-compressor.py">Download
-                        BASELINE-COMPRESSOR</a></p></li>
                 <li><p><strong>BASELINE-IMPOSTERS</strong>: This baseline offers an implementation of the
                     language-independent "imposters" approach for authorship verification <a
                             href="https://onlinelibrary.wiley.com/doi/abs/10.1002/asi.22954">(Koppel & Winter,
@@ -195,15 +184,9 @@ description: PAN @ CLEF 2019 - Cross-domain Authorship Attribution
                     highest ranking candidate author does not pass a fixed similarity threshold after this
                     procedure, the document is assigned to the <code>&lt;UNK&gt;</code> class and left
                     unattributed.</p>
-                    <p><a class="uk-button uk-button-primary" target="_blank"
-                          href="../pan19-code/pan19-cdaa-baseline-imposters.py">Download BASELINE-IMPOSTERS</a>
-                    </p>
                     <p>We also provide a set of imposter documents required by this baseline approach for each
                         of the four languages. This is a password-protected file (use the same password as for
                         the development corpus).</p>
-                    <p><a class="uk-button uk-button-primary" target="_blank"
-                          href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-19/pan19-data/pan19-cross-domain-authorship-attribution-impostors-2019-01-23-password-protected.zip">Download
-                        IMPOSTERS corpus</a></p>
                 </li>
             </ul>
 
