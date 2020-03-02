@@ -1,194 +1,368 @@
 ---
 layout: default
-nav_active: tasks
+nav_active: events
 title: PAN at CLEF 2015
 description: PAN at CLEF 2015
 ---
 
 <main>
-    <header class="uk-section uk-section-muted">
-        <nav class="uk-container">
-            <div class="uk-align-right uk-visible@m uk-text-muted">
-                <a class="uk-button" href="{{ 'clef14/pan14-web/index.html' | relative_url }}"
-                   data-uk-icon="chevron-left"></a>
-                CLEF 2015
-                <a class="uk-button uk-padding-remove-right" href="{{ 'clef16/pan16-web/index.html' | relative_url }}"
-                   data-uk-icon="chevron-right"></a>
-            </div>
-
-            <ul class="uk-text-muted uk-tab uk-margin-remove-top">
-                <li class="uk-active"><a href="{{ '/clef15/pan15-web/index.html' | relative_url }}">Overview</a></li>
-                <li><a href="{{ '/clef15/pan15-web/keynotes.html' | relative_url }}">Keynotes</a></li>
-                <li><a href="{{ '/clef15/pan15-web/program.html' | relative_url }}">Program</a></li>
-                <li>
-                    <a href="#">Tasks <span class="uk-margin-small-left"
-                                            data-uk-icon="icon: chevron-down"></span></a>
-                    <div class="uk-dropdown" data-uk-dropdown="mode: click">
-                        <ul class="uk-nav uk-dropdown-nav">
-                            <li><a href="{{ '/clef15/pan15-web/author-identification.html' | relative_url }}">Author
-                                Identification</a></li>
-                            <li><a href="{{ '/clef15/pan15-web/author-profiling.html' | relative_url }}">Author
-                                Profiling</a></li>
-                            <li><a href="{{ '/clef15/pan15-web/plagiarism-detection.html' | relative_url }}">Plagiarism
-                                Detection</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a href="{{ '/clef15/pan15-web/submission.html' | relative_url }}">Submission</a></li>
-                <li><a href="{{ 'publications.html#?q=year:2015' | relative_url }}">Proceedings</a></li>
+    <div class="uk-section uk-section-default">
+        <div class="uk-container">
+            <h1 class="uk-margin-remove-top">PAN at CLEF 2015</h1>
+            <ul class="uk-list">
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#index-tasks">Shared Tasks</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#index-important-dates">Important Dates</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#index-keynotes">Keynotes</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#index-program">Program</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#index-organizing-committee">Organizing Committee</a></li>
             </ul>
-        </nav>
-
-        <div class="uk-container uk-margin-small">
-            {% include current-register-quicklink.html year=2015 %}
-
-            <h1 class="uk-margin-small">PAN at CLEF 2015</h1>
-            <div class="page-header-meta">
-                {% include registration-counter.html year=2015 apiVersion="v3" url="" %}
-            </div>
         </div>
 
         <div class="uk-container uk-margin-medium">
-            <div class="uk-align-right uk-margin-remove-bottom">
-                <!--<a href="http://www.adobe.com/" target="_blank">-->
-                    <!--<img src="../pan15-figures/logo-adobe.png" alt="Adobe" style="height: 100px">-->
-                <!--</a>-->
-                <!--<div class="uk-text-small uk-text-muted uk-text-right">Sponsor</div>-->
-            </div>
-            <p class="uk-text-lead uk-margin-remove-top">
-                This is the 12th evaluation lab on uncovering plagiarism, authorship, and social software misuse. PAN
-                will be held as part of the <a href="http://clef2015.clef-initiative.eu" target="_blank">CLEF
-                conference</a> in Toulouse, France, on September 8-11, 2015.
-                Evaluations will commence <a href="{{ '/clef15/pan15-web/submission.html' | relative_url }}">from
-                January till June</a>.
-                We invite you to take part in any of the three tasks shown below.
-            </p>
-        </div>
-    </header>
+            <h2 id="index-tasks" class="uk-margin-small-top">Shared Tasks</h2>
+            <ul>
+                <li><a href="{{ '../../shared-tasks.html#author-profiling' | relative_url }}">Author Profiling</a></li>
+                <li><a href="{{ '../../shared-tasks.html#authorship-verification' | relative_url }}">Authorship Verification</a></li>
+                <li><a href="{{ '../../shared-tasks.html#source-retrieval' | relative_url }}">Source Retrieval</a></li>
+                <li><a href="{{ '../../shared-tasks.html#text-alignment' | relative_url }}">Text Alignment</a></li>
+            </ul>
 
-    <div class="uk-section">
-        <div class="uk-container">
-            <div class="uk-grid uk-grid-large uk-grid-divider uk-child-width-1-3@m uk-child-width-1-2@s" data-uk-grid>
-                <div>
-                    <h2>Author Identification
-                        <div class="uk-text-muted uk-text-lead">
-                            <a href="{{ '/clef15/pan15-web/author-identification.html' | relative_url }}">Learn more</a>
+            <h2 id="index-important-dates" class="uk-margin-large-top">Important Dates</h2>
+            <ul>
+                <li> March 10, 2015: Early bird software submission</li>
+                <li> April 15, 2015: TIRA evaluation phase opens</li>
+                <li> May 24, 2015: TIRA evaluation phase deadline</li>
+                <li> June 07, 2015 <strong>(extended)</strong>: Paper submission:
+                    [<a href="../../pan-paper-template.zip">template</a>]
+                    [<a href="http://clef2015.clef-initiative.eu/index.php?page=Pages/InstructionsforCLEF2015WorkingNotes.html">guidelines</a>]
+                    [<a href="https://easychair.org/conferences/?conf=clef2015">submission</a>]
+                </li>
+                <li> July 24, 2015: Early bird conference registration</li>
+                <li> September 08-11, 2015: Conference</li>
+            </ul>
+            <p>The timezone of all deadlines is <a href="https://en.wikipedia.org/wiki/Anywhere_on_Earth">Anywhere on Earth</a>.</p>
+
+            <h2 id="index-keynotes">Keynotes</h2>
+            <div class="uk-grid uk-child-width-1-2@l" data-uk-grid>
+                <article class="keynote">
+                    <header class="keynote-header">
+                        <div class="keynote-speaker-image">
+                            <img src="{{ '/clef15/pan15-figures/tommaso.jpg' | relative_url }}"
+                                 alt="Tommaso Fornaciari">
                         </div>
-                    </h2>
-                    <p>Given a document, who wrote it?</p>
-                    <p>This task focuses on <strong>authorship verification</strong> and methods to answer the question
-                        whether two given
-                        documents have the same author or no. This question accurately emulates the real-world problem
-                        that most forensic linguists face every day.</p>
-                </div>
-                <div>
-                    <h2>Author Profiling
-                        <div class="uk-text-muted uk-text-lead"><a
-                                href="{{ '/clef15/pan15-web/author-profiling.html' | relative_url }}">Learn more</a>
+                        <div class="keynote-meta">
+                            <div class="keynote-title">
+                                Deception detection in criminal analysis: from lie detector to stylometry
+                            </div>
+                            <div class="keynote-speaker"><a
+                                    href="https://it.linkedin.com/pub/tommaso-fornaciari/32/8a1/21b" target="_blank">Tommaso
+                                Fornaciari</a></div>
+                            <div class="keynote-affiliation">Italian National Police</div>
                         </div>
-                    </h2>
-                    <p>Given a document, what're its author's traits?</p>
-                    <p>This task is concerned with predicting an author's demographics from her writing. For example, an
-                        author's style may reveal her <strong>age, gender and personality</strong>. </p>
-                </div>
-                <div>
-                    <h2>Plagiarism Detection
-                        <div class="uk-text-muted uk-text-lead"><a
-                                href="{{ '/clef15/pan15-web/plagiarism-detection.html' | relative_url }}">Learn more</a>
+                    </header>
+                    <div class="keynote-body">
+                        <p>To detect deception in communications is a difficult task for humans and a critical issue in
+                            police investigations. In fact, no specific signs of deception, such as the Pinocchio's
+                            growing nose, have never been clearly identified, even though several approaches have been
+                            developed in order to unmask liars and the false information they convey. The speech will
+                            examine the problem in the perspective of police practices, from collection to evaluation of
+                            testimonies. The contribution of different techniques and technologies for testimonies'
+                            analysis will be discussed, with particular focus on the role of the modern stylometry, as
+                            many studies in literature suggest that the discipline, which exploits computational methods
+                            in order to analyze samples of spoken and written language through their stylistic features,
+                            can be effectively employed in deception detection.
+                        </p>
+
+                        <footer>
+                            <div class="keynote-bio" id="keynote-bio-1">
+                                <p>Tommaso Fornaciari is a Police Officer Psychologist of Italian National Police. Since
+                                    2003 he worked at the Forensic Science Police Service, dealing with crime scene
+                                    analysis, behavioral analysis and investigative data analysis, mostly regarding
+                                    bloody murders. With the purpose of supporting the analysis of testimonies, in 2009
+                                    he began to attend the PhD school of the Center for Mind/Brain Sciences - CIMeC of
+                                    the University of Trento, where he carried out a research project in forensic
+                                    linguistics (Ph.D. in Cognitive and Brain Sciences, 2012). In particular, he applied
+                                    computational techniques in order to detect deception in transcripts of hearings
+                                    held in Italian Courts. He is going ahead with research in deception detection and
+                                    currently he works at the Italian Ministry of Interior, where he is engaged in
+                                    research and technological innovation for public security.</p>
+
+                                <a href="#" class="read-more" data-uk-toggle="target: #keynote-bio-1; cls: expanded">Read
+                                    more&hellip;</a>
+                                <a href="#" class="read-less" data-uk-toggle="target: #keynote-bio-1; cls: expanded">Read
+                                    less&hellip;</a>
+                            </div>
+                        </footer>
+                    </div>
+                </article>
+                <article class="keynote">
+                    <header class="keynote-header">
+                        <div class="keynote-speaker-image">
+                            <img src="{{ '/clef15/pan15-figures/walter.jpg' | relative_url }}" alt="Walter Daelemans">
                         </div>
-                    </h2>
-                    <p>Given a document, is it an original?</p>
-                    <p>This task is divided into <strong>source retrieval</strong> and <strong>text alignment</strong>. Source retrieval is about
-                        searching for likely sources of a suspicious document. Text alignment is about matching passages
-                        of reused text between a pair of documents..
-                    </p>
-                </div>
+                        <div class="keynote-meta">
+                            <div class="keynote-title">
+                                Author Profiling in Practice
+                            </div>
+                            <div class="keynote-speaker"><a href="http://www.clips.ua.ac.be/~walter/" target="_blank">Walter
+                                Daelemans</a></div>
+                            <div class="keynote-affiliation">University of Antwerp</div>
+                        </div>
+                    </header>
+                    <div class="keynote-body">
+                        <p>In this talk I will describe recent research within the CLiPS research centre on author
+                            profiling: the automatic assignment of demographic and psychological properties to (unknown)
+                            authors of text on the basis of linguistic analysis of these texts. I will describe
+                            different ways in which the results of this research are currently being applied. In the
+                            AMiCA project, the goal is to help moderators of social networks to detect harmful
+                            situations in their network. Our case studies concern cyberbullying, pedophile grooming, and
+                            suicide announcements. I wil show how profiling information can help achieve these tasks. In
+                            addition I will briefly demo the profiling system of Textgain, a spin-off company from
+                            CLiPS, and describe some of the applications in which their profiling web services are put
+                            to use.
+                        </p>
+
+                        <footer>
+                            <div class="keynote-bio" id="keynote-bio-2">
+                                <p>Walter Daelemans (PhD in Computational Linguistics, 1987). Trained as a linguist and
+                                    psycholinguist at the Universities of Antwerpen and Leuven, he specialized in
+                                    computational linguistics and held research or teaching posts at the University of
+                                    Nijmegen, the AI Lab of Vrije Universiteit Brussel, and Tilburg University. Since
+                                    1999 he is full professor at the University of Antwerp and research director of
+                                    CLiPS. His main research interests are in machine learning of language, text
+                                    analytics, computational stylometry, and computational psycholinguistics.</p>
+
+                                <a href="#" class="read-more" data-uk-toggle="target: #keynote-bio-2; cls: expanded">Read
+                                    more&hellip;</a>
+                                <a href="#" class="read-less" data-uk-toggle="target: #keynote-bio-2; cls: expanded">Read
+                                    less&hellip;</a>
+                            </div>
+                        </footer>
+                    </div>
+                </article>
             </div>
-        </div>
 
-        <div class="uk-container uk-margin-medium">
-            <hr class="uk-divider-icon">
-        </div>
+            <h2 id="index-program">Program</h2>
+            <p>PAN's program is part of the <a
+                    href="http://clef2015.clef-initiative.eu/index.php?page=Pages/conference_session.html">CLEF
+                conference program</a>.</p>
+            <table class="uk-table uk-table-divider uk-table-small uk-table-striped">
+                <tbody>
+                <tr>
+                    <td colspan="2"><b>September 8</b></td>
+                </tr>
+                <tr>
+                    <td>
+                        <nobr>11:00-13:00</nobr>
+                    </td>
+                    <td><b>Lab Overviews 1</b></td>
+                </tr>
+                <tr>
+                    <td>30 min. talk</td>
+                    <td>Overview of the PAN/CLEF 2015 Evaluation Lab<br/><i>Efstathios Stamatatos, Martin Potthast,
+                        Francisco Rangel, Paolo Rosso, and Benno Stein</i></td>
+                </tr>
+                <tr>
+                    <td>13:00-14:00</td>
+                    <td>Lunch</td>
+                </tr>
+                <tr>
+                    <td>
+                        <nobr>14:00-15:30</nobr>
+                    </td>
+                    <td><b>Lab Overviews 2</b></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><b>September 9</b></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><b>Keynotes</b>, Chair: Paolo Rosso</td>
+                </tr>
+                <tr>
+                    <td>08:30-09:30</td>
+                    <td>Deception Detection in Criminal Analysis: From Lie Detector to Stylometry<br/><i>Tommaso
+                        Fornaciari</i></td>
+                </tr>
+                <tr>
+                    <td>09:30-10:30</td>
+                    <td>Author Profiling in Practice<br/><i>Walter Daelemans</i></td>
+                </tr>
+                <tr>
+                    <td>10:30-11:00</td>
+                    <td>Break + Posters</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><b>Author Identification</b>, Chair: Efstathios Stamatatos</td>
+                </tr>
+                <tr>
+                    <td>11:00-11:30</td>
+                    <td>Overview of the Author Identification Task at PAN 2015<br/><i>Efstathios Stamatatos, Walter
+                        Daelemans, Ben Verhoeven, Patrick Juola, Aurelio López López, Martin Potthast, and Benno
+                        Stein</i></td>
+                </tr>
+                <tr>
+                    <td>11:30-11:50</td>
+                    <td>Author Verification: Basic Stacked Generalization Applied To Predictions from a Set of
+                        Heterogeneous Learners<br/><i>Erwan Moreau, Arun Jayapal, Gerard Lynch, and Carl Vogel</i></td>
+                </tr>
+                <tr>
+                    <td>11:50-12:10</td>
+                    <td>GLAD: Groningen Lightweight Authorship Detection<br/><i>Manuela Hürlimann, Benno Weck, Esther
+                        van den Berg, Simon Šuster, and Malvina Nissim</i></td>
+                </tr>
+                <tr>
+                    <td>12:10-12:30</td>
+                    <td>Homotopy Based Classification for Author Verification Task<br/><i>Josue Gutierrez, Jose
+                        Casillas, Paola Ledesma, Gibran Fuentes, and Ivan Meza</i></td>
+                </tr>
+                <tr>
+                    <td>12:30-12:50</td>
+                    <td>An Author Verification Approach Based on Differential Features<br/><i>Alberto Bartoli, Alex
+                        Dagri, Andrea De Lorenzo, Eric Medvet, and Fabiano Tarlao</i></td>
+                </tr>
+                <tr>
+                    <td>12:50-13:00</td>
+                    <td>Discussion</td>
+                </tr>
+                <tr>
+                    <td>13:00-14:00</td>
+                    <td>Lunch + Posters</td>
+                </tr>
+                <tr>
+                    <td>19:30</td>
+                    <td>City Hall Welcome Reception</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><b>Poster Sessions</b></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>All participants are invited to present their work as a poster</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><b>September 10</b></td>
+                </tr>
+                <tr>
+                    <td>
+                        <nobr>10:00-12:00</nobr>
+                    </td>
+                    <td><b>CLEF Sessions Best of the Labs 2014</b></td>
+                </tr>
+                <tr>
+                    <td>30 min. talk</td>
+                    <td>Adaptive Algorithm for Plagiarism Detection<br/><i>Miguel A. Sánchez-Pérez, Alexander Gelbukh
+                        and Grigori Sidorov</i></td>
+                </tr>
+                <tr>
+                    <td>12:00-13:30</td>
+                    <td>Lunch</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><b>Author Profiling</b>, Chair: Francisco Rangel</td>
+                </tr>
+                <tr>
+                    <td>13:30-14:00</td>
+                    <td>Overview of the 3rd Author Profiling Task at PAN 2015<br/><i>Francisco Rangel, Fabio Celli,
+                        Paolo Rosso, Martin Potthast, Benno Stein, and Walter Daelemans</i></td>
+                </tr>
+                <tr>
+                    <td>14:00</td>
+                    <td>Award of appreciation for the overall best performing author profiling approach, sponsored by
+                        MeaningCloud.
+                    </td>
+                </tr>
+                <tr>
+                    <td>14:00-14:20</td>
+                    <td>INAOE's Participation at PAN'15: Author Profiling Task<br/><i>Miguel A. Álvarez-Carmona, A.
+                        Pastor López-Monroy, Manuel Montes-y-Gómez, Luis Villaseñor-Pineda, and Hugo Jair Escalante</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>14:20-14:40</td>
+                    <td>Tweets Classification Using Corpus Dependent Tags, Character and POS N-grams<br/><i>Carlos E.
+                        González-Gallardo, Azucena Montes, Gerardo Sierra, J. Antonio Núñez-Juárez, Adolfo Jonathan
+                        Salinas-López, and Juan Ek</i></td>
+                </tr>
+                <tr>
+                    <td>14:40-15:00</td>
+                    <td>XRCE Personal Language Analytics Engine for Multilingual Author Profiling<br/><i>Scott Nowson,
+                        Julien Perez, Caroline Brun, Shachar Mirkin, and Claude Roux</i></td>
+                </tr>
+                <tr>
+                    <td>15:00-15:20</td>
+                    <td>A Random Forest Approach for Authorship Profiling<br/><i>Alonso Palomino-Garibay, Adolfo T.
+                        Camacho-González, Ricardo A. Fierro-Villaneda, Irazú Hernández-Farias, Davide Buscaldi, and Ivan
+                        V. Meza-Ruiz</i></td>
+                </tr>
+                <tr>
+                    <td>15:20-15:30</td>
+                    <td>Discussion</td>
+                </tr>
+                <tr>
+                    <td>15:30-16:00</td>
+                    <td>Break</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><b>Plagiarism Detection</b>, Chair: Martin Potthast</td>
+                </tr>
+                <tr>
+                    <td>16:00-16:30</td>
+                    <td>Towards Data Submissions for Shared Tasks: First Experiences for the Task of Text Alignment<br/><i>Martin
+                        Potthast, Steve Göring, Paolo Rosso, and Benno Stein</i></td>
+                </tr>
+                <tr>
+                    <td>16:30-17:00</td>
+                    <td>Joint Talk on 3 Data Submissions to Text Alignment and 1 Source Retrieval Algorithm<br/><i>Habibollah
+                        Asghari, Khadijeh Khoshnava, Omid Fatemi, Heshaam Faili, Vahid Zarrabi, Salar Mohtaj, and Javad
+                        Rafiei</i></td>
+                </tr>
+                <tr>
+                    <td>17:00-17:20</td>
+                    <td>The Short Stories Corpus<br/><i>Faisal Alvi, Mark Stevenson, and Paul Clough</i></td>
+                </tr>
+                <tr>
+                    <td>17:20-17:40</td>
+                    <td>Improving Synoptic Querying for Source Retrieval<br/><i>Šimon Suchomel and Michal Brandejs.</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>17:40-18:00</td>
+                    <td>Discussion</td>
+                </tr>
+                <tr>
+                    <td>18:00-19:00</td>
+                    <td>Concert</td>
+                </tr>
+                <tr>
+                    <td>20:00</td>
+                    <td>Conference Dinner</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><b>Poster Sessions</b></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>All participants are invited to present their work as a poster</td>
+                </tr>
+                </tbody>
+            </table>
 
-        <!-- Important Dates -->
-        <div class="uk-container uk-margin-large">
-            <div class="uk-grid-medium" data-uk-grid>
-                <div class="uk-width-1-2@m">
-                    <h2 class="page-header" id="important-dates">Important Dates
-                        <span class="uk-text-muted uk-text-lead">Hawaii time zone</span>
-                    </h2>
-                    <table class="uk-table uk-table-divider uk-table-small uk-table-hover uk-table-justify uk-table-condensed">
-                        <tr>
-                            <td><strong>March 10, 2015 (optional; extended)</strong></td>
-                            <td>Early bird software submission</td>
-                        </tr>
-                        <tr>
-                            <td>April 15, 2015</td>
-                            <td>Final software submission</td>
-                        </tr>
-                        <tr>
-                            <td>May 24, 2015</td>
-                            <td>TIRA evaluation deadline</td>
-                        </tr>
-                        <tr>
-                            <td>June 7, 2015</td>
-                            <td>Notebook paper submission</td>
-                        </tr>
-                        <tr>
-                            <td>July 24, 2015</td>
-                            <td>Early bird conference registration</td>
-                        </tr>
-                        <tr>
-                            <td>September 8-11, 2015</td>
-                            <td>Conference</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="uk-width-1-4@m">
-                    <h2>Quicklinks</h2>
-                    <ul class="uk-list uk-list-divider">
-                        <li>
-                            <a target="_blank"
-                               href="https://docs.google.com/forms/d/e/1FAIpQLSfR_xoBuGU3q7o3EYPoItN28UPuZENjs3wlWYEX_EdRGUyRfA/viewform">Register
-                                for CLEF</a>
-                        </li>
-                        <li>
-                            <a href="pan15-notebook-templates.zip">Download Notebook Templates</a>
-                        </li>
-                        <li>
-                            <a href="https://easychair.org/conferences/?conf=clef2015">Submit Notebook Paper</a>
-                        </li>
-                        <li>
-                            <a href="http://clef2015.clef-initiative.eu/index.php?page=Pages/InstructionsforCLEF2015WorkingNotes.html">Notebook
-                                Submission guidelines</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="uk-width-1-4@m">
-                    <h2>Donate</h2>
-                    <p>Support PAN by making a donation.</p>
-
-                    <p>Organizing PAN entails a significant investment of time and money on our part. If you
-                        wish to support us, please consider making a donation.</p>
-
-                    {% include donation-form.html %}
-                </div>
-            </div>
-        </div>
-    </div>  <!-- section -->
-
-    <footer class="uk-section uk-section-muted">
-        <div class="uk-container">
-            <h2>Organizing Committee</h2>
+            <h2 id="index-organizing-committee">Organizing Committee</h2>
             <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
                 {% include people-cards/potthast.html %}
-                {% include people-cards/stein.html %}
                 {% include people-cards/rosso.html %}
                 {% include people-cards/stamatatos.html %}
+                {% include people-cards/stein.html %}
+            </div>
+            <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+                {% include organizations/clef-organizations-section.html year=2015 %}
             </div>
         </div>
-        <div class="uk-container uk-padding-large uk-padding-remove-bottom">
-            {% include organizations/clef-organizations-section.html year=2015 %}
-        </div>
-    </footer>
+    </div>
 </main>

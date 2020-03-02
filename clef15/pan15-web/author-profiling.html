@@ -6,120 +6,68 @@ description: PAN at CLEF 2015 - Author Profiling
 ---
 
 <main>
-    <header class="uk-section uk-section-muted">
-
-        <nav class="uk-container">
-            <div class="uk-align-right uk-visible@m uk-text-muted">
-                <a class="uk-button" href="{{ 'clef14/pan14-web/author-profiling.html' | relative_url }}"
-                   data-uk-icon="chevron-left"></a>
-                CLEF 2015
-                <a class="uk-button uk-padding-remove-right"
-                   href="{{ 'clef16/pan16-web/author-profiling.html' | relative_url }}"
-                   data-uk-icon="chevron-right"></a>
-            </div>
-
-            <ul class="uk-text-muted uk-tab uk-margin-remove-top">
-                <li><a href="{{ '/clef15/pan15-web/index.html' | relative_url }}">Overview</a></li>
-                <li><a href="{{ '/clef15/pan15-web/keynotes.html' | relative_url }}">Keynotes</a></li>
-                <li><a href="{{ '/clef15/pan15-web/program.html' | relative_url }}">Program</a></li>
-                <li class="uk-active">
-                    <a href="#">Tasks <span class="uk-margin-small-left"
-                                            data-uk-icon="icon: chevron-down"></span></a>
-                    <div class="uk-dropdown" data-uk-dropdown="mode: click">
-                        <ul class="uk-nav uk-dropdown-nav">
-                            <li><a href="{{ '/clef15/pan15-web/author-identification.html' | relative_url }}">Author
-                                Identification</a></li>
-                            <li class="uk-active"><a
-                                    href="{{ '/clef15/pan15-web/author-profiling.html' | relative_url }}">Author
-                                Profiling</a></li>
-                            <li><a href="{{ '/clef15/pan15-web/plagiarism-detection.html' | relative_url }}">Plagiarism
-                                Detection</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a href="{{ '/clef15/pan15-web/submission.html' | relative_url }}">Submission</a></li>
-                <li><a href="{{ 'publications.html#?q=year:2015' | relative_url }}">Proceedings</a></li>
-            </ul>
-        </nav>
-
+    <div class="uk-section uk-section-default">
         <div class="uk-container uk-margin-small">
-            {% include current-register-quicklink.html year=2015 %}
-            <h1 class="uk-margin-small">Author Profiling</h1>
-            <div class="page-header-meta">PAN at CLEF 2015</div>
-
-            <div class="uk-align-right uk-margin-remove-bottom">
-                <a href="http://www.meaningcloud.com/" target="_blank">
-                    <img src="../pan15-figures/logo-meaningcloud.png" style="height: 70px" alt="MeaningCloud">
-                </a>
-                <div class="uk-text-small uk-text-muted uk-text-right">Sponsor</div>
-            </div>
-
-            <p class="uk-text-lead">Authorship analysis deals with the classification of texts into classes based on the
-                stylistic choices of
-                their authors.</p>
-        </div>
-    </header>
-
-    <div class="uk-section">
-        <div class="uk-container uk-column-1-2@l uk-text-justify">
-
-            <h2>Author Profiling</h2>
-            <p>Authorship analysis deals with the classification of texts into classes based on the stylistic choices of
-                their authors. Beyond the author identification and author verification tasks where the style of
-                individual
-                authors is examined, author profiling distinguishes between classes of authors studying their sociolect
-                aspect, that is, how language is shared by people. This helps in identifying profiling aspects such as
-                gender, age, native language, or personality type. Author profiling is a problem of growing importance
-                in
-                applications in forensics, security, and marketing. E.g., from a forensic linguistics perspective one
-                would
-                like being able to know the linguistic profile of the author of a harassing text message (language used
-                by a
-                certain type of people) and identify certain characteristics (language as evidence). Similarly, from a
-                marketing viewpoint, companies may be interested in knowing, on the basis of the analysis of blogs and
-                online product reviews, the demographics of people that like or dislike their products. The focus is on
-                author profiling in social media since we are mainly interested in everyday language and how it reflects
-                basic social and personality processes.</p>
-
-            <h3>Award</h3>
-            <p>We are happy to announce that the best performing team at the 3rd International Competition on Author
-                Profiling will be awarded 300,- Euro sponsored by <a href="http://www.meaningcloud.com/"
-                                                                     target="_blank">MeaningCloud</a>.</p>
-            <ul>
-                <li>
-                    Miguel Ángel Álvarez Carmona, Adrián Pastor López Monroy, Manuel Montes y Gómez and Luis Villaseñor
-                    Pineda
-                    from INAOE, Mexico
-                </li>
+            <h1 class="uk-margin-remove-top">Author Profiling 2015</h1>
+            <ul class="uk-list">
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#award">Award</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#input">Input</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#output">Output</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#sponsor">Sponsor</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
             </ul>
+        </div>
+        <div class="uk-container uk-margin-medium">
+            <h2 id="synopsis">Synopsis</h2>
+            <ul>
+                <li>Task: Given a document, what're its author's traits?</li>
+                <li>Input: [<a href="{{ '../../data.html#pan15-author-profiling' | relative_url }}">data</a>]</li>
+                <li>Twitter Downloader: [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef15/author-profiling" target="_blank">code</a>]</li>
+                <li>Submission: [<a href="https://www.tira.io/task/author-profiling/">submit</a>]</li>
+            </ul>
+
+            <h2 id="introduction">Introduction</h2>
+            <p>Authorship analysis deals with the classification of texts into classes based on the stylistic choices of
+            their authors. Beyond the author identification and author verification tasks where the style of individual
+            authors is examined, author profiling distinguishes between classes of authors studying their sociolect
+            aspect, that is, how language is shared by people. This helps in identifying profiling aspects such as
+            gender, age, native language, or personality type. Author profiling is a problem of growing importance in
+            applications in forensics, security, and marketing. E.g., from a forensic linguistics perspective one would
+            like being able to know the linguistic profile of the author of a harassing text message (language used by a
+            certain type of people) and identify certain characteristics (language as evidence). Similarly, from a
+            marketing viewpoint, companies may be interested in knowing, on the basis of the analysis of blogs and
+            online product reviews, the demographics of people that like or dislike their products. The focus is on
+            author profiling in social media since we are mainly interested in everyday language and how it reflects
+            basic social and personality processes.</p>
+
+            <h2 id="task">Task</h2>
+            <p>This task is about predicting an author's demographics from her writing. Participants will be provided
+            with Twitter tweets in English and Spanish to predict age, gender and personality traits. Moreover, they
+            will be provided also with tweets in Italian and Dutch and asked to predict the gender and
+            personality. </p>
+
+            <h2 id="award">Award</h2>
+            <p>We are happy to announce that the best performing team at the 3rd International Competition on Author
+                Profiling will be awarded 300,- Euro sponsored by <a href="http://www.meaningcloud.com/" target="_blank">MeaningCloud</a>.</p>
+            <ul><li>
+                Miguel Ángel Álvarez Carmona, Adrián Pastor López Monroy, Manuel Montes y Gómez and Luis Villaseñor
+                Pineda
+                from INAOE, Mexico
+            </li></ul>
             <p>Congratulations!</p>
 
-            <h3>Task</h3>
-            <p>This task is about predicting an author's demographics from her writing. Participants will be provided
-                with Twitter tweets in English and Spanish to predict age, gender and personality traits. Moreover, they
-                will be provided also with tweets in Italian and Dutch and asked to predict the gender and
-                personality. </p>
+            <h2 id="input">Input</h2>
+            <p>To develop your software, we provide you with a training data set that consists of Twitter tweets in
+               English, Spanish, Italian and Dutch.
+                With regard to age, we will consider the following classes: 18-24, 25-34, 35-49, 50-xx.
+                With regard to personality traits, for each trait we will provide scores (between -0.5 and 0.5).</p>
 
-            <h3>Training Corpus</h3>
-            <p>
-
-                To develop your software, we provide you with a training data set that consists of Twitter tweets in
-                English, Spanish, Italian and Dutch.</p>
-            <p><a class="uk-button uk-button-primary" target="_blank"
-                  href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-15/pan15-data/pan15-author-profiling-training-dataset-2015-04-23-password-protected.zip">Download
-                corpus</a> (Updated April 23, 2015. The file is password-protected. To obtain the password, you need to
-                register first.)</p>
-
-            <p>With regard to age, we will consider the following classes: 18-24, 25-34, 35-49, 50-xx.</p>
-
-            <p>With regard to personality traits, for each trait we will provide scores (between -0.5 and 0.5).</p>
-
-            <h3>Test Corpus</h3>
-            <p><a class="uk-button uk-button-primary" target="_blank"
-                  href="https://s3.amazonaws.com/autoritas.pan/pan-ap2015-test.zip">Download test corpus + truth
-                files</a></p>
-
-            <h3>Output</h3>
+            <h2 id="output">Output</h2>
             <p>Your software must take as input the absolute path to an unpacked dataset, and has to output for each
                 document of the dataset a corresponding XML file that looks like this:</p>
             <pre class="prettyprint lang-xml" style="overflow-x: auto;">
@@ -133,63 +81,18 @@ description: PAN at CLEF 2015 - Author Profiling
 	  agreeable="-0.5 to +0.5"
 	  conscientious="-0.5 to +0.5"
 	  open="-0.5 to +0.5"
-  /&gt;
-  </pre>
+  /&gt;</pre>
             <p>The naming of the output files is up to you, we recommend to use the author-id as filename and "xml" as
                 extension.</p>
 
-
-            <h3>Performance Measures</h3>
+            <h2 id="evaluation">Evaluation</h2>
             <p>The performance of your author profiling solution for age and gender will be ranked by accuracy.</p>
             <p>For personality identification the average Root Mean Squared Error (RMSE) will be used.</p>
             <p>For obtaining a global ranking, we apply the following formula: global_ranking = ((1-RMSE) +
                 joint_accuracy)/ 2</p>
 
 
-            <h3>Submission</h3>
-            <p>We ask you to prepare your software so that it can be executed via command line calls. To maximize the
-                sustainability of software submissions for this task, we encourage you to prepare your software so it
-                can be re-trained on demand, i.e., by offering two commands, one for training, and one for testing. This
-                way, your software can be reused on future evaluation corpora as well as on private collections
-                submitted to PAN by via our data submission initiative.</p>
-            <p>The training command shall take as input (i) an absolute path to a training corpus formated as described
-                above, and (ii) an absolute path to an empty output directory:</p>
-            <pre class="prettyprint lang-c" style="overflow-x:auto">
-> myTrainingSoftware <b>-i</b> path/to/training/corpus <b>-o</b> path/to/output/directory
-</pre>
-            <p>Based on the training corpus, and perhaps based on its language and genre found within, your software
-                shall train a classification model, and save the trained model to the specified output directory in
-                serialized or binary form.</p>
-            <p>The testing command shall take as input (i) an absolute path to a test corpus (not containing the ground
-                truth) (ii) an absolute path to a previously trained classification model, and (iii) an absolute path to
-                an empty output directory:</p>
-            <pre class="prettyprint lang-py" style="overflow-x:auto">
-> myTestingSoftware <b>-i</b> path/to/test/corpus <b>-m</b> path/to/classification/model <b>-o</b> path/to/output/directory
-</pre>
-            <p>Based on the classification model, the software shall classifiy each case found in the test corpus and
-                write an output file as described above to the output directory.</p>
-            <p>However, <b>offering a command for training is optional</b>, so if you face difficulties in doing so, you
-                may skip the training command and omit the model option <b>-m</b> from the testing command.</p>
-            <p>You can choose freely among the available programming languages and among the operating systems Microsoft
-                Windows and Ubuntu. We will ask you to deploy your software onto a virtual machine that will be made
-                accessible to you after registration. You will be able to reach the virtual machine via ssh and via
-                remote desktop. More information about how to access the virtual machines can be found in the user guide
-                below:</p>
-            <p><a class="uk-button uk-button-primary" href="pan15-virtual-machine-user-guide.pdf">PAN Virtual Machine User Guide
-                »</a></p>
-            <p>Once deployed in your virtual machine, we ask you to access TIRA at <a href="http://www.tira.io">www.tira.io</a>,
-                where you can self-evaluate your software on the test data.</p>
-            <p><strong>Note:</strong> By submitting your software you retain full copyrights. You agree to grant us
-                usage rights only for the purpose of the PAN competition. We agree not to share your software with a
-                third party or use it for other purposes than the PAN competition.</p>
-
-
-        </div>
-    </div>
-
-    <div class="uk-section uk-section-default">
-        <div class="uk-container">
-            <h2>Results</h2>
+            <h2 id="results">Results</h2>
             <p>The following table lists the performances achieved by the participating teams:</p>
 
             <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
@@ -317,14 +220,9 @@ description: PAN at CLEF 2015 - Author Profiling
             <p>* Results have been omitted for these teams since they participated in some languages only.</p>
             <p>A more detailed analysis of the detection performances can be found in the overview paper accompanying
                 this task.</p>
-            <p>
-                <a class="uk-button uk-button-primary"
-                   href="https://www.uni-weimar.de/medien/webis/events/pan-15/pan15-papers-final/pan15-author-profiling/rangel15-overview.pdf#page=8">Learn
-                    more »</a>
-            </p>
 
-            <h2>Related Work and Corpora</h2>
-            <p>We refer you to:</p>
+
+            <h2 id="related-work">Related Work</h2>
             <ul>
                 <li>Fabio Celli, Bruno Lepri, Joan-Isaac Biel, Daniel Gatica-Perez, Giuseppe Riccardi, Fabio Pianesi. <a
                         href="http://clic.cimec.unitn.it/fabio/wk02cpr-celli.pdf" target="_blank">The Workshop on
@@ -387,19 +285,15 @@ description: PAN at CLEF 2015 - Author Profiling
                     (request)</a></li>
             </ul>
 
-        </div>
-    </div>
 
-    <footer class="uk-section uk-section-muted">
-        <div class="uk-container">
+            <h2 id="sponsor">Sponsor</h2>
+            <a href="http://www.meaningcloud.com/" target="_blank">
+                <img src="../pan15-figures/logo-meaningcloud.png" style="height: 130px" alt="MeaningCloud">
+            </a>
 
-            <h2>Task Chair</h2>
+            <h2 id="task-committee">Task Committee</h2>
             <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
                 {% include people-cards/rosso.html %}
-            </div>
-
-            <h2>Task Committee</h2>
-            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
                 {% include people-cards/rangel.html %}
                 {% include people-cards/celli.html %}
                 {% include people-cards/stein.html %}
@@ -407,9 +301,10 @@ description: PAN at CLEF 2015 - Author Profiling
                 {% include people-cards/daelemans.html %}
                 {% include people-cards/stamatatos.html %}
             </div>
+            <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+                {% include organizations/clef-organizations-section.html year=2015 %}
+            </div>
         </div>
-        <div class="uk-container uk-padding-large uk-padding-remove-bottom">
-            {% include organizations/clef-organizations-section.html year=2015 %}
-        </div>
-    </footer>
+    </div>
+
 </main>
