@@ -1,0 +1,323 @@
+---
+layout: default
+nav_active: tasks
+title: PAN @ CLEF 2012 - Sexual Predator Identification
+description: PAN @ CLEF 2012 - Sexual Predator Identification
+---
+
+<main>
+    <div class="uk-section uk-section-default">
+        <div class="uk-container uk-margin-small">
+            <h1 class="uk-margin-remove-top">Sexual Predator Identification 2012</h1>
+            <ul class="uk-list">
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#input">Input</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#output">Output</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
+            </ul>
+        </div>
+
+        <div class="uk-container uk-margin-medium">
+
+            <h2 id="synopsis">Synopsis</h2>
+            <ul>
+                <li>Task: Identify sexual predators in chat logs.</li>
+                <li>Input: [<a href="{{ 'data.html#pan12-sexual-predator-identification' | relative_url }}">data</a>]</li>
+                <li>Baseline: [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef12/source-retrieval" target="_blank">code</a>]</li>
+            </ul>
+
+
+            <h2 id="task">Task</h2>
+            <p>The goal of this sub-task is to identify classes of authors, namely online predators. You will
+            be given chat logs involving two (or more) people and have to determine who is the one trying to
+            convince the other(s) to provide some sexual favour. You will also need to identify the
+            particular conversation where the person exploits his bad behavior.</p>
+            <p>The task can therefore be divided into two parts:</p>
+            <ol>
+                <li>Identify the predators (within all the users)</li>
+                <li>Identify the part (the lines) of the predator conversations which are the most distinctive
+                    of the predator bad behavior</li>
+            </ol>
+            <p>Given the public nature of the dataset, we ask the participants not to use external or online
+            resources for resolving this task (e.g. search engines) but to extract evidence from the
+            provided datasets only.</p>
+
+
+            <h2 id="input">Input</h2>
+            <p>To develop your software, we provide you with a training corpus that consisting of chat logs
+            where minors and adults pretending to minors are chatting.</p>
+
+
+            <h2 id="output">Output</h2>
+            <p>For each of the two parts we require a different format.
+            </p>
+            <p><strong>Identify the predators (within all the users).</strong></p>
+            <p>Participants should update a text file containing an user-id per line, of those identified as predator only:</p>
+            <pre class="prettyprint lang-py" style="overflow-x:auto">...
+a7c5056a2c30e2dc637907f448934ca3
+58f15bbb100bbeb6963b4b967ce04bdf
+e040eb115e3f7ad3824e93141665fc2a
+3d57ed3fac066fa4f8a52432db51c019
+...
+</pre>
+
+            <p><strong>Identify the part (the lines) of the predator conversations which are the most
+            distinctive of the predator bad behavior.</strong></p>
+            <p>Participants should update an xml file similar to the corpus ones, containing
+            conversation-ids and message line numbers considered suspicious (line numbers together with
+            all the others message information: author, time, text):</p>
+            <pre class="prettyprint lang-xml" style="overflow-x:auto">&lt;conversations&gt;
+  ...
+  &lt;conversation id=&quot;0042762e26ed295a8576806f5548cad9&quot;&gt;
+    &lt;message line=&quot;3&quot;&gt;
+      &lt;author&gt;f069dbec9ab3e090972d432db279e3eb&lt;/author&gt;
+      &lt;time&gt;03:20&lt;/time&gt;
+      &lt;text&gt;whats up?&lt;/text&gt;
+    &lt;/message&gt;
+    &lt;message line=&quot;4&quot;&gt;
+      &lt;author&gt;f069dbec9ab3e090972d432db279e3eb&lt;/author&gt;
+      &lt;time&gt;03:21&lt;/time&gt;
+      &lt;text&gt;how u doing?&lt;/text&gt;
+    &lt;/message&gt;
+    ...
+    &lt;message line=&quot;10&quot;&gt;
+      &lt;author&gt;f069dbec9ab3e090972d432db279e3eb&lt;/author&gt;
+      &lt;time&gt;04:00&lt;/time&gt;
+      &lt;text&gt;sse you llater?&lt;/text&gt;
+    &lt;/message&gt;
+  &lt;/conversation&gt;
+  ...
+  &lt;conversation id=&quot;0209b0a30c8eced86863631ada73a530&quot;&gt;
+    &lt;message line=&quot;3&quot;&gt;
+      &lt;author&gt;0042762e26ed295a8576806f5548cad9&lt;/author&gt;
+      &lt;time&gt;01:17&lt;/time&gt;
+      &lt;text&gt;and that i dont touch u&lt;/text&gt;
+    &lt;/message&gt;
+  &lt;/conversation&gt;
+  ...
+&lt;conversations&gt;
+</pre>
+
+            <h2 id="evaluation">Evaluation</h2>
+            <p>The performance of your predator identification will be judged by average precision, recall, and
+                F over all persons involved and lines of the conversations. In addition, we consider F0.5 for
+                predator identification, and F3 for predator line identification, which will be used to rank
+                participants, respectively.</p>
+
+
+            <h2 id="results">Results</h2>
+            <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+                <thead>
+                <tr>
+                    <th colspan="2" style="text-align:center">Sexual predator identification performance: 1)
+                        identify predators
+                    </th>
+                </tr>
+                <tr>
+                    <th>F0.5</th>
+                    <th>Participant</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>0.9346</td>
+                    <td>Esaú Villatoro-Tello°*, Antonio Juárez-González°, Hugo J. Escalante°, Manuel
+                        Montes-y-Gómez°, and Luis Villaseñor-Pineda°<br/>°Instituto Nacional de Astrofísica,
+                        Óptica y Electrónica (INAOE) and *Universidad Autónoma Metropolitana, Mexico
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.9168</td>
+                    <td>Tim Snider<br/>Porfiau Inc., Canada</td>
+                </tr>
+                <tr>
+                    <td>0.8691</td>
+                    <td>Javier Parapar°, David E. Losada*, and Alvaro Barreiro°<br/>°University of A Coruña and
+                        *Universidade de Santiago de Compostela, Spain
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.8652</td>
+                    <td>Colin Morris and Graeme Hirst<br/>University of Toronto, Canada</td>
+                </tr>
+                <tr>
+                    <td>0.8638</td>
+                    <td>Gunnar Eriksson and Jussi Karlgren<br/>Gavagai AB, Sweden</td>
+                </tr>
+                <tr>
+                    <td>0.8137</td>
+                    <td>Claudia Peersman, Frederik Vaassen, Vincent Van Asch, and Walter Daelemans<br/>University
+                        of Antwerp, Netherlands
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.7316</td>
+                    <td>Cristian Grozea° and Marius Popescu*<br/>°Fraunhofer FIRST, Germany, and *University of
+                        Bucharest, Romania
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.7060</td>
+                    <td>Rachel Sitarz<br/>Purdue University, USA</td>
+                </tr>
+                <tr>
+                    <td>0.5537</td>
+                    <td>Anna Vartapetiance and Lee Gillam<br/>University of Surrey, UK</td>
+                </tr>
+                <tr>
+                    <td>0.3946</td>
+                    <td>April Kontostathis°, Andy Garron*, Kelly Reynolds^, Will West^, and Lynne Edwards°<br/>°Ursinus
+                        College, *The University of Maryland, and ^Lehigh University, USA
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.2554</td>
+                    <td>In-Su Kang°, Chul-Kyu Kim°, Shin-Jae Kang*, and Seung-Hoon Na^<br/>°Kyungsung
+                        University, *Daegu University, and ^Electronics and Telecommunications Research
+                        Institute, South Korea
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.1791</td>
+                    <td>Roman Kern°*, Stefan Klampfl*, Mario Zechner*<br/>°Graz University of Technology and
+                        *Know-Center GmbH, Austria
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.0316</td>
+                    <td>Dasha Bogdanova° and Paolo Rosso*<br/>°University of Saint Petersburg, Russia, and
+                        *Universitat Politècnica de València, Spain
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.0250</td>
+                    <td>Sriram Prasath Elango<br/>KTH/Gavagai, Sweden</td>
+                </tr>
+                <tr>
+                    <td>0.0232</td>
+                    <td>Darnes Vilariño, Esteban Castillo, David Pinto, Iván Olmos, Saul León<br/> Benemérita
+                        Universidad Autónoma de Puebla, Mexico
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.0059</td>
+                    <td>José María Gómez Hidalgo° and Andrés Alfonso Caurcel Díaz*<br/>°Optenet and *Universidad
+                        Politécnica de Madrid, Spain
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+                <thead>
+                <tr>
+                    <th colspan="2" style="text-align:center">Sexual predator identification performance: 2)
+                        identify predator lines
+                    </th>
+                </tr>
+                <tr>
+                    <th>F3</th>
+                    <th>Participant</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>0.4762</td>
+                    <td>Cristian Grozea° and Marius Popescu*<br/>°Fraunhofer FIRST, Germany, and *University of
+                        Bucharest, Romania
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.4174</td>
+                    <td>April Kontostathis°, Andy Garron*, Kelly Reynolds^, Will West^, and Lynne Edwards°<br/>°Ursinus
+                        College, *The University of Maryland, and ^Lehigh University, USA
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.2679</td>
+                    <td>Claudia Peersman, Frederik Vaassen, Vincent Van Asch, and Walter Daelemans<br/>University
+                        of Antwerp, Netherlands
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.2364</td>
+                    <td>Rachel Sitarz<br/>Purdue University, USA</td>
+                </tr>
+                <tr>
+                    <td>0.1986</td>
+                    <td>Colin Morris and Graeme Hirst<br/>University of Toronto, Canada</td>
+                </tr>
+                <tr>
+                    <td>0.1838</td>
+                    <td>Roman Kern°*, Stefan Klampfl*, Mario Zechner*<br/>°Graz University of Technology and
+                        *Know-Center GmbH, Austria
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.1633</td>
+                    <td>Gunnar Eriksson and Jussi Karlgren<br/>Gavagai AB, Sweden</td>
+                </tr>
+                <tr>
+                    <td>0.0770</td>
+                    <td>Sriram Prasath Elango<br/>KTH/Gavagai, Sweden</td>
+                </tr>
+                <tr>
+                    <td>0.0174</td>
+                    <td>Javier Parapar°, David E. Losada*, and Alvaro Barreiro°<br/>°University of A Coruña and
+                        *Universidade de Santiago de Compostela, Spain
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.0154</td>
+                    <td>Anna Vartapetiance and Lee Gillam<br/>University of Surrey, UK</td>
+                </tr>
+                <tr>
+                    <td>0.0074</td>
+                    <td>Darnes Vilariño, Esteban Castillo, David Pinto, Iván Olmos, Saul León<br/> Benemérita
+                        Universidad Autónoma de Puebla, Mexico
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.0007</td>
+                    <td>Dasha Bogdanova° and Paolo Rosso*<br/>°University of Saint Petersburg, Russia, and
+                        *Universitat Politècnica de València, Spain
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.0002</td>
+                    <td>Esaú Villatoro-Tello°*, Antonio Juárez-González°, Hugo J. Escalante°, Manuel
+                        Montes-y-Gómez°, and Luis Villaseñor-Pineda°<br/>°Instituto Nacional de Astrofísica,
+                        Óptica y Electrónica (INAOE) and *Universidad Autónoma Metropolitana, Mexico
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.0000</td>
+                    <td>José María Gómez Hidalgo° and Andrés Alfonso Caurcel Díaz*<br/>°Optenet and *Universidad
+                        Politécnica de Madrid, Spain
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <p>A more detailed analysis of the detection performances with respect to precision, recall, and
+                granularity can be found in the overview paper accompanying this task.</p>
+
+
+            <h2 id="task-committee">Task Committee</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/juola.html %}
+                {% include people-cards/inches.html %}
+                {% include people-cards/stamatatos.html %}
+                {% include people-cards/argamon.html %}
+                {% include people-cards/koppel.html %}
+                {% include people-cards/crestani.html %}
+            </div>
+            <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+                {% include organizations/clef-organizations-section.html year=2012 %}
+            </div>
+
+        </div>  <!-- section -->
+    </div>  <!-- section -->
+</main>

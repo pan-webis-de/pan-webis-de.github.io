@@ -1,0 +1,183 @@
+---
+layout: default
+nav_active: tasks
+title: PAN @ CLEF 2012 - Text Alignment
+description: PAN @ CLEF 2012 - Text Alignment
+---
+
+<main>
+    <div class="uk-section uk-section-default">
+        <div class="uk-container uk-margin-small">
+            <h1 class="uk-margin-remove-top">Text Alignment 2012</h1>
+            <ul class="uk-list">
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#input">Input</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#output">Output</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
+            </ul>
+        </div>
+
+        <div class="uk-container uk-margin-medium">
+
+            <h2 id="synopsis">Synopsis</h2>
+            <ul>
+                <li>Task: Given a pair of documents, your task is to identify all contiguous maximal-length passages of reused text between them.</li>
+                <li>Input: [<a href="{{ 'data.html#pan12-text-alignment' | relative_url }}">data</a>]</li>
+                <li>Evaluation: [<a href="https://github.com/pan-webis-de/pan-code/tree/master/sepln09" target="_blank">code</a>]</li>
+                <li>Baseline: [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef12/text-alignment" target="_blank">code</a>]</li>
+            </ul>
+
+            <h2 id="input">Input</h2>
+            <p>To develop your software, we provide you with a training corpus that consists of pairs of
+            documents, one of which may contain passages of text resued from the other. The reused text is
+            subject to various kinds of (automatic) obfuscation to hide the fact it has been reused.
+            <a href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2010p.pdf#page=4">Learn more »</a></p>
+
+
+            <h2 id="output">Output</h2>
+            <p>Enclosed in the evaluation corpora, a file named <code>pairs</code> is found, which lists all
+            pairs of suspicious documents and source documents to be compared. For each pair <code>suspicious-documentXYZ.txt</code>
+            and <code>source-documentABC.txt</code>, your plagiarism detector shall output an XML file
+            <code>suspicious-documentXYZ-source-documentABC.xml</code> which contains meta information about
+            the plagiarism cases detected within:</p>
+            <pre class="prettyprint lang-xml" style="overflow-x:auto"><nobr>&lt;document reference="suspicious-documentXYZ.txt"&gt;</nobr>
+&lt;feature
+  name="detected-plagiarism"
+  this_offset="5"
+  this_length="1000"
+&nbsp;&nbsp;<nobr>source_reference="source-documentABC.txt"</nobr>
+  source_offset="100"
+  source_length="1000"
+/&gt;
+&lt;feature ... /&gt;
+...
+&lt;/document&gt;</pre>
+            <p>For example, the above file would specify an aligned passage of text between <code>suspicious-documentXYZ.txt</code>
+            and <code>source-documentABC.txt</code>, and that it is of length 1000 characters, starting at
+            character offset 5 in the suspicious document and at character offset 100 in the source
+            document.</p>
+
+
+            <h2 id="evaluation">Evaluation</h2>
+            <p>Performance will be measured using macro-averaged precision and recall, granularity, and the
+            plagdet score, which is a combination of the first three measures. For your convenience, we
+            provide a reference implementation of the measures written in Python.
+            <a href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2010p.pdf#page=2">Learn more »</a></p>
+
+
+            <h3>Baseline</h3>
+            <p>For your convenience, we provide a baseline program written in Python.
+            The program loops through the document pairs of a corpus and records the detection results in XML
+            files. The XML files are valid with respect to the output format described below. You may use
+            the source code for getting started with your own approach.</p>
+
+
+            <h2 id="results">Results</h2>
+            <table class="uk-table uk-table-divider uk-table-small uk-table-hover" style="font-size:small;">
+                <thead>
+                <tr>
+                    <th colspan="2" style="text-align:center">Text Alignment Performance</th>
+                </tr>
+                <tr>
+                    <th>Plagdet</th>
+                    <th>Team</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>0.7386159</td>
+                    <td>L. Kong°, H. Qi°, S. Wang°, C. Du*, S. Wang*, and Y. Han°<br/>°Heilongjiang Institute of
+                        Technology and *Harbin Engineering University, China
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.6826726</td>
+                    <td>&Scaron;. Suchomel, J. Kasprzak, and M. Brandejs<br/>Masaryk University, Czech Republic
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.6787810</td>
+                    <td>Cristian Grozea° and Marius Popescu*<br/>°Fraunhofer FOKUS, Germany, and *University of
+                        Bucharest, Romania
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.6735574</td>
+                    <td>Oberreuter et al.<br/>Universidad de Chile, Chile</td>
+                </tr>
+                <tr>
+                    <td>0.6252024</td>
+                    <td>D.A. Rodr&iacute;guez Torrej&oacute;n and J.M. Mart&iacute;n Ramos<br/>Universidad de
+                        Huelva, Spain
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.5382163</td>
+                    <td>Y. Palkovskii and A. Belov<br/>Zhytomyr State University, Ukraine</td>
+                </tr>
+                <tr>
+                    <td>0.3499632</td>
+                    <td>R. K&uuml;ppers and S. Conrad<br/>University of D&uuml;sseldorf, Germany</td>
+                </tr>
+                <tr>
+                    <td>0.3099853</td>
+                    <td>F. S&aacute;nchez-Vega, M. Montes-y-G&oacute;mez, and L. Villase&ntilde;or-Pineda<br/>Instituto
+                        Nacional de Astrof&iacute;sica, &Oacute;ptica y Electr&oacute;nica, Mexico
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.3088109</td>
+                    <td>L. Gillam, N. Newbold, and N. Cooke<br/>University of Surrey, UK</td>
+                </tr>
+                <tr>
+                    <td>0.0452519</td>
+                    <td>A. Jayapal<br/>The University of Sheffield, UK</td>
+                </tr>
+                </tbody>
+            </table>
+            <p>A more detailed analysis of the detection performances can be found in the overview paper
+                accompanying this task.</p>
+
+            <h2 id="related-work">Related Work</h2>
+            <ul>
+                <li>
+                    <a href="{{ 'publications.html#?q=2011%20plagiarism%20potthast' | relative_url }}">Plagiarism Detection, PAN @ CLEF'11</a>
+                </li>
+                <li>
+                    <a href="{{ 'publications.html#?q=2010%20plagiarism%20potthast' | relative_url }}">Plagiarism Detection, PAN @ CLEF'10</a>
+                </li>
+                <li>
+                    <a href="{{ 'publications.html#?q=2009%20plagiarism%20potthast' | relative_url }}">Plagiarism Detection, PAN @ SEPLN'09</a>
+                </li>
+            </ul>
+
+
+            <h2 id="task-committee">Task Committee</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/potthast.html %}
+                {% include people-cards/gollub.html %}
+                {% include people-cards/hagen.html %}
+                {% include people-cards/stein.html %}
+                {% include people-cards/temporary.html url="https://weimar.webis.de"
+                name="Jan Graßegger" picture="../pan12-figures/jan.jpg" affiliation="Bauhaus Universität Weimar"  %}
+                {% include people-cards/kiesel.html %}
+                {% include people-cards/temporary.html url="https://weimar.webis.de"
+                name="Maximilian Michel" picture="../pan12-figures/maximilian.jpg" affiliation="Bauhaus Universität Weimar"  %}
+                {% include people-cards/temporary.html url="https://weimar.webis.de"
+                name="Arnd Oberländer" picture="../pan12-figures/arnd.jpg" affiliation="Bauhaus Universität Weimar"  %}
+                {% include people-cards/temporary.html url="https://weimar.webis.de"
+                name="Martin Tippmann" picture="../pan12-figures/martint.jpg" affiliation="Bauhaus Universität Weimar"  %}
+                {% include people-cards/rosso.html %}
+                {% include people-cards/gupta.html %}
+                {% include people-cards/barron-cedeno.html %}
+            </div>
+            <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+                {% include organizations/clef-organizations-section.html year=2012 %}
+            </div>
+
+        </div>  <!-- section -->
+    </div>  <!-- section -->
+</main>
