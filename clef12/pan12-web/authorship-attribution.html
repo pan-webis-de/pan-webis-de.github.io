@@ -1,0 +1,244 @@
+---
+layout: default
+nav_active: tasks
+title: PAN at CLEF 2012 - Authorship Attribution
+description: PAN at CLEF 2012 - Authorship Attribution
+---
+
+<main>
+    <div class="uk-section uk-section-default">
+        <div class="uk-container uk-margin-small">
+            <h1 class="uk-margin-remove-top">Authorship Attribution 2012</h1>
+            <ul class="uk-list">
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#input">Input</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#output">Output</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
+            </ul>
+        </div>
+
+        <div class="uk-container uk-margin-medium">
+
+            <h2 id="synopsis">Synopsis</h2>
+            <ul>
+                <li>Task: Given a document, determine who wrote it.</li>
+                <li>Input: [<a href="{{ 'data.html#pan12-attribution' | relative_url }}">data</a>]</li>
+                <li>Submission: [<a href="https://www.tira.io/task/author-identification/">submit</a>]</li>
+            </ul>
+
+
+            <h2 id="task">Task</h2>
+            <p>Within the traditional authorship tasks there are different flavors:</p>
+            <ul>
+                <li>
+                Traditional (closed-class /open-class, with varying numbers of candidate authors)
+                authorship attribution. Within the closed class you will be given a closed set of
+                candidate authors and are asked to identify which one of them is the author of an anonymous text. Withing
+                the open class you have to consider also that it might be that none of the candidates is the real
+                author of the document.
+                </li>
+                <li>
+                Authorship clustering/intrinsic plagiarism: in this problem you are given a text (which,
+                for simplicity, is segmented into a sequence of "paragraphs") and are asked to cluster
+                the paragraphs into exactly two clusters: one that includes paragraphs written by the "main"
+                author of the text and another that includes all paragraphs written by anybody else.
+                (Thus, this year the intrinsic plagiarism has been moved from the plagiarism task to the author
+                identification track.).
+                </li>
+            </ul>
+
+
+            <h2 id="input">Input</h2>
+            <p>To develop your software, we provide you with a training corpus that comprises several different
+            common attribution and clustering scenarios.
+            <a href="https://www.uni-weimar.de/medien/webis/events/pan-12/pan12-papers-final/pan12-author-identification/juola12-overview.pdf#page=2">
+                Learn more »</a>
+            </p>
+
+
+            <h2 id="output">Output</h2>
+            <p>As per repeated requests, here is a sample submission format to use for the Traditional
+            Authorship Attribution Competition for PAN/CLEF. Please note that following this format is not
+            mandatory and we will continue to accept anything we can interpret.</p>
+
+            <p>For traditional authorship problems (e.g. problem A), use the following (all words in ALL CAPS
+            should be filled out appropriately):</p>
+            <pre class="prettyprint lang-py" style="overflow-x:auto">
+team TEAM NAME : run RUN NUMBER
+task TASK IDENTIFIER
+file TEST FILE = AUTHOR IDENTIFIER
+file TEST FILE = AUTHOR IDENTIFIER
+...
+</pre>
+            <p>For problems E and F, there are no designated sample authors, so we recommend listing paragraph
+            numbers. Author identifier is optional and arbitrary -- if it makes you feel better to talk
+            about authors A and B or authors 1 and 2 you can insert it into the appropriate field. Any paragraphs
+            not listed will be assumed to be part of an unnamed default author.</p>
+            <pre class="prettyprint lang-py" style="overflow-x:auto">
+team TEAM NAME : run RUN NUMBER
+task TASK IDENTIFIER
+file TEST FILE = AUTHOR IDENTIFIER (PARAGRAPH LIST)
+file TEST FILE = AUTHOR IDENTIFIER
+...
+</pre>
+            <p>For example:</p>
+            <pre class="prettyprint lang-py" style="overflow-x:auto">
+team Jacob : run 1
+task B
+file 12Btest01.txt = A
+file 12Btest02.txt = A
+file 12Btest03.txt = A
+file 12Btest04.txt = None of the Above
+file 12Btest05.txt = A
+file 12Btest06.txt = A
+file 12Btest07.txt = A
+file 12Btest08.txt = A
+file 12Btest09.txt = A
+file 12Btest10.txt = A
+
+task C
+file 12Ctest01.txt = A
+file 12Ctest02.txt = A
+file 12Ctest03.txt = A
+file 12Ctest04.txt = A
+file 12Ctest05.txt = A
+file 12Ctest06.txt = A
+file 12Ctest07.txt = A
+file 12Ctest08.txt = A
+file 12Ctest09.txt = A
+
+task F
+file 12Ftest01.txt = (1,2,3,6,7)
+file 12Ftest01.txt = (4,5)
+</pre>
+            <p>In this sample file, we consider anything not listed in task F (paragraphs 8 and beyond) to be a third, unnamed author.</p>
+
+
+            <h2 id="evaluation">Evaluation</h2>
+            <p>The performance of your authorship attribution will be judged by average precision, recall, and
+            F1 over all authors in the given training set.</p>
+
+
+            <h2 id="results">Results</h2>
+            <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+                        <thead>
+                        <tr>
+                            <th colspan="2" style="text-align:center">Authorship attribution performance</th>
+                        </tr>
+                        <tr>
+                            <th>Overall</th>
+                            <th>Participant</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>86.37</td>
+                            <td>Marius Popescu* and Cristian Grozea°<br/>°Fraunhofer FIRST, Germany, and *University of
+                                Bucharest, Romania
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>83.40</td>
+                            <td>Navot Akiva<br/>Bar Ilan University, Israel</td>
+                        </tr>
+                        <tr>
+                            <td>82.41</td>
+                            <td>Michael Ryan and John Noecker Jr<br/>Duquesne University, USA</td>
+                        </tr>
+                        <tr>
+                            <td>70.81</td>
+                            <td>Ludovic Tanguy, Franck Sajous, Basilio Calderone, and Nabil Hathout<br/>CLLE-ERSS: CNRS
+                                and University of Toulouse, France
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>62.13</td>
+                            <td>Esteban Castillo°, Darnes Vilariño°, David Pinto°, Iván Olmos°, Jesús A. González*, and
+                                Maya Carrillo°<br/>°Benemérita Universidad Autónoma de Puebla and *Instituto Nacional de
+                                Astrofísica, Óptica y Electrónica (INAOE), Mexico
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>59.77</td>
+                            <td>François-Marie Giraud and Thierry Artières<br/>LIP6, Université Pierre et Marie Curie
+                                (UPMC), France
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>58.35</td>
+                            <td>Upendra Sapkota and Thamar Solorio<br/>University of Alabama at Birmingham, USA</td>
+                        </tr>
+                        <tr>
+                            <td>57.55</td>
+                            <td>Ramon de Graaff° and Cor J. Veenman*<br/>°Leiden University and *Netherlands Forensics
+                                Institute, The Netherlands
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>57.40</td>
+                            <td>Stefan Ruseti and Traian Rebedea<br/>University Politehnica of Bucharest, Romania</td>
+                        </tr>
+                        <tr>
+                            <td>54.88</td>
+                            <td>Anna Vartapetiance and Lee Gillam<br/>University of Surrey, UK</td>
+                        </tr>
+                        <tr>
+                            <td>43.18</td>
+                            <td>Roman Kern°*, Stefan Klampfl*, Mario Zechner*<br/>°Graz University of Technology and
+                                *Know-Center GmbH, Austria
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>16.63</td>
+                            <td>Julian Brooke and Graeme Hirst<br/>University of Toronto, Canada</td>
+                        </tr>
+                        </tbody>
+                    </table>
+            <p><a href="pan12-authorship-attribution-evaluation-results.xlsx">
+                Complete performances (Excel)</a></p>
+            <p>A more detailed analysis of the detection performances with respect to precision, recall, and
+                granularity can be found in the overview paper accompanying this task.</p>
+
+
+            <h2 id="related-work">Related Work</h2>
+            <ul>
+                <li>
+                    Patrick Juola. <a href="http://portal.acm.org/citation.cfm?id=1373451" target="_blank">Authorship
+                    Attribution</a>. In Foundations and Trends in Information Retrieval, Volume 1, Issue 3,
+                    December 2006.
+                </li>
+                <li>
+                    Moshe Koppel, Jonathan Schler, and Shlomo Argamon. <a
+                        href="http://onlinelibrary.wiley.com/doi/10.1002/asi.20961/full" target="_blank">Computational
+                    Methods in Authorship Attribution</a>. Journal of the American Society for Information
+                    Science and Technology, Volume 60, Issue 1, pages 9-26, January 2009.
+                </li>
+                <li>
+                    Efstathios Stamatatos. <a href="http://onlinelibrary.wiley.com/doi/10.1002/asi.21001/full"
+                                              target="_blank">A Survey of Modern Authorship Attribution
+                    Methods</a>. Journal of the American Society for Information Science and Technology, Volume
+                    60, Issue 3, pages 538-556, March 2009.
+                </li>
+            </ul>
+
+
+            <h2 id="task-committee">Task Committee</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/juola.html %}
+                {% include people-cards/inches.html %}
+                {% include people-cards/stamatatos.html %}
+                {% include people-cards/argamon.html %}
+                {% include people-cards/koppel.html %}
+                {% include people-cards/crestani.html %}
+            </div>
+            <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+                {% include organizations/clef-organizations-section.html year=2012 %}
+            </div>
+
+        </div>  <!-- section -->
+    </div>  <!-- section -->
+</main>

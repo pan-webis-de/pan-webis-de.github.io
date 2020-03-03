@@ -6,350 +6,264 @@ description: PAN @ CLEF 2012 - Wikipedia Quality Flaw Prediction
 ---
 
 <main>
-    <header class="uk-section uk-section-muted">
-        <nav class="uk-container">
-            <div class="uk-align-right uk-visible@m uk-text-muted">
-                <a class="uk-button" href="{{ 'clef11/pan11-web/wikipedia-vandalism-detection.html' | relative_url }}"
-                   data-uk-icon="chevron-left"></a>
-                CLEF 2012
-                <a class="uk-button uk-padding-remove-right"
-                   href="{{ 'clef13/pan13-web/index.html' | relative_url }}"
-                   data-uk-icon="chevron-right"></a>
-            </div>
-
-            <ul class="uk-text-muted uk-tab uk-margin-remove-top">
-                <li><a href="{{ '/clef12/pan12-web/index.html' | relative_url }}">Overview</a></li>
-                <li><a href="{{ '/clef12/pan12-web/keynotes.html' | relative_url }}">Keynotes</a></li>
-                <li><a href="{{ '/clef12/pan12-web/program.html' | relative_url }}">Program</a></li>
-                <li class="uk-active">
-                    <a href="#">Tasks <span class="uk-margin-small-left"
-                                            data-uk-icon="icon: chevron-down"></span></a>
-                    <div class="uk-dropdown" data-uk-dropdown="mode: click">
-                        <ul class="uk-nav uk-dropdown-nav">
-                            <li><a href="{{ '/clef12/pan12-web/author-identification.html' | relative_url }}">Author
-                                Identification</a></li>
-                            <li class="uk-active"><a
-                                    href="{{ '/clef12/pan12-web/wikipedia-quality-flaw-prediction.html' | relative_url }}">Wikipedia
-                                Quality Flaw Prediction</a></li>
-                            <li><a href="{{ '/clef12/pan12-web/plagiarism-detection.html' | relative_url }}">Plagiarism
-                                Detection</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a href="{{ '/clef12/pan12-web/submission.html' | relative_url }}">Submission</a></li>
-                <li><a href="{{ 'publications.html#?q=year:2012' | relative_url }}">Proceedings</a></li>
-            </ul>
-        </nav>
-
+    <div class="uk-section uk-section-default">
         <div class="uk-container uk-margin-small">
-            {% include current-register-quicklink.html year=2012 %}
-            <h1 class="uk-margin-small">Wikipedia Quality Flaw Prediction</h1>
-            <div class="page-header-meta">PAN @ CLEF 2012</div>
-            <div class="uk-align-right uk-margin-remove-bottom">
-                <a href="http://www.wikimedia.de/" target="_blank">
-                    <img src="../pan12-figures/logo-wikimedia-deutschland.png" style="height: 70px"
-                         alt="logo-upf-forensiclab">
-                </a>
-                <div class="uk-text-small uk-text-muted uk-text-right">Sponsor</div>
-            </div>
-            <p class="uk-text-lead">
-                This task is concerned with predicting the ten most frequent quality flaws of English Wikipedia
-                articles, such as "citation needed", orphan, or advert.
-            </p>
+            <h1 class="uk-margin-remove-top">Wikipedia Quality Flaw Prediction 2012</h1>
+            <ul class="uk-list">
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#introduction">Introduction</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#award">Award</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#input">Input</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#output">Output</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#sponsor">Sponsor</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
+            </ul>
         </div>
-    </header>
 
-    <section>
-        <div class="uk-section">
-            <div class="uk-container">
-                <div class="uk-column-1-2@l uk-text-justify">
-                    <p>In previous years, we have addressed quality issues in Wikipedia in the form of vandalism
-                        detection. However, the majority of quality flaws is not caused due to malicious intentions but
-                        stem from edits by inexperienced authors; examples include poor writing style, unreferenced
-                        statements, or missing neutrality. This year, we generalize the vandalism detection task and
-                        focus on the prediction of quality flaws in Wikipedia articles.</p>
-                    <p>We cast quality flaw prediction in Wikipedia as a <a
-                            href="http://en.wikipedia.org/wiki/One-class_classification">one-class classification
-                        problem</a> (as proposed in <a
-                            href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2011p.pdf">this
-                        paper</a>). The key feature of this problem is that there is no representative "negative"
-                        training data (articles that are tagged to <i>not</i> contain a particular flaw), which makes
-                        common discrimination-based classification techniques, like binary or multiclass classification,
-                        inapplicable.</p>
-                    <p>The task targets the ten most frequent quality flaws of English Wikipedia articles, which are
-                        listed in the following table. You can tackle each flaw individually, but you must predict all
-                        ten flaws. The prediction performance is evaluated individually for each flaw, and the results
-                        are averaged to a final score.</p>
-
-                    <table class="uk-table uk-table-divider uk-table-small uk-table-hover" style="font-size:small;">
-                        <thead>
-                        <tr>
-                            <th>Flaw name</th>
-                            <th>Description</th>
-                        <tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td><a href="http://en.wikipedia.org/wiki/Template:Unreferenced">Unreferenced</a></td>
-                            <td>The article does not cite any references or sources.</td>
-                        <tr>
-                        <tr>
-                            <td><a href="http://en.wikipedia.org/wiki/Wikipedia:Orphan">Orphan</a></td>
-                            <td>The article has fewer than three incoming links.</td>
-                        <tr>
-                        <tr>
-                            <td><a href="http://en.wikipedia.org/wiki/Template:Refimprove">Refimprove</a></td>
-                            <td>The article needs additional citations for verification.</td>
-                        <tr>
-                        <tr>
-                            <td><a href="http://en.wikipedia.org/wiki/Template:Empty_section">Empty section</a></td>
-                            <td>The article has at least one section that is empty.</td>
-                        <tr>
-                        <tr>
-                            <td><a href="http://en.wikipedia.org/wiki/Template:Notability">Notability</a></td>
-                            <td>The article does not meet the general notability guideline.</td>
-                        <tr>
-                        <tr>
-                            <td><a href="http://en.wikipedia.org/wiki/Template:No_footnotes">No footnotes</a></td>
-                            <td>The article’s sources remain unclear because of its inline citations.</td>
-                        <tr>
-                        <tr>
-                            <td><a href="http://en.wikipedia.org/wiki/Template:Primary_sources">Primary sources</a></td>
-                            <td>The article relies on references to primary sources.</td>
-                        <tr>
-                        <tr>
-                            <td><a href="http://en.wikipedia.org/wiki/Template:Wikify">Wikify</a></td>
-                            <td>The article needs to be wikified (internal links and layout).</td>
-                        <tr>
-                        <tr>
-                            <td><a href="http://en.wikipedia.org/wiki/Template:Advert">Advert</a></td>
-                            <td>The article is written like an advertisement.</td>
-                        <tr>
-                        <tr>
-                            <td><a href="http://en.wikipedia.org/wiki/Template:Original_research">Original research</a>
-                            </td>
-                            <td>The article contains original research.</td>
-                        <tr>
-                        </tbody>
-                    </table>
-                    <p><i>Background</i>. Wikipedia users who encounter some flaw can tag the article with a respective
-                        <a href="http://en.wikipedia.org/wiki/Wikipedia:Template_messages/Cleanup">cleanup tag</a>. The
-                        existing cleanup tags correspond to the set of quality flaws that have been identified so far by
-                        Wikipedia users and the tagged articles provide a source of human-labeled data (this idea has
-                        been proposed in <a
-                                href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2011d.pdf">this
-                            paper</a>). Hence, each of the ten flaws is defined by the respective cleanup tag.</p>
-                    <p><i>Remark.</i> Since quality flaw prediction in Wikipedia is a one-class problem, the engineering
-                        of features that discriminate articles containing a certain flaw from all other articles is one
-                        of the primary challenges. You can use all features imaginable and any source of information
-                        (e.g., the articles' revision history, Wikipedia's link graph, and also external sources), with
-                        one exception: <i>you must not use any information concerning the cleanup tags that define the
-                            flaws.</i> I.e., to predict whether an article suffers from a certain flaw, you must not
-                        analyze whether the article is tagged with the respective cleanup tag nor whether it is a member
-                        of a respective cleanup category. Such features are unusable in practice.</p>
+        <div class="uk-container uk-margin-medium">
+            <h2 id="synopsis">Synopsis</h2>
+            <ul>
+                <li>Task: Given a Wikipedia article, what're its quality flaws?</li>
+                <li>Input: [<a href="{{ 'data.html#pan12-wikipedia-quality-flaw' | relative_url }}">data</a>]</li>
+            </ul>
 
 
-                    <h3>Task</h3>
-                    <p> Given a set of Wikipedia articles that are tagged with a particular quality flaw, decide whether
-                        an untagged article suffers from this flaw.
-                    </p>
+            <h2 id="introduction">Introduction</h2>
+            <p>In previous years, we have addressed quality issues in Wikipedia in the form of vandalism
+            detection. However, the majority of quality flaws is not caused due to malicious intentions but
+            stem from edits by inexperienced authors; examples include poor writing style, unreferenced
+            statements, or missing neutrality. This year, we generalize the vandalism detection task and
+            focus on the prediction of quality flaws in Wikipedia articles.</p>
+
+            <p>We cast quality flaw prediction in Wikipedia as a
+            <a href="http://en.wikipedia.org/wiki/One-class_classification">one-class classification problem</a> (as proposed in
+            <a href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2011p.pdf">this paper</a>).
+            The key feature of this problem is that there is no representative "negative"
+            training data (articles that are tagged to <i>not</i> contain a particular flaw), which makes
+            common discrimination-based classification techniques, like binary or multiclass classification,
+            inapplicable.</p>
+
+            <p>The task targets the ten most frequent quality flaws of English Wikipedia articles, which are
+            listed in the following table. You can tackle each flaw individually, but you must predict all
+            ten flaws. The prediction performance is evaluated individually for each flaw, and the results
+            are averaged to a final score.</p>
+
+            <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+                <thead>
+                <tr>
+                    <th>Flaw name</th>
+                    <th>Description</th>
+                <tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><a href="http://en.wikipedia.org/wiki/Template:Unreferenced">Unreferenced</a></td>
+                    <td>The article does not cite any references or sources.</td>
+                <tr>
+                <tr>
+                    <td><a href="http://en.wikipedia.org/wiki/Wikipedia:Orphan">Orphan</a></td>
+                    <td>The article has fewer than three incoming links.</td>
+                <tr>
+                <tr>
+                    <td><a href="http://en.wikipedia.org/wiki/Template:Refimprove">Refimprove</a></td>
+                    <td>The article needs additional citations for verification.</td>
+                <tr>
+                <tr>
+                    <td><a href="http://en.wikipedia.org/wiki/Template:Empty_section">Empty section</a></td>
+                    <td>The article has at least one section that is empty.</td>
+                <tr>
+                <tr>
+                    <td><a href="http://en.wikipedia.org/wiki/Template:Notability">Notability</a></td>
+                    <td>The article does not meet the general notability guideline.</td>
+                <tr>
+                <tr>
+                    <td><a href="http://en.wikipedia.org/wiki/Template:No_footnotes">No footnotes</a></td>
+                    <td>The article’s sources remain unclear because of its inline citations.</td>
+                <tr>
+                <tr>
+                    <td><a href="http://en.wikipedia.org/wiki/Template:Primary_sources">Primary sources</a></td>
+                    <td>The article relies on references to primary sources.</td>
+                <tr>
+                <tr>
+                    <td><a href="http://en.wikipedia.org/wiki/Template:Wikify">Wikify</a></td>
+                    <td>The article needs to be wikified (internal links and layout).</td>
+                <tr>
+                <tr>
+                    <td><a href="http://en.wikipedia.org/wiki/Template:Advert">Advert</a></td>
+                    <td>The article is written like an advertisement.</td>
+                <tr>
+                <tr>
+                    <td><a href="http://en.wikipedia.org/wiki/Template:Original_research">Original research</a>
+                    </td>
+                    <td>The article contains original research.</td>
+                <tr>
+                </tbody>
+            </table>
+
+            <p><em>Background</em>. Wikipedia users who encounter some flaw can tag the article with a respective
+            <a href="http://en.wikipedia.org/wiki/Wikipedia:Template_messages/Cleanup">cleanup tag</a>. The
+            existing cleanup tags correspond to the set of quality flaws that have been identified so far by
+            Wikipedia users and the tagged articles provide a source of human-labeled data (this idea has been proposed in
+            <a href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2011d.pdf">this paper</a>).
+            Hence, each of the ten flaws is defined by the respective cleanup tag.</p>
+
+            <p><em>Remark.</em> Since quality flaw prediction in Wikipedia is a one-class problem, the engineering
+            of features that discriminate articles containing a certain flaw from all other articles is one
+            of the primary challenges. You can use all features imaginable and any source of information
+            (e.g., the articles' revision history, Wikipedia's link graph, and also external sources), with
+            one exception: <em>you must not use any information concerning the cleanup tags that define the
+            flaws.</em> I.e., to predict whether an article suffers from a certain flaw, you must not
+            analyze whether the article is tagged with the respective cleanup tag nor whether it is a member
+            of a respective cleanup category. Such features are unusable in practice.</p>
+
+            <h2 id="task">Task</h2>
+            <p> Given a set of Wikipedia articles that are tagged with a particular quality flaw, decide whether
+                an untagged article suffers from this flaw.</p>
 
 
-                    <h3>Award</h3>
-                    <p>
-                        We are happy to announce the following overall winner of the 1st International Competition on
-                        Quality Flaw Prediction in Wikipedia who will be awarded 200,- Euro sponsored by Wikimedia
-                        Deutschland:
-                    <ul>
-                        <li>
-                            Edgardo Ferretti, Donato Hern&aacute;ndez Fusilier, Rafael Guzm&aacute;n Cabrera, Manuel
-                            Montes-y-G&oacute;mez, Marcelo Errecalde, and Paolo Rosso.
-                        </li>
-                    </ul>
-                    Congratulations!
-                    </p>
+            <h2 id="award">Award</h2>
+            <p>We are happy to announce the following overall winner of the 1st International Competition on
+            Quality Flaw Prediction in Wikipedia who will be awarded 200,- Euro sponsored by Wikimedia
+            Deutschland:</p>
+            <ul><li>
+                    Edgardo Ferretti, Donato Hern&aacute;ndez Fusilier, Rafael Guzm&aacute;n Cabrera, Manuel
+                    Montes-y-G&oacute;mez, Marcelo Errecalde, and Paolo Rosso.
+            </li></ul>
+            <p>Congratulations!</p>
 
 
-                    <h3>Training Corpus</h3>
-                    <p>To develop your approach, we provide you with a training corpus which comprises a set of
-                        Wikipedia articles for a number of quality flaws.</p>
-                    <p>
-                        <a class="uk-button uk-button-primary"
-                           href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2012i.pdf#page=3">Learn
-                            more »</a>
-                        <a class="uk-button uk-button-primary" target="_blank"
-                           href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-12/pan12-data/pan12-wikipedia-quality-flaw-prediction-training-corpus-2012-03-19.zip">Download
-                            corpus</a>
-                    </p>
+            <h2 id="input">Input</h2>
+            <p>To develop your approach, we provide you with a training corpus which comprises a set of
+            Wikipedia articles for a number of quality flaws.
+            <a href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2012i.pdf#page=3">
+                Learn more »</a></p>
 
 
-                    <h3>Output</h3>
-                    <p>For each set of articles per quality flaw, your quality flaw prediction software shall output a
-                        file formatted as follows:</p>
-                    <p>
-                    <pre class="prettyprint lang-py" style="overflow-x:auto">
+            <h2 id="output">Output</h2>
+            <p>For each set of articles per quality flaw, your quality flaw prediction software shall output a
+            file formatted as follows:</p>
+            <pre class="prettyprint lang-py" style="overflow-x:auto">
 PAGEID C FEATUREVAL_1 FEAUTREVAL_2 FEATUREVAL_3 ... FEAUTREVAL_n
 279320 1 0.8647264878 5.0548156462 0.2854089458 ... 0.0000000584
 871808 0 0.6442019751 3.4979755645 0.1203675764 ... 0.0505761605
 850457 1 0.5054090519 9.3060661202 0.0550005005 ... 0.9190851616
 912468 0 0.9644561645 1.5059164514 0.4696140241 ... 0.0000000031
 ...</pre>
-                    </p>
-                    <ul>
-                        <li>
-                            The column PAGEID denotes the pageid of the test article.
-                        </li>
-                        <li>
-                            The column C denotes the decision of your classifier. This value should be either 1 or 0,
-                            where 1 means the article contains the flaw.
-                        </li>
-                        <li>
-                            The columns FEATUREVAL_1 to FEATUREVAL_n denote the n feature values of your document model
-                            for the given article. The feature values need not be normalized, and they should consist of
-                            unrounded values. If you have non-numeric features include them as well. Please send along a
-                            short description of each feature, and make sure that all entries in a column are based on
-                            the same feature implementation.
-                        </li>
-                    </ul>
+            <ul>
+                <li>The column PAGEID denotes the pageid of the test article.</li>
+                <li>The column C denotes the decision of your classifier. This value should be either 1 or 0,
+                where 1 means the article contains the flaw.</li>
+                <li>The columns FEATUREVAL_1 to FEATUREVAL_n denote the n feature values of your document model
+                for the given article. The feature values need not be normalized, and they should consist of
+                unrounded values. If you have non-numeric features include them as well. Please send along a
+                short description of each feature, and make sure that all entries in a column are based on
+                the same feature implementation.</li>
+            </ul>
 
 
-                    <h3>Performance Measures</h3>
-                    <p>The prediction performance will be judged by average precision, recall, and F-measure over all
-                        quality flaws.</p>
+            <h2 id="evaluation">Evaluation</h2>
+            <p>The prediction performance will be judged by average precision, recall, and F-measure over all quality flaws.</p>
 
 
-                    <h3>Test Corpus</h3>
-                    <p>Once you finished tuning your approach to achieve satisfying performance on the training corpus,
-                        you should run your software on the test corpus.</p>
-                    <p>During the competition, the test corpus does not contain ground truth data that reveals whether
-                        or not a suspicious document contains any plagiarized passages. To find out the performance of
-                        your software on the test corpus, you must collect the output its and submit it as described
-                        below.</p>
-                    <p>After the competition, the test corpus is updated to include the ground truth data. This way, you
-                        have all the neccessary data to evaluate your approach on your own, without submitting it's
-                        output, yet being comparable to those who took part in the competition.</p>
-                    <p>
-                        <a class="uk-button uk-button-primary" target="_blank"
-                           href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-12/pan12-data/pan12-wikipedia-quality-flaw-prediction-test-corpus-2012-05-18.zip">Download
-                            corpus</a>
-                    </p>
+            <h2 id="results">Results</h2>
+            <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+                <thead>
+                <tr>
+                    <th colspan="4" style="text-align:center">Wikipedia quality flaw prediction performance</th>
+                </tr>
+                <tr>
+                    <th>Precision</th>
+                    <th>Recall</th>
+                    <th>
+                        <nobr>F1-measure</nobr>
+                    </th>
+                    <th>Participant</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>0.735400</td>
+                    <td>0.917097</td>
+                    <td>0.814529</td>
+                    <td>
+                        Edgardo Ferretti*, Donato Hernández Fusilier°, Rafael Guzmán Cabrera°, Manuel
+                        Montes-y-Gómez^, Marcelo Errecalde*, and Paolo Rosso&#8224;<br/>
+                        * Universidad Nacional de San Luis, Argentina<br/>
+                        ° Universidad de Guanajuato, Mexico<br/>
+                        ^ Óptica y Electrónica (INAOE), Mexico<br/>
+                        &#8224; Universidad Politécnica de Valencia, Spain
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.753213</td>
+                    <td>0.852926</td>
+                    <td>0.798336</td>
+                    <td>
+                        Oliver Ferschke, Iryna Gurevych, and Marc Rittberger<br/>
+                        Technische Universität Darmstadt, Germany
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.043209</td>
+                    <td>0.579241</td>
+                    <td>0.079449</td>
+                    <td>
+                        Ionut Cristian Pistol and Adrian Iftene<br/>
+                        "Alexandru Ioan Cuza" University of Iasi, Romania
+                    </td>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <p>A more detailed analysis of the detection performances can be found in the overview paper
+                accompanying this task.</p>
 
 
-                    <h3>Submission</h3>
-                    <p>To submit your test run for evaluation, we ask you to send a Zip archive containing the output of
-                        your software when run on the test corpus to <a href="mailto:pan@webis.de">pan@webis.de</a>.</p>
-                    <p>Should the Zip archive be too large to be sent via mail, please upload it to a file hoster of
-                        your choosing and share a download link with us.</p>
-
-
-                    <h3>Results</h3>
-                    <p>The following table lists the performances achieved by the participating teams:</p>
-                    <table class="uk-table uk-table-divider uk-table-small uk-table-hover" style="font-size:small;">
-                        <thead>
-                        <tr>
-                            <th colspan="4" style="text-align:center">Wikipedia quality flaw prediction performance</th>
-                        </tr>
-                        <tr>
-                            <th>Precision</th>
-                            <th>Recall</th>
-                            <th>
-                                <nobr>F1-measure</nobr>
-                            </th>
-                            <th>Participant</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>0.735400</td>
-                            <td>0.917097</td>
-                            <td>0.814529</td>
-                            <td>
-                                Edgardo Ferretti*, Donato Hernández Fusilier°, Rafael Guzmán Cabrera°, Manuel
-                                Montes-y-Gómez^, Marcelo Errecalde*, and Paolo Rosso&#8224;<br/>
-                                * Universidad Nacional de San Luis, Argentina<br/>
-                                ° Universidad de Guanajuato, Mexico<br/>
-                                ^ Óptica y Electrónica (INAOE), Mexico<br/>
-                                &#8224; Universidad Politécnica de Valencia, Spain
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>0.753213</td>
-                            <td>0.852926</td>
-                            <td>0.798336</td>
-                            <td>
-                                Oliver Ferschke, Iryna Gurevych, and Marc Rittberger<br/>
-                                Technische Universität Darmstadt, Germany
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>0.043209</td>
-                            <td>0.579241</td>
-                            <td>0.079449</td>
-                            <td>
-                                Ionut Cristian Pistol and Adrian Iftene<br/>
-                                "Alexandru Ioan Cuza" University of Iasi, Romania
-                            </td>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    <p>A more detailed analysis of the detection performances can be found in the overview paper
-                        accompanying this task.</p>
-                    <p><a class="uk-button uk-button-primary"
-                          href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2012u.pdf#page=5">Learn
-                        more »</a></p>
-
-
-                    <h3>Related Work</h3>
-                    <p>
-                        <ul>
-                            <li>Get additional Wikipedia data: <a href="http://www.mediawiki.org/wiki/API">MediaWiki
-                                API</a>, <a href="http://dumps.wikimedia.org/backup-index.html">Wikimedia database
-                                dumps</a>, <a href="http://toolserver.org">Wikimedia Toolserver</a></li>
-                            <li><a href="http://www.mediawiki.org/wiki/Alternative_parsers">A list</a> of MediaWiki
-                                parsers and converters.
-                            </li>
-                            <li>
-                                Further reading:<br>
-                    <p>
-                    <ul>
-                        <li>Maik Anderka and Benno Stein. <a
-                                href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2012d.pdf">A
-                            Breakdown of Quality Flaws in Wikipedia</a>. In Proceedings of the 2nd Joint WICOW/AIRWeb
-                            Workshop on Web Quality (WebQuality '12), pages 11-18, 2012.
-                        </li>
-                        <li>Maik Anderka, Benno Stein, and Nedim Lipka. <a
-                                href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2012i.pdf">Predicting
-                            Quality Flaws in User-generated Content: The Case of Wikipedia</a>. In Proceedings of the
-                            35th International ACM Conference on Research and Development in Information Retrieval
-                            (SIGIR '12) (to appear), 2012.
-                        </li>
-                    </ul>
-                    </p>
-                    </li>
-                    </ul>
-                    </p>
-
+            <h2 id="sponsor">Sponsor</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <a href="http://www.wikimedia.de/" target="_blank">
+                        <img src="../pan12-figures/logo-wikimedia-deutschland.png" alt="Wikimedia-Deutschland">
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>  <!-- section -->
 
-        <div class="uk-section uk-section-muted">
-            <div class="uk-container">
 
-                <h2>Task Chair</h2>
-                <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
-                    {% include people-cards/anderka.html %}
-                </div>
+            <h2 id="related-work">Related Work</h2>
+            <ul>
+                <li>Get additional Wikipedia data:
+                    <a href="http://www.mediawiki.org/wiki/API">MediaWiki API</a>,
+                    <a href="http://dumps.wikimedia.org/backup-index.html">Wikimedia database dumps</a>,
+                    <a href="http://toolserver.org">Wikimedia Toolserver</a>
+                </li>
+                <li><a href="http://www.mediawiki.org/wiki/Alternative_parsers">A list</a> of MediaWiki parsers and converters.</li>
+                <li>Maik Anderka and Benno Stein.
+                    <a href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2012d.pdf">
+                        A Breakdown of Quality Flaws in Wikipedia</a>.
+                    In Proceedings of the 2nd Joint WICOW/AIRWeb Workshop on Web Quality (WebQuality '12), pages 11-18, 2012.
+                </li>
+                <li>Maik Anderka, Benno Stein, and Nedim Lipka.
+                    <a href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2012i.pdf">
+                        Predicting Quality Flaws in User-generated Content: The Case of Wikipedia</a>.
+                    In Proceedings of the 35th International ACM Conference on Research and Development in Information Retrieval (SIGIR '12), 2012.
+                </li>
+            </ul>
 
-                <h2>Task Committee</h2>
-                <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
-                    {% include people-cards/stein.html %}
-                </div>
+            <h2 id="task-committee">Task Committee</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/anderka.html %}
+                {% include people-cards/stein.html %}
             </div>
             <div class="uk-container uk-padding-large uk-padding-remove-bottom">
                 {% include organizations/clef-organizations-section.html year=2012 %}
             </div>
-        </div>
-    </section>
+
+        </div>  <!-- section -->
+    </div>  <!-- section -->
 </main>
