@@ -6,115 +6,77 @@ description: PAN at CLEF 2013 - Author Profiling
 ---
 
 <main>
-    <header class="uk-section uk-section-muted">
-
-        <nav class="uk-container">
-            <div class="uk-align-right uk-visible@m uk-text-muted">
-                <a class="uk-button" href="#"
-                   data-uk-icon="chevron-left"></a>
-                CLEF 2013
-                <a class="uk-button uk-padding-remove-right"
-                   href="{{ 'clef14/pan14-web/author-profiling.html' | relative_url }}"
-                   data-uk-icon="chevron-right"></a>
-            </div>
-
-            <ul class="uk-text-muted uk-tab uk-margin-remove-top">
-                <li><a href="{{ '/clef13/pan13-web/index.html' | relative_url }}">Overview</a></li>
-                <li><a href="{{ '/clef13/pan13-web/keynotes.html' | relative_url }}">Keynotes</a></li>
-                <li><a href="{{ '/clef13/pan13-web/program.html' | relative_url }}">Program</a></li>
-                <li class="uk-active">
-                    <a href="#">Tasks <span class="uk-margin-small-left"
-                                            data-uk-icon="icon: chevron-down"></span></a>
-                    <div class="uk-dropdown" data-uk-dropdown="mode: click">
-                        <ul class="uk-nav uk-dropdown-nav">
-                            <li><a href="{{ '/clef13/pan13-web/author-identification.html' | relative_url }}">Author
-                                Identification</a></li>
-                            <li class="uk-active"><a
-                                    href="{{ '/clef13/pan13-web/author-profiling.html' | relative_url }}">Author
-                                Profiling</a></li>
-                            <li><a href="{{ '/clef13/pan13-web/plagiarism-detection.html' | relative_url }}">Plagiarism
-                                Detection</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a href="{{ '/clef13/pan13-web/submission.html' | relative_url }}">Submission</a></li>
-                <li><a href="{{ 'publications.html#?q=year:2013' | relative_url }}">Proceedings</a></li>
-            </ul>
-        </nav>
+    <div class="uk-section uk-section-default">
         <div class="uk-container uk-margin-small">
-            {% include current-register-quicklink.html year=2013 %}
-            <h1 class="uk-margin-small">Author Profiling</h1>
-            <div class="page-header-meta">PAN at CLEF 2013</div>
-
-            <div class="uk-align-right uk-margin-remove-bottom">
-                <a href="#" target="_blank">
-                    <img src="../pan13-figures/logo-upf-forensiclab.png" style="height: 70px"
-                         alt="logo-upf-forensiclab">
-                </a>
-                <div class="uk-text-small uk-text-muted uk-text-right">Sponsor</div>
-            </div>
-
-            <p class="uk-text-lead">Authorship analysis deals with the classification of texts into classes based on the
-                stylistic choices of their authors.</p>
+            <h1 class="uk-margin-remove-top">Author Profiling 2013</h1>
+            <ul class="uk-list">
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#introduction">Introduction</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#award">Award</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#input">Input</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#output">Output</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#sponsor">Sponsor</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
+            </ul>
         </div>
-    </header>
+        <div class="uk-container uk-margin-medium">
+            <h2 id="synopsis">Synopsis</h2>
+            <ul>
+                <li>Task: Given a document, your task is to determine its author's age and gender.</li>
+                <li>Input: [<a href="{{ '../../data.html#pan13-author-profiling' | relative_url }}">data</a>]</li>
+                <li>Submission: [<a href="https://www.tira.io/task/author-profiling/">submit</a>]</li>
+            </ul>
 
-    <div class="uk-section">
-        <div class="uk-container uk-column-1-2@l uk-text-justify">
-
-            <h2>Author Profiling</h2>
+            <h2 id="introduction">Introduction</h2>
             <p>Authorship analysis deals with the classification of texts into classes based on the stylistic choices of
-                their authors. Beyond the author identification and author verification tasks where the style of
-                individual authors is examined, author profiling distinguishes between classes of authors studying their
-                sociolect aspect, that is, how language is shared by people. This helps in identifying profiling aspects
-                such as gender, age, native language, or personality type. Author profiling is a problem of growing
-                importance in applications in forensics, security, and marketing. E.g., from a forensic linguistics
-                perspective one would like being able to know the linguistic profile of the author of a harassing text
-                message (language used by a certain type of people) and identify certain characteristics (language as
-                evidence). Similarly, from a marketing viewpoint, companies may be interested in knowing, on the basis
-                of the analysis of blogs and online product reviews, the demographics of people that like or dislike
-                their products. The focus is on author profiling in social media since we are mainly interested in
-                everyday language and how it reflects basic social and personality processes.</p>
+            their authors. Beyond the author identification and author verification tasks where the style of
+            individual authors is examined, author profiling distinguishes between classes of authors studying their
+            sociolect aspect, that is, how language is shared by people. This helps in identifying profiling aspects
+            such as gender, age, native language, or personality type. Author profiling is a problem of growing
+            importance in applications in forensics, security, and marketing. E.g., from a forensic linguistics
+            perspective one would like being able to know the linguistic profile of the author of a harassing text
+            message (language used by a certain type of people) and identify certain characteristics (language as
+            evidence). Similarly, from a marketing viewpoint, companies may be interested in knowing, on the basis
+            of the analysis of blogs and online product reviews, the demographics of people that like or dislike
+            their products. The focus is on author profiling in social media since we are mainly interested in
+            everyday language and how it reflects basic social and personality processes.</p>
 
-            <h3>Award</h3>
+
+            <h2 id="task">Task</h2>
+            <p><b>Note.</b> Besides, at <a href="http://nlp.uned.es/replab2013/" target="_blank">RepLab 2013</a> author
+            profiling will be approached from the online reputation monitoring perspective. Given a large number of
+            Twitter profiles with 600 associated tweets each, participants will be asked to classify the author of a
+            set of tweets as journalist, politician, activist, professional, client, company, authority or citizen,
+            since the fact of belonging to a certain category could determine the importance of the user's opinions.
+            The dataset will contain English and Spanish tweets related to the banking and automotive domains.</p>
+
+            <h2 id="award">Award</h2>
             <p>We are happy to announce the following overall winner of the 1st International Competition on Author
                 Profiling who will be awarded 300,- Euro sponsored by the Forensic Lab of the Universitat Pompeu Fabra
                 Barcelona.</p>
-            <ul>
-                <li>
-                    Manuel Montes-y-G&oacute;mez, Luis Villase&ntilde;or-Pineda, Hugo Jair Escalante, and Adri&aacute;n
-                    Pastor L&oacute;pez-Monrroy from INAOE, Mexico.
-                </li>
-            </ul>
+            <ul><li>
+                Manuel Montes-y-G&oacute;mez, Luis Villase&ntilde;or-Pineda, Hugo Jair Escalante, and Adri&aacute;n
+                Pastor L&oacute;pez-Monrroy from INAOE, Mexico.
+            </li></ul>
             <p>Congratulations!</p>
 
-            <h3>Task</h3>
-            <p>Given a document, your task is to determine its author's age and gender.</p>
 
-            <h3>Training Corpus</h3>
+            <h2 id="input">Input</h2>
             <p>To develop your software, we provide you with a training data set that consists of documents written in
-                both English and Spanish. With regard to age, we will consider posts of three classes: 10s (13-17), 20s
-                (23-27), and 30s (33-47). Moreover, documents from authors who pretend to be minors will be included
-                (e.g., documents composed of chat lines of sexual predators will be also considered).</p>
-            <p>
-                <a class="uk-button uk-button-primary"
-                   href="https://www.uni-weimar.de/medien/webis/events/pan-13/pan13-papers-final/pan13-author-profiling/rangel13-overview.pdf#page=3">Learn
-                    more »</a>
-                <a class="uk-button uk-button-primary"
-                   href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-author-profiling-training-corpus-2013-01-09.zip">Download
-                    corpus</a>
+            both English and Spanish. With regard to age, we will consider posts of three classes: 10s (13-17), 20s
+            (23-27), and 30s (33-47). Moreover, documents from authors who pretend to be minors will be included
+            (e.g., documents composed of chat lines of sexual predators will be also considered).
+            <a href="https://www.uni-weimar.de/medien/webis/events/pan-13/pan13-papers-final/pan13-author-profiling/rangel13-overview.pdf#page=3">
+                Learn more »</a>
             </p>
 
-            <h3>Test Corpus</h3>
-            <p><a class="uk-button uk-button-primary" target="_blank"
-                  href="https://s3.amazonaws.com/autoritas.pan/pan13_author_profiling_full_test_data.tar.gz">Download
-                test corpus</a> + <a class="uk-button uk-button-primary" target="_blank"
-                                     href="https://s3.amazonaws.com/autoritas.pan/pan13_author_profiling_truth_data.tar.gz">truth
-                files</a></p>
 
-            <h3>Output</h3>
+            <h2 id="output">Output</h2>
             <p>Your software must take as input the absolute path to an unpacked dataset, and has to output for each
-                document of the dataset a corresponding XML file that looks like this:</p>
+            document of the dataset a corresponding XML file that looks like this:</p>
             <pre class="prettyprint lang-xml" style="overflow-x:auto">
 &lt;author
    id="{author-id}"
@@ -124,62 +86,20 @@ description: PAN at CLEF 2013 - Author Profiling
 /&gt;
 </pre>
             <p>The naming of the output files is up to you, we recommend to use the author-id as filename and "xml" as
-                extension. The output files have to be written either directly to the working directory (to "..) or to a
-                subfolder. The author-id has to be extracted from each document's filename which follows the pattern
-                <code>&lt;authorid&gt;_&lt;lang&gt;_&lt;age&gt;_&lt;gender&gt;.xml</code>. Note that in the test corpus
-                the age and gender information are replaced by "xxx".</p>
+            extension. The output files have to be written either directly to the working directory (to "..) or to a
+            subfolder. The author-id has to be extracted from each document's filename which follows the pattern
+            <code>&lt;authorid&gt;_&lt;lang&gt;_&lt;age&gt;_&lt;gender&gt;.xml</code>. Note that in the test corpus
+            the age and gender information are replaced by "xxx".</p>
 
 
-            <h3>Performance Measures</h3>
+            <h2 id="evaluation">Evaluation</h2>
             <p>The performance of your author profiling solution will be ranked by accuracy.</p>
 
 
-            <h3>Test Corpus</h3>
-            <p>Once you finished tuning your approach to achieve satisfying performance on the training corpus, you
-                should run your software on the test corpus.</p>
-            <p>During the competition, the test corpus will not be released publicly. Instead, we ask you to submit your
-                software for evaluation at our site as described below.</p>
-            <p>After the competition, the test corpus is available including ground truth data. This way, you have all
-                the necessities to evaluate your approach on your own, yet being comparable to those who took part in
-                the competition.</p>
-            <p>
-                <a class="uk-button uk-button-primary" target="_blank"
-                   href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-author-profiling-test-corpus1-2013-03-28.zip">Download
-                    corpus 1</a>
-                <a class="uk-button uk-button-primary" target="_blank"
-                   href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-labs-09-today/pan-13/pan13-data/pan13-author-profiling-test-corpus2-2013-04-29.zip">Download
-                    corpus 2</a>
-            </p>
-
-
-            <h3>Submission</h3>
-            <p>We ask you to prepare your software so that it can be executed via a command line call. You can choose
-                freely among the available programming languages and among the operating systems Microsoft Windows 7 and
-                Ubuntu 12.04. We will ask you to deploy your software onto a virtual machine that will be made
-                accessible to you after registration. You will be able to reach the virtual machine via ssh and via
-                remote desktop. Please test your software using one of the unit-test-scripts below. Download the script,
-                fill in the required fields, and start it using the sh command. If the script runs without errors and if
-                the correct output is produced, you can submit your software by sending your unit-test-script via
-                e-mail. For more information see the PAN 2013 User Guide below.</p>
-            <p>
-                <a class="uk-button uk-button-primary" href="pan13-virtual-machine-user-guide.pdf">PAN User Guide »</a>
-                <a class="uk-button uk-button-primary" href="../pan13-code/unit-test-ap-windows.sh">Unit-Test Windows »</a>
-                <a class="uk-button uk-button-primary" href="../pan13-code/unit-test-ap-ubuntu.sh">Unit-Test Ubuntu »</a>
-            </p>
-            <p><strong>Note:</strong> By submitting your software you retain full copyrights. You agree to grant us
-                usage rights only for the purpose of the PAN competition. We agree not to share your software with a
-                third party or use it for other purposes than the PAN competition.</p>
-
-
-        </div>
-    </div>
-
-    <div class="uk-section uk-section-default">
-        <div class="uk-container">
-            <h2>Results</h2>
+            <h2 id="results">Results</h2>
             <p>The following table lists the performances achieved by the participating teams:</p>
 
-            <table class="uk-table uk-table-divider uk-table-small uk-table-hover" style="font-size:small;">
+            <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
                 <thead>
                 <tr>
                     <th colspan="2" style="text-align:center">English author profiling performance</th>
@@ -240,7 +160,7 @@ description: PAN at CLEF 2013 - Author Profiling
                     <td>Roman Kern<br/>Know-Center GmbH, Autria</td>
                 </tr>
                 <tr>
-                    <td>0.3114</td>
+                    <td>0.3113</td>
                     <td>Fermín L. Cruz°, Rafa Haro R.*, and F. Javier Ortega°<br/>University of Seville and Zaizi, Spain
                     </td>
                 </tr>
@@ -264,7 +184,7 @@ description: PAN at CLEF 2013 - Author Profiling
                     </td>
                 </tr>
                 <tr>
-                    <td>0.2814</td>
+                    <td>0.2813</td>
                     <td>Magdalena Jankowska, Vlado Kešelj, and Evangelos Milios<br/>Dalhousie University, Canada</td>
                 </tr>
                 <tr>
@@ -315,14 +235,9 @@ description: PAN at CLEF 2013 - Author Profiling
             </table>
             <p>A more detailed analysis of the detection performances can be found in the overview paper accompanying
                 this task.</p>
-            <p>
-                <a class="uk-button uk-button-primary"
-                   href="https://www.uni-weimar.de/medien/webis/events/pan-13/pan13-papers-final/pan13-author-profiling/rangel13-overview.pdf#page=8">Learn
-                    more »</a>
-            </p>
 
-            <h2>Related Work</h2>
-            <p>We refer you to:</p>
+
+            <h2 id="related-work">Related Work</h2>
             <ul>
                 <li>
                     <a href="http://u.cs.biu.ac.il/~koppel/BlogCorpus.htm">The Blog Authorship Corpus</a>
@@ -351,28 +266,30 @@ description: PAN at CLEF 2013 - Author Profiling
                     Bloomsbury Publishing, 2011.
                 </li>
             </ul>
-        </div>
-    </div>
 
-    <footer class="uk-section uk-section-muted">
-        <div class="uk-container">
 
-            <h2>Task Chair</h2>
+            <h2 id="sponsor">Sponsor</h2>
             <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
-                {% include people-cards/rosso.html %}
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <a href="https://www.upf.edu/web/uval/forensiclab" target="_blank">
+                            <img src="../pan13-figures/logo-upf-forensiclab.png" alt="logo-upf-forensiclab">
+                        </a>
+                    </div>
+                </div>
             </div>
 
-            <h2>Task Committee</h2>
+            <h2 id="task-committee">Task Committee</h2>
             <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/rosso.html %}
                 {% include people-cards/rangel.html %}
                 {% include people-cards/inches.html %}
                 {% include people-cards/koppel.html %}
                 {% include people-cards/stamatatos.html %}
             </div>
-
+            <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+                {% include organizations/clef-organizations-section.html year=2013 %}
+            </div>
         </div>
-        <div class="uk-container uk-padding-large uk-padding-remove-bottom">
-            {% include organizations/clef-organizations-section.html year=2013 %}
-        </div>
-    </footer>
+    </div>
 </main>
