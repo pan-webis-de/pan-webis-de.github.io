@@ -6,194 +6,269 @@ description: PAN at CLEF 2011
 ---
 
 <main>
-    <header class="uk-section uk-section-muted">
-        <nav class="uk-container">
-            <div class="uk-align-right uk-visible@m uk-text-muted">
-                <a class="uk-button" href="{{ 'clef10/pan10-web/index.html' | relative_url }}"
-                   data-uk-icon="chevron-left"></a>
-                CLEF 2011
-                <a class="uk-button uk-padding-remove-right" href="{{ 'clef12/pan12-web/index.html' | relative_url }}"
-                   data-uk-icon="chevron-right"></a>
-            </div>
-
-            <ul class="uk-text-muted uk-tab uk-margin-remove-top">
-                <li class="uk-active"><a href="{{ '/clef11/pan11-web/index.html' | relative_url }}">Overview</a></li>
-                <li><a href="{{ '/clef11/pan11-web/keynotes.html' | relative_url }}">Keynotes</a></li>
-                <li><a href="{{ '/clef11/pan11-web/program.html' | relative_url }}">Program</a></li>
-                <li>
-                    <a href="#">Tasks <span class="uk-margin-small-left"
-                                            data-uk-icon="icon: chevron-down"></span></a>
-                    <div class="uk-dropdown" data-uk-dropdown="mode: click">
-                        <ul class="uk-nav uk-dropdown-nav">
-                            <li><a href="{{ '/clef11/pan11-web/author-identification.html' | relative_url }}">Author
-                                Identification</a></li>
-                            <li><a href="{{ '/clef11/pan11-web/wikipedia-vandalism-detection.html' | relative_url }}">
-                                Wikipedia Vandalism Detection</a></li>
-                            <li><a href="{{ '/clef11/pan11-web/plagiarism-detection.html' | relative_url }}">Plagiarism
-                                Detection</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a href="{{ '/clef11/pan11-web/submission.html' | relative_url }}">Submission</a></li>
-                <li><a href="{{ 'publications.html#?q=year:2011' | relative_url }}">Proceedings</a></li>
+    <div class="uk-section uk-section-default">
+        <div class="uk-container">
+            <h1 class="uk-margin-remove-top">PAN at CLEF 2011</h1>
+            <ul class="uk-list">
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#index-tasks">Shared Tasks</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#index-important-dates">Important Dates</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#index-keynotes">Keynotes</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#index-program">Program</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#index-organizing-committee">Organizing Committee</a></li>
             </ul>
-        </nav>
-
-        <div class="uk-container uk-margin-small">
-            {% include current-register-quicklink.html year=2011 %}
-
-            <h1 class="uk-margin-small">PAN at CLEF 2011</h1>
-            <div class="page-header-meta">
-                {% include registration-counter.html year=2011 apiVersion="v3" url="" %}
-            </div>
         </div>
 
         <div class="uk-container uk-margin-medium">
-            <div class="uk-align-right uk-margin-remove-bottom">
+            <h2 id="index-tasks" class="uk-margin-small-top">Shared Tasks</h2>
+            <ul>
+                <li><a href="{{ '../../shared-tasks.html#authorship-attribution' | relative_url }}">Authorship Attribution</a></li>
+                <li><a href="{{ '../../shared-tasks.html#wikipedia-vandalism-detection' | relative_url }}">Wikipedia Vandalism Detection</a></li>
+                <li><a href="{{ '../../shared-tasks.html#external-plagiarism-detection' | relative_url }}">External Plagiarism Detection</a></li>
+                <li><a href="{{ '../../shared-tasks.html#intrinsic-plagiarism-detection' | relative_url }}">Intrinsic Plagiarism Detection</a></li>
+            </ul>
+<!--Given a Wikipedia edit, is it well-intentioned?-->
+
+            <h2 id="index-important-dates" class="uk-margin-large-top">Important Dates</h2>
+            <ul>
+                <li> March 15, 2011: Training data release</li>
+                <li> May 16, 2011: Test data release</li>
+                <li> June 08, 2011: Result submission deadline</li>
+                <li> July 17, 2011: Paper submission:
+                    [<a href="../../pan-paper-template.zip">template</a>]
+                    [<a href="http://clef2011.clef-initiative.eu/index.php?page=Pages/InstructionsforCLEF2011WorkingNotes.html">guidelines</a>]
+                    [<a href="https://easychair.org/conferences/?conf=clef2011">submission</a>]
+                </li>
+                <li> August 14, 2011: Camera-ready paper</li>
+                <li> September 19-22, 2011: Conference</li>
+            </ul>
+            <p>The timezone of all deadlines is <a href="https://en.wikipedia.org/wiki/Anywhere_on_Earth">Anywhere on Earth</a>.</p>
+
+
+            <h2 id="index-keynotes">Keynotes</h2>
+            <div class="uk-grid uk-child-width-1-2@l" data-uk-grid>
+                <article class="keynote">
+                    <header class="keynote-header">
+                        <div class="keynote-speaker-image">
+                            <img src="{{ '/clef11/pan11-figures/maria.jpg' | relative_url }}" alt="M. Teresa Turell i Julià">
+                        </div>
+                        <div class="keynote-speaker-image">
+                            <img src="{{ '/clef11/pan11-figures/malcolm.jpg' | relative_url }}" alt="Malcolm Coulthard">
+                        </div>
+                        <div class="keynote-meta">
+                            <div class="keynote-title">
+                                Forensic Plagiarism Detection and Authorship Attribution: On the Linguists' Achievements and the Challenges for Computerized Analysis
+                            </div>
+                            <div class="keynote-speaker"><a
+                                    href="http://www.upf.edu/pdi/iula/teresa.turell/index_eng.htm" target="_blank">M. Teresa Turell i Julià</a>
+                            </div>
+                            <div class="keynote-affiliation">Universitat Pompeu Fabra</div>
+                            <br>
+                            <div class="keynote-speaker"><a
+                                    href="http://www1.aston.ac.uk/lss/staff-directory/coulthardm/" target="_blank">Malcolm Coulthard</a>
+                            </div>
+                            <div class="keynote-affiliation">Aston University</div>
+                        </div>
+                    </header>
+
+                </article>
             </div>
-            <p class="uk-text-lead uk-margin-remove-top">
-                This is the 5th evaluation lab on uncovering plagiarism, authorship, and social software misuse. PAN
-                will be held as part of the <a href="http://clef2011.clef-initiative.eu" target="_blank">CLEF
-                conference</a> in Amsterdam, The Netherlands, on September 19-22, 2011.
-                Evaluations will commence <a href="{{ '/clef11/pan11-web/submission.html' | relative_url }}">from
-                January till June</a>.
-                We invite you to take part in any of the three tasks shown below.
+
+
+            <h2 id="index-program">Program</h2>
+            <p>PAN's program is part of the
+                <a href="http://clef2011.clef-initiative.eu/index.php?page=Pages/conference_session.html">CLEF conference program</a>.
             </p>
-        </div>
-    </header>
+            <table class="uk-table uk-table-divider uk-table-small uk-table-striped">
+                <tbody>
+                <tr class="mid">
+                    <td colspan="2"><b>September 19</b></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><b>Lab overviews</b></td>
+                </tr>
+                <tr class="mid">
+                    <td>
+                        <nobr>14:00-16:00</nobr>
+                        <br/>
+                        <nobr>20 min. talk</nobr>
+                    </td>
+                    <td>PAN'11 - Uncovering Plagiarism, Authorship, and Social Software Misuse<br/><i>Benno Stein</i>
+                    </td>
+                </tr>
+                <tr class="mid">
+                    <td>16:00-16:30</td>
+                    <td>Coffee Break</td>
+                </tr>
+                <tr>
+                    <td>16:30-18:00</td>
+                    <td><b>Poster Session</b></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>EPSMS and the Document Occurrence Representation for Authorship Identification? - Notebook for
+                        PAN at CLEF 2011<br/><i>Hugo Jair Escalante</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Baseline Approaches for the Authorship Identification Task - Notebook for PAN at CLEF
+                        2011<br/><i>Darnes Vilari&ntilde;o Ayala, Esteban Castillo, David Pinto, Saul Leon, and Mireya
+                            Tovar Vidal</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>An Empirical Research: "Wikipedia Vandalism Detection using VandalSense 2.0" - Notebook for PAN
+                        at CLEF 2011<br/><i>F. Gediz Aksit</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Using WordNet-based Semantic Similarity Measurement in External Plagiarism Detection - Notebook
+                        for PAN at CLEF 2011<br/><i>Yurii Palkovskii, Alexei Belov, and Iryna Muzyka</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Rule Based Plagiarism Detection using Information Retrieval - Notebook for PAN at CLEF 2011<br/><i>Aniruddha
+                        Ghosh, Pinaki Bhaskar, Santanu Pal, and Sivaji Bandyopadhyay</i></td>
+                </tr>
+                <tr class="mid">
+                    <td></td>
+                    <td>Using Clustering to Identify Outlier Chunks of Text - Notebook for PAN at CLEF 2011<br/><i>Navot
+                        Akiva</i></td>
+                </tr>
+                <tr class="mid">
+                    <td colspan="2"><b>September 21</b></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><b>Vandalism Detection</b>, Chair: Martin Potthast</td>
+                </tr>
+                <tr class="mid">
+                    <td>10:30-10:55</td>
+                    <td>Multilingual Vandalism Detection using Language-Independent & Ex Post Facto Evidence - Notebook
+                        for PAN at CLEF 2011<br/><i>Andrew West and Insup Lee</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><b>Authorship Identification</b>, Chair: Moshe Koppel</td>
+                </tr>
+                <tr>
+                    <td>10:55-11:10</td>
+                    <td>Overview of the International Authorship Identification Competition at PAN-2011<br/><i>Shlomo
+                        Argamon and Patrick Juola</i></td>
+                </tr>
+                <tr>
+                    <td>11:10-11:35</td>
+                    <td>A Multitude of Linguistically-rich Features for Authorship Attribution - Notebook for PAN at
+                        CLEF 2011<br/><i>Ludovic Tanguy, Assaf Urieli, Basilio Calderone, Nabil Hathout, and Franck
+                            Sajous</i></td>
+                </tr>
+                <tr>
+                    <td>11:35-12:00</td>
+                    <td>Author Identification Using Semi-supervised Learning - Notebook for PAN at CLEF 2011<br/><i>Ioannis
+                        Kourtis and Efstathios Stamatatos</i></td>
+                </tr>
+                <tr>
+                    <td>12:00-12:15</td>
+                    <td>Authorship Identification with Modality Specific Meta Features - Notebook for PAN at CLEF
+                        2011<br/><i>Thamar Solorio, Sangita Pillay and Manuel Montes-Y-G&oacute;mez</i></td>
+                </tr>
+                <tr class="mid">
+                    <td>12:15-12:30</td>
+                    <td>Authorship Identification in Large Email Collections: Experiments Using Features that Belong to
+                        Different Linguistic Levels - Notebook for PAN at CLEF 2011<br/><i>George K. Mikros and Kostas
+                            Perifanos</i></td>
+                </tr>
+                <tr class="mid">
+                    <td>12:30-14:00</td>
+                    <td>Lunch</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><b>Authorship Identification</b>, Chair: Patrick Juola</td>
+                </tr>
+                <tr>
+                    <td>14:00-14:15</td>
+                    <td>Improved Implementation for Finding Text Similarities in Large Collections of Data - Notebook
+                        for PAN at CLEF 2011<br/><i>J&aacute;n Grman and Rudolf Ravas</i></td>
+                </tr>
+                <tr class="mid">
+                    <td>14:15-14:30</td>
+                    <td>Authorship Attribution of E-mail as a Multi-Class Task - Notebook for PAN at CLEF 2011<br/><i>Kim
+                        Luyckx</i></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><b>Keynote and Panel Discussion</b>, Chair: Paolo Rosso</td>
+                </tr>
+                <tr>
+                    <td>14:30-15:10</td>
+                    <td>Forensic Plagiarism Detection and Authorship Attribution: On the Linguists' Achievements and the
+                        Challenges for Computerized Analysis<br/><i>M. Teresa Turell and Malcolm Coulthard</i></td>
+                </tr>
+                <tr class="mid">
+                    <td>15:10-16:00</td>
+                    <td>Panel discussion<br/><i></i></td>
+                </tr>
+                <tr class="mid">
+                    <td colspan="2"><b>September 22</b></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><b>Plagiarism Detection</b>, Chair: Efstathios Stamatatos</td>
+                </tr>
+                <tr>
+                    <td>9:00-9:25</td>
+                    <td>Vote/Veto Meta-Classifier for Authorship Identification - Notebook for PAN at CLEF 2011<br/><i>Roman
+                        Kern, Christin Seifert, Mario Zechner, and Michael Granitzer</i></td>
+                </tr>
+                <tr>
+                    <td>9:25-9:40</td>
+                    <td>Overview of the 3rd International Competition on Plagiarism Detection<br/><i>Martin Potthast,
+                        Andreas Eiselt, Alberto Barr&oacute;n-Cede&ntilde;o, Benno Stein, and Paolo Rosso</i></td>
+                </tr>
+                <tr>
+                    <td>9:40-10:05</td>
+                    <td>Approaches for Intrinsic and External Plagiarism Detection - Notebook for PAN at CLEF
+                        2011<br/><i>Gabriel Oberreuter, Gaston L'Huillier, Seb&aacute;stian R&iacute;os, and Juan Vel&aacute;squez</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>10:05-10:30</td>
+                    <td>Intrinsic Plagiarism Detection Using Character Trigram Distance Scores - Notebook for PAN at
+                        CLEF 2011<br/><i>Mike Kestemont, Kim Luyckx and Walter Daelemans</i></td>
+                </tr>
+                <tr>
+                    <td>10:30-10:45</td>
+                    <td>The Encoplot Similarity Measure for Automatic Detection of Plagiarism - Notebook for PAN at CLEF
+                        2011<br/><i>Cristian Grozea and Marius Popescu</i></td>
+                </tr>
+                <tr>
+                    <td>10:45-11:00</td>
+                    <td>External Plagiarism Detection using Information Retrieval and Sequence Alignment - Notebook for
+                        PAN at CLEF 2011<br/><i>Rao Muhammad Adeel Nawab, Mark Stevenson and Paul Clough</i></td>
+                </tr>
+                <tr class="mid">
+                    <td>11:00-11:05</td>
+                    <td>A High-performance Plagiarism Detection System - Notebook for PAN at CLEF 2011<br/><i>Neil
+                        Cooke, Lee Gillam, Peter Wrobel, Henry Cooke, and Fahad Al-Obaidli</i></td>
+                </tr>
+                <tr class="mid">
+                    <td>11:05-11:30</td>
+                    <td>Coffee Break</td>
+                </tr>
+                <tr>
+                    <td><b></b></td>
+                    <td><b>Reports from the Labs</b></td>
+                </tr>
+                <tr>
+                    <td>11:30-13:15<br/>10 min. talk</td>
+                    <td>PAN'11: Results, Lessons Learned, and Outlook<br/><i>Martin Potthast</i></td>
+                </tr>
+                </tbody>
+            </table>
 
-    <div class="uk-section">
-        <div class="uk-container">
-            <div class="uk-grid uk-grid-large uk-grid-divider uk-child-width-1-3@m uk-child-width-1-2@s" data-uk-grid>
-                <div>
-                    <h2>Author Identification
-                        <div class="uk-text-muted uk-text-lead">
-                            <a href="{{ '/clef11/pan11-web/author-identification.html' | relative_url }}">Learn more</a>
-                        </div>
-                    </h2>
-                    <p>Given a document, who wrote it?</p>
-                    <p>This task incorporates <strong>authorship attribution</strong> and <strong>authorship
-                        verification</strong>.
-                        For the former, the task is to map the uncertain texts onto their true authors among candidate
-                        authors. For the
-                        latter, the task is to determine whether the given text has been written by a specific
-                        author.</p>
-                </div>
-                <div>
-                    <h2>Wikipedia Vandalism Detection
-                        <div class="uk-text-muted uk-text-lead"><a
-                                href="{{ '/clef11/pan11-web/wikipedia-vandalism-detection.html' | relative_url }}">Learn
-                            more</a>
-                        </div>
-                    </h2>
-                    <p>Given a Wikipedia edit, is it well-intentioned?</p>
-                    <p>This task is concerned with preventing "any addition, removal, or change of content made in a
-                        deliberate attempt to compromise the integrity of Wikipedia," which defines vandalism on
-                        Wikipedia. Given a set of edits on Wikipedia articles, the task is to separate the
-                        ill-intentioned edits from the well-intentioned edits.</p>
-                </div>
-                <div>
-                    <h2>Plagiarism Detection
-                        <div class="uk-text-muted uk-text-lead"><a
-                                href="{{ '/clef11/pan11-web/plagiarism-detection.html' | relative_url }}">Learn more</a>
-                        </div>
-                    </h2>
-                    <p>Given a document, is it an original?</p>
-                    <p>This task is divided into <strong>external detection</strong> and <strong>intrinsic
-                        detection</strong>.
-                        External detection is about searching for sources of a suspicious document. Intrinsic detection
-                        is about identifying plagiarized passages via breaches of writing style.
-                    </p>
-                </div>
-            </div>
-        </div>
 
-        <div class="uk-container uk-margin-medium">
-            <hr class="uk-divider-icon">
-        </div>
-
-        <!-- Important Dates -->
-        <div class="uk-container uk-margin-large">
-            <div class="uk-grid-medium" data-uk-grid>
-                <div class="uk-width-1-2@m">
-                    <h2 class="page-header" id="important-dates">Important Dates
-                        <span class="uk-text-muted uk-text-lead">Hawaii time zone</span>
-                    </h2>
-                    <table class="uk-table uk-table-divider uk-table-small uk-table-hover uk-table-justify uk-table-condensed">
-                        <tr>
-                            <td style="border-top:none;">closed</td>
-                            <td style="border-top:none;">Registration</td>
-                        </tr>
-                        <tr>
-                            <td style="vertical-align: top;text-decoration:line-through;">Mar 15, 2011</td>
-                            <td>Training data release</td>
-                        </tr>
-                        <tr>
-                            <td style="vertical-align: top;text-decoration:line-through;">May 16, 2011</td>
-                            <td>Test data release</td>
-                        </tr>
-                        <tr>
-                            <td style="vertical-align: top;text-decoration:line-through;">Jun 08, 2011</td>
-                            <td>Run submission</td>
-                        </tr>
-                        <tr>
-                            <td style="vertical-align: top;text-decoration:line-through;">Jun 15, 2011</td>
-                            <td>Result notification</td>
-                        </tr>
-                        <tr>
-                            <td style="vertical-align: top;text-decoration:line-through;">Jul 17, 2011</td>
-                            <td>Paper submission</td>
-                        </tr>
-                        <tr>
-                            <td style="vertical-align: top;text-decoration:line-through;">Jul 29, 2011</td>
-                            <td>Acceptance notification</td>
-                        </tr>
-                        <tr>
-                            <td style="vertical-align: top;text-decoration:line-through;">Aug 14, 2011</td>
-                            <td>Camera-ready paper</td>
-                        </tr>
-                        <tr>
-                            <td style="vertical-align: top;text-decoration:line-through;">Sep 19-22, 2011</td>
-                            <td>Conference</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="uk-width-1-4@m">
-                    <h2>Quicklinks</h2>
-                    <ul class="uk-list uk-list-divider">
-                        <li>
-                            <a target="_blank"
-                               href="https://docs.google.com/forms/d/e/1FAIpQLSfR_xoBuGU3q7o3EYPoItN28UPuZENjs3wlWYEX_EdRGUyRfA/viewform">Register
-                                for CLEF</a>
-                        </li>
-                        <li>
-                            <a href="pan11-notebook-templates.zip">Download Notebook Templates</a>
-                        </li>
-                        <li>
-                            <a href="https://easychair.org/conferences/?conf=clef2011">Submit Notebook Paper</a>
-                        </li>
-                        <li>
-                            <a href="http://clef2011.clef-initiative.eu/index.php?page=Pages/InstructionsforCLEF2011WorkingNotes.html">Notebook
-                                Submission guidelines</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="uk-width-1-4@m">
-                    <h2>Donate</h2>
-                    <p>Support PAN by making a donation.</p>
-
-                    <p>Organizing PAN entails a significant investment of time and money on our part. If you
-                        wish to support us, please consider making a donation.</p>
-
-                    {% include donation-form.html %}
-                </div>
-            </div>
-        </div>
-    </div>  <!-- section -->
-
-    <footer class="uk-section uk-section-muted">
-        <div class="uk-container">
-            <h2>Organizing Committee</h2>
+            <h2 id="index-organizing-committee">Organizing Committee</h2>
             <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
                 {% include people-cards/potthast.html %}
                 {% include people-cards/stein.html %}
@@ -204,9 +279,9 @@ description: PAN at CLEF 2011
                 {% include people-cards/argamon.html %}
                 {% include people-cards/koppel.html %}
             </div>
+            <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+                {% include organizations/clef-organizations-section.html year=2011 %}
+            </div>
         </div>
-        <div class="uk-container uk-padding-large uk-padding-remove-bottom">
-            {% include organizations/clef-organizations-section.html year=2011 %}
-        </div>
-    </footer>
+    </div>
 </main>

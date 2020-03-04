@@ -1,0 +1,180 @@
+---
+layout: default
+nav_active: tasks
+title: PAN @ CLEF 2011 - External Plagiarism Detection
+description: PAN @ CLEF 2011 - External Plagiarism Detection
+---
+
+<main>
+    <div class="uk-section uk-section-default">
+        <div class="uk-container uk-margin-small">
+            <h1 class="uk-margin-remove-top">External Plagiarism Detection 2011</h1>
+            <ul class="uk-list">
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#award">Award</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#input">Input</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#output">Output</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#sponsor">Sponsor</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
+            </ul>
+        </div>
+
+        <div class="uk-container uk-margin-medium">
+
+            <h2 id="synopsis">Synopsis</h2>
+            <ul>
+                <li>Task: Given a set of suspicious documents and a set of potential source documents, the task is to find
+                all plagiarized passages in the suspicious documents and their corresponding source passages in
+                the source documents.</li>
+                <li>Evaluator: [<a href="https://github.com/pan-webis-de/pan-code/tree/master/sepln09" target="_blank">code</a>]</li>
+            </ul>
+
+
+            <h2 id="award">Award</h2>
+            <p>We are happy to announce the following overall winner of the 1st International Competition on
+            Plagiarism Detection who will be awarded 500,- Euro sponsored by Yahoo! Research:</p>
+            <ul><li>
+                Task winner of the external plagiarism detection task are J. Grman and R. Ravas from SVOP Ltd., Slovakia.
+            </li></ul>
+            <p>Congratulations!</p>
+
+
+            <h2 id="input">Input</h2>
+            <p>To develop your approach, we provide you with a training corpus which comprises a set of
+            suspicious documents and a set of source documents. A suspicious document may contain
+            plagiarized passages, the source passages of which may or may not be present in one or more of
+            the source documents.</p>
+
+
+            <h2 id="output">Output</h2>
+            <p>For each suspicious document <code>suspicious-documentXYZ.txt</code> found in the evaluation
+            corpora, your plagiarism detector shall output an XML file <code>suspicious-documentXYZ.xml</code> which contains meta
+            information about all plagiarism cases detected within:</p>
+            <pre class="prettyprint lang-xml" style="overflow-x:auto">
+&lt;document reference="suspicious-documentXYZ.txt"&gt;
+  &lt;feature name="detected-plagiarism"
+           this_offset="5"
+           this_length="1000"
+           source_reference="source-documentABC.txt"
+           source_offset="100"
+           source_length="1000"
+  /&gt;
+  ...
+&lt;/document&gt;
+</pre>
+            <p>The XML documents must be valid with respect to the XML schema found
+            <a href="https://www.uni-weimar.de/medien/webis/corpora/corpus-pan-pc-09/document.xsd">here</a>.</p>
+
+
+            <h2 id="evaluation">Evaluation</h2>
+            <p>Performance will be measured using macro-averaged precision and recall, granularity, and the
+            plagdet score, which is a combination of the first three measures. For your convenience, we
+            provide a reference implementation of the measures written in Python.</p>
+
+
+            <h2 id="results">Results</h2>
+            <table class="uk-table uk-table-divider uk-table-small uk-table-hover" style="font-size:small">
+                        <thead>
+                        <tr>
+                            <th colspan="2" style="text-align:center">External Plagiarism Detection Performance</th>
+                        </tr>
+                        <tr>
+                            <th>Plagdet</th>
+                            <th>Participant</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>0.5563</td>
+                            <td>J. Grman and R. Ravas<br/>SVOP Ltd., Slovakia</td>
+                        </tr>
+                        <tr>
+                            <td>0.4153</td>
+                            <td>C. Grozea* and M. Popescu°<br/>*Fraunhofer Institute FIRST, Germany</br>°University of
+                                Bucharest, Romania
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>0.3469</td>
+                            <td>G. Oberreuter, G. L'Huillier, S A. R&iacute;os, and J.D. Vel&aacute;squez<br/>Universidad
+                                de Chile, Chile
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>0.2467</td>
+                            <td>N. Cooke, L. Gillam, P. Wrobel, H. Cooke, and F. Al-Obaidli<br/>University of Surrey,
+                                United Kingdom
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>0.2340</td>
+                            <td>D.A. Rodr&iacute;guez Torrej&oacute;n*<sup>,</sup>° and J.M. Mart&iacute;n Ramos°<br/>*IES
+                                "Jos&eacute; Caballero", Spain<br/>°Universidad de Huelva, Spain
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>0.1991</td>
+                            <td>S. Rao, P. Gupta, K. Singhal, and P. Majumder<br/>DA-IICT, India</td>
+                        </tr>
+                        <tr>
+                            <td>0.1892</td>
+                            <td>Y. Palkovskii, A. Belov, I. Muzyka<br/>Zhytomyr State University and SkyLine Inc.,
+                                Ukraine
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>0.0804</td>
+                            <td>R.M.A. Nawab, M. Stevenson, and P. Clough<br/>University of Sheffield, United Kingdom
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>0.0011</td>
+                            <td>A. Ghosh, P. Bhaskar, S. Pal, and S. Bandyopadhyay<br/>Jadavpur University, India</td>
+                        </tr>
+                        </tbody>
+                    </table>
+            <p>A more detailed analysis of the detection performances with respect to precision, recall, and
+                granularity can be found in the overview paper accompanying this task.</p>
+
+            <h2 id="related-work">Related Work</h2>
+            <ul>
+                <li>
+                    <a href="{{ 'publications.html#?q=2010%20plagiarism%20potthast' | relative_url }}">PAN @ CLEF'10</a>
+                </li>
+                <li>
+                    <a href="{{ 'publications.html#?q=2009%20plagiarism%20potthast' | relative_url }}">PAN @ SEPLN'09</a>
+                </li>
+            </ul>
+
+
+            <h2 id="sponsor">Sponsor</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <a href="https://labs.yahoo.com/" target="_blank">
+                            <img src="../pan11-figures/logo-yahoo-research.jpg" alt="logo-yahoo">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+            <h2 id="task-committee">Task Committee</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/potthast.html %}
+                {% include people-cards/stein.html %}
+                {% include people-cards/temporary.html url="https://weimar.webis.de"
+                name="Andreas Eiselt" picture="../pan11-figures/andreas.jpg" affiliation="Bauhaus Universität Weimar" %}
+                {% include people-cards/barron-cedeno.html %}
+                {% include people-cards/rosso.html %}
+            </div>
+            <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+                {% include organizations/clef-organizations-section.html year=2011 %}
+            </div>
+
+        </div>  <!-- section -->
+    </div>  <!-- section -->
+</main>
