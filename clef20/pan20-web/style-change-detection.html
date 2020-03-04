@@ -51,7 +51,7 @@ description: PAN @ CLEF 2020 - Style Change Detection
 
             <p>The following figure illustrates some possible scenarios and the expected output for the two tasks:</p>
             <br>
-            <img src="../pan20-figures/style-change-task.png" alt="Style Change Detction Task Example">
+            <img src="../pan20-figures/style-change-task.png" alt="Style Change Detection Task Example">
 
             <h2 id="data">Data</h2>
             <p>To develop and then test your algorithms, two data sets including ground truth information are provided. Those data sets differ in their topical breadth (i.e., the number of different topics that are covered in the documents contained). <i>dataset-narrow</i> contains texts from a relatively narrow set of subjects matters (all related to technology), whereas <i>dataset-wide</i> adds additional subject areas to that (travel, philosophy, economics, history, etc.).</p>
@@ -129,12 +129,12 @@ test/
                                 "changes": [0,0,0,...]
                             }</code></pre>
 
-            <p>We provide you with a script to check the validity of the solution files [<a href="../pan20-code/style-change-detection/output_verifier.py">verifier</a>][<a href="../pan20-code/style-change-detection/test_output_verifier.py">tests</a>]. </p>
+            <p>We provide you with a script to check the validity of the solution files [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef20/style-change-detection" target="_blank">verifier and tests</a>].</p>
 
             <h2 id="evaluation">Evaluation</h2>
             <p>Submissions are evaluated by the F1-score measure for each document. The two tasks are evaluated independently based on the obtained accuracy measures. For task 1, we compute the average F1-score value across all documents and for task 2, we use the micro-averaged F1-score across all documents. The submissions for the two datasets will be evaluated independently and the resulting F1-scores for the two tasks will be averaged across the two datasets.</p>
 
-            <p>We provide you with a script to compute those measures based on the produced output-files [<a href="../pan20-code/style-change-detection/evaluator.py">code</a>][<a href="../pan20-code/style-change-detection/test_evaluator.py">tests</a>].</p>
+            <p>We provide you with a script to compute those measures based on the produced output-files [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef20/style-change-detection">evaluator and tests</a>].</p>
 
             <h2 id="submission">Submission</h2>
             <p>Once you finished tuning your approach on the validation set, your software will be tested on the test set. During the competition, the test set will not be released publicly. Instead, we ask you to submit your software for evaluation at our site as described below.</p>
@@ -149,26 +149,23 @@ test/
             <p>Within <code>INPUT-DIRECTORY</code>, you will find one folder for each dataset, holding a set of problem instances (i.e., <code>problem-[id].txt</code> files). For each problem instance you should produce the solution file <code>solution-problem-[id].json</code> in the
                 <code>OUTPUT-DIRECTORY</code>. For instance, you read <code>INPUT-DIRECTORY/dataset-narrow/problem-12.txt</code>, process it and write your results to <code>OUTPUT-DIRECTORY/dataset-narrow/solution-problem-12.json</code>.</p>
 
-            <p>In general, this task follows PAN's software submission strategy <a href="http://127.0.0.1:4000/organization.html#participation-guide">described here</a>.</p>
+            <p>In general, this task follows PAN's software submission strategy <a href="{{ 'organization.html#participation-guide' | relative_url }}">described here</a>.</p>
 
             <p>Note: By submitting your software you retain full copyrights. You agree to grant us usage rights only for the purpose of the PAN competition. We agree not to share your software with a third party or use it for other purposes than the PAN competition.</p>
 
             <h2 id="related-work">Related Work</h2>
             <ul>
                 <li>
-                    <a href="https://pan.webis.de/publications.html#?q=2019">PAN@CLEF'19</a> (<i>Overview of the Style Change Detection Task at PAN-2019</i>)
+                    <a href="{{ 'publications.html#?q=2019%20Zangerle' | relative_url }}">Style Change Detection, PAN@CLEF'19</a>
                 </li>
                 <li>
-                    <a href="../../clef18/pan18-web/proceedings.html">PAN@CLEF'18</a> (<i>Overview of the Author
-                    Identification Task at PAN-2018: Cross-domain Authorship Attribution and Style Change
-                    Detection</i>)
+                    <a href="{{ 'publications.html#?q=2018%20Tschuggnall' | relative_url }}">Style Change Detection, PAN@CLEF'18</a>
                 </li>
                 <li>
-                    <a href="../../clef17/pan17-web/proceedings.html">PAN@CLEF'17</a> (<i>Overview of the Author
-                    Identification Task at PAN-2017</i> and <i>Style Breach Detection</i> section)
+                    <a href="{{ 'publications.html#?q=2017%20Tschuggnall' | relative_url }}">Style Breach Detection, PAN@CLEF'17</a>
                 </li>
                 <li>
-                    <a href="../../clef16/pan16-web/proceedings.html">PAN@CLEF'16</a> (<i>Clustering by
+                    <a href="{{ 'publications.html#?q=2016%20Tschuggnall' | relative_url }}">PAN@CLEF'16</a> (<i>Clustering by
                     Authorship Within and Across Documents</i> and <i>Author Diarization</i> section)
                 </li>
                 <li>J. Cardoso and R. Sousa. Measuring the performance of ordinal classification. International Journal of Pattern Recognition and Artificial Intelligence 25.08, pp. 1173-1195, 2011
@@ -177,7 +174,7 @@ test/
                     Segmenting Text into Multi-paragraph Subtopic Passages.</a>. In Computational Linguistics,
                     Volume 23, Issue 1, pages 33-64, 1997.
                 </li>-->
-                <li>Benno Stein, Nedim Lipka and Peter Prettenhofer. <a href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2011a.pdf">Intrinsic
+                <li>Benno Stein, Nedim Lipka and Peter Prettenhofer. <a href="https://webis.de/publications.html#?q=stein_2011a">Intrinsic
                     Plagiarism Analysis</a>. In Language Resources and Evaluation, Volume 45, Issue 1, pages 63-82, 2011.
                 </li>
                 <!--<li>
