@@ -1,4 +1,16 @@
 <div class="task-chair-organizations">
+    {% if include.year == 2009 %}
+    <div>
+        <a href="http://ixa2.si.ehu.es/sepln2009/" target="_blank">
+            <img src="{{ '/img/organizations/logo-sepln09.png' | relative_url }}" alt="SEPLN logo">
+        </a>
+    </div>
+    <div>
+        <a href="http://www.ehu.eus/" target="_blank">
+            <img src="{{ '/img/organizations/logo-universidad-del-pais-vasco.jpg' | relative_url }}" alt="UPV logo">
+        </a>
+    </div>
+    {% endif %}
     {% if include.year == 2010 %}
     <div>
         <a href="http://clef2010.clef-initiative.eu/" target="_blank">
@@ -76,9 +88,11 @@
         </a>
     </div>
     {% endif %}
+    {% if include.year >= 2010 %}
     <div>
         <a href="http://www.clef-initiative.eu/" target="_blank">
             <img src="{{ '/img/organizations/logo-clef2.png' | relative_url }}" alt="CLEF logo">
         </a>
     </div>
+    {% endif %}
 </div>

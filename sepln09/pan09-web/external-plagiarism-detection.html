@@ -1,0 +1,174 @@
+---
+layout: default
+nav_active: tasks
+title: PAN @ SEPLN 2009 - External Plagiarism Detection
+description: PAN @ SEPLN 2009 - External Plagiarism Detection
+---
+
+<main>
+    <div class="uk-section uk-section-default">
+        <div class="uk-container uk-margin-small">
+            <h1 class="uk-margin-remove-top">External Plagiarism Detection 2009</h1>
+            <ul class="uk-list">
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#award">Award</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#input">Input</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#output">Output</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#sponsor">Sponsor</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
+            </ul>
+        </div>
+
+        <div class="uk-container uk-margin-medium">
+
+            <h2 id="synopsis">Synopsis</h2>
+            <ul>
+                <li>Task: Given a set of suspicious documents and a set of potential source documents, the task is to find
+                    all plagiarized passages in the suspicious documents and their corresponding source passages in the source documents.
+                </li>
+                <li>Input: [<a href="{{ 'data.html#pan09-external-plagiarism-detection' | relative_url }}">data</a>]
+                </li>
+                <li>Evaluator: [<a href="https://github.com/pan-webis-de/pan-code/tree/master/sepln09" target="_blank">code</a>]
+                </li>
+            </ul>
+
+            <h2 id="award">Award</h2>
+            <p>We are happy to announce the following overall winner of the 1st International Competition on Plagiarism
+                Detection who will be awarded 500,- Euro sponsored by Yahoo! Research: </p>
+            <ul>
+                <li>Task winner of the external plagiarism detection task, and overall winner, are Cristian Grozea,
+                    Christian Gehl, and Marius Popescu from Fraunhofer FIRST and the University of Bucharest.
+                </li>
+            </ul>
+            <p>Congratulations!</p>
+
+
+            <h2 id="input">Input</h2>
+            <p>To develop your approach, we provide you with a training corpus which comprises a set of suspicious documents and a set of source documents.
+                A suspicious document may contain plagiarized passages from one or more source documents.</p>
+
+
+            <h2 id="output">Output</h2>
+            <p>For each suspicious document <code>suspicious-documentXYZ.txt</code> found in the evaluation
+            corpora, your plagiarism detector shall output an XML file
+            <code>suspicious-documentXYZ.xml</code> which contains meta information about all plagiarism
+            cases detected within:</p>
+            <pre class="prettyprint lang-xml" style="overflow-x:auto">&lt;document reference="suspicious-documentXYZ.txt"&gt;
+&lt;feature
+  name="detected-plagiarism"
+  this_offset="5"
+  this_length="1000"
+  source_reference="suspicious-documentABC.txt"
+  source_offset="100"
+  source_length="1000"
+/&gt;
+...
+&lt;/document&gt;</pre>
+            <p>The <code>source_*</code> attributes may be omitted in case no source document can be identified for
+            a given detected plagiarized passage.</p>
+
+
+            <h2 id="evaluation">Evaluation</h2>
+            <p>Performance will be measured using macro-averaged precision and recall, granularity, and the
+            plagdet score, which is a combination of the first three measures. For your convenience, we
+            provide a reference implementation of the measures written in Python.</p>
+
+
+            <h2 id="results">Results</h2>
+            <p>The following table lists the performances achieved by the participating teams:</p>
+            <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+                <thead>
+                <tr>
+                    <th colspan="2" style="text-align:center">Plagiarism Detection Performance</th>
+                </tr>
+                <tr>
+                    <th>Plagdet</th>
+                    <th>Participant</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>0.6957</td>
+                    <td>C. Grozea*, C. Gehl*, and M. Popescu°<br/>*Fraunhofer FIRST, Germany, and °University of
+                        Bucharest, Romania
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.6093</td>
+                    <td>J. Kasprzak, M. Brandejs, and M. Kr&#x030C;ipac&#x030C;<br/>Masaryk University, Czech Republic
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.6041</td>
+                    <td>C. Basile*, D. Benedetto°, E. Caglioti°, G. Cristadoro*, and M. Degli Esposti*<br/>*Università
+                        di Bologna and °Università La Sapienza, Italy
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.3045</td>
+                    <td>Y. A. Palkovskii<br/>Zhytomyr State University, Ukraine</td>
+                </tr>
+                <tr>
+                    <td>0.1885</td>
+                    <td>M. Zechner, M. Muhr, R. Kern, and M. Granitzer<br/>Know-Center Graz, Austria</td>
+                </tr>
+                <tr>
+                    <td>0.1422</td>
+                    <td>V. Shcherbinin* and S. Butakov°<br/>*American University of Nigeria, Nigeria, and<br/>°Solbridge
+                        International School of Business, South Korea
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.0649</td>
+                    <td>R. C. Pereira, V. P. Moreira, and R. Galante<br/>Universidade Federal do Rio Grande do Sul,
+                        Brazil
+                    </td>
+                </tr>
+                <tr>
+                    <td>0.0264</td>
+                    <td>E. Vall&eacute;s Balaguer<br/>Private, Spain</td>
+                </tr>
+                <tr>
+                    <td>0.0187</td>
+                    <td>J. A. Malcolm and P. C. R. Lane<br/>Ferret, University of Hertfordshire, UK</td>
+                </tr>
+                <tr>
+                    <td>0.0117</td>
+                    <td>J. Allen<br/>Southern Methodist University in Dallas, USA</td>
+                </tr>
+                </tbody>
+
+
+            </table>
+            <p>A more detailed analysis of the detection performances can be found in the overview paper accompanying this task.</p>
+
+
+            <h2 id="sponsor">Sponsor</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <a href="https://labs.yahoo.com/" target="_blank">
+                            <img src="../pan09-figures/logo-yahoo-research.jpg" alt="logo-yahoo">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+            <h2 id="task-committee">Task Committee</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/potthast.html %}
+                {% include people-cards/stein.html %}
+                {% include people-cards/temporary.html url="https://weimar.webis.de" name="Andreas Eiselt"
+                picture="../pan09-figures/andreas.jpg" affiliation="Bauhaus Universität Weimar" %}
+                {% include people-cards/barron-cedeno.html %}
+                {% include people-cards/rosso.html %}
+            </div>
+            <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+                {% include organizations/clef-organizations-section.html year=2009 %}
+            </div>
+        </div>  <!-- section -->
+    </div>  <!-- section -->
+</main>
