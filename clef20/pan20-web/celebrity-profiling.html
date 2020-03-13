@@ -28,7 +28,7 @@ description: PAN @ CLEF 2020 - Celebrity Profiling
                 <li>Input: [<a href="{{ '../../data.html#pan20-celebrity-profiling' | relative_url }}">data</a>]</li>
                 <li>Evaluation: [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef20/celebrity-profiling" target="_blank">code</a>]</li>
                 <li>Submission: [<a href="https://www.tira.io/task/celebrity-profiling/">submit</a>]</li>
-                <li>Baseline: [code]</li>
+                <li>Baseline: [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef20/celebrity-profiling" target="_blank">code</a>]</li>
             </ul>
 
             <h2 id="task">Task</h2>
@@ -103,8 +103,8 @@ gender      := {male, female}</code></pre>
             </p>
 
             <h2 id="results">Results</h2>
-            <p>Results will be announced after the competition.</p>
-            <!--
+            <p>Participant Results will be added after the competition.</p>
+
             <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
                 <thead>
                 <tr>
@@ -114,22 +114,36 @@ gender      := {male, female}</code></pre>
                 <tr>
                     <th></th>
                     <th>cRank</th>
-                    <th>Gender</th>
                     <th>Age</th>
+                    <th>Gender</th>
                     <th>Occupation</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <td>baseline-rand</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>baseline-ngram-celebrity-tweets</td>
+                    <td>0.631</td>
+                    <td>0.500</td>
+                    <td>0.753</td>
+                    <td>0.700</td>
+                </tr>
+                <tr>
+                    <td>baseline-ngram-follower-tweets</td>
+                    <td>0.469</td>
+                    <td>0.362</td>
+                    <td>0.584</td>
+                    <td>0.521</td>
+                </tr>
+                <tr>
+                    <td>baseline-uniform</td>
+                    <td>0.344</td>
+                    <td>0.330</td>
+                    <td>0.520</td>
+                    <td>0.265</td>
                 </tr>
                 </tbody>
             </table>
-            -->
+
 
            <h2 id="related-work">Related Work</h2>
             <ul>
