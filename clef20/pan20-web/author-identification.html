@@ -1,8 +1,8 @@
 ---
 layout: default
 nav_active: tasks
-title: PAN @ CLEF 2020 - Cross-domain Authorship Attribution
-description: PAN @ CLEF 2020 - Cross-domain Authorship Attribution
+title: PAN @ CLEF 2020 - Authorship Verification
+description: PAN @ CLEF 2020 - Authorship Verification
 ---
 
 <main>
@@ -24,9 +24,8 @@ description: PAN @ CLEF 2020 - Cross-domain Authorship Attribution
 
             <h2 id="synopsis">Synopsis</h2>
             <ul>
-                <li>Given two texts, determine if they are written by the same author.</li>
-                <li>Input: [data]</li>
-                <li>Output: [verifier]</li>
+                <li>Task: Given two texts, determine if they are written by the same author.</li>
+                <li>Input: [<a href="{{ '../../data.html#pan20-authorship-verification' | relative_url }}">data</a>]</li>
                 <li>Evaluation: [code]</li>
                 <li>Submission: [<a href="https://www.tira.io/task/authorship-verification/">submit</a>]</li>
                 <li>Baseline: [code]</li>
@@ -46,7 +45,29 @@ description: PAN @ CLEF 2020 - Cross-domain Authorship Attribution
             
             
             <h2 id="data">Data</h2>
-            <p>More details will be shared soon.</p>
+            <p>The dataset comes in two variants: a smaller dataset particularly for symbolic machine learning methods and a large dataset suitable for deep learning.
+            Participants have to specify which of the two datasets was used to train their model. Models using the small set will be evaluated
+            separately from models using the large set. We encourage participants to try the small dataset as a challenge, though participants can submit
+            separate approaches for either one or both.</p>
+
+            <p>Both the small and the large dataset come with two newline delimited JSON files each (<code>*.jsonl</code>).
+            The first file contains pairs of texts (each pair has a unique ID) and their fandom labels:</p>
+
+            <pre id="jsonl-example" class="prettyprint linenums uk-margin-remove-bottom">
+<code class="lang-json">{"id": "6cced668-6e51-5212-873c-717f2bc91ce6", "fandoms": ["Fandom 1", "Fandom 2"], "pair": ["Text 1...", "Text 2..."]}
+                        {"id": "ae9297e9-2ae5-5e3f-a2ab-ef7c322f2647", "fandoms": ["Fandom 3", "Fandom 4"], "pair": ["Text 3...", "Text 4..."]}
+...</code></pre>
+
+            <p>The second file, ending in <code>*_truth.jsonl</code>, contains the ground truth for all pairs. The ground truth
+            is composed of a boolean flag indicating if texts in a pair are from the same author and the numeric author IDs:</p>
+            <pre id="truth-jsonl-example" class="prettyprint linenums uk-margin-remove-bottom">
+<code class="lang-json">{"id": "6cced668-6e51-5212-873c-717f2bc91ce6", "same": true, "authors": ["1446633", "1446633"]}
+                        {"id": "ae9297e9-2ae5-5e3f-a2ab-ef7c322f2647", "same": false, "authors": ["1535385", "1998978"]}
+...</code></pre>
+
+            <p>Data and ground truth are in the same order and can be ingested line-wise in parallel without the need for a reshuffle based on the pair ID.</p>
+
+            <p>The fandom labels will be given in both the training and testing datasets. The ground truth file will only be available for the training data.</p>
             
             <h2 id="evaluation">Evaluation</h2>
             <p>More details will be shared soon.</p>
