@@ -34,5 +34,9 @@ None of our corpora match your filter.
 <script src="https://assets.webis.de/js/thirdparty/fontawesome/solid.min.js"></script>
 <script src="https://assets.webis.de/js/filter.js"></script>
 <script>
-includeDataTable(document.querySelector(".webis-data-table"), "#pan-include");
+let query = "";
+if (window.location.hash.startsWith("#?q=")) {
+  query = window.location.hash.substr(4);
+}
+includeDataTable(document.querySelector(".webis-data-table"), "#pan-include", query);
 </script>
