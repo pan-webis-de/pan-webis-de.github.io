@@ -27,7 +27,7 @@ description: PAN Shared Tasks Overview
         </div>
 
         <div class="uk-container uk-margin-medium webis-data-table">
-            <table class="uk-table uk-table-divider uk-table-small uk-table-hover targetable sortable">
+            <table class="uk-table uk-table-divider uk-table-small targetable sortable">
                 <thead>
                 <tr>
                     <th id="authorship-analysis"></th>
@@ -144,7 +144,7 @@ description: PAN Shared Tasks Overview
                 </tbody>
             </table>
 
-            <table class="uk-margin-medium uk-table uk-table-divider uk-table-small uk-table-hover sortable targetable">
+            <table class="uk-margin-medium uk-table uk-table-divider uk-table-small sortable targetable">
                 <thead>
                 <tr>
                     <th id="computational-ethics"></th>
@@ -193,7 +193,7 @@ description: PAN Shared Tasks Overview
                 </tbody>
             </table>
 
-            <table class="uk-margin-medium uk-table uk-table-divider uk-table-small uk-table-hover sortable targetable">
+            <table class="uk-margin-medium uk-table uk-table-divider uk-table-small sortable targetable">
                 <thead>
                 <tr>
                     <th id="originality"></th>
@@ -256,7 +256,7 @@ description: PAN Shared Tasks Overview
 </main>
 
 <script src="https://assets.webis.de/js/thirdparty/jquery/jquery.slim.min.js"></script>
-<script src="https://assets.webis.de/js/table-sorting.js"></script>
+<script src="https://assets.webis.de/js/tables.js"></script>
 <script src="https://assets.webis.de/js/thirdparty/fontawesome/fontawesome.min.js"></script>
 <script src="https://assets.webis.de/js/thirdparty/fontawesome/solid.min.js"></script>
 <script src="https://assets.webis.de/js/filter.js"></script>
@@ -268,4 +268,5 @@ description: PAN Shared Tasks Overview
         attributes['edition'] = normalize(entry.children[3].textContent);
         return attributes;
     });
+    initTableHighlightOnClick();
 </script>
