@@ -26,9 +26,9 @@ description: PAN @ CLEF 2020 - Authorship Verification
             <ul>
                 <li>Task: Given two texts, determine if they are written by the same author.</li>
                 <li>Input: [<a href="{{ '../../data.html#pan20-authorship-verification' | relative_url }}">data</a>]</li>
-                <li>Evaluation: [code]</li>
+                <li>Evaluation: [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef20/authorship-verification">evaluation code</a>]</li>
                 <li>Submission: [<a href="https://www.tira.io/task/authorship-verification/">submit</a>]</li>
-                <li>Baseline: [code]</li>
+                <li>Baseline: [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef20/authorship-verification">baselines code</a>]</li>
             </ul>
             
             <h2 id="task">Task</h2>
@@ -38,17 +38,15 @@ description: PAN @ CLEF 2020 - Authorship Verification
               <ul>
               <li><p>Year 1 (PAN 2020): Closed-set verficiation.<br>Given a large training dataset comprising of known authors who have written about a given set of topics, the test dataset contains verification cases from a subset of the authors and topics found in the training data.</p></li>
               <li><p>Year 2 (PAN 2021): Open-set verification.<br>Given the training dataset of Year&nbsp;1, the test dataset contains verification cases from previously unseen authors and topics.</p></li>
-              <li><p>Year 3 (PAN 2022): <em>Suprise task</em>.<br>The task of the last year of this evaluation cycle (to be announced at a later time) will be designed with an eye on realism and practical application.</p></li>
+              <li><p>Year 3 (PAN 2022): <em>Surprise task</em>.<br>The task of the last year of this evaluation cycle (to be announced at a later time) will be designed with an eye on realism and practical application.</p></li>
               </ul>
               This evaluation cycle on authorship verification provides for a renewed challenge of increasing difficulty within a large-scale evaluation. We invite you to plan ahead and participate in all three of these tasks.
             </p>
             
             
             <h2 id="data">Data</h2>
-            <p>The dataset comes in two variants: a smaller dataset particularly for symbolic machine learning methods and a large dataset suitable for deep learning.
-            Participants have to specify which of the two datasets was used to train their model. Models using the small set will be evaluated
-            separately from models using the large set. We encourage participants to try the small dataset as a challenge, though participants can submit
-            separate approaches for either one or both.</p>
+            <p>The train (calibration) and test datasets consists of pairs of (snippets from) two different fanfics, that were obtained drawn from <a href="https://www.fanfiction.net/">fanfiction.net</a>. Each pair was assigned a unique identifier and we distinguish between same-author pairs and different-authors pairs. Additionally, we offer metadata on the fandom (i.e. thematic category) for each text in the pair (note that fanfic "crossovers" were not included and only single-fandom texts were considered). The fandom distribution in these datasets maximally approximates the (long-tail) distribution of the fandoms in the original dataset. The test dataset is structured in the exact same way, but participants should expect a significant shift in the relation between authors and fandoms.</p>
+            <p>The training dataset comes in two variants: a smaller dataset, particularly suited for symbolic machine learning methods and a large, dataset, suitable for applying data-hungry deep learning algorithms. Participants have to specify which of the two datasets was used to train their model. Models using the small set will be evaluated separately from models using the large set. We encourage participants to try the small dataset as a challenge, though participants can submit separate submissions for either one or both.</p>
 
             <p>Both the small and the large dataset come with two newline delimited JSON files each (<code>*.jsonl</code>).
             The first file contains pairs of texts (each pair has a unique ID) and their fandom labels:</p>
@@ -65,12 +63,21 @@ description: PAN @ CLEF 2020 - Authorship Verification
                         {"id": "ae9297e9-2ae5-5e3f-a2ab-ef7c322f2647", "same": false, "authors": ["1535385", "1998978"]}
 ...</code></pre>
 
-            <p>Data and ground truth are in the same order and can be ingested line-wise in parallel without the need for a reshuffle based on the pair ID.</p>
+            <p>Data and ground truth are in the same order and can be ingested line-wise in parallel without the need for a reshuffle based on the pair ID. The fandom labels will be given in both the training and testing datasets. The ground truth file will only be available for the training data.</p>
 
-            <p>The fandom labels will be given in both the training and testing datasets. The ground truth file will only be available for the training data.</p>
+            <h2 id="baseline">Baselines [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef20/authorship-verification">baselines code</a>]</h2>
+            <p>We provide a simple baseline method that calculates the cosine similarities between TFIDF-normalized, bag-of-character-tetragrams representations of the texts in a pair. The resulting scores are then shifted using a simple grid search, to arrive at an optimal performance on the calibration data. Note that this baseline does not make use of the fandom information: participants are highly encouraged to exploit this useful metadata in their submissions.</p>
             
-            <h2 id="evaluation">Evaluation</h2>
-            <p>More details will be shared soon.</p>
+            <h2 id="evaluation">Evaluation [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef20/authorship-verification">evaluation code</a>]</h2>
+            <p>Systems will be compared and ranked on the basis of four, complementary metrics:
+            <ul>
+                <li><b>AUC</b>: the conventional area-under-the-curve score, as implemented in <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.auc.html">scikit-learn</a>.</li>
+                <li><b>F1-score</b>: the well-known performance measure (not taking into account non-answers), as implemented in <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html">scikit-learn</a>.</li>
+                <li><b>c@1</b>: a variant of the conventional F1-score, which rewards systems that leave difficult problems unanswered (i.e. scores of exactly 0.5), introduced by Peñas and Rodrigo (2011).</li>
+                <li><b>F_0.5u</b>: a newly proposed measure that puts more emphasis on deciding same-author cases correctly (Bevendorff et al. 2019)</li>
+            </ul>
+
+            <p>A reference evaluation script is made available. Systems will be applied to a pairs-file and are expected to produce a single jsonl-file as result. In this prediction file, each separate line should contain a valid json-string that provides the ID of a pair in the pairs-file and a "value" field, with a floating-point score that is bounded (0 >= score <= 1), indicating the probability that this pair is a same-author text pair. Systems are allowed to leave some problems unanswered: in such cases, the answer can be left out from the prediction file OR its value should be set to exactly 0.5. All answers that have a value of 0.5 will be considered non-decisions.</p>
             
             <h2 id="results">Results</h2>
             <p>More details will be shared soon.</p>
@@ -97,6 +104,12 @@ description: PAN @ CLEF 2020 - Authorship Verification
                     Survey of Modern Authorship Attribution Methods</a>.
                     Journal of the American Society for Information Science and Technology, Volume 60, Issue 3,
                     pages 538-556, March 2009.
+                </li>
+                <li>
+                    A. Peñas and A. Rodrigo. A Simple Measure to Assess Nonresponse. In Proc. of the 49th Annual Meeting of the Association for. Computational Linguistics, Vol. 1, pages 1415-1424, 2011.
+                </li>
+                <li>
+                    Bevendorff et al. Generalizing Unmasking for Short Texts, Proceedings of NAACL (2019), 654-659.
                 </li>
             </ul>
 
