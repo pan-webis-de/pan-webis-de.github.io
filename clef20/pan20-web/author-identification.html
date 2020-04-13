@@ -66,7 +66,10 @@ description: PAN @ CLEF 2020 - Authorship Verification
             <p>Data and ground truth are in the same order and can be ingested line-wise in parallel without the need for a reshuffle based on the pair ID. The fandom labels will be given in both the training and testing datasets. The ground truth file will only be available for the training data.</p>
 
             <h2 id="baseline">Baselines [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef20/authorship-verification">code</a>]</h2>
-            <p>We provide a simple baseline method that calculates the cosine similarities between TFIDF-normalized, bag-of-character-tetragrams representations of the texts in a pair. The resulting scores are then shifted using a simple grid search, to arrive at an optimal performance on the calibration data. Note that this baseline does not make use of the fandom information: participants are highly encouraged to exploit this useful metadata in their submissions.</p>
+            <p>We provide the following baseline methods: </p>
+            <p>- A simple method that calculates the cosine similarities between TFIDF-normalized, bag-of-character-tetragrams representations of the texts in a pair. The resulting scores are then shifted using a simple grid search, to arrive at an optimal performance on the calibration data. </p>
+            <p>- A simple method based on text compression that given a pair of texts calculates the cross-entropy of text2 using the Prediction by Partial Matching model of text1 and vice-versa. Then, the mean and absolute difference of the two cross-entropies are used by a logistic regression model to estimate a score in [0,1] indicating the probability the two texts are written by the same author.</p>
+            <p>Note that the above baseline methods do not make use of the fandom information: participants are highly encouraged to exploit this useful metadata in their submissions.</p>
             
             <h2 id="evaluation">Evaluation [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef20/authorship-verification">code</a>]</h2>
             <p>Systems will be compared and ranked on the basis of four, complementary metrics:
