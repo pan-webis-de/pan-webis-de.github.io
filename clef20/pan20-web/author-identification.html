@@ -87,17 +87,17 @@ description: PAN @ CLEF 2020 - Authorship Verification
             <h2 id="submission">Submission</h2>
             <p>We ask you to prepare your software so that it can be executed via command line calls. The command shall take as input (i) an absolute path to the EVALUATION-DIRECTORY and (ii) an absolute path to an OUTPUT-DIRECTORY:</p>
 
-            <pre id="jsonl-example" class="prettyprint uk-margin-remove-bottom"><code class="lang-json">mySoftware -i EVALUATION-DIRECTORY -o OUTPUT-DIRECTORY</code></pre>
+            <pre id="jsonl-example" class="prettyprint uk-margin-remove-bottom"><code class="lang-json"> > mySoftware -i EVALUATION-DIRECTORY -o OUTPUT-DIRECTORY</code></pre>
 
             <p>Within EVALUATION-DIRECTORY, a single jsonl-formatted file will be included (pairs.jsonl), containing the text pairs (analogously to the calibration data that was released). The answers should be written to a jsonl-formatted file (answers.jsonl) under EVALUATION-DIRECTORY. Each line should contain a single json-formatted answer, using the following syntax:</p>
 
             <pre id="jsonl-example" class="prettyprint linenums uk-margin-remove-bottom">
-                <code class="lang-json">{"id": "c04fdf1e-ddf5-5542-96e7-13ce18cae176", "value": 0.4921}
+<code class="lang-json">{"id": "c04fdf1e-ddf5-5542-96e7-13ce18cae176", "value": 0.4921}
                     {"id": "49dc4cae-3d32-5b4d-b240-a080a1dbb659", "value": 0.5}
                     {"id": "f326fe7c-fc10-566f-a70f-0f36e3f92399", "value": 0.5}
                     {"id": "16daa0d1-61b8-5650-b7ee-5e265bd40910", "value": 0.9333}
                     {"id": "08b536a8-4fed-5f62-97bb-e57f79e841d2", "value": 0.0751}
-                    ...</code></pre>
+...</code></pre>
 
             <p><i>Note:</i> Each verification problem should be solved independently of other problems in the collection.</p>
 
