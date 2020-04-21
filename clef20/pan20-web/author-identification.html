@@ -83,6 +83,36 @@ description: PAN @ CLEF 2020 - Authorship Verification
             </ul>
 
             <p>A reference evaluation script is made available. Systems will be applied to a pairs-file and are expected to produce a single jsonl-file as result. In this prediction file, each separate line should contain a valid json-string that provides the ID of a pair in the pairs-file and a "value" field, with a floating-point score that is bounded (0 >= score <= 1), indicating the probability that this pair is a same-author text pair. Systems are allowed to leave some problems unanswered: in such cases, the answer can be left out from the prediction file OR its value should be set to exactly 0.5. All answers that have a value of 0.5 will be considered non-decisions.</p>
+
+            <h2 id="submission">Submission</h2>
+            <p>We ask you to prepare your software so that it can be executed via command line calls. The command shall take as input (i) an absolute path to the EVALUATION-DIRECTORY and (ii) an absolute path to an OUTPUT-DIRECTORY:</p>p>
+
+            <pre id="jsonl-example" class="prettyprint linenums uk-margin-remove-bottom">
+                <code class="lang-json">
+                    mySoftware -i EVALUATION-DIRECTORY -o OUTPUT-DIRECTORY
+                </code>
+            </pre>
+
+            <p>Within EVALUATION-DIRECTORY, a single jsonl-formatted file will be included (pairs.jsonl), containing the text pairs (analogously to the calibration data that was released). The answers should be written to a jsonl-formatted file (answers.jsonl) under EVALUATION-DIRECTORY. Each line should contain a single json-formatted answer, using the following syntax:</p>
+
+            <pre id="jsonl-example" class="prettyprint linenums uk-margin-remove-bottom">
+                <code class="lang-json">
+                    {"id": "c04fdf1e-ddf5-5542-96e7-13ce18cae176", "value": 0.4921}
+                    {"id": "49dc4cae-3d32-5b4d-b240-a080a1dbb659", "value": 0.5}
+                    {"id": "f326fe7c-fc10-566f-a70f-0f36e3f92399", "value": 0.5}
+                    {"id": "16daa0d1-61b8-5650-b7ee-5e265bd40910", "value": 0.9333}
+                    {"id": "08b536a8-4fed-5f62-97bb-e57f79e841d2", "value": 0.0751}
+                    ...
+                </code>
+            </pre>
+
+            <p><i>Note:</i> Each verification problem should be solved independently of other problems in the collection.</p>
+
+            <p>You can choose freely among the available programming languages and among the operating systems Microsoft Windows and Ubuntu. We will ask you to deploy your software onto a virtual machine that will be made accessible to you after registration. You will be able to reach the virtual machine via ssh and via remote desktop. More information about how to access the virtual machines can be found in the user guide linked above.</p>
+
+            <p>Once deployed in your virtual machine, we ask you to access <a href="https://www.tira.io/">TIRA</a>, where you can self-evaluate your software on the test data.</p>
+
+            <p><i>Note:</i> By submitting your software you retain full copyrights. You agree to grant us usage rights only for the purpose of the PAN competition. We agree not to share your software with a third party or use it for other purposes than the PAN competition.</p>
             
             <h2 id="results">Results</h2>
             <p>More details will be shared soon.</p>
