@@ -85,6 +85,10 @@ description: PAN @ CLEF 2020 - Authorship Verification
             <p>A reference evaluation script is made available. Systems will be applied to a pairs-file and are expected to produce a single jsonl-file as result. In this prediction file, each separate line should contain a valid json-string that provides the ID of a pair in the pairs-file and a "value" field, with a floating-point score that is bounded (0 >= score <= 1), indicating the probability that this pair is a same-author text pair. Systems are allowed to leave some problems unanswered: in such cases, the answer can be left out from the prediction file OR its value should be set to exactly 0.5. All answers that have a value of 0.5 will be considered non-decisions.</p>
 
             <h2 id="submission">Submission</h2>
+            <p>This year, each participating team is allowed a maximum of <b>two submissions</b>: one submission trained on the small calibration dataset and one for the large calibration data set. (Participants can only submit just one system.)</p>
+
+            <p>Contrary to previous editions, submissions are <b>not</b> expected to be trained on TIRA (i.e. there will no new calibration dataset for the testing phase). The submisisons should therefore contain already fully calibrated models that should only be deployed on TIRA for the actual testing.</p>
+
             <p>We ask you to prepare your software so that it can be executed via command line calls. The command shall take as input (i) an absolute path to the EVALUATION-DIRECTORY and (ii) an absolute path to an OUTPUT-DIRECTORY:</p>
 
             <pre id="jsonl-example" class="prettyprint uk-margin-remove-bottom"><code class="lang-json"> > mySoftware -i EVALUATION-DIRECTORY -o OUTPUT-DIRECTORY</code></pre>
