@@ -18,7 +18,7 @@ description: PAN @ CLEF 2020 - Profiling Fake News Spreaders on Twitter
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
                 <!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>-->
-                <!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>-->
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>-->
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
             </ul>
@@ -123,6 +123,66 @@ description: PAN @ CLEF 2020 - Profiling Fake News Spreaders on Twitter
             For each language, we will calculate individual accuracies in discriminating between the two classes. 
             Finally, we will average the accuracy values per language to obtain the final ranking.
     
+            
+            <h2 id="results"> Results</h2>
+            
+                        <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+                <thead>
+
+                <tr>
+                    <th>POS</th>
+                    <th align="left">Team</th>
+                    <th>EN</th>
+                    <th>ES</th>
+                    <th>AVG</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td align="center">-</td>
+                    <td>SYMANTO (LDSE)</td>
+                    <td align="center">0.7450</td>
+                    <td align="center">0.7900</td>
+                    <td align="center">0.7575</td>
+                </tr>      
+                 <tr>
+                    <td align="center">-</td>
+                    <td>SVM + c nGrams</td>
+                    <td align="center">0.6800</td>
+                    <td align="center">0.7900</td>
+                    <td align="center">0.7350</td>
+                </tr>
+                <tr>
+                    <td align="center">-</td>
+                    <td>NN + w nGrams</td>
+                    <td align="center">0.6900</td>
+                    <td align="center">0.7000</td>
+                    <td align="center">0.6950</td>
+                </tr>
+                <tr>
+                    <td align="center">-</td>
+                    <td>EIN</td>
+                    <td align="center">0.6400</td>
+                    <td align="center">0.6400</td>
+                    <td align="center">0.6400</td>
+                </tr>
+                <tr>
+                    <td align="center">-</td>
+                    <td>LSTM</td>
+                    <td align="center">0.5600</td>
+                    <td align="center">0.6000</td>
+                    <td align="center">0.5800</td>
+                </tr>   
+                <tr>
+                    <td align="center">-</td>
+                    <td>Random</td>
+                    <td align="center">0.5100</td>
+                    <td align="center">0.5000</td>
+                    <td align="center">0.5050</td>
+                </tr>   
+                </tbody>
+            </table>
+            
              <h2 id="related-work">Related Work</h2>
             <ul>
                 <li>Ghanem, B., Rosso, P., and Rangel, F. (2020).
