@@ -8,7 +8,7 @@ Bridget Jones
 Brooke English
 Brooke Vandenberg
 Bryan Denton
-Cameron "Buck" Williams
+Cameron Buck Williams
 Celeste Anders
 Chris Higby
 Christine Massey
@@ -27,14 +27,12 @@ Jackie Harvey
 Jack McEvoy
 Jack McGee
 Jack Parlabane
-Jack Ryder
 Jamie Campbell
 Jasmine Thomas
 Jefferson Crowley
 Jim Stevens
 John Boy Walton
 John Fitzgerald Byers
-Josh Cashman
 Juan Carlos Bodoque
 Katie Reed
 Kelly O'Donnell
@@ -52,12 +50,11 @@ Murray Scarvi
 Nancy Hicks-Gribble
 Nick Alexander
 Nicole Walker
-Otto Chriek
 Pat Garrison
 Paul Beltzer
 Paul Marino
 Pepper Dennis
-Percy "P.C.M." Mercy
+Percy Mercy
 Polly Becker
 Riley Parker
 Ron Updyke
