@@ -25,8 +25,8 @@ description: PAN @ CLEF 2021 - Style Change Detection
 
             <h2 id="synopsis">Synopsis</h2>
             <ul>
-                <li>Task: Given two consecutive paragraphs, determine if there is a style change.</li>
-                <li>Input: TBD
+                <li>Task: Given a document, determine the number of authors and at which positions the author changes.</li>
+                <li>Input: StackExchange questions and answers, combined into documents </li>
 <!--                    StackExchange questions and answers, combined into documents; 22876 documents; narrow and wide topic relation [<a href="{{ '../../data.html#pan20-style-change-detection' | relative_url }}">data</a>]-->
                 </li>
                 <li>Output: TBD
@@ -42,31 +42,28 @@ description: PAN @ CLEF 2021 - Style Change Detection
             </ul>
 
             <h2 id="task">Task</h2>
-            Details about the task will be announced at a later date.
-<!--
-            <p>The goal of the style change detection task is to identify text positions within a given multi-author document at which the author switches. Detecting these positions is a crucial part of the authorship identification process, and for multi-author document analysis in general. Note that, for this task, we make the assumption that a change in writing style always signifies a change in author. </p>
+            <p> The goal of the style change detection task is to identify text positions within a given multi-author document at which the author switches. Hence, a fundamental question is the following: If multiple authors together have written a text, can we find evidence for this fact, e.g., do we have a means to detect variations in the writing
+            style? Answering this question belongs to the most difficult and most interesting challenges in author identification: Style change detection is the only means to detect plagiarism in a document if no comparison texts are given; likewise, style change detection can help to uncover gift authorships, to verify a claimed authorship, or to develop new technology for writing support.</p>
 
-            <p>Previous editions of the Style Change Detection task aim at e.g., detecting whether a document is single- or multi-authored 
-                (<a href="https://pan.webis.de/clef18/pan18-web/style-change-detection.html">2018</a>) or the actual number of authors within a document 
-                (<a href="https://pan.webis.de/clef19/pan19-web/style-change-detection.html">2019</a>). Considering the promising results achieved by the submitted approaches, we aim to steer the task back to its original goal: detecting the exact position of authorship changes. Therefore, the task for PAN'20 is to detect whether a document was authored by one or multiple authors and to find the positions of style changes at the paragraph-level. For each pair of consecutive paragraphs of a document, we ask participants to estimate whether there is indeed a style change between those two paragraphs. </p>
+            <p>Previous editions of the Style Change Detection task aim at e.g., detecting whether a document is single- or multi-authored (<a href="https://pan.webis.de/clef18/pan18-web/style-change-detection.html">2018</a>), the actual number of authors within a document (<a href="https://pan.webis.de/clef19/pan19-web/style-change-detection.html">2019</a>) or whether there was a style change between two consecutive paragraphs (<a href="https://pan.webis.de/clef20/pan20-web/style-change-detection.html">2020</a>). Considering the promising results achieved by the submitted approaches, we aim to steer the task back to its original goal: detecting the exact position of authorship changes. Therefore, the task for PAN'21 is to first detect whether a document was authored by one or multiple authors, for two-author documents, the task is to find the position of the authorship change and for multi-author documents, the task is to find all positions of authorship changes.</p>
             
-            <p>Given a document, we ask participants to answer the following two questions:</p>
+            <p>Given a document, we ask participants to answer the following three questions:</p>
             <ul>
-                <li>Was the given document written by multiple authors? (task 1)</li>
-                <li>For each pair of consecutive paragraphs in the given document: is there a style change between these paragraphs? (task 2)</li>
+                <li><b>Single vs. Multiple.</b> Given a text, find out whether the text is written by a single author or by multiple authors. (task 1) </li>
+                <li><b>Style Change Basic.</b> Given a text written by two authors and that contains a single style change only, find the position of this change, i.e., cut the text into the two authors' texts. Note that this task corresponds to authorship verification where the two authors are responsible for the beginning and the end of the text respectively. (task 2)</li>
+                <li><b>Style Change Real-World.</b> Given a text written by two or more authors, find all positions of writing style change, i.e., assign all paragraphs of the text uniquely to some author out of the number of authors you assume for the multi-author document. (task 3) </li>
             </ul>
 
-            <p>In other words, the goal is to determine whether the given document contains style changes and if it indeed does, we aim to find the position of the change in the document (between paragraphs).</p>
-            <p>All documents are provided in English and may contain zero up to ten style changes, resulting from at most three different authors. However, style changes may only occur between paragraphs (i.e., a single paragraph is always authored by a single author and does not contain any style changes).</p>
+
 
             <p>The following figure illustrates some possible scenarios and the expected output for the two tasks:</p>
             <br>
             <img src="../pan21-figures/style-change-task.png" alt="Style Change Detection Task Example">
 
             <h2 id="data">Data</h2>
-            <p>To develop and then test your algorithms, two data sets including ground truth information are provided. Those data sets differ in their topical breadth (i.e., the number of different topics that are covered in the documents contained). <i>dataset-narrow</i> contains texts from a relatively narrow set of subjects matters (all related to technology), whereas <i>dataset-wide</i> adds additional subject areas to that (travel, philosophy, economics, history, etc.).</p>
+            <p>To develop and then test your algorithms, a data set including ground truth information is provided, it contains texts from a relatively narrow set of subjects related to technology.</p>
 
-            <p>Both of those data sets are split into three parts:</p>
+            <p>The dataset is split into three parts:</p>
 
             <ol>
                 <li><i>training set:</i> Contains 50% of the whole data set and includes ground truth data. Use this set to develop and train your models.</li>
@@ -76,21 +73,16 @@ description: PAN @ CLEF 2021 - Style Change Detection
 
             <p>You are free to use additional external data for training your models. However, we ask you to make the additional data utilized freely available under a suitable license. </p>
 
-            <h3 id="input_format">Input Format</h3>
-            <p>Both dataset-narrow and dataset-wide are based on user posts from various sites of the StackExchange network, covering different topics. We refer to each input problem (i.e., the document for which to detect style changes) by an ID, which is subsequently also used to identify the submitted solution to this input problem.</p>
+            <!--<h3 id="input_format">Input Format</h3>
+            <p>The dataset is based on user posts from various sites of the StackExchange network, covering different topics. We refer to each input problem (i.e., the document for which to detect style changes) by an ID, which is subsequently also used to identify the submitted solution to this input problem.</p>
 
-            <p>The structure of the provided datasets is as follows:</p>
+            <p>The structure of the provided dataset is as follows:</p>
             <pre id="prettyprint linenums">
                     <code>
 train/
-    dataset-narrow/
-    dataset-wide/
 validation/
-    dataset-narrow/
-    dataset-wide/
 test/
-    dataset-narrow/
-    dataset-wide/
+
             </code></pre>
 
             <p>For each problem instance <code>X</code> (i.e., each input document), two files are provided:</p>
@@ -102,9 +94,12 @@ test/
                                 "structure": ORDER_OF_AUTHORS,
                                 "site": SOURCE_SITE,
                                 "multi-author": RESULT_TASK1,
-                                "changes": RESULT_ARRAY_TASK2
+                                "changes": RESULT_ARRAY_TASK2,
+                                "paragraph-authors": RESULT_ARRAY_TASK3
                             }</code></pre>
+
                     <p>The result for task 1 (key "multi-author") is a binary value (1 if the document is multi-authored, 0 if the document is single-authored). The result for task 2 (key "changes") is represented as an array, holding a binary for each pair of consecutive paragraphs within the document (0 if there was no style change, 1 if there was a style change). If the document is single-authored, the solution to task 2 is an array filled with 0s. Furthermore, we provide the order of authors contained in the document (e.g., <code>[A1, A2, A1]</code> for a two-author document), the total number of authors and the Stackoverflow site the texts were extracted from (i.e., topic).</p>
+
                     <p>An example of a multi-author document, where there was a style change between the third and fourth paragraph could look as follows (we only list the two relevant key/value pairs here):</p>
                     <pre class="prettyprint linenums uk-margin-remove-bottom"><code class="lang-json">{
                                "multi-author": 1, 
@@ -140,68 +135,31 @@ test/
                             }</code></pre>
 
             <p>We provide you with a script to check the validity of the solution files [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef20/style-change-detection" target="_blank">verifier and tests</a>].</p>
-
+            -->
             <h2 id="evaluation">Evaluation</h2>
-            <p>Submissions are evaluated by the F1-score measure for each document. The two tasks are evaluated independently based on the obtained accuracy measures. For task 1, we compute the average F1-score value across all documents and for task 2, we use the micro-averaged F1-score across all documents. The submissions for the two datasets will be evaluated independently and the resulting F1-scores for the two tasks will be averaged across the two datasets.</p>
+            <p>Submissions are evaluated by the F1-score measure for each document. The three tasks are evaluated independently based on the obtained accuracy measures. For task 1, we compute the average F1-score value across all documents and for task 2 and task 3, we use the macro-averaged F1-score across all documents. </p>
 
-            <p>We provide you with a script to compute those measures based on the produced output-files [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef20/style-change-detection">evaluator and tests</a>].</p>
+            <!--<p>We provide you with a script to compute those measures based on the produced output-files [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef20/style-change-detection">evaluator and tests</a>].</p> -->
 
             <h2 id="submission">Submission</h2>
-            <p>Once you finished tuning your approach on the validation set, your software will be tested on the test set. During the competition, the test set will not be released publicly. Instead, we ask you to submit your software for evaluation at our site as described below.</p>
+            <p>Once you finish tuning your approach on the validation set, your software will be tested on the test set. During the competition, the test set will not be released publicly. Instead, we ask you to submit your software for evaluation at our site as described below.</p>
 
             <p>We ask you to prepare your software so that it can be executed via command line calls. The command shall take as input (i) an absolute path to the directory of the test corpus and (ii) an absolute path to an empty output directory:</p>
 
             <pre class="prettyprint"><code>mySoftware -i INPUT-DIRECTORY -o OUTPUT-DIRECTORY</code></pre>
 
-            <p>Within <code>OUTPUT-DIRECTORY</code>, we require two subfolders: <code>dataset-narrow</code> and <code>dataset-wide</code>, holding the solutions for the two datasets, respectively. As the provided output directory is guaranteed to be empty, your software needs to create those subfolders.
-            </p>
-
-            <p>Within <code>INPUT-DIRECTORY</code>, you will find one folder for each dataset, holding a set of problem instances (i.e., <code>problem-[id].txt</code> files). For each problem instance you should produce the solution file <code>solution-problem-[id].json</code> in the
-                <code>OUTPUT-DIRECTORY</code>. For instance, you read <code>INPUT-DIRECTORY/dataset-narrow/problem-12.txt</code>, process it and write your results to <code>OUTPUT-DIRECTORY/dataset-narrow/solution-problem-12.json</code>.</p>
+            <p>Within <code>INPUT-DIRECTORY</code>, you will find the set of problem instances (i.e., <code>problem-[id].txt</code> files). For each problem instance you should produce the solution file <code>solution-problem-[id].json</code> in the <code>OUTPUT-DIRECTORY</code>. For instance, you read <code>INPUT-DIRECTORY/problem-12.txt</code>, process it and write your results to <code>OUTPUT-DIRECTORY/solution-problem-12.json</code>.</p>
 
             <p>In general, this task follows PAN's software submission strategy <a href="{{ 'organization.html#participation-guide' | relative_url }}">described here</a>.</p>
 
             <p>Note: By submitting your software you retain full copyrights. You agree to grant us usage rights only for the purpose of the PAN competition. We agree not to share your software with a third party or use it for other purposes than the PAN competition.</p>
 
-             <h2 id="results">Results</h2>
-
-              <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
-                  <thead>
-                  <tr>
-                      <th>Team</th>
-                      <th colspan="3" align="center">F1</th>
-                  </tr>
-                  <tr>
-                      <th></th>
-                      <th>Task 1</th>
-                      <th>Task 2</th>
-                      <th>Average</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                      <td>Iyer and Vosoughi</td>
-                      <td>0.6401</td>
-                      <td>0.8567</td>
-                      <td>0.7484</td>
-                  </tr>
-                  <tr>
-                      <td>Castro-Castro et al.</td>
-                      <td>0.5399</td>
-                      <td>0.7579</td>
-                      <td>0.6489</td>
-                  </tr>
-                  <tr>
-                      <td>Nath</td>
-                      <td>0.5204</td>
-                      <td>0.7526</td>
-                      <td>0.6365</td>
-                  </tr>
-                  </tbody>
-              </table>
--->
+          
             <h2 id="related-work">Related Work</h2>
             <ul>
+              <li>
+                    <a href="{{ 'publications.html#?q=2020%20Zangerle' | relative_url }}">Style Change Detection, PAN@CLEF'20</a>
+                </li>
                 <li>
                     <a href="{{ 'publications.html#?q=2019%20Zangerle' | relative_url }}">Style Change Detection, PAN@CLEF'19</a>
                 </li>
@@ -238,7 +196,6 @@ test/
             <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
                 {% include people-cards/zangerle.html %}
                 {% include people-cards/mayerl.html %}
-                {% include people-cards/specht.html %}
                 {% include people-cards/potthast.html %}
                 {% include people-cards/stein.html %}
             </div>
