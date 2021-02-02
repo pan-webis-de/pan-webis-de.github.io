@@ -1,8 +1,8 @@
 ---
 layout: default
 nav_active: tasks
-title: PAN @ CLEF 2021 - Style Change Detection
-description: PAN @ CLEF 2021 - Style Change Detection
+title: PAN @ CLEF 2021 - Style Change Detection and Multi-Author Writing Style Analysis
+description: PAN @ CLEF 2021 - Multi-Author Writing Style Analysis
 ---
 
 <main>
@@ -27,13 +27,13 @@ description: PAN @ CLEF 2021 - Style Change Detection
             <ul>
                 <li>Task: Given a document, determine the number of authors and at which positions the author changes.</li>
                 <li>Input: StackExchange questions and answers, combined into documents </li>
-<!--                    StackExchange questions and answers, combined into documents; 22876 documents; narrow and wide topic relation [<a href="{{ '../../data.html#pan20-style-change-detection' | relative_url }}">data</a>]-->
+<!--                   [<a href="{{ '../../data.html#pan20-style-change-detection' | relative_url }}">data</a>]-->
                 </li>
                 <li>Output: TBD
 <!--                    Whether a document has multiple authors, and how many [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef20/style-change-detection" target="_blank">verifier</a>]-->
                 </li>
-                <li>Evaluation: TBD
-<!--                    F1 [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef20/style-change-detection" target="_blank">code</a>]-->
+                <li>Evaluation: F1
+<!--                    [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef20/style-change-detection" target="_blank">code</a>]-->
                 </li>
                 <li>Submission: Deployment on TIRA [<a href="#submission">submit</a>]</li>
                 <li>Baseline: TBD
@@ -42,21 +42,21 @@ description: PAN @ CLEF 2021 - Style Change Detection
             </ul>
 
             <h2 id="task">Task</h2>
-            <p> The goal of the style change detection task is to identify text positions within a given multi-author document at which the author switches. Hence, a fundamental question is the following: If multiple authors together have written a text, can we find evidence for this fact, e.g., do we have a means to detect variations in the writing
-            style? Answering this question belongs to the most difficult and most interesting challenges in author identification: Style change detection is the only means to detect plagiarism in a document if no comparison texts are given; likewise, style change detection can help to uncover gift authorships, to verify a claimed authorship, or to develop new technology for writing support.</p>
+            <p> The goal of the style change detection task is to identify text positions within a given multi-author document at which the author switches. Hence, a fundamental question is the following: If multiple authors together have written a text, can we find evidence for this fact, e.g., do we have a means to detect variations in the writing style? Answering this question belongs to the most difficult and most interesting challenges in author identification: Style change detection is the only means to detect plagiarism in a document if no comparison texts are given; likewise, style change detection can help to uncover gift authorships, to verify a claimed authorship, or to develop new technology for writing support.
+            </p>
 
             <p>Previous editions of the Style Change Detection task aim at e.g., detecting whether a document is single- or multi-authored (<a href="https://pan.webis.de/clef18/pan18-web/style-change-detection.html">2018</a>), the actual number of authors within a document (<a href="https://pan.webis.de/clef19/pan19-web/style-change-detection.html">2019</a>) or whether there was a style change between two consecutive paragraphs (<a href="https://pan.webis.de/clef20/pan20-web/style-change-detection.html">2020</a>). Considering the promising results achieved by the submitted approaches, we aim to steer the task back to its original goal: detecting the exact position of authorship changes. Therefore, the task for PAN'21 is to first detect whether a document was authored by one or multiple authors, for two-author documents, the task is to find the position of the authorship change and for multi-author documents, the task is to find all positions of authorship changes.</p>
             
             <p>Given a document, we ask participants to answer the following three questions:</p>
             <ul>
-                <li><b>Single vs. Multiple.</b> Given a text, find out whether the text is written by a single author or by multiple authors. (task 1) </li>
-                <li><b>Style Change Basic.</b> Given a text written by two authors and that contains a single style change only, find the position of this change, i.e., cut the text into the two authors' texts. Note that this task corresponds to authorship verification where the two authors are responsible for the beginning and the end of the text respectively. (task 2)</li>
-                <li><b>Style Change Real-World.</b> Given a text written by two or more authors, find all positions of writing style change, i.e., assign all paragraphs of the text uniquely to some author out of the number of authors you assume for the multi-author document. (task 3) </li>
+                <li><b>Single vs. Multiple.</b> Given a text, find out whether the text is written by a single author or by multiple authors (task 1). </li>
+                <li><b>Style Change Basic.</b> Given a text written by two or more authors and that contains a number of style changes, find the position of the changes (task 2).</li>
+                <li><b>Style Change Real-World.</b> Given a text written by two or more authors, find all positions of writing style change, i.e., assign all paragraphs of the text uniquely to some author out of the number of authors you assume for the multi-author document (task 3). </li>
             </ul>
 
 
 
-            <p>The following figure illustrates some possible scenarios and the expected output for the two tasks:</p>
+            <p>The following figure illustrates some possible scenarios and the expected output for the tasks:</p>
             <br>
             <img src="../pan21-figures/style-change-task.png" alt="Style Change Detection Task Example">
 
@@ -66,24 +66,15 @@ description: PAN @ CLEF 2021 - Style Change Detection
             <p>The dataset is split into three parts:</p>
 
             <ol>
-                <li><i>training set:</i> Contains 50% of the whole data set and includes ground truth data. Use this set to develop and train your models.</li>
-                <li><i>validation set:</i> Contains 25% of the whole data set and includes ground truth data. Use this set to evaluate and optimize your models. </li>
-                <li><i>test set:</i> Contains 25% of the whole data set. For the documents on the test set, you are not given ground truth data. This set is used for evaluation (see later).</li>
+                <li><i>training set:</i> Contains 70% of the whole data set and includes ground truth data. Use this set to develop and train your models.</li>
+                <li><i>validation set:</i> Contains 15% of the whole data set and includes ground truth data. Use this set to evaluate and optimize your models. </li>
+                <li><i>test set:</i> Contains 15% of the whole data set. For the documents on the test set, you are not given ground truth data. This set is used for evaluation (see later).</li>
             </ol>
 
             <p>You are free to use additional external data for training your models. However, we ask you to make the additional data utilized freely available under a suitable license. </p>
 
-            <!--<h3 id="input_format">Input Format</h3>
-            <p>The dataset is based on user posts from various sites of the StackExchange network, covering different topics. We refer to each input problem (i.e., the document for which to detect style changes) by an ID, which is subsequently also used to identify the submitted solution to this input problem.</p>
-
-            <p>The structure of the provided dataset is as follows:</p>
-            <pre id="prettyprint linenums">
-                    <code>
-train/
-validation/
-test/
-
-            </code></pre>
+            <h3 id="input_format">Input Format</h3>
+            <p>The dataset is based on user posts from various sites of the StackExchange network, covering different topics. We refer to each input problem (i.e., the document for which to detect style changes) by an ID, which is subsequently also used to identify the submitted solution to this input problem. We provide one folder for train, validation and test data.</p>
 
             <p>For each problem instance <code>X</code> (i.e., each input document), two files are provided:</p>
             <ol>
@@ -91,51 +82,54 @@ test/
                 <li><code>truth-problem-X.json</code> contains the ground truth, i.e., the correct solution in JSON format:
                     <pre class="prettyprint linenums uk-margin-remove-bottom"><code class="lang-json">{
                                 "authors": NUMBER_OF_AUTHORS,
-                                "structure": ORDER_OF_AUTHORS,
                                 "site": SOURCE_SITE,
                                 "multi-author": RESULT_TASK1,
                                 "changes": RESULT_ARRAY_TASK2,
                                 "paragraph-authors": RESULT_ARRAY_TASK3
                             }</code></pre>
 
-                    <p>The result for task 1 (key "multi-author") is a binary value (1 if the document is multi-authored, 0 if the document is single-authored). The result for task 2 (key "changes") is represented as an array, holding a binary for each pair of consecutive paragraphs within the document (0 if there was no style change, 1 if there was a style change). If the document is single-authored, the solution to task 2 is an array filled with 0s. Furthermore, we provide the order of authors contained in the document (e.g., <code>[A1, A2, A1]</code> for a two-author document), the total number of authors and the Stackoverflow site the texts were extracted from (i.e., topic).</p>
+                    <p>The result for task 1 (key "multi-author") is a binary value (1 if the document is multi-authored, 0 if the document is single-authored). The result for task 2 (key "changes") is represented as an array, holding a binary for each pair of consecutive paragraphs within the document (0 if there was no style change, 1 if there was a style change). If the document is single-authored, the solution to task 2 is an array filled with 0s. For task 3 (key "paragraph-authors"), the result is the order of authors contained in the document (e.g., <code>[1, 2, 1]</code> for a two-author document), where the first author is "1", the second author appearing in the document is referred to as "2", etc. Furthermore, we provide the total number of authors and the Stackoverflow site the texts were extracted from (i.e., topic).</p>
 
-                    <p>An example of a multi-author document, where there was a style change between the third and fourth paragraph could look as follows (we only list the two relevant key/value pairs here):</p>
+                    <p>An example of a multi-author document, where there was a style change between the third and fourth paragraph could look as follows (we only list the relevant key/value pairs here):</p>
                     <pre class="prettyprint linenums uk-margin-remove-bottom"><code class="lang-json">{
                                "multi-author": 1, 
-                               "changes": [0,0,1,...]
+                               "changes": [0,0,1,...],
+                               "paragraph-authors": [1,1,1,2,...]
                             }</code></pre>
-                    <p>A single-author document would have the following form (again, only listing the two relevant key/value pairs):
+                    <p>A single-author document would have the following form (again, only listing the relevant key/value pairs):
                     </p>
                     <pre class="prettyprint linenums uk-margin-remove-bottom"><code class="lang-json">{
                                "multi-author": 0, 
-                               "changes": [0,0,0,...]
+                               "changes": [0,0,0,...],
+                               "paragraph-authors": [1,1,1,...]
                             }</code></pre>
                 </li>
             </ol>
 
             <h3 id="output_format">Output Format</h3>
-            <p>To evaluate the solutions for the two tasks, the classification results have to be stored in a single file for each of the input documents. Please note that we require a solution file to be generated for each input problem. The data structure during the evaluation phase will be similar to that in the training phase, with the exception that the ground truth files are missing.</p>
+            <p>To evaluate the solutions for the tasks, the classification results have to be stored in a single file for each of the input documents. Please note that we require a solution file to be generated for each input problem. The data structure during the evaluation phase will be similar to that in the training phase, with the exception that the ground truth files are missing.</p>
 
             <p>For each given problem problem-X.txt, your software should output the missing solution file
-                <code>solution-problem-X.json</code>, containing a JSON object with two properties, one for each task. The actual solution for task 1 is a binary value (0 or 1). For task 2, the solution is an array containing a binary value for each pair of consecutive paragraphs. </p>
+                <code>solution-problem-X.json</code>, containing a JSON object with three properties, one for each task. The actual solution for task 1 is a binary value (0 or 1). For task 2, the solution is an array containing a binary value for each pair of consecutive paragraphs. For task 3, the solution is an array containing the author number (in order of appearance in the given document) for each paragraph.</p>
 
             <p>An example solution file for a multi-authored document is featured in the following:</p>
 
             <pre class="prettyprint linenums uk-margin-remove-bottom"><code class="lang-json">{
                                 "multi-author": 1, 
-                                "changes": [0,0,1,...]
+                                "changes": [0,0,1,...],
+                                "paragraph-authors": [1,1,1,2,...]
                             }</code></pre>
 
             <p>For a single-authored document the solution file may look as follows:</p>
 
             <pre class="prettyprint linenums uk-margin-remove-bottom"><code class="lang-json">{
                                 "multi-author": 0,
-                                "changes": [0,0,0,...]
+                                "changes": [0,0,0,...],
+                                "paragraph-authors": [1,1,1,...]
                             }</code></pre>
 
-            <p>We provide you with a script to check the validity of the solution files [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef20/style-change-detection" target="_blank">verifier and tests</a>].</p>
-            -->
+            <!--<p>We provide you with a script to check the validity of the solution files [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef20/style-change-detection" target="_blank">verifier and tests</a>].</p>-->
+            
             <h2 id="evaluation">Evaluation</h2>
             <p>Submissions are evaluated by the F1-score measure for each document. The three tasks are evaluated independently based on the obtained accuracy measures. For task 1, we compute the average F1-score value across all documents and for task 2 and task 3, we use the macro-averaged F1-score across all documents. </p>
 
