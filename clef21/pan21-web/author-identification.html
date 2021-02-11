@@ -25,15 +25,10 @@ description: PAN @ CLEF 2021 - Authorship Verification
             <h2 id="synopsis">Synopsis</h2>
             <ul>
                 <li>Task: Given two texts, determine if they are written by the same author.</li>
-                <li>Input: TBD
-<!--                    Stories crawled from <a href="https://www.fanfiction.net/">fanfiction.net</a>; 53k text pairs total; small and large training set [<a href="{{ '../../data.html#pan20-authorship-verification' | relative_url }}">data</a>]-->
-                </li>
-                <li>Evaluation: TBD
-<!--                    AUC, F1, c@1, F_0.5u [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef21/authorship-verification">code</a>]-->
-                </li>
+                <li>Input: Stories crawled from <a href="https://www.fanfiction.net/">fanfiction.net</a>; 53k text pairs total; small and large training set [<a href="{{ '../../data.html#pan20-authorship-verification' | relative_url }}">data</a>]</li>
+                <li>Evaluation: AUC, F1, c@1, F_0.5u, Brier [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef20/authorship-verification">code</a>]</li>
                 <li>Submission: Deployment on TIRA [<a href="https://www.tira.io/task/authorship-verification/">submit</a>]</li>
-                <li>Baseline: TBD
-<!--                    TFIDF-weighted char 3-grams cosine similarity; compression method calculating cross-entropy [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef20/authorship-verification">code</a>]-->
+                <li>Baseline: TFIDF-weighted char 3-grams cosine similarity; compression method calculating cross-entropy [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef20/authorship-verification">code</a>]</li>
                 </li>
             </ul>
             
@@ -41,25 +36,13 @@ description: PAN @ CLEF 2021 - Authorship Verification
             <p>Authorship verification is the task of deciding whether two texts have been written by the same author based on comparing the texts' writing styles.</p>
             <p>With PAN&nbsp;2020, we started to develop a new experimental setup that addresses three key questions in authorship verification that have not been studied at scale to date:</p>
             <ul>
-              <li><p>Year 1 (PAN 2020): Closed-set verification.<br>Given a large training dataset comprising of known authors who have written about a given set of topics, the test dataset contains verification cases from a subset of the authors and topics found in the training data.</p></li>
-              <li><p>Year 2 (PAN 2021): Open-set verification.<br>Given the training dataset of Year&nbsp;1, the test dataset contains verification cases from previously unseen authors and topics.</p></li>
-              <li><p>Year 3 (PAN 2022): <em>Surprise task</em>.<br>The task of the last year of this evaluation cycle (to be announced at a later time) will be designed with an eye on realism and practical application.</p></li>
+              <li><p>Year 1 (PAN 2020) [<b>last year</b>]: Closed-set verification.<br>Given a large training dataset comprising of known authors who have written about a given set of topics, the test dataset contains verification cases from a subset of the authors and topics found in the training data.</p></li>
+              <li><p>Year 2 (PAN 2021) [<b>this year</b>]: Open-set verification.<br>Given the training dataset of Year&nbsp;1, the test dataset contains verification cases from previously unseen authors and topics.</p></li>
+              <li><p>Year 3 (PAN 2022) [<b>next year</b>]: <em>Surprise task</em>.<br>The task of the last year of this evaluation cycle (to be announced at a later time) will be designed with an eye on realism and practical application.</p></li>
             </ul>
             
             <p>This evaluation cycle on authorship verification provides for a renewed challenge of increasing difficulty within a large-scale evaluation. We invite you to plan ahead and participate in all three of these tasks.</p>
-            <p>At PAN&nbsp;2021, we proceed to the announced close-set verification scenario and ramp up the difficulty by providing a new test set made entirely of unseen authors and topics.</p>
-<!--
-            <p>Authorship verification is the task of deciding whether two texts have been written by the same author based on comparing the texts' writing styles.</p>
-            <p>
-              In the coming three years at PAN&nbsp;2020 to PAN&nbsp;2022, we develop a new experimental setup that addresses three key questions in authorship verification that have not been studied at scale to date:
-              <ul>
-              <li><p>Year 1 (PAN 2020): Closed-set verification.<br>Given a large training dataset comprising of known authors who have written about a given set of topics, the test dataset contains verification cases from a subset of the authors and topics found in the training data.</p></li>
-              <li><p>Year 2 (PAN 2021): Open-set verification.<br>Given the training dataset of Year&nbsp;1, the test dataset contains verification cases from previously unseen authors and topics.</p></li>
-              <li><p>Year 3 (PAN 2022): <em>Surprise task</em>.<br>The task of the last year of this evaluation cycle (to be announced at a later time) will be designed with an eye on realism and practical application.</p></li>
-              </ul>
-              This evaluation cycle on authorship verification provides for a renewed challenge of increasing difficulty within a large-scale evaluation. We invite you to plan ahead and participate in all three of these tasks.
-            </p>
-            
+            <p><b>***new***</b>: At PAN&nbsp;2021, the training data is the same as last year, but we proceed to the announced open-set verification scenario and considerable ramp up the difficulty of the task by providing a new test set made entirely of <i>unseen authors and topics</i>.</p>
             
             <h2 id="data">Data</h2>
             <p>The train (calibration) and test datasets consists of pairs of (snippets from) two different fanfics, that were obtained drawn from <a href="https://www.fanfiction.net/">fanfiction.net</a>. Each pair was assigned a unique identifier and we distinguish between same-author pairs and different-authors pairs. Additionally, we offer metadata on the fandom (i.e. thematic category) for each text in the pair (note that fanfic "crossovers" were not included and only single-fandom texts were considered). The fandom distribution in these datasets maximally approximates the (long-tail) distribution of the fandoms in the original dataset. The test dataset is structured in the exact same way, but participants should expect a significant shift in the relation between authors and fandoms.</p>
@@ -91,15 +74,17 @@ description: PAN @ CLEF 2021 - Authorship Verification
             <p>Note that the above baseline methods do not make use of the fandom information: participants are highly encouraged to exploit this useful metadata in their submissions.</p>
             
             <h2 id="evaluation">Evaluation [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef20/authorship-verification">code</a>]</h2>
-            <p>Systems will be compared and ranked on the basis of four, complementary metrics:
+            <p>Systems will be compared and ranked on the basis of five, complementary metrics:
             <ul>
                 <li><b>AUC</b>: the conventional area-under-the-curve score, as implemented in <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.auc.html">scikit-learn</a>.</li>
                 <li><b>F1-score</b>: the well-known performance measure (not taking into account non-answers), as implemented in <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html">scikit-learn</a>.</li>
                 <li><b>c@1</b>: a variant of the conventional F1-score, which rewards systems that leave difficult problems unanswered (i.e. scores of exactly 0.5), introduced by Peñas and Rodrigo (2011).</li>
                 <li><b>F_0.5u</b>: a newly proposed measure that puts more emphasis on deciding same-author cases correctly (Bevendorff et al. 2019)</li>
+                <li><b>Brier</b>: the complement of the well-known Brier score, for evaluating the goodness of (binary) probabilistic classififiers, as implemented in <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.brier_score_loss.html">scikit-learn</a>.</li>
             </ul>
+            <p>These measures are complementary and provide a holistic way to assess a system's performance: c@1 measures the accuracy of binary predictions but also the ability of systems to leave difficult cases unanswered; AUC measures the ability of systems to assign higher scores to positive cases in comparison to negative cases; Brier measures the ability of systems to calibrate the verification scores as probability of a positive answer, etc.</p>
 
-            <p>A reference evaluation script is made available. Systems will be applied to a pairs-file and are expected to produce a single jsonl-file as result. In this prediction file, each separate line should contain a valid json-string that provides the ID of a pair in the pairs-file and a "value" field, with a floating-point score that is bounded (0 >= score <= 1), indicating the probability that this pair is a same-author text pair. Systems are allowed to leave some problems unanswered: in such cases, the answer can be left out from the prediction file OR its value should be set to exactly 0.5. All answers that have a value of 0.5 will be considered non-decisions.</p>
+            <p>A reference evaluation script is made available. Systems will be applied to a pairs-file and are expected to produce a single jsonl-file as result. In this prediction file, each separate line should contain a valid json-string that provides the ID of a pair in the pairs-file and a "value" field, with a floating-point score that is bounded (0 >= score <= 1), indicating the probability that this pair is a same-author text pair. Systems are allowed to leave some problems unanswered: in such cases, the answer can be left out from the prediction file OR its value should be set to exactly 0.5. All answers that have a value of 0.5 will be considered non-decisions, which will affect some (but not all) evaluation metrics.</p>
 
             <h2 id="submission">Submission</h2>
             <p>This year, each participating team is allowed a maximum of <b>two submissions</b>: one submission trained on the small calibration dataset and one for the large calibration data set. (Participants can also choose to submit just one system.)</p>
@@ -129,173 +114,13 @@ description: PAN @ CLEF 2021 - Authorship Verification
             <p><i>Note:</i> By submitting your software you retain full copyrights. You agree to grant us usage rights only for the purpose of the PAN competition. We agree not to share your software with a third party or use it for other purposes than the PAN competition.</p>
             
             <h2 id="results">Results</h2>
-            <p>The final ranking of the submitted approaches was as follows:</p>
-
-            <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
-                <thead>
-                  <tr>
-                    <th>Rank</th>
-                    <th>Team</th>
-                    <th>Training dataset</th>
-                    <th>AUC</th>
-                    <th>c@1</th>
-                    <th>F0.5u</th>
-                    <th>F1-score</th>
-                    <th>Overall</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>boenninghoff20</td>
-                    <td>large</td>
-                    <td>0.969</td>
-                    <td>0.928</td>
-                    <td>0.907</td>
-                    <td>0.936</td>
-                    <td>0.935</td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>weerasinghe20</td>
-                    <td>large</td>
-                    <td>0.953</td>
-                    <td>0.880</td>
-                    <td>0.882</td>
-                    <td>0.891</td>
-                    <td>0.902</td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>boenninghoff20</td>
-                    <td>small</td>
-                    <td>0.940</td>
-                    <td>0.889</td>
-                    <td>0.853</td>
-                    <td>0.906</td>
-                    <td>0.897</td>
-                  </tr>
-                  <tr>
-                    <td>4</td>
-                    <td>weerasinghe20</td>
-                    <td>small</td>
-                    <td>0.939</td>
-                    <td>0.833</td>
-                    <td>0.817</td>
-                    <td>0.860</td>
-                    <td>0.862</td>
-                  </tr>
-                  <tr>
-                    <td>5</td>
-                    <td>halvani20b</td>
-                    <td>small</td>
-                    <td>0.878</td>
-                    <td>0.796</td>
-                    <td>0.819</td>
-                    <td>0.807</td>
-                    <td>0.825</td>
-                  </tr>
-                  <tr>
-                    <td>6</td>
-                    <td>kipnis20</td>
-                    <td>small</td>
-                    <td>0.866</td>
-                    <td>0.801</td>
-                    <td>0.815</td>
-                    <td>0.809</td>
-                    <td>0.823</td>
-                  </tr>
-                  <tr>
-                    <td>7</td>
-                    <td>araujo20</td>
-                    <td>small</td>
-                    <td>0.874</td>
-                    <td>0.770</td>
-                    <td>0.762</td>
-                    <td>0.811</td>
-                    <td>0.804</td>
-                  </tr>
-                  <tr>
-                    <td>8</td>
-                    <td>niven20</td>
-                    <td>small</td>
-                    <td>0.795</td>
-                    <td>0.786</td>
-                    <td>0.842</td>
-                    <td>0.778</td>
-                    <td>0.800</td>
-                  </tr>
-                  <tr>
-                    <td>9</td>
-                    <td>gagala20</td>
-                    <td>small</td>
-                    <td>0.786</td>
-                    <td>0.786</td>
-                    <td>0.809</td>
-                    <td>0.800</td>
-                    <td>0.796</td>
-                  </tr>
-                  <tr>
-                    <td>10</td>
-                    <td>araujo20</td>
-                    <td>large</td>
-                    <td>0.859</td>
-                    <td>0.751</td>
-                    <td>0.745</td>
-                    <td>0.800</td>
-                    <td>0.789</td>
-                  </tr>
-                  <tr>
-                    <td>11</td>
-                    <td>baseline (naive)</td>
-                    <td>small</td>
-                    <td>0.780</td>
-                    <td>0.723</td>
-                    <td>0.716</td>
-                    <td>0.767</td>
-                    <td>0.747</td>
-                  </tr>
-                  <tr>
-                    <td>12</td>
-                    <td>baseline (compression)</td>
-                    <td>small</td>
-                    <td>0.778</td>
-                    <td>0.719</td>
-                    <td>0.703</td>
-                    <td>0.770</td>
-                    <td>0.742</td>
-                  </tr>
-                  <tr>
-                    <td>13</td>
-                    <td>ordonez20</td>
-                    <td>large</td>
-                    <td>0.696</td>
-                    <td>0.640</td>
-                    <td>0.655</td>
-                    <td>0.748</td>
-                    <td>0.685</td>
-                  </tr>
-                  <tr>
-                    <td>14</td>
-                    <td>faber20</td>
-                    <td>small</td>
-                    <td>0.293</td>
-                    <td>0.331</td>
-                    <td>0.314</td>
-                    <td>0.262</td>
-                    <td>0.300</td>
-                  </tr>
-                </tbody>
-              </table>
-
-            <p>A detailed comparison of the approaches will be provided in the task overview paper.</p>
+            <p>[TBA]. A detailed comparison of the submitted approaches will be provided in the task overview paper.</p>
             -->
 
             <h2 id="related-work">Related Work</h2>
             <ul>
                 <li>
-                    <a href="http://ceur-ws.org/Vol-2125/invited_paper_2.pdf">Cross-domain Author identification
-                    task at PAN@CLEF'18</a> (closed-set cross-domain authorship attribution in fanfiction)
+                    Mike Kestemont, Enrique Manjavacas, Ilia Markov, Janek Bevendorff, Matti Wiegmann, Efstathios Stamatatos, Martin Potthast & Benno Stein, <a href="http://ceur-ws.org/Vol-2125/invited_paper_2.pdf">Overview of the Cross-Domain Authorship Verification Task at PAN 2020</a>. Working notes of CLEF 2020 - Conference and Labs of the Evaluation Forum, 22-25 September, Thessaloniki, Greece(last year's overview paper on closed-set cross-domain authorship attribution in fanfiction)
                 </li>
                 <li>
                     Patrick Juola. <a href="http://portal.acm.org/citation.cfm?id=1373451">Authorship
