@@ -12,9 +12,9 @@ description: PAN @ CLEF 2021 - Multi-Author Writing Style Analysis
             <ul class="uk-list">
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
-<!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>-->
-<!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>-->
-<!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>-->
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>
 <!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>-->
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
@@ -26,19 +26,13 @@ description: PAN @ CLEF 2021 - Multi-Author Writing Style Analysis
             <h2 id="synopsis">Synopsis</h2>
             <ul>
                 <li>Task: Given a document, determine the number of authors and at which positions the author changes.</li>
-                <li>Input: StackExchange questions and answers, combined into documents </li>
-<!--                   [<a href="{{ '../../data.html#pan20-style-change-detection' | relative_url }}">data</a>]-->
+                <li>Input: StackExchange questions and answers, combined into documents [<a href="{{ '../../data.html#pan20-style-change-detection' | relative_url }}">data</a>]
                 </li>
-                <li>Output: TBD
-<!--                    Whether a document has multiple authors, and how many [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef20/style-change-detection" target="_blank">verifier</a>]-->
+                <li>Output: Whether a document has multiple authors, how many and where authorship changes [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef21/style-change-detection" target="_blank">verifier</a>]
                 </li>
-                <li>Evaluation: F1
-<!--                    [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef20/style-change-detection" target="_blank">code</a>]-->
+                <li>Evaluation: F1 [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef21/style-change-detection" target="_blank">code</a>]
                 </li>
                 <li>Submission: Deployment on TIRA [<a href="#submission">submit</a>]</li>
-                <li>Baseline: TBD
-<!--                    Random [code]-->
-                </li>
             </ul>
 
             <h2 id="task">Task</h2>
@@ -129,14 +123,16 @@ description: PAN @ CLEF 2021 - Multi-Author Writing Style Analysis
                                 "paragraph-authors": [1,1,1,...]
                             }</code></pre>
 
-            <!--<p>We provide you with a script to check the validity of the solution files [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef20/style-change-detection" target="_blank">verifier and tests</a>].</p>-->
+            <p>We provide you with a script to check the validity of the solution files [<a
+href="https://github.com/pan-webis-de/pan-code/tree/master/clef21/style-change-detection" target="_blank">verifier and tests</a>].</p>
             
             <h2 id="evaluation">Evaluation</h2>
             <p>Submissions are evaluated by the F1-score measure for each document. The three tasks are evaluated
 independently based on the obtained accuracy measures. We compute the macro-averaged F1-score value across all
 documents. </p>
 
-            <!--<p>We provide you with a script to compute those measures based on the produced output-files [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef20/style-change-detection">evaluator and tests</a>].</p> -->
+            <p>We provide you with a script to compute those measures based on the produced output-files [<a
+href="https://github.com/pan-webis-de/pan-code/tree/master/clef21/style-change-detection">evaluator and tests</a>].</p>
 
             <h2 id="submission">Submission</h2>
             <p>Once you finish tuning your approach on the validation set, your software will be tested on the test set. During the competition, the test set will not be released publicly. Instead, we ask you to submit your software for evaluation at our site as described below.</p>
