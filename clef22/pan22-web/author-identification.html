@@ -1,0 +1,90 @@
+---
+layout: default
+nav_active: shared-tasks
+title: PAN @ CLEF 2022 - Authorship Verification
+description: PAN @ CLEF 2022 - Authorship Verification
+---
+
+<main>
+    <div class="uk-section uk-section-default">
+        <div class="uk-container uk-margin-small">
+            <h1 class="uk-margin-remove-top">Authorship Verification 2022</h1>
+            <ul class="uk-list">
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
+<!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>-->
+<!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>-->
+<!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>-->
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
+            </ul>
+        </div>
+
+        <div class="uk-container uk-margin-medium">
+
+            <h2 id="synopsis">Synopsis</h2>
+            <ul>
+                <li>Task: Given two texts, determine if they are written by the same author.</li>
+                <li>Input: tba.
+<!--                    Stories crawled from <a href="https://www.fanfiction.net/">fanfiction.net</a>; 53k text pairs total; small and large training set [<a href="{{ '../../data.html#pan20-authorship-verification' | relative_url }}">data</a>]-->
+                </li>
+                <li>Evaluation: tba.
+<!--                    AUC, F1, c@1, F_0.5u, Brier [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef20/authorship-verification">code</a>]-->
+                </li>
+                <li>Submission: Deployment on TIRA
+<!--                    [<a href="https://www.tira.io/task/pan21-authorship-verification">submit</a>]-->
+                </li>
+                <li>Baseline: tba.
+<!--                    TFIDF-weighted char 3-grams cosine similarity; compression method calculating cross-entropy [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef20/authorship-verification">code</a>]-->
+                </li>
+                </li>
+            </ul>
+            
+            <h2 id="task">Task</h2>
+            Further details of the task will be announced soon.
+
+            <h2 id="related-work">Related Work</h2>
+            <ul>
+                <li>
+                    Mike Kestemont, Enrique Manjavacas, Ilia Markov, Janek Bevendorff, Matti Wiegmann, Efstathios Stamatatos, Martin Potthast & Benno Stein, <a href="http://ceur-ws.org/Vol-2125/invited_paper_2.pdf">Overview of the Cross-Domain Authorship Verification Task at PAN 2020</a>. Working notes of CLEF 2020 - Conference and Labs of the Evaluation Forum, 22-25 September, Thessaloniki, Greece(last year's overview paper on closed-set cross-domain authorship attribution in fanfiction)
+                </li>
+                <li>
+                    Patrick Juola. <a href="http://portal.acm.org/citation.cfm?id=1373451">Authorship
+                    Attribution</a>. In Foundations and Trends in Information Retrieval, Volume 1, Issue 3,
+                    March 2008.
+                </li>
+                <li>
+                    Moshe Koppel, Jonathan Schler, and Shlomo Argamon. <a
+                        href="http://onlinelibrary.wiley.com/doi/10.1002/asi.20961/full">Computational Methods
+                    Authorship Attribution</a>. Journal of the American Society for Information Science and
+                    Technology, Volume 60, Issue 1, pages 9-26, January 2009.
+                </li>
+                <li>
+                    Efstathios Stamatatos. <a href="http://onlinelibrary.wiley.com/doi/10.1002/asi.21001/full">A
+                    Survey of Modern Authorship Attribution Methods</a>.
+                    Journal of the American Society for Information Science and Technology, Volume 60, Issue 3,
+                    pages 538-556, March 2009.
+                </li>
+                <li>
+                    A. Peñas and A. Rodrigo. A Simple Measure to Assess Nonresponse. In Proc. of the 49th Annual Meeting of the Association for. Computational Linguistics, Vol. 1, pages 1415-1424, 2011.
+                </li>
+                <li>
+                    Bevendorff et al. Generalizing Unmasking for Short Texts, Proceedings of NAACL (2019), 654-659.
+                </li>
+            </ul>
+
+            <h2 id="task-committee">Task Committee</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/kestemont.html %}
+                {% include people-cards/stamatatos.html %}
+                {% include people-cards/manjavacas.html %}
+                {% include people-cards/bevendorff.html %}
+                {% include people-cards/potthast.html %}
+                {% include people-cards/stein.html %}
+            </div>
+            <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+                {% include organizations/clef-organizations-section.html year=2022 %}
+            </div>
+        </div>
+    </div>
+</main>
