@@ -1,0 +1,48 @@
+---
+layout: default
+nav_active: events
+title: PAN @ FIRE 2011
+description: PAN @ FIRE 2011
+---
+
+<main>
+    <div class="uk-section uk-section-default">
+        <div class="uk-container">
+            <h1 class="uk-margin-remove-top">PAN at FIRE 2011</h1>
+            <ul class="uk-list">
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#index-tasks">Shared Tasks</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#index-important-dates">Important Dates</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#index-organizing-committee">Organizing Committee</a></li>
+            </ul>
+        </div>
+
+        <div class="uk-container uk-margin-medium">
+            <h2 id="index-tasks" class="uk-margin-small-top">Shared Tasks</h2>
+            <ul>
+                <li><a href="{{ '/shared-tasks.html#clitr' | relative_url }}">Cross-Language !ndian Text Reuse</a></li>
+            </ul>
+
+            <h2 id="index-important-dates" class="uk-margin-large-top">Important Dates</h2>
+            <ul>
+                <li> August 01, 2011: Corpus Release</li>
+                <li> September 15, 2011: evaluation phase deadline</li>
+                <li> November 28, 2011: Paper submission</li>
+                <li> December 2-4, 2011: Conference</li>
+            </ul>
+            <p>The timezone of all deadlines is <a href="https://en.wikipedia.org/wiki/Anywhere_on_Earth">Anywhere on
+                Earth</a>.</p>
+
+            <h2 id="index-organizing-committee">Organizing Committee</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/barron-cedeno.html %}
+                {% include people-cards/rosso.html %}
+                {% include people-cards/clough.html %}
+                {% include people-cards/stevenson.html %}
+            </div>
+
+            <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+                {% include organizations/fire-organizations-section.html year=2011 %}
+            </div>
+        </div>
+    </div>
+</main>
