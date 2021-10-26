@@ -1,0 +1,241 @@
+---
+layout: default
+nav_active: shared-tasks
+title: PAN @ FIRE 2015 - External Plagiarism Detection
+description: PAN @ FIRE 2015 - External Plagiarism Detection
+---
+
+<main>
+    <div class="uk-section uk-section-default">
+        <div class="uk-container uk-margin-small">
+            <h1 class="uk-margin-remove-top">External Plagiarism Detection in Arabic Text (AraPlagDet) 2015</h1>
+            <ul class="uk-list">
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#input">Input</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#output">Output</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Performance Measures</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
+            </ul>
+        </div>
+
+        <div class="uk-container uk-margin-medium">
+
+            <h2 id="synopsis">Synopsis</h2>
+            <ul>
+                <li>Given a document written in Arabic, does it contain plagiarism?</li>
+                <li>Input: [<a target="_blank" href="http://misc-umc.org/AraPlagDet/corpora/ExAraPlagDet-10-08-2015.zip">data</a>][<a target="_blank" href="http://misc-umc.org/AraPlagDet/corpora/ExAraPlagDet-21-09-2015-with-ground-truth.zip">truth</a>]</li>
+                <li>Evaluator: [<a href="https://www.uni-weimar.de/medien/webis/events/pan-09/pan09-code/pan09-plagiarism-detection-performance-measures.py">code</a>]</li>
+            </ul>
+
+
+            <h2 id="task">Task</h2>
+            <p>Identify the <strong>similar</strong> text fragments between the suspicious document and the potential<strong> sources of plagiarism</strong>. The suspicious document <strong>should be compared</strong> to other documents.</p>
+
+
+            <h2 id="input">Input</h2>
+            <p>You will be provided with a training corpus corpus to use it while developing your method. The corpus involves two collections: suspicious documents and source documents. Each suspicious document is associated with an XML document that determine the position of the plagiarised fragments and its source, which allows you to check the correctness of your detections.</p>
+            <p>This corpus will be provided just a couple of weeks before the end of the competition. You have to run your method on this corpus in order to compare it with others. The XML documents (the actual plagiarism annotation) will not be provided in this corpus until the end of the competition. </p>
+
+
+            <h2 id="output">Output</h2>
+            <p>Participants should submit their runs on the test corpus in the form of XML documents following the annotation format of the actual plagiarism provided in the training corpus (PAN format). Below an example on the content of the XML documents that should be submitted by the participants.</p>
+            <pre class="prettyprint"><code class="lang-json">&lt;document reference="suspicious-documentXYZ.txt"&gt;
+&lt;feature
+  name="detected-plagiarism"
+  this_offset="5"
+  this_length="1000"
+&nbsp;&nbsp;source_reference="source-documentABC.txt"
+  source_offset="100"
+  source_length="1000"
+/&gt;
+&lt;feature ... /&gt;
+...
+&lt;/document&gt;</code></pre>
+
+            <ul>
+                <li>Each <code>&lt;feature&gt;</code> tag desribes a detected fragment.</li>
+                <li>The attributes <code>this_offset</code> and <code>source_offset</code> describe the position of the first character of the detected plagiarism fragment in the suspicious document and the source document respectively.</li>
+                <li>The attributes <code>this_length</code> and <code>source_length</code> repesent the number of characters of the detected plagiarism fragment in the suspicious document and the source document respectively.</li>
+            </ul>
+
+
+            <h2 id="evaluation">Performance Measures</h2>
+            <p>The following measures are used to evaluate the performance of methods:</p>
+            <ul>
+              <li><strong>Precision</strong> and <strong>Recall</strong> at character level,</li>
+              <li><strong>Granularity</strong>: it reports overlapping or multiple detections for a single plagiarism case,</li>
+              <li><strong>Plagdet</strong>: a combination of the former measures to an overall score. This score is used to rank the methods.</li>
+            </ul>
+
+            <p>To compute these measures, we use the same code provided at <a href="http://pan.webis.de/">PAN@CLEF</a> (author: Martin Potthast). [<a href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2010p.pdf#page=2">Learn more</a>]</p>
+
+
+            <h2 id="submission">Submission</h2>
+            <p>(1) Run your method(s) on the test corpus, and generate for each suspicious document an XML document (with the same name) that contains the detected plagiarism (please follow the format shown above). Please record the runtime of your method in terms of seconds on the training as well as the test corpus.</p>
+            <p>(2) Send your runs on the test corpus as well as the training one in separate zip files to araplagdet.fire2015@gmail.com .(you can also upload them in a site such as Google Drive or Dropbox and send us the links). The names of the zip files should follow the format bellow:</p>
+            <ul>
+                <li>for the runs on the training corpus: <code>external_train_your.familly.name.zip</code></li>
+                <li>for the runs on the test corpus: <code>external_test_your.familly.name.zip</code></li>
+            </ul>
+            <p>If you submit more than 1 run for a subtask,  please add a number to the name of you files e.g. external_test_your.familly.name_1.zip and  external_test_your.familly.name_2.zip</p>
+            <p>In the email, mention the names of the sent zip files along with the runtime to generate each of them (preferably in seconds if possible, but you could put an approximate time in hours or minutes)  . E.g. <br>
+                external_test_your.familly.name.zip   1000 sec<br>
+                external_train_your.familly.name.zip  1022 sec
+            </p>
+
+
+            <h2 id="results">Results</h2>
+            <p>The winner is <strong>Magooda Team</strong>. Congratulation !</p>
+
+            <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+                <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Method</th>
+                  <th>Plagdet</th>
+                  <th>Precision</th>
+                  <th>Recall</th>
+                  <th>Granularity</th>
+                </tr>
+                </thead>
+                <tbody>
+                   <tr>
+                      <td>1</td>
+                      <td>Magooda_2</td>
+                      <td>0.8021737</td>
+                      <td>0.8521183</td>
+                      <td>0.8314955</td>
+                      <td>1.0694534</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Magooda_3</td>
+                      <td>0.7715430</td>
+                      <td>0.8535960</td>
+                      <td>0.7591500</td>
+                      <td>1.0584507</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Magooda_1</td>
+                      <td>0.7669238</td>
+                      <td>0.8048888</td>
+                      <td>0.7863135</td>
+                      <td>1.0523139</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>Palkovskii_1</td>
+                      <td>0.6270522</td>
+                      <td>0.9774681</td>
+                      <td>0.5422843</td>
+                      <td>1.1621349</td>
+                    </tr>
+                    <tr>
+                      <td>#</td>
+                      <td>Baseline</td>
+                      <td>0.6075470</td>
+                      <td>0.9903910</td>
+                      <td>0.5349007</td>
+                      <td>1.2089249</td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>Alzahrani</td>
+                      <td>0.5739858</td>
+                      <td>0.8308816</td>
+                      <td>0.5304589</td>
+                      <td>1.1857283</td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>Palkovskii_3</td>
+                      <td>0.5595334</td>
+                      <td>0.6582152</td>
+                      <td>0.5893837</td>
+                      <td>1.1606464</td>
+                    </tr>
+                    <tr>
+                      <td>7</td>
+                      <td>Palkovskii_2</td>
+                      <td>0.5178527</td>
+                      <td>0.5642698</td>
+                      <td>0.5893964</td>
+                      <td>1.1634981</td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+
+            <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+                <thead>
+                <tr>
+                    <th colspan="3">Participants</th>
+                </tr>
+                </thead>
+              <tbody>
+                <tr>
+                  <td>Magooda</td>
+                  <td>Ahmed Ezzat abdelGawad Magooda<br>Ahsraf Youssef Mahgoub<br>Mohsen Rashwan</td>
+                  <td><a href="http://www.rdi-eg.com/">RDI, Egypt</a></td>
+                </tr>
+                <tr>
+                  <td>Palkovskii</td>
+                  <td>Yurii Palkovskii<br>Alexei Belov</td>
+                  <td>SkyLine LLC and <a href="http://www.plagiarism-detector.com/" class="bg-primary">Plagiarism Detector Project</a>, Ukraine</td>
+                </tr>
+                <tr>
+                  <td>Alzahrani</td>
+                  <td><a href="http://www.c2learn.com/" class="bg-primary">Salha Alzahrani</a></td>
+                  <td>Taif University, Saudi Arabia</td>
+                </tr>
+              </tbody>
+            </table>
+
+
+            <h2 id="related-work">Related Work</h2>
+            <p>The external plagiarism detection task (on English documents)  has been run from PAN'09 to PAN'11. Here is a quick list of the respective proceedings and overviews:</p>
+            <ul>
+                <li><a href="{{ 'publications.html#?q=2011%20plagiarism%20overview' | relative_url }}">PAN @ CLEF'11</a> (<a href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2011t.pdf">overview paper</a>)</li>
+                <li><a href="{{ 'publications.html#?q=2010%20plagiarism%20overview' | relative_url }}">PAN @ CLEF'10</a> (<a href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2010t.pdf">overview paper</a>)</li>
+                <li><a href="{{ 'publications.html#?q=2009%20plagiarism%20overview' | relative_url }}">PAN @ SEPLN'09</a> (<a href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2009e.pdf">overview paper</a>)</li>
+            </ul>
+            <p>The external plagiarism detection task has been devided to Source Retrieval and Text Alignment sub-tasks since PAN'12. Here is a quick list of the respective proceedings and overviews:</p>
+            <ul>
+                <li><a href="{{ 'publications.html#?q=2015%20plagiarism%20overview' | relative_url }}">PAN @ CLEF'15</a> (<a href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2015j.pdf">overview paper1</a>, <a href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2015k.pdf">overview paper2</a>) </li>
+                <li><a href="{{ 'publications.html#?q=2014%20plagiarism%20overview' | relative_url }}">PAN @ CLEF'14</a> (<a href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2014k.pdf">overview paper</a>)</li>
+                <li><a href="{{ 'publications.html#?q=2013%20plagiarism%20overview' | relative_url }}">PAN @ CLEF'13</a> (<a href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2013h.pdf">overview paper</a>)</li>
+                <li><a href="{{ 'publications.html#?q=2012%20plagiarism%20overview' | relative_url }}">PAN @ CLEF'12</a> (<a href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2012t.pdf">overview paper</a>)</li>
+            </ul>
+            <p>The following references provide further information on external plagiarism detection and Arabic language:</p>
+            <ul>
+                <li>Potthast, M., Stein, B., Barrón-Cedeño, A., &amp; Rosso, P. (2010). <a href="http://users.dsic.upv.es/~prosso/resources/PotthastEtAl_COLING10.pdf">An Evaluation Framework for Plagiarism Detection</a>. COLING 2010, 997–1005. ACL.</li>
+                <li>Darwish, K., Magdy, W.(2013). <a href="http://alt.qcri.org/~wmagdy/PDF/ArabicIR.pdf">Arabic Information Retrieval.</a> Foundations and Trends&#174; in Information Retrieval. 7, 239&#8211;342.</li>
+                <li>Habash, N.(2010). <a href="http://www.morganclaypool.com/doi/abs/10.2200/S00277ED1V01Y201008HLT010">Introduction to Arabic Natural Language processing</a>. Morgan &#38; Claypool.</li>
+            </ul>
+
+            <h2 id="task-committee">Task Committee</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/temporary.html url="http://www.univ-constantine2.dz/facntic/departements/"
+                name="Imene Bensalem" picture="../pan15-figures/imene.jpg" affiliation="Constantine 2 University" %}
+                {% include people-cards/rosso.html %}
+                {% include people-cards/temporary.html url="http://qcri.org.qa/our-people/bio?pid=23&name=KareemDarwish"
+                name="Kareem Darwish" picture="../pan15-figures/kareem.jpg" affiliation="Qatar Computing Research Institute" %}
+                {% include people-cards/avatar.html url="http://www.univ-constantine2.dz/facntic/departements/"
+                name="Imène Boukhalfa" affiliation="Constantine 2 University" %}
+                {% include people-cards/avatar.html url="http://www.univ-constantine2.dz/laboratoires/labmisc/index.php?static6/scal"
+                name="Salim Chikhi" affiliation="Constantine 2 University" %}
+
+            </div>
+            <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+                {% include organizations/fire-organizations-section.html year=2015 %}
+            </div>
+
+        </div>  <!-- section -->
+    </div>  <!-- section -->
+</main>

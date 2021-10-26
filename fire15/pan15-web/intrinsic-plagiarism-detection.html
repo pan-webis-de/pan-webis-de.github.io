@@ -1,0 +1,170 @@
+---
+layout: default
+nav_active: shared-tasks
+title: PAN @ FIRE 2015 - Intrinsic Plagiarism Detection
+description: PAN @ FIRE 2015 - Intrinsic Plagiarism Detection
+---
+
+<main>
+    <div class="uk-section uk-section-default">
+        <div class="uk-container uk-margin-small">
+            <h1 class="uk-margin-remove-top">Intrinsic Plagiarism Detection in Arabic Text (AraPlagDet) 2015</h1>
+            <ul class="uk-list">
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#input">Input</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#output">Output</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Performance Measures</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
+            </ul>
+        </div>
+
+        <div class="uk-container uk-margin-medium">
+
+            <h2 id="synopsis">Synopsis</h2>
+            <ul>
+                <li>Given a document written in Arabic, does it contain plagiarism?</li>
+                <li>Input: [<a target="_blank" href="https://goo.gl/eGz5NN">data</a>][<a target="_blank" href="https://goo.gl/t0sDYy">truth</a>]</li>
+                <li>Evaluator: [<a href="https://www.uni-weimar.de/medien/webis/events/pan-09/pan09-code/pan09-plagiarism-detection-performance-measures.py">code</a>]</li>
+            </ul>
+
+
+            <h2 id="task">Task</h2>
+            <p>Identify the text fragments that are <strong>inconsistent</strong> with the rest of the document in terms of the <strong>writing style</strong>. The suspicious document <strong>should not be compared</strong> to any other documents.</p>
+
+
+            <h2 id="input">Input</h2>
+            <p>You will be provided with a training corpus corpus to use it while developing your method. The corpus involves a collection of suspicious documents. Each suspicious document is associated with an XML document that determine the position of the plagiarised fragments, which allows you to check the correctness of your detections.</p>
+
+
+            <h2 id="output">Output</h2>
+            <p>Participants should submit their runs on the test corpus in the form of XML documents following the annotation format of the actual plagiarism provided in the training corpus (PAN format). Below an example on the content of the XML documents that should be submitted by the participants.</p>
+            <pre class="prettyprint"><code class="lang-json">&lt;document reference="suspicious-documentXYZ.txt"&gt;
+&lt;feature
+  name="detected-plagiarism"
+  this_offset="5"
+  this_length="1000"
+/&gt;
+&lt;feature ... /&gt;
+...
+&lt;/document&gt;</code></pre>
+
+            <ul>
+                <li>Each <code>&lt;feature&gt;</code> tag desribes a detected fragment.</li>
+                <li>The attributes <code>this_offset</code> and <code>source_offset</code> describe the position of the first character of the detected plagiarism fragment in the suspicious document and the source document respectively.</li>
+                <li>The attributes <code>this_length</code> and <code>source_length</code> repesent the number of characters of the detected plagiarism fragment in the suspicious document and the source document respectively.</li>
+            </ul>
+
+
+            <h2 id="evaluation">Performance Measures</h2>
+            <p>The following measures are used to evaluate the performance of methods:</p>
+            <ul>
+              <li><strong>Precision</strong> and <strong>Recall</strong> at character level,</li>
+              <li><strong>Granularity</strong>: it reports overlapping or multiple detections for a single plagiarism case,</li>
+              <li><strong>Plagdet</strong>: a combination of the former measures to an overall score. This score is used to rank the methods.</li>
+            </ul>
+
+            <p>To compute these measures, we use the same code provided at <a href="http://pan.webis.de/">PAN@CLEF</a> (author: Martin Potthast). [<a href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2010p.pdf#page=2">Learn more</a>]</p>
+
+
+            <h2 id="submission">Submission</h2>
+            <p>(1) Run your method(s) on the test corpus, and generate for each suspicious document an XML document (with the same name) that contains the detected plagiarism (please follow the format shown above). <br>
+            Please record the runtime of your method in terms of seconds on the training as well as the test corpus.</p>
+            <p>(2) Send your runs on the test corpus as well as the training one in separate zip files to araplagdet.fire2015@gmail.com .(you can also upload them in a site such as Google Drive or Dropbox and send us the links) <br>
+              The names of the zip files should follow the format bellow:<br>
+              - for the runs on the training corpus:  intrinsic_train_your.familly.name.zip<br>
+              - for the runs on the test corpus:  intrinsic_test_your.familly.name.zip</p>
+            <p>If you submit more than 1 run for a subtask,  please add a number to the name of you files e.g. intrinsic_test_myname_1.zip and  intrinsic_test_myname_2.zip</p>
+            <p>In the email, mention the names of the sent zip files along with the runtime to generate each of them (preferably in seconds if possible, but you could put an approximate time in hours or minutes)  . E.g. <br>
+              intrinsic_test_yourname.zip   1000 sec<br>
+              intrinsic_train_yourname.zip  1022 sec</p>
+
+
+            <h2 id="results">Results</h2>
+            <p>The winner is <strong>Magooda Team</strong>. Congratulation !</p>
+
+            <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+                <thead>
+                <tr>
+                  <th>Method</th>
+                  <th>Plagdet</th>
+                  <th>Precision</th>
+                  <th>Recall</th>
+                  <th>Granularity</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>Baseline</td>
+                  <td>0.3753558</td>
+                  <td>0.2691282</td>
+                  <td>0.7792149</td>
+                  <td>1.0934164</td>
+                </tr>
+                <tr>
+                  <td>Magooda</td>
+                  <td>0.1926474</td>
+                  <td>0.1879309</td>
+                  <td>0.1976069</td>
+                  <td>1.0000000</td>
+                </tr>
+                </tbody>
+            </table>
+
+
+            <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+                <thead>
+                <tr>
+                    <th colspan="3">Participants</th>
+                </tr>
+                </thead>
+              <tbody>
+                <tr>
+                  <td>Magooda</td>
+                  <td>Ahmed Ezzat abdelGawad Magooda<br>Ahsraf Youssef Mahgoub<br>Mohsen Rashwan</td>
+                  <td><a href="http://www.rdi-eg.com/">RDI, Egypt</a></td>
+                </tr>
+              </tbody>
+            </table>
+
+
+            <h2 id="related-work">Related Work</h2>
+            <p>The intrinsic plagiarism detection task on English documents has been run from PAN'09 to PAN'12. Here is a quick list of the respective proceedings and overviews:</p>
+            <ul>
+                <li><a href="{{ 'publications.html#?q=2012%20plagiarism%20overview' | relative_url }}">PAN @ CLEF'12</a> (<a href="https://www.uni-weimar.de/medien/webis/events/pan-12/pan12-papers-final/pan12-author-identification/juola12-overview.pdf">overview paper</a>),</li>
+                <li><a href="{{ 'publications.html#?q=2011%20plagiarism%20overview' | relative_url }}">PAN @ CLEF'11</a> (<a href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2011t.pdf">overview paper</a>), </li>
+                <li><a href="{{ 'publications.html#?q=2010%20plagiarism%20overview' | relative_url }}">PAN @ CLEF'10</a> (<a href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2010t.pdf">overview paper</a>), and        </li>
+                <li><a href="{{ 'publications.html#?q=2009%20plagiarism%20overview' | relative_url }}">PAN @ SEPLN'09</a> (<a href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2009e.pdf">overview paper</a>).</li>
+            </ul>
+            <p>The following references provide further information on intrinsic plagiarism detection, its evaluation corpora development approaches and Arabic language:</p>
+            <ul>
+              <li>Stein, B., Lipka, N., &amp; Prettenhofer, P. (2011). <a href="https://www.uni-weimar.de/medien/webis/publications/papers/stein_2011a.pdf">Intrinsic Plagiarism Analysis</a>. Language Resources and Evaluation, 45(1), 63–82.</li>
+              <li>Bensalem, I., Rosso, P., &amp; Chikhi, S. (2014). <a href="http://users.dsic.upv.es/~prosso/resources/BensalemEtAl_EMNLP14.pdf">Intrinsic Plagiarism Detection using N-gram Classes</a>. EMNLP 2014, 1459–1464. ACL.</li>
+              <li>Potthast, M., Stein, B., Barrón-Cedeño, A., &amp; Rosso, P. (2010). <a href="http://users.dsic.upv.es/~prosso/resources/PotthastEtAl_COLING10.pdf">An Evaluation Framework for Plagiarism Detection</a>. COLING 2010, 997–1005. ACL. </li>
+              <li>Bensalem, I., Rosso, P., &amp; Chikhi, S. (2013). <a href="https://riunet.upv.es/bitstream/handle/10251/40242/BensalemEtAl_CLEF13.pdf">A New Corpus for the Evaluation of Arabic Intrinsic Plagiarism Detection</a>. CLEF 2013, LNCS, vol. 8138, 53–58. Springer.</li>
+              <li>Habash, N.(2010). <a href="http://www.morganclaypool.com/doi/abs/10.2200/S00277ED1V01Y201008HLT010">Introduction to Arabic Natural Language processing</a>. Morgan &#38; Claypool.</li>
+            </ul>
+
+            <h2 id="task-committee">Task Committee</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/temporary.html url="http://www.univ-constantine2.dz/facntic/departements/"
+                name="Imene Bensalem" picture="../pan15-figures/imene.jpg" affiliation="Constantine 2 University" %}
+                {% include people-cards/rosso.html %}
+                {% include people-cards/temporary.html url="http://qcri.org.qa/our-people/bio?pid=23&name=KareemDarwish"
+                name="Kareem Darwish" picture="../pan15-figures/kareem.jpg" affiliation="Qatar Computing Research Institute" %}
+                {% include people-cards/avatar.html url="http://www.univ-constantine2.dz/facntic/departements/"
+                name="Imène Boukhalfa" affiliation="Constantine 2 University" %}
+                {% include people-cards/avatar.html url="http://www.univ-constantine2.dz/laboratoires/labmisc/index.php?static6/scal"
+                name="Salim Chikhi" affiliation="Constantine 2 University" %}
+
+            </div>
+            <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+                {% include organizations/fire-organizations-section.html year=2015 %}
+            </div>
+
+        </div>  <!-- section -->
+    </div>  <!-- section -->
+</main>

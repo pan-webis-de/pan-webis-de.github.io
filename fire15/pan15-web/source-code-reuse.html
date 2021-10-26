@@ -1,0 +1,139 @@
+---
+layout: default
+nav_active: shared-tasks
+title: PAN @ FIRE 2015 - Detection of SOurce COde Re-use
+description: PAN @ FIRE 2015 - Detection of SOurce COde Re-use
+---
+
+<main>
+    <div class="uk-section uk-section-default">
+        <div class="uk-container uk-margin-small">
+
+            <h1 class="uk-margin-remove-top">Detection of SOurce COde Re-use 2015</h1>
+            <ul class="uk-list">
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#output">Output</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
+            </ul>
+             <div style="position:absolute;right:50px; top: 200px;">
+                <img src="../pan15-figures/SOCO.png" alt="SOCO logo" style="max-height:150px">
+            </div>
+
+        </div>
+
+        <div class="uk-container uk-margin-medium">
+            <h2 id="synopsis">Synopsis</h2>
+            <ul>
+                <li>Task: Given a source code, is it an original? This task focuses on the <strong>detection of cross-language source code re-use</strong>.
+                    It is about searching for likely source code pairs written in different programming languages of being a re-use case.</li>
+                <li>Training Data [<a target="_blank" href="../pan15-code/CL.SOCO.15.train.REVISED.zip">corpus</a>][<a target="_blank" href="../pan15-code/clsoco15-training-corpus.qrel">relevance-judgements</a>]</li>
+                <li>Test Data [<a target="_blank" href="../pan15-code/CL.SOCO.15.test.tar.gz.gpg">corpus</a>]</li>
+                <li>Evaluation [<a target="_blank" href="../pan15-code/soco15-eval.py">script</a>][<a target="_blank" href="../pan15-code/example-results-train.xml">example-output</a>]</li>
+            </ul>
+
+
+            <h2 id="introduction">Introduction</h2>
+            <p>The information has become easily accessible with the advent of the Web. Blogs, forums, repositories, etc. have made source code widely available to be read, to be copied and to be modified. Programmers are tempted to re-use debugged and tested source codes that can easily found on the Web. The vast amount of resources on the Web makes unfeasible the manual analysis of suspicious source code re-used. There is a need of development automatic systems for detecting source code re-use phenomenon.</p>
+            <p>Software companies have a special interest in preserving their own intellectual property. In a survey of 3,970 developers, more than 75 percent of respondents admitted that have re-use blocks of source code from elsewhere. Academic and programming environments have become a potential scenario for research in source code re-use because it is a frequent practice between students. In this context, students are tempted to re-use source code because they have to solve the same problem. It is a difficult scenario for detecting source code re-use because all the source codes will contain some degree of similarity.</p>
+            <p>The second edition of the SOCO task focuses on cross-language source code re-use detection. Participants will be provided with cross-language training and test sets of source code files. The task is about retrieving the source code pairs that have been re-used across programming languages.</p>
+
+
+            <h2 id="task">Task</h2>
+            <p>In this second edition SOCO focuses on cross-language source code re-use detection. Source codes will be tagged by language to ease the detection. You are provided with a set of source codes written in C and Java languages. The task is about retrieving the source code pairs that have been re-used across programming languages. This is a document level task, so no specific fragments inside of the source codes are expected to be identified; only pairs of source codes. Participants are asked to determine whether a source code has been plagiarised across programming languages.
+                In the test phase the only annotation that will be provided is the programming language extensions.
+                <strong>IMPORTANT: 3 RUNS per team are allowed as a maximum.</strong>
+            </p>
+
+            <h2 id="data">Data</h2>
+            <p>For the training phase we provide an annotated corpus including with the programming language extensions. It includes information about whether a text fragment has been re-used and, if it is the case, what its source is.</p>
+
+            <ul>
+                <li>The collection consists of source codes written in Java and C. </li>
+                <li>The Java and C collection contain 599 source codes numbered from 001 to 599.</li>
+                <li>Reuse is commited across programming languages.</li>
+                <li>Re-used cases are those with the same file number (e.g. 011.c ↔ 011.java).</li>
+                <li>Relevance Judgements represent re-use in both directions(a→b and b→a)</li>
+            </ul>
+
+            <p>In the test phase the only annotation that will be provided in the corpus is the programming language extensions.</p>
+            <ul>
+                <li>It is divided by programming language (Java and C) so you do not need any pre-process to identify the programming language of the source codes.</li>
+                <li>The Java and C collection contain 79 source codes numbered from 000 to 078.</li>
+                <li>Cross-language source code re-use is only committed from C to Java language.</li>
+            </ul>
+
+
+            <h2 id="output">Output</h2>
+                <p>The results of your re-use detection software are required to be formatted in XML:</p>
+                <pre class="prettyprint"><code class="lang-json">&lt;document&gt;
+&lt;reuse_case
+&nbsp;&nbsp;source_codeC="..."   &lt;!-- file name of the first source code re-used element  --&gt;
+&nbsp;&nbsp;source_codeJ="..."   &lt;!-- file name of the second source code re-used element  --&gt;
+/&gt;
+&lt;reuse_case
+&nbsp;&nbsp;source_codeC="..."   &lt;!-- file name of the first source code re-used element  --&gt;
+&nbsp;&nbsp;source_codeJ="..."   &lt;!-- file name of the second source code re-used element  --&gt;
+/&gt;
+...                    &lt;!-- more detections in the collection --&gt;
+&lt;/document &gt;</code></pre>
+
+            <p>For each pair of suspicious source code pair there will be one entry of the &lt;reuse_case .../&gt; in the xml file.</p>
+
+
+            <h2 id="evaluation">Evaluation</h2>
+		        <p>The success of the detection of source code re-use will be measured in terms of Precision, Recall and F1 measure.</p>
+		        <p>Run the evaluation script as <code>python clsoco15-eval.py</code></p>
+
+
+            <h2 id="submission">Submission</h2>
+                <p>The participants can use the training data to build their systems, tune parameters, proof-of-concept, manual analysis etc. Although participants can analyse their runs on test data, it is not desirable that they tune system according to test data. It is both, unreliable and unethical, in shared task environment.</p>
+                <p>Participants are allowed to submit up to three runs per language pair in order to experiment with different settings.</p>
+                <p>The results of your detection are required to be formatted as is explained in Task Description section.</p>
+
+
+            <h2 id="patch-notes">Similarities/Differences with SOCO-2014</h2>
+            <p>For your convenience, we summarize here the main similarities/differences of the source code re-use detection task @PAN-FIRE-2015 with respect to the corresponding task @PAN-FIRE-2014:</p>p>
+
+            Similarities:
+            <ul>
+                <li>The task definition is essentially the same</li>
+                <li>The format of corpus and ground truth is the same</li>
+                <li>The format of input/output of your software is ALMOST the same</li>
+                <li>The evaluation measures are the same</li>
+            </ul>
+
+            Differences:
+            <ul>
+                <li>The detection of source code re-use is established between C and Java programming languages.</li>
+            </ul>
+
+
+            <h2 id="related-work">Related Work</h2>
+            <ul>
+                <li>PAN @ FIRE'14 (overview paper)</li>
+                <li>Arwin, C., Tahaghoghi, S. (2006). Plagiarism detection across programming languages. In Proceedings of the 29th Australasian Computer Science Conference, 48, pp. 277-286. Australian Computer Society, Inc.</li>
+                <li>Flores E., Barrón-Cedeño A., Moreno L., Rosso P. (2014) Cross-Language Source Code Re-Use Detection. In: Proc. 3rd Spanish Conf. on Information Retrieval, pp. 145-156.</li>
+                <li>Flores E., Barrón-Cedeño A., Rosso P., Moreno L. (2012). DeSoCoRe: Detecting Source Code Re-Use across Programming Languages. In: Proc. 12th Int. Conf. of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, NAACL-2012, pp. 1-4.</li>
+                <li>Flores E., Rosso P., Moreno L., Villatoro-Tello E. (2014) PAN@FIRE: Overview of SOCO Track on the Detection of SOurce COde Re-use. In Proceedings of the Sixth Forum for Information Retrieval Evaluation (FIRE 2014).</li>
+                <li>Flores E., Barrón-Cedeño A., Moreno L., Rosso P. (2015) Uncovering Source Code Re-Use in Large-Scale Programming Environments. In: Computer Applications in Engineering and Education, 23(3), pp. 383-390. DOI: 10.1002/cae.21608</li>
+            </ul>
+
+            <h2 id="task-committee">Task Committee</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/flores.html %}
+                {% include people-cards/rosso.html %}
+                {% include people-cards/moreno.html %}
+                {% include people-cards/villatoro-tello.html %}
+            </div>
+
+            <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+                {% include organizations/fire-organizations-section.html year=2015 %}
+            </div>
+        </div>
+    </div>
+</main>

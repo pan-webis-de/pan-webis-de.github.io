@@ -1,38 +1,182 @@
 ---
 layout: default
-nav_active: events
-title: PAN @ FIRE 2011
-description: PAN @ FIRE 2011
+nav_active: shared-tasks
+title: PAN @ FIRE 2011 - Cross-Language !ndian Text Reuse
+description: PAN @ FIRE 2012 - Cross-Language !ndian Text Reuse
 ---
 
 <main>
     <div class="uk-section uk-section-default">
-        <div class="uk-container">
-            <h1 class="uk-margin-remove-top">PAN at FIRE 2011</h1>
+        <div class="uk-container uk-margin-small">
+            <h1 class="uk-margin-remove-top">Cross-Language !ndian Text Reuse 2011</h1>
             <ul class="uk-list">
-                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#index-tasks">Shared Tasks</a></li>
-                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#index-important-dates">Important Dates</a></li>
-                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#index-organizing-committee">Organizing Committee</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#introduction">Introduction</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
             </ul>
         </div>
 
         <div class="uk-container uk-margin-medium">
-            <h2 id="index-tasks" class="uk-margin-small-top">Shared Tasks</h2>
+
+            <h2 id="synopsis">Synopsis</h2>
             <ul>
-                <li><a href="{{ '/shared-tasks.html#clitr' | relative_url }}">Cross-Language !ndian Text Reuse</a></li>
+                <li>Data: [<a target="_blank" href="https://web.archive.org/web/20130715072522/http://memex2.dsic.upv.es/workshops/2011/clitr/downloads/CLITR_training_data.tar.bz2">training</a>]
+                    [<a target="_blank" href="https://web.archive.org/web/20130715072550/http://memex2.dsic.upv.es/workshops/2011/clitr/downloads/CLITR_test_data.tar.bz2">test</a>]
+                </li>
             </ul>
 
-            <h2 id="index-important-dates" class="uk-margin-large-top">Important Dates</h2>
-            <ul>
-                <li> August 01, 2011: Corpus Release</li>
-                <li> September 15, 2011: evaluation phase deadline</li>
-                <li> November 28, 2011: Paper submission</li>
-                <li> December 2-4, 2011: Conference</li>
-            </ul>
-            <p>The timezone of all deadlines is <a href="https://en.wikipedia.org/wiki/Anywhere_on_Earth">Anywhere on
-                Earth</a>.</p>
 
-            <h2 id="index-organizing-committee">Organizing Committee</h2>
+            <h2 id="introduction">Introduction</h2>
+            <p>With the advent of the World Wide Web, information in many different formats is easily accessible. Texts, images, videos and audios are all available for consult, download, and modification. Under these circumstances, text re-use has increased in the last years. In particular, plagiarism has been defined by IEEE as the reuse of someone else's prior ideas, processes, results, or words without explicitly acknowledging the original author and source. The problem has requested the attention from many research areas, even generating new terms, such as the known as copy&paste syndrome or a new kind of text re-use: cyberplagiarism.</p>
+            <p>While people have enough expertise to detect re-use of text when reading a document, the scale of potential source documents (that of the Web) makes manual analysis unfeasible. As a countermeasure, different systems that assist in the detection of text re-use have been developed. The main idea is to automatically detect such text fragments in a document that are suspicious of being re-used and, if available, provide its presumable source. In that way, on the basis of given linguistic evidence , a human can take a final decision.</p>
+            <p>Recent efforts have been conducted to the better development of models for detection of text re-use. Probably one of the most interesting cases is the PAN, International Competition on Plagiarism Detection held in conjunction with CLEF.
+                A special kind of phenomenon is cross-language text re-use, where the re-used text fragment and its source are written in different languages, making its automatic detection even harder than for the monolingual case. Cross-language text re-use detection has been nearly approached in the last years, and better models are necessary.
+                Through in the current initiative we aim to further impulse the development of better models for text re-use detection and, in particular, cross-language text re-use detection. Our interest in the second kind of text re-use is motivated by the following facts:</p>
+            <ul>
+                <li>Speakers of less-resourced languages (also known as under resourced languages) are forced to consult documentation in a foreign language; and</li>
+                <li>People immerse in a foreign country can still consult material written in their native language.</li>
+            </ul>
+            <p>Such environments cause the commitment of cross-language text re-use more likely and become it an interesting problem nowadays.</p>
+
+
+            <h2 id="task">Task</h2>
+            <p>The focus of the CL!TR evaluation task is on cross-language text re-use detection. To start with, in this year's task, we are targeting two languages: English - Hindi. The source text is in English and the suspicious text is in Hindi.
+                You are provided with a set of suspicious documents in Hindi and a set of potential source documents in English. The task is to identify the documents in the suspicious set (Hindi) that are created by re-using fragments from the source set (English).
+                You are expected to identify suspicious documents which have been actually generated by re-use together with their corresponding sources. Note that this is a document level task. No specific fragments inside of the documents are expected to be identified; only pairs of documents. Determining either a text has been re-used from its corresponding source is enough. Specifying the kind of re-use (Exact, Heavy, or Light) is not necessary.</p>
+            <p>CL!TR is divided in two phases: training and test. For the training phase we provide an annotated corpus including different levels of re-use. It includes information about whether a text fragment has been re-used and, if it is the case, what its source is. In the test phase no annotation or hints about the cases are provided.</p>
+
+            <h3>Result Submission</h3>
+            The results of your re-use detection software are required to be formatted in XML:
+            <pre class="prettyprint"><code class="lang-json">&lt;document&gt;
+&lt;reuse_case
+  reused_reference="..."    &lt;!-- file name of the suspicious document --&gt;
+  source_reference="..."    &lt;!-- file name of the source document --&gt;
+/&gt;
+&lt;reuse_case
+  reused_reference="..."    &lt;!-- file name of the suspicious document --&gt;
+  source_reference="..."   &lt;!-- file name of the source document --&gt;
+/&gt;
+.........................    &lt;!-- more detections in the collection --&gt;
+&lt;/document &gt;</code></pre>
+
+            For each pair of suspicious and source document there will be one entry of the &lt;reuse_case .../&gt; in the xml file.
+
+
+            <h2 id="data">Data</h2>
+            <p>Let S be a set of suspicious documents. Let D be a set of potential source documents. The task is to find those documents s in S which have been actually re-used and their source document d in D.
+                The corpus contains a set of potential source documents D, written in English, and set of suspicious documents S, written in Hindi. In the corpus you will find plain text files encoded in UTF-8. The source documents are taken from English Wikipedia. The source documents include Wiki-mark up.</p>
+
+            <h3>Training Collection</h3>
+            <p>In order to prepare and develop your detection software we provide with a training collection. Such a collection includes annotations for every case of re-use.</p>
+            <ul>
+                <li>5032 Source files in English</li>
+                <li>198 suspicious files in Hindi</li>
+            </ul>
+
+            <h3>Test Collection</h3>
+            <p>The test collection is composed on the same way than the training collection: a set of suspicious together with potential source documents.</p>
+            <ul>
+                <li>5032 Source files in English</li>
+                <li>190 suspicious files in Hindi</li>
+            </ul>
+
+            <h3>Submission of Detection Results</h3>
+
+            <p>Participants are allowed to submit up to three runs in order to experimenting with different settings.
+                The results of your detection are required to be formatted in XML. The result document must be valid with respect to the following XML schema:</p>
+            <pre class="prettyprint"><code class="lang-json">&lt;document&gt;
+&lt;reuse_case
+  reused_reference="..."    &lt;!-- file name of the suspicious document --&gt;
+  source_reference="..."    &lt;!-- file name of the source document --&gt;
+/&gt;
+&lt;reuse_case
+  reused_reference="..."    &lt;!-- file name of the suspicious document --&gt;
+  source_reference="..."   &lt;!-- file name of the source document --&gt;
+/&gt;
+.........................    &lt;!-- more detections in the collection --&gt;
+&lt;/document &gt;</code></pre>
+
+
+            <h2 id="evaluation">Evaluation</h2>
+            <p>The success of a text re-use detection will be measured in terms of its Precision (P), Recall (R), and F-measure (F) on detecting the re-used documents together with their source in the test corpus.
+                A detection is considered correct if the re-used document is identified together with its corresponding source document. We consider:</p>
+            <ul>
+                <li><em>total detected</em> to be the set of suspicious-source pairs detected by the system.</li>
+                <li><em>correctly detected</em> to be the subset of pairs detected by the system which actually compose cases of re-use.</li>
+                <li><em>total re-used</em> to be the gold standard, which includes all those pairs which compose actual re-used cases.</li>
+            </ul>
+
+            P, R and F are defined as follows:
+
+	        $$ \text{P} = {\text{correctly detected} \over \text{total deteted}} $$
+            $$ \text{R} = {\text{correctly detected} \over \text{total re-used}} $$
+            $$ \text{F-measure} = {
+            {2 * \text{R} * \text{P}}
+            \over
+            {\text{R} + \text{P}}
+            } $$
+
+            A reference implementation of the measures, coded in Perl, is no longer available.
+
+
+            <h2 id="results">Results</h2>
+
+            <h3>Participants</h3>
+            <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+                <thead>
+                <tr>
+                    <th>Participant</th>
+                    <th>Institution</th>
+                    <th>Country</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Aniruddha Ghosh</td><td>Jadavpur University</td><td>India</td></tr>
+                    <tr><td>Karteek Addanki et al.</td><td>Hong Kong University of Science and Technology</td><td>Hong Kong (China)</td></tr>
+                    <tr><td>Nitish Aggarwal et al.</td><td>DERI Galway and UPM Madrid</td><td>Ireland / Spain</td></tr>
+                    <tr><td>Parth Gupta et al.</td><td>UPV &amp; DA-IICT</td><td>Spain / India</td></tr>
+                    <tr><td>Rambhoopal K.</td><td>IIIT Hyderabad</td><td>India</td></tr>
+                    <tr><td>Yurii Palkovskii</td><td>Zhytomyr State University / SkyLine Inc.</td><td>Ukraine</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Ranking</h3>
+            <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+                <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>F-measure</th>
+                    <th>Recall</th>
+                    <th>Precision</th>
+                    <th>Run</th>
+                    <th>Leader</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>0.649</td><td>0.750</td><td>0.571</td><td>3</td><td>Rambhoopal K.</td></tr>
+                    <tr><td>2</td><td>0.609</td><td>0.821</td><td>0.484</td><td>1</td><td>Nitish Aggarwal</td></tr>
+                    <tr><td>3</td><td>0.608</td><td>0.643</td><td>0.576</td><td>2</td><td>Rambhoopal K.</td></tr>
+                    <tr><td>4</td><td>0.603</td><td>0.589</td><td>0.617</td><td>1</td><td>Yurii Palkovskii</td></tr>
+                    <tr><td>5</td><td>0.596</td><td>0.804</td><td>0.474</td><td>2</td><td>Parth Gupta</td></tr>
+                    <tr><td>6</td><td>0.589</td><td>0.795</td><td>0.468</td><td>2</td><td>Nitish Aggarwal</td></tr>
+                    <tr><td>7</td><td>0.576</td><td>0.589</td><td>0.564</td><td>1</td><td>Rambhoopal K.</td></tr>
+                    <tr><td>8</td><td>0.541</td><td>0.473</td><td>0.631</td><td>2</td><td>Yurii Palkovskii</td></tr>
+                    <tr><td>9</td><td>0.523</td><td>0.500</td><td>0.549</td><td>3</td><td>Yurii Palkovskii</td></tr>
+                    <tr><td>10</td><td>0.509</td><td>0.607</td><td>0.439</td><td>3</td><td>Parth Gupta</td></tr>
+                    <tr><td>11</td><td>0.430</td><td>0.580</td><td>0.342</td><td>1</td><td>Parth Gupta</td></tr>
+                    <tr><td>12</td><td>0.220</td><td>0.214</td><td>0.226</td><td>2</td><td>Aniruddha Ghosh</td></tr>
+                    <tr><td>13</td><td>0.220</td><td>0.214</td><td>0.226</td><td>3</td><td>Aniruddha Ghosh</td></tr>
+                    <tr><td>14</td><td>0.085</td><td>0.107</td><td>0.070</td><td>1</td><td>Aniruddha Ghosh</td></tr>
+                    <tr><td>15</td><td>0.000</td><td>0.000</td><td>0.000</td><td>1</td><td>Karteek Addanki</td></tr>
+                </tbody>
+            </table>
+
+
+            <h2 id="task-committee">Task Committee</h2>
             <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
                 {% include people-cards/barron-cedeno.html %}
                 {% include people-cards/rosso.html %}
@@ -46,3 +190,7 @@ description: PAN @ FIRE 2011
         </div>
     </div>
 </main>
+
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
