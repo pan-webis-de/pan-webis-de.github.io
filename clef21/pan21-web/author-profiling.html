@@ -1,6 +1,6 @@
 ---
 layout: default
-nav_active: tasks
+nav_active: shared-tasks
 title: PAN @ CLEF 2021 - Profiling Hate Speech Spreaders on Twitter
 description: PAN @ CLEF 2021 - Profiling Hate Speech Spreaders on Twitter
 ---
@@ -14,11 +14,11 @@ description: PAN @ CLEF 2021 - Profiling Hate Speech Spreaders on Twitter
             <ul class="uk-list">
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
-<!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#award">Award</a></li>-->
-<!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>-->
-<!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>-->
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#award">Award</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
                 <!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>-->
-<!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>-->
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="https://pan.webis.de/clef21/pan21-web/index.html#index-important-dates">Important dates</a></li>
@@ -42,7 +42,7 @@ description: PAN @ CLEF 2021 - Profiling Hate Speech Spreaders on Twitter
                 <li>Input: 
                    <ul>
                        <li>Timelines of users sharing hate speech towards, for instance, immigrants and women.</li>
-                       <li>English and Spanish, 200 training cases/authors each (with 200 tweets per author) [<a href="https://zenodo.org/record/4603578" target="blank">data</a>]</li> 
+                       <li>English and Spanish, 200 training cases/authors each (with 200 tweets per author) [<a href="https://zenodo.org/record/5637013" target="blank">data</a>]</li> 
                     </ul>
                                <!--; 300 training cases each-->
 <!--                    Timelines of users sharing fake news as per PolitiFact and Snopes; English and Spanish; 300 training cases each [<a href="https://doi.org/10.5281/zenodo.3692319" target="blank">data</a>]-->
@@ -50,9 +50,7 @@ description: PAN @ CLEF 2021 - Profiling Hate Speech Spreaders on Twitter
                 <li>Evaluation: Accuracy
                 </li>
                 <li>Submission: Deployment on TIRA [<a href="https://www.tira.io/task/pan21-profiling-hate-speech-spreaders-on-twitter">submit</a>]</li>
-                <li>Baseline: TBD
-<!--                    Random, LSTM, Neural Network using char 1-3-grams, SVM usign char 2-6-grams, Symanto LDSE, Emotionally-Infused Neural Network.-->
-                </li>
+                <li>Baselines: Character n-Grams+Logistic, Word n-Grams+SVM, USE+LSTM, XLMR+LSTM, MBERT+LSTM, TFIDF+LSTM, LDSE</li>
             </ul>
             
             <h2 id="task">Task</h2>
@@ -84,22 +82,21 @@ description: PAN @ CLEF 2021 - Profiling Hate Speech Spreaders on Twitter
             
             <h2 id="award">Award</h2>
             <p>We are happy to announce that the best performing team at the 9th International Competition on Author Profiling will be awarded 300,- Euro sponsored by <a href="https://www.symanto.net/" target="_blank"><b>Symanto</b></a>
-            <!--
+            
                 <br>
-                This year, the winners of the task are (ex aequo):
+                This year, the winner of the task is:
                 <br>
                 <ul>
-                    <li>Jakab Buda and Flora Bolonyai, Eötvös Loránd University, Hungary</li>
-                    <li>Juan Pizarro, Chile</li>
+                    <li>Marco Siino, Elisa Di Nuovo, Ilenia Tinnirello and Marco La Cascia, Università degli Studi di Palermo and Università degli Studi di Torino, Italy</li>
             </ul>
-            </p>-->
+            </p>
             
 <h2 id="data">Data</h2>
 
 <h3 class="uk-margin-small-top">Input</h3>
             The uncompressed dataset consists in a folder per language (en, es). Each folder contains:
             <ul>
-                <li>A XML file per author (Twitter user) with 100 tweets. The name of the XML file
+                <li>A XML file per author (Twitter user) with 200 tweets. The name of the XML file
                     correspond to the unique author id.
                 </li>
                 <li>A truth.txt file with the list of authors and the ground truth.</li>
@@ -145,7 +142,7 @@ description: PAN @ CLEF 2021 - Profiling Hate Speech Spreaders on Twitter
             For each language, we will calculate individual accuracies in discriminating between the two classes. 
             Finally, we will average the accuracy values per language to obtain the final ranking.
     
-            <!--
+            
             <h2 id="results"> Results</h2>
             
                         <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
@@ -160,577 +157,89 @@ description: PAN @ CLEF 2021 - Profiling Hate Speech Spreaders on Twitter
                 </tr>
                 </thead>
                 <tbody>
-                
-                    
-               <tr>
-<td> 1 </td> 
-<td> bolonyai20 </td>
-<td>0.7500 </td>
-<td>0.8050 </td>
-<td>0.7775 </td>
-</tr>
-
-<tr>
-<td> 1 </td> 
-<td> pizarro20 </td>
-<td>0.7350 </td>
-<td>0.8200 </td>
-<td>0.7775 </td>
-</tr>
-
-<tr>
-<td> - </td> 
-<td> SYMANTO (LDSE) [1] </td>
-<td>0.7450 </td>
-<td>0.7900 </td>
-<td>0.7675 </td>
-</tr>
-
-<tr>
-<td> 3 </td> 
-<td> koloski20 </td>
-<td>0.7150 </td>
-<td>0.7950 </td>
-<td>0.7550 </td>
-</tr>
-
-<tr>
-<td> 3 </td> 
-<td> deborjavalero20 </td>
-<td>0.7300 </td>
-<td>0.7800 </td>
-<td>0.7550 </td>
-</tr>
-
-<tr>
-<td> 3 </td> 
-<td> vogel20 </td>
-<td>0.7250 </td>
-<td>0.7850 </td>
-<td>0.7550 </td>
-</tr>
-
-<tr>
-<td> 6 </td> 
-<td> higueraporras20 </td>
-<td>0.7250 </td>
-<td>0.7750 </td>
-<td>0.7500 </td>
-</tr>
-
-<tr>
-<td> 6 </td> 
-<td> tarela20 </td>
-<td>0.7250 </td>
-<td>0.7750 </td>
-<td>0.7500 </td>
-</tr>
-
-<tr>
-<td> 8 </td> 
-<td> babaei20 </td>
-<td>0.7250 </td>
-<td>0.7650 </td>
-<td>0.7450 </td>
-</tr>
-
-<tr>
-<td> 9 </td> 
-<td> staykovski20 </td>
-<td>0.7050 </td>
-<td>0.7750 </td>
-<td>0.7400 </td>
-</tr>
-
-<tr>
-<td> 9 </td> 
-<td> hashemi20 </td>
-<td>0.6950 </td>
-<td>0.7850 </td>
-<td>0.7400 </td>
-</tr>
-
-<tr>
-<td> 11 </td> 
-<td> estevecasademunt20 </td>
-<td>0.7100 </td>
-<td>0.7650 </td>
-<td>0.7375 </td>
-</tr>
-
-<tr>
-<td> 12 </td> 
-<td> castellanospellecer20 </td>
-<td>0.7100 </td>
-<td>0.7600 </td>
-<td>0.7350 </td>
-</tr>
-
-<tr>
-<td> - </td> 
-<td> SVM + c nGrams </td>
-<td>0.6800 </td>
-<td>0.7900 </td>
-<td>0.7350 </td>
-</tr>
-
-<tr>
-<td> 13 </td> 
-<td> shrestha20 </td>
-<td>0.7100 </td>
-<td>0.7550 </td>
-<td>0.7325 </td>
-</tr>
-
-<tr>
-<td> 13 </td> 
-<td> tommasel20 </td>
-<td>0.6900 </td>
-<td>0.7750 </td>
-<td>0.7325 </td>
-</tr>
-
-<tr>
-<td> 15 </td> 
-<td> johansson20 </td>
-<td>0.7200 </td>
-<td>0.7350 </td>
-<td>0.7275 </td>
-</tr>
-
-<tr>
-<td> 15 </td> 
-<td> murauer20 </td>
-<td>0.6850 </td>
-<td>0.7700 </td>
-<td>0.7275 </td>
-</tr>
-
-<tr>
-<td> 17 </td> 
-<td> espinosagonzales20 </td>
-<td>0.6900 </td>
-<td>0.7600 </td>
-<td>0.7250 </td>
-</tr>
-
-<tr>
-<td> 17 </td> 
-<td> ikae20 </td>
-<td>0.7250 </td>
-<td>0.7250 </td>
-<td>0.7250 </td>
-</tr>
-
-<tr>
-<td> 19 </td> 
-<td> morenosandoval20 </td>
-<td>0.7150 </td>
-<td>0.7300 </td>
-<td>0.7225 </td>
-</tr>
-
-<tr>
-<td> 20 </td> 
-<td> majumder20 </td>
-<td>0.6400 </td>
-<td>0.8000 </td>
-<td>0.7200 </td>
-</tr>
-
-<tr>
-<td> 20 </td> 
-<td> sanchezromero20 </td>
-<td>0.6850 </td>
-<td>0.7550 </td>
-<td>0.7200 </td>
-</tr>
-
-<tr>
-<td> 22 </td> 
-<td> lopezchilet20 </td>
-<td>0.6800 </td>
-<td>0.7550 </td>
-<td>0.7175 </td>
-</tr>
-
-<tr>
-<td> 22 </td> 
-<td> nadalalmela20 </td>
-<td>0.6800 </td>
-<td>0.7550 </td>
-<td>0.7175 </td>
-</tr>
-
-<tr>
-<td> 22 </td> 
-<td> carrodve20 </td>
-<td>0.7100 </td>
-<td>0.7250 </td>
-<td>0.7175 </td>
-</tr>
-
-<tr>
-<td> 25 </td> 
-<td> gil20 </td>
-<td>0.6950 </td>
-<td>0.7350 </td>
-<td>0.7150 </td>
-</tr>
-
-<tr>
-<td> 26 </td> 
-<td> elexpuruortiz20 </td>
-<td>0.6800 </td>
-<td>0.7450 </td>
-<td>0.7125 </td>
-</tr>
-
-<tr>
-<td> 26 </td> 
-<td> labadietamayo20 </td>
-<td>0.7050 </td>
-<td>0.7200 </td>
-<td>0.7125 </td>
-</tr>
-
-<tr>
-<td> 28 </td> 
-<td> grafiaperez20 </td>
-<td>0.6750 </td>
-<td>0.7450 </td>
-<td>0.7100 </td>
-</tr>
-
-<tr>
-<td> 28 </td> 
-<td> jilka20 </td>
-<td>0.6650 </td>
-<td>0.7550 </td>
-<td>0.7100 </td>
-</tr>
-
-<tr>
-<td> 28 </td> 
-<td> lopezfernandez20 </td>
-<td>0.6850 </td>
-<td>0.7350 </td>
-<td>0.7100 </td>
-</tr>
-
-<tr>
-<td> 31 </td> 
-<td> pinnaparaju20 </td>
-<td>0.7150 </td>
-<td>0.7000 </td>
-<td>0.7075 </td>
-</tr>
-
-<tr>
-<td> 31 </td> 
-<td> aguirrezabal20 </td>
-<td>0.6900 </td>
-<td>0.7250 </td>
-<td>0.7075 </td>
-</tr>
-
-<tr>
-<td> 33 </td> 
-<td> kengyi20 </td>
-<td>0.6550 </td>
-<td>0.7550 </td>
-<td>0.7050 </td>
-</tr>
-
-<tr>
-<td> 33 </td> 
-<td> gowda20 </td>
-<td>0.675 </td>
-<td>0.735 </td>
-<td>0.7050 </td>
-</tr>
-
-<tr>
-<td> 33 </td> 
-<td> jakers20 </td>
-<td>0.6750 </td>
-<td>0.7350 </td>
-<td>0.7050 </td>
-</tr>
-
-<tr>
-<td> 33 </td> 
-<td> cosin20 </td>
-<td>0.7050 </td>
-<td>0.7050 </td>
-<td>0.7050 </td>
-</tr>
-
-<tr>
-<td> 37 </td>
-<td> navarromartinez20 </td>
-<td> 0.6600 </td>
-<td> 0.7450 </td>
-<td> 0.7025 </td>
-</tr>
-
-<tr>
-<td> 38 </td>
-<td> heilmann20 </td>
-<td> 0.6550 </td>
-<td> 0.7450 </td>
-<td> 0.7000 </td>
-</tr>
-
-<tr>
-<td> 39 </td>
-<td> cardaioli20 </td>
-<td> 0.6750 </td>
-<td> 0.7150 </td>
-<td> 0.6950 </td>
-</tr>
-
-<tr>
-<td> 39 </td>
-<td> females20 </td>
-<td> 0.6050 </td>
-<td> 0.7850 </td>
-<td> 0.6950 </td>
-</tr>
-
-<tr>
-<td> 39 </td>
-<td> kaushikamardas20 </td>
-<td> 0.7000 </td>
-<td> 0.6900 </td>
-<td> 0.6950 </td>
-</tr>
-
-<tr>
-<td> - </td>
-<td> NN + w nGrams </td>
-<td> 0.6900 </td>
-<td> 0.7000 </td>
-<td> 0.6950 </td>
-</tr>
-
-<tr>
-<td> 42 </td>
-<td> monteroceballos20 </td>
-<td> 0.6300 </td>
-<td> 0.7450 </td>
-<td> 0.6875 </td>
-</tr>
-
-<tr>
-<td> 43 </td>
-<td> ogaltsov20 </td>
-<td> 0.6950 </td>
-<td> 0.6650 </td>
-<td> 0.6800 </td>
-</tr>
-
-<tr>
-<td> 44 </td>
-<td> botticebria20 </td>
-<td> 0.6250 </td>
-<td> 0.7200 </td>
-<td> 0.6725 </td>
-</tr>
-
-<tr>
-<td> 45 </td>
-<td> lichouri20 </td>
-<td> 0.5850 </td>
-<td> 0.7600 </td>
-<td> 0.6725 </td>
-</tr>
-
-<tr>
-<td> 46 </td>
-<td> manna20 </td>
-<td> 0.5950 </td>
-<td> 0.7250 </td>
-<td> 0.6600 </td>
-</tr>
-
-<tr>
-<td> 47 </td>
-<td> fersini20 </td>
-<td> 0.6000 </td>
-<td> 0.7150 </td>
-<td> 0.6575 </td>
-</tr>
-
-<tr>
-<td> 48 </td>
-<td> jardon20 </td>
-<td> 0.5450 </td>
-<td> 0.7500 </td>
-<td> 0.6475 </td>
-</tr>
-
-<tr>
-<td> - </td>
-<td> EIN [2]</td>
-<td> 0.6400 </td>
-<td> 0.6400 </td>
-<td> 0.6400 </td>
-</tr>
-
-<tr>
-<td> 49 </td>
-<td> shashirekha20 </td>
-<td> 0.6200 </td>
-<td> 0.6450 </td>
-<td> 0.6325 </td>
-</tr>
-
-<tr>
-<td> 50 </td>
-<td> datatontos20 </td>
-<td> 0.7250 </td>
-<td> 0.5300 </td>
-<td> 0.6275 </td>
-</tr>
-
-<tr>
-<td> 51 </td>
-<td> soleramo20 </td>
-<td> 0.6100 </td>
-<td> 0.6150 </td>
-<td> 0.6125 </td>
-</tr>
-
-<tr>
-<td> - </td>
-<td> LSTM </td>
-<td> 0.5600 </td>
-<td> 0.6000 </td>
-<td> 0.5800 </td>
-</tr>
-
-<tr> 
-<td> 52 </td>
-<td> russo20 </td>
-<td> 0.5800 </td>
-<td> 0.5150 </td>
-<td> 0.5475 </td>
-</tr>
-
-<tr>
-<td> 53 </td>
-<td> igualadamoraga20 </td>
-<td> 0.5250 </td>
-<td> 0.5050 </td>
-<td> 0.5150 </td>
-</tr>
-
-<tr>
-<td> - </td>
-<td> RANDOM </td>
-<td> 0.5100 </td>
-<td> 0.5000 </td>
-<td> 0.5050 </td>
-</tr>
-
-<tr>
-<td> 54 </td>
-<td> hoertenhuemer20 </td>
-<td> 0.725 </td>
-<td> - </td>
-</tr>
-
-<tr>
-<td> 55 </td>
-<td> duan20 </td>
-<td> 0.720  </td>
-<td> - </td>
-</tr>
-
-<tr>
-<td> 55 </td>
-<td> andmangenix20 </td>
-<td> 0.720 </td>
-<td> - </td>
-</tr>
-
-<tr>
-<td> 57 </td>
-<td> saeed20 </td>
-<td> 0.700 </td>
-<td> - </td>
-</tr>
-
-<tr>
-<td> 58 </td>
-<td> baruah20 </td>
-<td> 0.690 </td>
-<td> - </td>
-</tr>
-
-<tr>
-<td> 59 </td>
-<td> anthonio20 </td>
-<td> 0.685 </td>
-<td> - </td>
-</tr>
-
-<tr>
-<td> 60 </td>
-<td> zhang20 </td>
-<td> 0.670 </td>
-<td> - </td>
-</tr>
-
-<tr>
-<td> 61 </td>
-<td> espinosaruiz20 </td>
-<td> 0.665 </td>
-<td> - </td>
-</tr>
-
-<tr>
-<td> 62 </td>
-<td> shen20 </td>
-<td> 0.650 </td>
-<td> - </td>
-</tr>
-
-<tr>
-<td> 63 </td>
-<td> suareztrashorras20 </td>
-<td> 0.640 </td>
-<td> - </td>
-</tr>
-
-<tr>
-<td> 64 </td>
-<td> niven20 </td>
-<td> 0.610  </td>
-<td> - </td>
-</tr>
-
-<tr>
-<td> 65 </td>
-<td> margoes20 </td>
-<td> 0.570 </td>
-<td> - </td>
-</tr>
-
-<tr>
-<td> 66 </td>
-<td> wu20 </td>
-<td> 0.560 </td>
-<td> - </td>
-</tr>
+<tr><td>1</td><td>SiinoDiNuovo</td><td>73.0</td><td>85.0</td><td>79.0</td></tr>
+<tr><td>2</td><td>MUCIC</td><td>73.0</td><td>83.0</td><td>78.0</td></tr>
+<tr><td>2</td><td>UO-UPV</td><td>74.0</td><td>82.0</td><td>78.0</td></tr>
+<tr><td>4</td><td>andujar</td><td>72.0</td><td>82.0</td><td>77.0</td></tr>
+<tr><td>4</td><td>anitei</td><td>72.0</td><td>82.0</td><td>77.0</td></tr>
+<tr><td>4</td><td>anwar</td><td>72.0</td><td>82.0</td><td>77.0</td></tr>
+<tr><td>7</td><td>pagnan</td><td>73.0</td><td>80.0</td><td>76.5</td></tr>
+<tr><td></td><td>LDSE [20]</td><td>70.0</td><td>82.0</td><td>76.0</td></tr>
+<tr><td></td><td>char nGrams+Logistic</td><td>69.0</td><td>83.0</td><td>76.0</td></tr>
+<tr><td>8</td><td>hoellig</td><td>73.0</td><td>79.0</td><td>76.0</td></tr>
+<tr><td>9</td><td>bañuls</td><td>68.0</td><td>83.0</td><td>75.5</td></tr>
+<tr><td>9</td><td>supaca</td><td>69.0</td><td>82.0</td><td>75.5</td></tr>
+<tr><td>9</td><td>oleg</td><td>67.0</td><td>83.0</td><td>75.0</td></tr>
+<tr><td>9</td><td>moreno</td><td>69.0</td><td>81.0</td><td>75.0</td></tr>
+<tr><td>9</td><td>cervero</td><td>70.0</td><td>80.0</td><td>75.0</td></tr>
+<tr><td>14</td><td>katona</td><td>70.0</td><td>79.0</td><td>74.5</td></tr>
+<tr><td></td><td>word nGrams+SVM</td><td>65.0</td><td>83.0</td><td>74.0</td></tr>
+<tr><td>15</td><td>bagdon</td><td>67.0</td><td>81.0</td><td>74.0</td></tr>
+<tr><td>15</td><td>das</td><td>67.0</td><td>81.0</td><td>74.0</td></tr>
+<tr><td>17</td><td>ikae</td><td>66.0</td><td>81.0</td><td>73.5</td></tr>
+<tr><td>17</td><td>mata</td><td>70.0</td><td>77.0</td><td>73.5</td></tr>
+<tr><td>19</td><td>lai</td><td>62.0</td><td>84.0</td><td>73.0</td></tr>
+<tr><td>19</td><td>jain</td><td>66.0</td><td>80.0</td><td>73.0</td></tr>
+<tr><td>19</td><td>villarroya</td><td>67.0</td><td>79.0</td><td>73.0</td></tr>
+<tr><td>19</td><td>mktung</td><td>64.0</td><td>82.0</td><td>73.0</td></tr>
+<tr><td>19</td><td>sercopa</td><td>67.0</td><td>79.0</td><td>73.0</td></tr>
+<tr><td>19</td><td>castro</td><td>67.0</td><td>79.0</td><td>73.0</td></tr>
+<tr><td>25</td><td>giglou</td><td>65.0</td><td>80.0</td><td>72.5</td></tr>
+<tr><td>25</td><td>huertas</td><td>67.0</td><td>78.0</td><td>72.5</td></tr>
+<tr><td>25</td><td>wentao</td><td>68.0</td><td>77.0</td><td>72.5</td></tr>
+<tr><td>28</td><td>rus</td><td>61.0</td><td>83.0</td><td>72.0</td></tr>
+<tr><td>28</td><td>tudo</td><td>65.0</td><td>79.0</td><td>72.0</td></tr>
+<tr><td>30</td><td>jaiferhu</td><td>61.0</td><td>82.0</td><td>71.5</td></tr>
+<tr><td>30</td><td>joshi</td><td>65.0</td><td>78.0</td><td>71.5</td></tr>
+<tr><td>32</td><td>valiense</td><td>63.0</td><td>79.0</td><td>71.0</td></tr>
+<tr><td>32</td><td>krstev</td><td>65.0</td><td>77.0</td><td>71.0</td></tr>
+<tr><td>34</td><td>martin</td><td>65.0</td><td>77.0</td><td>71.0</td></tr>
+<tr><td>35</td><td>gomez</td><td>58.0</td><td>83.0</td><td>70.5</td></tr>
+<tr><td>35</td><td>bakhteev</td><td>58.0</td><td>83.0</td><td>70.5</td></tr>
+<tr><td>35</td><td>MaNa</td><td>64.0</td><td>77.0</td><td>70.5</td></tr>
+<tr><td>38</td><td>cabrera</td><td>62.0</td><td>78.0</td><td>70.0</td></tr>
+<tr><td>38</td><td>esam</td><td>63.0</td><td>77.0</td><td>70.0</td></tr>
+<tr><td>38</td><td>zhang</td><td>63.0</td><td>77.0</td><td>70.0</td></tr>
+<tr><td>41</td><td>dudko</td><td>61.0</td><td>78.0</td><td>69.5</td></tr>
+<tr><td>41</td><td>meghana</td><td>64.0</td><td>75.0</td><td>69.5</td></tr>
+<tr><td>43</td><td>rubio</td><td>59.0</td><td>79.0</td><td>69.0</td></tr>
+<tr><td>43</td><td>uzan</td><td>62.0</td><td>76.0</td><td>69.0</td></tr>
+<tr><td>45</td><td>herrero</td><td>57.0</td><td>80.0</td><td>68.5</td></tr>
+<tr><td>46</td><td>puertas</td><td>60.0</td><td>76.0</td><td>68.0</td></tr>
+<tr><td></td><td>USE-LSTM</td><td>56.0</td><td>79.0</td><td>67.5</td></tr>
+<tr><td></td><td>XLMR-LSTM</td><td>62.0</td><td>73.0</td><td>67.5</td></tr>
+<tr><td>47</td><td>ipek</td><td>58.0</td><td>77.0</td><td>67.5</td></tr>
+<tr><td>47</td><td>schlicht21</td><td>58.0</td><td>77.0</td><td>67.5</td></tr>
+<tr><td>47</td><td>peirano</td><td>59.0</td><td>76.0</td><td>67.5</td></tr>
+<tr><td>47</td><td>russo</td><td>55.0</td><td>80.0</td><td>67.5</td></tr>
+<tr><td></td><td>MBERT-LSTM</td><td>59.0</td><td>75.0</td><td>67.0</td></tr>
+<tr><td>51</td><td>kazzaz</td><td>55.0</td><td>77.0</td><td>66.0</td></tr>
+<tr><td>52</td><td>dorado</td><td>60.0</td><td>71.0</td><td>65.5</td></tr>
+<tr><td>53</td><td>kobby</td><td>53.0</td><td>77.0</td><td>65.0</td></tr>
+<tr><td>53</td><td>kern</td><td>54.0</td><td>76.0</td><td>65.0</td></tr>
+<tr><td>53</td><td>espinosa</td><td>64.0</td><td>66.0</td><td>65.0</td></tr>
+<tr><td>56</td><td>labadie</td><td>51.0</td><td>78.0</td><td>64.5</td></tr>
+<tr><td>57</td><td>silva</td><td>56.0</td><td>69.0</td><td>62.5</td></tr>
+<tr><td>57</td><td>garibo</td><td>57.0</td><td>68.0</td><td>62.5</td></tr>
+<tr><td>59</td><td>estepicursor</td><td>51.0</td><td>72.0</td><td>61.5</td></tr>
+<tr><td>60</td><td>spears</td><td>52.0</td><td>68.0</td><td>60.0</td></tr>
+<tr><td></td><td>TFIDF-LSTM</td><td>61.0</td><td>51.0</td><td>56.0</td></tr>
+<tr><td>61</td><td>barbas</td><td>46.0</td><td>50.0</td><td>48.0</td></tr>
+<tr><td>62</td><td>dukic</td><td>75.0</td><td>-</td><td>-</td></tr>
+<tr><td>63</td><td>tosev</td><td>70.0</td><td>-</td><td>-</td></tr>
+<tr><td>64</td><td>amir</td><td>68.0</td><td>-</td><td>-</td></tr>
+<tr><td>65</td><td>siebert</td><td>68.0</td><td>-</td><td>-</td></tr>
+<tr><td>66</td><td>iteam</td><td>65.0</td><td>-</td><td>-</td></tr>
+                    <tr><td>67</td><td>amina*</td><td>63.0</td><td>-</td><td>-</td></tr>
 
 
      
                     
                 </tbody>
             </table>
--->
+
+        * Result sent beyond the deadline.
+        
              <h2 id="related-work">Related Work</h2>
             <ul>
                 <li>[1] Valerio Basile, Cristina Bosco, Elisabetta Fersini, Dora Nozza, Viviana Patti, Francisco Rangel, Paolo Rosso, Manuela Sanguinetti (2019). 

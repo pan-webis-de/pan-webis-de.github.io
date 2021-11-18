@@ -1,208 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+---
+layout: default
+nav_active: events
+title: PAN @ FIRE 2015
+description: PAN @ FIRE 2015
+redirect_from:
+  - /fire15/pan15-web/about.html
+  - /fire15/pan15-web/proceedings.html
+  - /fire15/pan15-web/araplagdet.html
+---
 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<main>
+    <div class="uk-section uk-section-default">
+        <div class="uk-container">
+            <h1 class="uk-margin-remove-top">PAN at FIRE 2015</h1>
+            <ul class="uk-list">
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#index-tasks">Shared Tasks</a></li>
+              </ul>
+        </div>
 
-<title>PAN 2015</title> 
-
-<link href="../../css/bootstrap.min.css" rel="stylesheet" />
-<link href="../../css/prettify.css" rel="stylesheet" />
-
-<style>
-.navbar .navbar-nav {
-  font-weight: bold;
-}
-</style>
-
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-  <script src="../../js/html5shiv.js"></script>
-  <script src="../../js/respond.min.js"></script>
-<![endif]-->
-
-<link rel="shortcut icon" href="../pan15-figures/pan-icon-16x16.ico">
-<!--
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
-<link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
--->
-
-</head>
-<body>
-
-<nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom:0px;">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="../../index.html"><img src="../pan15-figures/pan-logo-small-lightgrey.png" alt="PAN" style="margin-top:-5px"></a>
-  </div>
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="../../index.html">Home</a></li>
-      <li class="active"><a href="index.html">PAN @ FIRE 2015:</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="proceedings.html">Proceedings</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tasks <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-           <li><a href="clsoco.html">CL-SOCO</a></li>
-          <li><a href="araplagdet.html">AraPlagDet</a></li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</nav>
-
-<div class="jumbotron" style="background-image:url('../pan15-figures/pan-fingerprint.png');background-repeat:no-repeat;background-position:right top;">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <h1>
-	
-	
-          PAN @ FIRE 2015
-          <a href="../../fire14/pan14-web/index.html"><small data-toggle="tooltip" title="Previous year" class="glyphicon glyphicon-chevron-left"></small></a>
-          
-        </h1>
-        <p>This is the 2nd evaluation lab on source code re-use detection and the 1st evaluation lab on plagiarism detection in Arabic text. PAN@FIRE will be held as part of the <a href="http://www.isical.ac.in/~fire/" target="_blank">FIRE 2015 Forum for Information Retrieval Evaluation</a> in Gandhinagar, India, on December 4-6, 2015. 
-	</p>
-        <p>
-          <a class="btn btn-default btn-large" href="about.html">Learn more »</a>
-          <!--a class="btn btn-primary btn-large" href="about.html#registration">Register now »</a-->
-          <!--span class="badge"><span id="registered-total">0</span> already signed up</span-->
-          <a class="btn btn-primary btn-large" href="proceedings.html">Proceedings »</a>
-        </p>
-      </div>
+        <div class="uk-container uk-margin-medium">
+            <h2 id="index-tasks" class="uk-margin-small-top">Shared Tasks</h2>
+            <ul>
+                <li><a href="{{ '/shared-tasks.html#source-code-reuse' | relative_url }}">Cross-Language Detection of SOurce COde Re-use</a></li>
+                <li><a href="{{ '/shared-tasks.html#intrinsic-plagiarism-detection' | relative_url }}">Intrinsic Plagiarism Detection in Arabic Text</a></li>
+                <li><a href="{{ '/shared-tasks.html#external-plagiarism-detection' | relative_url }}">External Plagiarism Detection in Arabic Text</a></li>
+            </ul>
+            <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+                {% include organizations/fire-organizations-section.html year=2015 %}
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-
-
-<div class="container" style="padding-top:20px;">
-<!-- Tasks -->
-<div class="row">
-  <div class="col-md-6">
-    <h3>Cross-Language Detection of SOurce COde Re-use</h3>
-    <p>Given a source code, is it an original?</p>
-    <p>This task focuses on the <strong>detection of cross-language source code re-use</strong>. It is about searching for likely source code pairs written in
-    different programming languages of being a re-use case.</p>
-    <p><a class="btn btn-default" href="clsoco.html">Learn more »</a></p>
-  </div>
-  <div class="col-md-6">
-    <h3>Plagiarism Detection in Arabic Text</h3>
-    <p>Given a document written in Arabic, does it contain plagiarism?</p>
-    <p>This task offers to you the opportunity to evaluate your plagiarism detection method on Arabic documents. It is composed of two sub-tasks: <strong>External Plagiarism Detection</strong> & <strong>Intrinsic Plagiarism Detection</strong>. Participants can participate to one or both sub-tasks.</p>
-    <p><a class="btn btn-default" href="araplagdet.html">Learn more »</a></p>
- </div>
-</div>
-
-<!-- Keynotes -->
-<!--div class="row">
-  <div class="col-md-12">
-    <h2>Keynotes</h2>
-  </div>
-  <div class="col-md-6">
-    <div class="pull-left"><img class="img-rounded" style="max-height:140px;margin:5px;" src="../pan15-figures/tommaso.jpg" alt="Tommaso Fornaciari"></div>
-    <h4 class="media-heading">Deception detection in criminal analysis: from lie detector to stylometry</h4>
-    <p><a href="https://it.linkedin.com/pub/tommaso-fornaciari/32/8a1/21b" target="_blank">Tommaso Fornaciari</a><br/>
-    <span style="font-size:10pt">Italian National Police</span></p>
-    <p>To detect deception in communications is a difficult task for humans and a critical issue in police investigations.  In fact, no specific signs of deception, such as the Pinocchio's growing nose, have never been clearly identified, even though several approaches have been developed in order to unmask liars and the false information they convey. The speech will examine the problem in the perspective of police practices, from collection to evaluation of testimonies. The contribution of different techniques and technologies for testimonies' analysis will be discussed, with particular focus on the role of the modern stylometry, as many studies in literature suggest that the discipline, which exploits computational methods in order to analyze samples of spoken and written language through their stylistic features, can be effectively employed in deception detection.
-</p>
-    <p><em>Tommaso Fornaciari is a Police Officer Psychologist of Italian National Police. Since 2003 he worked at the Forensic Science Police Service, dealing with crime scene analysis, behavioral analysis and investigative data analysis, mostly regarding bloody murders. With the purpose of supporting the analysis of testimonies, in 2009 he began to attend the PhD school of the Center for Mind/Brain Sciences - CIMeC of the University of Trento, where he carried  out a research project in forensic linguistics (Ph.D. in Cognitive and Brain Sciences, 2012). In particular, he applied computational techniques in order to detect deception in transcripts of hearings held in Italian Courts. He is going ahead with research in deception detection and currently he works at the Italian Ministry of Interior, where he is engaged in research and technological innovation for public security.</em></p>
-  </div>
-  <div class="clearfix visible-xs visible-sm"></div>
-  <div class="col-md-6">
-    <div class="pull-left"><img class="img-rounded" style="max-height:140px;margin:5px;" src="../pan15-figures/walter2.jpg" alt="Walter Daelemans"></div>
-    <h4 class="media-heading">Author Profiling in Practice</h4>
-    <p><a href="http://www.clips.ua.ac.be/~walter/" target="_blank">Walter Daelemans</a><br/>
-    <span style="font-size:10pt">University of Antwerp</span></p>
-    <p>In this talk I will describe recent research within the CLiPS research centre on author profiling: the automatic assignment of demographic and psychological properties to (unknown) authors of text on the basis of linguistic analysis of these texts. I will describe different ways in which the results of this research are currently being applied. In the AMiCA project, the goal is to help moderators of social networks to detect harmful situations in their network. Our case studies concern cyberbullying, pedophile grooming, and suicide announcements. I wil show how profiling information can help achieve these tasks. In addition I will briefly demo the profiling system of Textgain, a spin-off company from CLiPS, and describe some of the applications in which their profiling web services are put to use.</p>
-    <p><em>Walter Daelemans (PhD in Computational Linguistics, 1987). Trained as a linguist and psycholinguist at the Universities of Antwerpen and Leuven, he specialized in computational linguistics and held research or teaching posts at the University of Nijmegen, the AI Lab of Vrije Universiteit Brussel, and Tilburg University. Since 1999 he is full professor at the University of Antwerp and research director of CLiPS. His main research interests are in machine learning of language, text analytics, computational stylometry, and computational psycholinguistics.</em></p>
-  </div>
-
-</div-->
-
-<br>
-<div class="row" style="padding-top:60px;">
-  <!--div class="col-xs-6 col-sm-4 col-md-3"><a href="http://www.webis.de" target="_blank" class="thumbnail" style="border:none;min-height:75px;"><img src="../pan15-figures/logo-bauhaus-universitaet-weimar.png" alt="Bauhaus-Universtät Weimar logo" class="img-responsive" style="max-height:50px;"></a></div-->
-  <div class="col-xs-6 col-sm-4 col-md-3"><a href="http://www.upv.es" target="_blank" class="thumbnail" style="border:none;min-height:75px;"><img src="../pan15-figures/logo-universitat-politecnica-de-valencia.png" alt="Universitat Politecnica de Valencia logo" class="img-responsive" style="max-height:50px;"></a></div>
-  <div class="col-xs-6 col-sm-4 col-md-3"><a href="http://www.aegean.gr" target="_blank" class="thumbnail" style="border:none;min-height:75px;"><img src="http://users.dsic.upv.es/grupos/nle/clsoco/images/vlc-campus.png" alt="VLC-CAMPUS Excelence" class="img-responsive" style="max-height:50px;"></a></div>
-  <!--div class="col-xs-6 col-sm-4 col-md-3"><a href="http://www.autoritas.es" target="_blank" class="thumbnail" style="border:none;min-height:75px;"><img src="../pan15-figures/logo-autoritas.jpg" alt="Autoritas Consulting logo" class="img-responsive" style="max-height:50px;"></a></div-->
-  <div class="col-xs-6 col-sm-4 col-md-3"><a href="http://cordis.europa.eu/projects/rcn/99075_en.html" target="_blank" class="thumbnail" style="border:none;min-height:75px;"><img src="../pan15-figures/logo-wiqei.png" alt="WiQ-Ei logo" class="img-responsive" style="max-height:50px;"></a></div>
-  <div class="col-xs-6 col-sm-4 col-md-3"><a href="http://www.univ-constantine2.dz" target="_blank" class="thumbnail" style="border:none;min-height:75px;"><img src="../pan15-figures/logo-constantine2-university.png" alt="constantine2 university logo" class="img-responsive" style="max-height:55px;"></a></div>
-  <!--div class="col-xs-6 col-sm-4 col-md-3"><a href="http://clef2015.clef-initiative.eu/" target="_blank" class="thumbnail" style="border:none;min-height:75px;"><img src="../pan15-figures/logo-clef15.jpg" alt="CLEF'15 logo" class="img-responsive" style="max-height:70px;"></a></div-->
-  <!--div class="col-xs-6 col-sm-4 col-md-3"><a href="http://www.clef-initiative.eu/" target="_blank" class="thumbnail" style="border:none;min-height:75px;"><img src="../pan15-figures/logo-clef.png" alt="CLEF Initiative logo" class="img-responsive" style="max-height:70px;"></a></div-->
-</div>
-
-<footer>
-  <p class="pull-right">© pan.webis.de</p>
-</footer>
-
-</div>
-
-<script src="../../js/jquery.js"></script>
-<script src="../../js/bootstrap.min.js"></script>
-<script type="text/javascript">
-  $('.jumbotron').tooltip({
-    selector: "[data-toggle=tooltip]",
-    container: "body"
-  })
-</script>
-<script src="../../js/prettify.js"></script>
-<script>
-  !function ($) {
-    $(function(){
-      window.prettyPrint && prettyPrint()   
-    })
-  }(window.jQuery)
-</script>
-
-<!-- Update the registration statistics. -->
-<script type="text/javascript">
-  $.ajax({
-    url: "https://spreadsheets.google.com/feeds/cells/0AlwcskAJGamSdEN2ZUQ4Uk44cW13XzQ4UDRNTDR0V3c/od5/public/basic?min-row=5&min-col=1&max-row=1&max-col=1&alt=json",
-    cache: false,
-    dataType: "json"
-  }).done(function(json) {
-    $(json["feed"]["entry"]).each(function() {
-      var title = this["title"]["$t"];
-      var content = this["content"]["$t"];
-      switch (title) {
-      case "A1":
-        $("#registered-total").text(content)
-      case "A2":
-        $("#registered-plagiarism-detection").text(content)
-      case "A3":
-        $("#registered-author-identification").text(content)
-      case "A4":
-        $("#registered-author-profiling").text(content)
-      case "A5":
-        $("#registered-countries").text(content)
-      }
-    });
-  });
-</script>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-70770005-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
-</body>
-</html>
-
+</main>
