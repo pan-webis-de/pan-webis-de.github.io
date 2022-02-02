@@ -47,7 +47,7 @@ description: PAN @ CLEF 2022 - Authorship Verification
             			
             <h2 id="data">Data</h2>
             <p>The train (calibration) and test datasets consist of pairs of texts belonging to two different DTs. Each pair was assigned a unique identifier and we distinguish between same-author pairs and different-authors pairs. Additionally, we offer metadata on the discourse type for each text in the pair. Both training and test datasets are structured in the same way, but their author sets are not overlapping.</p>
-            <p>Since the text length of texts of emails and text messages can be very small, each text belonging to these DTs is actually a concatenation of different messages. We use the <code>\<new\></code> tag to denote boundaries of original messages. In addition, author-specific and topic-specific information, e.g. named entities, has been replaced with similar tags.</p>
+            <p>Since the text length of texts of emails and text messages can be very small, each text belonging to these DTs is actually a concatenation of different messages. We use the <code>new</code> tag to denote boundaries of original messages. In addition, author-specific and topic-specific information, e.g. named entities, has been replaced with similar tags.</p>
 
             <p>The training dataset comes with two newline delimited JSON files (<code>*.jsonl</code>).
             The first file contains pairs of texts (each pair has a unique ID) and their discourse type labels:</p>
