@@ -49,15 +49,15 @@ description: PAN @ CLEF 2022 - Authorship Verification
             <p>The train (calibration) and test datasets consist of pairs of texts belonging to two different DTs. Each pair was assigned a unique identifier and we distinguish between same-author pairs and different-authors pairs. Additionally, we offer metadata on the discourse type for each text in the pair. Both training and test datasets are structured in the same way, but their author sets are not overlapping.</p>
             <p>Since the text length of texts of emails and text messages can be very small, each text belonging to these DTs is actually a concatenation of different messages. We use the <code>&lt;new&gt;</code> tag to denote boundaries of original messages. New lines within a text are denoted with the <code>&lt;nl&gt;</code>tag. In addition, author-specific and topic-specific information, e.g. named entities, has been replaced with corresponding tags.</p>
 
-            <p>The training dataset comes with two newline delimited JSON files (<code>*.jsonl</code>).
-            The first file contains pairs of texts (each pair has a unique ID) and their discourse type labels:</p>
+            <p>The training dataset comes with two newline delimited JSON files.
+            The first file <code>pairs.jsonl</code> contains pairs of texts (each pair has a unique ID) and their discourse type labels:</p>
 
             <pre id="jsonl-example" class="prettyprint linenums uk-margin-remove-bottom">
 <code class="lang-json">{"id": "6cced668-6e51-5212-873c-717f2bc91ce6", "discource_type": ["essay", "email"], "pair": ["Text 1...", "Text 2..."]}
                         {"id": "ae9297e9-2ae5-5e3f-a2ab-ef7c322f2647", "discourse_type": ["email", "text_message"], "pair": ["Text 3...", "Text 4..."]}
 ...</code></pre>
 
-            <p>The second file, ending in <code>*_truth.jsonl</code>, contains the ground truth for all pairs. The ground truth
+            <p>The second file, <code>truth.jsonl</code>, contains the ground truth for all pairs. The ground truth
             is composed of a boolean flag indicating if texts in a pair are from the same author and the author IDs:</p>
             <pre id="truth-jsonl-example" class="prettyprint linenums uk-margin-remove-bottom">
 <code class="lang-json">{"id": "6cced668-6e51-5212-873c-717f2bc91ce6", "same": true, "authors": ["1446633", "1446633"]}
