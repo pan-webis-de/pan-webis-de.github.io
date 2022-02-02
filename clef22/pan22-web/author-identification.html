@@ -47,7 +47,7 @@ description: PAN @ CLEF 2022 - Authorship Verification
             			
             <h2 id="data">Data</h2>
             <p>The train (calibration) and test datasets consist of pairs of texts belonging to two different DTs. Each pair was assigned a unique identifier and we distinguish between same-author pairs and different-authors pairs. Additionally, we offer metadata on the discourse type for each text in the pair. Both training and test datasets are structured in the same way, but their author sets are not overlapping.</p>
-            <p>Since the text length of texts of emails and text messages can be very small, each text belonging to these DTs is actually a concatenation of different messages. We use the <code><new></code> tag to denote boundaries of original messages. In addition, author-specific and topic-specific information, e.g. named entities, has been replaced with similar tags.</p>
+            <p>Since the text length of texts of emails and text messages can be very small, each text belonging to these DTs is actually a concatenation of different messages. We use the <code>\<new\></code> tag to denote boundaries of original messages. In addition, author-specific and topic-specific information, e.g. named entities, has been replaced with similar tags.</p>
 
             <p>The training dataset comes with two newline delimited JSON files (<code>*.jsonl</code>).
             The first file contains pairs of texts (each pair has a unique ID) and their discourse type labels:</p>
@@ -90,7 +90,7 @@ description: PAN @ CLEF 2022 - Authorship Verification
             <h2 id="submission">Submission</h2>
 <!--            <p>Each participating team is allowed a maximum of <b>two submissions</b>: one submission trained on the small calibration dataset and one for the large calibration data set. (Participants can also choose to submit just one system.)</p> -->
 
-            <p>Submissions are <b>not</b> expected to be trained on TIRA (i.e. there will no new calibration dataset for the testing phase). The submisisons should therefore contain already fully calibrated models that should only be deployed on TIRA for the actual testing.</p>
+            <p>Submissions are <b>not</b> expected to be trained on TIRA (i.e. there will be no new calibration dataset for the testing phase). The submisisons should therefore contain already fully calibrated models that should only be deployed on TIRA for the actual testing.</p>
 
             <p>We ask you to prepare your software so that it can be executed via command line calls. The command shall take as input (i) an absolute path to the EVALUATION-DIRECTORY and (ii) an absolute path to an OUTPUT-DIRECTORY:</p>
 
@@ -149,8 +149,8 @@ description: PAN @ CLEF 2022 - Authorship Verification
             <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
                 {% include people-cards/stamatatos.html %}
                 {% include people-cards/kredens.html %}
-<!--                {% include people-cards/pezik.html %}
-                {% include people-cards/heini.html %} -->
+                {% include people-cards/pezik.html %}
+                {% include people-cards/heini.html %} 
                 {% include people-cards/kestemont.html %}
                 {% include people-cards/bevendorff.html %}
                 {% include people-cards/potthast.html %}
