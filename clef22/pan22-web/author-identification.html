@@ -46,7 +46,7 @@ description: PAN @ CLEF 2022 - Authorship Verification
 			</ul>
             			
             <h2 id="data">Data</h2>
-            <p>The train (calibration) and test datasets consist of pairs of texts belonging to two different DTs. Each pair was assigned a unique identifier and we distinguish between same-author pairs and different-authors pairs. Additionally, we offer metadata on the discrourse type for each text in the pair. Both training and test datasets are structured in the same way, but their author sets are not overlapping.</p>
+            <p>The train (calibration) and test datasets consist of pairs of texts belonging to two different DTs. Each pair was assigned a unique identifier and we distinguish between same-author pairs and different-authors pairs. Additionally, we offer metadata on the discourse type for each text in the pair. Both training and test datasets are structured in the same way, but their author sets are not overlapping.</p>
             <p>Since the text length of texts of emails and text messages can be very small, each text belonging to these DTs is actually a concatenation of different messages. We use the <code><new></code> tag to denote boundaries of original messages. In addition, author-specific and topic-specific information, e.g. named entities, has been replaced with similar tags.</p>
 
             <p>The training dataset comes with two newline delimited JSON files (<code>*.jsonl</code>).
@@ -88,9 +88,9 @@ description: PAN @ CLEF 2022 - Authorship Verification
             <p>A reference evaluation script is made available [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef20/authorship-verification">code</a>]</h2>. Systems will be applied to a pairs-file and are expected to produce a single jsonl-file as result. In this prediction file, each separate line should contain a valid json-string that provides the ID of a pair in the pairs-file and a "value" field, with a floating-point score that is bounded (0 >= score <= 1), indicating the probability that this pair is a same-author text pair. Systems are allowed to leave some problems unanswered: in such cases, the answer can be left out from the prediction file OR its value should be set to exactly 0.5. All answers that have a value of 0.5 will be considered non-decisions, which will affect some (but not all) evaluation metrics.</p>
 
             <h2 id="submission">Submission</h2>
-            <p>This year, each participating team is allowed a maximum of <b>two submissions</b>: one submission trained on the small calibration dataset and one for the large calibration data set. (Participants can also choose to submit just one system.)</p>
+<!--            <p>Each participating team is allowed a maximum of <b>two submissions</b>: one submission trained on the small calibration dataset and one for the large calibration data set. (Participants can also choose to submit just one system.)</p> -->
 
-            <p>Contrary to previous editions, submissions are <b>not</b> expected to be trained on TIRA (i.e. there will no new calibration dataset for the testing phase). The submisisons should therefore contain already fully calibrated models that should only be deployed on TIRA for the actual testing.</p>
+            <p>Submissions are <b>not</b> expected to be trained on TIRA (i.e. there will no new calibration dataset for the testing phase). The submisisons should therefore contain already fully calibrated models that should only be deployed on TIRA for the actual testing.</p>
 
             <p>We ask you to prepare your software so that it can be executed via command line calls. The command shall take as input (i) an absolute path to the EVALUATION-DIRECTORY and (ii) an absolute path to an OUTPUT-DIRECTORY:</p>
 
@@ -147,9 +147,11 @@ description: PAN @ CLEF 2022 - Authorship Verification
 
             <h2 id="task-committee">Task Committee</h2>
             <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
-                {% include people-cards/kestemont.html %}
                 {% include people-cards/stamatatos.html %}
-                {% include people-cards/manjavacas.html %}
+                {% include people-cards/kredens.html %}
+                {% include people-cards/pezik.html %}
+                {% include people-cards/heini.html %}
+                {% include people-cards/kestemont.html %}
                 {% include people-cards/bevendorff.html %}
                 {% include people-cards/potthast.html %}
                 {% include people-cards/stein.html %}
