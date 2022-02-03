@@ -81,7 +81,7 @@ description: PAN @ CLEF 2022 - Authorship Verification
                 <li><b>AUC</b>: the conventional area-under-the-ROC-curve score, as implemented in <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.auc.html">scikit-learn</a>.</li>
                 <li><b>F1-score</b>: the well-known performance measure (not taking into account non-answers), as implemented in <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html">scikit-learn</a>.</li>
                 <li><b>c@1</b>: a variant of the conventional F1-score, which rewards systems that leave difficult problems unanswered (i.e. scores of exactly 0.5), introduced by Peñas and Rodrigo (2011).</li>
-                <li><b>F_0.5u</b>: a newly proposed measure that puts more emphasis on deciding same-author cases correctly (Bevendorff et al. 2019)</li>
+                <li><b>F_0.5u</b>: a measure that puts more emphasis on deciding same-author cases correctly (Bevendorff et al. 2019)</li>
                 <li><b>Brier</b>: the complement of the well-known Brier score, for evaluating the goodness of (binary) probabilistic classififiers, as implemented in <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.brier_score_loss.html">scikit-learn</a>.</li>
             </ul>
             <p>These measures are complementary and provide a holistic way to assess a system's performance: c@1 measures the accuracy of binary predictions but also the ability of systems to leave difficult cases unanswered; AUC measures the ability of systems to assign higher scores to positive cases in comparison to negative cases; Brier measures the ability of systems to calibrate the verification scores as probability of a positive answer, etc.</p>
