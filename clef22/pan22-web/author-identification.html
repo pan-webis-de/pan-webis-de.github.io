@@ -78,7 +78,7 @@ description: PAN @ CLEF 2022 - Authorship Verification
             <h2 id="evaluation">Evaluation [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef22/authorship-verification">code</a>]</h2>
             <p>Systems will be compared and ranked on the basis of five, complementary metrics:
             <ul>
-                <li><b>AUC</b>: the conventional area-under-the-curve score, as implemented in <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.auc.html">scikit-learn</a>.</li>
+                <li><b>AUC</b>: the conventional area-under-the-ROC-curve score, as implemented in <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.auc.html">scikit-learn</a>.</li>
                 <li><b>F1-score</b>: the well-known performance measure (not taking into account non-answers), as implemented in <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html">scikit-learn</a>.</li>
                 <li><b>c@1</b>: a variant of the conventional F1-score, which rewards systems that leave difficult problems unanswered (i.e. scores of exactly 0.5), introduced by Peñas and Rodrigo (2011).</li>
                 <li><b>F_0.5u</b>: a newly proposed measure that puts more emphasis on deciding same-author cases correctly (Bevendorff et al. 2019)</li>
