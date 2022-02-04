@@ -25,7 +25,7 @@ description: PAN @ CLEF 2022 - Authorship Verification
 <h2 id="synopsis">Synopsis</h2>
             <ul>
                 <li>Task: Given two texts belonging to different Discourse Types (DT), determine if they are written by the same author (<b>cross-DT authorship verification</b>).</li>
-                <li>Input: Pairs of texts from a new corpus in English covering the following DTs: essays, emails, text messages, and business memos.</li>
+                <li>Input: Pairs of texts from a new corpus in English covering the following DTs: essays, emails, text messages, and business memos. [<a href="https://pan.webis.de/data.html#pan22-authorship-verification">data</a>]</li>
                 <li>Evaluation: AUC, F1, c@1, F_0.5u, Brier [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef22/authorship-verification">code</a>]</li>
                 <li>Submission: Deployment on TIRA [<a href="https://www.tira.io/task/pan22-authorship-verification">submit</a>]</li>
                 <li>Baseline: TFIDF-weighted char 3-grams cosine similarity; compression method calculating cross-entropy [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef22/authorship-verification">code</a>]</li>
@@ -46,7 +46,7 @@ description: PAN @ CLEF 2022 - Authorship Verification
 			</ul>
             <p>The corpus comprises texts of around 100 individuals. All individuals have similar age (18-22) and are native English speakers. The topic of text samples is not restricted while the level of formality can vary within a certain DT (e.g., text messages may be addressed to family members or non-familial acquaintances).	</p>
 	    
-            <h2 id="data">Data</h2>
+            <h2 id="data">Data [<a href="https://pan.webis.de/data.html#pan22-authorship-verification">download</a>]</h2>
             <p>The train (calibration) and test datasets consist of pairs of texts belonging to two different DTs. Each pair was assigned a unique identifier and we distinguish between same-author pairs and different-authors pairs. Additionally, we offer metadata on the discourse type for each text in the pair. Both training and test datasets are structured in the same way, but their author sets are not overlapping.</p>
             <p>Since the text length of texts of emails and text messages can be very small, each text belonging to these DTs is actually a concatenation of different messages. We use the <code>&lt;new&gt;</code> tag to denote boundaries of original messages. New lines within a text are denoted with the <code>&lt;nl&gt;</code>tag. In addition, author-specific and topic-specific information, e.g. named entities, has been replaced with corresponding tags.</p>
 
