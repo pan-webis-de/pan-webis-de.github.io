@@ -28,7 +28,9 @@ description: PAN @ CLEF 2022 - Authorship Verification
                 <li>Input: Pairs of texts from the Aston 100 Idiolects Corpus in English covering the following DTs: essays, emails, text messages, and business memos. 
 <!--			[<a href="https://pan.webis.de/data.html#pan22-authorship-verification">data</a>] -->
 		    </li>
-                <li>Evaluation: AUC, F1, c@1, F_0.5u, Brier [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef22/authorship-verification">code</a>]</li>
+                <li>Evaluation: AUC, F1, c@1, F_0.5u, Brier 
+			[<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef22/authorship-verification">code</a>]
+		    </li>
                 <li>Submission: Deployment on TIRA [<a href="https://www.tira.io/task/pan22-authorship-verification">submit</a>]</li>
                 <li>Baseline: TFIDF-weighted char 3-grams cosine similarity; compression method calculating cross-entropy 
 <!--			[<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef22/authorship-verification">code</a>]</li> -->
@@ -83,7 +85,7 @@ description: PAN @ CLEF 2022 - Authorship Verification
             <p>Note that the above baseline methods do not make use of the available discourse type information: participants are highly encouraged to exploit this useful metadata in their submissions.</p>
             
             <h2 id="evaluation">Evaluation 
-<!--		    [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef22/authorship-verification">code</a>] -->
+		    [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef22/authorship-verification">code</a>]
 		</h2>
             <p>Systems will be compared and ranked on the basis of five, complementary metrics:
             <ul>
@@ -96,7 +98,7 @@ description: PAN @ CLEF 2022 - Authorship Verification
             <p>These measures are complementary and provide a holistic way to assess a system's performance: c@1 measures the accuracy of binary predictions but also the ability of systems to leave difficult cases unanswered; AUC measures the ability of systems to assign higher scores to positive cases in comparison to negative cases; Brier measures the ability of systems to calibrate the verification scores as probability of a positive answer, etc.</p>
 
             <p>A reference evaluation script is made available 
-<!--		    [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef20/authorship-verification">code</a>] -->
+		    [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef20/authorship-verification">code</a>]
 		. Systems will be applied to a pairs-file and are expected to produce a single jsonl-file as result. In this prediction file, each separate line should contain a valid json-string that provides the ID of a pair in the pairs-file and a "value" field, with a floating-point score that is bounded (0 >= score <= 1), indicating the probability that this pair is a same-author text pair. Systems are allowed to leave some problems unanswered: in such cases, the answer can be left out from the prediction file OR its value should be set to exactly 0.5. All answers that have a value of 0.5 will be considered non-decisions, which will affect some (but not all) evaluation metrics.</p>
 
             <h2 id="submission">Submission</h2>
