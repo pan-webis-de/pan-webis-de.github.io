@@ -1,9 +1,16 @@
 ---
 layout: default
 nav_active: shared-tasks
-title: PAN @ CLEF 2022 - Authorship Verification
-description: PAN @ CLEF 2022 - Authorship Verification
+title: PAN at CLEF 2022 - Authorship Verification
+description: PAN at CLEF 2022 - Authorship Verification
 ---
+<nav class="uk-container">
+<ul class="uk-breadcrumb">
+<li><a href="../../index.html">PAN</a></li>
+<li><a href="../../shared-tasks.html">Shared Tasks</a></li>
+<li class="uk-disabled"><a href="#">Authorship Verification 2022</a></li>
+</ul>
+</nav>
 
 <main>
     <div class="uk-section uk-section-default">
@@ -32,8 +39,8 @@ description: PAN @ CLEF 2022 - Authorship Verification
 			[<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef22/authorship-verification">code</a>]
 		    </li>
                 <li>Submission: Deployment on TIRA [<a href="https://www.tira.io/task/pan22-authorship-verification">submit</a>]</li>
-                <li>Baseline: TFIDF-weighted char 3-grams cosine similarity; compression method calculating cross-entropy 
-<!--			[<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef22/authorship-verification">code</a>]</li> -->
+                <li>Baseline: TFIDF-weighted char n-grams cosine similarity; compression method calculating cross-entropy 
+			[<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef22/authorship-verification">code</a>]</li>
                 </li>
             </ul>
 
@@ -61,7 +68,7 @@ description: PAN @ CLEF 2022 - Authorship Verification
             The first file <code>pairs.jsonl</code> contains pairs of texts (each pair has a unique ID) and their discourse type labels:</p>
 
             <pre id="jsonl-example" class="prettyprint linenums uk-margin-remove-bottom">
-<code class="lang-json">{"id": "6cced668-6e51-5212-873c-717f2bc91ce6", "discource_type": ["essay", "email"], "pair": ["Text 1...", "Text 2..."]}
+<code class="lang-json">{"id": "6cced668-6e51-5212-873c-717f2bc91ce6", "discourse_type": ["essay", "email"], "pair": ["Text 1...", "Text 2..."]}
                         {"id": "ae9297e9-2ae5-5e3f-a2ab-ef7c322f2647", "discourse_type": ["email", "text_message"], "pair": ["Text 3...", "Text 4..."]}
 ...</code></pre>
 
@@ -75,7 +82,7 @@ description: PAN @ CLEF 2022 - Authorship Verification
             <p>Data and ground truth are in the same order and can be ingested line-wise in parallel without the need for a reshuffle based on the pair ID. The discourse type labels will be given in both the training and testing datasets. The ground truth file will only be available for the training data.</p>
 
             <h2 id="baseline">Baselines 
-<!--		    [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef22/authorship-verification">code</a>] -->
+		    [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef22/authorship-verification">code</a>] 
 		</h2>
             <p>We provide the following baseline methods: </p>
             <ul>
@@ -110,7 +117,7 @@ description: PAN @ CLEF 2022 - Authorship Verification
 
             <pre id="jsonl-example" class="prettyprint uk-margin-remove-bottom"><code class="lang-json"> > mySoftware -i EVALUATION-DIRECTORY -o OUTPUT-DIRECTORY</code></pre>
 
-            <p>Within EVALUATION-DIRECTORY, a single jsonl-formatted file will be included (pairs.jsonl), containing the text pairs (analogously to the calibration data that was released). The answers should be written to a jsonl-formatted file (answers.jsonl) under EVALUATION-DIRECTORY. Each line should contain a single json-formatted answer, using the following syntax:</p>
+            <p>Within EVALUATION-DIRECTORY, a single jsonl-formatted file will be included (pairs.jsonl), containing the text pairs (analogously to the calibration data that was released). The answers should be written to a jsonl-formatted file (answers.jsonl) under OUTPUT-DIRECTORY. Each line should contain a single json-formatted answer, using the following syntax:</p>
 
             <pre id="jsonl-example" class="prettyprint linenums uk-margin-remove-bottom">
 <code class="lang-json">{"id": "c04fdf1e-ddf5-5542-96e7-13ce18cae176", "value": 0.4921}
