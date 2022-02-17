@@ -99,12 +99,7 @@ description: PAN at CLEF 2022 - Style Change Detection and Multi-Author Writing 
 
                     <p>The result for task 1 (key "changes") is represented as an array, holding a binary for each pair of consecutive paragraphs within the document (0 if there was no style change, 1 if there was a style change). For task 2 (key "paragraph-authors"), the result is the order of authors contained in the document (e.g., <code>[1, 2, 1]</code> for a two-author document), where the first author is "1", the second author appearing in the document is referred to as "2", etc. Furthermore, we provide the total number of authors and the Stackoverflow site the texts were extracted from (i.e., topic).</p>
 
-                    <p>For task 3, we provide a similarly structured file, an example is listed in the following:
-                        <pre class="prettyprint linenums uk-margin-remove-bottom"><code class="lang-json">{
-                                "changes": RESULT_ARRAY_TASK3,
-                            }</code></pre>
-
-                    <p>The result for task 3 (key "changes") is similarly structured as the results array for task 1. However, for task 3, the `changes` array holds a binary for each pair of consecutive <i>sentences</i>.
+                    <p>The result for task 3 (key "changes") is similarly structured as the results array for task 1. However, for task 3, the <code>changes</code> array holds a binary for each pair of consecutive <i>sentences</i>.
 
                     <p>An example of a multi-author document, where there was a style change between the third and fourth paragraph could look as follows (we only list the relevant key/value pairs here):</p>
                     <pre class="prettyprint linenums uk-margin-remove-bottom"><code class="lang-json">{
@@ -117,22 +112,21 @@ description: PAN at CLEF 2022 - Style Change Detection and Multi-Author Writing 
             </ol>
 
             <h3 id="output_format">Output Format</h3>
-            <p>To evaluate the solutions for the tasks, the classification results have to be stored in a single file for each of the input documents. Please note that we require a solution file to be generated for each input problem for both datasets. The data structure during the evaluation phase will be similar to that in the training phase, with the exception that the ground truth files are missing.</p>
+            <p>To evaluate the solutions for the tasks, the classification results have to be stored in a single file for each of the input documents and each of the datasets. Please note that we require a solution file to be generated for each input problem for each dataset. The data structure during the evaluation phase will be similar to that in the training phase, with the exception that the ground truth files are missing.</p>
 
-            <p>For each given problem problem-X.txt, your software should output the missing solution file
+            <p>For each given problem <code>problem-X.txt</code>, your software should output the missing solution file
                 <code>solution-problem-X.json</code>, containing a JSON object with three properties, one for each task. The solution for tasks 1 and 3 is an array containing a binary value for each pair of consecutive paragraphs (task 1) or sentences (task 3). For task 2, the solution is again an array containing a binary value, however, the binary solution is an array containing the author number (in order of appearance in the given document) for each paragraph. </p>
 
-            <p>An example solution file for tasks 1 and 2 for a multi-authored document is featured in the following:</p>
+            <p>An example solution file for tasks 1 and 3 is featured in the following (note again that for task 1, changes are captured on the paragraph level, whereas for task 3, changes are captured on the sentence level):</p>
 
             <pre class="prettyprint linenums uk-margin-remove-bottom"><code class="lang-json">{
-                                "changes": [0,0,1,...],
-                                "paragraph-authors": [1,1,1,2,...]
+                                "changes": [0,0,1,0,0,...]
                             }</code></pre>
             </p>
 
-            For task 3, we expect the binary array indicating style changes between pairs of consecutive sentences as follows: 
+            For task 2, the solution file looks as follows:
             <pre class="prettyprint linenums uk-margin-remove-bottom"><code class="lang-json">{
-                                "changes": [0,0,0,1,...]
+                                "paragraph-authors": [1,1,2,2,3,2,...]
                             }</code></pre>
 
             <h2 id="evaluation">Evaluation</h2>
