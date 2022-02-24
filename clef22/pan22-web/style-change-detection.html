@@ -99,10 +99,12 @@ description: PAN at CLEF 2022 - Style Change Detection and Multi-Author Writing 
 
                     <p>The result for task 1 (key "changes") is represented as an array, holding a binary for each pair of consecutive paragraphs within the document (0 if there was no style change, 1 if there was a style change). For task 2 (key "paragraph-authors"), the result is the order of authors contained in the document (e.g., <code>[1, 2, 1]</code> for a two-author document), where the first author is "1", the second author appearing in the document is referred to as "2", etc. Furthermore, we provide the total number of authors and the Stackoverflow site the texts were extracted from (i.e., topic).</p>
 
-                    <p>The result for task 3 (key "changes") is similarly structured as the results array for task 1. However, for task 3, the <code>changes</code> array holds a binary for each pair of consecutive <i>sentences</i>.
+                    <p>The result for task 3 (key "changes") is similarly structured as the results array for task 1.
+However, for task 3, the <code>changes</code> array holds a binary for each pair of consecutive <i>sentences</i> and
+they may be multiple style changes in the document.
 
                     <p>An example of a multi-author document with a style change between the third and fourth paragraph
-(or sentence for task 3) could look as follows (we only list the relevant key/value pairs here):</p>
+(or sentence for task 3) could be described as follows (we only list the relevant key/value pairs here):</p>
                     <pre class="prettyprint linenums uk-margin-remove-bottom"><code class="lang-json">{
                                "changes": [0,0,1,...],
                                "paragraph-authors": [1,1,1,2,...]
