@@ -47,13 +47,15 @@ description: PAN at CLEF 2022 - Style Change Detection and Multi-Author Writing 
             </ul>
 
             <h2 id="task">Task</h2>
-            <p> The goal of the style change detection task is to identify text positions within a given multi-author document at which the author switches. Hence, a fundamental question is the following: If multiple authors together have written a text, can we find evidence for this fact, e.g., do we have a means to detect variations in the writing style? Answering this question belongs to the most difficult and most interesting challenges in author identification: Style change detection is the only means to detect plagiarism in a document if no comparison texts are given; likewise, style change detection can help to uncover gift authorships, to verify a claimed authorship, or to develop new technology for writing support.
+            <p> The goal of the style change detection task is to identify text positions within a given multi-author
+document at which the author switches. Hence, a fundamental question is the following: If multiple authors have written
+a text together, can we find evidence for this fact; i.e., do we have a means to detect variations in the writing style? Answering this question belongs to the most difficult and most interesting challenges in author identification: Style change detection is the only means to detect plagiarism in a document if no comparison texts are given; likewise, style change detection can help to uncover gift authorships, to verify a claimed authorship, or to develop new technology for writing support.
             </p>
 
             <p>Previous editions of the Style Change Detection task aim at e.g., detecting whether a document is single- or multi-authored (<a href="https://pan.webis.de/clef18/pan18-web/style-change-detection.html">2018</a>), the actual number of authors within a document (<a href="https://pan.webis.de/clef19/pan19-web/style-change-detection.html">2019</a>), whether there was a style change between two consecutive paragraphs (<a href="https://pan.webis.de/clef20/pan20-web/style-change-detection.html">2020</a>, <a href="https://pan.webis.de/clef21/pan21-web/style-change-detection.html">2021</a>) and where the actual style changes were located (<a href="https://pan.webis.de/clef21/pan21-web/style-change-detection.html">2021</a>). 
 
             Based on the progress made towards this goal in previous years, we again extend the set of challenges to likewise entice novices and experts:
-            <p>Given a document, we ask participants to answer the following three questions:</p>
+            <p>Given a document, we ask participants to solve the following three tasks:</p>
             <ul>
                 <li><b> [Task1] Style Change Basic:</b> for a text written by two authors that contains a single style change only, find the position of this change (i.e., cut the text into the two authors’ texts on the paragraph-level),</li>
                 <li><b> [Task2] Style Change Advanced:</b> for a text written by two or more authors, find all positions of writing style change (i.e., assign all paragraphs of the text uniquely to some author out of the number of authors assumed for the multi-author document)</li>
@@ -70,36 +72,38 @@ description: PAN at CLEF 2022 - Style Change Detection and Multi-Author Writing 
 
             <h2 id="data">Data</h2>
             <p>To develop and then test your algorithms, three datasets including ground truth information are provided
-(<i>dataset1</i> for task 1, <i>dataset2</i> for task 2, and <i>dataset3</i> for task 3). The datasets contain texts from a relatively narrow set of subjects related to technology.</p>
+(<i>dataset1</i> for task 1, <i>dataset2</i> for task 2, and <i>dataset3</i> for task 3).</p>
 
-            <p>The datasets are split into three parts:</p>
+            <p>Each dataset is split into three parts:</p>
 
             <ol>
                 <li><i>training set:</i> Contains 70% of the whole dataset and includes ground truth data. Use this set to develop and train your models.</li>
                 <li><i>validation set:</i> Contains 15% of the whole dataset and includes ground truth data. Use this set to evaluate and optimize your models. </li>
-                <li><i>test set:</i> Contains 15% of the whole dataset. For the documents on the test set, you are not given ground truth data. This set is used for evaluation (see later).</li>
+                <li><i>test set:</i> Contains 15% of the whole dataset, no ground truth data is given. This set is used for evaluation (see later).</li>
             </ol>
 
             <p>You are free to use additional external data for training your models. However, we ask you to make the additional data utilized freely available under a suitable license. </p>
 
 
             <h3 id="input_format">Input Format</h3>
-            <p>The datasets are based on user posts from various sites of the StackExchange network, covering different topics. We refer to each input problem (i.e., the document for which to detect style changes) by an ID, which is subsequently also used to identify the submitted solution to this input problem. We provide one folder for train, validation, and test data for each dataset respectively.</p>
+            <p>The datasets are based on user posts from various sites of the StackExchange network, covering different
+topics. We refer to each input problem (i.e., the document for which to detect style changes) by an ID, which is
+subsequently also used to identify the submitted solution to this input problem. We provide one folder for train,
+validation, and test data for each dataset, respectively.</p>
 
             <p>For each problem instance <code>X</code> (i.e., each input document), two files are provided:</p>
             <ol>
                 <li><code>problem-X.txt</code> contains the actual text, where paragraphs are denoted by <code>\n</code> for tasks 1 and 2. For task 3, we provide one sentence per paragraph (again, split by <code>\n</code>).</li>
-                <li><code>truth-problem-X.json</code> contains the ground truth, i.e., the correct solution in JSON format. For tasks 1 and 2, an example file is listed in the following:
+                <li><code>truth-problem-X.json</code> contains the ground truth, i.e., the correct solution in JSON
+format. An example file is listed in the following (note that we list keys for the three tasks here):
                     <pre class="prettyprint linenums uk-margin-remove-bottom"><code class="lang-json">{
                                 "authors": NUMBER_OF_AUTHORS,
                                 "site": SOURCE_SITE,
-                                "changes": RESULT_ARRAY_TASK2,
-                                "paragraph-authors": RESULT_ARRAY_TASK3
+                                "changes": RESULT_ARRAY_TASK1 or RESULT_ARRAY_TASK3,
+                                "paragraph-authors": RESULT_ARRAY_TASK2
                             }</code></pre>
 
-                    <p>The result for task 1 (key "changes") is represented as an array, holding a binary for each pair of consecutive paragraphs within the document (0 if there was no style change, 1 if there was a style change). For task 2 (key "paragraph-authors"), the result is the order of authors contained in the document (e.g., <code>[1, 2, 1]</code> for a two-author document), where the first author is "1", the second author appearing in the document is referred to as "2", etc. Furthermore, we provide the total number of authors and the Stackoverflow site the texts were extracted from (i.e., topic).</p>
-
-                    <p>The result for task 3 (key "changes") is similarly structured as the results array for task 1.
+                    <p>The result for task 1 (key "changes") is represented as an array, holding a binary for each pair of consecutive paragraphs within the document (0 if there was no style change, 1 if there was a style change). For task 2 (key "paragraph-authors"), the result is the order of authors contained in the document (e.g., <code>[1, 2, 1]</code> for a two-author document), where the first author is "1", the second author appearing in the document is referred to as "2", etc. Furthermore, we provide the total number of authors and the Stackoverflow site the texts were extracted from (i.e., topic). The result for task 3 (key "changes") is similarly structured as the results array for task 1.
 However, for task 3, the <code>changes</code> array holds a binary for each pair of consecutive <i>sentences</i> and
 they may be multiple style changes in the document.
 
@@ -115,10 +119,13 @@ they may be multiple style changes in the document.
             </ol>
 
             <h3 id="output_format">Output Format</h3>
-            <p>To evaluate the solutions for the tasks, the classification results have to be stored in a single file for each of the input documents and each of the datasets. Please note that we require a solution file to be generated for each input problem for each dataset. The data structure during the evaluation phase will be similar to that in the training phase, with the exception that the ground truth files are missing.</p>
+            <p>To evaluate the solutions for the tasks, the results have to be stored in a single file for each of the input documents and each of the datasets. Please note that we require a solution file to be generated for each input problem for each dataset. The data structure during the evaluation phase will be similar to that in the training phase, with the exception that the ground truth files are missing.</p>
 
             <p>For each given problem <code>problem-X.txt</code>, your software should output the missing solution file
-                <code>solution-problem-X.json</code>, containing a JSON object with three properties, one for each task. The solution for tasks 1 and 3 is an array containing a binary value for each pair of consecutive paragraphs (task 1) or sentences (task 3). For task 2, the solution is again an array containing a binary value, however, the binary solution is an array containing the author number (in order of appearance in the given document) for each paragraph. </p>
+                <code>solution-problem-X.json</code>, containing a JSON object holding the solution to the respective
+task. The solution for tasks 1 and 3 is an array containing a binary value for each pair of consecutive paragraphs (task
+1) or sentences (task 3). For task 2, the solution is an array containing the order of authors contained in the document
+(as in the truth files). </p>
 
             <p>An example solution file for tasks 1 and 3 is featured in the following (note again that for task 1, changes are captured on the paragraph level, whereas for task 3, changes are captured on the sentence level):</p>
 
@@ -133,7 +140,8 @@ they may be multiple style changes in the document.
                             }</code></pre>
 
             <h2 id="evaluation">Evaluation</h2>
-            <p>Submissions are evaluated by the F1-score measure for each document. The three tasks are evaluated independently based on the obtained accuracy measures. We compute the macro-averaged F1-score value across all documents. </p>
+            <p>Submissions are evaluated by the F1-score measure for each document. The three tasks are evaluated
+independently based on the obtained evaluation scores. We compute the macro-averaged F1-score value across all documents. </p>
 
             <!--<p>We provide you with a script to compute those measures based on the produced output-files [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef22/style-change-detection">evaluator and tests</a>].</p> -->
 
