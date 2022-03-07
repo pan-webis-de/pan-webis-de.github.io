@@ -19,9 +19,9 @@ description: PAN at CLEF 2022 - Style Change Detection and Multi-Author Writing 
             <ul class="uk-list">
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
-<!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>-->
-<!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>-->
-<!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>-->
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>
 <!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>-->
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
@@ -33,16 +33,16 @@ description: PAN at CLEF 2022 - Style Change Detection and Multi-Author Writing 
             <h2 id="synopsis">Synopsis</h2>
             <ul>
                 <li>Task: Given a document, determine the number of authors and at which positions the author changes.</li>
-                <li>Input: StackExchange questions and answers, combined into documents <!--[<a href="https://zenodo.org/record/4589145#.YFDOwnVKhhF">data</a>] -->
+                <li>Input: StackExchange questions and answers, combined into documents [<a href="https://zenodo.org/record/6334245#.YiYEsXXMJ8x">data</a>]
                     <!--[<a href="{{'../../data.html#pan21-style-change-detection' | relative_url }}">data</a>]-->
                 </li>
-                <li>Output: Where does authorship change on the paragraph and sentence level <!--[<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef21/style-change-detection" target="_blank">verifier</a>]-->
+                <li>Output: Where does authorship change on the paragraph and sentence level [<a
+href="https://github.com/pan-webis-de/pan-code/tree/master/clef22/style-change-detection" target="_blank">validator</a>]
                 </li>
-                <li>Evaluation: F1
-<!--                    F1 [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef21/style-change-detection" target="_blank">code</a>]-->
+                <li>Evaluation: F1 [<a
+href="https://github.com/pan-webis-de/pan-code/tree/master/clef22/style-change-detection" target="_blank">code</a>]
                 </li>
                 <li>Submission: Deployment on TIRA
-<!--                    [<a href="#submission">submit</a>]-->
                 </li>
             </ul>
 
@@ -70,7 +70,7 @@ a text together, can we find evidence for this fact; i.e., do we have a means to
             <img src="../pan22-figures/style-change-task.png" alt="Style Change Detection Task Example">
 
 
-            <h2 id="data">Data</h2>
+            <h2 id="data">Data [<a href="https://zenodo.org/record/6334245#.YiYCcXXMJ8x">download</a>]</h2>
             <p>To develop and then test your algorithms, three datasets including ground truth information are provided
 (<i>dataset1</i> for task 1, <i>dataset2</i> for task 2, and <i>dataset3</i> for task 3).</p>
 
