@@ -79,7 +79,7 @@ a text together, can we find evidence for this fact; i.e., do we have a means to
             <ol>
                 <li><i>training set:</i> Contains 70% of the whole dataset and includes ground truth data. Use this set to develop and train your models.</li>
                 <li><i>validation set:</i> Contains 15% of the whole dataset and includes ground truth data. Use this set to evaluate and optimize your models. </li>
-                <li><i>test set:</i> Contains 15% of the whole dataset, no ground truth data is given. This set is used for evaluation (see later).</li>
+                <li><i>test set:</i> Contains 15% of the whole dataset, no ground truth data is given. This set is used for evaluation.</li>
             </ol>
 
             <p>You are free to use additional external data for training your models. However, we ask you to make the additional data utilized freely available under a suitable license. </p>
@@ -118,7 +118,8 @@ they may be multiple style changes in the document.
                 </li>
             </ol>
 
-            <h3 id="output_format">Output Format</h3>
+            <h3 id="output_format">Output Format [<a
+href="https://github.com/pan-webis-de/pan-code/tree/master/clef22/style-change-detection" target="_blank">validator</a>]</h3>
             <p>To evaluate the solutions for the tasks, the results have to be stored in a single file for each of the input documents and each of the datasets. Please note that we require a solution file to be generated for each input problem for each dataset. The data structure during the evaluation phase will be similar to that in the training phase, with the exception that the ground truth files are missing.</p>
 
             <p>For each given problem <code>problem-X.txt</code>, your software should output the missing solution file
@@ -139,11 +140,12 @@ task. The solution for tasks 1 and 3 is an array containing a binary value for e
                                 "paragraph-authors": [1,1,2,2,3,2,...]
                             }</code></pre>
 
-            <h2 id="evaluation">Evaluation</h2>
+            <h2 id="evaluation">Evaluation [<a
+href="https://github.com/pan-webis-de/pan-code/tree/master/clef22/style-change-detection" target="_blank">code</a>]</h2>
             <p>Submissions are evaluated by the F1-score measure for each document. The three tasks are evaluated
 independently based on the obtained evaluation scores. We compute the macro-averaged F1-score value across all documents. </p>
 
-            <!--<p>We provide you with a script to compute those measures based on the produced output-files [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef22/style-change-detection">evaluator and tests</a>].</p> -->
+            <p>We provide you with a script to compute those measures based on the produced output-files [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef22/style-change-detection">evaluator and tests</a>].</p> 
 
 
             <h2 id="submission">Submission</h2>
