@@ -33,7 +33,7 @@ description: PAN at CLEF 2022 - Authorship Verification
             <ul>
                 <li>Task: Given two texts belonging to different Discourse Types (DT), determine if they are written by the same author (<b>cross-DT authorship verification</b>).</li>
                 <li>Input: Pairs of texts from the Aston 100 Idiolects Corpus in English covering the following DTs: essays, emails, text messages, and business memos. 
-<!--			[<a href="https://pan.webis.de/data.html#pan22-authorship-verification">data</a>] -->
+			[<a href="https://zenodo.org/record/6337151#.YicqB3pBw2w">data</a>] 
 		    </li>
                 <li>Evaluation: AUC, F1, c@1, F_0.5u, Brier 
 			[<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef22/authorship-verification">code</a>]
@@ -59,7 +59,7 @@ description: PAN at CLEF 2022 - Authorship Verification
             <p>The corpus comprises texts of around 100 individuals. All individuals have similar age (18-22) and are native English speakers. The topic of text samples is not restricted while the level of formality can vary within a certain DT (e.g., text messages may be addressed to family members or non-familial acquaintances).	</p>
 	    
             <h2 id="data">Data 
-<!--		    [<a href="https://pan.webis.de/data.html#pan22-authorship-verification">download</a>] -->
+		    [<a href="https://zenodo.org/record/6337151#.YicqB3pBw2w">download</a>] 
 		</h2>
             <p>The train (calibration) and test datasets consist of pairs of texts belonging to two different DTs. Each pair was assigned a unique identifier and we distinguish between same-author pairs and different-authors pairs. Additionally, we offer metadata on the discourse type for each text in the pair. Both training and test datasets are structured in the same way, but their author sets are not overlapping.</p>
             <p>Since the text length of texts of emails and text messages can be very small, each text belonging to these DTs is actually a concatenation of different messages. We use the <code>&lt;new&gt;</code> tag to denote boundaries of original messages. New lines within a text are denoted with the <code>&lt;nl&gt;</code>tag. In addition, author-specific and topic-specific information, e.g. named entities, has been replaced with corresponding tags.</p>
@@ -80,6 +80,7 @@ description: PAN at CLEF 2022 - Authorship Verification
 ...</code></pre>
 
             <p>Data and ground truth are in the same order and can be ingested line-wise in parallel without the need for a reshuffle based on the pair ID. The discourse type labels will be given in both the training and testing datasets. The ground truth file will only be available for the training data.</p>
+	    <p>The development of the 100 Idiolects corpus was supported by a Research England Expanding Excellence in England (E3) grant awarded to the Aston Institute for Forensic Linguistics. This dataset should not to be used for any other research purposes without permission from the Aston Institute for Forensic Linguistics.</p>
 
             <h2 id="baseline">Baselines 
 		    [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef22/authorship-verification">code</a>] 
