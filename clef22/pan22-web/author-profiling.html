@@ -61,6 +61,57 @@ description: PAN at CLEF 2022 - Profiling Irony and Stereotype Spreaders on Twit
             their number of tweets with ironic content. Among those authors  we will consider a subset that employs irony to convey stereotypes in order to investigate if state-of-the-art
             models are able to distinguish also these cases. Therefore, given authors of Twitter together with their tweets, the  goal will be to profile those authors that can be considered as ironic, and among them those that employ irony to convey stereotypical messages. 
         
+            
+            <h2 id="data">Data</h2>
+
+            <h3 class="uk-margin-small-top">Input</h3>
+            The uncompressed dataset consists in a folder which contains:
+            <ul>
+                <li>A XML file per author (Twitter user) with 200 tweets. The name of the XML file
+                    correspond to the unique author id.
+                </li>
+                <li>A truth.txt file with the list of authors and the ground truth.</li>
+            </ul>
+            The format of the XML files is:<br/>
+            
+            <pre class="prettyprint lang-xml" style="overflow-x: auto;">
+                &lt;author lang="en"&gt;
+                &lt;documents&gt;
+                &lt;document&gt;Tweet 1 textual contents&lt;/document&gt;
+                &lt;document&gt;Tweet 2 textual contents&lt;/document&gt;
+                ...
+                &lt;/documents&gt;
+                &lt;/author&gt;
+            </pre>
+
+            The format of the truth.txt file is as follows. The first column corresponds to the author id. 
+            The second column contains the truth label.<br>
+            
+            <pre class="prettyprint lang-xml" style="overflow-x: auto;">
+            b2d5748083d6fdffec6c2d68d4d4442d:::0
+            2bed15d46872169dc7deaf8d2b43a56:::0
+            8234ac5cca1aed3f9029277b2cb851b:::1
+            5ccd228e21485568016b4ee82deb0d28:::0
+            60d068f9cafb656431e62a6542de2dc0:::1
+            ...
+            </pre>
+
+           <!---
+            <h3 class="uk-margin-small-top">Output</h3>
+            <p>Your software must take as input the absolute path to an unpacked dataset, and has to output
+                for each document of the dataset a corresponding XML file that looks like this:</p>
+                <pre class="prettyprint lang-xml" style="overflow-x: auto;">
+                    &lt;author id="author-id"
+                    lang="en|es"
+                    type="0|1"
+                    /&gt;
+                </pre>
+            <p>The naming of the output files is up to you. However, we recommend to use the author-id as
+                filename and "xml" as extension.</p>
+            <p><b>IMPORTANT!</b> Languages should not be mixed. A folder should be created for each language
+                and place inside only the files with the prediction for this language. </p>
+            -->
+            
             <h2 id="evaluation">Evaluation</h2>
             The performance of your system will be ranked by accuracy.
             
