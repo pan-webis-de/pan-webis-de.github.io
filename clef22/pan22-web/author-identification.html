@@ -110,7 +110,7 @@ description: PAN at CLEF 2022 - Authorship Verification
 		. Systems will be applied to a pairs-file and are expected to produce a single jsonl-file as result. In this prediction file, each separate line should contain a valid json-string that provides the ID of a pair in the pairs-file and a "value" field, with a floating-point score that is bounded (0 >= score <= 1), indicating the probability that this pair is a same-author text pair. Systems are allowed to leave some problems unanswered: in such cases, the answer can be left out from the prediction file OR its value should be set to exactly 0.5. All answers that have a value of 0.5 will be considered non-decisions, which will affect some (but not all) evaluation metrics.</p>
 
             <h2 id="submission">Submission</h2>
-<!--            <p>Each participating team is allowed a maximum of <b>two submissions</b>: one submission trained on the small calibration dataset and one for the large calibration data set. (Participants can also choose to submit just one system.)</p> -->
+            <p>Each participating team is allowed the submission of <b>at most three runs</b>. The participants should indicate in their notebook paper the submitted system settings for each run.</p>
 
             <p>Submissions are <b>not</b> expected to be trained on TIRA (i.e. there will be no new calibration dataset for the testing phase). The submisisons should therefore contain already fully calibrated models that should only be deployed on TIRA for the actual testing.</p>
 
