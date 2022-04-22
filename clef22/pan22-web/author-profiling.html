@@ -102,21 +102,21 @@ description: PAN at CLEF 2022 - Profiling Irony and Stereotype Spreaders on Twit
             ...
             </pre>
            
-           <!---
+       
             <h3 class="uk-margin-small-top">Output</h3>
             <p>Your software must take as input the absolute path to an unpacked dataset, and has to output
                 for each document of the dataset a corresponding XML file that looks like this:</p>
                 <pre class="prettyprint lang-xml" style="overflow-x: auto;">
                     &lt;author id="author-id"
-                    lang="en|es"
-                    type="0|1"
+                    lang="en"
+                    type="NI|I"
                     /&gt;
                 </pre>
             <p>The naming of the output files is up to you. However, we recommend to use the author-id as
                 filename and "xml" as extension.</p>
-            <p><b>IMPORTANT!</b> Languages should not be mixed. A folder should be created for each language
-                and place inside only the files with the prediction for this language. </p>
-            -->
+            <!-- <p><b>IMPORTANT!</b> Languages should not be mixed. A folder should be created for each language
+                and place inside only the files with the prediction for this language. </p> -->
+       
             
             <h2 id="evaluation">Evaluation</h2>
             The performance of your system will be ranked by accuracy.
