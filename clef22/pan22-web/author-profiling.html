@@ -60,11 +60,13 @@ description: PAN at CLEF 2022 - Profiling Irony and Stereotype Spreaders on Twit
             </ul>
             
             <h2 id="task">Task</h2>
-            With irony, language is employed in a figurative and subtle way to mean the opposite to what is literally stated. In case of sarcasm, a more aggressive type of irony, the intent is to mock or scorn a victim without excluding the possibility to hurt. 
+            <p>With irony, language is employed in a figurative and subtle way to mean the opposite to what is literally stated. In case of sarcasm, a more aggressive type of irony, the intent is to mock or scorn a victim without excluding the possibility to hurt. 
             Stereotypes are often used, especially in discussions about controversial issues such as immigration or sexism and misogyny. At PAN’22, we will focus on profiling ironic authors in Twitter. Special emphasis will be given to those authors
             that employ irony to spread stereotypes, for instance, towards women or the LGTB community. The goal will be to classify authors as ironic or not depending on 
             their number of tweets with ironic content. Among those authors  we will consider a subset that employs irony to convey stereotypes in order to investigate if state-of-the-art
-            models are able to distinguish also these cases. Therefore, given authors of Twitter together with their tweets, the goal will be to profile those authors that can be considered as ironic. 
+            models are able to distinguish also these cases. Therefore, given authors of Twitter together with their tweets, the goal will be to profile those authors that can be considered as ironic. </p>
+        
+        <p>For those who likes challenges, there is also the opportunity to participate in the IROSTEREO subtask that addresses  Stereotype Stance Detection. In fact, stereotypes have been employed by ironic authors to hurt the target (e.g. immigrants) or to somehow defend it. The goal of this subtask will be to detect the stance of how stereotypes are used by ironic authors, if in favour or against the target. Therefore, given the subset of ironic authors that employed stereotypes in some of their tweets, the goal will be to detect their overall stance.</p>
         
             <h2 id="award">Award</h2>
             <p>We are happy to announce that the best performing team at the 10th International Competition on Author Profiling will be awarded 300,- Euro sponsored by <a href="https://www.symanto.net/" target="_blank"><b>Symanto</b></a>
@@ -106,6 +108,7 @@ description: PAN at CLEF 2022 - Profiling Irony and Stereotype Spreaders on Twit
             ...
             </pre>
            
+            <p>Regarding the subtask on stance detection, the format will be the same except for the classes, whose labels are: INFAVOR and AGAINST.</p>
        
             <h3 class="uk-margin-small-top">Output</h3>
             <p>Your software must take as input the absolute path to an unpacked dataset, and has to output
@@ -122,8 +125,12 @@ description: PAN at CLEF 2022 - Profiling Irony and Stereotype Spreaders on Twit
                 and place inside only the files with the prediction for this language. </p> -->
        
             
+        <p>Regarding the subtask on stance detection, the format will be the same except for the classes, whose labels are: INFAVOR and AGAINST.</p>
+        
             <h2 id="evaluation">Evaluation</h2>
-            The performance of your system will be ranked by accuracy.
+        <p>The performance of your system will be ranked by accuracy.</p>
+        
+            <p>For those who participate in the subtask on stance detection of ironic users towards stereotypes, the evaluation metric will be Macro-F. We will also analyse the precision, recall and f-measure per class to look into the performance of the systems regarding each possibility (in favour vs. against).</p>
                        
             
             <h2 id="related-work">Related Work</h2>
