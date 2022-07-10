@@ -19,7 +19,9 @@ description: Clickbait posts link to web pages and advertise their content by ar
             <ul class="uk-list">
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#index-important-dates">Important Dates</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#baselines">Baselines</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>
 <!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>-->
@@ -44,17 +46,74 @@ description: Clickbait posts link to web pages and advertise their content by ar
                 <li><a href="#spoiler-generation">Task 2: Spoiler generation</a></li>
             </ul>
 
+            <h2 id="index-important-dates">Important Dates  (tentative)</h2>
+            <ul>
+                <li>August 1, 2022: Submission System Opens</li>
+                <li>December 1, 2022: Early bird software submission phase (optional)</li>
+                <li>January 10, 2023: Submission deadline.</li>
+                <li>February 2023: Participant paper submission</li>
+                <li>March 2023: Peer review notification</li>
+                <li>April 2023: Camera-ready participant papers submission</li>
+                <li>Summer 2023: SemEval workshop (co-located with a major NLP conference)</li>
+            </ul>
+            <p>The timezone of all deadlines is <a href="https://en.wikipedia.org/wiki/Anywhere_on_Earth">Anywhere on Earth</a>.</p>
+
 
             <h2 id="data">Data [<a href="https://zenodo.org/record/6362726#.YsbdSTVBzrk">download</a>]</h2>
-            <p>The description of data will be published soon.</p>
+            <p>
+            The dataset contains the clickbait posts and manually cleaned versions of the linked documents, and extracted spoilers for each clickbait post. Additionally, the spoilers are categorized into three types: short phrase spoilers, longer passage spoilers, and multiple non-consecutive pieces of text.
+            </p>
+            
+            <p>The training and validation data is <a href="https://zenodo.org/record/6362726#.YsbdSTVBzrk">available for download on zenodo</a>. This dataset contains contains 3,200 posts for training (the file training.jsonl) and 800 posts for validation (the file validation.jsonl). After training and validation, systems are <a href="#evaluation">evaluated on 1,000 test posts</a>.</p>
 
 
             <h3 id="input_format">Input Format</h3>
-            <p>The description of the output format will be announced soon.</p>
-
+            
+            <p>The data comes in JSON Lines format (.jsonl) where each line contains a clickbait post and the manually cleaned version of the linked document. For each line, the goal is to classify the spoiler type needed (task 1), and/or to generate the spoiler (task 2).</p>
+            
+            <p>For each entry in the training and validation dataset, the following fields are available:</p>
+            <ul>
+            <li><code>uuid</code>: The uuid of the dataset entry.</li>
+            <li><code>postText</code>: The text of the clickbait post which is to be spoiled.</li>
+            <li><code>targetParagraphs</code>: The main content of the linked web page to classify the spoiler type (task 1) and to generate the spoiler (task 2). Consists of the paragraphs of manually extracted main content.</li>
+            <li><code>targetTitle</code>:  The title of the linked web page to classify the spoiler type (task 1) and to generate the spoiler (task 2).</li>
+            <li><code>targetUrl</code>: The URL of the linked web page.</li>
+            <li><code>humanSpoiler</code>: The human generated spoiler (abstractive) for the clickbait post from the linked web page. This field is only available in the training and validation dataset (not during test).</li>
+            <li><code>spoiler</code>: The human extracted spoiler for the clickbait post from the linked web page. This field is only available in the training and validation dataset (not during test).</li>
+            <li><code>spoilerPositions</code>: The position of the human extracted spoiler for the clickbait post from the linked web page. This field is only available in the training and validation dataset (not during test).</li>    
+            <li><code>tags</code>: The spoiler type (might be "phrase", "passage", or "multi") that is to be classified in task 1 (spoiler type classification), This field is only available in the training and validation dataset (not during test).</li>
+            <li>Some fields contain additional metainformation about the entry but are unused: <code>postId</code>, <code>postPlatform</code>, <code>targetDescription</code>, <code>targetKeywords</code>, <code>targetMedia</code>.</li>
+            
+            </ul>
+            
+            <p>The following is a simplified entry in the dataset (line breaks added for readability):</p>
+            <code>
+            {<br>
+&nbsp;&nbsp;"uuid": "0af11f6b-c889-4520-9372-66ba25cb7657",<br>
+&nbsp;&nbsp;"postText": ["Wes Welker Wanted Dinner With Tom Brady, But Patriots QB Had Better Idea"],<br>
+&nbsp;&nbsp;"targetParagraphs": [<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"It’ll be just like old times this weekend for Tom Brady and Wes Welker.",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"Welker revealed Friday morning on a Miami radio station that he contacted Brady because he’ll be in town for Sunday’s game between the New England Patriots and Miami Dolphins at Gillette Stadium. It seemed like a perfect opportunity for the two to catch up.",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"But Brady’s definition of \"catching up\" involves far more than just a meal. In fact, it involves some literal \"catching\" as the Patriots quarterback looks to stay sharp during his four-game Deflategate suspension.",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"\"I hit him up to do dinner Saturday night. He’s like, ‘I’m going to be flying in from Ann Arbor later (after the Michigan-Colorado football game), but how about that morning we go throw?’ \" Welker said on WQAM, per The Boston Globe. \"And I’m just sitting there, I’m like, ‘I was just thinking about dinner, but yeah, sure. I’ll get over there early and we can throw a little bit.’ \"",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"Welker was one of Brady’s favorite targets for six seasons from 2007 to 2012. It’s understandable him and Brady want to meet with both being in the same area. But Brady typically is all business during football season. Welker probably should have known what he was getting into when reaching out to his buddy.",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"\"That’s the only thing we really have planned,\" Welker said of his upcoming workout with Brady. \"It’s just funny. I’m sitting there trying to have dinner. ‘Hey, get your ass up here and let’s go throw.’ I’m like, ‘Aw jeez, man.’ He’s going to have me running like 2-minute drills in his backyard or something.\"",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"Maybe Brady will put a good word in for Welker down in Foxboro if the former Patriots wide receiver impresses him enough."<br>
+&nbsp;&nbsp;],<br>
+&nbsp;&nbsp;"targetTitle": "Wes Welker Wanted Dinner With Tom Brady, But Patriots QB Had A Better Idea",<br>
+&nbsp;&nbsp;"targetUrl": "http://nesn.com/2016/09/wes-welker-wanted-dinner-with-tom-brady-but-patriots-qb-had-better-idea/",<br>
+&nbsp;&nbsp;"spoiler": ["how about that morning we go throw?"],<br>
+&nbsp;&nbsp;"spoilerPositions": [[[3, 151], [3, 186]]],<br>
+&nbsp;&nbsp;"tags": ["passage"]<br>
+}
+            </code>
+            
             <h3 id="output_format">Output Format [<a
 href="https://github.com/pan-webis-de/pan-code/tree/master/semeval23/clickbait-challenge" target="_blank">validator</a>]</h3>
             <p>The description of the output format will be announced soon.</p>
+            
+            <h2 id="baselines">Baselines <!--[<a href="https://zenodo.org/record/6362726#.YsbdSTVBzrk">download</a>]--></h2>
+            <p>We will publish baselines (source code and docker images with models trained and fine-tuned on the official training and testing data) soon.</p>
 
             <h2 id="evaluation">Evaluation [<a
 href="https://github.com/pan-webis-de/pan-code/tree/master/semeval23/clickbait-challenge" target="_blank">code</a>]</h2>
