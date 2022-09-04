@@ -32,8 +32,11 @@ description: PAN at CLEF 2022 - Style Change Detection and Multi-Author Writing 
 
             <h2 id="synopsis">Synopsis</h2>
             <ul>
-                <li>Task: Given a document, determine the number of authors and at which positions the author changes.</li>
+                <li>Task: Given a document, determine the number of authors and at which positions the author changes.
+                    <br><span class="uk-text-muted uk-padding-small uk-padding-remove-vertical">Subtasks: (1) 2 authors, 1 split; (2) paragraph level; (3) sentence-level.</span>
+                </li>
                 <li>Input: StackExchange questions and answers, combined into documents [<a href="https://zenodo.org/record/6334245#.YiYEsXXMJ8x">data</a>]
+                    <br><span class="uk-text-muted uk-padding-small uk-padding-remove-vertical">2,000 / 10,000 / 10,000 documents per subtask.</span>
                     <!--[<a href="{{'../../data.html#pan21-style-change-detection' | relative_url }}">data</a>]-->
                 </li>
                 <li>Output: Where does authorship change on the paragraph and sentence level [<a
@@ -43,6 +46,10 @@ href="https://github.com/pan-webis-de/pan-code/tree/master/clef22/style-change-d
 href="https://github.com/pan-webis-de/pan-code/tree/master/clef22/style-change-detection" target="_blank">code</a>]
                 </li>
                 <li>Submission: Deployment on TIRA
+                </li>
+                <li>Results (9 Submissions) <br>
+                    <span class="uk-text-muted uk-padding-small uk-padding-remove-vertical">Best extrinsic approach:</span>Retrieval-based reconstruction [<a href="http://ceur-ws.org/Vol-3180/paper-197.pdf">Lukas Graner and Paul Ranly</a>]<br>
+                    <span class="uk-text-muted uk-padding-small uk-padding-remove-vertical">Best intrinsic approach:</span>Transformer ensemble [<a href="http://ceur-ws.org/Vol-3180/paper-210.pdf">Tsu-Mi Lin et al*</a>]
                 </li>
             </ul>
 

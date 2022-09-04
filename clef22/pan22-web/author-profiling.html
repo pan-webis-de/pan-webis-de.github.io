@@ -44,12 +44,10 @@ description: PAN at CLEF 2022 - Profiling Irony and Stereotype Spreaders on Twit
             <h2 id="synopsis">Synopsis</h2>
             <ul>
                 <li>Task: Given a Twitter feed in English, determine whether its author spreads Irony and Stereotypes.</li>
-                <li>Input: Timelines of authors sharing Irony and Stereotypes towards, for instance, women or the LGTB community [<a href="https://pan.webis.de/data.html#pan22-profiling-irony-and-stereotype-spreaders-on-twitter" target="blank">data</a>].</li>
-</li>
-<!--                   <ul>-->
-<!--                       <li>Timelines of users sharing hate speech towards, for instance, immigrants and women.</li>-->
-<!--                       <li> English authors Twitter feeds. </li> -->
-<!--                    </ul>-->
+                <li>Input: Timelines of authors sharing Irony and Stereotypes towards, for instance, women or the LGTB community [<a href="https://pan.webis.de/data.html#pan22-profiling-irony-and-stereotype-spreaders-on-twitter" target="blank">data</a>].
+                    <br><span class="uk-text-muted uk-padding-small uk-padding-remove-vertical">600 users with 200 English tweets each.</span>
+                    <br><span class="uk-text-muted uk-padding-small uk-padding-remove-vertical">Classes: (1) Irony with Stereotypes, (2) Irony without Stereotypes, (3) Stereotypes but no Irony, (4) Neither</span>
+                </li>
                 <li>Evaluation: Accuracy.</li>
                 <li>Submission: Even when Deployment on TIRA platform are prefered to guarantee the reproducibility of the results, 
                 participants can upload their runs in another modality this year. Participants can bypass the VMs and download the test set 
@@ -57,6 +55,9 @@ description: PAN at CLEF 2022 - Profiling Irony and Stereotype Spreaders on Twit
                 the correct output format specified by the shared task organizers (like in the good, old, non-reproducible days). 
                 Participants must upload their results in a single zip archive (.zip). </li>           
                 <li>Baselines: Character/word n-grams+ SVM/Logistic Regression, LDSE, ...</li>
+                <li>Results (47 Submissions) <br>
+                    <span class="uk-text-muted uk-padding-small uk-padding-remove-vertical">Best approach:</span>Soft-voting BERTweet Ensemble [<a href="http://ceur-ws.org/Vol-3180/paper-229.pdf">Wentao Yu et al</a>]
+                </li>
             </ul>
             
             <h2 id="task">Task</h2>

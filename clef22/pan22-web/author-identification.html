@@ -29,18 +29,17 @@ description: PAN at CLEF 2022 - Authorship Verification
 
         <div class="uk-container uk-margin-medium">
 
-<h2 id="synopsis">Synopsis</h2>
+            <h2 id="synopsis">Synopsis</h2>
             <ul>
                 <li>Task: Given two texts belonging to different Discourse Types (DT), determine if they are written by the same author (<b>cross-DT authorship verification</b>).</li>
-                <li>Input: Pairs of texts from the Aston 100 Idiolects Corpus in English covering the following DTs: essays, emails, text messages, and business memos. 
-			[<a href="https://zenodo.org/record/6337151#.YicqB3pBw2w">data</a>] 
-		    </li>
-                <li>Evaluation: AUC, F1, c@1, F_0.5u, Brier 
-			[<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef22/authorship-verification">code</a>]
-		    </li>
+                <li>Input: Pairs of texts from the Aston 100 Idiolects Corpus in English covering the following DTs: essays, emails, text messages, and business memos. [<a href="https://zenodo.org/record/6337151#.YicqB3pBw2w">data</a>]
+                    <br><span class="uk-text-muted uk-padding-small uk-padding-remove-vertical">22,922 document pairs from 56 Authors</span>
+                </li>
+                <li>Evaluation: AUC, F1, c@1, F_0.5u, Brier [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef22/authorship-verification">code</a>]</li>
                 <li>Submission: Deployment on TIRA [<a href="https://www.tira.io/task/pan22-authorship-verification">submit</a>]</li>
-                <li>Baseline: TFIDF-weighted char n-grams cosine similarity; compression method calculating cross-entropy 
-			[<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef22/authorship-verification">code</a>]</li>
+                <li>Baseline: TFIDF-weighted char n-grams cosine similarity; compression method calculating cross-entropy [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef22/authorship-verification">code</a>]</li>
+                <li>Results (7 Participants)
+                    <br><span class="uk-text-muted uk-padding-small uk-padding-remove-vertical">Best approach:</span> T5-Embeddings of Text and Stylistic Features [<a href="http://ceur-ws.org/Vol-3180/paper-229.pdf">Maryam Najafi and Ehsan Tavan</a>]]
                 </li>
             </ul>
 
