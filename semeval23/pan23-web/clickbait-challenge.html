@@ -47,8 +47,8 @@ description: Clickbait posts link to web pages and advertise their content by ar
             <img src="../pan23-figures/twitter-clickbait-examples.png" alt="Clickbait Spoiling Task Example">
             
             <ul>
-                <li><a href="#spoiler-type-classification">Task 1: Spoiler type classification</a></li>
-                <li><a href="#spoiler-generation">Task 2: Spoiler generation</a></li>
+                <li>Task 1 on Spoiler Type Classification: <a href="#data">The input<a> is the clickbait post and the linked document. The task is to classify the spoiler type that the clickbait post warrants (either "phrase", "passage", "multi"). For each input, an output like <code>{"uuid": "&#60;UUID&#62;", "spoilerType": "&#60;SPOILER-TYPE&#62;"}</code> has to be generated where <code>&#60;SPOILER-TYPE&#62;</code> is either <code>phrase</code>, <code>passage</code>, or <code>multi</code>.</li>
+                <li>Task 2 on Spoiler Generation: <a href="#data">The input<a> is the clickbait post and the linked document (and, optional, the spoiler type if your approach uses this field). The task is to generate the spoiler for the clickbait post. For each input, an output like <code>{"uuid": "&#60;UUID&#62;", "spoiler": "&#60;SPOILER&#62;"}</code> has to be generated where <code>&#60;SPOILER&#62;</code> is the spoiler for the clickbait post.</li>
             </ul>
 
             <h2 id="index-important-dates">Important Dates</h2>
