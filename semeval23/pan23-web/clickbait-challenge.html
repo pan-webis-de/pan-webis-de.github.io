@@ -162,14 +162,14 @@ href="https://github.com/pan-webis-de/pan-code/tree/master/semeval23/clickbait-c
             <p>
             Your software is expected to accept two arguments: 
             <ul>
-            <li>An input directory (named <code>$inputDataset</code> in TIRA). This input directory contains a input.jsonl file that contains the input data</li>.
-            <li>An output directory (named <code>$outputDir</code> in TIRA). Your software should create its output in <code>$outputDir/run.jsonl</code></li>.
+            <li>An input directory (named <code>$inputDataset</code> in TIRA). This input directory contains a input.jsonl file that contains the input data.</li>
+            <li>An output directory (named <code>$outputDir</code> in TIRA). Your software should create its output in <code>$outputDir/run.jsonl</code>.</li>
             </ul>
             </p>
             
             <p>
             After you have uploaded your image, you can add new softwares that use this image.
-            Each combination of a command and a docker image is a software in TIRA (that can not be changed in retrospect to ensure reproducibility). Add a software by selecting your image and specifying the command (that shoudl use the two arguments, for instance, the command for the naive baseline uploaded above is <code>/naive-baseline-task-1.py --input $inputDataset/input.jsonl --output $outputDir/run.jsonl</code>):
+            Each combination of a command and a docker image is a software in TIRA (that can not be changed in retrospect to ensure reproducibility). Add a software by selecting your image and specifying the command that should be executed inside the image (should use the two arguments, for instance, the command for the naive baseline uploaded above is <code>/naive-baseline-task-1.py --input $inputDataset/input.jsonl --output $outputDir/run.jsonl</code>):
             
             <img src="../pan23-figures/tira-add-docker-software.png" alt="TIRA">
 
