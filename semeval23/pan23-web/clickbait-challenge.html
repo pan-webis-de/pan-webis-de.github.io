@@ -47,8 +47,8 @@ description: Clickbait posts link to web pages and advertise their content by ar
             <img src="../pan23-figures/twitter-clickbait-examples.png" alt="Clickbait Spoiling Task Example">
             
             <ul>
-                <li>Task 1 on Spoiler Type Classification: <a href="#data">The input<a> is the clickbait post and the linked document. The task is to classify the spoiler type that the clickbait post warrants (either "phrase", "passage", "multi"). For each input, an output like <code>{"uuid": "&#60;UUID&#62;", "spoilerType": "&#60;SPOILER-TYPE&#62;"}</code> has to be generated where <code>&#60;SPOILER-TYPE&#62;</code> is either <code>phrase</code>, <code>passage</code>, or <code>multi</code>.</li>
-                <li>Task 2 on Spoiler Generation: <a href="#data">The input<a> is the clickbait post and the linked document (and, optional, the spoiler type if your approach uses this field). The task is to generate the spoiler for the clickbait post. For each input, an output like <code>{"uuid": "&#60;UUID&#62;", "spoiler": "&#60;SPOILER&#62;"}</code> has to be generated where <code>&#60;SPOILER&#62;</code> is the spoiler for the clickbait post.</li>
+                <li>Task 1 on Spoiler Type Classification: <a href="#data">The input</a> is the clickbait post and the linked document. The task is to classify the spoiler type that the clickbait post warrants (either "phrase", "passage", "multi"). For each input, an output like <code>{"uuid": "&#60;UUID&#62;", "spoilerType": "&#60;SPOILER-TYPE&#62;"}</code> has to be generated where <code>&#60;SPOILER-TYPE&#62;</code> is either <code>phrase</code>, <code>passage</code>, or <code>multi</code>.</li>
+                <li>Task 2 on Spoiler Generation: <a href="#data">The input</a> is the clickbait post and the linked document (and, optional, the spoiler type if your approach uses this field). The task is to generate the spoiler for the clickbait post. For each input, an output like <code>{"uuid": "&#60;UUID&#62;", "spoiler": "&#60;SPOILER&#62;"}</code> has to be generated where <code>&#60;SPOILER&#62;</code> is the spoiler for the clickbait post.</li>
             </ul>
 
             <h2 id="index-important-dates">Important Dates</h2>
@@ -66,7 +66,7 @@ description: Clickbait posts link to web pages and advertise their content by ar
 
             <h2 id="data">Data [<a href="https://zenodo.org/record/6362726#.YsbdSTVBzrk">download</a>]</h2>
             <p>
-            The dataset contains the clickbait posts and manually cleaned versions of the linked documents, and extracted spoilers for each clickbait post. Additionally, the spoilers are categorized into three types: short phrase spoilers, longer passage spoilers, and multiple non-consecutive pieces of text.
+            The dataset contains the clickbait posts and manually cleaned versions of the linked documents, and extracted spoilers for each clickbait post (the dataset was constructed and published in the <a href="https://webis.de/publications.html?q=clickbait#hagen_2022a">corresponding paper</a>). Additionally, the spoilers are categorized into three types: short phrase spoilers, longer passage spoilers, and multiple non-consecutive pieces of text.
             </p>
             
             <p>The training and validation data is <a href="https://zenodo.org/record/6362726#.YsbdSTVBzrk">available for download on zenodo</a>. This dataset contains contains 3,200 posts for training (the file training.jsonl) and 800 posts for validation (the file validation.jsonl). After training and validation, systems are <a href="#evaluation">evaluated on 1,000 test posts</a>.</p>
