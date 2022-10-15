@@ -146,8 +146,46 @@ href="https://github.com/pan-webis-de/pan-code/tree/master/semeval23/clickbait-c
             <h2 id="submission">Submission</h2>
             <p>We will accept run file submissions and software submissions via <a href="https://tira.io">TIRA</a>. Run file submissions will be uploaded to TIRA in the format specified above. For software submissions, you upload docker images to TIRA that will be executed on the test data within the TIRA platform (using a single file as input to produce a single file as output in the format specified above). We recommend software submissions to improve the reproducibility and reusability.</p>
 
-            <p>We will provide more details on the submission requirements soon.</p>
 
+            <h2 id="tira-quickstart">TIRA Quickstart</h2>
+            <p>
+            Participants may upload docker images that are executed within TIRA so that the runs can be reproduced or the software may be applied to different data (of same format) in the future. You can find the access credentials for your dedicated container registry to upload your images under "Docker Submission":
+            </p>
+            
+            <img src="../pan23-figures/tira-upload-docker-image.png" alt="TIRA">
+            
+            <p>
+            Please follow the instructions there to upload your image.
+            For instance, you can upload <a href="#baselines">the naive baseline</a> for task 1 by first tagging the image accordingly, i.e., <code>docker tag webis/pan-clickbait-spoiling-baselines:task1-naive-0.0.1 registry.webis.de/code-research/tira/YOUR-USER-NAME/YOUR-SOFTWARE-NAME:0.0.1</code>, then logging in to your dedicated registry, i.e., <code>docker login -u YOUR-USER-NAME -pTOKEN-PROVIDED-BY-TIRA registry.webis.de</code> and finally uploading the image by running <code>docker push registry.webis.de/code-research/tira/YOUR-USER-NAME/YOUR-SOFTWARE-NAME:0.0.1</code>. 
+            </p>
+            
+            <p>
+            Your software is expected to accept two arguments: 
+            <ul>
+            <li>An input directory (named <code>$inputDataset</code> in TIRA). This input directory contains a input.jsonl file that contains the input data</li>.
+            <li>An output directory (named <code>$outputDir</code> in TIRA). Your software should create its output in <code>$outputDir/run.jsonl</code></li>.
+            </ul>
+            </p>
+            
+            <p>
+            After you have uploaded your image, you can add new softwares that use this image.
+            Each combination of a command and a docker image is a software in TIRA (that can not be changed in retrospect to ensure reproducibility). Add a software by selecting your image and specifying the command (that shoudl use the two arguments, for instance, the command for the naive baseline uploaded above is <code>/naive-baseline-task-1.py --input $inputDataset/input.jsonl --output $outputDir/run.jsonl</code>):
+            
+            <img src="../pan23-figures/tira-add-docker-software.png" alt="TIRA">
+
+            </p>
+            
+            <p>            
+            After adding the docker software, a new tab for this software appears.
+            You can run your software by specifying the compute resources (that your software has available during its execution) and the dataset (the input to the software). You can run your software multiple times in parallel so executing your software on different resource specifications enables evaluations on the scalability of the software:
+            
+            <img src="../pan23-figures/tira-run-docker-software.png" alt="TIRA">
+            <p>
+            
+            Once the run of your software completes, you can see the run and its evaluation:
+            
+            <img src="../pan23-figures/tira-run-results.png" alt="TIRA">
+            </p>
 
             <h2 id="task-committee">Task Committee</h2>
             <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
