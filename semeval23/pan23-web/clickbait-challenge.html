@@ -144,7 +144,9 @@ href="https://github.com/pan-webis-de/pan-code/tree/master/semeval23/clickbait-c
 
 
             <h2 id="submission">Submission</h2>
-            <p>We will accept run file submissions and software submissions via <a href="https://tira.io">TIRA</a>. Run file submissions will be uploaded to TIRA in the format specified above. For software submissions, you upload docker images to TIRA that will be executed on the test data within the TIRA platform (using a single file as input to produce a single file as output in the format specified above). We recommend software submissions to improve the reproducibility and reusability.</p>
+            <p>We will accept run file submissions and software submissions via <a href="https://tira.io">TIRA</a>. Run file submissions will be uploaded to TIRA in the format specified above. For software submissions, you upload docker images to TIRA that will be executed on the test data within the TIRA platform (using a single file as input to produce a single file as output in the format specified above). We recommend software submissions to improve the reproducibility and reusability. Please run your software on the datasets "task-1-type-classification" (for task 1) respectively "task-2-spoiler-generation" (for task 2) in TIRA to produce submissions (you can use the datasets "task-1-type-classification-validation" respectively "task-2-spoiler-generation-validation" to validate your approaches).
+            
+            </p>
 
 
             <h2 id="tira-quickstart">TIRA Quickstart</h2>
@@ -177,7 +179,7 @@ href="https://github.com/pan-webis-de/pan-code/tree/master/semeval23/clickbait-c
             
             <p>            
             After adding the docker software, a new tab for this software appears.
-            You can run your software by specifying the compute resources (that your software has available during its execution) and the dataset (the input to the software). You can run your software multiple times in parallel so executing your software on different resource specifications enables evaluations on the scalability of the software:
+            You can run your software by specifying the compute resources (that your software has available during its execution) and the dataset (the input to the software). Please run your software on the datasets "task-1-type-classification" (for task 1) respectively "task-2-spoiler-generation" (for task 2) in TIRA to produce submissions (you can use the datasets "task-1-type-classification-validation" respectively "task-2-spoiler-generation-validation" to validate your approaches). You can run your software multiple times in parallel so executing your software on different resource specifications enables evaluations on the scalability of the software:
             
             <img src="../pan23-figures/tira-run-docker-software.png" alt="TIRA">
             <p>
