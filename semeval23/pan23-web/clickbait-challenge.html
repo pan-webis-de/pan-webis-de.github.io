@@ -86,7 +86,7 @@ description: Clickbait posts link to web pages and advertise their content by ar
             <li><code>humanSpoiler</code>: The human generated spoiler (abstractive) for the clickbait post from the linked web page. This field is only available in the training and validation dataset (not during test).</li>
             <li><code>spoiler</code>: The human extracted spoiler for the clickbait post from the linked web page. This field is only available in the training and validation dataset (not during test).</li>
             <li><code>spoilerPositions</code>: The position of the human extracted spoiler for the clickbait post from the linked web page. This field is only available in the training and validation dataset (not during test).</li>    
-            <li><code>tags</code>: The spoiler type (might be "phrase", "passage", or "multi") that is to be classified in task 1 (spoiler type classification), This field is only available in the training and validation dataset (not during test).</li>
+            <li><code>tags</code>: The spoiler type (might be "phrase", "passage", or "multi") that is to be classified in task 1 (spoiler type classification). For task 1, this field is only available in the training and validation dataset (not during test). For task 2, this field is always available and can be used.</li>
             <li>Some fields contain additional metainformation about the entry but are unused: <code>postId</code>, <code>postPlatform</code>, <code>targetDescription</code>, <code>targetKeywords</code>, <code>targetMedia</code>.</li>
             
             </ul>
