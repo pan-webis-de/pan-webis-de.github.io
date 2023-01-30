@@ -87,18 +87,20 @@ description: PAN at CLEF 2023 - >Profiling Cryptocurrency Influencers with Few-s
             </ol>
             <li>Participation for independent tasks, both from machine and deep learning paradigms, are welcome. </li>
             <h2 id="task">Task</h2>
-            Data annotation for Natural Language Processing (NLP) is a challenging task. Aspects such as the economic and temporal cost, 
+            <p> Data annotation for Natural Language Processing (NLP) is a challenging task. Aspects such as the economic and temporal cost, 
             the psychological and linguistic expertise needed by the annotator, and the congenital subjectivity involved in the annotation task, 
             makes it difficult to obtain large amounts of high quality data [1, 2].<br>            
             Cryptocurrencies have massively increased their popularity in recent years [3]. 
             Aspects such as not being reliant on any central authority, the possibilities offered by the different projects, and the new gold rush, 
             spread mainly by influencers, make this a very trendy topic in social media. However, in a real environment where, for instance, 
             traders may want to leverage social media signals to forecast the market, data collection is a challenge and real-time profiling needs 
-            to be done in a few milliseconds, which implies to process as little data as possible.<br>
+            to be done in a few milliseconds, which implies to process as little data as possible.
                                     
             Participants will be provided with little training data per task, and will need to choose carefully the models applied to this under-resource setting. 
-            Concepts such as transfer learning [4] and few-shot learning [5,6,7,8] will be key to excel. 
-           
+            Concepts such as transfer learning [4] and few-shot learning [5,6,7,8] will be key to excel. </p> <br>
+            
+             <h2 id="award">Award</h2>
+                         
             <h2 id="data">Data</h2>
             <h3 class="uk-margin-small-top">Input</h3>
             The dataset consists in a folder which contains:
@@ -107,19 +109,22 @@ description: PAN at CLEF 2023 - >Profiling Cryptocurrency Influencers with Few-s
                 </li>
             </ul>
             The format of the JSON files is:<br/>
-             <pre class="prettyprint json" style="overflow-x: auto;">
-                {"twitter user id":"a4b9c45b95919bfceded5cd933503ad1","text":"You\u2019ve seen each other naked","tweed id":"9c598533c8941ff31d6e59e991d00d55","class":"macro"}
-                {"twitter user id":"0f32fb22e9b6538ed7d6c49ebbbfd879","text":"@Maryerm_ya @AM_Saleeem Don't baby me ","tweed id":"fc83613cde61a80cc5b9f5adad6d79e2","class":"macro"}            
+             <pre class="prettyprint json" style="overflow-x: auto;"> {"twitter user id":"a4b9c45b95919bfceded5cd933503ad1","text":"You\u2019ve seen each other naked","tweed id":"9c598533c8941ff31d6e59e991d00d55","class":"macro"}
+             {"twitter user id":"0f32fb22e9b6538ed7d6c49ebbbfd879","text":"@Maryerm_ya @AM_Saleeem Don't baby me ","tweed id":"fc83613cde61a80cc5b9f5adad6d79e2","class":"macro"}            
             </pre>                              
                                            
             <h3 class="uk-margin-small-top">Output</h3>  
             <p>Your software must take as input the absolute path to an unpacked dataset, and has to output
                 for each document of the dataset a corresponding JSON file that looks like this:</p>
-              <pre class="prettyprint json" style="overflow-x: auto;"> {"twitter user id":"a4b9c45b95919bfceded5cd933503ad1","text":"You\u2019ve seen each other naked","tweed id":"9c598533c8941ff31d6e59e991d00d55","class":"macro", "probability": 0.5} {"twitter user id":"0f32fb22e9b6538ed7d6c49ebbbfd879","text":"@Maryerm_ya @AM_Saleeem Don't baby me","tweed id":"fc83613cde61a80cc5b9f5adad6d79e2","class":"macro", "probability": 0.5}
+              <pre class="prettyprint json" style="overflow-x: auto;"> {"twitter user id":"a4b9c45b95919bfceded5cd933503ad1","text":"You\u2019ve seen each other naked","tweed id":"9c598533c8941ff31d6e59e991d00d55","class":"macro", "probability": 0.5}
+                                                                                                       {"twitter user id":"0f32fb22e9b6538ed7d6c49ebbbfd879","text":"@Maryerm_ya @AM_Saleeem Don't baby me","tweed id":"fc83613cde61a80cc5b9f5adad6d79e2","class":"macro", "probability": 0.5}
               </pre>
                                                                                                           
             <h2 id="evaluation">Evaluation </h2> 
-            <p>The performance of your system will be ranked by Accuracy and Macro-F1. We will also analyse the precision, recall and f-measure per class to look into the performance of the systems regarding each possibility.
+            <p>The performance of your system will be ranked by Accuracy and Macro-F1. 
+                               We will also analyse the precision, recall and f-measure per class to look into 
+                               the performance of the systems regarding each possibility.
+            </p>
             <h2 id="evaluation">Results SubTask 1: Low-resource influencer profiling</h2>                               
              <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
                 <thead>
@@ -155,8 +160,7 @@ description: PAN at CLEF 2023 - >Profiling Cryptocurrency Influencers with Few-s
                 </thead>
                 <tbody>  
                                     
-            <h2 id="award">Award</h2>
-                         
+                                    
             <h2 id="related-work">Related Work</h2>
             <ul>
                   <li>
