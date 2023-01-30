@@ -109,14 +109,16 @@ description: PAN at CLEF 2023 - >Profiling Cryptocurrency Influencers with Few-s
                 </li>
             </ul>
             The format of the JSON files is:<br/>
-             <pre class="prettyprint json" style="overflow-x: auto;"> {"twitter user id":"a4b9c45b95919bfceded5cd933503ad1","text":"You\u2019ve seen each other naked","tweed id":"9c598533c8941ff31d6e59e991d00d55","class":"macro"}
+             <pre class="prettyprint json" style="overflow-x: auto;"> 
+{"twitter user id":"a4b9c45b95919bfceded5cd933503ad1","text":"You\u2019ve seen each other naked","tweed id":"9c598533c8941ff31d6e59e991d00d55","class":"macro"}
 {"twitter user id":"0f32fb22e9b6538ed7d6c49ebbbfd879","text":"@Maryerm_ya @AM_Saleeem Don't baby me ","tweed id":"fc83613cde61a80cc5b9f5adad6d79e2","class":"macro"}            
             </pre>                              
                                            
             <h3 class="uk-margin-small-top">Output</h3>  
             <p>Your software must take as input the absolute path to an unpacked dataset, and has to output
                 for each document of the dataset a corresponding JSON file that looks like this:</p>
-              <pre class="prettyprint json" style="overflow-x: auto;"> {"twitter user id":"a4b9c45b95919bfceded5cd933503ad1","text":"You\u2019ve seen each other naked","tweed id":"9c598533c8941ff31d6e59e991d00d55","class":"macro", "probability": 0.5}
+              <pre class="prettyprint json" style="overflow-x: auto;"> 
+{"twitter user id":"a4b9c45b95919bfceded5cd933503ad1","text":"You\u2019ve seen each other naked","tweed id":"9c598533c8941ff31d6e59e991d00d55","class":"macro", "probability": 0.5}
 {"twitter user id":"0f32fb22e9b6538ed7d6c49ebbbfd879","text":"@Maryerm_ya @AM_Saleeem Don't baby me","tweed id":"fc83613cde61a80cc5b9f5adad6d79e2","class":"macro", "probability": 0.5}
               </pre>
                                                                                                           
@@ -137,7 +139,8 @@ description: PAN at CLEF 2023 - >Profiling Cryptocurrency Influencers with Few-s
                 </tr>
                 </thead>
                 <tbody>
-             
+                </tbody>
+             </table>
              <h2 id="evaluation">Results SubTask 2:Low-resource influencer interest identification</h2>                               
              <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
                 <thead>
@@ -150,6 +153,8 @@ description: PAN at CLEF 2023 - >Profiling Cryptocurrency Influencers with Few-s
                 </tr>
                 </thead>
                 <tbody>  
+               </tbody>
+              </table>
              <h2 id="evaluation">Results SubTask 3: Low-resource influencer intent identification</h2>                               
              <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
                 <thead>
@@ -162,7 +167,8 @@ description: PAN at CLEF 2023 - >Profiling Cryptocurrency Influencers with Few-s
                 </tr>
                 </thead>
                 <tbody>  
-                                    
+                </tbody>
+             </table>                       
                                     
             <h2 id="related-work">Related Work</h2>
             <ul>
