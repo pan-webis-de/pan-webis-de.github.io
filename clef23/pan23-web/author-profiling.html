@@ -76,7 +76,7 @@ description: PAN at CLEF 2023 - >Profiling Cryptocurrency Influencers with Few-s
                     <br><span class="uk-text-muted uk-padding-small uk-padding-remove-vertical">Classes: (1) subjective opinion, (2) financial information, 
                        (3) advertising, (4) announcement </span>
                    </li>
-                   <li>Evaluation: Accuracy and macro F1 </li>
+                   <li>Evaluation: Accuracy and Macro F1 </li>
                    <li>Submission: TIRA.</li>
                    <li>Baselines: tba.</li>
                   </ul>
@@ -115,14 +115,46 @@ description: PAN at CLEF 2023 - >Profiling Cryptocurrency Influencers with Few-s
             <h3 class="uk-margin-small-top">Output</h3>  
             <p>Your software must take as input the absolute path to an unpacked dataset, and has to output
                 for each document of the dataset a corresponding JSON file that looks like this:</p>
-                <pre class="prettyprint json" style="overflow-x: auto;">
-                {"twitter user id":"a4b9c45b95919bfceded5cd933503ad1","text":"You\u2019ve seen each other naked","tweed id":"9c598533c8941ff31d6e59e991d00d55","class":"macro", "probability": 0.5}
-                {"twitter user id":"0f32fb22e9b6538ed7d6c49ebbbfd879","text":"@Maryerm_ya @AM_Saleeem Don't baby me","tweed id":"fc83613cde61a80cc5b9f5adad6d79e2","class":"macro", "probability": 0.5}
-                </pre>
+              <pre class="prettyprint json" style="overflow-x: auto;"> {"twitter user id":"a4b9c45b95919bfceded5cd933503ad1","text":"You\u2019ve seen each other naked","tweed id":"9c598533c8941ff31d6e59e991d00d55","class":"macro", "probability": 0.5} {"twitter user id":"0f32fb22e9b6538ed7d6c49ebbbfd879","text":"@Maryerm_ya @AM_Saleeem Don't baby me","tweed id":"fc83613cde61a80cc5b9f5adad6d79e2","class":"macro", "probability": 0.5}
+              </pre>
                                                                                                           
-            
-            <h2 id="evaluation">Evaluation</h2>                               
-                         
+            <h2 id="evaluation">Evaluation </h2> 
+            <p>The performance of your system will be ranked by Accuracy and Macro-F1. We will also analyse the precision, recall and f-measure per class to look into the performance of the systems regarding each possibility.
+            <h2 id="evaluation">Results SubTask 1: Low-resource influencer profiling</h2>                               
+             <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+                <thead>
+
+                <tr>
+                    <th align="left">POS</th>
+                    <th align="left">Team</th>
+                    <th align="left">Accuracy</th>
+                </tr>
+                </thead>
+                <tbody>
+             
+             <h2 id="evaluation">Results SubTask 2:Low-resource influencer interest identification</h2>                               
+             <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+                <thead>
+
+                <tr>
+                    <th align="left">POS</th>
+                    <th align="left">Team</th>
+                    <th align="left">Accuracy</th>
+                </tr>
+                </thead>
+                <tbody>  
+             <h2 id="evaluation">Results SubTask 3: Low-resource influencer intent identification</h2>                               
+             <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
+                <thead>
+
+                <tr>
+                    <th align="left">POS</th>
+                    <th align="left">Team</th>
+                    <th align="left">Accuracy</th>
+                </tr>
+                </thead>
+                <tbody>  
+                                    
             <h2 id="award">Award</h2>
                          
             <h2 id="related-work">Related Work</h2>
