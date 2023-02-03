@@ -13,15 +13,15 @@ description: PAN at CLEF 2023 - Trigger Detection
 </nav>
 
 <main class="uk-section uk-section-default">
-    <div class="uk-container"">
+    <div class="uk-container">
         <div class="uk-container uk-margin-small">
             <h1 class="uk-margin-remove-top">Trigger Detection 2023</h1>
             <ul class="uk-list">
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
-<!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>-->
-<!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>-->
-<!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>-->
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>
 <!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>-->
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
@@ -32,26 +32,95 @@ description: PAN at CLEF 2023 - Trigger Detection
 
             <h2 id="synopsis">Synopsis</h2>
             <ul>
-                <li>Task: Given a document, determine if it contains triggering content.</li>
-                <li>Input:  tba.
-<!--                    Input: StackExchange questions and answers, combined into documents [<a href="https://zenodo.org/record/4589145#.YFDOwnVKhhF">data</a>] -->
-                    <!--[<a href="{{'../../data.html#pan21-style-change-detection' | relative_url }}">data</a>]-->
+                <li>Task: Given a document, assign all appropriate trigger warning labels.</li>
+                <li>Input: A Fanwork with 50 to 6,000 words length. [<a href="https://doi.org/10.5281/zenodo.7600050">data</a>]
                 </li>
-                <li>Output: tba.
-<!--                    Whether a document has multiple authors, how many and where authorship changes [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef21/style-change-detection" target="_blank">verifier</a>]-->
+                <li>Output: The ID of the work and a list of appropriate trigger labels, selected from a set of 32.
                 </li>
-                <li>Evaluation: tba
-<!--                    F1 [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef21/style-change-detection" target="_blank">code</a>]-->
+                <li>Evaluation: F1 [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef23/trigger-detection" target="_blank">code</a>]
                 </li>
-                <li>Submission: TIRA
+                <li>Submission: <a href="https://www.tira.io/task/pan23-trigger-detection" target="_blank">tira.io</a> preferably as a software submission
                 </li>
             </ul>
 
             <h2 id="task">Task</h2>
-            Details of this task will be announced soon.
+            <p>
+                In trigger detection, we want to assign trigger warning labels to documents that contain potentially discomforting or distressing (triggering) content [1].
+                We ask participants to develop a software or model that determines if a document contains triggering content.
+                In particular, we model trigger detection as a multi-label document classification challenge: assign each document all appropriate trigger warnings, but not more.
+                All warnings are chosen from the author's perspective, i.e. the work's author decided which kind of trigger the document contains.
+            </p>
+
+            <h2 id="data">Data</h2>
+            <p>
+                Our dataset contains works of fanfiction, extracted from <a href="https://archiveofourown.org/" target="_blank">archiveofourown.org</a> (AO3).
+                Each work is between 50 and 6,000 words long and has between 1 and many trigger warnings assigned. The label set contains 32 different trigger warnings with a long-tailed frequency distribution, i.e. some labels are very common, most labels are increasingly rare.
+                Our training dataset contains 307,102 examples, with 17,104 in validation and 17,040 in the test split.
+            </p>
+            <h3>Training Dataset</h3>
+            <p>
+                The train and validation splits contains two files each: <code>works.jsonl</code> and <code>labels.jsonl</code>.
+                Both files have 1 example on each line, encoded in a json object. The <code>works.jsonl</code> can be loaded with the huggingface datasets library.
+            </p>
+            <pre id="works-example" class="prettyprint linenums uk-margin-remove-bottom">
+<code class="lang-json">{
+    "work_id": 1234,                 # The id of the work.
+    "labels": [1,0,0,1,...]          # A list of labels (binary format). Check the utility code for conversion.
+    "text": "The text of a fanwork." # This contains &lt;em&gt;inline html&lt;/em&gt; to preserve the original formatting.
+}
+</code></pre>
+            <div class="uk-text-small uk-text-muted uk-text-right">works.jsonl</div>
+
+            <pre id="labels-example" class="prettyprint linenums uk-margin-remove-bottom">
+<code class="lang-json">{
+    "work_id": 1234,                         # The id of the work.
+    "labels": [pornographic-content, abuse]  # A list of labels (string format). Check the utility code for conversion.
+}
+</code></pre>
+            <div class="uk-text-small uk-text-muted uk-text-right">labels.jsonl</div>
+
+            <h3>Test Dataset</h3>
+            <p>
+                The test split contains one file: <code>works.jsonl</code>. Its format is as described above, but without with <code>labels</code>.
+                Each solution to this task should take this <code>works.jsonl</code> as an input, and produce a complete <code>labels.jsonl</code> as described above.
+            </p>
+
+            <h3>Label Set</h3>
+            <p>
+                All labels are based on the
+                <a href="https://archiveofourown.org/wrangling_guidelines/11#Warnings%20and%20triggers:~:text=Warnings%20and-,triggers,-General%20warnings%20(e" target="_blank">freeform content warnings</a>
+                added to a fanwork by its author. Detailed definitions are included in the dataset download.
+            </p>
+            <pre id="label-set" class="prettyprint linenums uk-margin-remove-bottom">
+<code class="lang-json">pornographic-content, violence, death, sexual-assault, abuse, blood, suicide,
+pregnancy, child-abuse, incest, underage, homophobia, self-harm, dying, kidnapping,
+mental-illness, dissection, eating-disorders, abduction, body-hatred, childbirth,
+racism, sexism, miscarriages, transphobia, abortion, fat-phobia, animal-death,
+ableism, classism, misogyny, animal-cruelty
+</code></pre>
+
+            <h2 id="evaluation">Evaluation</h2>
+            <p>
+                Our ranking criteria are macro (primary) and micro F<sub>1</sub>.
+                We also compute most other common evaluation metrics used in multi-label classification.
+            </p>
+
+            <h2 id="submission">Submission</h2>
+            <p>
+                All submissions are handled through <a href="https://www.tira.io/task/pan23-trigger-detection" target="_blank">tira.io</a>.
+                We encourage all participants to use software submissions (via docker) for the sake of reproducibility.
+                In a software submission you upload a docker image, which is then built and executed on the test data on tira's servers.
+                Please follow tira's extensive documentation (and forums) for instructions.
+            </p>
 
             <h2 id="related-work">Related Work</h2>
-            Related Work will be announced soon.
+            <ul>
+                <li>[1] Magdalena Wolska and Christopher Schr{\"{o}}der and Ole Borchardt and Benno Stein and Martin Potthast
+                    <a href="https://doi.org/10.48550/arXiv.2209.04409" target="_blank">Trigger Warnings: Bootstrapping a Violence Detector for FanFiction</a>
+                    In: CoRR
+                </li>
+
+            </ul>
 
             <h2 id="task-committee">Task Committee</h2>
             <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
