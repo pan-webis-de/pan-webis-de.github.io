@@ -47,7 +47,7 @@ description: PAN at CLEF 2023 - >Profiling Cryptocurrency Influencers with Few-s
                 Moreover, we propose to categorize other related aspects of the influencers, also using a low-resource setting. Specifically, 
                     we focus on English Twitter posts for three different sub-tasks: </li>
                <ol>
-               <li>Low-resource influencer profiling:</li>
+               <li>Low-resource influencer profiling (subtask-1):</li>
                    <ul>
                    <li>Input: 
                     <br><span class="uk-text-muted uk-padding-small uk-padding-remove-vertical">32 users per label with a maximum of 10 English tweets each.</span>
@@ -58,7 +58,7 @@ description: PAN at CLEF 2023 - >Profiling Cryptocurrency Influencers with Few-s
                    <li>Baselines: tba.</li>
                    </ul>
               
-               <li>Low-resource influencer interest identification:</li>
+               <li>Low-resource influencer interest identification (subtask-2):</li>
                    <ul>
                    <li>Input: 
                     <br><span class="uk-text-muted uk-padding-small uk-padding-remove-vertical">64 users per label with 1 English tweets each.</span>
@@ -69,7 +69,7 @@ description: PAN at CLEF 2023 - >Profiling Cryptocurrency Influencers with Few-s
                    <li>Submission: TIRA.</li>
                    <li>Baselines: tba.</li>
                    </ul>
-               <li>Low-resource influencer intent identification:</li>
+               <li>Low-resource influencer intent identification (subtask-3):</li>
                  <ul>
                    <li>Input: 
                     <br><span class="uk-text-muted uk-padding-small uk-padding-remove-vertical">64 users per label with 1 English tweets each.</span>
@@ -98,8 +98,8 @@ description: PAN at CLEF 2023 - >Profiling Cryptocurrency Influencers with Few-s
            <h2 id="award">Award</h2>
              tba            
            <h2 id="data">Data</h2>
-            <h3 class="uk-margin-small-top">Input</h3>
-            Dataset format is the same for each sub task. The uncompressed dataset consists in a folder which contains two JSON files:
+           <h3 class="uk-margin-small-top">Input</h3>
+           <p> Dataset format is the same for each sub task. The uncompressed dataset consists in a folder which contains two JSON files:</p> 
             <ul>
                 <li>A train-truth.json file with the list of authors and the ground truth.</li>
                 <pre class="prettyprint json" style="overflow-x: auto;"> 
@@ -113,10 +113,18 @@ description: PAN at CLEF 2023 - >Profiling Cryptocurrency Influencers with Few-s
 {"twitter user id":"0003d5772f14b3147659f37b5aa4399e","class":"no influencer"}
 {"twitter user id":"00230caa0289b84a7a077457435d26b8","class":"macro"}
                 </pre> 
-                </li>                          
-                                                                                                          
+                </li>                                                                                                                       
+         <h3 class="uk-margin-small-top">Output</h3>
+            <p>Your software must take as input the absolute path to an unpacked dataset, and has to output a JSON file that looks like this:</p>
+                <pre class="prettyprint lang-json" style="overflow-x: auto;">
+                 {"twitter user id":"0003d5772f14b3147659f37b5aa4399e","class":"no influencer", "probability": 1.0}
+                 {"twitter user id":"00230caa0289b84a7a077457435d26b8","class":"macro", "probability": 0.5} 
+                </pre>
+            <p>The naming of the output files is up to you. However, we recommend to use the "sub task id" eg; "subtask1" as
+                filename and "json" as extension.</p>
+                
           <h2 id="evaluation">Evaluation </h2> 
-            <p>The performance of your system will be ranked by Macro-F1. 
+          <p>The performance of your system will be ranked by Macro-F1. 
                                We will also analyse the accuracy, precision, recall and f-measure per class to look into 
                                the performance of the systems regarding each possibility.
             </p>
