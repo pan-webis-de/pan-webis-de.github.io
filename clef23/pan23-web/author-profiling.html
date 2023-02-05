@@ -50,10 +50,10 @@ description: PAN at CLEF 2023 - >Profiling Cryptocurrency Influencers with Few-s
                <li>Low-resource influencer profiling:</li>
                    <ul>
                    <li>Input: 
-                    <br><span class="uk-text-muted uk-padding-small uk-padding-remove-vertical">32 users per label with 10 English tweets each.</span>
+                    <br><span class="uk-text-muted uk-padding-small uk-padding-remove-vertical">32 users per label with a maximum of 10 English tweets each.</span>
                     <br><span class="uk-text-muted uk-padding-small uk-padding-remove-vertical">Classes: (1) null, (2) nano, (3) micro, (4) macro, (5) mega </span>
                    </li>
-                   <li>Evaluation: Accuracy and macro F1 </li>
+                   <li>Evaluation: macro F1 and accuracy </li>
                    <li>Submission: TIRA.</li>
                    <li>Baselines: tba.</li>
                    </ul>
@@ -65,7 +65,7 @@ description: PAN at CLEF 2023 - >Profiling Cryptocurrency Influencers with Few-s
                     <br><span class="uk-text-muted uk-padding-small uk-padding-remove-vertical">Classes: (1) technical information, (2) price update, (3) trading matters, 
                        (4) gaming, (5) other </span>
                    </li>
-                   <li>Evaluation: Accuracy and macro F1 </li>
+                   <li>Evaluation: macro F1 and accuracy </li>
                    <li>Submission: TIRA.</li>
                    <li>Baselines: tba.</li>
                    </ul>
@@ -76,7 +76,7 @@ description: PAN at CLEF 2023 - >Profiling Cryptocurrency Influencers with Few-s
                     <br><span class="uk-text-muted uk-padding-small uk-padding-remove-vertical">Classes: (1) subjective opinion, (2) financial information, 
                        (3) advertising, (4) announcement </span>
                    </li>
-                   <li>Evaluation: Accuracy and Macro F1 </li>
+                   <li>Evaluation: macro F1 and accuracy </li>
                    <li>Submission: TIRA.</li>
                    <li>Baselines: tba.</li>
                   </ul>
@@ -103,28 +103,31 @@ description: PAN at CLEF 2023 - >Profiling Cryptocurrency Influencers with Few-s
                          
             <h2 id="data">Data</h2>
             <h3 class="uk-margin-small-top">Input</h3>
-            The dataset consists in a folder which contains:
+            The dataset for the three task have the same format. The uncompressed dataset consists in a folder which contains:
             <ul>
-                <li>To develop your software, we provide you with a training data set that consists of Twitter users labeled.
-                </li>
-            </ul>
-            The format of the JSON files is:<br/>
+                <li>A Json file with each Twitter user per line. The format of the JSON files is:<br/>
              <pre class="prettyprint json" style="overflow-x: auto;"> 
-{"twitter user id":"a4b9c45b95919bfceded5cd933503ad1","text":"You\u2019ve seen each other naked","tweed id":"9c598533c8941ff31d6e59e991d00d55","class":"macro"}
-{"twitter user id":"0f32fb22e9b6538ed7d6c49ebbbfd879","text":"@Maryerm_ya @AM_Saleeem Don't baby me ","tweed id":"fc83613cde61a80cc5b9f5adad6d79e2","class":"macro"}            
-            </pre>                              
+            
+            </pre>    
+                </li>
+                <li>A train-truth.json file with the list of authors and the ground truth.</li>
+                <pre class="prettyprint json" style="overflow-x: auto;"> 
+                {"twitter user id":"05ca545f2f700d0d5c916657251d010b","texts":[{"text":"I got $20 on Boston winning tonight, who trying to bet? \ud83d\udc40"},{"text":"Is there an alternative search engine besides Google? I hate when I search a question and the answer has absolutely nothing to do with the question"}],"tweet ids":[{"tweet id":"65408feeb147b509e4bc47280c062e16"},{"tweet id":"10a27a0fae34f8411a2ed3b0631db42d"}]}
+                {"twitter user id":"062492818c984febba843b650a4a602e","texts":[{"text":"@1inch, my favorite aggregator has a sweet booth this year, if you ignore the glare lol https:\/\/t.co\/BJdG60wpKR"},{"text":"Takes 2 $Matic or 100 $BANK on polygon. That's one of the lowest cost ways to now flex commitment to community, and value the work of your peers in so doing."}],"tweet ids":[{"tweet id":"841834bda2a5703a27a9e2a2e0e11471"},{"tweet id":"6539be1639225a7b362e71dba7dcf18a"}]}
+                </pre>   
+               
+                </li>
+                <li>A truth.txt file with the list of authors and the ground truth. The format of the truth.txt file is as follows. The first column corresponds to the author id. 
+               The second column contains the truth label.<br></li>
+                <pre class="prettyprint json" style="overflow-x: auto;"> 
+                {"twitter user id":"0003d5772f14b3147659f37b5aa4399e","class":"no influencer"}
+                {"twitter user id":"00230caa0289b84a7a077457435d26b8","class":"macro"}
+                </pre> 
                                            
-            <h3 class="uk-margin-small-top">Output</h3>  
-            <p>Your software must take as input the absolute path to an unpacked dataset, and has to output
-                for each document of the dataset a corresponding JSON file that looks like this:</p>
-              <pre class="prettyprint json" style="overflow-x: auto;"> 
-{"twitter user id":"a4b9c45b95919bfceded5cd933503ad1","text":"You\u2019ve seen each other naked","tweed id":"9c598533c8941ff31d6e59e991d00d55","class":"macro", "probability": 0.5}
-{"twitter user id":"0f32fb22e9b6538ed7d6c49ebbbfd879","text":"@Maryerm_ya @AM_Saleeem Don't baby me","tweed id":"fc83613cde61a80cc5b9f5adad6d79e2","class":"macro", "probability": 0.5}
-              </pre>
                                                                                                           
             <h2 id="evaluation">Evaluation </h2> 
-            <p>The performance of your system will be ranked by Accuracy and Macro-F1. 
-                               We will also analyse the precision, recall and f-measure per class to look into 
+            <p>The performance of your system will be ranked by Macro-F1. 
+                               We will also analyse the accuracy, precision, recall and f-measure per class to look into 
                                the performance of the systems regarding each possibility.
             </p>
             <h2>Results SubTask 1: Low-resource influencer profiling</h2>
