@@ -47,41 +47,41 @@ description: PAN at CLEF 2023 - >Profiling Cryptocurrency Influencers with Few-s
                 Moreover, we propose to categorize other related aspects of the influencers, also using a low-resource setting. Specifically, 
                     we focus on English Twitter posts for three different sub-tasks: </li>
                <ol>
-               <li>Low-resource influencer profiling (subtask-1):</li>
+               <li><b>Low-resource influencer profiling (subtask-1):</b></li>
                    <ul>
                    <li>Input: 
                     <br><span class="uk-text-muted uk-padding-small uk-padding-remove-vertical">32 users per label with a maximum of 10 English tweets each.</span>
                     <br><span class="uk-text-muted uk-padding-small uk-padding-remove-vertical">Classes: (1) null, (2) nano, (3) micro, (4) macro, (5) mega </span>
                    </li>
-                   <li>Evaluation: macro F1 and accuracy </li>
+                   <li>Oficial evaluation metric: Macro F1 </li>
                    <li>Submission: TIRA.</li>
-                   <li>Baselines: tba.</li>
+                   <li>Baselines: </li>
                    </ul>
               
-               <li>Low-resource influencer interest identification (subtask-2):</li>
+               <li><b>Low-resource influencer interest identification (subtask-2):</b></li>
                    <ul>
                    <li>Input: 
                     <br><span class="uk-text-muted uk-padding-small uk-padding-remove-vertical">64 users per label with 1 English tweets each.</span>
                     <br><span class="uk-text-muted uk-padding-small uk-padding-remove-vertical">Classes: (1) technical information, (2) price update, (3) trading matters, 
                        (4) gaming, (5) other </span>
                    </li>
-                   <li>Evaluation: macro F1 and accuracy </li>
+                   <li>Oficial evaluation metric: Macro F1 </li>
                    <li>Submission: TIRA.</li>
-                   <li>Baselines: tba.</li>
+                   <li>Baselines: <em>tba.</em></li>
                    </ul>
-               <li>Low-resource influencer intent identification (subtask-3):</li>
+               <li><b>Low-resource influencer intent identification (subtask-3):</b></li>
                  <ul>
                    <li>Input: 
                     <br><span class="uk-text-muted uk-padding-small uk-padding-remove-vertical">64 users per label with 1 English tweets each.</span>
                     <br><span class="uk-text-muted uk-padding-small uk-padding-remove-vertical">Classes: (1) subjective opinion, (2) financial information, 
                        (3) advertising, (4) announcement </span>
                    </li>
-                   <li>Evaluation: macro F1 and accuracy </li>
+                   <li>Oficial evaluation metric: Macro F1 </li>
                    <li>Submission: TIRA.</li>
-                   <li>Baselines: tba.</li>
+                   <li>Baselines: <em>tba.</em></li>
                   </ul>
             </ol>
-            <li>Participation for independent tasks, both from machine and deep learning paradigms, are welcome. </li>
+            <li>Participations for independent tasks, both from machine and deep learning pespective, are welcome. </li>
             <h2 id="task">Task</h2>
             <p> Data annotation for Natural Language Processing (NLP) is a challenging task. Aspects such as the economic and temporal cost, 
             the psychological and linguistic expertise needed by the annotator, and the congenital subjectivity involved in the annotation task, 
@@ -96,10 +96,10 @@ description: PAN at CLEF 2023 - >Profiling Cryptocurrency Influencers with Few-s
             Concepts such as transfer learning [4] and few-shot learning [5,6,7,8] will be key to excel. </p>             
            
            <h2 id="award">Award</h2>
-             tba            
+             <em>tba.</em>          
            <h2 id="data">Data</h2>
            <h3 class="uk-margin-small-top">Input</h3>
-           <p> Dataset format is the same for each sub task. The uncompressed dataset consists in a folder which contains two JSON files:</p> 
+           <p> The dataset format is the same for each sub task. The uncompressed dataset consists in a folder which contains two JSON files:</p> 
             <ul>
                 <li>A train-truth.json file with the list of authors and the ground truth.</li>
                 <pre class="prettyprint json" style="overflow-x: auto;"> 
@@ -116,18 +116,15 @@ description: PAN at CLEF 2023 - >Profiling Cryptocurrency Influencers with Few-s
                 </li>  
          </ul>
          <h3 class="uk-margin-small-top">Output</h3>
-            <p>Your software must take as input the absolute path to an unpacked dataset, and has to output a JSON file that looks like this:</p>
+            <p>Participants software must take as input the absolute path to an unpacked dataset. The output JSON file looks like this:</p>
                 <pre class="prettyprint json" style="overflow-x: auto;">
 {"twitter user id":"0003d5772f14b3147659f37b5aa4399e","class":"no influencer", "probability": 1.0}
 {"twitter user id":"00230caa0289b84a7a077457435d26b8","class":"macro", "probability": 0.5} 
                 </pre>
-            <p>The naming of the output files is up to you. However, we recommend to use the "sub task id" eg; "subtask1" as
-                filename and "json" as extension.</p>   
-         
+            <p>The output file naming is up to participants. However, we recommend to use the "subtask-id" eg; "subtask-1" as
+                filename and "json" as extension.</p>  
           <h2 id="evaluation">Evaluation </h2> 
-          <p>The performance of your system will be ranked by Macro-F1. 
-                               We will also analyse the accuracy, precision, recall and f-measure per class to look into 
-                               the performance of the systems regarding each possibility.
+          <p>The official evaluation metric is Macro F1. We will also analyse per-class accuracy, precision, recall and f-measure to show the participant performance regarding.
             </p>
             <h2>Results SubTask 1: Low-resource influencer profiling</h2>
              <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
