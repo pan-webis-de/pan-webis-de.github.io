@@ -47,7 +47,7 @@ description: PAN at CLEF 2023 - >Profiling Cryptocurrency Influencers with Few-s
                 Moreover, we propose to categorize other related aspects of the influencers, also using a low-resource setting. Specifically, 
                     we focus on English Twitter posts for three different sub-tasks: </li>
                <ol>
-               <li><b>Low-resource influencer profiling (subtask-1):</b></li>
+               <li><b>Low-resource influencer profiling (subtask1):</b></li>
                    <ul>
                    <li>Input: 
                     <br><span class="uk-text-muted uk-padding-small uk-padding-remove-vertical">32 users per label with a maximum of 10 English tweets each.</span>
@@ -58,7 +58,7 @@ description: PAN at CLEF 2023 - >Profiling Cryptocurrency Influencers with Few-s
                    <li>Baselines: User-character Logistic Regression; <a href="https://huggingface.co/sentence-transformers/sentence-t5-large">t5-large</a> (bi-encoders) - zero shot [7], <a href="https://huggingface.co/sentence-transformers/sentence-t5-large">t5-large</a> (label tuning) - few shot [7] </li>
                    </ul>
               
-               <li><b>Low-resource influencer interest identification (subtask-2):</b></li>
+               <li><b>Low-resource influencer interest identification (subtask2):</b></li>
                    <ul>
                    <li>Input: 
                     <br><span class="uk-text-muted uk-padding-small uk-padding-remove-vertical">64 users per label with 1 English tweets each.</span>
@@ -69,7 +69,7 @@ description: PAN at CLEF 2023 - >Profiling Cryptocurrency Influencers with Few-s
                    <li>Submission: TIRA.</li>
                    <li>Baselines: User-character Logistic Regression; <a href="https://huggingface.co/sentence-transformers/sentence-t5-large">t5-large</a> (bi-encoders) - zero shot [7], <a href="https://huggingface.co/sentence-transformers/sentence-t5-large">t5-large</a> (label tuning) - few shot [7] </li>
                    </ul>
-               <li><b>Low-resource influencer intent identification (subtask-3):</b></li>
+               <li><b>Low-resource influencer intent identification (subtask3):</b></li>
                  <ul>
                    <li>Input: 
                     <br><span class="uk-text-muted uk-padding-small uk-padding-remove-vertical">64 users per label with 1 English tweets each.</span>
@@ -121,7 +121,7 @@ description: PAN at CLEF 2023 - >Profiling Cryptocurrency Influencers with Few-s
 {"twitter user id":"0003d5772f14b3147659f37b5aa4399e","class":"no influencer", "probability": 1.0}
 {"twitter user id":"00230caa0289b84a7a077457435d26b8","class":"macro", "probability": 0.5} 
                 </pre>
-            <p>The output file naming is up to participants. However, we recommend to use the "subtask-id" eg; "subtask-1" as
+            <p>The output file naming is up to participants. However, we recommend to use the "subtask-id" eg; "subtask1" as
                 filename and "json" as extension.</p>  
           <h2 id="evaluation">Evaluation </h2> 
           <p>The official evaluation metric is Macro F1. We will also analyse per-class accuracy, precision, recall and f-measure to show the participant performance regarding.
