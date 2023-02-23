@@ -19,9 +19,9 @@ description: PAN at CLEF 2023 - Style Change Detection and Multi-Author Writing 
             <ul class="uk-list">
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
-<!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>-->
-<!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>-->
-<!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>-->
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>
 <!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>-->
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
@@ -33,21 +33,105 @@ description: PAN at CLEF 2023 - Style Change Detection and Multi-Author Writing 
             <h2 id="synopsis">Synopsis</h2>
             <ul>
                 <li>Task: Given a document, determine at which positions the author changes.</li>
-                <li>Input: tba.
+                <li>Input: Reddit comments, combined into documents. <!-- [<a href="">data</a>]-->
                 </li>
-                <li>Output: tba.
+                <li>Output: Where does authorship change on the paragraph level.  <!-- [<a href="">validator</a>]-->
                 </li>
-                <li>Evaluation: tba.
+                <li>Evaluation: F1.  <!-- [<a href="">code</a>].-->
                 </li>
-                <li>Submission: TIRA
+                <li>Submission: TIRA.
                 </li>
             </ul>
 
+
             <h2 id="task">Task</h2>
-            Details of the task will be announced at a later date.
+            <p>The goal of the style change detection task is to identify text positions within a given multi-author document at which the author switches. Hence, a fundamental question is the following: If multiple authors together have written a text, can we find evidence for this fact; do we have a means to detect variations in the writing style? Answering this question belongs to the most difficult and most interesting challenges in author identification: Style change detection is the only means to detect plagiarism in a document if no comparison texts are given; likewise, style change detection can help to uncover gift authorships, to verify a claimed authorship, or to develop new technology for writing support.</p>
+
+            <p>Previous editions of the multi-author writing style analysis task aim at e.g., detecting whether a document is single- or multi-authored (<a href="https://pan.webis.de/clef18/pan18-web/style-change-detection.html">2018</a>), the actual number of authors within a document (<a href="https://pan.webis.de/clef19/pan19-web/style-change-detection.html">2019</a>), whether there was a style change between two consecutive paragraphs (<a href="https://pan.webis.de/clef20/pan20-web/style-change-detection.html">2020</a>, <a href="https://pan.webis.de/clef21/pan21-web/style-change-detection.html">2021</a>, <a href="https://pan.webis.de/clef22/pan22-web/style-change-detection.html">2022</a>), and where the actual style changes were located (<a href="https://pan.webis.de/clef21/pan21-web/style-change-detection.html">2021</a>, <a href="https://pan.webis.de/clef22/pan22-web/style-change-detection.html">2022</a>). In <a href="https://pan.webis.de/clef22/pan22-web/style-change-detection.html">2022</a>, style changes also had to be detected on the sentence level. The previously used datasets exhibited high topic diversity, which allowed the participants to leverage topic information as a style change signal. In this year's edition of the writing style analysis task, special attention is paid to this issue. </p>
+
+            <p>We ask participants to solve the following task: <b>for a given text, find all positions of writing style change on the paragraph-level</b> (i.e., for each pair of consecutive paragraphs, assess whether there was a style change). The simultaneous change of authorship and topic will be carefully controlled and we will provide participants with datasets of three difficulty levels:</p>
+
+            <ol>
+                <li><b>Easy:</b> The paragraphs of a document cover a variety of topics, allowing approaches to make use of topic information to detect authorship changes.</li>
+                <li><b>Medium:</b> The topical variety in a document is small (though still present) forcing the approaches to focus more on style to effectively solve the detection task.</li>
+                <li><b>Hard:</b> All paragraphs in a document are on the same topic.</li>
+            </ol>
+
+            <p>All documents are provided in English and may contain an arbitrary number of style changes. However, style changes may only occur between paragraphs (i.e., a single paragraph is always authored by a single author and contains no style changes). </p>
+
+
+            <h2 id="data">Data</h2> <!-- [<a href="https://zenodo.org/record/6334245#.YiYCcXXMJ8x">TODO</a>]</h2>-->
+            <p>To develop and then test your algorithms, three datasets including ground truth information are provided
+            (<i>dataset1</i> for the easy task, <i>dataset2</i> for the medium task, and <i>dataset3</i> for the hard task).</p>
+
+            <p>Each dataset is split into three parts:</p>
+
+            <ol>
+                <li><i>training set:</i> Contains 70% of the whole dataset and includes ground truth data. Use this set to develop and train your models.</li>
+                <li><i>validation set:</i> Contains 15% of the whole dataset and includes ground truth data. Use this set to evaluate and optimize your models. </li>
+                <li><i>test set:</i> Contains 15% of the whole dataset, no ground truth data is given. This set is used for evaluation.</li>
+            </ol>
+
+            <p>You are free to use additional external data for training your models. However, we ask you to make the additional data utilized freely available under a suitable license. </p>
+
+            <h3 id="input_format">Input Format</h3>
+            <p>The datasets are based on user posts from various subreddits of the <a href="https://www.reddit.com/">Reddit</a> platform. We refer to each input problem (i.e., the document for which to detect style changes) by an ID, which is subsequently also used to identify the submitted solution to this input problem. We provide one folder for train, validation, and test data for each dataset, respectively.</p>
+
+            <p>For each problem instance <code>X</code> (i.e., each input document), two files are provided:</p>
+            <ol>
+                <li><code>problem-X.txt</code> contains the actual text.</li>
+                <li><code>truth-problem-X.json</code> contains the ground truth, i.e., the correct solution in JSON format. An example file is listed in the following:
+                    <pre class="prettyprint linenums uk-margin-remove-bottom"><code class="lang-json">{
+                                "authors": NUMBER_OF_AUTHORS,
+                                "changes": RESULT_ARRAY_TASK
+                            }</code></pre>
+
+                    <p>The result (key "changes") is represented as an array, holding a binary for each pair of consecutive paragraphs within the document (0 if there was no style change, 1 if there was a style change). </p>
+
+                    <p>An example of a multi-author document with a style change between the third and fourth paragraph could be described as follows (we only list the relevant key/value pairs here):</p>
+                    <pre class="prettyprint linenums uk-margin-remove-bottom"><code class="lang-json">{
+                               "changes": [0,0,1,...]
+                            }</code></pre>
+                </li>
+            </ol>
+
+            <h3 id="output_format">Output Format</h3> <!--[<a
+href="https://github.com/pan-webis-de/pan-code/tree/master/clef23/style-change-detection" target="_blank">TODO</a>]</h3>-->
+            <p>To evaluate the solutions for the tasks, the results have to be stored in a single file for each of the input documents and each of the datasets. Please note that we require a solution file to be generated for each input problem for each dataset. The data structure during the evaluation phase will be similar to that in the training phase, with the exception that the ground truth files are missing.</p>
+
+            <p>For each given problem <code>problem-X.txt</code>, your software should output the missing solution file <code>solution-problem-X.json</code>, containing a JSON object holding the solution to the respective task. The solution is an array containing a binary value for each pair of consecutive paragraphs .</p>
+
+            <p>An example solution file is featured in the following:</p>
+
+            <pre class="prettyprint linenums uk-margin-remove-bottom"><code class="lang-json">{
+                                "changes": [0,0,1,0,0,...]
+                            }</code></pre>
+
+            <h2 id="evaluation">Evaluation</h2> <!--[<a
+href="https://github.com/pan-webis-de/pan-code/tree/master/clef23/style-change-detection" target="_blank">TODO</a>]</h2>-->
+            <p>Submissions are evaluated by the F1-score measure for each document. The solutions for each dataset are evaluated independently based on the obtained evaluation scores. 
+
+            <p>We provide you with a script to compute those measures based on the produced output-files [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef23/style-change-detection">evaluator and tests</a>].</p> 
+
+
+            <h2 id="submission">Submission</h2>
+            <p>Once you finish tuning your approach on the validation set, your software will be tested on the test set. During the competition, the test sets will not be released publicly. Instead, we ask you to submit your software for evaluation at our site as follows.</p>
+
+            <p>We ask you to prepare your software so that it can be executed via command line calls. The command shall take as input (i) an absolute path to the directory of the test corpora and (ii) an absolute path to an empty output directory:</p>
+
+            <pre class="prettyprint"><code>mySoftware -i INPUT-DIRECTORY -o OUTPUT-DIRECTORY</code></pre>
+
+            <p>Within <code>INPUT-DIRECTORY</code>, you will find three folders (<code>dataset1</code>, <code>dataset2</code>, <code>dataset3</code>) holding the sets of problem instances (i.e., <code>problem-[id].txt</code> files) for each of the three datasets, respectively. For each problem instance you should produce the solution file <code>solution-problem-[id].json</code> in the respective subfolder (<code>dataset1</code>, <code>dataset2</code>, <code>dataset3</code>) of <code>OUTPUT-DIRECTORY</code>. For instance, you read <code>INPUT-DIRECTORY/dataset1/problem-12.txt</code>, process it, and write your results to <code>OUTPUT-DIRECTORY/dataset1/solution-problem-12.json</code>.</p>
+
+            <p>In general, this task follows PAN's software submission strategy <a href="{{ 'organization.html#participation-guide' | relative_url }}">described here</a>.</p>
+
+            <p>Note: By submitting your software you retain full copyrights. You agree to grant us usage rights only for the PAN competition. We agree not to share your software with a third party or use it for other purposes than the PAN competition.</p>
 
             <h2 id="related-work">Related Work</h2>
             <ul>
+                <li>
+                    <a href="{{ 'publications.html#?q=2022%20Zangerle' | relative_url }}">Style Change Detection, PAN@CLEF'22</a>
+                </li>
                 <li>
                     <a href="{{ 'publications.html#?q=2021%20Zangerle' | relative_url }}">Style Change Detection, PAN@CLEF'21</a>
                 </li>
