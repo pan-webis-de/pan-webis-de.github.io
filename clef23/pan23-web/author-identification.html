@@ -8,14 +8,14 @@ description: PAN at CLEF 2023 - Authorship Verification
 <ul class="uk-breadcrumb">
 <li><a href="../../index.html">PAN</a></li>
 <li><a href="../../shared-tasks.html">Shared Tasks</a></li>
-<li class="uk-disabled"><a href="#">Cross-Discourse Type Authorship Verification 2023</a></li>
+<li class="uk-disabled"><a href="#">Authorship Verification 2023</a></li>
 </ul>
 </nav>
 
 <main class="uk-section uk-section-default">
     <div class="uk-container"">
         <div class="uk-container uk-margin-small">
-            <h1 class="uk-margin-remove-top">Cross-Discourse Type Authorship Verification 2023</h1>
+            <h1 class="uk-margin-remove-top">Authorship Verification 2023</h1>
             <ul class="uk-list">
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
@@ -29,21 +29,114 @@ description: PAN at CLEF 2023 - Authorship Verification
 
         <div class="uk-container uk-margin-medium">
 
-<h2 id="synopsis">Synopsis</h2>
+            <h2 id="synopsis">Synopsis</h2>
             <ul>
-                <li>Task: Given two texts from written and oral Discourse Types (DT), determine if they are written by the same author.</li>
-                <li>Input: tba.</li>
-                <li>Evaluation: tba.</li>
-                <li>Submission: TIRA</li>
-                <li>Baseline: tba.</li>
+                <li>Task: Given two texts belonging to different Discourse Types (DT), determine if they are written by the same author (<b>cross-DT authorship verification</b>).</li>
+                <li>Input: Pairs of texts from the Aston 100 Idiolects Corpus in English covering DTs of both written and spoken language: essays, emails, interviews, and speech transcriptions. [<a href="">data</a>] </li>
+                <li>Evaluation: AUC, F1, c@1, F_0.5u, Brier [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef23/authorship-verification">code</a>]</li>
+                <li>Submission: Deployment on TIRA [<a href="https://www.tira.io/task/pan23-authorship-verification">submit</a>]</li>
+                <li>Baseline: TFIDF-weighted char n-grams cosine similarity; compression method calculating cross-entropy [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef23/authorship-verification">code</a>]</li>
             </ul>
 
-            <h2 id="task">Task</h2>
-            Details of this task will be announced soon.
 
+            <h2 id="task">Task</h2>
+            <p>Authorship verification is the task of deciding whether two texts have been written by the same author based on comparing the texts' writing styles.
+            In previous editions of PAN, we explored the effectiveness of authorship verification technology in several languages and text genres. In the 2020 and 2021 editions, cross-domain authorship verification using fanfiction texts was examined. Despite certain differences between fandoms, the task of cross-fandom authorship verification has proved to be relatively feasible. In the 2022 edition, we introduced more challenging scenarios where each author verification case considers two texts that belong to different DTs (cross-DT authorship verification). However, all considered DTs correspend to written language. In the current edition, for the first time, we will focus
+on (cross-discourse type) authorship verification where both 
+written language (i.e., essays and emails) and oral language (i.e., interviews and speech transcriptions) are represented in the set of discourse types. This will provide the opportunity to study the robustness and effectiveness of stylometric approaches in challenging and intriguing conditions. In addition, the ability of authorship verification methods to handle the different forms of expression in written and oral language will be highlighted. </p>
+            
+            <p>Based on a new corpus in English, we provide cross-DT authorship verification cases using the following DTs: </p>
+			<ul>
+				<li>Essays (written discourse)</li>
+				<li>Emails (written discourse)</li>
+				<li>Interviews (spoken discourse)</li>
+				<li>Speech transcriptions (spoken discourse)</li>
+			</ul>
+            <p>The corpus comprises texts of around 100 individuals. All individuals have similar age (18-22) and are native English speakers. The topic of text samples is not restricted while the level of formality can vary within a certain DT (e.g., text messages may be addressed to family members or non-familial acquaintances).	</p>
+	    
+            <h2 id="data">Data 
+		    [<a href="">download</a>] 
+		</h2>
+            <p>The train (calibration) and test datasets consist of pairs of texts belonging to two different DTs. Each pair was assigned a unique identifier and we distinguish between same-author pairs and different-authors pairs. Additionally, we offer metadata on the discourse type for each text in the pair. Both training and test datasets are structured in the same way and have similar properties. However, their author sets are not overlapping.</p>
+            <p>Since the text length of texts of emails and interviews can be very small, each text belonging to these DTs is actually a concatenation of different messages. We use the <code>&lt;new&gt;</code> tag to denote boundaries of original messages. New lines within a text are denoted with the <code>&lt;nl&gt;</code>tag. In addition, author-specific and topic-specific information, e.g. named entities, has been replaced with corresponding tags.</p> In spoken discourse types, additional tags are used to indicate  nonverbal vocalisations (e.g, cough, laugh).
+
+            <p>The training dataset comes with two newline delimited JSON files encoded in UTF8.
+            The first file <code>pairs.jsonl</code> contains pairs of texts (each pair has a unique ID) and their discourse type labels:</p>
+
+            <pre id="jsonl-example" class="prettyprint linenums uk-margin-remove-bottom">
+<code class="lang-json">{"id": "6cced668-6e51-5212-873c-717f2bc91ce6", "discourse_type": ["essay", "email"], "pair": ["Text 1...", "Text 2..."]}
+                        {"id": "ae9297e9-2ae5-5e3f-a2ab-ef7c322f2647", "discourse_type": ["essay", "interview"], "pair": ["Text 3...", "Text 4..."]}
+...</code></pre>
+
+            <p>The second file, <code>truth.jsonl</code>, contains the ground truth for all pairs. The ground truth
+            is composed of a boolean flag indicating if texts in a pair are from the same author and the author IDs:</p>
+            <pre id="truth-jsonl-example" class="prettyprint linenums uk-margin-remove-bottom">
+<code class="lang-json">{"id": "6cced668-6e51-5212-873c-717f2bc91ce6", "same": true, "authors": ["1446633", "1446633"]}
+                        {"id": "ae9297e9-2ae5-5e3f-a2ab-ef7c322f2647", "same": false, "authors": ["1535385", "1998978"]}
+...</code></pre>
+
+            <p>Data and ground truth are in the same order and can be ingested line-wise in parallel without the need for a reshuffle based on the pair ID. The discourse type labels will be given in both the training and testing datasets. The ground truth file will only be available for the training data.</p>
+	    <p>The development of the 100 Idiolects corpus was supported by a Research England Expanding Excellence in England (E3) grant awarded to the Aston Institute for Forensic Linguistics. This dataset should not to be used for any other research purposes without permission from the Aston Institute for Forensic Linguistics.</p>
+
+            <h2 id="baseline">Baselines 
+		    [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef22/authorship-verification">code</a>] 
+		</h2>
+            <p>We provide the following baseline methods: </p>
+            <ul>
+            <li>A simple method that calculates the cosine similarities between TFIDF-normalized, bag-of-character-tetragrams representations of the texts in a pair. The resulting scores are then shifted using a simple grid search, to arrive at an optimal performance on the calibration data. </li>
+            <li>A simple method based on text compression that given a pair of texts calculates the cross-entropy of text2 using the Prediction by Partial Matching model of text1 and vice-versa. Then, the mean and absolute difference of the two cross-entropies are used by a logistic regression model to estimate a verification score in [0,1].</li>
+            </ul>
+            <p>Note that the above baseline methods do not make use of the available discourse type information: participants are highly encouraged to exploit this useful metadata in their submissions.</p>
+            
+            <h2 id="evaluation">Evaluation 
+		    [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef22/authorship-verification">code</a>]
+		</h2>
+            <p>Systems will be compared and ranked on the basis of five, complementary metrics:
+            <ul>
+                <li><b>AUC</b>: the conventional area-under-the-ROC-curve score, as implemented in <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.auc.html">scikit-learn</a>.</li>
+                <li><b>F1-score</b>: the well-known performance measure (not taking into account non-answers), as implemented in <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html">scikit-learn</a>.</li>
+                <li><b>c@1</b>: a variant of the conventional F1-score, which rewards systems that leave difficult problems unanswered (i.e. scores of exactly 0.5), introduced by Peñas and Rodrigo (2011).</li>
+                <li><b>F_0.5u</b>: a measure that puts more emphasis on deciding same-author cases correctly (Bevendorff et al. 2019)</li>
+                <li><b>Brier</b>: the complement of the well-known Brier score, for evaluating the goodness of (binary) probabilistic classififiers, as implemented in <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.brier_score_loss.html">scikit-learn</a>.</li>
+            </ul>
+            <p>These measures are complementary and provide a holistic way to assess a system's performance: c@1 measures the accuracy of binary predictions but also the ability of systems to leave difficult cases unanswered; AUC measures the ability of systems to assign higher scores to positive cases in comparison to negative cases; Brier measures the ability of systems to calibrate the verification scores as probability of a positive answer, etc.</p>
+
+            <p>A reference evaluation script is made available 
+		    [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef23/authorship-verification">code</a>]
+		. Systems will be applied to a pairs-file and are expected to produce a single jsonl-file as result. In this prediction file, each separate line should contain a valid json-string that provides the ID of a pair in the pairs-file and a "value" field, with a floating-point score that is bounded (0 >= score <= 1), indicating the probability that this pair is a same-author text pair. Systems are allowed to leave some problems unanswered: in such cases, the answer can be left out from the prediction file OR its value should be set to exactly 0.5. All answers that have a value of 0.5 will be considered non-decisions, which will affect some (but not all) evaluation metrics.</p>
+
+            <h2 id="submission">Submission</h2>
+            <p>Each participating team is allowed the submission of <b>at most three runs</b>. The participants should indicate in their notebook paper the submitted system settings for each run.</p>
+
+            <p>Submissions are <b>not</b> expected to be trained on TIRA (i.e. there will be no new calibration dataset for the testing phase). The submisisons should therefore contain already fully calibrated models that should only be deployed on TIRA for the actual testing.</p>
+
+            <p>We ask you to prepare your software so that it can be executed via command line calls. The command shall take as input (i) an absolute path to the EVALUATION-DIRECTORY and (ii) an absolute path to an OUTPUT-DIRECTORY:</p>
+
+            <pre id="jsonl-example" class="prettyprint uk-margin-remove-bottom"><code class="lang-json"> > mySoftware -i EVALUATION-DIRECTORY -o OUTPUT-DIRECTORY</code></pre>
+
+            <p>Within EVALUATION-DIRECTORY, a single jsonl-formatted file will be included (pairs.jsonl), containing the text pairs (analogously to the calibration data that was released). The answers should be written to a jsonl-formatted file (answers.jsonl) under OUTPUT-DIRECTORY. Each line should contain a single json-formatted answer, using the following syntax:</p>
+
+            <pre id="jsonl-example" class="prettyprint linenums uk-margin-remove-bottom">
+<code class="lang-json">{"id": "c04fdf1e-ddf5-5542-96e7-13ce18cae176", "value": 0.4921}
+                    {"id": "49dc4cae-3d32-5b4d-b240-a080a1dbb659", "value": 0.5}
+                    {"id": "f326fe7c-fc10-566f-a70f-0f36e3f92399", "value": 0.5}
+                    {"id": "16daa0d1-61b8-5650-b7ee-5e265bd40910", "value": 0.9333}
+                    {"id": "08b536a8-4fed-5f62-97bb-e57f79e841d2", "value": 0.0751}
+...</code></pre>
+
+            <p><i>Note:</i> Each verification problem should be solved independently of other problems in the collection.</p>
+
+            <p>You can choose freely among the available programming languages and among the operating systems Microsoft Windows and Ubuntu. We will ask you to deploy your software onto a virtual machine that will be made accessible to you after registration. You will be able to reach the virtual machine via ssh and via remote desktop. More information about how to access the virtual machines can be found in the user guide linked above.</p>
+
+            <p>Once deployed in your virtual machine, we ask you to access <a href="https://www.tira.io/">TIRA</a>, where you can self-evaluate your software on the test data.</p>
+
+            <p><i>Note:</i> By submitting your software you retain full copyrights. You agree to grant us usage rights only for the purpose of the PAN competition. We agree not to share your software with a third party or use it for other purposes than the PAN competition.</p>
+            
 
             <h2 id="related-work">Related Work</h2>
             <ul>
+				<li>
+                    Efstathios Stamatatos, Mike Kestemont, Krzysztof Kredens, Piotr Pezik, Annina Heini, Janek Bevendorff, Benno Stein, and Martin Potthast. <a href="https://ceur-ws.org/Vol-3180/paper-184.pdf">Overview of the Cross-Domain Authorship Verification Task at PAN 2022</a>. In Guglielmo Faggioli, Nicola Ferro, Allan Hanbury, and Martin Potthast, editors, CLEF 2023 Labs and Workshops, Notebook Papers, September 2023.
                 <li>
                     Mike Kestemont, Efstathios Stamatatos, Enrique Manjavacas, Janek Bevendorff, Martin Potthast, and Benno Stein, <a href="https://pan.webis.de/downloads/publications/papers/kestemont_2021.pdf">Overview of the Cross-Domain Authorship Verification Task at PAN 2021</a>. Working notes of CLEF 2021 - Conference and Labs of the Evaluation Forum.
                 </li>
@@ -92,7 +185,7 @@ description: PAN at CLEF 2023 - Authorship Verification
                 {% include people-cards/stein.html %}
             </div>
             <div class="uk-container uk-padding-large uk-padding-remove-bottom">
-                {% include organizations/clef-organizations-section.html year=2023 %}
+                {% include organizations/clef-organizations-section.html year=2022 %}
             </div>
         </div>
     </div>
