@@ -80,7 +80,8 @@ href="https://github.com/pan-webis-de/pan-code/tree/master/clef23/multi-author-a
 
             <p>For each problem instance <code>X</code> (i.e., each input document), two files are provided:</p>
             <ol>
-                <li><code>problem-X.txt</code> contains the actual text.</li>
+                <li><code>problem-X.txt</code> contains the actual text. When reading in files via Python, please use
+<code>open(path, "r", newline="")</code> to prevent any errors.</li>
                 <li><code>truth-problem-X.json</code> contains the ground truth, i.e., the correct solution in JSON format. An example file is listed in the following:
                     <pre class="prettyprint linenums uk-margin-remove-bottom"><code class="lang-json">{
                                 "authors": NUMBER_OF_AUTHORS,
