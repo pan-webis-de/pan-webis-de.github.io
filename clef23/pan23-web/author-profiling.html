@@ -129,7 +129,47 @@ description: PAN at CLEF 2023 - >Profiling Cryptocurrency Influencers with Few-s
                 For software submissions, you upload docker images to TIRA that will be executed on the test data within the 
                 TIRA platform (using a single file as input to produce a single file as output in the format specified above). </p>
            <h2 id="TIRA">TIRA Quickstart </h2> 
+            <p>
+            Participants can upload docker images that are executed within TIRA so that the runs can be reproduced or the software may be applied to different data (of same format) in the future. 
+            You can find the access credentials for your dedicated container registry to upload your images under "Docker Submission":
+            </p>
+            <img src="../pan23-figures/tira-upload-docker-image.png" alt="TIRA">
+            <p>
+            Please follow the instructions there to upload your image.
+            For instance, you can upload <a href="#baselines">the random baseline</a> for subtask 1, i.e., <code>docker tag pan-profiling-cryptocurrency-baselines:subtask1-random-0.0.1  registry.webis.de/code-research/tira/<YOUR-USER-NAME>/random-baseline-subtask1:0.0.1/code>, 
+                then logging in to your dedicated registry, i.e., <code>docker login -u YOUR-USER-NAME -pTOKEN-PROVIDED-BY-TIRA registry.webis.de</code> 
+                and finally uploading the image by running <code>docker push pan-profiling-cryptocurrency-baselines:subtask1-random-0.0.1</code>. 
+            </p>
+                
+            <p>
+            Your software is expected to accept two arguments: 
+            <ul>
+            <li>An input directory (named <code>$inputDataset</code> in TIRA). This input directory contains a input.json file that contains the input data.</li>
+            <li>An output directory (named <code>$outputDir</code> in TIRA). Your software should create its output in <code>$outputDir/subtask1.json</code>.</li>
+            </ul>
+            </p>
             
+            <p>
+            After you have uploaded your image, you can add new softwares that use this image.
+            Each combination of a command and a docker image is a software in TIRA (that can not be changed in retrospect to ensure reproducibility). 
+            Add a software by selecting your image and specifying the command that should be executed inside the image (should use the two arguments, for instance, the command for the naive baseline uploaded above is <code>python3 /random-baseline-subtask-1.py --input $inputDataset/train_text.json --output $outputDir/subtask1.json</code>):
+            
+            <img src="../pan23-figures/tira-add-docker-software.png" alt="TIRA">
+
+            </p>    
+             
+            <p>            
+            After adding the docker software, a new tab for this software appears.
+            You can run your software by specifying the compute resources (that your software has available during its execution) and the dataset (the input to the software). Please run your software on the datasets "task-1-type-classification" (for task 1) respectively "task-2-spoiler-generation" (for task 2) in TIRA to produce submissions (you can use the datasets "task-1-type-classification-validation" respectively "task-2-spoiler-generation-validation" to validate your approaches). You can run your software multiple times in parallel so executing your software on different resource specifications enables evaluations on the scalability of the software:
+            
+            <img src="../pan23-figures/tira-run-docker-software.png" alt="TIRA">
+            <p>
+            
+            Once the run of your software completes, you can see the run and its evaluation:
+            
+            <img src="../pan23-figures/tira-run-results.png" alt="TIRA">
+            </p>
+                
           <h2 id="evaluation">Evaluation </h2> 
           <p>The official evaluation metric is Macro F1. We will also analyse per-class accuracy, precision, recall and f-measure to show the participant performance regarding.
             </p>
