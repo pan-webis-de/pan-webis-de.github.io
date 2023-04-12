@@ -55,7 +55,7 @@ description: PAN at CLEF 2023 - >Profiling Cryptocurrency Influencers with Few-s
                    </li>
                    <strong>March 6, 2023 - Version 1.1 </strong> New dataset version is available.
                    <li>Oficial evaluation metric: Macro F1 </li>
-                   <li>Submission: TIRA.</li>
+                   <li>Submission: <a href="https://www.tira.io/">TIRA</a></li>
                    <li>Baselines: User-character Logistic Regression; <a href="https://huggingface.co/sentence-transformers/sentence-t5-large">t5-large</a> (bi-encoders) - zero shot [7], <a href="https://huggingface.co/sentence-transformers/sentence-t5-large">t5-large</a> (label tuning) - few shot [7] </li>
                    </ul>
               
@@ -67,7 +67,7 @@ description: PAN at CLEF 2023 - >Profiling Cryptocurrency Influencers with Few-s
                        (4) gaming, (5) other </span>
                    </li>
                    <li>Oficial evaluation metric: Macro F1 </li>
-                   <li>Submission: TIRA.</li>
+                   <li>Submission: <a href="https://www.tira.io/">TIRA</a></li>
                    <li>Baselines: User-character Logistic Regression; <a href="https://huggingface.co/sentence-transformers/sentence-t5-large">t5-large</a> (bi-encoders) - zero shot [7], <a href="https://huggingface.co/sentence-transformers/sentence-t5-large">t5-large</a> (label tuning) - few shot [7] </li>
                    </ul>
                <li><b>Low-resource influencer intent identification (subtask3):</b></li>
@@ -78,7 +78,7 @@ description: PAN at CLEF 2023 - >Profiling Cryptocurrency Influencers with Few-s
                        (3) advertising, (4) announcement </span>
                    </li>
                    <li>Oficial evaluation metric: Macro F1 </li>
-                   <li>Submission: TIRA.</li>
+                   <li>Submission: <a href="https://www.tira.io/">TIRA</a></li>
                    <li>Baselines: User-character Logistic Regression; <a href="https://huggingface.co/sentence-transformers/sentence-t5-large">t5-large</a> (bi-encoders) - zero shot [7], <a href="https://huggingface.co/sentence-transformers/sentence-t5-large">t5-large</a> (label tuning) - few shot [7] </li>
                   </ul>
             </ol>
@@ -128,6 +128,10 @@ description: PAN at CLEF 2023 - >Profiling Cryptocurrency Influencers with Few-s
             <p> We will accept run software submissions via [<a href="https://www.tira.io/" target="blank">TIRA</a>]. 
                 For software submissions, you upload docker images to TIRA that will be executed on the test data within the 
                 TIRA platform (using a single file as input to produce a single file as output in the format specified above). </p>
+            <p> We provide some random baselines for all the sub tasks those are available at <a href="https://github.com/pan-webis-de/pan-code/tree/master/clef23/profiling-cryptocurrency-influencers">
+                the corresponding git repository </a>. 
+            </p>
+            
            <h2 id="TIRA">TIRA Quickstart </h2> 
             <p>
             Participants can upload docker images that are executed within TIRA so that the runs can be reproduced or the software may be applied to different data (of same format) in the future. 
@@ -136,7 +140,9 @@ description: PAN at CLEF 2023 - >Profiling Cryptocurrency Influencers with Few-s
             <img src="../pan23-figures/tira-upload-docker-image.png" alt="TIRA">
             <p>
             Please follow the instructions there to upload your image.
-            For instance, you can upload <a href="https://github.com/pan-webis-de/pan-code/tree/master/clef23/profiling-cryptocurrency-influencers">the random baseline</a> for subtask 1, i.e., <code>docker tag pan-profiling-cryptocurrency-baselines:subtask1-random-0.0.1  registry.webis.de/code-research/tira/<YOUR-USER-NAME>/random-baseline-subtask1:0.0.1/code>, 
+            For instance, you can upload <a href="https://github.com/pan-webis-de/pan-code/tree/master/clef23/profiling-cryptocurrency-influencers">
+                the random baseline</a> for subtask 1, i.e., 
+                <code>docker tag pan-profiling-cryptocurrency-baselines:subtask1-random-0.0.1  registry.webis.de/code-research/tira/<YOUR-USER-NAME>/random-baseline-subtask1:0.0.1 </code>, 
                 then logging in to your dedicated registry, i.e., <code>docker login -u YOUR-USER-NAME -pTOKEN-PROVIDED-BY-TIRA registry.webis.de</code> 
                 and finally uploading the image by running <code>docker push pan-profiling-cryptocurrency-baselines:subtask1-random-0.0.1</code>. 
             </p>
