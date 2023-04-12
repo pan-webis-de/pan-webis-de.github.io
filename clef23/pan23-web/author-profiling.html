@@ -134,52 +134,62 @@ description: PAN at CLEF 2023 - >Profiling Cryptocurrency Influencers with Few-s
             
            <h2 id="TIRA">TIRA Quickstart </h2> 
             <p>
-            Participants can upload docker images that are executed within TIRA so that the runs can be reproduced or the software may be applied to different data (of same format) in the future. 
-            You can find the access credentials for your dedicated container registry to upload your images under "Docker Submission":
+            Participants must upload a docker image containing the created/trained solution to be evaluated at TIRA. 
+            This image could be re-used in the future for different datasets using the same format. 
+            To upload your images, you can find the access credentials for your personal container registry under "Docker Submission":
             </p>
             <img src="../pan23-figures/tira-upload-docker-image.png" alt="TIRA">
             <p>
-            Please follow the instructions there to upload your image.
-            For instance, you can upload <a href="https://github.com/pan-webis-de/pan-code/tree/master/clef23/profiling-cryptocurrency-influencers">
-                the random baseline</a> for subtask1, i.e., 
-                <code> docker build -t pan-profiling-cryptocurrency-baselines:subtask1-random-0.0.1 . </code>, 
-                then logging in to your dedicated registry, i.e., <code>docker login -u YOUR-USER-NAME -pTOKEN-PROVIDED-BY-TIRA registry.webis.de</code> 
-                and finally uploading the image by running <code>docker push pan-profiling-cryptocurrency-baselines:subtask1-random-0.0.1</code>. 
+            Please follow the instructions there to upload your image. 
+            For instance, you can build the random baseline (more info about how to create a docker image and run baselines 
+            <a href="https://github.com/pan-webis-de/pan-code/tree/master/clef23/profiling-cryptocurrency-influencers">here</a>) as follows:
             </p>
-                
+            <code> docker build -t pan-profiling-cryptocurrency-baselines:subtask1-random-0.0.1 . </code>
             <p>
-            Your software is expected to accept two arguments: 
+            You can next login to your dedicated registry as follows:
+            </p>
+            <code>docker login -u YOUR-USER-NAME -pTOKEN-PROVIDED-BY-TIRA registry.webis.de</code> 
+            <p>  Finally, you can upload your image by running: </p>
+            <code>docker push pan-profiling-cryptocurrency-baselines:subtask1-random-0.0.1</code>                 
+            <p>
+            Note that your software is expected to receive two arguments:
             <ul>
-            <li>An input directory (named <code>$inputDataset</code> in TIRA). This input directory contains a input.json file that contains the input data.</li>
-            <li>An output directory (named <code>$outputDir</code> in TIRA). Your software should create its output in <code>$outputDir/subtask1.json</code>.</li>
+            <li> First, an input directory (named <code>$inputDataset</code> in TIRA). This input directory contains a input.json file that contains the input data. </li>
+            <li> Second, an output directory (named <code>$outputDir</code> in TIRA). Your software should create its output in <code>$outputDir/subtask1.json</code>, where “subtask1” will be the corresponding one. </li>
             </ul>
             </p>
             
             <p>
-            After you have uploaded your image, you can add new softwares that use this image.
-            Each combination of a command and a docker image is a software in TIRA (that can not be changed in retrospect to ensure reproducibility). 
-            Add a software by selecting your image and specifying the command that should be executed inside the image 
-            (should use the two arguments, for instance, the command for the random baseline uploaded above is <code>python3 /random-baseline-subtask-1.py --input $inputDataset/train_text.json --output $outputDir/subtask1.json</code>):
-             </p>
+            After you have uploaded your image, you can create different "command-image" configurations that use it. 
+            Each combination of a command and a docker image is called a "software" in TIRA. 
+            Add a software by selecting your image and specifying the command that should be executed inside the image. 
+            It must use the two aforementioned arguments. For instance, the command for the random baseline uploaded above is:
+            </p>    
+                
+            <code>python3 /random-baseline-subtask-1.py --input $inputDataset/train_text.json --output $outputDir/subtask1.json</code>
+            <p>This will be displayed as follows: </p> 
                 
             <img src="../pan23-figures/tira-add-docker-software_author.png" alt="TIRA">
-            <p>            
-            After adding the docker software, a new tab for this software appears.
-            You can run your software by specifying the compute resources (that your software has available during its execution) 
-            and the dataset (the input to the software). Please run your software on the datasets for example, "pan23-profiling-cryptocurrency-influencers-subtask1-20230210-test" (for subtask 1) in TIRA to produce submissions (you can use the datasets "pan23-profiling-cryptocurrency-influencers-subtask1-20230210-training" to validate your approaches). 
-            You can run your software multiple times in parallel so executing your software on different resource specifications enables evaluations on the scalability of the software:
+            
+            <p> 
+            After creating the docker software, a new tab for this software is added. 
+            You can run your software by specifying the needed hardware resources and the input dataset. 
+            For instance, you can evaluate and record your results for subtask1 using "pan23-profiling-cryptocurrency-influencers-subtask1-20230210-test". 
+            To just validate that your software works, you can evaluate on training "pan23-profiling-cryptocurrency-influencers-subtask1-20230210-training". 
             </p>
+        
             <img src="../pan23-figures/tira-run-docker-software_author.png" alt="TIRA">
             <p>
             
-            Once the run of your software completes, you can see the run and its evaluation:
+            Once the run of your software completes, you can see the run and its evaluation (results hidden for the test partition):
             </p>
             
             <img src="../pan23-figures/tira-run-results_author.png" alt="TIRA">
             
                 
           <h2 id="evaluation">Evaluation </h2> 
-          <p>The official evaluation metric is Macro F1. We will also analyse per-class accuracy, precision, recall and f-measure to show the participant performance regarding.
+          <p>The official evaluation metric is Macro F1. 
+              We will also analyse per-class accuracy, precision, recall and f-measure to show the participant performance regarding.
             </p>
             <h2>Results SubTask 1: Low-resource influencer profiling</h2>
              <table class="uk-table uk-table-divider uk-table-small uk-table-hover">
