@@ -125,7 +125,7 @@ description: PAN at CLEF 2023 - >Profiling Cryptocurrency Influencers with Few-s
             <p>The output file naming is up to participants. However, we recommend to use the "subtask-id" eg; "subtask1" as
                 filename and "json" as extension.</p>  
           <h2 id="submission">Submission</h2> 
-            <p> We will accept run file submissions and software submissions via [<a href="https://www.tira.io/" target="blank">TIRA</a>]. 
+            <p> We will accept run software submissions via [<a href="https://www.tira.io/" target="blank">TIRA</a>]. 
                 For software submissions, you upload docker images to TIRA that will be executed on the test data within the 
                 TIRA platform (using a single file as input to produce a single file as output in the format specified above). </p>
            <h2 id="TIRA">TIRA Quickstart </h2> 
@@ -136,7 +136,7 @@ description: PAN at CLEF 2023 - >Profiling Cryptocurrency Influencers with Few-s
             <img src="../pan23-figures/tira-upload-docker-image.png" alt="TIRA">
             <p>
             Please follow the instructions there to upload your image.
-            For instance, you can upload <a href="#baselines">the random baseline</a> for subtask 1, i.e., <code>docker tag pan-profiling-cryptocurrency-baselines:subtask1-random-0.0.1  registry.webis.de/code-research/tira/<YOUR-USER-NAME>/random-baseline-subtask1:0.0.1/code>, 
+            For instance, you can upload <a href="https://github.com/pan-webis-de/pan-code/tree/master/clef23/profiling-cryptocurrency-influencers">the random baseline</a> for subtask 1, i.e., <code>docker tag pan-profiling-cryptocurrency-baselines:subtask1-random-0.0.1  registry.webis.de/code-research/tira/<YOUR-USER-NAME>/random-baseline-subtask1:0.0.1/code>, 
                 then logging in to your dedicated registry, i.e., <code>docker login -u YOUR-USER-NAME -pTOKEN-PROVIDED-BY-TIRA registry.webis.de</code> 
                 and finally uploading the image by running <code>docker push pan-profiling-cryptocurrency-baselines:subtask1-random-0.0.1</code>. 
             </p>
@@ -155,20 +155,22 @@ description: PAN at CLEF 2023 - >Profiling Cryptocurrency Influencers with Few-s
             Add a software by selecting your image and specifying the command that should be executed inside the image 
             (should use the two arguments, for instance, the command for the naive baseline uploaded above is <code>python3 /random-baseline-subtask-1.py --input $inputDataset/train_text.json --output $outputDir/subtask1.json</code>):
             
-            <img src="../pan23-figures/tira-add-docker-software.png" alt="TIRA">
+            <img src="../pan23-figures/tira-add-docker-software_author.png" alt="TIRA">
 
             </p>    
              
             <p>            
             After adding the docker software, a new tab for this software appears.
-            You can run your software by specifying the compute resources (that your software has available during its execution) and the dataset (the input to the software). Please run your software on the datasets "task-1-type-classification" (for task 1) respectively "task-2-spoiler-generation" (for task 2) in TIRA to produce submissions (you can use the datasets "task-1-type-classification-validation" respectively "task-2-spoiler-generation-validation" to validate your approaches). You can run your software multiple times in parallel so executing your software on different resource specifications enables evaluations on the scalability of the software:
+            You can run your software by specifying the compute resources (that your software has available during its execution) 
+            and the dataset (the input to the software). Please run your software on the datasets for example, "pan23-profiling-cryptocurrency-influencers-subtask1-20230210-test" (for subtask 1) in TIRA to produce submissions (you can use the datasets "pan23-profiling-cryptocurrency-influencers-subtask1-20230210-training" to validate your approaches). 
+            You can run your software multiple times in parallel so executing your software on different resource specifications enables evaluations on the scalability of the software:
             
-            <img src="../pan23-figures/tira-run-docker-software.png" alt="TIRA">
+            <img src="../pan23-figures/tira-run-docker-software_author.png" alt="TIRA">
             <p>
             
             Once the run of your software completes, you can see the run and its evaluation:
             
-            <img src="../pan23-figures/tira-run-results.png" alt="TIRA">
+            <img src="../pan23-figures/tira-run-results_author.png" alt="TIRA">
             </p>
                 
           <h2 id="evaluation">Evaluation </h2> 
