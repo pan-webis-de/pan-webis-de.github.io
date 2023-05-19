@@ -13,14 +13,14 @@ description: PAN at CLEF 2023 - Authorship Verification
 </nav>
 
 <main class="uk-section uk-section-default">
-    <div class="uk-container"">
+    <div class="uk-container">
         <div class="uk-container uk-margin-small">
             <h1 class="uk-margin-remove-top">Authorship Verification 2023</h1>
             <ul class="uk-list">
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
-<!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>-->
-<!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>-->
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
 <!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>-->
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
@@ -34,7 +34,7 @@ description: PAN at CLEF 2023 - Authorship Verification
                 <li>Task: Given two texts belonging to different Discourse Types (DT), determine if they are written by the same author (<b>cross-DT authorship verification</b>).</li>
                 <li>Input: Pairs of texts from the Aston 100 Idiolects Corpus in English covering DTs of both <b> written and spoken language </b>: essays, emails, interviews, and speech transcriptions. [<a href="#data">data</a>] </li>
                 <li>Evaluation: AUC, F1, c@1, F_0.5u, Brier [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef23/authorship-verification">code</a>]</li>
-                <li>Submission: Deployment on TIRA [<a href="https://www.tira.io/task/pan23-authorship-verification">submit</a>]</li>
+                <li>Submission: Deployment on TIRA [<a href="https://www.tira.io/task/pan23-cross-discourse-type-authorship-verification">submit</a>]</li>
                 <li>Baseline: TFIDF-weighted char n-grams cosine similarity; compression method calculating cross-entropy [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef23/authorship-verification">code</a>]</li>
             </ul>
 
@@ -115,11 +115,11 @@ on (cross-discourse type) authorship verification where both
 
             <p>We ask you to prepare your software so that it can be executed via command line calls. The command shall take as input (i) an absolute path to the EVALUATION-DIRECTORY and (ii) an absolute path to an OUTPUT-DIRECTORY:</p>
 
-            <pre id="jsonl-example" class="prettyprint uk-margin-remove-bottom"><code class="lang-json"> > mySoftware -i EVALUATION-DIRECTORY -o OUTPUT-DIRECTORY</code></pre>
+            <pre class="prettyprint uk-margin-remove-bottom"><code class="lang-json"> > mySoftware -i EVALUATION-DIRECTORY -o OUTPUT-DIRECTORY</code></pre>
 
             <p>Within EVALUATION-DIRECTORY, a single jsonl-formatted file will be included (pairs.jsonl), containing the text pairs (analogously to the calibration data that was released). The answers should be written to a jsonl-formatted file (answers.jsonl) under OUTPUT-DIRECTORY. Each line should contain a single json-formatted answer, using the following syntax:</p>
 
-            <pre id="jsonl-example" class="prettyprint linenums uk-margin-remove-bottom">
+            <pre class="prettyprint linenums uk-margin-remove-bottom">
 <code class="lang-json">{"id": "c04fdf1e-ddf5-5542-96e7-13ce18cae176", "value": 0.4921}
                     {"id": "49dc4cae-3d32-5b4d-b240-a080a1dbb659", "value": 0.5}
                     {"id": "f326fe7c-fc10-566f-a70f-0f36e3f92399", "value": 0.5}
@@ -129,9 +129,9 @@ on (cross-discourse type) authorship verification where both
 
             <p><i>Note:</i> Each verification problem should be solved independently of other problems in the collection.</p>
 
-            <p>You can choose freely among the available programming languages and among the operating systems Microsoft Windows and Ubuntu. We will ask you to deploy your software onto a virtual machine that will be made accessible to you after registration. You will be able to reach the virtual machine via ssh and via remote desktop. More information about how to access the virtual machines can be found in the user guide linked above.</p>
-
-            <p>Once deployed in your virtual machine, we ask you to access <a href="https://www.tira.io/">TIRA</a>, where you can self-evaluate your software on the test data.</p>
+            <p>We ask you to prepare your software in a docker container and submit it to <a href="https://www.tira.io/">TIRA</a>, where you can self-evaluate your software on the test data.
+            See the <a href="https://www.tira.io/t/getting-started/1364">TIRA Guides</a> for mor details on the submission procedure.
+            </p>
 
             <p><i>Note:</i> By submitting your software you retain full copyrights. You agree to grant us usage rights only for the purpose of the PAN competition. We agree not to share your software with a third party or use it for other purposes than the PAN competition.</p>
             
