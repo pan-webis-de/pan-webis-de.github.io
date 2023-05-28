@@ -113,7 +113,7 @@ href="https://github.com/pan-webis-de/pan-code/tree/master/clef23/multi-author-a
 href="https://github.com/pan-webis-de/pan-code/tree/master/clef23/multi-author-analysis" target="_blank">code</a>]</h2>
             <p>Submissions are evaluated by the F1-score measure for each document. The solutions for each dataset are evaluated independently based on the obtained evaluation scores. 
 
-            <p>We provide you with a script to compute those measures based on the produced output-files [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef23/style-change-detection">evaluator and tests</a>].</p> 
+            <p>We provide you with a script to compute those measures based on the produced output-files [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef23/multi-author-analysis">evaluator and tests</a>].</p> 
 
 
             <h2 id="submission">Submission</h2>
@@ -123,7 +123,7 @@ href="https://github.com/pan-webis-de/pan-code/tree/master/clef23/multi-author-a
 
             <pre class="prettyprint"><code>mySoftware -i INPUT-DIRECTORY -o OUTPUT-DIRECTORY</code></pre>
 
-            <p>Within <code>INPUT-DIRECTORY</code>, you will find three folders (<code>dataset1</code>, <code>dataset2</code>, <code>dataset3</code>) holding the sets of problem instances (i.e., <code>problem-[id].txt</code> files) for each of the three datasets, respectively. For each problem instance you should produce the solution file <code>solution-problem-[id].json</code> in the respective subfolder (<code>dataset1</code>, <code>dataset2</code>, <code>dataset3</code>) of <code>OUTPUT-DIRECTORY</code>. For instance, you read <code>INPUT-DIRECTORY/dataset1/problem-12.txt</code>, process it, and write your results to <code>OUTPUT-DIRECTORY/dataset1/solution-problem-12.json</code>.</p>
+            <p>Within <code>INPUT-DIRECTORY</code>, you will find the set of problem instances (i.e., <code>problem-[id].txt</code> files) for each of the three datasets, respectively. For each problem instance you should produce the solution file <code>solution-problem-[id].json</code> in the respective <code>OUTPUT-DIRECTORY</code>. For instance, you read <code>INPUT-DIRECTORY/problem-12.txt</code>, process it, and write your results to <code>OUTPUT-DIRECTORY/solution-problem-12.json</code>.</p>
 
             <p>In general, this task follows PAN's software submission strategy <a href="{{ 'organization.html#participation-guide' | relative_url }}">described here</a>.</p>
 
