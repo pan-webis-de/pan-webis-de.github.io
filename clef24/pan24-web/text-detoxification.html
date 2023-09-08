@@ -37,7 +37,7 @@ description: PAN at CLEF 2024 - Multilingual Text Detoxification
                 </li>
                 <li>Output: non-toxic version in the corresponding language.
                 </li>
-                <li>Evaluation: automatic and manual evaluation based on three parameters: (i) style transfer accuracy; (ii) content preservation; (iii) fluence. <!--[<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/text-detoxification" target="_blank">code</a>]-->
+                <li>Evaluation: automatic and manual evaluation based on three parameters: (i) style transfer accuracy; (ii) content preservation; (iii) fluency. <!--[<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/text-detoxification" target="_blank">code</a>]-->
                 </li>
                 <li>Submission: <a href="#" target="_blank">tira.io</a> as a software submission.
 <!--                <li>Submission: <a href="https://www.tira.io/task/pan24-text-detoxification" target="_blank">tira.io</a> preferably as a software submission-->
@@ -76,8 +76,40 @@ description: PAN at CLEF 2024 - Multilingual Text Detoxification
             </p>
 
             <h2 id="evaluation">Evaluation</h2>
-            
+            <p>
+                For the development set, the automatic evaluation metrics set will be available. For the test set, both automatic and manual evaluations will be hold. <b>The final leaderboard</b> will be built based on <b>manual evaluation</b> results.
+            </p>
 
+            <p>
+                Both automatic and manual evaluation will be based on the main three parameters:
+                <u>
+                    <li>
+                        <b>Style Transfer Accuracy (STA)</b>: Given the generated paraphrase, the annotators should classify it into one of the classes – toxic or neutral.
+                    </li>
+
+                    <li>
+                        <b>Content preservation (SIM)</b>: Given two texts (original toxic sentence and generated paraphrase) the annotators should evaluate the similarity of their content and mark them as similar or dissimilar.
+                    </li>
+
+                    <li>
+                        <b>Fluency task (FL)</b> The output should be no less fluent then the input sentence.
+                    </li>
+                </u>
+            </p>
+
+            <p>
+                To have the one common metric for leaderboard estimation, we will comput <b>J</b> metric as the mean of STA*SIM*FL per sample.
+            </p>
+
+            <p>
+                For <b>automatic</b> evaluation, the setup for each language will look like follow: (i) STA: binary classifier; (ii) SIM: cosine similarity of LaBSE embeddings; (iii) FL: binary classifier or perplexity.
+                All scripts for these metrics calculation will be provided.
+            </p>
+
+            <p>
+                For <b>manual</b> evaluation, we will create annotation tasks on <a href="https://toloka.ai/">Toloka.ai</a> platform. Then, the final leaderboard will be published on this page.
+            </p>
+            
 
             <h2 id="submission">Submission</h2>
             <p>
