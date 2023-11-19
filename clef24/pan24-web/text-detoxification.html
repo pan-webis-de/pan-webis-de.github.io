@@ -33,7 +33,7 @@ description: PAN at CLEF 2024 - Multilingual Text Detoxification
             <h2 id="synopsis">Synopsis</h2>
             <ul>
                 <li>Task: Given a toxic piece of text, re-write it in a non-toxic way while saving the main content as much as possible.</li>
-                <li>Input: toxic sentences in several languages: English, Russian, Ukrainian, German, Chinese, Amharic, and Arabic.
+                <li>Input: toxic sentences in multiple languages: English, Russian, Ukrainian, German, Spanish, Chinese, Amharic, Arabic, and Hindi.
                 </li>
                 <li>Output: non-toxic version in the corresponding language.
                 </li>
@@ -59,8 +59,8 @@ description: PAN at CLEF 2024 - Multilingual Text Detoxification
             </p>
 
             <p>
-                In this competition, we suggest you to create detoxification systems for new languages—Ukrainian, German, Chinese, Amharic, and Arabic—for those there is no parallel detoxification corpus.
-                Meaning, you need to solve the task of cross-lingual text detoxification transfer.
+                In this competition, we suggest you to create detoxification systems for new languages from several linguitic families: Ukrainian, German, Spanish, Chinese, Amharic, Arabic, and Hindi.
+                In comparison to English and Russian, we do not provide full-size parallel corpus, only dev and test sets. Meaning, you need to solve the task of cross-lingual text detoxification transfer.
             </p>
 
 
@@ -72,7 +72,9 @@ description: PAN at CLEF 2024 - Multilingual Text Detoxification
             </p>
 
             <p>
-                <b>Definition of toxiciy</b>. One of the crucial points in this task is to have a common ground on how to estimate if the text is toxic or not.
+                <b>Definition of toxiciy</b>. One of the crucial points in this task is to have a common ground on how to estimate if the text is toxic or not. 
+                In our task, we will work only with <b>explicit</b> types of toxicity—obvious present of obscene and rude lexicon where still there is meaningful neutral content present—and <b>do not</b> work with <b>implicit</b> types—like sarcasm, passive aggressiveness, or direct hate to some group where no neutral content can be found.
+                With such task fomulation, we indeed can control the preservation of the content.
             </p>
 
             <h2 id="evaluation">Evaluation</h2>
@@ -141,7 +143,7 @@ description: PAN at CLEF 2024 - Multilingual Text Detoxification
 
             <h2 id="task-committee">Task Committee</h2>
             <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
-<!--                {% include people-cards/wolska.html %}-->
+               {% include people-cards/dementieva.html %}
 <!--                Daryna Dementieva - Technical University of Munich, Germany-->
 <!--                Alisa Smirnova - Toloka, Switzerland-->
 <!--                Dmitry Ustalov - Toloka, Serbia-->
