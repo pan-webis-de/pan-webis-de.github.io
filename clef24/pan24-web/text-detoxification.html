@@ -33,14 +33,14 @@ description: PAN at CLEF 2024 - Multilingual Text Detoxification
             <h2 id="synopsis">Synopsis</h2>
             <ul>
                 <li>Task: Given a toxic piece of text, re-write it in a non-toxic way while saving the main content as much as possible.</li>
-                <li>Input: toxic sentences in multiple languages: English, Russian, Ukrainian, German, Spanish, Chinese, Amharic, Arabic, and Hindi.
+                <li>Input: toxic sentences in multiple languages from all over the globe: English, Russian, Ukrainian, German, Spanish, Chinese, Amharic, Arabic, and Hindi.
                 </li>
                 <li>Output: non-toxic version in the corresponding language.
                 </li>
                 <li>Evaluation: automatic and manual evaluation based on three parameters: (i) style transfer accuracy; (ii) content preservation; (iii) fluency. <!--[<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/text-detoxification" target="_blank">code</a>]-->
                 </li>
                 <li>Submission: <a href="#" target="_blank">tira.io</a> as a software submission.
-<!--                <li>Submission: <a href="https://www.tira.io/task/pan24-text-detoxification" target="_blank">tira.io</a> preferably as a software submission-->
+<!--                <li>Submission: <a href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/text-detoxification" target="_blank">tira.io</a> preferably as a software submission-->
                 </li>
             </ul>
 
@@ -52,15 +52,31 @@ description: PAN at CLEF 2024 - Multilingual Text Detoxification
             </p>
 
             <p>
-                Detoxification can be solved with Text Style Transfer (TST) methods.
-                Before for detoxification, only unsupervised methods were used. Meaning, there was no parallel corpora, only non-parallel datasets with toxic and non-toxic labels.
-                Recenly, the first parallel detoxification corporus (with pairs toxic-neutral text) was introduced for English (<a href="https://aclanthology.org/2022.acl-long.469/">Paradetox</a>) and then for Russian (<a href="https://russe.nlpub.org/2022/tox/">RUSSE-2022</a>). 
-                However, the tranfer of detoxification knowledge to a new language is still challenging. 
+                Detoxification examples in English:
+                <table>
+                  <tr>
+                    <th>Toxic</th>
+                    <th>Detoxified</th>
+                  </tr>
+                  <tr>
+                    <td>he had steel b*lls too!</td>
+                    <td>he was brave too!</td>
+                  </tr>
+                  <tr>
+                    <td>delete the page and sh*t up</td>
+                    <td>delete the page</td>
+                  </tr>
+                  <tr>
+                    <td>what a chicken crap excuse for a reason.</td>
+                    <td>what a bad excuse for a reason.</td>
+                  </tr>
+                </table>
             </p>
 
             <p>
-                In this competition, we suggest you to create detoxification systems for new languages from several linguitic families: Ukrainian, German, Spanish, Chinese, Amharic, Arabic, and Hindi.
-                In comparison to English and Russian, we do not provide full-size parallel corpus, only dev and test sets. Meaning, you need to solve the task of cross-lingual text detoxification transfer.
+                In this competition, we suggest you to create detoxification systems for 9 languages from several linguitic families: English, Russian, Ukrainian, German, Spanish, Chinese, Amharic, Arabic, and Hindi.
+                However, the availability of training corpora will differ betwen the languages. For English and Russian, the parallel corpora of several thousand of toxic-detoxified pairs (as presented above) are available. So, you can fine-tune text generation models on them.
+                For other languages, for the dev phase, no such corpora will be provided. <b>The main challenge</b> of this competition will be to perform a <b>cross-lingual detoxification</b>.
             </p>
 
 
