@@ -60,15 +60,15 @@ description: PAN at CLEF 2024 - Multilingual Text Detoxification
                   </tr>
                   <tr>
                     <td>he had steel b*lls too!</td>
-                    <td>he was brave too!</td>
+                    <td>->he was brave too!</td>
                   </tr>
                   <tr>
                     <td>delete the page and sh*t up</td>
-                    <td>delete the page</td>
+                    <td>->delete the page</td>
                   </tr>
                   <tr>
-                    <td>what a chicken crap excuse for a reason.</td>
-                    <td>what a bad excuse for a reason.</td>
+                    <td>what a chicken cr*p excuse for a reason.</td>
+                    <td>->what a bad excuse for a reason.</td>
                   </tr>
                 </table>
             </p>
@@ -77,40 +77,45 @@ description: PAN at CLEF 2024 - Multilingual Text Detoxification
                 In this competition, we suggest you to create detoxification systems for 9 languages from several linguitic families: English, Russian, Ukrainian, German, Spanish, Chinese, Amharic, Arabic, and Hindi.
                 However, the availability of training corpora will differ betwen the languages. For English and Russian, the parallel corpora of several thousand of toxic-detoxified pairs (as presented above) are available. So, you can fine-tune text generation models on them.
                 For other languages, for the dev phase, no such corpora will be provided. <b>The main challenge</b> of this competition will be to perform a <b>cross-lingual detoxification</b>.
-            </p>
-
 
             <h2 id="data">Data</h2>
             
             <p>    
                 ParaDetox datasets for <a href="https://huggingface.co/datasets/s-nlp/paradetox">English</a> and <a href="https://huggingface.co/datasets/s-nlp/ru_paradetox">Russian</a> are already available.
-                For each new language, we will provide 1k parallel pairs for development fase and 100 toxic sentences for the test set.
+                For each new language, we will provide 1k parallel pairs which will be divided into dev and test phases..
             </p>
 
             <p>
-                <b>Definition of toxiciy</b>. One of the crucial points in this task is to have a common ground on how to estimate if the text is toxic or not. 
+                <b>Definition of toxiciy</b>. 
+            </p>
+
+            <p>
+                One of the crucial points in this task is to have a common ground on how to estimate if the text is toxic or not. 
                 In our task, we will work only with <b>explicit</b> types of toxicity—obvious present of obscene and rude lexicon where still there is meaningful neutral content present—and <b>do not</b> work with <b>implicit</b> types—like sarcasm, passive aggressiveness, or direct hate to some group where no neutral content can be found.
-                With such task fomulation, we indeed can control the preservation of the content.
+                Such implicit toxicity types are challenging to be detoxified so the intent will indeed become non-toxic (i.e. try to detoxify the sentence <i>"I h*te all immigrants, f*ck you all!"</i>).
+                For this reason, we tried to pick for our datasets the sentences with explicit toxicity where the main intent is still non-toxic. 
+                However, toxicity can be quite a subjective intent. We hope, that we will agree on the majority of the cases what should be toxic or not. In the end, the main goal is to make the texts and the world at least somehow less toxic ;)
             </p>
 
             <h2 id="evaluation">Evaluation</h2>
-            <p>
-                For the development set, the automatic evaluation metrics set will be available. For the test set, both automatic and manual evaluations will be hold. <b>The final leaderboard</b> will be built based on <b>manual evaluation</b> results.
-            </p>
 
             <p>
-                Both automatic and manual evaluation will be based on the main three parameters:
+                <b>Development Phase</b>
+            </p>
+            
+            <p>
+                For the whole competition, the automatic evaluation metrics set will be available. We provide the multilingual automatic evaluation pipeline based on main three parameters:
                 <ul>
                     <li>
-                        <b>Style Transfer Accuracy (STA)</b>: Given the generated paraphrase, the annotators should classify it into one of the classes – toxic or neutral.
+                        <b>Style Transfer Accuracy (STA)</b>: Given the generated paraphrase, classify if the style of the new text – toxic or neutral. For this, multilingual toxicity binary <a href="https://huggingface.co/textdetox">classifier</a> will be used.
                     </li>
 
                     <li>
-                        <b>Content preservation (SIM)</b>: Given two texts (original toxic sentence and generated paraphrase) the annotators should evaluate the similarity of their content and mark them as similar or dissimilar.
+                        <b>Content preservation (SIM)</b>: Given two texts (original toxic sentence and generated paraphrase), evaluate the similarity of their content. We calculate it as cosine similarity between <a href="https://huggingface.co/sentence-transformers/LaBSE">LaBSe</a> embeddings.
                     </li>
 
                     <li>
-                        <b>Fluency task (FL)</b> The output should be no less fluent then the input sentence.
+                        <b>Fluency task (FL)</b>: The output should be no less fluent then the input sentence. For both original text and its detoxification, perplexity will be calculated with LM model.
                     </li>
                 </ul>
             </p>
@@ -120,12 +125,16 @@ description: PAN at CLEF 2024 - Multilingual Text Detoxification
             </p>
 
             <p>
-                For <b>automatic</b> evaluation, the setup for each language will look like follow: (i) STA: binary classifier; (ii) SIM: cosine similarity of LaBSE embeddings; (iii) FL: binary classifier or perplexity.
                 All scripts for these metrics calculation will be provided.
             </p>
 
             <p>
-                For <b>manual</b> evaluation, we will create annotation tasks on <a href="https://toloka.ai/">Toloka.ai</a> platform. Then, the final leaderboard will be published on this page.
+                <b>Test Phase</b>
+            </p>
+
+            <p>
+                Even if we already have powerful models to classify texts and embed their meanings, the human judgement is still the best for the final decision [5]. So, for the test set, we will perform <b>both</b> manual and automatic evaluation.
+                For <b>manual</b> evaluation, we will create annotation tasks on <a href="https://toloka.ai/">Toloka.ai</a> platform corresponding to the same parameters described above. <b>The final leaderboard</b> will be built based on <b>manual evaluation</b> results.
             </p>
             
 
@@ -154,6 +163,10 @@ description: PAN at CLEF 2024 - Multilingual Text Detoxification
 
                 <li>
                     Dementieva D. et al. <b>RUSSE-2022: Findings of the First Russian Detoxification Shared Task Based on Parallel Corpora</b>. Dialogue, 2022. [<a href="https://www.dialog-21.ru/media/5755/dementievadplusetal105.pdf">pdf</a>]
+                </li>
+
+                <li>
+                    Logacheva, Varvara, et al. <b>A Study on Manual and Automatic Evaluation for Text Style Transfer: The Case of Detoxification.</b> HumEval, 2022. [<a href="https://aclanthology.org/2022.humeval-1.8.pdf">pdf</a>]
                 </li>
             </ul>
 
