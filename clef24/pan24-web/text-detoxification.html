@@ -19,6 +19,7 @@ description: PAN at CLEF 2024 - Multilingual Text Detoxification
             <ul class="uk-list">
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#methodology">Methodology</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>
@@ -76,13 +77,52 @@ description: PAN at CLEF 2024 - Multilingual Text Detoxification
             <p>
                 In this competition, we suggest you to create detoxification systems for 9 languages from several linguitic families: English, Russian, Ukrainian, German, Spanish, Chinese, Amharic, Arabic, and Hindi.
                 However, the availability of training corpora will differ betwen the languages. For English and Russian, the parallel corpora of several thousand of toxic-detoxified pairs (as presented above) are available. So, you can fine-tune text generation models on them.
-                For other languages, for the dev phase, no such corpora will be provided. <b>The main challenge</b> of this competition will be to perform a <b>cross-lingual detoxification</b>.
+                For other languages, for the dev phase, no such corpora will be provided. <b>The main challenge</b> of this competition will be to perform a <b>unsupersived and cross-lingual detoxification</b>.
+            </p>
+
+            <h2 id="methodology">Methodology</h2>
+
+            <p>
+                <b>Unsupervised Methods</b>
+            </p>
+
+            <p>
+                For the majority of the cases and languages, there is not parallel corpus for the detoxification task. For this reason, 
+            </p>
+
+            <p>
+                <b>Supervised Methods</b>
+            </p>
+
+            <p>
+                If a parallel corpus of toxic-neutral pairs is already available (as, in our case, for English and Russian), then you can fine-tune <i>any</i> text generation model.
+            </p>
+
+            <p>
+                <b>Baselines</b>
+            </p>
+            We provide three baslines:
+            <ol>
+                <li>
+                    <b>Duplicate</b>: a simple duplication of the toxic input.
+                </li>
+
+                <li>
+                    <b>Delete</b>: elimination of a toxic keywords based on a predifined <a href="https://huggingface.co/textdetox">dictionary</a> for each language.
+                </li>
+
+                <li>
+                    <b>Backtranslation</b>:a more sophisticated cross-lingual transfer method. Translate the input to the language for which powerful detoxification model in available (i.e. English), perform detoxification, and translate back to the target language.
+                </li>
+            </ol>
+
+            The code for all baselines is available <a href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/text-detoxification">here</a>.
 
             <h2 id="data">Data</h2>
             
             <p>    
-                ParaDetox datasets for <a href="https://huggingface.co/datasets/s-nlp/paradetox">English</a> and <a href="https://huggingface.co/datasets/s-nlp/ru_paradetox">Russian</a> are already available.
-                For each new language, we will provide 1k parallel pairs which will be divided into dev and test phases..
+                ParaDetox datasets for <a href="https://huggingface.co/datasets/s-nlp/paradetox">English</a> and <a href="https://huggingface.co/datasets/s-nlp/ru_paradetox">Russian</a> are already available. Please, refer to [1] and [4] about more details of the corpora collection.
+                For each new language, we will provide 1k parallel pairs which will be divided into dev and test phases.
             </p>
 
             <p>
@@ -148,7 +188,7 @@ description: PAN at CLEF 2024 - Multilingual Text Detoxification
             </p>
 
             <h2 id="related-work">Related Work</h2>
-            <ul>
+            <ol>
                 <li>
                     Logacheva V. et. al. <b>ParaDetox: Detoxification with Parallel Data</b>. ACL, 2022. [<a href="https://aclanthology.org/2022.acl-long.469.pdf">pdf</a>]
                 </li>
@@ -168,7 +208,11 @@ description: PAN at CLEF 2024 - Multilingual Text Detoxification
                 <li>
                     Logacheva, Varvara, et al. <b>A Study on Manual and Automatic Evaluation for Text Style Transfer: The Case of Detoxification.</b> HumEval, 2022. [<a href="https://aclanthology.org/2022.humeval-1.8.pdf">pdf</a>]
                 </li>
-            </ul>
+
+                <li>
+                    Dementieva, D., et al. <b>Exploring Methods for Cross-lingual Text Style Transfer: The Case of Text Detoxification.</b> AACL, 2023. [<a href="http://www.afnlp.org/conferences/ijcnlp2023/proceedings/main-long/cdrom/pdf/2023.ijcnlp-long.70.pdf">pdf</a>]
+                </li>
+            </ol>
 
             <h2 id="task-committee">Task Committee</h2>
             <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
