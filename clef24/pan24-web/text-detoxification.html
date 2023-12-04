@@ -77,7 +77,7 @@ description: PAN at CLEF 2024 - Multilingual Text Detoxification
             <p>
                 In this competition, we suggest you to create detoxification systems for 9 languages from several linguitic families: English, Russian, Ukrainian, German, Spanish, Chinese, Amharic, Arabic, and Hindi.
                 However, the availability of training corpora will differ betwen the languages. For English and Russian, the parallel corpora of several thousand of toxic-detoxified pairs (as presented above) are available. So, you can fine-tune text generation models on them.
-                For other languages, for the dev phase, no such corpora will be provided. <b>The main challenge</b> of this competition will be to perform a <b>unsupersived and cross-lingual detoxification</b>.
+                For other languages, for the dev phase, no such corpora will be provided. <b>The main challenge</b> of this competition will be to perform an <b>unsupersived and cross-lingual detoxification</b>.
             </p>
 
             <h2 id="methodology">Methodology</h2>
@@ -87,7 +87,22 @@ description: PAN at CLEF 2024 - Multilingual Text Detoxification
             </p>
 
             <p>
-                For the majority of the cases and languages, there is not parallel corpus for the detoxification task. For this reason, 
+                For the majority of the cases and languages, there is not parallel corpus for the detoxification task. For this reason, we create our competition to recreate the real-life conditions. Some examples of stong unserpvised methods:
+                <ul>
+                    <li>
+                        <b>CondBERT</b> [2,3]: using Masked Language Modeling, mask toxic words in a sentence and rerank the candidates from LM based on their non-toxicity scores.
+                    </li>
+
+                    <li>
+                        <b>ParaGedi</b> [3]: the detoxification task is viewed as paraphrasing task, but during the generation step toxicity scores of the next token prediction are also taken into account.
+                    </li>
+                </ul>
+                The code for this methods can be found <a href="https://github.com/s-nlp/detox/tree/main/emnlp2021/style_transfer">here</a>.
+            </p>
+
+            <p>
+                For the case, where for some language a detoxification corpus or/and model are available (i.e. English), you can use such methods as Backtranslation, Translation of the training corpus to the target language, or Adapter layers.
+                Please, refer to [6] for the detailed explanations of the suggested ideas of cross-lingual detoxification knowledge transfer.
             </p>
 
             <p>
@@ -112,7 +127,7 @@ description: PAN at CLEF 2024 - Multilingual Text Detoxification
                 </li>
 
                 <li>
-                    <b>Backtranslation</b>:a more sophisticated cross-lingual transfer method. Translate the input to the language for which powerful detoxification model in available (i.e. English), perform detoxification, and translate back to the target language.
+                    <b>Backtranslation</b>: a more sophisticated cross-lingual transfer method. Translate the input to the language for which powerful detoxification model in available (i.e. English), perform detoxification, and translate back to the target language.
                 </li>
             </ol>
 
