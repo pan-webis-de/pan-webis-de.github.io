@@ -1,0 +1,11 @@
+<div>
+    <div class="uk-card uk-card-default uk-card-body">
+        <a href="https://webis.de" class="uk-link-reset">
+            <div class="thumbnail-left"><img src="{{ '/img/people/stakovskii.jpg' | relative_url }}" alt="Elisei Stakovskii"></div>
+            <div class="uk-height-1-1">
+                <div class="uk-card-title">Elisei Stakovskii</div>
+                <div class="uk-text-muted uk-margin-small-top">Independent Researcher</div>
+            </div>
+        </a>
+    </div>
+</div>
