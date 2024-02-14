@@ -156,6 +156,7 @@ description: PAN at CLEF 2024 - Multilingual Text Detoxification
 
                 <li>
                     <b>Backtranslation</b>: a more sophisticated cross-lingual transfer method. Translate the input to the language for which powerful detoxification model in available (i.e. English), perform detoxification, and translate back to the target language.
+                    The translation is done with NLLB-600M <a href="https://huggingface.co/facebook/nllb-200-distilled-600M">model</a>, detoxification with English bart-base-detox <a href="https://huggingface.co/s-nlp/bart-base-detox">model</a>.
                 </li>
             </ol>
 
