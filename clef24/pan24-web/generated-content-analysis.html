@@ -43,65 +43,90 @@ description: PAN at CLEF 2024 - Generative AI Authorship Verification
 
 
             <h2 id="task">Task</h2>
-            Details will be announced at a later date.
+            <p>With Large Language Models (LLMs) improving at breakneck speed and seeing more widespread adoption every day, it is getting increasingly hard to discern whether a given text was authored by a human being or a machine. Many classification approaches have been devised to help humans distinguish between human- and machine-authored text, though often without questioning the fundamental and inherent feasibility of the task itself.</p>
+
+            <p>With years of experience in a related but much broader field—authorship verification—, we set out to answer whether this task can be solved. We start with the simplest arrangement of a suitable task setup: <strong>Given two texts, one human, one machine: pick out the human.</strong></p>
+
+            <p>The <em>Generative AI Authorship Verification Task</em> @ PAN is organized in collaboration with the <em>Voight-Kampff Task</em> @ <a href="https://eloquent-lab.github.io/">ELOQUENT Lab</a> in a builder-breaker style. PAN participants will build systems to tell human and machine apart, while ELOQUENT participants will investigate novel text generation and obfuscation method for avoiding detection.</p>
 
             <h2 id="data">Data</h2>
-            Details will be announced at a later date.
+
+            <p>Test data for this task will be compiled from the submissions of ELOQUENT participants and will comprise multiple text genres, such as news articles, Wikipedia intro texts, or fanfiction. Additionally, PAN participants will be provided with a bootstrap dataset of real and fake news articles spanning multiple 2021 U.S. news headlines.</p>
+
+            <p><strong>Download instructions:</strong> The dataset will be made available to participants via Zenodo at a later point.</p>
+
+            <p>The <strong>bootstrap dataset</strong> is provided as a set of newline-delimited JSON files. Each file contains a list of articles, written either by (any number of) human authors or a single machine. That is, the file <code>human.jsonl</code> contains only human texts, whereas a file <code>gemini-pro.jsonl</code> contains articles about the same topics, but written entirely by Google's Gemini Pro. The file format is as follows:</p>
+
+            <pre class="prettyprint linenums uk-padding-remove-bottom"><code class="lang-json">{"id": "news-2021-01-01-2021-12-31-kabulairportattack/art-081", "text": "..."}
+{"id": "news-2021-01-01-2021-12-31-capitolriot/art-050", "text": "..."}
+...</code></pre>
+
+            <p>The article IDs and line orderings are the same across all files, so the same line always corresponds to the same topic, but from different “authors”.</p>
+
+            <p>The <strong>test dataset</strong> will be provided in a different format. Instead of individual files, only a single JSONL file will be given, each line containing a pair of texts:</p>
+
+            <pre class="prettyprint linenums uk-padding-remove-bottom"><code class="lang-json">{"id": "iixcWBmKWQqLAwVXxXGBGg", "text1": "...", "text2": "..."}
+{"id": "y12zUebGVHSN9yiL8oRZ8Q", "text1": "...", "text2": "..."}
+...</code></pre>
+
+            <p>The IDs will be scrambled and the participant's task is to generate an appropriate output file with predictions for which of the two texts is the human one (see <a href="#submission">Submission</a> below).</p>
 
             <h2 id="evaluation">Evaluation</h2>
             Details will be announced at a later date.
 
             <h2 id="submission">Submission</h2>
-            Details will be announced at a later date.
+            <p>Participants will submit their systems as Docker images through the <a href="https://www.tira.io/">Tira</a> platform. It is not expected that submitted systems are actually <em>trained</em> on Tira, but they must be standalone and runnable on the platform without requiring contact to the outside world (evaluation runs will be sandboxed).</p>
+
+            <p>The submitted software must be executable inside the container via a command line call. The script must take two arguments: <code>INPUT-FILE</code> (absolute path to the input JSONL file) and <code>OUTPUT-DIRECTORY</code> (absolute path to the output directory):</p>
+            <pre class="prettyprint"><code class="lang-json">$ mySoftware INPUT-FILE OUTPUT-DIRECTORY</code></pre>
+
+            <p>Within <code>OUTPUT-DIRECTORY</code>, a single (!) JSONL file must be created with the following format:</p>
+
+            <pre class="prettyprint linenums uk-padding-remove-bottom"><code class="lang-json">{"id": "iixcWBmKWQqLAwVXxXGBGg", "is_human": 1.0}
+{"id": "y12zUebGVHSN9yiL8oRZ8Q", "is_human": 0.3}
+...</code></pre>
+
+            <p>For each line in the input file, an output line must be written with the ID of the input text pair and a single (!) confidence score between <code>0.0</code> and <code>1.0</code>. A score <code>&lt; 0.5</code> means that <code>text1</code> is believed to be human-authored. A score <code>&gt; 0.5</code> means that <code>text2</code> is believed to be human-authored. A score of <em>exactly</em> <code>0.5</code> means the case is undecidable. Participants are encouraged to answer with <code>0.5</code> rather than making a <em>wrong</em> prediction.</p>
+
 
             <h2 id="related-work">Related Work</h2>
-            Details will be announced at a later date.
-<!--            <ul>-->
-<!--				<li>-->
-<!--                    Efstathios Stamatatos, Mike Kestemont, Krzysztof Kredens, Piotr Pezik, Annina Heini, Janek Bevendorff, Benno Stein, and Martin Potthast. <a href="https://ceur-ws.org/Vol-3180/paper-184.pdf">Overview of the Authorship Verification Task at PAN 2022</a>. In Guglielmo Faggioli, Nicola Ferro, Allan Hanbury, and Martin Potthast, editors, CLEF 2023 Labs and Workshops, Notebook Papers, September 2023.-->
-<!--                <li>-->
-<!--                    Mike Kestemont, Efstathios Stamatatos, Enrique Manjavacas, Janek Bevendorff, Martin Potthast, and Benno Stein, <a href="https://downloads.webis.de/pan/publications/papers/kestemont_2021.pdf">Overview of the Cross-Domain Authorship Verification Task at PAN 2021</a>. Working notes of CLEF 2021 - Conference and Labs of the Evaluation Forum.-->
-<!--                </li>-->
-<!--                <li>-->
-<!--                    Mike Kestemont, Enrique Manjavacas, Ilia Markov, Janek Bevendorff, Matti Wiegmann, Efstathios Stamatatos, Martin Potthast & Benno Stein, <a href="http://ceur-ws.org/Vol-2125/invited_paper_2.pdf">Overview of the Cross-Domain Authorship Verification Task at PAN 2020</a>. Working notes of CLEF 2020 - Conference and Labs of the Evaluation Forum.-->
-<!--                </li>-->
-<!--		<li>-->
-<!--		    Efstathios Stamatatos. <a href="https://www.rcs.cic.ipn.mx/2016_123/Authorship%20Verification_%20A%20Review%20of%20Recent%20Advances.pdf">Authorship Verification: A Review of Recent Advances</a>. Research in Computer Science, 123, pp. 9-25, 2016.-->
-<!--		</li>-->
-<!--                <li>-->
-<!--                    Patrick Juola. <a href="http://portal.acm.org/citation.cfm?id=1373451">Authorship-->
-<!--                    Attribution</a>. In Foundations and Trends in Information Retrieval, Volume 1, Issue 3, 2008.-->
-<!--                </li>-->
-<!--                <li>-->
-<!--                    Moshe Koppel, Jonathan Schler, and Shlomo Argamon. <a-->
-<!--                        href="http://onlinelibrary.wiley.com/doi/10.1002/asi.20961/full">Computational Methods-->
-<!--                    Authorship Attribution</a>. Journal of the American Society for Information Science and-->
-<!--                    Technology, Volume 60, Issue 1, pages 9-26, 2009.-->
-<!--                </li>-->
-<!--                <li>-->
-<!--                    Efstathios Stamatatos. <a href="http://onlinelibrary.wiley.com/doi/10.1002/asi.21001/full">A-->
-<!--                    Survey of Modern Authorship Attribution Methods</a>.-->
-<!--                    Journal of the American Society for Information Science and Technology, Volume 60, Issue 3,-->
-<!--                    pages 538-556, 2009.-->
-<!--                </li>-->
-<!--                <li>-->
-<!--                    A. Peñas and A. Rodrigo. A Simple Measure to Assess Nonresponse. In Proc. of the 49th Annual Meeting of the Association for. Computational Linguistics, Vol. 1, pages 1415-1424, 2011.-->
-<!--                </li>-->
-<!--                <li>-->
-<!--                    Bevendorff et al. Generalizing Unmasking for Short Texts, Proceedings of NAACL, pages 654-659, 2019.-->
-<!--                </li>-->
-<!--		<li>-->
-<!--		    Kredens, K., Heini, A. and Pezik, P. 100 Idiolects - a corpus for research on individual variation across discourse types. Aston University: FoLD Repository, 2021.-->
-<!--		</li>-->
-<!--            </ul>-->
+            <ul>
+				<li>
+                    Janek Bevendorff et al. <a href="https://downloads.webis.de/publications/papers/bevendorff_2024b.pdf">Overview of PAN 2024: Multi-Author Writing Style Analysis, Multilingual Text Detoxification, Oppositional Thinking Analysis, and Generative AI Authorship Verification</a>. In Advances in Information Retrieval. 46th European Conference on IR Research (ECIR 2024), Lecture Notes in Computer Science, March 2024. Springer.
+                </li>
+                <li>
+                    Uchendu, Adaku, Thai Le, Kai Shu, and Dongwon Lee. 2020. <a href="https://aclanthology.org/2020.emnlp-main.673/">Authorship Attribution for Neural Text Generation</a>. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP). Association for Computational Linguistics.
+                </li>
+                <li>
+                    Hans, Abhimanyu, Avi Schwarzschild, Valeriia Cherepanova, Hamid Kazemi, Aniruddha Saha, Micah Goldblum, Jonas Geiping, and Tom Goldstein. 2024. <a href="http://arxiv.org/abs/2401.12070">Spotting LLMs with Binoculars: Zero-Shot Detection of Machine-Generated Text</a>. arXiv [Cs.CL].
+                </li>
+                <li>
+                    Mitchell, Eric, Yoonho Lee, Alexander Khazatsky, Christopher D. Manning, and Chelsea Finn. 2023. <a href="http://arxiv.org/abs/2301.11305">DetectGPT: Zero-Shot Machine-Generated Text Detection Using Probability Curvature</a>. arXiv [Cs.CL].
+                </li>
+                <li>
+                    Jakesch, Maurice, Jeffrey T. Hancock, and Mor Naaman. 2023. <a href="https://www.pnas.org/doi/10.1073/pnas.2208839120">Human Heuristics for AI-Generated Language Are Flawed</a>. Proceedings of the National Academy of Sciences of the United States of America 120.
+                </li>
+                <li>
+                    Uchendu, Adaku, Zeyu Ma, Thai Le, Rui Zhang, and Dongwon Lee. 2021. <a href="https://pike.psu.edu/publications/emnlp21.pdf">TURINGBENCH: A Benchmark Environment for Turing Test in the Age of Neural Text Generation</a>. arXiv [Cs.CL].
+                </li>
+                <li>
+                    Schuster, Tal, Roei Schuster, Darsh J. Shah, and Regina Barzilay. 2020. <a href="https://direct.mit.edu/coli/article/46/2/499/93369/The-Limitations-of-Stylometry-for-Detecting">The Limitations of Stylometry for Detecting Machine-Generated Fake News</a>. Computational Linguistics 46 (2): 499–510.
+                </li>
+                <li>
+                    Sadasivan, Vinu Sankar, Aounon Kumar, Sriram Balasubramanian, Wenxiao Wang, and Soheil Feizi. 2023. <a href="http://arxiv.org/abs/2303.11156">Can AI-Generated Text Be Reliably Detected?</a> arXiv [Cs.CL].
+                </li>
+                <li>
+                    Ippolito, Daphne, Daniel Duckworth, Chris Callison-Burch, and Douglas Eck. 2020. <a href="https://aclanthology.org/2020.acl-main.164/">Automatic Detection of Generated Text Is Easiest When Humans Are Fooled</a>. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, 1808–22. Online: Association for Computational Linguistics.
+                </li>
+            </ul>
 
             <h2 id="task-committee">Task Committee</h2>
             <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
-                {% include people-cards/stamatatos.html %}
                 {% include people-cards/bevendorff.html %}
                 {% include people-cards/wiegmann.html %}
                 {% include people-cards/potthast.html %}
                 {% include people-cards/stein.html %}
+                {% include people-cards/stamatatos.html %}
             </div>
             <div class="uk-container uk-padding-large uk-padding-remove-bottom">
                 {% include organizations/clef-organizations-section.html year=2024 %}
