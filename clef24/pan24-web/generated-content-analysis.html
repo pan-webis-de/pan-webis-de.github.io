@@ -31,8 +31,8 @@ description: PAN at CLEF 2024 - Generative AI Authorship Verification
 
             <h2 id="synopsis">Synopsis</h2>
             <ul>
-                <li>Task: Given a document, determine if the author is a human or an AI.</li>
-                <li>Input: tba.</li>
+                <li>Task: Given two texts, one authored by a human, one by a machine: pick out the human.</li>
+                <li>Input: Pairs of texts, one of which was written by a human. [download tba.]</li>
                 <li>Evaluation: tba.</li>
 <!--                <li>Evaluation: AUC, F1, c@1, F_0.5u, Brier [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef23/authorship-verification">code</a>]</li>-->
                 <li>Submission: Deployment on TIRA [<a href="#">submit</a>]</li>
@@ -86,8 +86,9 @@ description: PAN at CLEF 2024 - Generative AI Authorship Verification
 {"id": "y12zUebGVHSN9yiL8oRZ8Q", "is_human": 0.3}
 ...</code></pre>
 
-            <p>For each line in the input file, an output line must be written with the ID of the input text pair and a single (!) confidence score between <code>0.0</code> and <code>1.0</code>. A score <code>&lt; 0.5</code> means that <code>text1</code> is believed to be human-authored. A score <code>&gt; 0.5</code> means that <code>text2</code> is believed to be human-authored. A score of <em>exactly</em> <code>0.5</code> means the case is undecidable. Participants are encouraged to answer with <code>0.5</code> rather than making a <em>wrong</em> prediction.</p>
+            <p>For each test case in the input file, an output line must be written with the ID of the input text pair and a confidence score between <code>0.0</code> and <code>1.0</code>. A score <code>&lt; 0.5</code> means that <code>text1</code> is believed to be human-authored. A score <code>&gt; 0.5</code> means that <code>text2</code> is believed to be human-authored. A score of <em>exactly</em> <code>0.5</code> means the case is undecidable. Participants are encouraged to answer with <code>0.5</code> rather than making a <em>wrong</em> prediction.</p>
 
+            <p><strong>All test cases must be processed in isolation without information leakage between them!</strong> Even though systems may be given an input file with multiple JSON lines at once for reasons of efficiency, these inputs must be processed and answered just the same as if only a single line were given. Answers for any one test case must not depend on other cases in the input dataset!</p>
 
             <h2 id="related-work">Related Work</h2>
             <ul>
