@@ -34,11 +34,8 @@ description: PAN at CLEF 2024 - Generative AI Authorship Verification
                 <li>Task: Given two texts, one authored by a human, one by a machine: pick out the human.</li>
                 <li>Input: Pairs of texts, one of which was written by a human. [download tba.]</li>
                 <li>Evaluation: tba.</li>
-<!--                <li>Evaluation: AUC, F1, c@1, F_0.5u, Brier [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef23/authorship-verification">code</a>]</li>-->
-                <li>Submission: Deployment on TIRA [<a href="#">submit</a>]</li>
-<!--                <li>Submission: Deployment on TIRA [<a href="https://www.tira.io/task/pan23-cross-discourse-type-authorship-verification">submit</a>]</li>-->
+                <li>Submission: Deployment on TIRA [<a href="https://www.tira.io/task-overview/generative-ai-authorship-verification-panclef-2024/">submit</a>]</li>
                 <li>Baseline: tba.</li>
-<!--                <li>Baseline: TFIDF-weighted char n-grams cosine similarity; compression method calculating cross-entropy [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef23/authorship-verification">code</a>]</li>-->
             </ul>
 
 
@@ -75,7 +72,7 @@ description: PAN at CLEF 2024 - Generative AI Authorship Verification
             Details will be announced at a later date.
 
             <h2 id="submission">Submission</h2>
-            <p>Participants will submit their systems as Docker images through the <a href="https://www.tira.io/">Tira</a> platform. It is not expected that submitted systems are actually <em>trained</em> on Tira, but they must be standalone and runnable on the platform without requiring contact to the outside world (evaluation runs will be sandboxed).</p>
+            <p>Participants will submit their systems as Docker images through the <a href="https://www.tira.io/task-overview/generative-ai-authorship-verification-panclef-2024/">Tira</a> platform. It is not expected that submitted systems are actually <em>trained</em> on Tira, but they must be standalone and runnable on the platform without requiring contact to the outside world (evaluation runs will be sandboxed).</p>
 
             <p>The submitted software must be executable inside the container via a command line call. The script must take two arguments: <code>INPUT-FILE</code> (absolute path to the input JSONL file) and <code>OUTPUT-DIRECTORY</code> (absolute path to the output directory):</p>
             <pre class="prettyprint"><code class="lang-json">$ mySoftware INPUT-FILE OUTPUT-DIRECTORY</code></pre>
