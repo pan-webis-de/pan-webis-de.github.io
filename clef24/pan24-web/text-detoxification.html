@@ -44,17 +44,19 @@ description: PAN at CLEF 2024 - Multilingual Text Detoxification
             <h2 id="synopsis">Synopsis</h2>
             <ul>
                 <li>Task: Given a toxic piece of text, re-write it in a non-toxic way while saving the main content as much as possible.</li>
-                <li>Input: toxic sentences in multiple languages from all over the globe: English, Russian, Ukrainian, German, Spanish, Chinese, Amharic, Arabic, and Hindi.
+                <li>Input: toxic sentences in multiple languages from all over the globe: English, Russian, Ukrainian, German, Spanish, Chinese, Amharic, Arabic, and Hindi. [<a href="https://huggingface.co/datasets/textdetox/multilingual_paradetox">data</a>]
                 </li>
                 <li>Output: detoxified version of the text in the corresponding language.
                 </li>
-                <li>Evaluation: automatic and manual evaluation based on three parameters: (i) style transfer accuracy; (ii) content preservation; (iii) fluency. <!--[<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/text-detoxification" target="_blank">code</a>]-->
+                <li>Evaluation: automatic and manual evaluation based on three parameters: (i) style transfer accuracy; (ii) content preservation; (iii) fluency.[<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/text-detoxification">baselines</a>][<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/text-detoxification">leaderboard</a>]
                 </li>
                 <li>Submission: <a href="#" target="_blank">tira.io</a> as a software submission.
 <!--                <li>Submission: <a href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/text-detoxification" target="_blank">tira.io</a> preferably as a software submission-->
                 </li>
                 <li>
-                    Main links: [<a href="https://huggingface.co/datasets/textdetox/multilingual_paradetox">Data</a>] [<a href="https://clef2024-labs-registration.dei.unipd.it">CLEF registration</a>] [<a href="https://huggingface.co/textdetox">HuggingFace space</a>] [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/text-detoxification">baselines</a>] [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/text-detoxification">leaderboard</a>] [<a href="https://groups.google.com/g/textdetox-clef2024">google group</a>]
+                    Registration: [<a href="https://clef2024-labs-registration.dei.unipd.it">CLEF registration</a>] 
+                </li>
+                <li>Contact: [<a href="https://huggingface.co/textdetox">HuggingFace space</a>][<a href="https://groups.google.com/g/textdetox-clef2024">google group</a>]
                 </li>
             </ul>
 
@@ -278,8 +280,8 @@ description: PAN at CLEF 2024 - Multilingual Text Detoxification
                 </li>
             </ol>
 
-            <h2 id="task-committee">Task Committee</h2>
-            The list of all researchers contributed to the parallel data preparation:
+            <h2>Contributors</h2>
+            The following researchers contributed to the parallel data preparation:
             <ul>
                 <li>Daryna Dementieva: Ukrainian, English, Russian</li>
                 <li>Daniil Moskovsky: English, Russian</li>
@@ -292,6 +294,7 @@ description: PAN at CLEF 2024 - Multilingual Text Detoxification
                 <li>Naquee Rizwan: Hindi</li>
             </ul>
             
+            <h2 id="task-committee">Task Committee</h2>
             <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
                 {% include people-cards/dementieva.html %}
                 {% include people-cards/schneider.html %}
@@ -302,12 +305,6 @@ description: PAN at CLEF 2024 - Multilingual Text Detoxification
                 {% include people-cards/stakovskii %}
                 {% include people-cards/smirnova.html %}
                 {% include people-cards/panchenko.html %}
-<!--                Daryna Dementieva - Technical University of Munich, Germany-->
-<!--                Alisa Smirnova - Toloka, Switzerland-->
-<!--                Dmitry Ustalov - Toloka, Serbia-->
-<!--                Alexander Panchenko - Skolkovo Institute of Science and Technology, Russia-->
-<!--                Animesh Mukherjee - Indian Institute of Technology Kharagpur, India-->
-<!--                Ashaf Elnagar - University of Sharjah, United Arab Emirates-->
             </div>
             <div class="uk-container uk-padding-large uk-padding-remove-bottom">
                 {% include organizations/clef-organizations-section.html year=2024 %}
