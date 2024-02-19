@@ -36,9 +36,9 @@ description: PAN at CLEF 2024 - Multi-Author Writing Style Analysis
                 <li>Input: Reddit comments, combined into documents [<a href="https://doi.org/10.5281/zenodo.7729177">data</a>].
                 </li>
                 <li>Output: Where does authorship change on the paragraph level [<a
-href="https://github.com/pan-webis-de/pan-code/tree/master/clef23/multi-author-analysis">validator</a>].
+href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/multi-author-analysis">validator</a>].
                 </li>
-                <li>Evaluation: F1 [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef23/multi-author-analysis">code</a>].
+                <li>Evaluation: F1 [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/multi-author-analysis">code</a>].
                 </li>
                 <li>Submission: Deployment on TIRA [<a href="https://www.tira.io/task-overview/multi-author-writing-style-analysis-2024/">submit</a>].
                 </li>
@@ -46,8 +46,6 @@ href="https://github.com/pan-webis-de/pan-code/tree/master/clef23/multi-author-a
 
 
             <h2 id="task">Task</h2>
-            Details will be announced at a later date.
-            <!--
             <p>The goal of the style change detection task is to identify text positions within a given multi-author document at which the author switches. Hence, a fundamental question is the following: If multiple authors together have written a text, can we find evidence for this fact; do we have a means to detect variations in the writing style? Answering this question belongs to the most difficult and most interesting challenges in author identification: Style change detection is the only means to detect plagiarism in a document if no comparison texts are given; likewise, style change detection can help to uncover gift authorships, to verify a claimed authorship, or to develop new technology for writing support.</p>
 
             <p>Previous editions of the multi-author writing style analysis task aim at e.g., detecting whether a document is single- or multi-authored (<a href="https://pan.webis.de/clef18/pan18-web/style-change-detection.html">2018</a>), the actual number of authors within a document (<a href="https://pan.webis.de/clef19/pan19-web/style-change-detection.html">2019</a>), whether there was a style change between two consecutive paragraphs (<a href="https://pan.webis.de/clef20/pan20-web/style-change-detection.html">2020</a>, <a href="https://pan.webis.de/clef21/pan21-web/style-change-detection.html">2021</a>, <a href="https://pan.webis.de/clef22/pan22-web/style-change-detection.html">2022</a>), and where the actual style changes were located (<a href="https://pan.webis.de/clef21/pan21-web/style-change-detection.html">2021</a>, <a href="https://pan.webis.de/clef22/pan22-web/style-change-detection.html">2022</a>). In <a href="https://pan.webis.de/clef22/pan22-web/style-change-detection.html">2022</a>, style changes also had to be detected on the sentence level. The previously used datasets exhibited high topic diversity, which allowed the participants to leverage topic information as a style change signal. In this year's edition of the writing style analysis task, special attention is paid to this issue. </p>
@@ -61,11 +59,8 @@ href="https://github.com/pan-webis-de/pan-code/tree/master/clef23/multi-author-a
             </ol>
 
             <p>All documents are provided in English and may contain an arbitrary number of style changes. However, style changes may only occur between paragraphs (i.e., a single paragraph is always authored by a single author and contains no style changes). </p>
--->
 
             <h2 id="data">Data [<a href="https://doi.org/10.5281/zenodo.7729177">download</a>]</h2>
-            Details will be announced at a later date.
-            <!--
             <p>To develop and then test your algorithms, three datasets including ground truth information are provided
             (<i>dataset1</i> for the easy task, <i>dataset2</i> for the medium task, and <i>dataset3</i> for the hard task).</p>
 
@@ -102,7 +97,7 @@ href="https://github.com/pan-webis-de/pan-code/tree/master/clef23/multi-author-a
             </ol>
 
             <h3 id="output_format">Output Format [<a
-href="https://github.com/pan-webis-de/pan-code/tree/master/clef23/multi-author-analysis" target="_blank">validator</a>]</h3>
+href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/multi-author-analysis" target="_blank">validator</a>]</h3>
             <p>To evaluate the solutions for the tasks, the results have to be stored in a single file for each of the input documents and each of the datasets. Please note that we require a solution file to be generated for each input problem for each dataset. The data structure during the evaluation phase will be similar to that in the training phase, with the exception that the ground truth files are missing.</p>
 
             <p>For each given problem <code>problem-X.txt</code>, your software should output the missing solution file <code>solution-problem-X.json</code>, containing a JSON object holding the solution to the respective task. The solution is an array containing a binary value for each pair of consecutive paragraphs .</p>
@@ -112,14 +107,12 @@ href="https://github.com/pan-webis-de/pan-code/tree/master/clef23/multi-author-a
             <pre class="prettyprint linenums uk-margin-remove-bottom"><code class="lang-json">{
                                 "changes": [0,0,1,0,0,...]
                             }</code></pre>
--->
-            <!--
+
             <h2 id="evaluation">Evaluation [<a
-href="https://github.com/pan-webis-de/pan-code/tree/master/clef23/multi-author-analysis" target="_blank">code</a>]</h2>
+href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/multi-author-analysis" target="_blank">code</a>]</h2>
             <p>Submissions are evaluated by the F1-score measure for each document. The solutions for each dataset are evaluated independently based on the obtained evaluation scores. 
 
-            <p>We provide you with a script to compute those measures based on the produced output-files [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef23/multi-author-analysis">evaluator and tests</a>].</p> 
--->
+            <p>We provide you with a script to compute those measures based on the produced output-files [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef23/multi-author-analysis">evaluator and tests</a>].</p>
 
             <h2 id="submission">Submission</h2>
             <p>Once you finish tuning your approach on the validation set, your software will be tested on the test set. During the competition, the test sets will not be released publicly. Instead, we ask you to submit your software for evaluation at our site as follows.</p>
@@ -136,6 +129,9 @@ href="https://github.com/pan-webis-de/pan-code/tree/master/clef23/multi-author-a
 
             <h2 id="related-work">Related Work</h2>
             <ul>
+                <li>
+                    <a href="{{ 'publications.html#?q=2023%20Zangerle' | relative_url }}">Style Change Detection, PAN@CLEF'23</a>
+                </li>
                 <li>
                     <a href="{{ 'publications.html#?q=2022%20Zangerle' | relative_url }}">Style Change Detection, PAN@CLEF'22</a>
                 </li>
