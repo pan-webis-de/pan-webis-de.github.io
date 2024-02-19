@@ -33,12 +33,12 @@ description: PAN at CLEF 2024 - Multi-Author Writing Style Analysis
             <h2 id="synopsis">Synopsis</h2>
             <ul>
                 <li>Task: Given a document, determine at which positions the author changes.</li>
-                <li>Input: Reddit comments, combined into documents [<a href="https://doi.org/10.5281/zenodo.7729177">data</a>].
+                <li>Input: Reddit comments, combined into documents [<a href="https://doi.org/10.5281/zenodo.10677876">data</a>].
                 </li>
                 <li>Output: Where does authorship change on the paragraph level [<a
-href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/multi-author-analysis">validator</a>].
+href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/multi-author-analysis/output_verifier/">validator</a>].
                 </li>
-                <li>Evaluation: F1 [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/multi-author-analysis">code</a>].
+                <li>Evaluation: F1 [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/multi-author-analysis/evaluator/">code</a>].
                 </li>
                 <li>Submission: Deployment on TIRA [<a href="https://www.tira.io/task-overview/multi-author-writing-style-analysis-2024/">submit</a>].
                 </li>
@@ -60,9 +60,9 @@ href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/multi-author-a
 
             <p>All documents are provided in English and may contain an arbitrary number of style changes. However, style changes may only occur between paragraphs (i.e., a single paragraph is always authored by a single author and contains no style changes). </p>
 
-            <h2 id="data">Data [<a href="https://doi.org/10.5281/zenodo.7729177">download</a>]</h2>
+            <h2 id="data">Data [<a href="https://doi.org/10.5281/zenodo.10677876">download</a>]</h2>
             <p>To develop and then test your algorithms, three datasets including ground truth information are provided
-            (<i>dataset1</i> for the easy task, <i>dataset2</i> for the medium task, and <i>dataset3</i> for the hard task).</p>
+            (<i>easy</i> for the easy task, <i>medium</i> for the medium task, and <i>hard</i> for the hard task).</p>
 
             <p>Each dataset is split into three parts:</p>
 
@@ -97,7 +97,7 @@ href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/multi-author-a
             </ol>
 
             <h3 id="output_format">Output Format [<a
-href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/multi-author-analysis" target="_blank">validator</a>]</h3>
+href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/multi-author-analysis/output_verifier/" target="_blank">validator</a>]</h3>
             <p>To evaluate the solutions for the tasks, the results have to be stored in a single file for each of the input documents and each of the datasets. Please note that we require a solution file to be generated for each input problem for each dataset. The data structure during the evaluation phase will be similar to that in the training phase, with the exception that the ground truth files are missing.</p>
 
             <p>For each given problem <code>problem-X.txt</code>, your software should output the missing solution file <code>solution-problem-X.json</code>, containing a JSON object holding the solution to the respective task. The solution is an array containing a binary value for each pair of consecutive paragraphs .</p>
@@ -109,10 +109,10 @@ href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/multi-author-a
                             }</code></pre>
 
             <h2 id="evaluation">Evaluation [<a
-href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/multi-author-analysis" target="_blank">code</a>]</h2>
-            <p>Submissions are evaluated by the F1-score measure for each document. The solutions for each dataset are evaluated independently based on the obtained evaluation scores. 
+href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/multi-author-analysis/evaluator" target="_blank">code</a>]</h2>
+            <p>Submissions are evaluated by the F1-score measure (macro) across all paragraph pairs. The solutions for each dataset are evaluated independently based on the obtained evaluation scores. 
 
-            <p>We provide you with a script to compute those measures based on the produced output-files [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef23/multi-author-analysis">evaluator and tests</a>].</p>
+            <p>We provide you with a script to compute the F1-score based on the produced output-files [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/multi-author-analysis/evaluator/">evaluator and tests</a>].</p>
 
             <h2 id="submission">Submission</h2>
             <p>Once you finish tuning your approach on the validation set, your software will be tested on the test set. During the competition, the test sets will not be released publicly. Instead, we ask you to submit your software for evaluation at our site as follows.</p>
