@@ -48,83 +48,83 @@ description: PAN at CLEF 2024 - Oppositional Thinking Analysis
                 <li>Submission: Deployment on TIRA [<a href="https://www.tira.io/task-overview/oppositional-thinking-analysis-at-panclef-2024/">submit</a>]</li>
             </ul>-->
 
-            Conspiracy theories are complex narratives that attempt to explain the ultimate causes of significant events as cover plots 
+            <p>Conspiracy theories are complex narratives that attempt to explain the ultimate causes of significant events as cover plots 
             orchestrated by secret, powerful, and malicious groups [1]. A challenging aspect of identifying conspiracy with NLP models [2] 
             stems from the difficulty of distinguishing critical thinking from conspiratorial thinking in automatic content moderation. 
             This distinction is vital because labeling a message as conspiratorial when it is only oppositional could
-            drive those who were simply asking questions into the arms of the conspiracy communities.
+            drive those who were simply asking questions into the arms of the conspiracy communities.</p>
             
-            At PAN 2024 we aim at analyzing texts that reflect oppositional thinking and contain either conspiracy or critical narratives. 
+            <p>At PAN 2024 we aim at analyzing texts that reflect oppositional thinking and contain either conspiracy or critical narratives. 
             The task will address two new challenges for the NLP research community: (1) to distinguish the conspiracy narrative from other 
             oppositional narratives that do not express a conspiracy mentality (i.e., critical thinking); and (2) to identify in online messages 
             the key elements of a narrative that fuels the intergroup conflict in oppositional thinking. To this end we provide two text corpora, 
-            one <b>English</b> and one <b>Spanish</b>, and we propose two sub-tasks:
+            one <b>English</b> and one <b>Spanish</b>, and we propose two sub-tasks:</p>
             
-            <b>1. Distinguishing between critical and conspiracy texts (subtask 1):</b>
-            A binary classification task differentiating between (1) critical messages that question major decisions in the public health domain, but do not promote a conspiracist mentality; and (2) messages that view the pandemic or public health decisions as a result of a malevolent conspiracy by secret, influential groups.
+            <p><b>1. Distinguishing between critical and conspiracy texts (subtask 1):</b></p>
+            <p>A binary classification task differentiating between (1) critical messages that question major decisions in the public health domain, but do not promote a conspiracist mentality; and (2) messages that view the pandemic or public health decisions as a result of a malevolent conspiracy by secret, influential groups.</p>
+            <ul>
+                <li>Input: Set of texts, each associated with one of the two categories: CONSPIRACY, CRITICAL</li>
+                    <li>Official evaluation metric: MCC [3] </li>
+                <li>Baselines: BERT classifier [4]</li>
+            </ul>
             
-            Input:
-            Set of texts, each associated with one of the two categories: CONSPIRACY, CRITICAL
-            Official evaluation metric: MCC [3] 
-            Baselines: BERT classifier [4]
+            <p><b>2. Detecting elements of the oppositional narratives (subtask 2):</b></p>
+            <p>A token-level classification task aimed at recognizing text spans corresponding to the key elements of oppositional narratives. Since conspiracy narratives are a special kind of causal explanation, we developed a span-level annotation scheme that identifies the goals, effects, agents, and the groups-in conflict in these narratives.</p>
             
-            <b>2. Detecting elements of the oppositional narratives (subtask 2):</b>
-            A token-level classification task aimed at recognizing text spans corresponding to the key elements of oppositional narratives. Since conspiracy narratives are a special kind of causal explanation, we developed a span-level annotation scheme that identifies the goals, effects, agents, and the groups-in conflict in these narratives.
-            
-            Input:
-            Set of texts, each text accompanied with a (possibly empty) list of span annotations. Each annotation corresponds to a narrative element, and is described by its borders (start and end characters), and its category. There are six distinct span categories: AGENT, FACILITATOR, VICTIM, CAMPAIGNER, OBJECTIVE, NEGATIVE_EFFECT
-            Official evaluation metric: span-F1 [5]
-            Baseline: BERT-based multi-task token classifier (separate classification heads, common transformer backbone) [6]
+            <ul>
+                <li>Input: Set of texts, each text accompanied with a (possibly empty) list of span annotations. Each annotation corresponds to a narrative element, and is described by its borders (start and end characters), and its category. There are six distinct span categories: AGENT, FACILITATOR, VICTIM, CAMPAIGNER, OBJECTIVE, NEGATIVE_EFFECT</li>
+                <li>Official evaluation metric: span-F1 [5]</li>
+                <li>Baseline: BERT-based multi-task token classifier (separate classification heads, common transformer backbone) [6]</li>
+            </ul>
 
 
             
 
             <h2 id="task">Task</h2>>
-            Conspiracy Theories are complex narratives that attempt to explain the ultimate causes of significant events as cover plots 
-            orchestrated by secret, powerful, and malicious groups [1]. 
-            Automatic detection of CTs in text has recently gained popularity [2, 7, 8, 9]. The problem is commonly framed as binary 
+            <p>Conspiracy Theories are complex narratives that attempt to explain the ultimate causes of significant events as cover plots 
+            orchestrated by secret, powerful, and malicious groups [1]. Automatic detection of CTs in text has recently gained popularity [2, 7, 8, 9]. The problem is commonly framed as binary 
             classification, with fine-grained approaches corresponding to multi-label or multi-class classification. Two recent <a href="https://multimediaeval.github.io/editions/2022/" target="_blank">MediaEval</a> 
             challenges [8, 9] of coarse- and fine-grained classification of conspiratorial text [8, 9] led to a number of approaches 
             demonstrating that the state-of-art architecture is a multi-task classifier [10, 11, 12] based on domain-specific CT-BERT model [12]. 
-            An LLM-based approach was also attempted [13].
+            An LLM-based approach was also attempted [13]. </p>
             
-            However, existing approaches do not distinguish between critical and conspiratorial thinking. This distinction is important because 
+            <p>However, existing approaches do not distinguish between critical and conspiratorial thinking. This distinction is important because 
             labeling a text as conspiratorial when it is, in fact, oppositional to mainstream views, could potentially lead those who were simply 
             asking questions closer to conspiracy communities. As several authors from the field of social sciences suggest, a fully-fledged 
             conspiratorial worldview is the final step in a progressive "spiritual journey" that sets out by questioning social and political 
             orthodoxies [1, 14, 15]. Additionally, recent research [16] has shown that the level of interaction with conspiracist users is the most 
             important feature for predicting whether or not users join conspiracy communities. These insights have an important implication for 
             automatic content moderation: if models do not differentiate between critical and conspiratorial thinking, there is a high risk of pushing 
-            people toward conspiracy communities.
+            people toward conspiracy communities.</p>
             
-            Another important gap in the computational analysis of conspiratorial texts fails to address is the
+            <p>Another important gap in the computational analysis of conspiratorial texts fails to address is the
             role that intergroup conflict (IGC) [17] plays in these narratives. Intergroup conflict is a way of framing events by emphasizing the 
             hostility between groups, typically by using "us versus them" narrative, and by fueling the perceived injustice and threat to the group. 
             The increasing potentially violent involvement of conspiracist communities in political processes suggests that one of the purposes of CTs 
             is to enforce IGC and coordinate action [18]. Therefore, tools that enable an IGC-based analysis of conspiratorial texts could offer 
-            valuable insights for content moderation.
+            valuable insights for content moderation.</p>
             
-            Motivated by the described issues, we propose a novel annotation scheme that distinguishes between conspiracy and critical texts, and 
+            <p>Motivated by the described issues, we propose a novel annotation scheme that distinguishes between conspiracy and critical texts, and 
             defines important categories of oppositional narrative. In addition to the standard elements of conspiracy narratives such as agents 
             (conspirators) and victims, the proposed scheme identifies the following categories: “facilitators” (collaborators of the agents, such 
             as the media) and “campaigners” (those that unmask the conspiracy agenda). These types of actors are “key players” in IGC: the 
             facilitators are tangible targets with whom real conflict is possible (in contrast to abstract agents such as secret groups), and the 
-            campaigners are those that show their opposition to the facilitators and try to persuade the victims to join their cause.
+            campaigners are those that show their opposition to the facilitators and try to persuade the victims to join their cause.</p>
             
-            We focus on oppositional texts from the Telegram platform related to the COVID-19 pandemic, and construct <b>English</b> and <b>Spanish</b> 
+            <p>We focus on oppositional texts from the Telegram platform related to the COVID-19 pandemic, and construct <b>English</b> and <b>Spanish</b> 
             corpora annotated with the described labeling schemes. This enables the NLP community to tackle two new tasks related to the two previously 
             described phenomena: the binary classification task of distinguishing between conspiratorial and critical texts, and the task of 
-            detecting the elements of the oppositional narrative.
+            detecting the elements of the oppositional narrative.</p>
            
            <h2 id="award">Award</h2>>
            We are pleased to announce that the best-performing team at the 11th International Competition on Author Profiling will be awarded 300,- Euro 
             sponsored by <a href="https://www.symanto.com/" target="_blank">Symanto</a>.
 
            <h2 id="data">Data</h2>>
-            The participants will work with a JSON file that contains all the texts in the train dataset, and their annotations. Each text 
+            <p>The participants will work with a JSON file that contains all the texts in the train dataset, and their annotations. Each text 
             corresponds to a dictionary that contains the ID, tokenized text, the binary category, and the span annotations. Span annotations 
             are a list of dictionaries, each corresponding to an annotated span and containing the span’s category and text, designated by 
-            the start and end characters. This is an example of a JSON dictionary corresponding to a single, fully annotated, text:
+            the start and end characters. This is an example of a JSON dictionary corresponding to a single, fully annotated, text:</p>
 
             <pre>
                  {
@@ -160,25 +160,25 @@ description: PAN at CLEF 2024 - Oppositional Thinking Analysis
                   }
 
             </pre>
-            At test time, the participants will receive text data in the above format. For each text, only the “id” and the “text” fields will 
+           <p>At test time, the participants will receive text data in the above format. For each text, only the “id” and the “text” fields will 
             be provided. The required output is a JSON file in the same format, with each text designated with an ID, and annotated with the 
             text category, and the annotations. More details about the data, and the data utilities can be found in the task’s github 
-            repository [repo-link].
+            repository [repo-link].</p>
 
             
            <h2 id="submission">Submission </h2>
            Details will be announced at a later date.
 
           <h2 id="evaluation">Evaluation</h2> 
-           The official evaluation metric for subtask 1 (critical vs. conspiracy classification) is MCC [3], while the official metric 
+           <p>The official evaluation metric for subtask 1 (critical vs. conspiracy classification) is MCC [3], while the official metric 
             for subtask 2 (span-level detection of narrative elements) is span-F1 [5]. For subtask 1 we will also provide binary F1 scores 
             for each of the classes, and for subtask 2 we will provide per-category span-F1 scores. For each of the task languages, <b>English</b> and 
-            <b>Spanish</b>, a separate ranking list will be maintained for each task.
+            <b>Spanish</b>, a separate ranking list will be maintained for each task.</p>
 
-            We provide two hard baselines for these tasks. For subtask 1, the baseline is a standard BERT [4] classifier. For subtask 2, 
+            <p>We provide two hard baselines for these tasks. For subtask 1, the baseline is a standard BERT [4] classifier. For subtask 2, 
             the baseline is a BERT-based multi-task token classifier (separate classification heads, common transformer backbone) [6]. 
             The baselines are based on either <b>English</b> or <b>Spanish</b> BERT models, depending on the language. The task’s 
-            github repository [repo-link] contains the code of the baselines.
+            github repository [repo-link] contains the code of the baselines.</p>
 
                                     
             <h2 id="related-work">Related Work</h2>
