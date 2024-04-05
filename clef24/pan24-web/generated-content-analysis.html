@@ -54,11 +54,11 @@ description: PAN at CLEF 2024 - Generative AI Authorship Verification
 
             <p>The <strong>bootstrap dataset</strong> is provided as a set of newline-delimited JSON files. Each file contains a list of articles, written either by (any number of) human authors or a single machine. That is, the file <code>human.jsonl</code> contains only human texts, whereas a file <code>gemini-pro.jsonl</code> contains articles about the same topics, but written entirely by Google's Gemini Pro. The file format is as follows:</p>
 
-            <pre class="prettyprint linenums uk-padding-remove-bottom"><code class="lang-json">{"id": "news-2021-01-01-2021-12-31-kabulairportattack/art-081", "text": "..."}
-{"id": "news-2021-01-01-2021-12-31-capitolriot/art-050", "text": "..."}
+            <pre class="prettyprint linenums uk-padding-remove-bottom"><code class="lang-json">{"id": "gemini-pro/news-2021-01-01-2021-12-31-kabulairportattack/art-081", "text": "..."}
+{"id": "gemini-pro/news-2021-01-01-2021-12-31-capitolriot/art-050", "text": "..."}
 ...</code></pre>
 
-            <p>The article IDs and line orderings are the same across all files, so the same line always corresponds to the same topic, but from different “authors”.</p>
+            <p>The article IDs and line orderings are the same across all files (except for the model-specific prefix before the first <code>/</code>), so the same line always corresponds to the same topic, but from different “authors”.</p>
 
             <p>The <strong>test dataset</strong> will be provided in a different format. Instead of individual files, only a single JSONL file will be given, each line containing a pair of texts:</p>
 
@@ -127,7 +127,7 @@ description: PAN at CLEF 2024 - Generative AI Authorship Verification
                 {% include people-cards/stamatatos.html %}
             </div>
             <div class="uk-container uk-padding-large uk-padding-remove-bottom">
-                {% include organizations/clef-organizations-section.html year=2024 %}
+                {% include organizations/clef-organizations-section.html year=2024 ows=true %}
             </div>
         </div>
     </div>
