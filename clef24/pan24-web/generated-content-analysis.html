@@ -74,10 +74,12 @@ description: PAN at CLEF 2024 - Generative AI Authorship Verification
             <h2 id="submission">Submission</h2>
             <p>Participants will submit their systems as Docker images through the <a href="https://www.tira.io/task-overview/generative-ai-authorship-verification-panclef-2024/">Tira</a> platform. It is not expected that submitted systems are actually <em>trained</em> on Tira, but they must be standalone and runnable on the platform without requiring contact to the outside world (evaluation runs will be sandboxed).</p>
 
-            <p>The submitted software must be executable inside the container via a command line call. The script must take two arguments: <code>INPUT-FILE</code> (absolute path to the input JSONL file) and <code>OUTPUT-DIRECTORY</code> (absolute path to the output directory):</p>
-            <pre class="prettyprint"><code class="lang-json">$ mySoftware INPUT-FILE OUTPUT-DIRECTORY</code></pre>
+            <p>The submitted software must be executable inside the container via a command line call. The script must take two arguments: an input file (an absolute path to the input JSONL file) and an output directory (an absolute path to where the results will be written):</p>
 
-            <p>Within <code>OUTPUT-DIRECTORY</code>, a single (!) file with the file extension <code>*.jsonl</code> must be created with the following format:</p>
+            <p>Within Tira, the input file will be called <code>dataset.jsonl</code>, so with the pre-defined Tira placeholders, your software should be invoked like this:</p>
+            <pre class="prettyprint"><code class="lang-console">$ mySoftware $inputDataset/dataset.jsonl $outputDir</code></pre>
+
+            <p>Within <code>$outputDir</code>, a single (!) file with the file extension <code>*.jsonl</code> must be created with the following format:</p>
 
             <pre class="prettyprint linenums uk-padding-remove-bottom"><code class="lang-json">{"id": "iixcWBmKWQqLAwVXxXGBGg", "is_human": 1.0}
 {"id": "y12zUebGVHSN9yiL8oRZ8Q", "is_human": 0.3}
