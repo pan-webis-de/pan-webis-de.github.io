@@ -55,7 +55,7 @@ description: PAN at CLEF 2024 - Generative AI Authorship Verification
 
             <p>The <strong>bootstrap dataset</strong> is provided as a set of newline-delimited JSON files. Each file contains a list of articles, written either by (any number of) human authors or a single machine. That is, the file <code>human.jsonl</code> contains only human texts, whereas a file <code>gemini-pro.jsonl</code> contains articles about the same topics, but written entirely by Google's Gemini Pro. The file format is as follows:</p>
 
-            <pre class="prettyprint linenums uk-padding-remove-bottom"><code class="lang-json">{"id": "gemini-pro/news-2021-01-01-2021-12-31-kabulairportattack/art-081", "text": "..."}
+            <pre class="prettyprint"><code class="lang-json">{"id": "gemini-pro/news-2021-01-01-2021-12-31-kabulairportattack/art-081", "text": "..."}
 {"id": "gemini-pro/news-2021-01-01-2021-12-31-capitolriot/art-050", "text": "..."}
 ...</code></pre>
 
@@ -63,14 +63,34 @@ description: PAN at CLEF 2024 - Generative AI Authorship Verification
 
             <p>The <strong>test dataset</strong> will be provided in a different format. Instead of individual files, only a single JSONL file will be given, each line containing a pair of texts:</p>
 
-            <pre class="prettyprint linenums uk-padding-remove-bottom"><code class="lang-json">{"id": "iixcWBmKWQqLAwVXxXGBGg", "text1": "...", "text2": "..."}
+            <pre class="prettyprint"><code class="lang-json">{"id": "iixcWBmKWQqLAwVXxXGBGg", "text1": "...", "text2": "..."}
 {"id": "y12zUebGVHSN9yiL8oRZ8Q", "text1": "...", "text2": "..."}
 ...</code></pre>
 
             <p>The IDs will be scrambled and the participant's task is to generate an appropriate output file with predictions for which of the two texts is the human one (see <a href="#submission">Submission</a> below).</p>
 
             <h2 id="evaluation">Evaluation</h2>
-            Details will be announced at a later date.
+            Systems will be evaluated with the same measures as previous installments of the PAN authorship verification tasks. The following metrics will be used:</p>
+
+            <ul>
+                <li>ROC-AUC: The area under the ROC (Receiver Operating Characteristic) curve.</li>
+                <li>Brier: The complement of the Brier score (mean squared loss).</li>
+                <li>C@1: A modified accuracy score that assigns non-answers (score = 0.5) the average accuracy of the remaining cases.</li>
+                <li>F<sub>1</sub>: The harmonic mean of precision and recall.</li>
+                <li>F<sub>0.5u</sub>: A modified F<sub>0.5</sub> measure (precision-weighted F measure) that treats non-answers (score = 0.5) as false negatives.</li>
+                <li>The arithmetic mean of all the metrics above.</li>
+            </ul>
+
+            <p>The evaluator for the task will output the above measures as JSON like so:</p>
+            <pre class="prettyprint"><code class="lang-json">{
+    "roc-auc": 0.992,
+    "brier": 0.979,
+    "c@1": 0.978,
+    "f1": 0.978,
+    "f_05_u": 0.978,
+    "mean": 0.981
+}</code></pre>
+
 
             <h2 id="submission">Submission</h2>
             <p>Participants will submit their systems as Docker images through the <a href="https://www.tira.io/task-overview/generative-ai-authorship-verification-panclef-2024/">Tira</a> platform. It is not expected that submitted systems are actually <em>trained</em> on Tira, but they must be standalone and runnable on the platform without requiring contact to the outside world (evaluation runs will be sandboxed).</p>
@@ -82,13 +102,15 @@ description: PAN at CLEF 2024 - Generative AI Authorship Verification
 
             <p>Within <code>$outputDir</code>, a single (!) file with the file extension <code>*.jsonl</code> must be created with the following format:</p>
 
-            <pre class="prettyprint linenums uk-padding-remove-bottom"><code class="lang-json">{"id": "iixcWBmKWQqLAwVXxXGBGg", "is_human": 1.0}
+            <pre class="prettyprint"><code class="lang-json">{"id": "iixcWBmKWQqLAwVXxXGBGg", "is_human": 1.0}
 {"id": "y12zUebGVHSN9yiL8oRZ8Q", "is_human": 0.3}
 ...</code></pre>
 
             <p>For each test case in the input file, an output line must be written with the ID of the input text pair and a confidence score between <code>0.0</code> and <code>1.0</code>. A score <code>&lt; 0.5</code> means that <code>text1</code> is believed to be human-authored. A score <code>&gt; 0.5</code> means that <code>text2</code> is believed to be human-authored. A score of <em>exactly</em> <code>0.5</code> means the case is undecidable. Participants are encouraged to answer with <code>0.5</code> rather than making a <em>wrong</em> prediction.</p>
 
             <p><strong>All test cases must be processed in isolation without information leakage between them!</strong> Even though systems may be given an input file with multiple JSON lines at once for reasons of efficiency, these inputs must be processed and answered just the same as if only a single line were given. Answers for any one test case must not depend on other cases in the input dataset!</p>
+
+            <p><strong>Tip:</strong> You can test your submission using the <code>pan24-generative-authorship-smoke-test</code> dataset and evaluator (which is different from the final test dataset).</p>
 
             <h2 id="related-work">Related Work</h2>
             <ul>
