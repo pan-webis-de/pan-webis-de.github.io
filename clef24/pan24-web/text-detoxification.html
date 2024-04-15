@@ -44,7 +44,7 @@ description: PAN at CLEF 2024 - Multilingual Text Detoxification
             <h2 id="synopsis">Synopsis</h2>
             <ul> 
                 <li>Task: Given a toxic piece of text, re-write it in a non-toxic way while saving the main content as much as possible.</li>
-                <li>Input: toxic sentences in multiple languages from all over the globe: English, Spanish,  German, Chinese, Arabic, Hindi, Ukrainian, and Amharic. [<a href="https://huggingface.co/datasets/textdetox/multilingual_paradetox">data</a>]
+                <li>Input: toxic sentences in multiple languages from all over the globe: English, Spanish,  German, Chinese, Arabic, Hindi, Ukrainian, Russian, and Amharic. [<a href="https://huggingface.co/datasets/textdetox/multilingual_paradetox">data</a>]
                 </li>
                 <li>Output: detoxified version of the text in the corresponding language.
                 </li>
@@ -93,7 +93,7 @@ description: PAN at CLEF 2024 - Multilingual Text Detoxification
             </p>
 
             <p>
-                In this competition, we suggest you create detoxification systems for 9 languages from several linguitic families: English, Russian, Ukrainian, German, Spanish, Chinese, Amharic, Arabic, and Hindi.
+                In this competition, we suggest you create detoxification systems for 9 languages from several linguitic families: English, Spanish,  German, Chinese, Arabic, Hindi, Ukrainian, Russian, and Amharic.
                 However, the availability of training corpora will differ between the languages. For English and Russian, the parallel corpora of several thousand toxic-detoxified pairs (as presented above) are available. So, you can fine-tune text generation models on them.
                 For other languages, for the dev phase, no such corpora will be provided. <b>The main challenge</b> of this competition will be to perform an <b>unsupervised and cross-lingual detoxification</b>.
             </p>
@@ -134,7 +134,7 @@ description: PAN at CLEF 2024 - Multilingual Text Detoxification
 
             <p>
                 If a parallel corpus of toxic-neutral pairs is already available (as, in our case, for English and Russian), then you can fine-tune <i>any</i> text generation model.
-                You can refer to the ruT5 model for detoxification <a href="https://github.com/s-nlp/russe_detox_2022/tree/main/baselines/t5">example</a> from the previous <a href="https://russe.nlpub.org/2022/tox/">RUSSE-2022</a> competition.
+                You can refer to the ruT5 model for detoxification <a href="https://github.com/s-nlp/russe_detox_2022/tree/main/baselines/t5">example</a> from the  <a href="https://russe.nlpub.org/2022/tox/">previous competition</a> at the <a href="https://www.dialog-21.ru/en/evaluation/">Dialogue Evaluation</a> forum.
             </p>
 
             <p>
