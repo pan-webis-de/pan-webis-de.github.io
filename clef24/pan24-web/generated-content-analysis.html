@@ -22,6 +22,7 @@ description: PAN at CLEF 2024 - Generative AI Authorship Verification
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#baselines">Baselines</a></li>
 <!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>-->
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
@@ -36,7 +37,7 @@ description: PAN at CLEF 2024 - Generative AI Authorship Verification
                 <li>Input: Pairs of texts, one of which was written by a human. [<a href="https://zenodo.org/records/10718757">download</a>]</li>
                 <li>Evaluation: tba.</li>
                 <li>Submission: Deployment on TIRA [<a href="https://www.tira.io/task-overview/generative-ai-authorship-verification-panclef-2024/">submit</a>]</li>
-                <li>Baseline: tba.</li>
+                <li>Baseline: PPMd CBC, Authorship Unmasking, Binoculars, DetectLLM, DetectGPT</li>
             </ul>
 
 
@@ -112,8 +113,59 @@ description: PAN at CLEF 2024 - Generative AI Authorship Verification
 
             <p><strong>Tip:</strong> You can test your submission using the <code>pan24-generative-authorship-smoke-test</code> dataset and evaluator (which is different from the final test dataset).</p>
 
-            <h2 id="related-work">Related Work</h2>
+            <h2 id="baselines">Baselines</h2>
+            <p>We provide six LLM detection baselines as reimplementations from the original papers:</p>
             <ul>
+                <li>
+                    PPMd Compression-based Cosine
+                    [<a href="https://ieeexplore.ieee.org/abstract/document/1607268">Sculley and Brodley, 2006</a>]
+                    [<a href="https://dl.acm.org/doi/abs/10.1145/3098954.3104050">Halvani et al., 2017</a>]
+                </li><li>
+                    Authorship Unmasking
+                    [<a href="https://dl.acm.org/doi/abs/10.1145/1015330.1015448">Koppel and Schler, 2004</a>]
+                    [<a href="https://aclanthology.org/N19-1068/">Bevendorff et al., 2019</a>]
+                </li><li>
+                    Binoculars
+                    [<a href="https://arxiv.org/abs/2401.12070">Hans et al., 2024</a>]
+                </li><li>
+                    DetectLLM LRR and NPR
+                    [<a href="https://arxiv.org/abs/2306.05540">Su et al., 2023</a>]
+                </li><li>
+                    DetectGPT
+                    [<a href="https://arxiv.org/abs/2301.11305">Mitchell et al., 2023</a>]
+                </li><li>
+                    Text length
+                </li>
+            </ul>
+
+            <p>With PPMd CBC and Authorship unmasking, we provide two bag-of-words authorship verification models. Binoculars, DetectLLM, and DetectGPT use large language models to measure text perplexity. The text length baseline serves mainly as a data sanity check and is designed to have random performance.</p>
+
+            <p>The baselines are published on <a href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/generative-authorship-verification">GitHub</a>. You can run them locally, in a Docker container or using <code>tira-run</code>. All baselines come with a CLI and usage instructions. Their general usage for is:</p>
+
+            <pre class="prettyprint"><code class="console">$ baseline BASELINENAME [OPTIONS] INPUT_FILE OUTPUT_DIRECTORY</code></pre>
+
+            Use <code>--help</code> on any subcommand for more information:
+
+            <pre class="prettyprint"><code class="console">$ baseline --help
+Usage: baseline.py [OPTIONS] COMMAND [ARGS]...
+
+  PAN'24 Generative Authorship Detection baselines.
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  binoculars  PAN'24 baseline: Binoculars.
+  detectgpt   PAN'24 baseline: DetectGPT.
+  detectllm   PAN'24 baseline: DetectLLM.
+  length      PAN'24 baseline: Text length.
+  ppmd        PAN'24 baseline: Compression-based cosine.
+  unmasking   PAN'24 baseline: Authorship unmasking.</code></pre>
+
+            <p>More information on how to install and run the baselines can be found in the <a href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/generative-authorship-verification#readme">README on GitHub</a>.</p>
+
+            <h2 id="related-work">Related Work</h2>
+            <ul class="uk-list uk-list-bullet">
 				<li>
                     Janek Bevendorff et al. <a href="https://downloads.webis.de/publications/papers/bevendorff_2024b.pdf">Overview of PAN 2024: Multi-Author Writing Style Analysis, Multilingual Text Detoxification, Oppositional Thinking Analysis, and Generative AI Authorship Verification</a>. In Advances in Information Retrieval. 46th European Conference on IR Research (ECIR 2024), Lecture Notes in Computer Science, March 2024. Springer.
                 </li>
@@ -121,13 +173,28 @@ description: PAN at CLEF 2024 - Generative AI Authorship Verification
                     Uchendu, Adaku, Thai Le, Kai Shu, and Dongwon Lee. 2020. <a href="https://aclanthology.org/2020.emnlp-main.673/">Authorship Attribution for Neural Text Generation</a>. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP). Association for Computational Linguistics.
                 </li>
                 <li>
+                    Jakesch, Maurice, Jeffrey T. Hancock, and Mor Naaman. 2023. <a href="https://www.pnas.org/doi/10.1073/pnas.2208839120">Human Heuristics for AI-Generated Language Are Flawed</a>. Proceedings of the National Academy of Sciences of the United States of America 120.
+                </li>
+                <li>
                     Hans, Abhimanyu, Avi Schwarzschild, Valeriia Cherepanova, Hamid Kazemi, Aniruddha Saha, Micah Goldblum, Jonas Geiping, and Tom Goldstein. 2024. <a href="http://arxiv.org/abs/2401.12070">Spotting LLMs with Binoculars: Zero-Shot Detection of Machine-Generated Text</a>. arXiv [Cs.CL].
+                </li>
+                <li>
+                    Su, Jinyan, Terry Yue Zhuo, Di Wang, and Preslav Nakov. 2023. <a href="https://arxiv.org/abs/2306.05540">DetectLLM: Leveraging Log Rank Information for Zero-Shot Detection of Machine-Generated Text.</a> arXiv [Cs.CL].
                 </li>
                 <li>
                     Mitchell, Eric, Yoonho Lee, Alexander Khazatsky, Christopher D. Manning, and Chelsea Finn. 2023. <a href="http://arxiv.org/abs/2301.11305">DetectGPT: Zero-Shot Machine-Generated Text Detection Using Probability Curvature</a>. arXiv [Cs.CL].
                 </li>
                 <li>
-                    Jakesch, Maurice, Jeffrey T. Hancock, and Mor Naaman. 2023. <a href="https://www.pnas.org/doi/10.1073/pnas.2208839120">Human Heuristics for AI-Generated Language Are Flawed</a>. Proceedings of the National Academy of Sciences of the United States of America 120.
+                    Koppel, Moshe, and Jonathan Schler. 2004. <a href="https://dl.acm.org/doi/abs/10.1145/1015330.1015448">Authorship Verification as a One-Class Classification Problem.</a> In Proceedings, Twenty-First International Conference on Machine Learning, ICML 2004, 489–95.
+                </li>
+                <li>
+                    Bevendorff, Janek, Benno Stein, Matthias Hagen, and Martin Potthast. 2019. <a href="https://aclanthology.org/N19-1068/">Generalizing Unmasking for Short Texts.</a> In Proceedings of the 2019 Conference of the North, 654–59. Stroudsburg, PA, USA: Association for Computational Linguistics.
+                </li>
+                <li>
+                    Sculley, D., and C. E. Brodley. 2006. <a href="https://ieeexplore.ieee.org/abstract/document/1607268">Compression and Machine Learning: A New Perspective on Feature Space Vectors.</a> In Data Compression Conference (DCC’06), 332–41. IEEE.
+                </li>
+                <li>
+                    Halvani, Oren, Christian Winter, and Lukas Graner. 2017. <a href="https://dl.acm.org/doi/abs/10.1145/3098954.3104050">On the Usefulness of Compression Models for Authorship Verification.</a> In ACM International Conference Proceeding Series. Vol. Part F1305. Association for Computing Machinery.
                 </li>
                 <li>
                     Uchendu, Adaku, Zeyu Ma, Thai Le, Rui Zhang, and Dongwon Lee. 2021. <a href="https://pike.psu.edu/publications/emnlp21.pdf">TURINGBENCH: A Benchmark Environment for Turing Test in the Age of Neural Text Generation</a>. arXiv [Cs.CL].
