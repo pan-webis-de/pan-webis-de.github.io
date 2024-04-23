@@ -114,7 +114,7 @@ description: PAN at CLEF 2024 - Generative AI Authorship Verification
             <p><strong>Tip:</strong> You can test your submission using the <code>pan24-generative-authorship-smoke-test</code> dataset and evaluator (which is different from the final test dataset).</p>
 
             <h2 id="baselines">Baselines</h2>
-            <p>We provide six LLM detection baselines as reimplementations from the original papers:</p>
+            <p>We provide five (six) LLM detection baselines as reimplementations from the original papers:</p>
             <ul>
                 <li>
                     PPMd Compression-based Cosine
@@ -140,7 +140,7 @@ description: PAN at CLEF 2024 - Generative AI Authorship Verification
 
             <p>With PPMd CBC and Authorship unmasking, we provide two bag-of-words authorship verification models. Binoculars, DetectLLM, and DetectGPT use large language models to measure text perplexity. The text length baseline serves mainly as a data sanity check and is designed to have random performance.</p>
 
-            <p>The baselines are published on <a href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/generative-authorship-verification">GitHub</a>. You can run them locally, in a Docker container or using <code>tira-run</code>. All baselines come with a CLI and usage instructions. Their general usage for is:</p>
+            <p>The baselines are published on <a href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/generative-authorship-verification">GitHub</a>. You can run them locally, in a Docker container or using <code>tira-run</code>. All baselines come with a CLI and usage instructions. Their general usage is:</p>
 
             <pre class="prettyprint"><code class="console">$ baseline BASELINENAME [OPTIONS] INPUT_FILE OUTPUT_DIRECTORY</code></pre>
 
