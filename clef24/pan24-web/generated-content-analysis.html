@@ -32,7 +32,7 @@ description: PAN at CLEF 2024 - Generative AI Authorship Verification
         <div class="uk-container uk-margin-medium">
 
             <h2 id="synopsis">Synopsis</h2>
-            <ul>
+            <ul class="uk-list uk-list-bullet">
                 <li>Task: Given two texts, one authored by a human, one by a machine: pick out the human.</li>
                 <li>Input: Pairs of texts, one of which was written by a human. [<a href="https://zenodo.org/records/10718757">download</a>]</li>
                 <li>Evaluation: ROC-AUC, Brier, C@1, F<sub>1</sub>, F<sub>0.5u</sub> [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/generative-authorship-verification">code</a>]</li>
@@ -73,7 +73,7 @@ description: PAN at CLEF 2024 - Generative AI Authorship Verification
             <h2 id="evaluation">Evaluation</h2>
             Systems will be evaluated with the same measures as previous installments of the PAN authorship verification tasks. The following metrics will be used:</p>
 
-            <ul>
+            <ul class="uk-list uk-list-bullet">
                 <li>ROC-AUC: The area under the ROC (Receiver Operating Characteristic) curve.</li>
                 <li>Brier: The complement of the Brier score (mean squared loss).</li>
                 <li>C@1: A modified accuracy score that assigns non-answers (score = 0.5) the average accuracy of the remaining cases.</li>
@@ -115,7 +115,7 @@ description: PAN at CLEF 2024 - Generative AI Authorship Verification
 
             <h2 id="baselines">Baselines</h2>
             <p>We provide five (six) LLM detection baselines as reimplementations from the original papers:</p>
-            <ul>
+            <ul class="uk-list uk-list-bullet">
                 <li>
                     PPMd Compression-based Cosine
                     [<a href="https://ieeexplore.ieee.org/abstract/document/1607268">Sculley and Brodley, 2006</a>]
