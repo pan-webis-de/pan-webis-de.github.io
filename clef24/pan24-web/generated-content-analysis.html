@@ -114,7 +114,7 @@ description: PAN at CLEF 2024 - Generative AI Authorship Verification
             <p><strong>Tip:</strong> You can test your submission using the <code>pan24-generative-authorship-smoke-test</code> dataset and evaluator (which is different from the final test dataset).</p>
 
             <h2 id="baselines">Baselines</h2>
-            <p>We provide five (six) LLM detection baselines as reimplementations from the original papers:</p>
+            <p>We provide six (seven) LLM detection baselines as re-implementations from the original papers:</p>
             <ul class="uk-list uk-list-bullet">
                 <li>
                     PPMd Compression-based Cosine
@@ -133,6 +133,9 @@ description: PAN at CLEF 2024 - Generative AI Authorship Verification
                 </li><li>
                     DetectGPT
                     [<a href="https://arxiv.org/abs/2301.11305">Mitchell et al., 2023</a>]
+                </li><li>
+                    FastDetectGPT
+                    [<a href="https://arxiv.org/abs/2310.05130">Bao et al., 2023</a>]
                 </li><li>
                     Text length
                 </li>
@@ -155,12 +158,13 @@ Options:
   --help  Show this message and exit.
 
 Commands:
-  binoculars  PAN'24 baseline: Binoculars.
-  detectgpt   PAN'24 baseline: DetectGPT.
-  detectllm   PAN'24 baseline: DetectLLM.
-  length      PAN'24 baseline: Text length.
-  ppmd        PAN'24 baseline: Compression-based cosine.
-  unmasking   PAN'24 baseline: Authorship unmasking.</code></pre>
+  binoculars     PAN'24 baseline: Binoculars.
+  detectgpt      PAN'24 baseline: DetectGPT.
+  detectllm      PAN'24 baseline: DetectLLM.
+  fastdetectgpt  PAN'24 baseline: FastDetectGPT.
+  length         PAN'24 baseline: Text length.
+  ppmd           PAN'24 baseline: Compression-based cosine.
+  unmasking      PAN'24 baseline: Authorship unmasking.</code></pre>
 
             <p>More information on how to install and run the baselines can be found in the <a href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/generative-authorship-verification#readme">README on GitHub</a>.</p>
 
@@ -183,6 +187,9 @@ Commands:
                 </li>
                 <li>
                     Mitchell, Eric, Yoonho Lee, Alexander Khazatsky, Christopher D. Manning, and Chelsea Finn. 2023. <a href="http://arxiv.org/abs/2301.11305">DetectGPT: Zero-Shot Machine-Generated Text Detection Using Probability Curvature.</a> arXiv [Cs.CL].
+                </li>
+                <li>
+                    Bao, Guangsheng, Yanbin Zhao, Zhiyang Teng, Linyi Yang, and Yue Zhang. 2023. <a href="https://arxiv.org/abs/2310.05130">Fast-DetectGPT: Efficient Zero-Shot Detection of Machine-Generated Text via Conditional Probability Curvature.</a> arXiv [Cs.CL].
                 </li>
                 <li>
                     Koppel, Moshe, and Jonathan Schler. 2004. <a href="https://dl.acm.org/doi/abs/10.1145/1015330.1015448">Authorship Verification as a One-Class Classification Problem.</a> In Proceedings, Twenty-First International Conference on Machine Learning, ICML 2004, 489–95.
