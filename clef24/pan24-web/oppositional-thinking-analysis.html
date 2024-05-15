@@ -121,7 +121,7 @@ description: PAN at CLEF 2024 - Oppositional Thinking Analysis
            We are pleased to announce that the best-performing team at the 11th International Competition on Author Profiling will be awarded 300,- Euro 
             sponsored by <a href="https://www.symanto.com/" target="_blank">Symanto</a>.
 
-           <h2 id="data">Data [<a href="https://doi.org/10.5281/zenodo.10680586" target="_blank">download</a>]</h2> 
+           <h2 id="data">Data [<a href="https://zenodo.org/records/11199642" target="_blank">download</a>]</h2> 
             <p>The participants will work with a JSON file that contains all the texts in the train dataset, and their annotations. Each text 
             corresponds to a dictionary that contains the ID, tokenized text, the binary category, and the span annotations. Span annotations 
             are a list of dictionaries, each corresponding to an annotated span and containing the span’s category and text, designated by 
@@ -168,8 +168,77 @@ description: PAN at CLEF 2024 - Oppositional Thinking Analysis
 
             
            <h2 id="submission">Submission </h2>
-           Details will be announced at a later date.
+           <p>The test set has been released [<a href="https://zenodo.org/records/11199642" target="_blank">download</a>].</p>
+            
+            <p>The submission must be a zip file with a folder named as your team. The zip file must contain a JSON file with each of the subtasks and languages you want to participate in. 
+            The name of the JSON file must follow the following structure:</p>
 
+            <pre>[team]_[task]_[lang].json</pre>
+
+            <p>For instance, for team "rangel", you will send a file whose name will be <i>rangel.zip</i> with the following structure and files:</p>
+            <pre>
+            rangel/
+            |----rangel_task1_en.json
+            |----rangel_task1_es.json
+            |----rangel_task2_en.json
+            |----rangel_task2_es.json
+            </pre>
+            
+            <p>The content of the JSON file depends on the subtask:</p>
+
+            <p><b>Subtask 1:</b></p>
+
+            <pre>
+                [
+                  {
+                    "id": "6742",
+                    "category": "CRITICAL"
+                  },
+                  {
+                    "id": "10596",
+                    "category": "CONSPIRACY"
+                  },
+                ....
+                ]
+            </pre>
+
+            <p><b>Subtask 2:</b></p>
+            <pre>
+                [
+                  {
+                    "id": "6742",
+                    "annotations": [
+                      {
+                        "start_char": 255,
+                        "end_char": 360,
+                        "category": "VICTIM"
+                      },
+                      {
+                        "start_char": 89,
+                        "end_char": 111,
+                        "category": "VICTIM"
+                      },
+                      {
+                        "start_char": 204,
+                        "end_char": 271,
+                        "category": "OBJECTIVE"
+                      },
+                      {
+                        "start_char": 194,
+                        "end_char": 275,
+                        "category": "FACILITATOR"
+                      }
+                    ]
+                  },
+                ...
+                ]
+            </pre>
+
+            <p>The zip file has to be sent to: kico (dot) rangel (at) gmail (dot) com</p>
+            <p>We will send you the obtained results as soon as we evaluate them, as well as we will contact you in case of technical errors.</p>
+            <p>IMPORTANT: Remember, you can submit up to two runs and we will keep the one with the highest score unless you tell us the contrary. 
+                In case of doubt, we will ask you to let us know which one you want to use for the final ranking.</p>
+            
           <h2 id="evaluation">Evaluation</h2> 
            <p>The official evaluation metric for subtask 1 (critical vs. conspiracy classification) is MCC [3], while the official metric 
             for subtask 2 (span-level detection of narrative elements) is span-F1 [5]. For subtask 1 we will also provide binary F1 scores 
