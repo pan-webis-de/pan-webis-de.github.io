@@ -5,324 +5,931 @@ title: PAN at CLEF 2024 - Multilingual Text Detoxification
 description: PAN at CLEF 2024 - Multilingual Text Detoxification
 ---
 <nav class="uk-container">
-<ul class="uk-breadcrumb">
-<li><a href="../../index.html">PAN</a></li>
-<li><a href="../../shared-tasks.html">Shared Tasks</a></li>
-<li class="uk-disabled"><a href="#">Multilingual Text Detoxification 2024</a></li>
-</ul>
+   <ul class="uk-breadcrumb">
+      <li><a href="../../index.html">PAN</a></li>
+      <li><a href="../../shared-tasks.html">Shared Tasks</a></li>
+      <li class="uk-disabled"><a href="#">Multilingual Text Detoxification 2024</a></li>
+   </ul>
 </nav>
-
 <main class="uk-section uk-section-default">
-    <div class="uk-container">
-        <div class="uk-container uk-margin-small">
-            <div>
-            <h1 class="uk-margin-remove-top">Multilingual Text Detoxification (TextDetox) 2024</h1>
+   <div class="uk-container">
+      <div class="uk-container uk-margin-small">
+         <div>
+            <h1 class="uk-margin-remove-top">Multilingual Text Detoxification2024</h1>
             <ul class="uk-list">
-                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
-                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
-                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#methodology">Methodology</a></li>
-                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
-                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
-                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>
-<!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>-->
-                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#timeline">Important Dates</a></li>
-                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
-                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
+               <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
+               <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
+               <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#methodology">Methodology</a></li>
+               <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
+               <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
+               <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>
+               <!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>-->
+               <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#timeline">Important Dates</a></li>
+               <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
+               <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
             </ul>
-            </div>
-            <div style="position:absolute;right:50px; top: 300px;">
-                <p>Stop the war!</p>
-                <b>Sponsored by</b><br/>
-                <a href="https://toloka.ai/" target="_blank">
-                    <img src="../pan24-figures/toloka-logo.png" style="width: 200px" alt="Toloka">
-                </a>
-            </div>
-        </div>
-
-        <div class="uk-container uk-margin-medium">
-
-            <h2 id="synopsis">Synopsis</h2>
-            <ul> 
-                <li>Task: Given a toxic piece of text, re-write it in a non-toxic way while saving the main content as much as possible.</li>
-                <li>Input: toxic sentences in multiple languages from all over the globe: English, Spanish,  German, Chinese, Arabic, Hindi, Ukrainian, Russian, and Amharic. [<a href="https://huggingface.co/datasets/textdetox/multilingual_paradetox">data</a>]
-                </li>
-                <li>Output: detoxified version of the text in the corresponding language.
-                </li>
-                <li>Evaluation: automatic and manual evaluation based on three parameters: (i) style transfer accuracy; (ii) content preservation; (iii) fluency.[<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/text-detoxification">baselines</a>][<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/text-detoxification">leaderboard</a>]
-                </li>
-                <li>Submission: <a href="https://codalab.lisn.upsaclay.fr/competitions/18243" target="_blank">Codalab</a> as a file submission (and <a href="https://www.tira.io/task/pan24-text-detoxification" target="_blank">tira.io</a> as an additional option).
-                </li>
-                <li>
-                    Registration: [<a href="https://clef2024-labs-registration.dei.unipd.it">CLEF registration</a>] 
-                </li>
-                <li>Contact: [<a href="https://huggingface.co/textdetox">HuggingFace space</a>][<a href="https://groups.google.com/g/textdetox-clef2024">google group</a>]
-                </li>
-            </ul>
-
-            <h2 id="task">Task</h2>
-            <p>
-                Identification of toxicity in user texts is an active area of research. Today, social networks such as <a href="https://edition.cnn.com/2021/06/16/tech/facebook-ai-conflict-moderation-groups/index.html">Facebook</a>, <a href="https://about.instagram.com/blog/announcements/introducing-new-tools-to-protect-our-community-from-abuse">Instagram</a> are trying to address the problem of toxicity.
-                However, they usually simply block such kinds of texts. 
-                We suggest a proactive reaction to toxicity from the user. Namely, we aim at presenting a neutral version of a user message which preserves meaningful content. We denote this task as <i>text detoxification</i>.
-            </p>
-
-            <p>
-                <img src="../pan24-figures/textdetox_abstract.png" style="width: 700px; display: block; margin: 0 auto;" alt="Multilingual TextDetox Task">
-            </p>
-
-            <p>
-                More text detoxification examples in English:
-                <table>
-                  <tr>
-                    <th>Toxic</th>
-                    <th>Detoxified</th>
-                  </tr>
-                  <tr>
-                    <td>he had steel b*lls too!</td>
-                    <td>->he was brave too!</td>
-                  </tr>
-                  <tr>
-                    <td>delete the page and sh*t up</td>
-                    <td>->delete the page</td>
-                  </tr>
-                  <tr>
-                    <td>what a chicken cr*p excuse for a reason.</td>
-                    <td>->what a bad excuse for a reason.</td>
-                  </tr>
-                </table>
-            </p>
-
-            <p>
-                In this competition, we suggest you create detoxification systems for 9 languages from several linguitic families: English, Spanish,  German, Chinese, Arabic, Hindi, Ukrainian, Russian, and Amharic.
-                However, the availability of training corpora will differ between the languages. For English and Russian, the parallel corpora of several thousand toxic-detoxified pairs (as presented above) are available. So, you can fine-tune text generation models on them.
-                For other languages, for the dev phase, no such corpora will be provided. <b>The main challenge</b> of this competition will be to perform an <b>unsupervised and cross-lingual detoxification</b>.
-            </p>
-
-            <h2 id="methodology">Methodology</h2>
-
-            <p>
-                <b>Unsupervised Methods</b>
-            </p>
-
-            <p>
-                For the majority of the cases and languages, there is not parallel corpus for the detoxification task. For this reason, we create our competition to recreate the real-life conditions. Some examples of stong unserpvised methods:
-                <ul>
-                    <li>
-                        <b>CondBERT</b> [2,3]: using Masked Language Modeling, mask toxic words in a sentence and rerank the candidates from LM based on their non-toxicity scores.
-                    </li>
-
-                    <li>
-                        <b>ParaGedi</b> [3]: the detoxification task is viewed as paraphrasing task, but during the generation step toxicity scores of the next token prediction are also taken into account.
-                    </li>
-                </ul>
-            
-                The code for this methods can be found <a href="https://github.com/s-nlp/detox/tree/main/emnlp2021/style_transfer">here</a>.
-            </p>
-
-            <p>
-                <img src="../pan24-figures/detox_condBERT.png" style="width: 350px; display: block; margin: 0 auto;" alt="CondBERT Approach">
-            </p>
-
-            <p>
-                For the case, where for some language a detoxification corpus or/and model are available (i.e. English), you can use such methods as Backtranslation, Translation of the training corpus to the target language, or Adapter layers.
-                Please, refer to [6] for the detailed explanations of the suggested ideas of cross-lingual detoxification knowledge transfer.
-            </p>
-
-            <p>
-                <b>Supervised Methods</b>
-            </p>
-
-            <p>
-                If a parallel corpus of toxic-neutral pairs is already available (as, in our case, for English and Russian), then you can fine-tune <i>any</i> text generation model.
-                You can refer to the ruT5 model for detoxification <a href="https://github.com/s-nlp/russe_detox_2022/tree/main/baselines/t5">example</a> from the <a href="https://russe.nlpub.org/2022/tox/">shared task</a> at the <a href="https://www.dialog-21.ru/en/evaluation/">Dialogue Evaluation</a> forum.
-            </p>
-
-            <p>
-                <b>Baselines</b>
-            </p>
-
-            <p>
-                <img src="../pan24-figures/detox_baselines.png" style="width: 700px; display: block; margin: 0 auto;" alt="Unsupervised Baselines">
-            </p>
-            
-            We provide three baselines:
-            <ol>
-                <li>
-                    <b>Duplicate</b>: a simple duplication of the toxic input.
-                </li>
-
-                <li>
-                    <b>Delete</b>: elimination of a toxic keywords based on a predifined <a href="https://huggingface.co/datasets/textdetox/multilingual_toxic_lexicon">dictionary</a> for each language.
-                </li>
-
-                <li>
-                    <b>Backtranslation</b>: a more sophisticated cross-lingual transfer method. Translate the input to the language for which powerful detoxification model in available (i.e. English), perform detoxification, and translate back to the target language.
-                    The translation is done with NLLB-600M <a href="https://huggingface.co/facebook/nllb-200-distilled-600M">model</a>, detoxification with English bart-base-detox <a href="https://huggingface.co/s-nlp/bart-base-detox">model</a>.
-                </li>
-            </ol>
-
-            The code for all baselines is available <a href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/text-detoxification">here</a>.
-
-            <p>
-                <b>For the test phase,</b> we have released a new <b>supervised baseline</b>! The <a href="https://huggingface.co/google/mt5-xl">mt5</a> was fine-tuned on the <a href="https://huggingface.co/datasets/textdetox/multilingual_paradetox">parallel dev set</a>. The fine-tuned instance can be found <a href="https://huggingface.co/textdetox/mt5-xl-detox-baseline">here</a>.
-            </p>
-
-            <h2 id="data">Data</h2>
-            
-            <p>    
-                For the fine-tuning, ParaDetox datasets for <a href="https://huggingface.co/datasets/s-nlp/paradetox">English</a> and <a href="https://huggingface.co/datasets/s-nlp/ru_paradetox">Russian</a> are already available. Please, refer to [1] and [4] about more details of the corpora collection.
-                For <b>each</b> language, we have prepared 1k parallel pairs and divided into dev (400 pairs) and test (600 pairs). The parts will be released according the shared task schedule.
-            </p>
-
-            <p>
-                <b>!!!Test phase has started!!!</b>
-            </p>
-
-            <p>
+         </div>
+         <div style="position:absolute;right:50px; top: 300px;">
+            <p>Stop the war!</p>
+            <b>Sponsored by</b><br/>
+            <a href="https://toloka.ai/" target="_blank">
+            <img src="../pan24-figures/toloka-logo.png" style="width: 200px" alt="Toloka">
+            </a>
+         </div>
+      </div>
+      <div class="uk-container uk-margin-medium">
+         <h2 id="synopsis">Synopsis</h2>
+         <ul>
+            <li>Task: Given a toxic piece of text, re-write it in a non-toxic way while saving the main content as much as possible.</li>
+            <li>Input: toxic sentences in multiple languages from all over the globe: English, Spanish,  German, Chinese, Arabic, Hindi, Ukrainian, Russian, and Amharic. [<a href="https://huggingface.co/datasets/textdetox/multilingual_paradetox">data</a>]
+            </li>
+            <li>Output: detoxified version of the text in the corresponding language.
+            </li>
+            <li>Evaluation: automatic and manual evaluation based on three parameters:style transfer accuracy;content preservation;fluency.[<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/text-detoxification">baselines</a>][<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/text-detoxification">leaderboard</a>]
+            </li>
+            <li>Submission: <a href="https://codalab.lisn.upsaclay.fr/competitions/18243" target="_blank">Codalab</a> as a file submission.
+            </li>
+            <li>
+               Registration: [<a href="https://clef2024-labs-registration.dei.unipd.it">CLEF registration</a>] 
+            </li>
+            <li>Contact: [<a href="https://huggingface.co/textdetox">HuggingFace space</a>][<a href="https://groups.google.com/g/textdetox-clef2024">google group</a>]
+            </li>
+         </ul>
+         <h2 id="task">Task</h2>
+         <p>
+            Identification of toxicity in user texts is an active area of research. Today, social networks such as <a href="https://edition.cnn.com/2021/06/16/tech/facebook-ai-conflict-moderation-groups/index.html">Facebook</a>, <a href="https://about.instagram.com/blog/announcements/introducing-new-tools-to-protect-our-community-from-abuse">Instagram</a> are trying to address the problem of toxicity.
+            However, they usually simply block such kinds of texts. 
+            We suggest a proactive reaction to toxicity from the user. Namely, we aim at presenting a neutral version of a user message which preserves meaningful content. We denote this task as <i>text detoxification</i>.
+         </p>
+         <p>
+            <img src="../pan24-figures/textdetox_abstract.png" style="width: 700px; display: block; margin: 0 auto;" alt="Multilingual TextDetox Task">
+         </p>
+         <p>
+            More text detoxification examples in English:
+         <table>
+            <tr>
+               <th>Toxic</th>
+               <th>Detoxified</th>
+            </tr>
+            <tr>
+               <td>he had steel b*lls too!</td>
+               <td>->he was brave too!</td>
+            </tr>
+            <tr>
+               <td>delete the page and sh*t up</td>
+               <td>->delete the page</td>
+            </tr>
+            <tr>
+               <td>what a chicken cr*p excuse for a reason.</td>
+               <td>->what a bad excuse for a reason.</td>
+            </tr>
+         </table>
+         </p>
+         <p>
+            In this competition, we suggest you create detoxification systems for 9 languages from several linguitic families: English, Spanish,  German, Chinese, Arabic, Hindi, Ukrainian, Russian, and Amharic.
+            However, the availability of training corpora will differ between the languages. For English and Russian, the parallel corpora of several thousand toxic-detoxified pairsare available. So, you can fine-tune text generation models on them.
+            For other languages, for the dev phase, no such corpora will be provided. <b>The main challenge</b> of this competition will be to perform an <b>unsupervised and cross-lingual detoxification</b>.
+         </p>
+         <h2 id="methodology">Methodology</h2>
+         <p>
+            <b>Unsupervised Methods</b>
+         </p>
+         <p>
+            For the majority of the cases and languages, there is not parallel corpus for the detoxification task. For this reason, we create our competition to recreate the real-life conditions. Some examples of stong unserpvised methods:
+         <ul>
+            <li>
+               <b>CondBERT</b> [2,3]: using Masked Language Modeling, mask toxic words in a sentence and rerank the candidates from LM based on their non-toxicity scores.
+            </li>
+            <li>
+               <b>ParaGedi</b> [3]: the detoxification task is viewed as paraphrasing task, but during the generation step toxicity scores of the next token prediction are also taken into account.
+            </li>
+         </ul>
+         The code for this methods can be found <a href="https://github.com/s-nlp/detox/tree/main/emnlp2021/style_transfer">here</a>.
+         </p>
+         <p>
+            <img src="../pan24-figures/detox_condBERT.png" style="width: 350px; display: block; margin: 0 auto;" alt="CondBERT Approach">
+         </p>
+         <p>
+            For the case, where for some language a detoxification corpus or/and model are available, you can use such methods as Backtranslation, Translation of the training corpus to the target language, or Adapter layers.
+            Please, refer to [6] for the detailed explanations of the suggested ideas of cross-lingual detoxification knowledge transfer.
+         </p>
+         <p>
+            <b>Supervised Methods</b>
+         </p>
+         <p>
+            If a parallel corpus of toxic-neutral pairs is already available, then you can fine-tune <i>any</i> text generation model.
+            You can refer to the ruT5 model for detoxification <a href="https://github.com/s-nlp/russe_detox_2022/tree/main/baselines/t5">example</a> from the <a href="https://russe.nlpub.org/2022/tox/">shared task</a> at the <a href="https://www.dialog-21.ru/en/evaluation/">Dialogue Evaluation</a> forum.
+         </p>
+         <p>
+            <b>Baselines</b>
+         </p>
+         <p>
+            <img src="../pan24-figures/detox_baselines.png" style="width: 700px; display: block; margin: 0 auto;" alt="Unsupervised Baselines">
+         </p>
+         We provide three baselines:
+         <ol>
+            <li>
+               <b>Duplicate</b>: a simple duplication of the toxic input.
+            </li>
+            <li>
+               <b>Delete</b>: elimination of a toxic keywords based on a predifined <a href="https://huggingface.co/datasets/textdetox/multilingual_toxic_lexicon">dictionary</a> for each language.
+            </li>
+            <li>
+               <b>Backtranslation</b>: a more sophisticated cross-lingual transfer method. Translate the input to the language for which powerful detoxification model in available, perform detoxification, and translate back to the target language.
+               The translation is done with NLLB-600M <a href="https://huggingface.co/facebook/nllb-200-distilled-600M">model</a>, detoxification with English bart-base-detox <a href="https://huggingface.co/s-nlp/bart-base-detox">model</a>.
+            </li>
+         </ol>
+         The code for all baselines is available <a href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/text-detoxification">here</a>.
+         <p>
+            <b>For the test phase,</b> we have released a new <b>supervised baseline</b>! The <a href="https://huggingface.co/google/mt5-xl">mt5</a> was fine-tuned on the <a href="https://huggingface.co/datasets/textdetox/multilingual_paradetox">parallel dev set</a>. The fine-tuned instance can be found <a href="https://huggingface.co/textdetox/mt5-xl-detox-baseline">here</a>.
+         </p>
+         <h2 id="data">Data</h2>
+         <p>    
+            For the fine-tuning, ParaDetox datasets for <a href="https://huggingface.co/datasets/s-nlp/paradetox">English</a> and <a href="https://huggingface.co/datasets/s-nlp/ru_paradetox">Russian</a> are already available. Please, refer to [1] and [4] about more details of the corpora collection.
+            For <b>each</b> language, we have prepared 1k parallel pairs and divided into devand test. The parts will be released according the shared task schedule.
+         </p>
+         <p>
+            <b>!!!Test phase has started!!!</b>
+         </p>
+         <p>
             <b>Parallel Devset is now available!</b> The <a href="https://huggingface.co/datasets/textdetox/multilingual_paradetox">link</a> to the parallel multilingual data. This dataset contains 400 pairs for each of 9 languages.
-            </p>   
-
-            <p>
-            <b>Test set can be found <a href="https://huggingface.co/datasets/textdetox/multilingual_paradetox_test">here</a>! </b> You are provided with 600 toxic sentences for each language.
-            </p>   
-            
-
-            <p>
-                <b>Definition of toxiciy</b> 
-            </p>
-
-            <p>
-                One of the crucial points in this task is to have a common ground on how to estimate if the text is toxic or not. 
-                In our task, we will work only with <b>explicit</b> types of toxicity—obvious present of obscene and rude lexicon where still there is meaningful neutral content present—and <b>do not</b> work with <b>implicit</b> types—like sarcasm, passive aggressiveness, or direct hate to some group where no neutral content can be found.
-                Such implicit toxicity types are challenging to be detoxified so the intent will indeed become non-toxic (i.e. try to detoxify the sentence <i>"I h*te all immigrants, f*ck you all!"</i>).
-                For this reason, we tried to pick for our datasets the sentences with explicit toxicity where we can detoxify it.
-                However, toxicity can be quite a subjective intent. We hope, that we will agree on the majority of the cases what should be toxic or not. In the end, the main goal is to make the texts and the world at least somehow less toxic ;)
-            </p>
-
-            <h2 id="evaluation">Evaluation</h2>
-
-            <p>
-                <img src="../pan24-figures/detox_manual_eval.png" style="width: 650px; display: block; margin: 0 auto;" alt="The concept of text detoxification evaluation">
-            </p>
-            
-            <p>
-                <b>Development Phase</b>
-            </p>
-            
-            <p>
-                For the whole competition, the automatic evaluation metrics set will be available. We provide the multilingual automatic evaluation pipeline based on main three parameters:
-                <ul>
-                    <li>
-                        <b>Style Transfer Accuracy (STA)</b>: Given the generated paraphrase, classify its level of <b>non-toxicity</b>. For this, specifically fine-tuned xlm-roberta-large for toxicity binary <a href="https://huggingface.co/textdetox/xlmr-large-toxicity-classifier">classification</a> is used.
-                        For additional experiments, we also provide the <a href="https://huggingface.co/textdetox/xlmr-base-toxicity-classifier">base</a> fine-tuned version of the classifier.
-                    </li>
-
-                    <li>
-                        <b>Content preservation (SIM)</b>: Given two texts (original toxic sentence and generated paraphrase), evaluate the similarity of their content. We calculate it as cosine similarity between <a href="https://huggingface.co/sentence-transformers/LaBSE">LaBSe</a> embeddings.
-                    </li>
-
-                    <li>
-                        <b>ChrF</b>: To estimate the adequacy of the text and its similarity to the human-written detoxified references, we calculate <a href="https://github.com/m-popovic/chrF">ChrF</a> measure. 
-                    </li>
-                </ul>
-            </p>
-
-            <p>
-                Each metric component lies in the range [0;1]. To have the one common metric for leaderboard estimation, we will comput <b>J</b> metric as the mean of STA*SIM*FL per sample.
-            </p>
-
-            <p>
-                All scripts for these metrics calculation can be found <a href="https://github.com/pan-webis-de/pan-code/blob/master/clef24/text-detoxification/evaluate.py">here</a>.
-            </p>
-
-            <p>
-                <b>Test Phase</b>
-            </p>
-
-            <p>
-                Even if we already have powerful models to classify texts and embed their meanings, the human judgement is still the best for the final decision [5]. So, for the test set, we will perform <b>both</b> manual and automatic evaluation.
-                For <b>manual</b> evaluation, we will create annotation tasks on <a href="https://toloka.ai/">Toloka.ai</a> platform corresponding to the same parameters described above. <b>The final leaderboard</b> will be built based on <b>manual evaluation</b> results.
-            </p>
-            
-
-            <h2 id="submission">Submission</h2>
-            <p>
-
-                All submissions are handled through <a href="https://codalab.lisn.upsaclay.fr/competitions/18243" target="_blank">Codalab</a> (and <a href="https://www.tira.io/task/pan24-text-detoxification" target="_blank">tira.io</a> as a spare option).
-                We accept solutions submissions.
-                Please follow instructions the corresponding instructions (the test file can be downloaded after the registration).
-            </p>
-
-            <h2 id="timeline">Important Dates</h2>
-            <p>
-                <ul>
-                    <li><b>February 1, 2024</b>: First data available and run submission opens.</li>
-                    <li><b>April 22, 2024</b>: Registration closes.</li>
-                    <li><b>May 14, 2024</b>: Run submission deadline and results out.</li>
-                    <li><b>May 31, 2024</b>: Participants paper submission.</li>
-                    <li><b>July 8, 2024</b>: Camera-ready participant papers submission.</li>
-                    <li><b>September 9-12, 2024</b>: CLEF Conference in Grenoble and Touché Workshop.</li>
-                </ul>
-            </p>
-
-            <h2 id="related-work">Related Work</h2>
-            <ol>
-                <li>
-                    Logacheva V. et. al. <b>ParaDetox: Detoxification with Parallel Data</b>. ACL, 2022. [<a href="https://aclanthology.org/2022.acl-long.469.pdf">pdf</a>]
-                </li>
-
-                <li>
-                    Dementieva D. et. al. <b>Methods for Detoxification of Texts for the Russian Language</b>. Multimodal Technologies and Interaction 5, 2021. [<a href="https://www.mdpi.com/2414-4088/5/9/54/pdf">pdf</a>]
-                </li>
-
-                <li>
-                    Dale D. et. al. <b>Text Detoxification using Large Pre-trained Neural Models</b>. EMNLP, 2021. [<a href="https://aclanthology.org/2021.emnlp-main.629.pdf">pdf</a>]
-                </li>
-
-                <li>
-                    Dementieva D. et al. <b>RUSSE-2022: Findings of the First Russian Detoxification Shared Task Based on Parallel Corpora</b>. Dialogue, 2022. [<a href="https://www.dialog-21.ru/media/5755/dementievadplusetal105.pdf">pdf</a>]
-                </li>
-
-                <li>
-                    Logacheva, V. et al. <b>A Study on Manual and Automatic Evaluation for Text Style Transfer: The Case of Detoxification.</b> HumEval, 2022. [<a href="https://aclanthology.org/2022.humeval-1.8.pdf">pdf</a>]
-                </li>
-
-                <li>
-                    Dementieva, D. et al. <b>Exploring Methods for Cross-lingual Text Style Transfer: The Case of Text Detoxification.</b> AACL, 2023. [<a href="http://www.afnlp.org/conferences/ijcnlp2023/proceedings/main-long/cdrom/pdf/2023.ijcnlp-long.70.pdf">pdf</a>]
-                </li>
-            </ol>
-
-            <h2>Contributors</h2>
-            The following researchers contributed to the parallel data preparation:
-            <ul>
-                <li>Daryna Dementieva: Ukrainian, English, Russian</li>
-                <li>Daniil Moskovsky: English, Russian</li>
-                <li>Florian Schneider: German</li>
-                <li>Nikolay Babakov: Ukrainian, Spanish</li>
-                <li>Seid Yimam: Amharic</li>
-                <li>Abinew Ali Ayele: Amharic</li>
-                <li>Ashaf Elnagar: Arabic</li>
-                <li>Xinting Wang: Chinese</li>
-                <li>Naquee Rizwan: Hindi</li>
-            </ul>
-            
-            <h2 id="task-committee">Task Committee</h2>
-            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
-                {% include people-cards/dementieva.html %}
-                {% include people-cards/schneider.html %}
-                {% include people-cards/wang.html %}
-                {% include people-cards/yimam.html %}
-                {% include people-cards/babakov.html %}
-                {% include people-cards/moskovskiy.html %}
-                {% include people-cards/elnagar.html %}
-                {% include people-cards/ustalov.html %}
-                {% include people-cards/stakovskii %}
-                {% include people-cards/smirnova.html %}
-                {% include people-cards/panchenko.html %}
-            </div>
-            <div class="uk-container uk-padding-large uk-padding-remove-bottom">
-                {% include organizations/clef-organizations-section.html year=2024 %}
-            </div>
-        </div>
-    </div>
+         </p>
+         <p>
+            <b>Test set can be found <a href="https://huggingface.co/datasets/textdetox/multilingual_paradetox_test">here</a> </b>. You are provided with 600 toxic sentences for each language.
+         </p>
+         <p>
+            <b>Definition of toxiciy</b> 
+         </p>
+         <p>
+            One of the crucial points in this task is to have a common ground on how to estimate if the text is toxic or not. 
+            In our task, we will work only with <b>explicit</b> types of toxicity—obvious present of obscene and rude lexicon where still there is meaningful neutral content present—and <b>do not</b> work with <b>implicit</b> types—like sarcasm, passive aggressiveness, or direct hate to some group where no neutral content can be found.
+            Such implicit toxicity types are challenging to be detoxified so the intent will indeed become non-toxic.
+            For this reason, we tried to pick for our datasets the sentences with explicit toxicity where we can detoxify it.
+            However, toxicity can be quite a subjective intent. We hope, that we will agree on the majority of the cases what should be toxic or not. In the end, the main goal is to make the texts and the world at least somehow less toxic ;)
+         </p>
+         <h2 id="evaluation">Evaluation</h2>
+         <p>
+            <img src="../pan24-figures/detox_manual_eval.png" style="width: 650px; display: block; margin: 0 auto;" alt="The concept of text detoxification evaluation">
+         </p>
+         <p>
+            <b>Development Phase</b>
+         </p>
+         <p>
+            For the whole competition, the automatic evaluation metrics set will be available. We provide the multilingual automatic evaluation pipeline based on main three parameters:
+         <ul>
+            <li>
+               <b>Style Transfer Accuracy</b>: Given the generated paraphrase, classify its level of <b>non-toxicity</b>. For this, specifically fine-tuned xlm-roberta-large for toxicity binary <a href="https://huggingface.co/textdetox/xlmr-large-toxicity-classifier">classification</a> is used.
+               For additional experiments, we also provide the <a href="https://huggingface.co/textdetox/xlmr-base-toxicity-classifier">base</a> fine-tuned version of the classifier.
+            </li>
+            <li>
+               <b>Content preservation</b>: Given two texts, evaluate the similarity of their content. We calculate it as cosine similarity between <a href="https://huggingface.co/sentence-transformers/LaBSE">LaBSe</a> embeddings.
+            </li>
+            <li>
+               <b>Fluency</b>: To estimate the adequacy of the text and its similarity to the human-written detoxified references, we calculate <a href="https://github.com/m-popovic/chrF">ChrF</a> measure. 
+            </li>
+         </ul>
+         </p>
+         <p>
+            Each metric component lies in the range [0;1]. To have the one common metric for leaderboard estimation, we will calculate <b>Joint</b> metric as the mean of <b>STA</b>*<b>SIM</b>*<b>FL</b> per sample.
+         </p>
+         <p>
+            All scripts for these metrics calculation can be found <a href="https://github.com/pan-webis-de/pan-code/blob/master/clef24/text-detoxification/evaluate.py">here</a>.
+         </p>
+         <p>
+            <b>Test Phase</b>
+         </p>
+         <p>
+            Even if we already have powerful models to classify texts and embed their meanings, the human judgement is still the best for the final decision [5]. So, for the test set, we will perform <b>both</b> manual and automatic evaluation.
+            For <b>manual</b> evaluation, we will create annotation tasks on <a href="https://toloka.ai/">Toloka.ai</a> platform corresponding to the same parameters described above. <b>The final leaderboard</b> will be built based on <b>manual evaluation</b> results.
+         </p>
+         <h2 id="submission">Submission</h2>
+         <p>
+            All submissions are handled through <a href="https://codalab.lisn.upsaclay.fr/competitions/18243" target="_blank">Codalab</a>.
+            We accept solutions submissions.
+            Please follow instructions the corresponding instructions.
+         </p>
+         <h2 id="timeline">Important Dates</h2>
+         <p>
+         <ul>
+            <li><b>February 1, 2024</b>: First data available and run submission opens.</li>
+            <li><b>April 22, 2024</b>: Registration closes.</li>
+            <li><b>May 14, 2024</b>: Run submission deadline and results out.</li>
+            <li><b>May 31, 2024</b>: Participants paper submission.</li>
+            <li><b>July 8, 2024</b>: Camera-ready participant papers submission.</li>
+            <li><b>September 9-12, 2024</b>: CLEF Conference in Grenoble and Touché Workshop.</li>
+         </ul>
+         </p>
+         <h2 id="timeline">Test Results: Automatic Evaluations</h2>
+         <div class="leaderboard-result-table">
+            <table class="resultsTable dataTable">
+               <tbody>
+                  <tr class="table-title">
+                     <!-- <th colspan="15">Results</th> -->
+                  </tr>
+                  <tr class="leaderboard-result-table-header">
+                     <th rowspan="2">#</th>
+                     <th rowspan="2">User</th>
+                     <th rowspan="2" class="column-selectable column-selected" name="chrf_avg">average
+                        <span class="glyphicon glyphicon-play ascending-sorting" aria-hidden="true"></span>
+                     </th>
+                     <th rowspan="2" class="column-selectable" name="chrf_en">en
+                        <span class="glyphicon glyphicon-play ascending-sorting" aria-hidden="true"></span>
+                     </th>
+                     <th rowspan="2" class="column-selectable" name="chrf_es">es
+                        <span class="glyphicon glyphicon-play ascending-sorting" aria-hidden="true"></span>
+                     </th>
+                     <th rowspan="2" class="column-selectable" name="chrf_de">de
+                        <span class="glyphicon glyphicon-play ascending-sorting" aria-hidden="true"></span>
+                     </th>
+                     <th rowspan="2" class="column-selectable" name="chrf_zh">zh
+                        <span class="glyphicon glyphicon-play ascending-sorting" aria-hidden="true"></span>
+                     </th>
+                     <th rowspan="2" class="column-selectable" name="chrf_ar">ar
+                        <span class="glyphicon glyphicon-play ascending-sorting" aria-hidden="true"></span>
+                     </th>
+                     <th rowspan="2" class="column-selectable" name="chrf_hi">hi
+                        <span class="glyphicon glyphicon-play ascending-sorting" aria-hidden="true"></span>
+                     </th>
+                     <th rowspan="2" class="column-selectable" name="chrf_uk">uk
+                        <span class="glyphicon glyphicon-play ascending-sorting" aria-hidden="true"></span>
+                     </th>
+                     <th rowspan="2" class="column-selectable" name="chrf_ru">ru
+                        <span class="glyphicon glyphicon-play ascending-sorting" aria-hidden="true"></span>
+                     </th>
+                     <th rowspan="2" class="column-selectable" name="chrf_am">am
+                        <span class="glyphicon glyphicon-play ascending-sorting" aria-hidden="true"></span>
+                     </th>
+                  </tr>
+                  <tr>
+                  </tr>
+                  <tr>
+                     <td class="row-position">
+                        <p class="leader-top3">1</p>
+                     </td>
+                     <td>
+                        <p class="leader-top3">adugeen</p>
+                     </td>
+                     <td class="column-selected" name="chrf_avg">0.523</td>
+                     <td name="chrf_en">0.602</td>
+                     <td name="chrf_es">0.562</td>
+                     <td name="chrf_de">0.678</td>
+                     <td name="chrf_zh">0.178</td>
+                     <td name="chrf_ar">0.626</td>
+                     <td name="chrf_hi">0.355</td>
+                     <td name="chrf_uk">0.692</td>
+                     <td name="chrf_ru">0.634</td>
+                     <td name="chrf_am">0.378</td>
+                  </tr>
+                  <tr>
+                     <td class="row-position">
+                        <p class="leader-top3">2</p>
+                     </td>
+                     <td>
+                        <p class="leader-top3">lmeribal</p>
+                     </td>
+                     <td class="column-selected" name="chrf_avg">0.515</td>
+                     <td name="chrf_en">0.593</td>
+                     <td name="chrf_es">0.555</td>
+                     <td name="chrf_de">0.669</td>
+                     <td name="chrf_zh">0.165</td>
+                     <td name="chrf_ar">0.617</td>
+                     <td name="chrf_hi">0.352</td>
+                     <td name="chrf_uk">0.686</td>
+                     <td name="chrf_ru">0.628</td>
+                     <td name="chrf_am">0.374</td>
+                  </tr>
+                  <tr>
+                     <td class="row-position">
+                        <p class="leader-top3">3</p>
+                     </td>
+                     <td>
+                        <p class="leader-top3">nikita.sushko</p>
+                     </td>
+                     <td class="column-selected" name="chrf_avg">0.465</td>
+                     <td name="chrf_en">0.553</td>
+                     <td name="chrf_es">0.480</td>
+                     <td name="chrf_de">0.592</td>
+                     <td name="chrf_zh">0.176</td>
+                     <td name="chrf_ar">0.575</td>
+                     <td name="chrf_hi">0.241</td>
+                     <td name="chrf_uk">0.668</td>
+                     <td name="chrf_ru">0.570</td>
+                     <td name="chrf_am">0.328</td>
+                  </tr>
+                  <tr>
+                     <td class="row-position">
+                        4
+                     </td>
+                     <td>
+                        VitalyProtasov
+                     </td>
+                     <td class="column-selected" name="chrf_avg">0.445</td>
+                     <td name="chrf_en">0.531</td>
+                     <td name="chrf_es">0.472</td>
+                     <td name="chrf_de">0.502</td>
+                     <td name="chrf_zh">0.175</td>
+                     <td name="chrf_ar">0.523</td>
+                     <td name="chrf_hi">0.320</td>
+                     <td name="chrf_uk">0.629</td>
+                     <td name="chrf_ru">0.542</td>
+                     <td name="chrf_am">0.311</td>
+                  </tr>
+                  <tr>
+                     <td class="row-position">
+                        5
+                     </td>
+                     <td>
+                        erehulka
+                     </td>
+                     <td class="column-selected" name="chrf_avg">0.435</td>
+                     <td name="chrf_en">0.543</td>
+                     <td name="chrf_es">0.497</td>
+                     <td name="chrf_de">0.575</td>
+                     <td name="chrf_zh">0.160</td>
+                     <td name="chrf_ar">0.536</td>
+                     <td name="chrf_hi">0.185</td>
+                     <td name="chrf_uk">0.602</td>
+                     <td name="chrf_ru">0.529</td>
+                     <td name="chrf_am">0.287</td>
+                  </tr>
+                  <tr>
+                     <td class="row-position">
+                        6
+                     </td>
+                     <td>
+                        SomethingAwful
+                     </td>
+                     <td class="column-selected" name="chrf_avg">0.431</td>
+                     <td name="chrf_en">0.522</td>
+                     <td name="chrf_es">0.475</td>
+                     <td name="chrf_de">0.551</td>
+                     <td name="chrf_zh">0.147</td>
+                     <td name="chrf_ar">0.514</td>
+                     <td name="chrf_hi">0.269</td>
+                     <td name="chrf_uk">0.584</td>
+                     <td name="chrf_ru">0.516</td>
+                     <td name="chrf_am">0.299</td>
+                  </tr>
+                  <tr>
+                     <td class="row-position">
+                        7
+                     </td>
+                     <td>
+                        mareksuppa
+                     </td>
+                     <td class="column-selected" name="chrf_avg">0.424</td>
+                     <td name="chrf_en">0.537</td>
+                     <td name="chrf_es">0.492</td>
+                     <td name="chrf_de">0.577</td>
+                     <td name="chrf_zh">0.156</td>
+                     <td name="chrf_ar">0.547</td>
+                     <td name="chrf_hi">0.181</td>
+                     <td name="chrf_uk">0.615</td>
+                     <td name="chrf_ru">0.540</td>
+                     <td name="chrf_am">0.173</td>
+                  </tr>
+                  <tr>
+                     <td class="row-position">
+                        8
+                     </td>
+                     <td>
+                        kofeinix
+                     </td>
+                     <td class="column-selected" name="chrf_avg">0.395</td>
+                     <td name="chrf_en">0.497</td>
+                     <td name="chrf_es">0.420</td>
+                     <td name="chrf_de">0.502</td>
+                     <td name="chrf_zh">0.095</td>
+                     <td name="chrf_ar">0.501</td>
+                     <td name="chrf_hi">0.189</td>
+                     <td name="chrf_uk">0.569</td>
+                     <td name="chrf_ru">0.490</td>
+                     <td name="chrf_am">0.298</td>
+                  </tr>
+                  <tr>
+                     <td class="row-position">
+                        9
+                     </td>
+                     <td>
+                        Yekaterina29
+                     </td>
+                     <td class="column-selected" name="chrf_avg">0.372</td>
+                     <td name="chrf_en">0.510</td>
+                     <td name="chrf_es">0.439</td>
+                     <td name="chrf_de">0.479</td>
+                     <td name="chrf_zh">0.131</td>
+                     <td name="chrf_ar">0.453</td>
+                     <td name="chrf_hi">0.173</td>
+                     <td name="chrf_uk">0.553</td>
+                     <td name="chrf_ru">0.507</td>
+                     <td name="chrf_am">0.102</td>
+                  </tr>
+                  <tr>
+                     <td class="row-position">
+                        10
+                     </td>
+                     <td>
+                        AlekseevArtem
+                     </td>
+                     <td class="column-selected" name="chrf_avg">0.366</td>
+                     <td name="chrf_en">0.427</td>
+                     <td name="chrf_es">0.401</td>
+                     <td name="chrf_de">0.465</td>
+                     <td name="chrf_zh">0.071</td>
+                     <td name="chrf_ar">0.465</td>
+                     <td name="chrf_hi">0.217</td>
+                     <td name="chrf_uk">0.562</td>
+                     <td name="chrf_ru">0.406</td>
+                     <td name="chrf_am">0.278</td>
+                  </tr>
+                  <tr>
+                     <td class="row-position">
+                        11
+                     </td>
+                     <td>
+                        bmmikheev
+                     </td>
+                     <td class="column-selected" name="chrf_avg">0.364</td>
+                     <td name="chrf_en">0.489</td>
+                     <td name="chrf_es">0.458</td>
+                     <td name="chrf_de">0.487</td>
+                     <td name="chrf_zh">0.150</td>
+                     <td name="chrf_ar">0.415</td>
+                     <td name="chrf_hi">0.212</td>
+                     <td name="chrf_uk">0.466</td>
+                     <td name="chrf_ru">0.402</td>
+                     <td name="chrf_am">0.194</td>
+                  </tr>
+                  <tr>
+                     <td class="row-position">
+                        12
+                     </td>
+                     <td>
+                        pavelshtykov
+                     </td>
+                     <td class="column-selected" name="chrf_avg">0.364</td>
+                     <td name="chrf_en">0.489</td>
+                     <td name="chrf_es">0.458</td>
+                     <td name="chrf_de">0.487</td>
+                     <td name="chrf_zh">0.150</td>
+                     <td name="chrf_ar">0.415</td>
+                     <td name="chrf_hi">0.212</td>
+                     <td name="chrf_uk">0.466</td>
+                     <td name="chrf_ru">0.402</td>
+                     <td name="chrf_am">0.194</td>
+                  </tr>
+                  <tr>
+                     <td class="row-position">
+                        13
+                     </td>
+                     <td>
+                        gleb.shnshn
+                     </td>
+                     <td class="column-selected" name="chrf_avg">0.359</td>
+                     <td name="chrf_en">0.462</td>
+                     <td name="chrf_es">0.437</td>
+                     <td name="chrf_de">0.464</td>
+                     <td name="chrf_zh">0.155</td>
+                     <td name="chrf_ar">0.415</td>
+                     <td name="chrf_hi">0.244</td>
+                     <td name="chrf_uk">0.460</td>
+                     <td name="chrf_ru">0.445</td>
+                     <td name="chrf_am">0.147</td>
+                  </tr>
+                  <tr>
+                     <td class="row-position">
+                        14
+                     </td>
+                     <td>
+                        Volodimirich
+                     </td>
+                     <td class="column-selected" name="chrf_avg">0.342</td>
+                     <td name="chrf_en">0.472</td>
+                     <td name="chrf_es">0.410</td>
+                     <td name="chrf_de">0.388</td>
+                     <td name="chrf_zh">0.095</td>
+                     <td name="chrf_ar">0.431</td>
+                     <td name="chrf_hi">0.181</td>
+                     <td name="chrf_uk">0.483</td>
+                     <td name="chrf_ru">0.452</td>
+                     <td name="chrf_am">0.169</td>
+                  </tr>
+                  <tr>
+                     <td class="row-position">
+                        15
+                     </td>
+                     <td>
+                        ansafronov
+                     </td>
+                     <td class="column-selected" name="chrf_avg">0.340</td>
+                     <td name="chrf_en">0.506</td>
+                     <td name="chrf_es">0.319</td>
+                     <td name="chrf_de">0.362</td>
+                     <td name="chrf_zh">0.178</td>
+                     <td name="chrf_ar">0.456</td>
+                     <td name="chrf_hi">0.133</td>
+                     <td name="chrf_uk">0.328</td>
+                     <td name="chrf_ru">0.507</td>
+                     <td name="chrf_am">0.270</td>
+                  </tr>
+                  <tr>
+                     <td class="row-position">
+                        16
+                     </td>
+                     <td>
+                        MOOsipenko
+                     </td>
+                     <td class="column-selected" name="chrf_avg">0.326</td>
+                     <td name="chrf_en">0.411</td>
+                     <td name="chrf_es">0.352</td>
+                     <td name="chrf_de">0.326</td>
+                     <td name="chrf_zh">0.067</td>
+                     <td name="chrf_ar">0.442</td>
+                     <td name="chrf_hi">0.104</td>
+                     <td name="chrf_uk">0.474</td>
+                     <td name="chrf_ru">0.507</td>
+                     <td name="chrf_am">0.252</td>
+                  </tr>
+                  <tr>
+                     <td class="row-position">
+                        17
+                     </td>
+                     <td>
+                        mkrisnai
+                     </td>
+                     <td class="column-selected" name="chrf_avg">0.324</td>
+                     <td name="chrf_en">0.475</td>
+                     <td name="chrf_es">0.422</td>
+                     <td name="chrf_de">0.396</td>
+                     <td name="chrf_zh">0.109</td>
+                     <td name="chrf_ar">0.270</td>
+                     <td name="chrf_hi">0.194</td>
+                     <td name="chrf_uk">0.460</td>
+                     <td name="chrf_ru">0.383</td>
+                     <td name="chrf_am">0.205</td>
+                  </tr>
+                  <tr>
+                     <td class="row-position">
+                        18
+                     </td>
+                     <td>
+                        maryam.najafi
+                     </td>
+                     <td class="column-selected" name="chrf_avg">0.316</td>
+                     <td name="chrf_en">0.504</td>
+                     <td name="chrf_es">0.305</td>
+                     <td name="chrf_de">0.315</td>
+                     <td name="chrf_zh">0.069</td>
+                     <td name="chrf_ar">0.456</td>
+                     <td name="chrf_hi">0.105</td>
+                     <td name="chrf_uk">0.315</td>
+                     <td name="chrf_ru">0.508</td>
+                     <td name="chrf_am">0.269</td>
+                  </tr>
+                  <tr>
+                     <td class="row-position">
+                        19
+                     </td>
+                     <td>
+                        shredder67
+                     </td>
+                     <td class="column-selected" name="chrf_avg">0.316</td>
+                     <td name="chrf_en">0.418</td>
+                     <td name="chrf_es">0.359</td>
+                     <td name="chrf_de">0.384</td>
+                     <td name="chrf_zh">0.104</td>
+                     <td name="chrf_ar">0.389</td>
+                     <td name="chrf_hi">0.172</td>
+                     <td name="chrf_uk">0.432</td>
+                     <td name="chrf_ru">0.431</td>
+                     <td name="chrf_am">0.157</td>
+                  </tr>
+                  <tr>
+                     <td class="row-position">
+                        20
+                     </td>
+                     <td>
+                        d1n910
+                     </td>
+                     <td class="column-selected" name="chrf_avg">0.316</td>
+                     <td name="chrf_en">0.408</td>
+                     <td name="chrf_es">0.361</td>
+                     <td name="chrf_de">0.503</td>
+                     <td name="chrf_zh">0.086</td>
+                     <td name="chrf_ar">0.283</td>
+                     <td name="chrf_hi">0.158</td>
+                     <td name="chrf_uk">0.471</td>
+                     <td name="chrf_ru">0.394</td>
+                     <td name="chrf_am">0.178</td>
+                  </tr>
+                  <tr style="background-color: lightgrey">
+                     <td class="row-position">
+                        21
+                     </td>
+                     <td>
+                        mT5
+                     </td>
+                     <td class="column-selected" name="chrf_avg">0.315</td>
+                     <td name="chrf_en">0.418</td>
+                     <td name="chrf_es">0.359</td>
+                     <td name="chrf_de">0.384</td>
+                     <td name="chrf_zh">0.096</td>
+                     <td name="chrf_ar">0.389</td>
+                     <td name="chrf_hi">0.170</td>
+                     <td name="chrf_uk">0.433</td>
+                     <td name="chrf_ru">0.432</td>
+                     <td name="chrf_am">0.157</td>
+                  </tr>
+                  <tr>
+                     <td class="row-position">
+                        22
+                     </td>
+                     <td>
+                        estrella
+                     </td>
+                     <td class="column-selected" name="chrf_avg">0.309</td>
+                     <td name="chrf_en">0.413</td>
+                     <td name="chrf_es">0.404</td>
+                     <td name="chrf_de">0.403</td>
+                     <td name="chrf_zh">0.126</td>
+                     <td name="chrf_ar">0.283</td>
+                     <td name="chrf_hi">0.225</td>
+                     <td name="chrf_uk">0.436</td>
+                     <td name="chrf_ru">0.397</td>
+                     <td name="chrf_am">0.097</td>
+                  </tr>
+                  <tr style="background-color: lightgrey">
+                     <td class="row-position">
+                        23
+                     </td>
+                     <td>
+                        delete
+                     </td>
+                     <td class="column-selected" name="chrf_avg">0.302</td>
+                     <td name="chrf_en">0.447</td>
+                     <td name="chrf_es">0.319</td>
+                     <td name="chrf_de">0.362</td>
+                     <td name="chrf_zh">0.175</td>
+                     <td name="chrf_ar">0.456</td>
+                     <td name="chrf_hi">0.105</td>
+                     <td name="chrf_uk">0.328</td>
+                     <td name="chrf_ru">0.255</td>
+                     <td name="chrf_am">0.270</td>
+                  </tr>
+                  <tr>
+                     <td class="row-position">
+                        24
+                     </td>
+                     <td>
+                        razvor
+                     </td>
+                     <td class="column-selected" name="chrf_avg">0.288</td>
+                     <td name="chrf_en">0.345</td>
+                     <td name="chrf_es">0.351</td>
+                     <td name="chrf_de">0.364</td>
+                     <td name="chrf_zh">0.124</td>
+                     <td name="chrf_ar">0.373</td>
+                     <td name="chrf_hi">0.204</td>
+                     <td name="chrf_uk">0.404</td>
+                     <td name="chrf_ru">0.367</td>
+                     <td name="chrf_am">0.058</td>
+                  </tr>
+                  <tr>
+                     <td class="row-position">
+                        25
+                     </td>
+                     <td>
+                        LanaKlitotekhnis
+                     </td>
+                     <td class="column-selected" name="chrf_avg">0.253</td>
+                     <td name="chrf_en">0.460</td>
+                     <td name="chrf_es">0.161</td>
+                     <td name="chrf_de">0.298</td>
+                     <td name="chrf_zh">0.062</td>
+                     <td name="chrf_ar">0.274</td>
+                     <td name="chrf_hi">0.110</td>
+                     <td name="chrf_uk">0.341</td>
+                     <td name="chrf_ru">0.384</td>
+                     <td name="chrf_am">0.184</td>
+                  </tr>
+                  <tr>
+                     <td class="row-position">
+                        26
+                     </td>
+                     <td>
+                        Anastasia1706
+                     </td>
+                     <td class="column-selected" name="chrf_avg">0.242</td>
+                     <td name="chrf_en">0.349</td>
+                     <td name="chrf_es">0.271</td>
+                     <td name="chrf_de">0.191</td>
+                     <td name="chrf_zh">0.064</td>
+                     <td name="chrf_ar">0.404</td>
+                     <td name="chrf_hi">0.088</td>
+                     <td name="chrf_uk">0.334</td>
+                     <td name="chrf_ru">0.248</td>
+                     <td name="chrf_am">0.227</td>
+                  </tr>
+                  <tr>
+                     <td class="row-position">
+                        27
+                     </td>
+                     <td>
+                        ZhongyuLuo
+                     </td>
+                     <td class="column-selected" name="chrf_avg">0.240</td>
+                     <td name="chrf_en">0.506</td>
+                     <td name="chrf_es">0.330</td>
+                     <td name="chrf_de">0.024</td>
+                     <td name="chrf_zh">0.052</td>
+                     <td name="chrf_ar">0.225</td>
+                     <td name="chrf_hi">0.138</td>
+                     <td name="chrf_uk">0.284</td>
+                     <td name="chrf_ru">0.507</td>
+                     <td name="chrf_am">0.096</td>
+                  </tr>
+                  <tr>
+                     <td class="row-position">
+                        28
+                     </td>
+                     <td>
+                        cocount
+                     </td>
+                     <td class="column-selected" name="chrf_avg">0.210</td>
+                     <td name="chrf_en">0.271</td>
+                     <td name="chrf_es">0.265</td>
+                     <td name="chrf_de">0.320</td>
+                     <td name="chrf_zh">0.100</td>
+                     <td name="chrf_ar">0.315</td>
+                     <td name="chrf_hi">0.079</td>
+                     <td name="chrf_uk">0.245</td>
+                     <td name="chrf_ru">0.214</td>
+                     <td name="chrf_am">0.080</td>
+                  </tr>
+                  <tr style="background-color: lightgrey">
+                     <td class="row-position">
+                        29
+                     </td>
+                     <td>
+                        backtranslation
+                     </td>
+                     <td class="column-selected" name="chrf_avg">0.205</td>
+                     <td name="chrf_en">0.506</td>
+                     <td name="chrf_es">0.275</td>
+                     <td name="chrf_de">0.233</td>
+                     <td name="chrf_zh">0.027</td>
+                     <td name="chrf_ar">0.206</td>
+                     <td name="chrf_hi">0.104</td>
+                     <td name="chrf_uk">0.201</td>
+                     <td name="chrf_ru">0.223</td>
+                     <td name="chrf_am">0.075</td>
+                  </tr>
+                  <tr>
+                     <td class="row-position">
+                        30
+                     </td>
+                     <td>
+                        etomoscow
+                     </td>
+                     <td class="column-selected" name="chrf_avg">0.204</td>
+                     <td name="chrf_en">0.293</td>
+                     <td name="chrf_es">0.244</td>
+                     <td name="chrf_de">0.197</td>
+                     <td name="chrf_zh">0.025</td>
+                     <td name="chrf_ar">0.149</td>
+                     <td name="chrf_hi">0.092</td>
+                     <td name="chrf_uk">0.266</td>
+                     <td name="chrf_ru">0.507</td>
+                     <td name="chrf_am">0.067</td>
+                  </tr>
+                  <tr>
+                     <td class="row-position">
+                        31
+                     </td>
+                     <td>
+                        cointegrated
+                     </td>
+                     <td class="column-selected" name="chrf_avg">0.175</td>
+                     <td name="chrf_en">0.160</td>
+                     <td name="chrf_es">0.265</td>
+                     <td name="chrf_de">0.245</td>
+                     <td name="chrf_zh">0.050</td>
+                     <td name="chrf_ar">0.183</td>
+                     <td name="chrf_hi">0.070</td>
+                     <td name="chrf_uk">0.253</td>
+                     <td name="chrf_ru">0.223</td>
+                     <td name="chrf_am">0.123</td>
+                  </tr>
+                  <tr>
+                     <td class="row-position">
+                        32
+                     </td>
+                     <td>
+                        dkenco
+                     </td>
+                     <td class="column-selected" name="chrf_avg">0.163</td>
+                     <td name="chrf_en">0.183</td>
+                     <td name="chrf_es">0.090</td>
+                     <td name="chrf_de">0.287</td>
+                     <td name="chrf_zh">0.069</td>
+                     <td name="chrf_ar">0.294</td>
+                     <td name="chrf_hi">0.035</td>
+                     <td name="chrf_uk">0.032</td>
+                     <td name="chrf_ru">0.265</td>
+                     <td name="chrf_am">0.217</td>
+                  </tr>
+                  <tr>
+                     <td class="row-position">
+                        33
+                     </td>
+                     <td>
+                        FD
+                     </td>
+                     <td class="column-selected" name="chrf_avg">0.144</td>
+                     <td name="chrf_en">0.061</td>
+                     <td name="chrf_es">0.189</td>
+                     <td name="chrf_de">0.166</td>
+                     <td name="chrf_zh">0.069</td>
+                     <td name="chrf_ar">0.294</td>
+                     <td name="chrf_hi">0.035</td>
+                     <td name="chrf_uk">0.215</td>
+                     <td name="chrf_ru">0.048</td>
+                     <td name="chrf_am">0.217</td>
+                  </tr>
+                  <tr style="background-color: lightgrey">
+                     <td class="row-position">
+                        34
+                     </td>
+                     <td>
+                        duplicate
+                     </td>
+                     <td class="column-selected" name="chrf_avg">0.126</td>
+                     <td name="chrf_en">0.061</td>
+                     <td name="chrf_es">0.090</td>
+                     <td name="chrf_de">0.287</td>
+                     <td name="chrf_zh">0.069</td>
+                     <td name="chrf_ar">0.294</td>
+                     <td name="chrf_hi">0.035</td>
+                     <td name="chrf_uk">0.032</td>
+                     <td name="chrf_ru">0.048</td>
+                     <td name="chrf_am">0.217</td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+         <h2 id="related-work">Related Work</h2>
+         <ol>
+            <li>
+               Logacheva V. et al. <b>ParaDetox: Detoxification with Parallel Data</b>. ACL, 2022. [<a href="https://aclanthology.org/2022.acl-long.469.pdf">pdf</a>]
+            </li>
+            <li>
+               Moskovskiy D. et al. <b>Exploring Cross-lingual Text Detoxification with Large Multilingual Language Models.</b> ACL SRW, 2022. [<a href="https://aclanthology.org/2022.acl-srw.26.pdf">pdf</a>]
+            <li>
+               Dementieva D. et al. <b>Methods for Detoxification of Texts for the Russian Language</b>. Multimodal Technologies and Interaction 5, 2021. [<a href="https://www.mdpi.com/2414-4088/5/9/54/pdf">pdf</a>]
+            </li>
+            <li>
+               Dale D. et. al. <b>Text Detoxification using Large Pre-trained Neural Models</b>. EMNLP, 2021. [<a href="https://aclanthology.org/2021.emnlp-main.629.pdf">pdf</a>]
+            </li>
+            <li>
+               Dementieva D. et al. <b>RUSSE-2022: Findings of the First Russian Detoxification Shared Task Based on Parallel Corpora</b>. Dialogue, 2022. [<a href="https://www.dialog-21.ru/media/5755/dementievadplusetal105.pdf">pdf</a>]
+            </li>
+            <li>
+               Logacheva, V. et al. <b>A Study on Manual and Automatic Evaluation for Text Style Transfer: The Case of Detoxification.</b> HumEval, 2022. [<a href="https://aclanthology.org/2022.humeval-1.8.pdf">pdf</a>]
+            </li>
+            <li>
+               Dementieva, D. et al. <b>Exploring Methods for Cross-lingual Text Style Transfer: The Case of Text Detoxification.</b> AACL, 2023. [<a href="http://www.afnlp.org/conferences/ijcnlp2023/proceedings/main-long/cdrom/pdf/2023.ijcnlp-long.70.pdf">pdf</a>]
+            </li>
+         </ol>
+         <h2>Contributors</h2>
+         The following researchers contributed to the parallel data preparation:
+         <ul>
+            <li>Daryna Dementieva: Ukrainian, English, Russian</li>
+            <li>Daniil Moskovskiy: English, Russian</li>
+            <li>Florian Schneider: German</li>
+            <li>Nikolay Babakov: Ukrainian, Spanish</li>
+            <li>Seid Yimam: Amharic</li>
+            <li>Abinew Ali Ayele: Amharic</li>
+            <li>Ashaf Elnagar: Arabic</li>
+            <li>Xinting Wang: Chinese</li>
+            <li>Naquee Rizwan: Hindi</li>
+         </ul>
+         <h2 id="task-committee">Task Committee</h2>
+         <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+            {% include people-cards/dementieva.html %}
+            {% include people-cards/moskovskiy.html %}
+            {% include people-cards/babakov.html %}
+            {% include people-cards/schneider.html %}
+            {% include people-cards/wang.html %}
+            {% include people-cards/yimam.html %}
+            {% include people-cards/elnagar.html %}
+            {% include people-cards/ustalov.html %}
+            {% include people-cards/stakovskii %}
+            {% include people-cards/smirnova.html %}
+            {% include people-cards/panchenko.html %}
+         </div>
+         <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+            {% include organizations/clef-organizations-section.html year=2024 %}
+         </div>
+      </div>
+   </div>
 </main>
