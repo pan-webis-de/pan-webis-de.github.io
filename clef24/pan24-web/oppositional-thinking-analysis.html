@@ -74,7 +74,7 @@ description: PAN at CLEF 2024 - Oppositional Thinking Analysis
             
             <ul>
                 <li>Input: Set of texts, each text accompanied with a (possibly empty) list of span annotations. Each annotation corresponds to a narrative element, and is described by its borders (start and end characters), and its category. There are six distinct span categories: AGENT, FACILITATOR, VICTIM, CAMPAIGNER, OBJECTIVE, NEGATIVE_EFFECT</li>
-                <li>Official evaluation metric: span-F1 [5]</li>
+                <li>Official evaluation metric: macro-averaged span-F1 [5]</li>
                 <li>Baseline: BERT-based multi-task token classifier (separate classification heads, common transformer backbone) [6]</li>
             </ul>
 
@@ -247,7 +247,7 @@ description: PAN at CLEF 2024 - Oppositional Thinking Analysis
             
           <h2 id="evaluation">Evaluation</h2> 
            <p>The official evaluation metric for subtask 1 (critical vs. conspiracy classification) is MCC [3], while the official metric 
-            for subtask 2 (span-level detection of narrative elements) is span-F1 [5]. For subtask 1 we will also provide binary F1 scores 
+            for subtask 2 (span-level detection of narrative elements) is macro-averaged span-F1 [5]. For subtask 1 we will also provide binary F1 scores 
             for each of the classes, and for subtask 2 we will provide per-category span-F1 scores. For each of the task languages, <b>English</b> and 
             <b>Spanish</b>, a separate ranking list will be maintained for each task.</p>
 
