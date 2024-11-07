@@ -40,12 +40,12 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
       <div class="uk-container uk-margin-medium">
          <h2 id="synopsis">Synopsis</h2>
          <ul>
-            <li>Task: Given a toxic piece of text, re-write it in a non-toxic way while saving the main content as much as possible.</li>
-            <li>Input: tba. [<a href="#">data</a>]
+             <li>Task: Given a toxic piece of text, re-write it in a non-toxic way while saving the main content as much as possible.</li>
+            <li>Input: toxic sentences in multiple languages from all over the globe: English, Spanish, German, Chinese, Arabic, Hindi, Ukrainian, Russian, Amharic; new: Italian, French, Hebrew, Japanese, Tatar. [<a href="https://huggingface.co/datasets/textdetox/multilingual_paradetox">data</a>]
             </li>
-            <li>Output: tba.
+            <li>Output: detoxified version of the text in the corresponding language.
             </li>
-            <li>Evaluation: tba.[<a href="#">baselines</a>][<a href="#">leaderboard</a>]
+            <li>Evaluation: automatic and manual evaluation based on three parameters:style transfer accuracy;content preservation;fluency.[<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/text-detoxification">baselines</a>][<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/text-detoxification">leaderboard</a>]
             </li>
             <li>Submission: tba.
             </li>
@@ -63,8 +63,7 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
             </li>
          </ul>
          <h2 id="task">Task</h2>
-         tba.
-         <!-- <p>
+         <p>
             Identification of toxicity in user texts is an active area of research. Today, social networks such as <a href="https://edition.cnn.com/2021/06/16/tech/facebook-ai-conflict-moderation-groups/index.html">Facebook</a>, <a href="https://about.instagram.com/blog/announcements/introducing-new-tools-to-protect-our-community-from-abuse">Instagram</a> are trying to address the problem of toxicity.
             However, they usually simply block such kinds of texts. 
             We suggest a proactive reaction to toxicity from the user. Namely, we aim at presenting a neutral version of a user message which preserves meaningful content. We denote this task as <i>text detoxification</i>.
@@ -97,7 +96,7 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
             In this competition, we suggest you create detoxification systems for 9 languages from several linguitic families: English, Spanish,  German, Chinese, Arabic, Hindi, Ukrainian, Russian, and Amharic.
             However, the availability of training corpora will differ between the languages. For English and Russian, the parallel corpora of several thousand toxic-detoxified pairsare available. So, you can fine-tune text generation models on them.
             For other languages, for the dev phase, no such corpora will be provided. <b>The main challenge</b> of this competition will be to perform an <b>unsupervised and cross-lingual detoxification</b>.
-         </p> -->
+         </p>
 
          <h2 id="methodology">Methodology</h2>
          tba.
@@ -154,19 +153,15 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
             <b>For the test phase,</b> we have released a new <b>supervised baseline</b>! The <a href="https://huggingface.co/google/mt5-xl">mt5</a> was fine-tuned on the <a href="https://huggingface.co/datasets/textdetox/multilingual_paradetox">parallel dev set</a>. The fine-tuned instance can be found <a href="https://huggingface.co/textdetox/mt5-xl-detox-baseline">here</a>.
          </p> -->
          <h2 id="data">Data</h2>
-         tba.
          <!-- <p>    
             For the fine-tuning, ParaDetox datasets for <a href="https://huggingface.co/datasets/s-nlp/paradetox">English</a> and <a href="https://huggingface.co/datasets/s-nlp/ru_paradetox">Russian</a> are already available. Please, refer to [1] and [4] about more details of the corpora collection.
             For <b>each</b> language, we have prepared 1k parallel pairs and divided into devand test. The parts will be released according the shared task schedule.
          </p>
          <p>
             <b>!!!Test phase has started!!!</b>
-         </p>
+         </p> -->
          <p>
             <b>Parallel Devset is now available!</b> The <a href="https://huggingface.co/datasets/textdetox/multilingual_paradetox">link</a> to the parallel multilingual data. This dataset contains 400 pairs for each of 9 languages.
-         </p>
-         <p>
-            <b>Test set can be found <a href="https://huggingface.co/datasets/textdetox/multilingual_paradetox_test">here</a> </b>. You are provided with 600 toxic sentences for each language.
          </p>
          <p>
             <b>Definition of toxiciy</b> 
@@ -177,11 +172,10 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
             Such implicit toxicity types are challenging to be detoxified so the intent will indeed become non-toxic.
             For this reason, we tried to pick for our datasets the sentences with explicit toxicity where we can detoxify it.
             However, toxicity can be quite a subjective intent. We hope, that we will agree on the majority of the cases what should be toxic or not. In the end, the main goal is to make the texts and the world at least somehow less toxic ;)
-         </p> -->
+         </p>
 
          <h2 id="evaluation">Evaluation</h2>
-         tba.
-         <!-- <p>
+         <p>
             <img src="../pan25-figures/detox_manual_eval.png" style="width: 650px; display: block; margin: 0 auto;" alt="The concept of text detoxification evaluation">
          </p>
          <p>
@@ -205,7 +199,7 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
          <p>
             Each metric component lies in the range [0;1]. To have the one common metric for leaderboard estimation, we will calculate <b>Joint</b> metric as the mean of <b>STA</b>*<b>SIM</b>*<b>FL</b> per sample.
          </p>
-         <p>
+         <!-- <p>
             All scripts for these metrics calculation can be found <a href="https://github.com/pan-webis-de/pan-code/blob/master/clef25/text-detoxification/evaluate.py">here</a>.
          </p>
          <p>
@@ -214,17 +208,17 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
          <p>
             Even if we already have powerful models to classify texts and embed their meanings, the human judgement is still the best for the final decision [5]. So, for the test set, we will perform <b>both</b> manual and automatic evaluation.
             For <b>manual</b> evaluation, we will create annotation tasks on <a href="https://toloka.ai/">Toloka.ai</a> platform corresponding to the same parameters described above. <b>The final leaderboard</b> will be built based on <b>manual evaluation</b> results.
-         </p>
+         </p> -->
 
-         <h2 id="submission">Submission</h2>
+         <!-- <h2 id="submission">Submission</h2>
          <p>
             All submissions are handled through <a href="https://codalab.lisn.upsaclay.fr/competitions/18253" target="_blank">Codalab</a>.
             We accept solutions submissions.
             Please follow instructions the corresponding instructions.
          </p> -->
 
-         <h2 id="results">Results</h2>
-         tba.
+         <!-- <h2 id="results">Results</h2>
+         tba. -->
          
          <h2 id="related-work">Related Work</h2>
          <ol>
@@ -255,14 +249,17 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
          The following researchers contributed to the parallel data preparation:
          <ul>
             <li>Daryna Dementieva: Ukrainian, English, Russian</li>
-            <li>Daniil Moskovskiy: English, Russian</li>
-            <li>Florian Schneider: German</li>
             <li>Nikolay Babakov: Ukrainian, Spanish</li>
             <li>Seid Yimam: Amharic</li>
             <li>Abinew Ali Ayele: Amharic</li>
             <li>Ashaf Elnagar: Arabic</li>
-            <li>Xinting Wang: Chinese</li>
+            <li>Xintong Wang: Chinese</li>
             <li>Naquee Rizwan: Hindi</li>
+            <li>Caroline Brune: French</li>
+            <li>Debora Nozza: Italian</li>
+            <li>Sotaro Takeshita: Japanese</li>
+            <li>Ilseyar Alimova: Tatar</li>
+            <li>Chaya Liebeskind: Hebrew</li>
          </ul>
          <h2 id="task-committee">Task Committee</h2>
          <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
