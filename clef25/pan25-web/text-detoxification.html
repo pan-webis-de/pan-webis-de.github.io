@@ -5,6 +5,20 @@ title: PAN at CLEF 2025 - Multilingual Text Detoxification
 description: PAN at CLEF 2025 - Multilingual Text Detoxification
 ---
 
+<head>
+<style>
+     table {
+         border-collapse: collapse; /* Ensures that borders are shared between cells */
+         width: 100%; /* Optional: Makes the table take up the full width of its container */
+     }
+     th, td {
+         border: 1px solid black; /* Adds borders to table headers and cells */
+         padding: 10px; /* Increases padding for more space within cells */
+         text-align: left; /* Aligns text to the left */
+     }
+</style>
+</head>
+
 <nav class="uk-container">
    <ul class="uk-breadcrumb">
       <li><a href="../../index.html">PAN</a></li>
@@ -41,11 +55,11 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
          <h2 id="synopsis">Synopsis</h2>
          <ul>
              <li>Task: Given a toxic piece of text, re-write it in a non-toxic way while saving the main content as much as possible.</li>
-            <li>Input: toxic sentences in multiple languages from all over the globe: English, Spanish, German, Chinese, Arabic, Hindi, Ukrainian, Russian, Amharic; new: Italian, French, Hebrew, Japanese, Tatar. [<a href="https://huggingface.co/datasets/textdetox/multilingual_paradetox">data</a>]
+            <li>Input: toxic sentences in multiple languages from all over the globe: English, Spanish, German, Chinese, Arabic, Hindi, Ukrainian, Russian, Amharic; and new ones! [<a href="https://huggingface.co/datasets/textdetox/multilingual_paradetox">data</a>]
             </li>
             <li>Output: detoxified version of the text in the corresponding language.
             </li>
-            <li>Evaluation: automatic and manual evaluation based on three parameters:style transfer accuracy;content preservation;fluency.[<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/text-detoxification">baselines</a>][<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/text-detoxification">leaderboard</a>]
+            <li>Evaluation: automatic and manual evaluation based on three parameters:style transfer accuracy;content preservation;fluency.[<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/text-detoxification">baselines</a>]
             </li>
             <li>Submission: tba.
             </li>
@@ -93,9 +107,13 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
          </table>
          </p>
          <p>
-            In this competition, we suggest you create detoxification systems for 9 languages from several linguitic families: English, Spanish,  German, Chinese, Arabic, Hindi, Ukrainian, Russian, and Amharic.
-            However, the availability of training corpora will differ between the languages. For English and Russian, the parallel corpora of several thousand toxic-detoxified pairsare available. So, you can fine-tune text generation models on them.
-            For other languages, for the dev phase, no such corpora will be provided. <b>The main challenge</b> of this competition will be to perform an <b>unsupervised and cross-lingual detoxification</b>.
+            In this competition, we suggest you create detoxification systems for various languages from several linguitic families.
+         </p>
+         <p>
+            <b>Development Phase</b> We challenge you to find the best multilingual model utilizing parallel training data for: English, Spanish,  German, Chinese, Arabic, Hindi, Ukrainian, Russian, and Amharic.
+         </p>
+         <p>
+            <b>Test Phase</b>However, the availability of training corpora will differ between the languages. Thus, for new languages, no such corpora will be provided. <b>The main challenge</b> of this competition will be to perform an <b>unsupervised and cross-lingual detoxification</b>.
          </p>
 
          <h2 id="methodology">Methodology</h2>
@@ -185,9 +203,7 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
             For the whole competition, the automatic evaluation metrics set will be available. We provide the multilingual automatic evaluation pipeline based on main three parameters:
          <ul>
             <li>
-               <b>Style Transfer Accuracy</b>: Given the generated paraphrase, classify its level of <b>non-toxicity</b>. For this, specifically fine-tuned xlm-roberta-large for toxicity binary <a href="https://huggingface.co/textdetox/xlmr-large-toxicity-classifier">classification</a> is used.
-               For additional experiments, we also provide the <a href="https://huggingface.co/textdetox/xlmr-base-toxicity-classifier">base</a> fine-tuned version of the classifier.
-            </li>
+               <b>Style Transfer Accuracy</b>: Given the generated paraphrase, classify its level of <b>non-toxicity</b>. For this, specifically fine-tuned xlm-roberta-large for toxicity binary <a href="https://huggingface.co/textdetox/xlmr-large-toxicity-classifier">classification</a> is used.            </li>
             <li>
                <b>Content preservation</b>: Given two texts, evaluate the similarity of their content. We calculate it as cosine similarity between <a href="https://huggingface.co/sentence-transformers/LaBSE">LaBSe</a> embeddings.
             </li>
@@ -246,7 +262,7 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
          </ol>
          
          <h2>Contributors</h2>
-         The following researchers contributed to the parallel data preparation:
+         The following researchers are contributing to the parallel data preparation:
          <ul>
             <li>Daryna Dementieva: Ukrainian, English, Russian</li>
             <li>Nikolay Babakov: Ukrainian, Spanish</li>
@@ -255,11 +271,11 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
             <li>Ashaf Elnagar: Arabic</li>
             <li>Xintong Wang: Chinese</li>
             <li>Naquee Rizwan: Hindi</li>
-            <li>Caroline Brune: French</li>
-            <li>Debora Nozza: Italian</li>
-            <li>Sotaro Takeshita: Japanese</li>
-            <li>Ilseyar Alimova: Tatar</li>
-            <li>Chaya Liebeskind: Hebrew</li>
+            <li>Caroline Brune</li>
+            <li>Debora Nozza</li>
+            <li>Sotaro Takeshita</li>
+            <li>Ilseyar Alimova</li>
+            <li>Chaya Liebeskind</li>
          </ul>
          <h2 id="task-committee">Task Committee</h2>
          <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
