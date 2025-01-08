@@ -64,7 +64,7 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
             <li>Submission: tba.
             </li>
             <li>
-               Registration: tba.
+               Registration: [<a href="https://clef2025.clef-initiative.eu/index.php?page=Pages/registration.html">CLEF2025 Registration</a>]
             </li>
             <li>
                Contact: [<a href="https://huggingface.co/textdetox">HuggingFace space</a>][<a href="https://groups.google.com/g/textdetox-clef2025">google group</a>]
@@ -117,30 +117,7 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
          </p>
 
          <h2 id="methodology">Methodology</h2>
-         tba.
-         <!-- <p>
-            <b>Unsupervised Methods</b>
-         </p>
-         <p>
-            For the majority of the cases and languages, there is not parallel corpus for the detoxification task. For this reason, we create our competition to recreate the real-life conditions. Some examples of stong unserpvised methods:
-         <ul>
-            <li>
-               <b>CondBERT</b> [2,3]: using Masked Language Modeling, mask toxic words in a sentence and rerank the candidates from LM based on their non-toxicity scores.
-            </li>
-            <li>
-               <b>ParaGedi</b> [3]: the detoxification task is viewed as paraphrasing task, but during the generation step toxicity scores of the next token prediction are also taken into account.
-            </li>
-         </ul>
-         The code for this methods can be found <a href="https://github.com/s-nlp/detox/tree/main/emnlp2021/style_transfer">here</a>.
-         </p>
-         <p>
-            <img src="../pan25-figures/detox_condBERT.png" style="width: 350px; display: block; margin: 0 auto;" alt="CondBERT Approach">
-         </p>
-         <p>
-            For the case, where for some language a detoxification corpus or/and model are available, you can use such methods as Backtranslation, Translation of the training corpus to the target language, or Adapter layers.
-            Please, refer to [6] for the detailed explanations of the suggested ideas of cross-lingual detoxification knowledge transfer.
-         </p>
-         <p>
+          <p>
             <b>Supervised Methods</b>
          </p>
          <p>
@@ -151,7 +128,7 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
             <b>Baselines</b>
          </p>
          <p>
-            <img src="../pan25-figures/detox_baselines.png" style="width: 700px; display: block; margin: 0 auto;" alt="Unsupervised Baselines">
+            <img src="../pan24-figures/detox_baselines.png" style="width: 700px; display: block; margin: 0 auto;" alt="Unsupervised Baselines">
          </p>
          We provide three baselines:
          <ol>
@@ -169,7 +146,8 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
          The code for all baselines is available <a href="https://github.com/pan-webis-de/pan-code/tree/master/clef25/text-detoxification">here</a>.
          <p>
             <b>For the test phase,</b> we have released a new <b>supervised baseline</b>! The <a href="https://huggingface.co/google/mt5-xl">mt5</a> was fine-tuned on the <a href="https://huggingface.co/datasets/textdetox/multilingual_paradetox">parallel dev set</a>. The fine-tuned instance can be found <a href="https://huggingface.co/textdetox/mt5-xl-detox-baseline">here</a>.
-         </p> -->
+         </p>
+           
          <h2 id="data">Data</h2>
          <!-- <p>    
             For the fine-tuning, ParaDetox datasets for <a href="https://huggingface.co/datasets/s-nlp/paradetox">English</a> and <a href="https://huggingface.co/datasets/s-nlp/ru_paradetox">Russian</a> are already available. Please, refer to [1] and [4] about more details of the corpora collection.
