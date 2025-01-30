@@ -30,39 +30,60 @@ description: PAN at CLEF 2025 - Generative AI Detection
         </div>
 
         <div class="uk-container uk-margin-medium">
-
             <h2 id="synopsis">Synopsis</h2>
             <ul class="uk-list uk-list-bullet">
-                <li>Task: tba.</li>
-            	<li>Submission: Deployment on TIRA [submit]</li>
-                <li>Input: tba. [download]</li>
-                <li>Evaluation Measures: tba. [code]</li>
-                <li>Baselines: tba. [code]</li>
-                <li>Evaluation: tba. [code]</li>
-	        </ul>
-
+                <li>Task: Detect machine-generated content in mixed human-AI authorship scenarios</li>
+                <li>Subtask 1: AI Detection Sensitivity Analysis (obfuscated/unobfuscated)</li>
+                <li>Subtask 2: Fine-grained Human-AI Collaboration Classification (7 categories)</li>
+                <li>Input: Multi-domain documents with human/machine authorship labels [download]</li>
+                <li>Evaluation Measures: Macro-F1 (Subtask 1), Accuracy (Subtask 2) [code]</li>
+                <li>Baselines: DetectGPT, Binoculars, Fast-DetectGPT [code]</li>
+                <li>Submission Deadline: 25 April 2025</li>
+                <li>Training Data Release: 30 January 2025</li>
+            </ul>
 
             <h2 id="task">Task</h2>
-            <p>tba.</p>
+            <p>Develop models to detect and classify human-AI collaborative texts:</p>
+            <h3>Subtask 1: AI Detection Sensitivity</h3>
+            <ul class="uk-list uk-list-bullet">
+                <li>Detect AI-generated text with/without obfuscation</li>
+                <li>Binary classification: Human vs Machine</li>
+            </ul>
+            <h3>Subtask 2: Collaboration Classification</h3>
+            <ul class="uk-list uk-list-bullet">
+                <li>7-class classification of human-AI interaction patterns</li>
+                <li>Categories include: Human-initiated/machine-continued, Machine-polished, Deeply-mixed text, etc.</li>
+            </ul>
 
             <h2 id="data">Data</h2>
-
-            <p>tba.</p>
-
-            <h2 id="evaluation">Evaluation</h2>
-            <p>tba</p>>
-
-
+            <ul class="uk-list uk-list-bullet">
+                <li>Multi-domain documents (academic, journalism, social media)</li>
+                <li>Human-written and machine-generated samples (GPT-4, Claude, PaLM)</li>
+                <li>Collaborative texts with annotation layers for human/machine contributions</li>
+                <li>Multiple languages supported (English, Spanish, German)</li>
+            </ul>
 
             <h2 id="submission">Submission</h2>
-            <p>tba</p>
+            <ul class="uk-list uk-list-bullet">
+                <li>Maximum 3 submissions per team</li>
+                <li>Required: Technical report paper</li>
+            </ul>
+
+            <h2 id="evaluation">Evaluation</h2>
+            <ul class="uk-list uk-list-bullet">
+                <li>Macro-F1</li>
+                <li>Robustness testing against novel obfuscation techniques</li>
+            </ul>
 
             <h2 id="baselines">Baselines</h2>
-            <p>tba.</p>
-
+            <ul class="uk-list uk-list-bullet">
+                <li>Zero-shot detectors: DetectGPT, Binoculars</li>
+                <li>Fine-tuned LLMs: RoBERTa-base, DeBERTa-v3</li>
+                <li>Ensemble methods with stylometric features</li>
+            </ul>
 
             <h2 id="results">Results</h2>
-            <p>tba</p>
+            <p>Competition results will be published after evaluation period concludes</p>
 
 
             <h2 id="related-work">Related Work</h2>
@@ -116,18 +137,72 @@ description: PAN at CLEF 2025 - Generative AI Detection
 
             <h2 id="task-committee">Task Committee</h2>
             <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
-                {% include people-cards/bevendorff.html %}
-                <!-- Yuxia Wang -->
-                {% include people-cards/wiegmann.html %}
-                <!-- Artem Shelmanov  -->
-                <!-- Jussi Karlgren -->
-                <!-- Preslav Nakov -->
-                {% include people-cards/potthast.html %}
-                {% include people-cards/stein.html %}
-                {% include people-cards/stamatatos.html %}
+                <div class="uk-width-1-3@m">
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <h3 class="uk-card-title">Yuxia Wang</h3>
+                        <p class="uk-text-meta">MBZUAI</p>
+                        <a href="mailto:yuxia.wang@mbzuai.ac.ae" class="uk-link-muted">yuxia.wang@mbzuai.ac.ae</a>
+                    </div>
+                </div>
+                <div class="uk-width-1-3@m">
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <h3 class="uk-card-title">Artem Shelmanov</h3>
+                        <p class="uk-text-meta">MBZUAI</p>
+                        <a href="mailto:artem.shelmanov@mbzuai.ac.ae" class="uk-link-muted">artem.shelmanov@mbzuai.ac.ae</a>
+                    </div>
+                </div>
+                <div class="uk-width-1-3@m">
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <h3 class="uk-card-title">Jonibek Mansurov</h3>
+                        <p class="uk-text-meta">MBZUAI</p>
+                    </div>
+                </div>
+                <div class="uk-width-1-3@m">
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <h3 class="uk-card-title">Akim Tsvigun</h3>
+                        <p class="uk-text-meta">Nebius AI</p>
+                    </div>
+                </div>
+                <div class="uk-width-1-3@m">
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <h3 class="uk-card-title">Iryna Gurevych</h3>
+                        <p class="uk-text-meta">MBZUAI<br>TU Darmstadt</p>
+                    </div>
+                </div>
+                <div class="uk-width-1-3@m">
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <h3 class="uk-card-title">Preslav Nakov</h3>
+                        <p class="uk-text-meta">MBZUAI</p>
+                        <a href="mailto:preslav.nakov@mbzuai.ac.ae" class="uk-link-muted">preslav.nakov@mbzuai.ac.ae</a>
+                    </div>
+                </div>
             </div>
             <div class="uk-container uk-padding-large uk-padding-remove-bottom">
-                {% include organizations/clef-organizations-section.html year=2025 ows=true %}
+                <h3>Organizing Institutions</h3>
+                <div class="uk-grid uk-child-width-1-3@m uk-margin-medium-top" data-uk-grid>
+                    <div>
+                        <a href="https://mbzuai.ac.ae" target="_blank">
+                            <img src="../pan25-figures/mbzuai-logo.jpg" alt="MBZUAI" style="max-height: 80px; height: auto;">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://www.nebius.ai" target="_blank">
+                            <img src="../pan25-figures/nebius-logo.png" alt="Nebius AI" style="max-height: 60px; height: auto;">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://www.tu-darmstadt.de" target="_blank">
+                            <img src="../pan25-figures/tudarmstadt-logo.png" alt="TU Darmstadt" style="max-height: 80px; height: auto;">
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="uk-margin-medium-top">
+                    <h3>Hosted by</h3>
+                    <a href="https://clef2025.clef-initiative.eu" target="_blank">
+                        <img src="../pan25-figures/clef25-logo.png" alt="CLEF 2025" style="max-width: 300px;">
+                    </a>
+                </div>
             </div>
         </div>
     </div>
