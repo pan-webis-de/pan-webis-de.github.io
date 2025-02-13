@@ -33,9 +33,10 @@ description: PAN at CLEF 2025 - Multi-Author Writing Style Analysis
                 <li>Task: Given a document, determine at which positions the author changes.</li>
                 <li>Input: Reddit comments, combined into documents [<a href="#">data</a>].
                 </li>
-                <li>Output: Where does authorship change on the sentence level <!--[<a href="#">validator</a>].-->
+                <li>Output: Where does authorship change on the sentence level [<a
+href="https://github.com/pan-webis-de/pan-code/tree/master/clef25/multi-author-analysis/output_verifier/">validator</a>].
                 </li>
-                <li>Evaluation: F1 <!--[<a href="#">code</a>]-->.
+                <li>Evaluation: F1 [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef25/multi-author-analysis/evaluator/">code</a>].
                 </li>
                 <li>Submission: Deployment on TIRA [<a href="#">submit</a>].
                 </li>
@@ -93,8 +94,8 @@ description: PAN at CLEF 2025 - Multi-Author Writing Style Analysis
                 </li>
             </ol>
 
-            <h3 id="output_format">Output Format <!--[<a
-href="https://github.com/pan-webis-de/pan-code/tree/master/clef25/multi-author-analysis/output_verifier/" target="_blank">validator</a>]--></h3>
+            <h3 id="output_format">Output Format [<a
+href="https://github.com/pan-webis-de/pan-code/tree/master/clef25/multi-author-analysis/output_verifier/" target="_blank">validator</a>]</h3>
             <p>To evaluate the solutions for the tasks, the results have to be stored in a single file for each of the input documents and each of the datasets. Please note that we require a solution file to be generated for each input problem for each dataset. The data structure during the evaluation phase will be similar to that in the training phase, with the exception that the ground truth files are missing.</p>
 
             <p>For each given problem <code>problem-X.txt</code>, your software should output the missing solution file <code>solution-problem-X.json</code>, containing a JSON object holding the solution to the respective task. The solution is an array containing a binary value for each pair of consecutive sentences .</p>
@@ -105,11 +106,11 @@ href="https://github.com/pan-webis-de/pan-code/tree/master/clef25/multi-author-a
                                 "changes": [0,0,1,0,0,...]
                             }</code></pre> 
 
-            <h2 id="evaluation">Evaluation <!--[<a
+            <h2 id="evaluation">Evaluation [<a
 href="https://github.com/pan-webis-de/pan-code/tree/master/clef25/multi-author-analysis/evaluator" target="_blank">code</a>]--></h2>
             <p>Submissions are evaluated by the F1-score measure (macro) across all sentence pairs. The solutions for each dataset are evaluated independently based on the obtained evaluation scores. 
 
-            <!--<p>We provide you with a script to compute the F1-score based on the produced output-files [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef25/multi-author-analysis/evaluator/">evaluator and tests</a>].</p>-->
+            <p>We provide you with a script to compute the F1-score based on the produced output-files [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef25/multi-author-analysis/evaluator/">evaluator and tests</a>].</p>
 
             <h2 id="submission">Submission</h2>
             <p>Once you finish tuning your approach on the validation set, your software will be tested on the test set. During the competition, the test sets will not be released publicly. Instead, we ask you to submit your software for evaluation at our site as follows.</p>
