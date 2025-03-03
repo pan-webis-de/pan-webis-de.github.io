@@ -53,7 +53,7 @@ description: PAN at CLEF 2025 - Generative AI Detection
             <p>The training and validation dataset is provided as a set of newline-delimited JSON files. Each file contains a list of texts, written either by a human or a machine. The file format is as follows:</p>
 
             <pre class="prettyprint"><code class="lang-json">{"id": "9f40d176-2560-5d1b-97ee-e86f9056e2f7", "text": "...", "model": "human", "label": 0, "genre": "essays"}
-{"id": "074ac722-c4fd-52f7-802d-401c50bce035", "text": "...", "model": "gpt-3.5-turbo", "label": 1, "genre": "essays"}
+{"id": "074ac722-c4fd-52f7-802d-401c50bce035", "text": "...", "model": "gpt-4o", "label": 1, "genre": "essays"}
 ...</code></pre>
 
             A <code>"label"</code> of 0 means human-written, 1 is ai-written. <code>"genre"</code> is for informational purposes only and can be either <code>"essays"</code>, <code>"news"</code>, or <code>"fiction"</code>. Texts with <code>"genre": "news"</code> are sampled from last year's dataset (but with a few additions, such as GPT-4o). So if you want to reuse last year's dataset, be aware that some texts will be duplicates!
