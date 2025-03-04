@@ -32,15 +32,17 @@ description: PAN at CLEF 2025 - Generative AI Detection
             <ul class="uk-list uk-list-bullet">
                 <li>Task 1: Given a text, decide whether it was written by a human or an AI.</li>
                 <li>Task 2 Given a document collaboratively authored by human and AI, classify the extent to which the model assisted.</li>
-                <li>Data: Human and machine texts [<a href="https://zenodo.org/records/14962653">download task 1</a>] [<a href="https://drive.google.com/drive/folders/1eTd82aMG0cmbVcIbTMcGVq2aJpFlIV0C?usp=sharing">download task 2</a>]</li>
-                <li>Evaluation Measures: Macro-F1, C@1, FPR, FNR</li>
+                <li>Important dates: tba.</li>
+                <li>Data: Human and machine texts [<a href="https://zenodo.org/records/14962653">download task 1</a>] [<a href="https://zenodo.org/records/14966121">download task 2</a>]</li>
+                <li>Evaluation Measures: F1, C@1, FPR, FNR</li>
                 <li>Baselines: SVM, Binoculars, RoBERTa [code task 1] [<a href="https://github.com/mbzuai-nlp/PAN-CLEF2025GenAIDetection-Subtask2">code task 2</a>]</li>
 	        </ul>
 
             <h2 id="task-overview">Task Overview</h2>
             <p>The <em>Generative AI Authorship Verification Task</em> @ PAN is split into two subtasks. Participants can submit their systems to either of them or both. Task 1 focuses on the robustness and sensitivity of detection systems, Task 2 focuses on the degree to which a mixed-authorship text is human- or machine-authored. The two tasks have individual datasets.</p>
+        </div>
 
-
+        <div class="uk-container uk-margin-medium">
             <h2 id="task1">Subtask 1: Voight-Kampff AI Detection Sensitivity</h2>
             <p>Subtask 1 is a binary AI detection task in that participants are given a text and have to decide whether it was machine-authored (class 1) or human-authored (class 0). However, we introduced a twist: The LLMs were instructed to change their style and mimic a specific human author. Furthermore, the test set will contain several surprises such as new models or unknown obfuscations to test the robustness of the classifiers (however, texts will be from the same domain).</p>
 
@@ -52,8 +54,8 @@ description: PAN at CLEF 2025 - Generative AI Detection
 
             <p>The training and validation dataset is provided as a set of newline-delimited JSON files. Each file contains a list of texts, written either by a human or a machine. The file format is as follows:</p>
 
-            <pre class="prettyprint"><code class="lang-json">{"id": "9f40d176-2560-5d1b-97ee-e86f9056e2f7", "text": "...", "model": "human", "label": 0, "genre": "essays"}
-{"id": "074ac722-c4fd-52f7-802d-401c50bce035", "text": "...", "model": "gpt-4o", "label": 1, "genre": "essays"}
+            <pre class="prettyprint"><code class="lang-json">{"id": "a6c8018e-d22c-4d6e-b5e3-0c0a65682a6a", "text": "...", "model": "human", "label": 0, "genre": "essays"}
+{"id": "f1a26761-ca2a-43e9-890d-80dcb3058364", "text": "...", "model": "gpt-4o", "label": 1, "genre": "essays"}
 ...</code></pre>
 
             A <code>"label"</code> of 0 means human-written, 1 is ai-written. <code>"genre"</code> is for informational purposes only and can be either <code>"essays"</code>, <code>"news"</code>, or <code>"fiction"</code>. Texts with <code>"genre": "news"</code> are sampled from last year's dataset (but with a few additions, such as GPT-4o). So if you want to reuse last year's dataset, be aware that some texts will be duplicates!
@@ -71,7 +73,7 @@ description: PAN at CLEF 2025 - Generative AI Detection
 
             <p>Within <code>$outputDir</code>, a single (!) file with the file extension <code>*.jsonl</code> must be created with the following format:</p>
 
-            <pre class="prettyprint"><code class="lang-json">{"id": bea8cccd-0c99-4977-9c1b-8423a9e1ed96", "label": 1.0}
+            <pre class="prettyprint"><code class="lang-json">{"id": "bea8cccd-0c99-4977-9c1b-8423a9e1ed96", "label": 1.0}
 {"id": "a963d7a0-d7e9-47c0-be84-a40ccc2005c7", "label": 0.2315}
 ...</code></pre>
 
@@ -79,20 +81,31 @@ description: PAN at CLEF 2025 - Generative AI Detection
 
             <p><strong>All test cases must be processed in isolation without information leakage between them!</strong> Even though systems may be given an input file with multiple JSON lines at once for reasons of efficiency, these inputs must be processed and answered just the same as if only a single line were given. Answers for any one test case must not depend on other cases in the input dataset!</p>
 
+            <h3 id="task1-evaluation">Evaluation</h3>
+            <p>tba</p>
 
+            <h3 id="task1-baselines">Baselines</h3>
+            <p>tba</p>
+
+        </div>
+
+        <div class="uk-container uk-margin-medium">
             <h2 id="task2">Subtask 2: Human-AI Collaborative Text Classification</h2>
-	        <p>Subtask 2 is a six-class classification task. Given a document collaboratively authored by humans and models, our goal is to classify it into one of the following six categories:</p>
-            <ul class="uk-list uk-list-bullet">
-                <li>(1) Fully human-written</li>
-                <li>(2) Human-initiated, then machine-continued</li>
-                <li>(3) Human-written, then machine-polished</li>
-                <li>(4) Machine-written, then machine-humanized (obfuscated)</li>
-                <li>(5) Machine-written, then human-edited</li>
-                <li>(6) Deeply-mixed text: where some parts are written by a human and some are generated by a machine.</li>
-            </ul>
+            <p>In subtask 2, we focus on Human-AI Collaborative Text Classification, where the goal is to categorize documents that have been co-authored by humans and LLMs. Specifically, we aim to classify texts into six distinct categories based on the nature of human and machine contributions:</p>
+
+            <ol class="uk-list uk-list-bullet">
+                <li><strong>Fully human-written:</strong> The document is entirely authored by a human without any AI assistance.</li>
+                <li><strong>Human-initiated, then machine-continued:</strong> A human starts writing, and an AI model completes the text.</li>
+                <li><strong>Human-written, then machine-polished:</strong> The text is initially written by a human but later refined or edited by an AI model.</li>
+                <li><strong>Machine-written, then machine-humanized (obfuscated):</strong> An AI generates the text, which is later modified to obscure its machine origin.</li>
+                <li><strong>Machine-written, then human-edited:</strong> The content is generated by an AI but subsequently edited or refined by a human.</li>
+                <li><strong>Deeply-mixed text:</strong> The document contains interwoven sections written by both humans and AI, without a clear separation.</li>
+            </ol>
+
+            <p>Accurately distinguishing between these categories will enhance our understanding of human-AI collaboration and help mitigate the risks associated with synthetic text.</p>
 
             <h3 id="task2-data">Data</h3>
-            The two subtasks have individual datasets. Links to the dataset are on our <a href="https://github.com/mbzuai-nlp/PAN-CLEF2025GenAIDetection-Subtask2">GitHub</a> page.
+            The dataset for Task 2 can be downloaded from <a href="https://zenodo.org/records/14966121">Zenodo</a>. More information and baselines can be found in our <a href="https://github.com/mbzuai-nlp/PAN-CLEF2025GenAIDetection-Subtask2">GitHub repository</a>.
 
             <ul class="uk-list uk-list-bullet">
                 <li>Multi-domain documents (academic, journalism, social media)</li>
@@ -100,6 +113,55 @@ description: PAN at CLEF 2025 - Generative AI Detection
                 <li>Collaborative texts with annotation layers for human/machine contributions</li>
                 <li>Multiple languages supported (English, Spanish, German)</li>
             </ul>
+
+            <p>Dataset label distribution:</p>
+
+            <table class="uk-table uk-table-divider uk-table-small uk-width-1-2">
+                <thead>
+                <tr>
+                    <th>Label Category</th>
+                    <th class="uk-text-right">Train</th>
+                    <th class="uk-text-right">Dev</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Machine-written, then machine-humanized</td>
+                    <td class="uk-text-right">91,232</td>
+                    <td class="uk-text-right">10,137</td>
+                </tr>
+                <tr>
+                    <td>Human-written, then machine-polished</td>
+                    <td class="uk-text-right">95,398</td>
+                    <td class="uk-text-right">12,289</td>
+                </tr>
+                <tr>
+                    <td>Fully human-written</td>
+                    <td class="uk-text-right">75,270</td>
+                    <td class="uk-text-right">12,330</td>
+                </tr>
+                <tr>
+                    <td>Human-initiated, then machine-continued</td>
+                    <td class="uk-text-right">10,740</td>
+                    <td class="uk-text-right">37,170</td>
+                </tr>
+                <tr>
+                    <td>Deeply-mixed text (human + machine parts)</td>
+                    <td class="uk-text-right">14,910</td>
+                    <td class="uk-text-right">225</td>
+                </tr>
+                <tr>
+                    <td>Machine-written, then human-edited</td>
+                    <td class="uk-text-right">1,368</td>
+                    <td class="uk-text-right">510</td>
+                </tr>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td class="uk-text-right"><strong>288,918</strong></td>
+                    <td class="uk-text-right"><strong>72,661</strong></td>
+                </tr>
+                </tbody>
+            </table>
 
             <h3 id="task2-submission">Submission</h3>
             <p>tba</p>
@@ -113,6 +175,7 @@ description: PAN at CLEF 2025 - Generative AI Detection
                 <li>Fine-tuned LLMs: RoBERTa-base, DeBERTa-v3</li>
                 <li>Ensemble methods with stylometric features</li>
             </ul>
+            <p>Code for the task baseline can be found in our <a href="https://github.com/mbzuai-nlp/PAN-CLEF2025GenAIDetection-Subtask2">GitHub repository</a>.</p>
 
 
             <h2 id="related-work">Related Work</h2>
