@@ -146,6 +146,9 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
             If a parallel corpus of toxic-neutral pairs is already available, then you can fine-tune <i>any</i> text generation model.
             You can refer to the ruT5 model for detoxification <a href="https://github.com/s-nlp/russe_detox_2022/tree/main/baselines/t5">example</a> from the <a href="https://russe.nlpub.org/2022/tox/">shared task</a> at the <a href="https://www.dialog-21.ru/en/evaluation/">Dialogue Evaluation</a> forum.
          </p>
+        <p>
+             We provide one of the top solution from TextDetox2024 <a href='https://huggingface.co/s-nlp/mt0-xl-detox-orpo'>mT0-XL-detox</a> and <a href='https://huggingface.co/textdetox/mbart-detox-baseline'>mBART</a> baselines fine-tuned on 9 languages.
+        </p>
          <p>
             <b>Baselines</b>
          </p>
@@ -164,15 +167,27 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
                <b>Backtranslation</b>: a more sophisticated cross-lingual transfer method. Translate the input to the language for which powerful detoxification model in available, perform detoxification, and translate back to the target language.
                The translation is done with NLLB-600M <a href="https://huggingface.co/facebook/nllb-200-distilled-600M">model</a>, detoxification with English bart-base-detox <a href="https://huggingface.co/s-nlp/bart-base-detox">model</a>.
             </li>
+            <li>
+                 <b>LLMs prompting</b>: for sure, you can utilize any LLMs in zero-shot or few-shot format. As a baseline, we provide zero-shot results of <a href='https://huggingface.co/mlabonne/Llama-3.1-70B-Instruct-lorablated'>LLaMa-70B</a> prompting.
+            </li>
          </ol>
          The code for all baselines is available <a href="https://github.com/pan-webis-de/pan-code/tree/master/clef25/text-detoxification">here</a>.
-         <p>
-            <b>For the test phase,</b> we have released a new <b>supervised baseline</b>! The <a href="https://huggingface.co/google/mt5-xl">mt5</a> was fine-tuned on the <a href="https://huggingface.co/datasets/textdetox/multilingual_paradetox">parallel dev set</a>. The fine-tuned instance can be found <a href="https://huggingface.co/textdetox/mt5-xl-detox-baseline">here</a>.
-         </p>
            
          <h2 id="data">Data</h2>
+        <p>
+             <b>Training Data</b>
+        </p>
          <p>
-            <b>Parallel Devset is now available!</b> The <a href="https://huggingface.co/datasets/textdetox/multilingual_paradetox">link</a> to the parallel multilingual data. This dataset contains 400 pairs for each of 9 languages.
+            <b>Parallel Text Detoxification Dataset</b> The <a href="https://huggingface.co/datasets/textdetox/multilingual_paradetox">link</a> to the parallel multilingual text detoxification data. This dataset contains 400 pairs for each of 9 languages.
+            <b>Toxicity Classification Dataset</b>. To support broader experiments with toxicity, we provide a compilation of <a href='https://huggingface.co/datasets/textdetox/multilingual_toxicity_dataset'>toxicity classification data</a> for all 15 languages.
+            <b>Toxic Keywords List</b>. <a href='https://huggingface.co/datasets/textdetox/multilingual_toxic_lexicon'>Toxic keywords</a> for all 15 languages and <a href='https://huggingface.co/datasets/textdetox/multilingual_toxic_spans'>toxic spans</a> for 9 languages.
+     
+         </p>
+         <p>
+              <b>Test Data</b>
+         </p>
+         <p>
+              The test data for all languages is available <a href='https://huggingface.co/datasets/textdetox/multilingual_paradetox_test'>[here]</a>.
          </p>
 
          <h2 id="evaluation">Evaluation</h2>
@@ -186,7 +201,7 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
             For the whole competition, the automatic evaluation metrics set will be available. We provide the multilingual automatic evaluation pipeline based on main three parameters:
          <ul>
             <li>
-               <b>Style Transfer Accuracy</b>: Given the generated paraphrase, classify its level of <b>non-toxicity</b>. For this, specifically fine-tuned xlm-roberta-large for toxicity binary <a href="https://huggingface.co/textdetox/xlmr-large-toxicity-classifier">classification</a> is used.            </li>
+               <b>Style Transfer Accuracy</b>: Given the generated paraphrase, classify its level of <b>non-toxicity</b>. For this, specifically fine-tuned xlm-roberta-large for toxicity binary <a href="https://huggingface.co/textdetox/xlmr-large-toxicity-classifier-v2">classification</a> is used.            </li>
             <li>
                <b>Content preservation</b>: Given two texts, evaluate the similarity of their content. We calculate it as cosine similarity between <a href="https://huggingface.co/sentence-transformers/LaBSE">LaBSe</a> embeddings.
             </li>
@@ -203,12 +218,12 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
          <p>
             All submissions are handled through <a href="https://codalab.lisn.upsaclay.fr/competitions/22396" target="_blank">Codalab</a>.
             We accept solutions submissions.
-            Please follow the corresponding instructions.
+            Please follow carefully the corresponding instructions.
          </p>
 
          <h2 id="dates">Important Dates</h2>
          <ol>
-              <li><b>Registration to CLEF2025</b>: is now open! Register <a href='https://clef2025.clef-initiative.eu/index.php?page=Pages/registration.html'>here</a>.</li>
+              <li><b>Registration to CLEF2025</b>: is now open! Register <a href='https://clef2025.clef-initiative.eu/index.php?page=Pages/registration.html'>here</a> and join our <a href='https://groups.google.com/g/textdetox-clef2025'>Google Group</a>.</li>
               <li>April 25, 2025: Registration closes.</li>
               <li>May 1st, 2025: Test phase starts.</li>
               <li>May 10, 2025: End of evaluation cycle.</li>
@@ -253,7 +268,7 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
          </ol>
          
          <h2>Contributors</h2>
-         The following researchers are contributing to the parallel data preparation:
+         We have a very big international team working on this Shared Task preparation. The following researchers are contributing to the parallel data preparation:
          <ul>
             <li>Daryna Dementieva: Ukrainian, English, Russian</li>
             <li>Nikolay Babakov: Ukrainian, Spanish</li>
