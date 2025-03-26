@@ -34,6 +34,7 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
             <ul class="uk-list">
                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task</a></li>
+               <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#phases">Phases</a></li>
                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#methodology">Methodology</a></li>
                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
@@ -106,14 +107,35 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
             </tr>
          </table>
          </p>
+
          <p>
-            In this competition, we suggest you create detoxification systems for various languages from several linguitic families.
+              <b>Languages</b>
          </p>
          <p>
-            <b>Development Phase</b> We challenge you to find the best multilingual model utilizing parallel training data for: English, Spanish,  German, Chinese, Arabic, Hindi, Ukrainian, Russian, and Amharic.
+            In this competition, we suggest you create detoxification systems for various languages from several linguitic families. We have languages from the <a href='https://pan.webis.de/clef24/pan24-web/text-detoxification.html'>2024 edition</a> — English, Spanish, German, Chinese, Arabic, Hindi, Ukrainian, Russian, and Amharic — 
+            together with <b>new languages</b>: European languages — Italian, French, Turkic language Tatar, Semitic language Hebrew, Asian language Japanese, and even one very popular code-switch language Hinglish!
+         </p>
+
+         <p>
+            <b>Definition of toxiciy</b> 
          </p>
          <p>
-            <b>Test Phase</b> However, the availability of training corpora will differ between the languages. Thus, for new languages, no such corpora will be provided. <b>The main challenge</b> of this competition will be to perform an <b>unsupervised and cross-lingual detoxification</b>.
+            One of the crucial points in this task is to have a common ground on how to estimate if the text is toxic or not. 
+            In our task, we will work only with <b>explicit</b> types of toxicity—obvious present of obscene and rude lexicon where still there is meaningful neutral content present—and <b>do not</b> work with <b>implicit</b> types—like sarcasm, passive aggressiveness, or direct hate to some group where no neutral content can be found.
+            Such implicit toxicity types are challenging to be detoxified so the intent will indeed become non-toxic.
+            For this reason, we tried to pick for our datasets the sentences with explicit toxicity where we can detoxify it.
+            However, toxicity can be quite a subjective intent. We hope, that we will agree on the majority of the cases what should be toxic or not. In the end, the main goal is to make the texts and the world at least somehow less toxic ;)
+         </p>
+
+         <h2 id="phases">Phases</h2>
+         The shared task will be divided into two phases — development and test. In both phases, we are make the emphasis on <b>cross-lingual</b> and <b>multilingual</b> text detoxification.
+         <p>
+            <b>Development Phase</b> The <a href='https://huggingface.co/datasets/textdetox/multilingual_paradetox'>parallel traning data</a> is available for these languages: English, Spanish,  German, Chinese, Arabic, Hindi, Ukrainian, Russian, and Amharic. 
+            In our <a href='https://huggingface.co/datasets/textdetox/multilingual_paradetox_test'>test set</a>, we have 600 toxic sentence per these languages together with 100 toxic sentence for new languages—Italian, French, Hebrew, Hinglish, Japanese, and Tatar! 
+            Your task will be to come up with text detoxification models for new languages with no parallel training data as well as aiming to have the best overall multilingual model.
+         </p>
+         <p>
+            <b>Test Phase</b> We will add even more test toxic sentences for new languages!
          </p>
 
          <h2 id="methodology">Methodology</h2>
@@ -152,16 +174,6 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
          <p>
             <b>Parallel Devset is now available!</b> The <a href="https://huggingface.co/datasets/textdetox/multilingual_paradetox">link</a> to the parallel multilingual data. This dataset contains 400 pairs for each of 9 languages.
          </p>
-         <p>
-            <b>Definition of toxiciy</b> 
-         </p>
-         <p>
-            One of the crucial points in this task is to have a common ground on how to estimate if the text is toxic or not. 
-            In our task, we will work only with <b>explicit</b> types of toxicity—obvious present of obscene and rude lexicon where still there is meaningful neutral content present—and <b>do not</b> work with <b>implicit</b> types—like sarcasm, passive aggressiveness, or direct hate to some group where no neutral content can be found.
-            Such implicit toxicity types are challenging to be detoxified so the intent will indeed become non-toxic.
-            For this reason, we tried to pick for our datasets the sentences with explicit toxicity where we can detoxify it.
-            However, toxicity can be quite a subjective intent. We hope, that we will agree on the majority of the cases what should be toxic or not. In the end, the main goal is to make the texts and the world at least somehow less toxic ;)
-         </p>
 
          <h2 id="evaluation">Evaluation</h2>
          <p>
@@ -198,7 +210,7 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
          <ol>
               <li><b>Registration to CLEF2025</b>: is now open! Register <a href='https://clef2025.clef-initiative.eu/index.php?page=Pages/registration.html'>here</a>.</li>
               <li>April 25, 2025: Registration closes.</li>
-              <li>May 1st, 2025: Test phase starts.</li>\
+              <li>May 1st, 2025: Test phase starts.</li>
               <li>May 10, 2025: End of evaluation cycle.</li>
               <li>May 30, 2025: Participants paper submission.</li>
               <li>June 27, 2025: Notification of acceptance.</li>
