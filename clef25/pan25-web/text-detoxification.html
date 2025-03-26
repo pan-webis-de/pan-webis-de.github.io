@@ -38,7 +38,7 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>
-               <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>
+               <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#dates">Important Dates</a></li>
                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
             </ul>
@@ -55,13 +55,13 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
          <h2 id="synopsis">Synopsis</h2>
          <ul>
              <li>Task: Given a toxic piece of text, re-write it in a non-toxic way while saving the main content as much as possible.</li>
-            <li>Input: toxic sentences in multiple languages from all over the globe: English, Spanish, German, Chinese, Arabic, Hindi, Ukrainian, Russian, Amharic; and new ones! [<a href="https://huggingface.co/datasets/textdetox/multilingual_paradetox">data</a>]
+            <li>Input: toxic sentences in <b>15 languages</b> from all over the globe: English, Spanish, German, Chinese, Arabic, Hindi, Ukrainian, Russian, Amharic, Italian, French, Hebrew, Hinglish, Japanese, and Tatar. [<a href="https://huggingface.co/datasets/textdetox/multilingual_paradetox">data</a>]
             </li>
             <li>Output: detoxified version of the text in the corresponding language.
             </li>
-            <li>Evaluation: automatic and manual evaluation based on three parameters:style transfer accuracy;content preservation;fluency.[<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef24/text-detoxification">baselines</a>]
+            <li>Evaluation: automatic and manual evaluation based on three parameters: style transfer accuracy; content preservation; fluency.[<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef25/text-detoxification">baselines</a>]
             </li>
-            <li>Submission: tba.
+            <li>Submission: [<a href="https://codalab.lisn.upsaclay.fr/competitions/22396">CodaLab</a>] is now open!
             </li>
             <li>
                Registration: [<a href="https://clef2025.clef-initiative.eu/index.php?page=Pages/registration.html">CLEF2025 Registration</a>]
@@ -83,7 +83,7 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
             We suggest a proactive reaction to toxicity from the user. Namely, we aim at presenting a neutral version of a user message which preserves meaningful content. We denote this task as <i>text detoxification</i>.
          </p>
          <p>
-            <img src="../pan25-figures/textdetox_abstract.jpg" style="width: 1200px; display: block; margin: 0 auto;" alt="Multilingual TextDetox Task">
+            <img src="../pan25-figures/textdetox_abstract.jpg" style="width: 1100px; display: block; margin: 0 auto;" alt="Multilingual TextDetox Task">
          </p>
          <p>
             More text detoxification examples in English:
@@ -113,7 +113,7 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
             <b>Development Phase</b> We challenge you to find the best multilingual model utilizing parallel training data for: English, Spanish,  German, Chinese, Arabic, Hindi, Ukrainian, Russian, and Amharic.
          </p>
          <p>
-            <b>Test Phase</b>However, the availability of training corpora will differ between the languages. Thus, for new languages, no such corpora will be provided. <b>The main challenge</b> of this competition will be to perform an <b>unsupervised and cross-lingual detoxification</b>.
+            <b>Test Phase</b> However, the availability of training corpora will differ between the languages. Thus, for new languages, no such corpora will be provided. <b>The main challenge</b> of this competition will be to perform an <b>unsupervised and cross-lingual detoxification</b>.
          </p>
 
          <h2 id="methodology">Methodology</h2>
@@ -186,23 +186,25 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
          <p>
             Each metric component lies in the range [0;1]. To have the one common metric for leaderboard estimation, we will calculate <b>Joint</b> metric as the mean of <b>STA</b>*<b>SIM</b>*<b>FL</b> per sample.
          </p>
-         <!-- <p>
-            All scripts for these metrics calculation can be found <a href="https://github.com/pan-webis-de/pan-code/blob/master/clef25/text-detoxification/evaluate.py">here</a>.
-         </p>
-         <p>
-            <b>Test Phase</b>
-         </p>
-         <p>
-            Even if we already have powerful models to classify texts and embed their meanings, the human judgement is still the best for the final decision [5]. So, for the test set, we will perform <b>both</b> manual and automatic evaluation.
-            For <b>manual</b> evaluation, we will create annotation tasks on <a href="https://toloka.ai/">Toloka.ai</a> platform corresponding to the same parameters described above. <b>The final leaderboard</b> will be built based on <b>manual evaluation</b> results.
-         </p> -->
 
          <h2 id="submission">Submission</h2>
          <p>
             All submissions are handled through <a href="https://codalab.lisn.upsaclay.fr/competitions/22396" target="_blank">Codalab</a>.
             We accept solutions submissions.
-            Please follow instructions the corresponding instructions.
+            Please follow the corresponding instructions.
          </p>
+
+         <h2 id="dates">Important Dates</h2>
+         <ol>
+              <li><b>Registration to CLEF2025</b>: is now open! Register <a href='https://clef2025.clef-initiative.eu/index.php?page=Pages/registration.html'>here</a>.</li>
+              <li>April 25, 2025: Registration closes.</li>
+              <li>May 1st, 2025: Test phase starts.</li>\
+              <li>May 10, 2025: End of evaluation cycle.</li>
+              <li>May 30, 2025: Participants paper submission.</li>
+              <li>June 27, 2025: Notification of acceptance.</li>
+              <li>July 7, 2025: Camera-ready due.</li>
+              <li>September 9-12, 2025: CLEF Conference in Madrid, Spain!</li>
+         </ol>
 
          <!-- <h2 id="results">Results</h2>
          tba. -->
