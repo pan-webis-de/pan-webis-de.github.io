@@ -140,7 +140,7 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
 
          <h2 id="methodology">Methodology</h2>
           <p>
-            <b>Supervised Methods</b>
+            <b>Supervised Baselines</b>
          </p>
          <p>
             If a parallel corpus of toxic-neutral pairs is already available, then you can fine-tune <i>any</i> text generation model.
@@ -149,13 +149,16 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
         <p>
              We provide one of the top solution from TextDetox2024 <a href='https://huggingface.co/s-nlp/mt0-xl-detox-orpo'>mT0-XL-detox</a> and <a href='https://huggingface.co/textdetox/mbart-detox-baseline'>mBART</a> baselines fine-tuned on 9 languages.
         </p>
+        <p>
+             The code example how to <b>fine-tune</b> your own <i>seq2seq</i> model is availale as a <a href="https://colab.research.google.com/drive/1Wd_32qGpED5M3cfmDapKqOGplgLQ39xP?usp=sharing"> Google Colabnotebook</a>.
+        </p>
          <p>
-            <b>Baselines</b>
+            <b>Unsupervised Baselines</b>
          </p>
          <p>
             <img src="../pan25-figures/detox_baselines.png" style="width: 700px; display: block; margin: 0 auto;" alt="Unsupervised Baselines">
          </p>
-         We provide several unsupervised baselines:
+         To begin with, you can start with unsupervised methods that does not require fine-tuning. We provide several unsupervised baselines:
          <ol>
             <li>
                <b>Duplicate</b>: a simple duplication of the toxic input.
