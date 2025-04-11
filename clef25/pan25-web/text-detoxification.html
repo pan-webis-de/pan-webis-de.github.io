@@ -207,21 +207,45 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
             Each metric component lies in the range [0;1]. To have the one common metric for leaderboard estimation, we will calculate <b>Joint</b> metric as the mean of combination of <b>STA</b>*<b>SIM</b>*<b>FL</b> per sample.
          </p>
          <p>
-            <img src="../pan25-figures/detox_evaluation_formula.jpeg" style="width: 650px; display: block; margin: 0 auto;" alt="The concept of text detoxification evaluation">
+            <img src="../pan25-figures/detox_evaluation_formula.jpeg" style="width: 750px; display: block; margin: 0 auto;" alt="The concept of text detoxification evaluation">
          </p>
          <p>
               <b>[2025-edition metrics update]</b> As you can compare from 2024 shared task edition, the calculation of J score advanced significantly (see the formula). Thus, in each metrics parameter--STA, SIM, and FL--we take take into account human references.
-              For <b>STA</b>, we check not only the probability of a new output to be a non-toxic sentence, but also if its non-toxicity score is less than human references. This is motivated by the fact that even human detoxifications might be not ideally non-toxic. For <b>SIM</b>, we calculate the weighted sum of output's similarity to the original sentence as well as the human detoxification. Finally, machine-translation inspired fluency metric xCOMET evaluates the similarity of the output to the human-written detoxified version.
+              For <b>STA</b>, we check not only the probability of a new output to be a non-toxic sentence, but also if its non-toxicity score is less than human references. This is motivated by the fact that even human detoxifications might be not ideally non-toxic. For <b>SIM</b>, we calculate the weighted sum of output's similarity to the original sentence as well as the human detoxification. Finally, machine-translation inspired <b>FL</b> metric xCOMET evaluates the similarity of the output to the human-written detoxified version.
          </p>
          <p>
-               <b>Automatic Evaluatiom Code</b> is fully publicly available [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef25/text-detoxification">here</a>].
+               <b>Automatic Evaluation Code</b> is fully publicly available [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef25/text-detoxification">here</a>].
          </p>
 
          <h2 id="submission">Submission</h2>
          <p>
             All submissions are handled through <a href="https://codalab.lisn.upsaclay.fr/competitions/22396" target="_blank">Codalab</a>.
-            We accept solutions submissions.
-            Please follow carefully the corresponding instructions.
+         </p>
+         <p>
+              To get the <b>submission file</b> for the phase, you need to go to the Participate -> Files page and download Public data. You will receive a .tsv file to fill in. 
+              You must <b>fill in all the rows</b> in the file -- either dublicate the toxic input or provide your model output -- and then <b>.zip</b> your .tsv submission.
+         </p>
+         <p>
+              On the leaderboard, you will see the final J score per all languages. We divide columns of the leaderboard into two categories:
+              <ol>
+                   <li><b>AvgP</b>: Languages with parallel data (previous 9 languages).</li>
+                   <li><b>AvgNP</b>: Languages without available parallel data (new 6 languages).</li>
+              </ol>
+              Thus, you can see how your model perform on each <b>language separately</b>, on <b>languages with training data</b>, and <b>new languages without training data</b>. 
+         </p>
+         <p>
+              Also, if you would like to see detialed scores per language and per each metrics parameter, you can download <i>View scoring error log</i>. 
+         </p>
+         <p>
+              <b>Please, follow carefully submissions requirements!</b>
+              <ol>
+                   <li>Your submission must be in .zip format with a .tsv file inside: Make sure that you provide a .tsv file to follow this rule.</li>
+                   <li>Your submission must contain three columns: toxic_text, neutral_text, and lang.</li>
+                   <li>You must not edit the neutral_text and lang columns: Texts in these columns should correspond to the original inputs.</li>
+                   <li>Do not provide NaN in your .tsv file: Please NaNreplace them by, for example, given inputs, as they will break your submission attempt.</li>
+                   <li>Do not remove lines: Size of your submission should correpospond to the size of an original file.</li>
+              </ol>
+              Please, wait 1-2 minutes till the 'Finished' status. For the final step, if you want your receied results be <b>visible on the overall leaderboard</b>, you must click 'Submit to Leaderboard' button.
          </p>
 
          <h2 id="dates">Important Dates</h2>
