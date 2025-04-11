@@ -155,7 +155,7 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
          <p>
             <img src="../pan25-figures/detox_baselines.png" style="width: 700px; display: block; margin: 0 auto;" alt="Unsupervised Baselines">
          </p>
-         We provide three baselines:
+         We provide several unsupervised baselines:
          <ol>
             <li>
                <b>Duplicate</b>: a simple duplication of the toxic input.
@@ -168,10 +168,10 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
                The translation is done with NLLB-600M <a href="https://huggingface.co/facebook/nllb-200-distilled-600M">model</a>, detoxification with English bart-base-detox <a href="https://huggingface.co/s-nlp/bart-base-detox">model</a>.
             </li>
             <li>
-                 <b>LLMs prompting</b>: for sure, you can utilize any LLMs in zero-shot or few-shot format. As a baseline, we provide zero-shot results of <a href='https://huggingface.co/mlabonne/Llama-3.1-70B-Instruct-lorablated'>LLaMa-70B</a> prompting.
+                 <b>LLMs prompting</b>: for sure, you can utilize any LLMs in zero-shot or few-shot format. As a baseline, we provide zero-shot results of <a href='https://huggingface.co/mlabonne/Llama-3.1-70B-Instruct-lorablated'>LLaMa-70B</a> as well as GPT-4-0613, GPT-4o-2024-08-06, and o3-mini-2025-01-31 prompting.
             </li>
          </ol>
-         The code for all baselines is available <a href="https://github.com/pan-webis-de/pan-code/tree/master/clef25/text-detoxification">here</a>.
+         <b>The code for all baselines</b> together with links to all models and used prompts is available [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef25/text-detoxification">here</a>].
            
          <h2 id="data">Data</h2>
         <p>
