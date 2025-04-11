@@ -191,12 +191,6 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
 
          <h2 id="evaluation">Evaluation</h2>
          <p>
-            <img src="../pan25-figures/detox_manual_eval.png" style="width: 650px; display: block; margin: 0 auto;" alt="The concept of text detoxification evaluation">
-         </p>
-         <p>
-            <b>Development Phase</b>
-         </p>
-         <p>
             For the whole competition, the automatic evaluation metrics set will be available. We provide the multilingual automatic evaluation pipeline based on main three parameters:
          <ul>
             <li>
@@ -205,12 +199,22 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
                <b>Content preservation</b>: Given two texts, evaluate the similarity of their content. We calculate it as cosine similarity between <a href="https://huggingface.co/sentence-transformers/LaBSE">LaBSe</a> embeddings.
             </li>
             <li>
-               <b>Fluency</b>: To estimate the adequacy of the text and its similarity to the human-written detoxified references, we calculate <a href="https://github.com/m-popovic/chrF">ChrF</a> measure. 
+               <b>Fluency</b>: To estimate the adequacy of the text and its similarity to the human-written detoxified references, we use <a href="https://huggingface.co/myyycroft/XCOMET-lite">xCOMET</a> model. Based on our experiments, COMET machine translation models showed perfect correlation with the annotation of fluency in detoxified texts.
             </li>
          </ul>
          </p>
          <p>
-            Each metric component lies in the range [0;1]. To have the one common metric for leaderboard estimation, we will calculate <b>Joint</b> metric as the mean of <b>STA</b>*<b>SIM</b>*<b>FL</b> per sample.
+            Each metric component lies in the range [0;1]. To have the one common metric for leaderboard estimation, we will calculate <b>Joint</b> metric as the mean of combination of <b>STA</b>*<b>SIM</b>*<b>FL</b> per sample.
+         </p>
+         <p>
+            <img src="../pan25-figures/detox_evaluation_formula.jpeg" style="width: 650px; display: block; margin: 0 auto;" alt="The concept of text detoxification evaluation">
+         </p>
+         <p>
+              <b>[2025-edition metrics update]</b> As you can compare from 2024 shared task edition, the calculation of J score advanced significantly (see the formula). Thus, in each metrics parameter--STA, SIM, and FL--we take take into account human references.
+              For <b>STA</b>, we check not only the probability of a new output to be a non-toxic sentence, but also if its non-toxicity score is less than human references. This is motivated by the fact that even human detoxifications might be not ideally non-toxic. For <b>SIM</b>, we calculate the weighted sum of output's similarity to the original sentence as well as the human detoxification. Finally, machine-translation inspired fluency metric xCOMET evaluates the similarity of the output to the human-written detoxified version.
+         </p>
+         <p>
+               <b>Automatic Evaluatiom Code</b> is fully publicly available [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef25/text-detoxification">here</a>].
          </p>
 
          <h2 id="submission">Submission</h2>
@@ -247,9 +251,6 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
                Logacheva V. et al. <b>ParaDetox: Detoxification with Parallel Data</b>. ACL, 2022. [<a href="https://aclanthology.org/2022.acl-long.469.pdf">pdf</a>]
             </li>
             <li>
-               Moskovskiy D. et al. <b>Exploring Cross-lingual Text Detoxification with Large Multilingual Language Models</b>. ACL SRW, 2022. [<a href="https://aclanthology.org/2022.acl-srw.26.pdf">pdf</a>]
-            </li>
-            <li>
                Dementieva D. et al. <b>RUSSE-2022: Findings of the First Russian Detoxification Shared Task Based on Parallel Corpora</b>. Dialogue, 2022. [<a href="https://www.dialog-21.ru/media/5755/dementievadplusetal105.pdf">pdf</a>]
             </li>
             <li>
@@ -284,7 +285,7 @@ description: PAN at CLEF 2025 - Multilingual Text Detoxification
             <li>Shehryaar Shah Khan: Hinglish</li>
          </ul>
          <p>
-              Vitaliy Protasov contributed with new automatic evaluation metrics and leaderboard preparations.
+              Vitaly Protasov contributed with new automatic evaluation metrics and leaderboard preparations.
          </p>
          <h2 id="task-committee">Task Committee</h2>
          <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
