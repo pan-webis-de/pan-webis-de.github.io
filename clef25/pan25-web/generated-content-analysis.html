@@ -164,7 +164,15 @@ description: PAN at CLEF 2025 - Generative AI Detection
             </table>
 
             <h3 id="task2-submission">Submission</h3>
-            <p>tba</p>
+           	<p>Participants only need to submit the predicted labels by a jsonl file named as<code>team_name_submission_date.jsonl</code> to <a href="https://codalab.lisn.upsaclay.fr/competitions/22620">CodaLab</a>.</p>
+		<p>The <code>team_name_submission_date.jsonl</code> file should be a lines of objects by the following format:</p>
+		 <pre class="prettyprint"><code class="lang-json">{"id": "identifier of the test sample", "label": 1}
+		{"id": "identifier of the test sample", "label": 3}
+		...</code></pre>
+		<p>labels are in [1, 2, 3, 4, 5, 6]</p>
+		
+		<p>Check the correctness of your submission format by <a href="https://github.com/mbzuai-nlp/PAN-CLEF2025GenAIDetection-Subtask2/blob/main/format_checker.py">format_checker.py</a> in our <a href="https://github.com/mbzuai-nlp/PAN-CLEF2025GenAIDetection-Subtask2">GitHub repository</a>.</p>
+		<p>This script checks whether the results format is correct. It also provides some warnings about possible errors.</p>
 
             <h3 id="task2-evaluation">Evaluation</h3>
             <p>tba</p>
