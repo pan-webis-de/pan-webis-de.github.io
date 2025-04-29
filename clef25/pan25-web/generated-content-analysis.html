@@ -34,14 +34,18 @@ description: PAN at CLEF 2025 - Generative AI Detection
                 <li>Subtask 2: Given a document collaboratively authored by human and AI, classify the extent to which the model assisted.</li>
                 <li>Important dates: <strong>May 23, 2025</strong> (software submission), <strong>May 30, 2025</strong> (participant notebook submission)</li>
                 <li>Data: Human and machine texts [<a href="https://zenodo.org/records/14962653">download task 1</a>] [<a href="https://zenodo.org/records/14966981">download task 2</a>]</li>
-                <li>Evaluation Measures: F1, C@1, FPR, FNR</li>
-                <li>Baselines: SVM, Binoculars, RoBERTa [code task 1] [<a href="https://github.com/mbzuai-nlp/PAN-CLEF2025GenAIDetection-Subtask2">code task 2</a>]</li>
+                <li>Evaluation Measures: F1, C@1, AUC-ROC, FPR, FNR</li>
+                <li>Baselines: SVM, Binoculars, RoBERTa [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef25/generative-authorship-verification/pan25_genai_baselines">code task 1</a>] [<a href="https://github.com/mbzuai-nlp/PAN-CLEF2025GenAIDetection-Subtask2">code task 2</a>]</li>
 	        </ul>
 
             <h2 id="task-overview">Task Overview</h2>
             <p>The <em>Generative AI Authorship Verification Task</em> @ PAN is split into <strong>two subtasks</strong> [<a href="#task1">subtask 1</a>, <a href="#task2">subtask 2</a>]. Participants can submit their systems to either of them or both. Task 1 focuses on the robustness and sensitivity of detection systems, Task 2 focuses on the degree to which a mixed-authorship text is human- or machine-authored. The two tasks have individual datasets.</p>
         </div>
+    </div>
 
+        <!-- ======================== TASK 1 ======================== -->
+
+    <div class="uk-section uk-section-default">
         <div class="uk-container uk-margin-medium">
             <h2 id="task1">Subtask 1: Voight-Kampff AI Detection Sensitivity</h2>
             <p>Subtask 1 is a binary AI detection task in that participants are given a text and have to decide whether it was machine-authored (class 1) or human-authored (class 0). However, we introduced a twist: The LLMs were instructed to change their style and mimic a specific human author. Furthermore, the test set will contain several surprises such as new models or unknown obfuscations to test the robustness of the classifiers (however, texts will be from the same domain).</p>
@@ -82,13 +86,81 @@ description: PAN at CLEF 2025 - Generative AI Detection
             <p><strong>All test cases must be processed in isolation without information leakage between them!</strong> Even though systems may be given an input file with multiple JSON lines at once for reasons of efficiency, these inputs must be processed and answered just the same as if only a single line were given. Answers for any one test case must not depend on other cases in the input dataset!</p>
 
             <h3 id="task1-evaluation">Evaluation</h3>
-            <p>tba</p>
+            <p>Systems will be evaluated with the same measures as previous installments of the PAN authorship verification tasks. The following metrics will be used:</p>
+
+            <ul class="uk-list uk-list-bullet">
+                <li>ROC-AUC: The area under the ROC (Receiver Operating Characteristic) curve.</li>
+                <li>Brier: The complement of the Brier score (mean squared loss).</li>
+                <li>C@1: A modified accuracy score that assigns non-answers (score = 0.5) the average accuracy of the remaining cases.</li>
+                <li>F<sub>1</sub>: The harmonic mean of precision and recall.</li>
+                <li>F<sub>0.5u</sub>: A modified F<sub>0.5</sub> measure (precision-weighted F measure) that treats non-answers (score = 0.5) as false negatives.</li>
+                <li>The arithmetic mean of all the metrics above.</li>
+                <li>A confusion matrix for calculating true/false positive/negative rates.</li>
+            </ul>
+
+            <p>The evaluator for the task will output the above measures as JSON like so:</p>
+            <pre class="prettyprint"><code class="lang-json">{
+    "roc-auc": 0.996,
+    "brier": 0.951,
+    "c@1": 0.984,
+    "f1": 0.98,
+    "f05u": 0.981,
+    "mean": 0.978,
+    "confusion": [
+        [
+            1211,
+            66
+        ],
+        [
+            27,
+            2285
+        ]
+    ]
+}</code></pre>
 
             <h3 id="task1-baselines">Baselines</h3>
-            <p>tba</p>
+            <p>We provide three LLM detection baselines:</p>
+            <ul class="uk-list uk-list-bullet">
+                <li>
+                    TF-IDF SVM
+                </li><li>
+                    PPMd Compression-based Cosine
+                    [<a href="https://ieeexplore.ieee.org/abstract/document/1607268">Sculley and Brodley, 2006</a>]
+                    [<a href="https://dl.acm.org/doi/abs/10.1145/3098954.3104050">Halvani et al., 2017</a>]
+                </li><li>
+                Binoculars
+                [<a href="https://arxiv.org/abs/2401.12070">Hans et al., 2024</a>]
+            </li>
+            </ul>
+
+            <p>With TF-IDF SVM and PPMd CBC, we provide two bag-of-words authorship verification models. Binoculars uses large language models to measure text perplexity. The baselines are published on <a href="https://github.com/pan-webis-de/pan-code/tree/master/clef25/generative-authorship-verification/pan25_genai_baselines">GitHub</a>. You can run them locally, in a Docker container or using <code>tira-run</code>. All baselines come with a CLI and usage instructions. Their general usage is:</p>
+
+            <pre class="prettyprint"><code class="console">$ pan25-baseline BASELINENAME INPUT_FILE OUTPUT_DIRECTORY</code></pre>
+
+            Use <code>--help</code> on any subcommand for more information:
+
+            <pre class="prettyprint"><code class="console">$ pan25-baseline --help
+    Usage: pan25-baseline [OPTIONS] COMMAND [ARGS]...
+
+      PAN'25 Generative Authorship Detection baselines.
+
+    Options:
+      --help  Show this message and exit.
+
+    Commands:
+      binoculars  PAN'25 baseline: Binoculars.
+      ppmd        PAN'25 baseline: Compression-based cosine.
+      tfidf       PAN'25 baseline: TF-IDF SVM.</code></pre>
+
+            <p>More information on how to install and run the baselines can be found in the <a href="https://github.com/pan-webis-de/pan-code/tree/master/clef25/generative-authorship-verification/pan25_genai_baselines">README on GitHub</a>.</p>
 
         </div>
+    </div>
 
+
+        <!-- ======================== TASK 2 ======================== -->
+
+    <div class="uk-section uk-section-muted">
         <div class="uk-container uk-margin-medium">
             <h2 id="task2">Subtask 2: Human-AI Collaborative Text Classification</h2>
             <p>In subtask 2, we focus on Human-AI Collaborative Text Classification, where the goal is to categorize documents that have been co-authored by humans and LLMs. Specifically, we aim to classify texts into six distinct categories based on the nature of human and machine contributions:</p>
@@ -191,7 +263,12 @@ description: PAN at CLEF 2025 - Generative AI Detection
             </ul>
             <p>Code for the task baseline can be found in our <a href="https://github.com/mbzuai-nlp/PAN-CLEF2025GenAIDetection-Subtask2">GitHub repository</a>.</p>
 
+        </div>
+    </div>
 
+
+    <div class="uk-section uk-section-default">
+        <div class="uk-container uk-margin-medium">
             <h2 id="related-work">Related Work</h2>
             <ul class="uk-list uk-list-bullet">
 				<li>
