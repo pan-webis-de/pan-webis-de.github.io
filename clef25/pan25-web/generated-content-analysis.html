@@ -133,7 +133,7 @@ description: PAN at CLEF 2025 - Generative AI Detection
             </li>
             </ul>
 
-            <p>With TF-IDF SVM and PPMd CBC, we provide two bag-of-words authorship verification models. Binoculars uses large language models to measure text perplexity. The baselines are published on <a href="https://github.com/pan-webis-de/pan-code/tree/master/clef25/generative-authorship-verification/pan25_genai_baselines">GitHub</a>. You can run them locally, in a Docker container or using <code>tira-run</code>. All baselines come with a CLI and usage instructions. Their general usage is:</p>
+            <p>With TF-IDF SVM and PPMd CBC, we provide two bag-of-words authorship verification models. Binoculars uses large language models to measure text perplexity. The SVM classifier is a supervised LLM detector, the other two are unsupervised / zero-shot models. The baselines are published on <a href="https://github.com/pan-webis-de/pan-code/tree/master/clef25/generative-authorship-verification/pan25_genai_baselines">GitHub</a>. You can run them locally, in a Docker container, or using <code>tira-run</code>. All baselines come with a CLI and usage instructions. Their general usage is:</p>
 
             <pre class="prettyprint"><code class="console">$ pan25-baseline BASELINENAME INPUT_FILE OUTPUT_DIRECTORY</code></pre>
 
