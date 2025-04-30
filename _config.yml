@@ -26,7 +26,3 @@ exclude:
   - Gemfile.lock
   - node_modules
   - README.md
-
-plugins:
-  - jekyll-sitemap
-  - jekyll-redirect-from
