@@ -1,8 +1,12 @@
+@use 'variables';
+
+@import url("https://assets.webis.de/css/style.css");
+
 .page-index {
-    background: $global-secondary-background-lighter url("../img/pan-logo-index-page.png") no-repeat top right;
+    background: variables.$global-secondary-background-lighter url("../img/pan-logo-index-page.png") no-repeat top right;
 
     .footer-section, .footer-section a {
-        color: $inverse-global-color !important;
+        color: variables.$inverse-global-color !important;
         background: none;
     }
 }

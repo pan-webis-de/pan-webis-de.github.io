@@ -1,3 +1,5 @@
+@use 'variables';
+
 .thumbnail-card-grid {
     & > * {
         width: 100%;
@@ -6,28 +8,28 @@
         -webkit-hyphens: none;
 
 
-        @media (min-width: $breakpoint-small) {
+        @media (min-width: variables.$breakpoint-small) {
             width: 50%;
         }
-        @media (min-width: $breakpoint-medium) {
+        @media (min-width: variables.$breakpoint-medium) {
             width: 30%;
         }
-        @media (min-width: $breakpoint-large) {
+        @media (min-width: variables.$breakpoint-large) {
             width: 25%;
         }
     }
 
     .uk-card {
-        padding: $padding-small-padding;
+        padding: variables.$padding-small-padding;
         max-width: 400px;
         //min-width: 300px;
     }
 
     .thumbnail-left {
-        margin: -$padding-small-padding;
-        margin-right: $padding-small-padding;
+        margin: -(variables.$padding-small-padding);
+        margin-right: variables.$padding-small-padding;
         float: left;
-        height: calc(100% + #{2 * $padding-small-padding});
+        height: calc(100% + #{2 * variables.$padding-small-padding});
 
         img, svg {
             height: 100%;
@@ -39,7 +41,7 @@
 
     .thumbnail-top {
         text-align: center;
-        margin-bottom: $padding-small-padding;
+        margin-bottom: variables.$padding-small-padding;
         height: 140px;
         display: flex;
         flex-direction: column;
@@ -64,7 +66,7 @@
     .thumbnail-card-logo {
         width: 100px;
         max-height: 100px;
-        margin-bottom: $padding-small-padding;
-        margin-right: $padding-small-padding;
+        margin-bottom: variables.$padding-small-padding;
+        margin-right: variables.$padding-small-padding;
     }
 }
