@@ -2,6 +2,11 @@
 # Front matter to ensure Jekyll is processing the file.
 ---
 
-@use "../_sass/index";
-@use "../_sass/tasks";
-@use "../_sass/thumbnail_cards";
+// Theme variable overrides
+@import url("https://assets.webis.de/css/style.css?{{site.time | date: '%s'}}");
+@import "../_sass/variables";
+
+// Styles
+@import "../_sass/index";
+@import "../_sass/tasks";
+@import "../_sass/thumbnail_cards";

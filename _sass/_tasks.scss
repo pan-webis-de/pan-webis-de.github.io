@@ -1,15 +1,12 @@
-@use 'sass:color';
-@use 'variables';
-
 .page-header-meta {
-  color: variables.$global-muted-color;
+  color: $global-muted-color;
   font-size: 1.1rem;
 }
 
 .task-chair-organizations {
   text-align: center;
 
-  @media (min-width: variables.$breakpoint-large) {
+  @media (min-width: $breakpoint-large) {
     margin-left: auto;
     margin-right: auto;
   }
@@ -17,7 +14,7 @@
   & > * {
     height: 60px;
     display: inline-block;
-    padding: variables.$padding-large-padding;
+    padding: $padding-large-padding;
   }
 
   img, svg {
@@ -26,10 +23,10 @@
 
   .logo-font {
     display: inline-block;
-    padding-left: variables.$padding-small-padding;
+    padding-left: $padding-small-padding;
     font-size: 2.5em;
     vertical-align: middle;
-    color: color.adjust(variables.$global-color, $lightness: 20%);
+    color: lighten($global-color, 20);
   }
 }
 
@@ -41,7 +38,7 @@
 
 
 .keynote {
-  margin-bottom: variables.$global-medium-gutter;
+  margin-bottom: $global-medium-gutter;
 
   .keynote-speaker-image, .keynote-meta {
     display: table-cell;
@@ -49,7 +46,7 @@
   }
 
   .keynote-speaker-image {
-    padding-right: 1.5 * variables.$global-small-padding;
+    padding-right: 1.5 * $global-small-padding;
 
     img {
       height: 100px;
@@ -61,7 +58,7 @@
   }
 
   .keynote-title {
-    font-size: variables.$text-lead-font-size;
+    font-size: $text-lead-font-size;
     font-weight: bold;
     text-align: left;
     margin-bottom: 5px;
@@ -69,8 +66,8 @@
 
   .keynote-speaker {
     text-align: left;
-    color: variables.$global-muted-color;
-    font-size: variables.$text-small-font-size;
+    color: $global-muted-color;
+    font-size: $text-small-font-size;
     display: inline;
   }
 
@@ -80,16 +77,16 @@
       padding: 0 5px;
     }
 
-    color: variables.$global-muted-color;
+    color: $global-muted-color;
     display: inline;
   }
 
   .keynote-body {
-    margin-top: variables.$global-small-padding;
+    margin-top: $global-small-padding;
   }
 
   footer {
-    color: variables.$global-muted-color;
+    color: $global-muted-color;
     font-style: italic;
 
     .keynote-bio {

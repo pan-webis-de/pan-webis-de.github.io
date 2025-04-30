@@ -1,10 +1,13 @@
-// Theme variables
+// Webis theme variable overrides
 
-@use 'sass:color';
+$navbar-breakpoint: 850px;
+$task-card-target-color: #d9e7f7;
+$table-entry-target-color: #d9e7f7;
+
 
 // other assets-variables used in dependent scss
 $global-secondary-background: #323232;
-$global-secondary-background-lighter: color.adjust($global-secondary-background, $lightness: 6%);
+$global-secondary-background-lighter: lighten($global-secondary-background, 6);
 
 $global-large-font-size: 1.5rem !default;
 $text-lead-font-size: $global-large-font-size !default;
@@ -17,6 +20,7 @@ $global-inverse-color: #fff !default;
 $inverse-global-color: rgba($global-inverse-color, 0.7) !default;
 $global-color: #222;
 $global-muted-color: #666;
+$text-muted-color: $global-muted-color !default;
 
 $breakpoint-small: 640px !default;
 $breakpoint-medium: 960px !default;
