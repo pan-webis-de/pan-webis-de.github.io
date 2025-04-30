@@ -35,7 +35,7 @@ description: PAN at CLEF 2025 - Generative AI Detection
                 <li>Important dates: <strong>May 23, 2025</strong> (software submission), <strong>May 30, 2025</strong> (participant notebook submission)</li>
                 <li>Data: Human and machine texts [<a href="https://zenodo.org/records/14962653">download task 1</a>] [<a href="https://zenodo.org/records/14966981">download task 2</a>]</li>
                 <li>Evaluation Measures: F1, C@1, AUC-ROC, FPR, FNR</li>
-                <li>Baselines: SVM, Binoculars, RoBERTa [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef25/generative-authorship-verification/pan25_genai_baselines">code task 1</a>] [<a href="https://github.com/mbzuai-nlp/PAN-CLEF2025GenAIDetection-Subtask2">code task 2</a>]</li>
+                <li>Baselines: SVM, Compression, Binoculars [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef25/generative-authorship-verification/pan25_genai_baselines">code task 1</a>]; RoBERTa [<a href="https://github.com/mbzuai-nlp/PAN-CLEF2025GenAIDetection-Subtask2">code task 2</a>]</li>
 	        </ul>
 
             <h2 id="task-overview">Task Overview</h2>
@@ -122,14 +122,17 @@ description: PAN at CLEF 2025 - Generative AI Detection
             <p>We provide three LLM detection baselines:</p>
             <ul class="uk-list uk-list-bullet">
                 <li>
-                    TF-IDF SVM
+                    Linear SVM with TF-IDF features<br>
+                    <small><em>Validation:</em> [ROC-AUC: 0.996; Brier: 0.951; C@1: 0.984; F<sub>1</sub>: 0.980; F<sub>0.5u</sub>: 0.981; Mean: 0.978]</small>
                 </li><li>
                     PPMd Compression-based Cosine
                     [<a href="https://ieeexplore.ieee.org/abstract/document/1607268">Sculley and Brodley, 2006</a>]
-                    [<a href="https://dl.acm.org/doi/abs/10.1145/3098954.3104050">Halvani et al., 2017</a>]
+                    [<a href="https://dl.acm.org/doi/abs/10.1145/3098954.3104050">Halvani et al., 2017</a>]<br>
+                    <small><em>Validation:</em> [ROC-AUC: 0.786; Brier: 0.799; C@1: 0.757; F<sub>1</sub>: 0.812; F<sub>0.5u</sub>: 0.778; Mean: 0.786]</small>
                 </li><li>
                 Binoculars
-                [<a href="https://arxiv.org/abs/2401.12070">Hans et al., 2024</a>]
+                [<a href="https://arxiv.org/abs/2401.12070">Hans et al., 2024</a>]<br>
+                <small><em>Validation:</em> [ROC-AUC: 0.918; Brier: 0.867; C@1: 0.844; F<sub>1</sub>: 0.872; F<sub>0.5u</sub>: 0.882; Mean: 0.877]</small>
             </li>
             </ul>
 
