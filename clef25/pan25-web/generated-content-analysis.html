@@ -167,6 +167,355 @@ Commands:
             <p>More information on how to install and run the baselines can be found in the <a href="https://github.com/pan-webis-de/pan-code/tree/master/clef25/generative-authorship-verification/pan25_genai_baselines">README on GitHub</a>.</p>
 
         </div>
+
+        <div class="uk-container uk-margin-medium">
+            <h3 id="task1-leaderboard">Task 1 Leaderboard</h3>
+
+            <p>Final leaderboard ranking for subtask 1. Teams who submitted multiple systems are listed only once with their best-performing system on the main test dataset.</p>
+
+            <table class="uk-table uk-table-divider uk-table-small">
+                <thead>
+                <tr>
+                    <th class="uk-text-right">#</th>
+                    <th>Team</th>
+                    <th>ROC-AUC</th>
+                    <th>Brier</th>
+                    <th>C@1</th>
+                    <th>F<sub>1</sub></th>
+                    <th>F<sub>0.5u</sub></th>
+                    <th>Mean <span data-uk-icon="arrow-down"></span></th>
+                    <th>FPR</th>
+                    <th>FNR</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th class="uk-text-right">1</th>
+                    <td>mdok</td>
+                    <td>0.853</td>
+                    <td>0.896</td>
+                    <td>0.894</td>
+                    <td>0.898</td>
+                    <td>0.903</td>
+                    <td class="uk-background-muted uk-text-bold">0.899</td>
+                    <td>0.108</td>
+                    <td>0.094</td>
+                </tr>
+                <tr>
+                    <th class="uk-text-right">2</th>
+                    <td>steely</td>
+                    <td>0.842</td>
+                    <td>0.879</td>
+                    <td>0.877</td>
+                    <td>0.865</td>
+                    <td>0.881</td>
+                    <td class="uk-background-muted uk-text-bold">0.880</td>
+                    <td>0.151</td>
+                    <td>0.100</td>
+                </tr>
+                <tr>
+                    <th class="uk-text-right">3</th>
+                    <td>nexus-interrogators</td>
+                    <td>0.865</td>
+                    <td>0.874</td>
+                    <td>0.870</td>
+                    <td>0.860</td>
+                    <td>0.881</td>
+                    <td class="uk-background-muted uk-text-bold">0.879</td>
+                    <td>0.159</td>
+                    <td>0.083</td>
+                </tr>
+                <tr>
+                    <th class="uk-text-right">4</th>
+                    <td>yangjlg</td>
+                    <td>0.845</td>
+                    <td>0.878</td>
+                    <td>0.871</td>
+                    <td>0.856</td>
+                    <td>0.881</td>
+                    <td class="uk-background-muted uk-text-bold">0.877</td>
+                    <td>0.172</td>
+                    <td>0.062</td>
+                </tr>
+                <tr>
+                    <th class="uk-text-right">5</th>
+                    <td>cnlp-nits-pp</td>
+                    <td>0.825</td>
+                    <td>0.873</td>
+                    <td>0.873</td>
+                    <td>0.854</td>
+                    <td>0.882</td>
+                    <td class="uk-background-muted uk-text-bold">0.874</td>
+                    <td>0.176</td>
+                    <td>0.050</td>
+                </tr>
+                <tr>
+                    <th class="uk-text-right">6</th>
+                    <td>unibuc-nlp</td>
+                    <td>0.828</td>
+                    <td>0.885</td>
+                    <td>0.864</td>
+                    <td>0.845</td>
+                    <td>0.876</td>
+                    <td class="uk-background-muted uk-text-bold">0.872</td>
+                    <td>0.187</td>
+                    <td>0.052</td>
+                </tr>
+                <tr>
+                    <th class="uk-text-right">7</th>
+                    <td>moadmoad</td>
+                    <td>0.822</td>
+                    <td>0.866</td>
+                    <td>0.865</td>
+                    <td>0.855</td>
+                    <td>0.882</td>
+                    <td class="uk-background-muted uk-text-bold">0.871</td>
+                    <td>0.175</td>
+                    <td>0.058</td>
+                </tr>
+                <tr>
+                    <th class="uk-text-right">8</th>
+                    <td>iimasnlp</td>
+                    <td>0.838</td>
+                    <td>0.868</td>
+                    <td>0.856</td>
+                    <td>0.851</td>
+                    <td>0.877</td>
+                    <td class="uk-background-muted uk-text-bold">0.869</td>
+                    <td>0.171</td>
+                    <td>0.077</td>
+                </tr>
+                <tr>
+                    <th class="uk-text-right">9</th>
+                    <td>bohan-li</td>
+                    <td>0.848</td>
+                    <td>0.858</td>
+                    <td>0.852</td>
+                    <td>0.847</td>
+                    <td>0.870</td>
+                    <td class="uk-background-muted uk-text-bold">0.866</td>
+                    <td>0.174</td>
+                    <td>0.092</td>
+                </tr>
+                <tr>
+                    <th class="uk-text-right">10</th>
+                    <td>advacheck</td>
+                    <td>0.802</td>
+                    <td>0.855</td>
+                    <td>0.855</td>
+                    <td>0.854</td>
+                    <td>0.879</td>
+                    <td class="uk-background-muted uk-text-bold">0.863</td>
+                    <td>0.169</td>
+                    <td>0.084</td>
+                </tr>
+                <tr>
+                    <th class="uk-text-right">11</th>
+                    <td>hello-world</td>
+                    <td>0.838</td>
+                    <td>0.871</td>
+                    <td>0.836</td>
+                    <td>0.827</td>
+                    <td>0.862</td>
+                    <td class="uk-background-muted uk-text-bold">0.856</td>
+                    <td>0.153</td>
+                    <td>0.128</td>
+                </tr>
+                <tr class="uk-text-italic uk-background-muted">
+                    <th class="uk-text-right"></th>
+                    <td>Baseline TF-IDF</td>
+                    <td>0.838</td>
+                    <td>0.871</td>
+                    <td>0.836</td>
+                    <td>0.827</td>
+                    <td>0.862</td>
+                    <td class="uk-background-muted uk-text-bold">0.856</td>
+                    <td>0.153</td>
+                    <td>0.128</td>
+                </tr>
+                <tr>
+                    <th class="uk-text-right">12</th>
+                    <td>xlbniu</td>
+                    <td>0.794</td>
+                    <td>0.847</td>
+                    <td>0.847</td>
+                    <td>0.840</td>
+                    <td>0.869</td>
+                    <td class="uk-background-muted uk-text-bold">0.854</td>
+                    <td>0.188</td>
+                    <td>0.077</td>
+                </tr>
+                <tr>
+                    <th class="uk-text-right">13</th>
+                    <td>shushantatud</td>
+                    <td>0.823</td>
+                    <td>0.850</td>
+                    <td>0.840</td>
+                    <td>0.831</td>
+                    <td>0.862</td>
+                    <td class="uk-background-muted uk-text-bold">0.852</td>
+                    <td>0.203</td>
+                    <td>0.093</td>
+                </tr>
+                <tr>
+                    <th class="uk-text-right">14</th>
+                    <td>ds-gt-pan</td>
+                    <td>0.803</td>
+                    <td>0.844</td>
+                    <td>0.844</td>
+                    <td>0.835</td>
+                    <td>0.867</td>
+                    <td class="uk-background-muted uk-text-bold">0.851</td>
+                    <td>0.195</td>
+                    <td>0.070</td>
+                </tr>
+                <tr>
+                    <th class="uk-text-right">15</th>
+                    <td>styloch</td>
+                    <td>0.793</td>
+                    <td>0.866</td>
+                    <td>0.821</td>
+                    <td>0.823</td>
+                    <td>0.853</td>
+                    <td class="uk-background-muted uk-text-bold">0.844</td>
+                    <td>0.201</td>
+                    <td>0.131</td>
+                </tr>
+                <tr>
+                    <th class="uk-text-right">16</th>
+                    <td>felix-volpel</td>
+                    <td>0.815</td>
+                    <td>0.854</td>
+                    <td>0.816</td>
+                    <td>0.822</td>
+                    <td>0.855</td>
+                    <td class="uk-background-muted uk-text-bold">0.843</td>
+                    <td>0.212</td>
+                    <td>0.115</td>
+                </tr>
+                <tr>
+                    <th class="uk-text-right">17</th>
+                    <td>sinai-inta</td>
+                    <td>0.811</td>
+                    <td>0.841</td>
+                    <td>0.807</td>
+                    <td>0.818</td>
+                    <td>0.860</td>
+                    <td class="uk-background-muted uk-text-bold">0.838</td>
+                    <td>0.222</td>
+                    <td>0.079</td>
+                </tr>
+                <tr>
+                    <th class="uk-text-right">18</th>
+                    <td>pindrop</td>
+                    <td>0.782</td>
+                    <td>0.854</td>
+                    <td>0.814</td>
+                    <td>0.815</td>
+                    <td>0.853</td>
+                    <td class="uk-background-muted uk-text-bold">0.835</td>
+                    <td>0.211</td>
+                    <td>0.115</td>
+                </tr>
+                <tr>
+                    <th class="uk-text-right">19</th>
+                    <td>diveye</td>
+                    <td>0.786</td>
+                    <td>0.828</td>
+                    <td>0.806</td>
+                    <td>0.823</td>
+                    <td>0.862</td>
+                    <td class="uk-background-muted uk-text-bold">0.831</td>
+                    <td>0.211</td>
+                    <td>0.104</td>
+                </tr>
+                <tr>
+                    <th class="uk-text-right">20</th>
+                    <td>s-titze</td>
+                    <td>0.797</td>
+                    <td>0.848</td>
+                    <td>0.798</td>
+                    <td>0.807</td>
+                    <td>0.849</td>
+                    <td class="uk-background-muted uk-text-bold">0.827</td>
+                    <td>0.243</td>
+                    <td>0.131</td>
+                </tr>
+                <tr class="uk-text-italic uk-background-muted">
+                    <th class="uk-text-right"></th>
+                    <td>Baseline Binoculars Llama-3.1</td>
+                    <td>0.760</td>
+                    <td>0.835</td>
+                    <td>0.793</td>
+                    <td>0.802</td>
+                    <td>0.831</td>
+                    <td class="uk-background-muted uk-text-bold">0.818</td>
+                    <td>0.206</td>
+                    <td>0.200</td>
+                </tr>
+                <tr>
+                    <th class="uk-text-right">21</th>
+                    <td>iunlp</td>
+                    <td>0.734</td>
+                    <td>0.799</td>
+                    <td>0.799</td>
+                    <td>0.829</td>
+                    <td>0.850</td>
+                    <td class="uk-background-muted uk-text-bold">0.814</td>
+                    <td>0.178</td>
+                    <td>0.210</td>
+                </tr>
+                <tr>
+                    <th class="uk-text-right">22</th>
+                    <td>hiwiy</td>
+                    <td>0.765</td>
+                    <td>0.806</td>
+                    <td>0.771</td>
+                    <td>0.830</td>
+                    <td>0.791</td>
+                    <td class="uk-background-muted uk-text-bold">0.807</td>
+                    <td>0.000</td>
+                    <td>0.636</td>
+                </tr>
+                <tr>
+                    <th class="uk-text-right">23</th>
+                    <td>team-a</td>
+                    <td>0.603</td>
+                    <td>0.783</td>
+                    <td>0.783</td>
+                    <td>0.824</td>
+                    <td>0.801</td>
+                    <td class="uk-background-muted uk-text-bold">0.788</td>
+                    <td>0.049</td>
+                    <td>0.457</td>
+                </tr>
+                <tr class="uk-text-italic uk-background-muted">
+                    <th class="uk-text-right">24</th>
+                    <td>Baseline PPMd CBC</td>
+                    <td>0.636</td>
+                    <td>0.795</td>
+                    <td>0.735</td>
+                    <td>0.763</td>
+                    <td>0.771</td>
+                    <td class="uk-background-muted uk-text-bold">0.758</td>
+                    <td>0.129</td>
+                    <td>0.499</td>
+                </tr>
+                <tr>
+                    <th class="uk-text-right">25</th>
+                    <td>asdkklkk</td>
+                    <td>0.718</td>
+                    <td>0.739</td>
+                    <td>0.739</td>
+                    <td>0.726</td>
+                    <td>0.781</td>
+                    <td class="uk-background-muted uk-text-bold">0.753</td>
+                    <td>0.308</td>
+                    <td>0.110</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
 
