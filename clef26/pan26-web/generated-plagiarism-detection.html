@@ -1,0 +1,159 @@
+---
+layout: default
+nav_active: shared-tasks
+title: PAN at CLEF 2026 - Generated Plagiarism Detection
+description: PAN at CLEF 2026 - Generated Plagiarism Detection
+---
+<nav class="uk-container">
+<ul class="uk-breadcrumb">
+<li><a href="../../index.html">PAN</a></li>
+<li><a href="../../shared-tasks.html">Shared Tasks</a></li>
+<li class="uk-disabled"><a href="#">Generated Plagiarism Detection</a></li>
+</ul>
+</nav>
+
+<main class="uk-section uk-section-default">
+    <div class="uk-container">
+        <div class="uk-container uk-margin-small">
+            <div>
+            <h1 class="uk-margin-remove-top">Generative Plagiarism Detection 2026</h1>
+            <ul class="uk-list">
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task Overview</a></li>
+               <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
+<!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>-->
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
+            </ul>
+            </div>
+        </div>
+        
+
+        <div class="uk-container uk-margin-medium">
+            <h2 id="synopsis">Synopsis</h2>
+            <ul>
+                <li>Task: Given a pair of documents, your task is to identify all contiguous maximal-length passages of reused text between them.</li>
+                <li>Important dates:
+                    <ul>
+                        <li><strong>May 07, 2026:</strong> software submission</li>
+                        <li><strong>May 28, 2026:</strong> participant notebook submission
+                            [<a href="../../pan-notebook-paper-template/pan-notebook-paper-template.zip">template</a>]
+                            [<a href="https://easychair.org/conferences/?conf=clef2026">submission</a>&nbsp; – <em>select "Stylometry and Digital Text Forensics (PAN)"</em> ]</li>
+                    </ul>
+                </li>
+<!--                <li>Input: [<a href="{{ 'data.html#pan25-text-alignment' | relative_url }}">data</a>].</li>-->
+<!--                <li>Baselines: [<a href="https://github.com/pan-webis-de/pan-code/blob/master/clef25/generated-plagiarism-detection" target="_blank">code</a>].</li>-->
+<!--                <li>Evaluation: [<a href="https://github.com/pan-webis-de/pan-code/blob/master/clef25/generated-plagiarism-detection/evaluation" target="_blank">code</a>].</li>-->
+<!--                <li>Submission: Deployment on TIRA [<a href="https://www.tira.io/task-overview/pan25-generated-plagiarism-detection">submit</a>]</li>-->
+            </ul>
+
+            <h2 id="task">Task Overview</h2>
+            <p>
+                To develop your software, we provide you with a training and validation corpus that consists of pairs of
+                documents, one of which may contain passages of text resued from the other. The reused text is
+                subject to automatic LLM paraphrasing to hide the fact it has been reused. Multiple LLMs have been utilized
+                and the documents may contain additional genuine LLM paraphrased text (i.e., it is not reused).
+                The input and output formats are the same as in previous text-alignment tasks.
+                <a href="clef14/pan14-web/text-alignment.html">Learn more »</a>
+            </p>
+            
+
+            <h2 id="data">Data</h2> 
+            <p>The dataset is available via <a href="https://zenodo.org/records/14969012">Zenodo</a>.
+            Please register first at <a href="https://www.tira.io/task-overview/pan25-generated-plagiarism-detection">Tira</a>. 
+            The dataset contains copyrighted material and may be used only for research purposes. <strong>No redistribution allowed.</strong></p>
+
+            <p>Enclosed in the train and validation corpora, two folders are found: (1) the text data and (2) the annotation data (<code>_truths</code> postfix).
+                <ul>
+                    <li>Text Data: contains a <code>pairs</code> file which lists all pairs of suspicious documents (in the <code>susp</code> folder) and source documents (in the <code>src</code> folder) to be compared.</li>
+                    <li>Annotation Data: contains XML files for each pair in the <code>pairs</code> file providing information about the locations and its source of reused texts.</li>
+                </ul>
+
+                The annotation data contains the following information that should be used for training:</p>
+                <pre class="prettyprint lang-xml" style="overflow-x:auto"><nobr>&lt;document reference="suspicious-documentXYZ.txt"&gt;</nobr>
+    &lt;feature
+        name="plagiarism"
+        this_offset="5"
+        this_length="1000"
+      &nbsp;&nbsp;<nobr>source_reference="source-documentABC.txt"</nobr>
+        source_offset="100"
+        source_length="1000"
+        ...
+    /&gt;
+    &lt;feature
+        name="altered"
+        this_offset="5"
+        this_length="1000"
+      &nbsp;&nbsp;<nobr>source_reference="source-documentABC.txt"</nobr>
+        ...
+    /&gt;
+    ...
+    &lt;/document&gt;</pre>
+                <p>The <code>plagiarism</code> feature specifies an aligned passage of text between <code>suspicious-documentXYZ.txt</code>
+                and <code>source-documentABC.txt</code>, and that it is of length 1000 characters, starting at
+                character offset 5 in the suspicious document and at character offset 100 in the source
+                document. The other attributes are used to allow for a more detailed analysis of the results and can be ignored for training.</p>
+
+                <p>The <code>altered</code> feature specifies the location of paraphrased text that was not reused (no plagiarism). This allows
+                to distinguish between genuine LLM generated texts and reused text. For the evaluation, only the <code>plagiarism</code> features
+                need to be predicted.</p>
+
+                <p>For each pair <code>suspicious-documentXYZ.txt</code> and <code>source-documentABC.txt</code> in the <code>pairs</code> file, 
+                your plagiarism detector shall output an XML file <code>suspicious-documentXYZ-source-documentABC.xml</code>
+                which specifies the location of the plagiarism cases detected within. The name of the feature should be <code>detected-plagiarism</code>
+                and specify the offsets and lengths in the suspicious and the source document. No other attributes are evaluated. For example:</p>
+                <pre class="prettyprint lang-xml" style="overflow-x:auto"><nobr>&lt;document reference="suspicious-documentXYZ.txt"&gt;</nobr>
+    &lt;feature
+      name="detected-plagiarism"
+      this_offset="5"
+      this_length="1000"
+    &nbsp;&nbsp;<nobr>source_reference="source-documentABC.txt"</nobr>
+      source_offset="100"
+      source_length="1000"
+    /&gt;
+    &lt;feature ... /&gt;
+    ...
+    &lt;/document&gt;</pre>
+                <p>For evaluation, the offset and length attributes <code>detected-plagiarism</code> features will be compared against the <code>plagiarism</code> features in the annotation data.
+                No other information will be evaluated.</p>
+            
+            <h2 id="results">Results</h2> 
+            tba.
+
+                                    
+            <h2 id="related-work">Related Work</h2>
+            <ol>
+                <li>
+                    <a href="{{ 'publications.html#?q=2014%20plagiarism%20potthast' | relative_url }}">Plagiarism Detection, PAN @ CLEF'14</a>
+                </li>
+                <li>
+                    <a href="{{ 'publications.html#?q=2013%20plagiarism%20potthast' | relative_url }}">Plagiarism Detection, PAN @ CLEF'13</a>
+                </li>
+                <li>
+                    <a href="{{ 'publications.html#?q=2012%20plagiarism%20potthast' | relative_url }}">Plagiarism Detection, PAN @ CLEF'12</a>
+                </li>
+                <li>
+                    <a href="{{ 'publications.html#?q=2011%20plagiarism%20potthast' | relative_url }}">Plagiarism Detection, PAN @ CLEF'11</a>
+                </li>
+                <li>
+                    <a href="{{ 'publications.html#?q=2010%20plagiarism%20potthast' | relative_url }}">Plagiarism Detection, PAN @ CLEF'10</a>
+                </li>
+                <li>
+                    <a href="{{ 'publications.html#?q=2009%20plagiarism%20potthast' | relative_url }}">Plagiarism Detection, PAN @ SEPLN'09</a>
+                </li>  
+            </ol>
+            
+            <h2 id="task-committee">Task Committee</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/greinerpetter.html %}
+                {% include people-cards/philipwahle.html %}
+                {% include people-cards/ruas.html %}
+                {% include people-cards/gipp.html %}
+            </div>    
+            <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+                {% include organizations/clef-organizations-section.html year=2026 %}
+            </div>
+        </div>
+    </div>
+</main> 
