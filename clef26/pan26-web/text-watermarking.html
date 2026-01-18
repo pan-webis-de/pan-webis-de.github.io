@@ -28,31 +28,79 @@ description: PAN at CLEF 2026 - Text Watermarking
 
             <h2 id="synopsis">Synopsis</h2>
             <ul class="uk-list uk-list-bullet">
-                <li>Task: TBA.</li>
+                <li>Task: Insert a watermark into a given text. Then, after we have attacked the text, detect the inserted watermark. </li>
                 <li>Registration: [<a href="https://clef-labs-registration.dipintra.it/">CLEF labs</a>]</li>
                 <li>Important dates:
                     <ul>
                         <li><strong>May 07, 2026:</strong> software submission</li>
                         <li><strong>May 28, 2026:</strong> participant notebook submission
                             [<a href="../../pan-notebook-paper-template/pan-notebook-paper-template.zip">template</a>]
-                            [<a href="https://easychair.org/conferences/?conf=clef2026">submission</a>&nbsp; – <em>select "Stylometry and Digital Text Forensics (PAN)"</em> ]</li>
+                            [<a href="https://easychair.org/conferences/?conf=clef2026">submission</a>&nbsp; – <em>select "Text Watermarking (PAN)"</em> ]</li>
                     </ul>
                 </li>
-<!--                <li>Data: TBA [<a href="">download</a>]</li>-->
-<!--                <li>Evaluation Measures: TBD</li>-->
+                <li>Data: TBA <!-- [<a href="">download</a>] --> </li>
+                <li>Evaluation Measures: Accuracy, F1, BLEU, BERTScore </li>
 <!--                <li>Baselines: TBA [<a href="">code</a>]</li>-->
 	        </ul>
             
             
             <h2 id="task-overview">Task Overview</h2>
-            <p>TBA</p>
+            <p>In the Text Watermarking task, participants are given a text and must insert a watermark into it. After submitting the watermarked texts and the watermark algorithm, including a watermark detection system, through <a href="www.tira.io">TIRA</a>, the texts are subjected to various attacks. The objective is to detect the watermark after the text has been attacked, thereby demonstrating its robustness against an attacker.</p>
+            
+            <p>The task is structured as follows:</p>
 
+            <ol class="uk-list uk-list-bullet">
+                <li>Insert a watermark into each text in the provided data set.</li>
+                <li>Submit the watermarked texts together with the watermarking system, including the watermark detection, through the <a href="https://www.tira.io/task-overview/generative-ai-authorship-verification-panclef-2026/">Tira</a> platform.</li>
+                <li>We will carry out attacks with varying severity on the watermarked texts.</li>
+                <li>We will run your watermark detection system on the attacked texts to evaluate its performance in detecting watermarks.</li>
+            </ol>
 
             <h2 id="submission">Submission</h2>
-            <p>TBA</p>
+            <p>Participants will submit their systems as Docker images through the <a href="https://www.tira.io/task-overview/generative-ai-authorship-verification-panclef-2026/">Tira</a> platform. It is not expected that submitted systems are actually <em>trained</em> on Tira, but they must be standalone and runnable on the platform without requiring contact to the outside world (evaluation runs will be sandboxed).</p>
+
+            <p>The submitted software must be executable inside the container via a command line call. The script must take two arguments: an input file (an absolute path to the input JSONL file) and an output directory (an absolute path to where the results will be written):</p>
+
+            <p>Within Tira, the input file will be called <code>dataset.jsonl</code>, so with the pre-defined Tira placeholders, your software should be invoked like this:</p>
+            <pre class="prettyprint"><code class="lang-console">$ mySoftware $inputDataset/dataset.jsonl $outputDir</code></pre>
+
+            <p>Within <code>$outputDir</code>, a single (!) file with the file extension <code>*.jsonl</code> must be created with the following format:</p>
+
+            <pre class="prettyprint"><code class="lang-json">{"id": "bea8cccd-0c99-4977-9c1b-8423a9e1ed96", "label": 1.0}
+{"id": "a963d7a0-d7e9-47c0-be84-a40ccc2005c7", "label": 0.0}
+...</code></pre>
+            
 
             <h2 id="evaluation">Evaluation</h2>
-            <p>TBA</p>
+            <p>Systems will be evaluated with the following metrics:</p>
+
+            <ul class="uk-list uk-list-bullet">
+                <li>Accuracy: The percentage of how often the correct outcome is predicted.</li>
+                <li>F<sub>1</sub>: The harmonic mean of precision and recall.</li>
+                <li>BLEU: Similarity of the watermarked text to the original text.</li>
+                <li>BERTScore: Similarity of the watermarked text and the original text based on the cosine similarity.</li>
+                <li>The arithmetic mean of all the metrics above.</li>
+                <li>A confusion matrix for calculating true/false positive/negative rates.</li>
+            </ul>
+
+            <p>The evaluator for the task will output the above measures as JSON like so:</p>
+            <pre class="prettyprint"><code class="lang-json">{
+    "accuracy": 0.984,
+    "f1": 0.98,
+    "BLEU": 0.901,
+    "BERTScore": 0.85,
+    "mean": 0.92875,
+    "confusion": [
+        [
+            1211,
+            66
+        ],
+        [
+            27,
+            2285
+        ]
+    ]
+}</code></pre>
 
             <h2 id="baselines">Baselines</h2>
             <p>TBA</p>
@@ -66,7 +114,48 @@ description: PAN at CLEF 2026 - Text Watermarking
         <div class="uk-container uk-margin-medium">
             <h2 id="related-work">Related Work</h2>
             <ul class="uk-list uk-list-bullet">
-                <li>TBA</li>
+                <li>
+                    John Kirchenbauer, Jonas Geiping, Yuxin Wen, Jonathan Katz, Ian Miers, and
+Tom Goldstein. A watermark for large language models. In Andreas Krause,
+Emma Brunskill, Kyunghyun Cho, Barbara Engelhardt, Sivan Sabato, and
+Jonathan Scarlett, editors, International Conference on Machine Learning,
+ICML 2023, 23-29 July 2023, Honolulu, Hawaii, USA, volume 202 of Pro-
+ceedings of Machine Learning Research, pages 1706117084. PMLR, 2023.
+URL https://proceedings.mlr.press/v202/kirchenbauer23a.html
+                </li>
+                <li>
+                    Xuandong Zhao, Prabhanjan Vijendra Ananth, Lei Li, and Yu-Xiang Wang.
+Provable robust watermarking for ai-generated text. In The Twelfth Interna-
+tional Conference on Learning Representations, ICLR 2024, Vienna, Aus-
+tria, May 7-11, 2024. OpenReview.net, 2024. URL https://openreview.
+net/forum?id=SsmT8aO45L.
+                </li>
+                <li>
+                    Yijian Lu, Aiwei Liu, Dianzhi Yu, Jingjing Li, and Irwin King. An entropy-
+based text watermarking detection method. In Lun-Wei Ku, Andre Martins,
+and Vivek Srikumar, editors, Proceedings of the 62nd Annual Meeting of
+the Association for Computational Linguistics (Volume 1: Long Papers),
+ACL 2024, Bangkok, Thailand, August 11-16, 2024, pages 1172411735.
+Association for Computational Linguistics, 2024. doi: 10.18653/V1/2024.
+ACL-LONG.630. URL https://doi.org/10.18653/v1/2024.acl-long.
+630.
+                </li>
+                <li>
+                    Taehyun Lee, Seokhee Hong, Jaewoo Ahn, Ilgee Hong, Hwaran Lee, Sangdoo
+Yun, Jamin Shin, and Gunhee Kim. Who wrote this code? watermarking
+for code generation. In Lun-Wei Ku, Andre Martins, and Vivek Sriku-
+mar, editors, Proceedings of the 62nd Annual Meeting of the Association for
+Computational Linguistics (Volume 1: Long Papers), ACL 2024, Bangkok,
+Thailand, August 11-16, 2024, pages 48904911. Association for Compu-
+tational Linguistics, 2024. doi: 10.18653/V1/2024.ACL-LONG.268. URL
+https://doi.org/10.18653/v1/2024.acl-long.268.
+                </li>
+                <li>
+                    Aiwei Liu, Leyi Pan, Yijian Lu, Jingjing Li, Xuming Hu, Lijie Wen, Irwin King,
+and Philip S. Yu. A survey of text watermarking in the era of large language
+models. CoRR, abs/2312.07913, 2023. doi: 10.48550/ARXIV.2312.07913.
+URL https://doi.org/10.48550/arXiv.2312.07913.
+                </li>
             </ul>
 
             <h2 id="task-committee">Task Committee</h2>
