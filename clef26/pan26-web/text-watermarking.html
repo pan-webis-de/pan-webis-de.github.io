@@ -45,19 +45,19 @@ description: PAN at CLEF 2026 - Text Watermarking
             
             
             <h2 id="task-overview">Task Overview</h2>
-            <p>In the Text Watermarking task, participants are given a text and must insert a watermark into it. After submitting the watermarked texts and the watermark algorithm, including a watermark detection system, through <a href="www.tira.io">TIRA</a>, the texts are subjected to various attacks. The objective is to detect the watermark after the text has been attacked, thereby demonstrating its robustness against an attacker.</p>
+            <p>In the Text Watermarking task, participants are given a text and must insert a watermark into it. After submitting the watermarked texts and the watermark algorithm, including a watermark detection system, through <a href="https://www.tira.io/">TIRA</a>, the texts are subjected to various attacks. The objective is to detect the watermark after the text has been attacked, thereby demonstrating its robustness against an attacker.</p>
             
             <p>The task is structured as follows:</p>
 
             <ol>
                 <li>Insert a watermark into each text in the provided data set.</li>
-                <li>Submit the watermarked texts together with the watermarking system, including the watermark detection, through the <a href="https://www.tira.io/task-overview/generative-ai-authorship-verification-panclef-2026/">Tira</a> platform.</li>
+                <li>Submit the watermarked texts together with the watermarking system, including the watermark detection, through the <a href="https://www.tira.io/">Tira</a> platform.</li>
                 <li>We will carry out attacks with varying severity on the watermarked texts.</li>
                 <li>We will run your watermark detection system on the attacked texts to evaluate its performance in detecting watermarks.</li>
             </ol>
 
             <h2 id="submission">Submission</h2>
-            <p>Participants will submit their systems as Docker images through the <a href="https://www.tira.io/task-overview/generative-ai-authorship-verification-panclef-2026/">Tira</a> platform. It is not expected that submitted systems are actually <em>trained</em> on Tira, but they must be standalone and runnable on the platform without requiring contact to the outside world (evaluation runs will be sandboxed).</p>
+            <p>Participants will submit their systems as Docker images through the <a href="https://www.tira.io/">Tira</a> platform. It is not expected that submitted systems are actually <em>trained</em> on Tira, but they must be standalone and runnable on the platform without requiring contact to the outside world (evaluation runs will be sandboxed).</p>
 
             <p>The submitted software must be executable inside the container via a command line call. The script must take two arguments: an input file (an absolute path to the input JSONL file) and an output directory (an absolute path to where the results will be written):</p>
 
