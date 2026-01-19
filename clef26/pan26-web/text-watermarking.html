@@ -83,20 +83,18 @@ description: PAN at CLEF 2026 - Text Watermarking
 
             <ul class="uk-list uk-list-bullet">
                 <li>Accuracy: The percentage of how often the correct outcome is predicted.</li>
-                <li>F<sub>1</sub>: The harmonic mean of precision and recall.</li>
-                <li>BLEU: Similarity of the watermarked text to the original text.</li>
-                <li>BERTScore: Similarity of the watermarked text and the original text based on the cosine similarity.</li>
-                <li>The arithmetic mean of all the metrics above.</li>
+                <li>BLEU: Syntactic similarity of the watermarked text to the original text.</li>
+                <li>BERTScore: Semantic similarity of the watermarked text and the original text.</li>
+                <li>An overall score, calculated by the multiplying the accuracy with the maximum of the BLEU and BERTScore values. This score penalises watermarking algorithms that alter the original text too much.</li>
                 <li>A confusion matrix for calculating true/false positive/negative rates.</li>
             </ul>
 
             <p>The evaluator for the task will output the above measures as JSON like so:</p>
             <pre class="prettyprint"><code class="lang-json">{
     "accuracy": 0.984,
-    "f1": 0.98,
     "BLEU": 0.901,
     "BERTScore": 0.85,
-    "mean": 0.92875,
+    "score": 0.88298,
     "confusion": [
         [
             1211,
