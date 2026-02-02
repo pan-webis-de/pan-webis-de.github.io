@@ -19,7 +19,7 @@ description: PAN at CLEF 2026 - Generated Plagiarism Detection
             <h1 class="uk-margin-remove-top">Generative Plagiarism Detection 2026</h1>
             <ul class="uk-list">
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
-                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task">Task Overview</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task1">Task Overview</a></li>
                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
 <!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>-->
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>
@@ -33,40 +33,41 @@ description: PAN at CLEF 2026 - Generated Plagiarism Detection
         <div class="uk-container uk-margin-medium">
             <h2 id="synopsis">Synopsis</h2>
             <ul>
-                <!-- <li>Task: Given a pair of documents, your task is to identify all contiguous maximal-length passages of reused text between them.</li> -->
+                <!-- <li>Task 1: Given a pair of documents, your task is to identify all contiguous maximal-length passages of reused text between them.</li> -->
+                <li>Task: Given a document and a collection of documents, your task is to identify all sources in the collection that the document plagiarizes.</li>
                 <!-- <li>Registration: [<a href="https://clef-labs-registration.dipintra.it/">CLEF labs</a>]</li> -->
                 <li>Details will be announced shortly.</li>
                 <li>Important dates:
                     <ul>
-                        <li><strong>May 07, 2026:</strong> software submission</li>
+                        <li><strong>February 28, 2026:</strong> dataset release</li>
+                        <li><strong>May 07, 2026:</strong> software submission
+                            [<a href="https://www.tira.io/task-overview/pan26-generated-plagiarism-detection">Tira</a>]</li>
                         <li><strong>May 28, 2026:</strong> participant notebook submission
                             [<a href="../../pan-notebook-paper-template/pan-notebook-paper-template.zip">template</a>]
                             [<a href="https://easychair.org/conferences/?conf=clef2026">submission</a>&nbsp; – <em>select "Stylometry and Digital Text Forensics (PAN)"</em> ]</li>
                     </ul>
                 </li>
 <!--                <li>Input: [<a href="{{ 'data.html#pan25-text-alignment' | relative_url }}">data</a>].</li>-->
-<!--                <li>Baselines: [<a href="https://github.com/pan-webis-de/pan-code/blob/master/clef25/generated-plagiarism-detection" target="_blank">code</a>].</li>-->
-<!--                <li>Evaluation: [<a href="https://github.com/pan-webis-de/pan-code/blob/master/clef25/generated-plagiarism-detection/evaluation" target="_blank">code</a>].</li>-->
+               <!-- <li>Baselines: [<a href="https://github.com/pan-webis-de/pan-code/blob/master/clef25/generated-plagiarism-detection" target="_blank">code</a>].</li> -->
+               <!-- <li>Evaluation: [<a href="https://github.com/pan-webis-de/pan-code/blob/master/clef25/generated-plagiarism-detection/evaluation" target="_blank">code</a>].</li> -->
 <!--                <li>Submission: Deployment on TIRA [<a href="https://www.tira.io/task-overview/pan25-generated-plagiarism-detection">submit</a>]</li>-->
             </ul>
 
             <h2 id="task">Task Overview</h2>
-            <!-- <p>
-                To develop your software, we provide you with a training and validation corpus that consists of pairs of
-                documents, one of which may contain passages of text resued from the other. The reused text is
-                subject to automatic LLM paraphrasing to hide the fact it has been reused. Multiple LLMs have been utilized
-                and the documents may contain additional genuine LLM paraphrased text (i.e., it is not reused).
-                The input and output formats are the same as in previous text-alignment tasks.
-                <a href="clef14/pan14-web/text-alignment.html">Learn more »</a>
+            <p>
+                This task follows the classic retrieval task design. The given document (query) is fully auto-generated via an undisclosed LLM 
+                that was instructed to write a new scientific document based of multiple (at least 2) source documents. The goal of this task is
+                to identify all sources for the given query document within a given collection.
             </p>
             
 
             <h2 id="data">Data</h2> 
-            <p>The dataset is available via <a href="https://zenodo.org/records/14969012">Zenodo</a>.
-            Please register first at <a href="https://www.tira.io/task-overview/pan25-generated-plagiarism-detection">Tira</a>. 
+            Please register first at <a href="https://www.tira.io/task-overview/pan26-generated-plagiarism-detection">Tira</a>. 
             The dataset contains copyrighted material and may be used only for research purposes. <strong>No redistribution allowed.</strong></p>
 
-            <p>Enclosed in the train and validation corpora, two folders are found: (1) the text data and (2) the annotation data (<code>_truths</code> postfix).
+            Further information will be published soon.
+
+            <!-- <p>Enclosed in the train and validation corpora, two folders are found: (1) the text data and (2) the annotation data (<code>_truths</code> postfix).
                 <ul>
                     <li>Text Data: contains a <code>pairs</code> file which lists all pairs of suspicious documents (in the <code>susp</code> folder) and source documents (in the <code>src</code> folder) to be compared.</li>
                     <li>Annotation Data: contains XML files for each pair in the <code>pairs</code> file providing information about the locations and its source of reused texts.</li>
@@ -127,6 +128,9 @@ description: PAN at CLEF 2026 - Generated Plagiarism Detection
             <h2 id="related-work">Related Work</h2>
             <ol>
                 <li>
+                    <a href="{{ 'publications.html#?q=2025%20plagiarism%20potthast' | relative_url }}">Plagiarism Detection, PAN @ CLEF'25</a>
+                </li>
+                <li>
                     <a href="{{ 'publications.html#?q=2014%20plagiarism%20potthast' | relative_url }}">Plagiarism Detection, PAN @ CLEF'14</a>
                 </li>
                 <li>
@@ -149,8 +153,6 @@ description: PAN at CLEF 2026 - Generated Plagiarism Detection
             <h2 id="task-committee">Task Committee</h2>
             <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
                 {% include people-cards/greinerpetter.html %}
-                {% include people-cards/philipwahle.html %}
-                {% include people-cards/ruas.html %}
                 {% include people-cards/gipp.html %}
             </div>    
             <div class="uk-container uk-padding-large uk-padding-remove-bottom">
