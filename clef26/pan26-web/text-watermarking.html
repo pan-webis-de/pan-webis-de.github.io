@@ -61,10 +61,11 @@ description: PAN at CLEF 2026 - Text Watermarking
                 <li>We will run your watermark detection system on the attacked texts to evaluate its performance in detecting watermarks.</li>
             </ol>
 
-            <p>Important: The watermarked text must remain semantically close to the original. Watermarked texts that deviate significantly in meaning from the original will be penalized during evaluation.</p>
+            <p>The watermarked text must remain semantically close to the original. Watermarked texts that deviate significantly in meaning from the original will be penalized during evaluation.</p>
 
             <h2 id="submission">Submission</h2>
             <p>Participants will submit their systems as Docker images through the <a href="https://www.tira.io/">Tira</a> platform. It is not expected that submitted systems are actually <em>trained</em> on Tira, but they must be standalone and runnable on the platform without requiring contact to the outside world (evaluation runs will be sandboxed).</p>
+            <p><b>Important:</b> As contact to the outside world is not possible in the TIRA environment, submissions cannot use online services such as ChatGPT or other online LLMs.</p>
 
             <p>The submitted software must be executable inside the container via a command line call. The script must take two arguments: an input file (an absolute path to the input JSONL file) and an output directory (an absolute path to where the results will be written):</p>
 
@@ -127,6 +128,16 @@ Jonathan Scarlett, editors, International Conference on Machine Learning,
 ICML 2023, 23-29 July 2023, Honolulu, Hawaii, USA, volume 202 of Pro-
 ceedings of Machine Learning Research, pages 1706117084. PMLR, 2023.
 URL https://proceedings.mlr.press/v202/kirchenbauer23a.html
+                </li>
+                <li>
+                    Yapei Chang, Kalpesh Krishna, Amir Houmansadr, John Wieting, and Mo-
+hit Iyyer. Postmark: A robust blackbox watermark for large language
+models. In Yaser Al-Onaizan, Mohit Bansal, and Yun-Nung Chen, edi-
+tors, Proceedings of the 2024 Conference on Empirical Methods in Natural
+Language Processing, EMNLP 2024, Miami, FL, USA, November 12-16,
+2024, pages 89698987. Association for Computational Linguistics, 2024.
+doi: 10.18653/V1/2024.EMNLP-MAIN.506. URL https://doi.org/10.
+18653/v1/2024.emnlp-main.506.
                 </li>
                 <li>
                     Xuandong Zhao, Prabhanjan Vijendra Ananth, Lei Li, and Yu-Xiang Wang.
