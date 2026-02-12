@@ -19,6 +19,7 @@ description: PAN at CLEF 2026 - Text Watermarking
             <ul class="uk-list">
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-overview">Task Overview</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#evaluation">Evaluation</a></li>
                 <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#baselines">Baselines</a></li>
@@ -42,7 +43,7 @@ description: PAN at CLEF 2026 - Text Watermarking
                             [<a href="https://easychair.org/conferences/?conf=clef2026">submission</a>&nbsp; – <em>select "Stylometry and Digital Text Forensics (PAN)"</em> ]</li>
                     </ul>
                 </li>
-                <li>Data: TBA <!-- [<a href="">download</a>] --> </li>
+                <li>Data: Political speeches [<a href="https://zenodo.org/records/18620130">download</a>] </li>
                 <li>Evaluation Measures: Balanced Accuracy, BLEU, BERTScore </li>
 <!--                <li>Baselines: TBA [<a href="">code</a>]</li>-->
 	        </ul>
@@ -62,6 +63,18 @@ description: PAN at CLEF 2026 - Text Watermarking
             </ol>
 
             <p>The watermarked text must remain semantically close to the original. Watermarked texts that deviate significantly in meaning from the original will be penalized during evaluation.</p>
+
+
+            <h2 id="data">Data</h2>
+            The dataset is available via <a href="https://zenodo.org/records/18620130">Zenodo</a>.
+
+            <p>The training dataset is provided as a set of newline-delimited JSON files. The file format is as follows:</p>
+
+            <pre class="prettyprint"><code class="lang-json">{"id": "9a28d103-7b2e-43da-b511-2efb5f91975f", "text": "..."}
+{"id": "4fcae8a8-f5e6-4ccd-9dae-10b609a47cfc", "text": "..."}
+...</code></pre>
+
+            <p>The test dataset will have the exact same format.</p>
 
             <h2 id="submission">Submission</h2>
             <p>Participants will submit their systems as Docker images through the <a href="https://www.tira.io/">Tira</a> platform. It is not expected that submitted systems are actually <em>trained</em> on Tira, but they must be standalone and runnable on the platform without requiring contact to the outside world (evaluation runs will be sandboxed).</p>
