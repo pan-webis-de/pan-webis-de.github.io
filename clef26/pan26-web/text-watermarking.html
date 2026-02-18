@@ -98,8 +98,8 @@ description: PAN at CLEF 2026 - Text Watermarking
             <ul class="uk-list uk-list-bullet">
                 <li>Overall score, here called Text Watermarking Fidelity (TWF). <code>TWF = max(BLEU, BERTScore) &middot; Balanced Accuracy</code></li>
                 <li>Balanced Accuracy: The average of true positive rate and true negative rate.</li>
-                <li>BLEU: Syntactic similarity of the watermarked text to the original text.</li>
-                <li>BERTScore: Semantic similarity between the watermarked text and the original text.</li>
+                <li>BLEU: Syntactic similarity of the watermarked text to the original text. Here, it is computed at sentence level and averaged over the full text.</li>
+                <li>BERTScore: Semantic similarity between the watermarked text and the original text. Here, it is computed at sentence level and averaged over the full text.</li>
                 <li>In addition, the confusion matrix is reported for calculating true/false positive/negative rates.</li>
             </ul>
 
