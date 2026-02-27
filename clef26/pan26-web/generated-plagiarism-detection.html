@@ -33,9 +33,8 @@ description: PAN at CLEF 2026 - Generated Plagiarism Detection
         <div class="uk-container uk-margin-medium">
             <h2 id="synopsis">Synopsis</h2>
             <ul>
-                <li>Task: Given a suspicious document and a collection of documents, your task is to retrieve the documents in the collection that the document plagiarizes. This task is similar to the Source Retrieval Task that was hosted at PAN between <a href="https://pan.webis.de/clef12/pan12-web/source-retrieval.html">2012</a> and <a href="https://pan.webis.de/clef15/pan15-web/source-retrieval.html">2015</a>.</li>
+                <li>Task: Given a suspicious document and a collection of potential source documents, your task is to retrieve the source documents in the collection that the suspicious document plagiarizes (similar to the Source Retrieval Task at PAN <a href="https://pan.webis.de/clef12/pan12-web/source-retrieval.html">2012</a> to <a href="https://pan.webis.de/clef15/pan15-web/source-retrieval.html">2015</a>).</li>
                 <!-- <li>Registration: [<a href="https://clef-labs-registration.dipintra.it/">CLEF labs</a>]</li> -->
-                <li>Details will be announced shortly.</li>
                 <li>Important dates:
                     <ul>
                         <li><strong>March 13, 2026:</strong> dataset release</li>
@@ -54,10 +53,10 @@ description: PAN at CLEF 2026 - Generated Plagiarism Detection
 
             <h2 id="task">Task Overview</h2>
             <p>
-                This task follows the classic retrieval task design. The given document (query) is fully auto-generated via an undisclosed LLM 
+                This task follows the classic retrieval task design. Each given suspicious document (the query) is fully auto-generated via an undisclosed LLM 
                 that was instructed to write a new scientific document based of multiple (at least 2) source documents. The goal of this task is
                 to identify all sources for the given query document within a given collection.
-                Please retrieve a list of the top-100 or top-1000 results in the TREC-style run format.
+                Please retrieve up to 1000 results (from the source documents) in the TREC-style run format for each suspicious document.
             </p>
             
 
@@ -68,15 +67,15 @@ description: PAN at CLEF 2026 - Generated Plagiarism Detection
                 We will prepare the data in a format compatible with <a href="https://ir-datasets.com/">ir_datasets</a> so that you can directly load the data with the ir_datasets API (please look at the <a href="https://github.com/pan-webis-de/pan-code/tree/master/clef26/generated-plagiarism-detection/baseline-pyterrier">baseline</a> for an example).<br><br>
                 Accessing the data via ir_datasets works like:
                 <pre class="prettyprint lang-py" style="overflow-x:auto;white-space:nowrap">from tira.third_party_integrations import ir_datasets<br>
-# spot-check-dataset-20260227-training is the ID of the spot-check dataset
-dataset = ir_datasets.load("spot-check-dataset-20260227-training")
-
-#access the to-be-retrieved documents via.
-dataset.docs_iter()
-
-#access the suspicios documents via:
-dataset.queries_iter()
-</pre><br><br>
+# spot-check-dataset-20260227-training is the ID of the spot-check dataset<br>
+dataset = ir_datasets.load("spot-check-dataset-20260227-training")<br>
+<br>
+#access the to-be-retrieved documents via.<br>
+dataset.docs_iter()<br>
+<br>
+#access the suspicios documents via:<br>
+dataset.queries_iter()<br>
+</pre><br>
 
                 You can also access the data without ir_datasets. The data consists of two files, first the corpus.jsonl.gz file contains all documents (the documents to retrieve from), and queries.jsonl contains all queries (each query is a document for which we look for the documents that it plagiarized).
             <ul>
@@ -94,12 +93,12 @@ dataset.queries_iter()
                 <pre class="prettyprint lang-py" style="overflow-x:auto;white-space:nowrap">qid Q0 doc rank score tag</pre>
             With:
             <ul>
-                <li><pre>qid</pre>: The topic number.</li>
-                <li><pre>Q0</pre>: Unused, should always be Q0.</li>
-                <li><pre>doc</pre>: The document ID (the official args.me ID) returned by your system for the topic qid.</li>
-                <li><pre>rank</pre>: The rank the document is retrieved at.</li>
-                <li><pre>score</pre>: The score (integer or floating point) that generated the ranking. The score must be in descending (non-increasing) order. It is important to handle tied scores (trec_eval sorts documents by the score values and not your rank values).</li>
-                <li><pre>tag</pre>: A tag that identifies your system</li>
+                <li>qid: The query ID that identifies the suspicious document for which potential source documents should be retrieved.</li>
+                <li>Q0: Unused, should always be Q0.</li>
+                <li>doc: The document ID from the collection of source documents returned by your system for the qid.</li>
+                <li>rank: The rank the document is retrieved at.</li>
+                <li>score: The score (integer or floating point) that generated the ranking. The score must be in descending (non-increasing) order. It is important to handle tied scores (trec_eval sorts documents by the score values and not your rank values).</li>
+                <li>tag: A tag that identifies your system</li>
             </ul>
                 
             </p>
