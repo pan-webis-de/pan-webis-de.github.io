@@ -45,7 +45,7 @@ description: PAN at CLEF 2026 - Generated Plagiarism Detection
                             [<a href="https://easychair.org/conferences/?conf=clef2026">submission</a>&nbsp; – <em>select "Stylometry and Digital Text Forensics (PAN)"</em> ]</li>
                     </ul>
                 </li>
-                <li>Input: [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef26/generated-plagiarism-detection/spot-check-dataset">spot-check dataset</a>, test set releaseed soon].</li>
+                <li>Input: [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef26/generated-plagiarism-detection/spot-check-dataset">spot-check dataset</a>, test set released soon].</li>
                 <li>Baselines: [<a href="https://github.com/pan-webis-de/pan-code/tree/master/clef26/generated-plagiarism-detection/baseline-pyterrier" target="_blank">code</a>].</li>
                 <li>Evaluation: We will evaluate standard retrieval measures such as nDCG@10, Recall@10, and Recall@100.</li>
                 <li>Submission: Deployment on TIRA [<a href="https://www.tira.io/task-overview/pan26-generated-plagiarism-detection">submit</a>]</li>
@@ -68,7 +68,7 @@ description: PAN at CLEF 2026 - Generated Plagiarism Detection
                 Accessing the data via ir_datasets works like:
                 <pre class="prettyprint lang-py" style="overflow-x:auto;white-space:nowrap">from tira.third_party_integrations import ir_datasets<br>
 # spot-check-dataset-20260227-training is the ID of the spot-check dataset<br>
-dataset = ir_datasets.load("spot-check-dataset-20260227-training")<br>
+dataset = ir_datasets.load("pan26-generated-plagiarism-detection/spot-check-dataset-20260227-training")<br>
 <br>
 #access the to-be-retrieved documents via.<br>
 dataset.docs_iter()<br>
@@ -77,7 +77,7 @@ dataset.docs_iter()<br>
 dataset.queries_iter()<br>
 </pre><br>
 
-                You can also access the data without ir_datasets. The data consists of two files, first the corpus.jsonl.gz file contains all documents (the documents to retrieve from), and queries.jsonl contains all queries (each query is a document for which we look for the documents that it plagiarized).
+                You can also access the data without ir_datasets. The data consists of two files, first the corpus.jsonl.gz file contains all potential source documents (the documents to retrieve from), and queries.jsonl contains all queries (each query is a suspicious document for which we look for the source documents that it plagiarized).
             <ul>
                 <li>The corpus.jsonl.gz file has the following structure:<pre class="prettyprint lang-py" style="overflow-x:auto;white-space:nowrap">{"doc_id": "123", "default_text": "The text of the arxiv paper with ID 123"}</pre></li>
                 
