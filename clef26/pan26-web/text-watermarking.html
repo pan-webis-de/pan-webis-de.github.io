@@ -34,7 +34,7 @@ description: PAN at CLEF 2026 - Text Watermarking
             <h2 id="synopsis">Synopsis</h2>
             <ul class="uk-list uk-list-bullet">
                 <li>Task: Insert a watermark into a given text. Then, after we have attacked the text, detect the inserted watermark. </li>
-                <li>Registration: [<a href="https://clef-labs-registration.dipintra.it/">CLEF labs</a>]</li>
+                <li>Registration: [<a href="https://clef-labs-registration.dipintra.it/">CLEF labs</a>] [<a href="https://www.tira.io/task-overview/text-watermarking-panclef-2026/">Tira</a>]</li>
                 <li>Important dates:
                     <ul>
                         <li><strong>May 07, 2026:</strong> software submission</li>
@@ -66,7 +66,7 @@ description: PAN at CLEF 2026 - Text Watermarking
 
 
             <h2 id="data">Data</h2>
-            The dataset is available via <a href="https://zenodo.org/records/18620130">Zenodo</a>.
+            The dataset is available via <a href="https://zenodo.org/records/18620130">Zenodo</a>. Please register first at <a href="https://www.tira.io/task-overview/text-watermarking-panclef-2026/">Tira</a> and then request access on Zenodo using the same email address.
 
             <p>The training dataset is provided as a set of newline-delimited JSON files. The file format is as follows:</p>
 
@@ -77,7 +77,7 @@ description: PAN at CLEF 2026 - Text Watermarking
             <p>The test dataset will have the exact same format.</p>
 
             <h2 id="submission">Submission</h2>
-            <p>Participants will submit their systems as Docker images through the <a href="https://www.tira.io/">Tira</a> platform. It is not expected that submitted systems are actually <em>trained</em> on Tira, but they must be standalone and runnable on the platform without requiring contact to the outside world (evaluation runs will be sandboxed).</p>
+            <p>Participants will submit their systems as Docker images through the <a href="https://www.tira.io/task-overview/text-watermarking-panclef-2026/">Tira</a> platform. It is not expected that submitted systems are actually <em>trained</em> on Tira, but they must be standalone and runnable on the platform without requiring contact to the outside world (evaluation runs will be sandboxed).</p>
             <p><b>Important:</b> As contact to the outside world is not possible in the TIRA environment, submissions cannot use online services such as ChatGPT or other online LLMs.</p>
 
             <p>The submitted software must be executable inside the container via a command line call. The script must take two arguments: an input file (an absolute path to the input JSONL file) and an output directory (an absolute path to where the results will be written):</p>
