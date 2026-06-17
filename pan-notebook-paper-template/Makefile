@@ -2,7 +2,6 @@ TEX = pan-notebook-template
 LATEX = pdflatex
 BIBTEX = bibtex
 
-.PHONY: $(TEX).pdf
 
 all: $(TEX).pdf
 
@@ -18,4 +17,4 @@ clean:
 distclean: clean
 	rm -f $(TEX).pdf
 
-.PHONY: all clean distclean
+.PHONY: $(TEX).pdf clean distclean
