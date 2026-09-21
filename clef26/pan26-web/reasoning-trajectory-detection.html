@@ -43,13 +43,6 @@ description: PAN at CLEF 2026 - Reasoning Trajectory Detection
                         <li><strong>Subtask 2 (Safety Detection):</strong> Decide whether the reasoning trajectory is safe vs. unsafe, and whether the final answer is safe vs. unsafe.</li>
                     </ul>
                 </li>
-                <li>
-                    Registration: <strong>TBD</strong>
-                    <!-- Add links once available, e.g.:
-                    [<a href="https://clef-labs-registration.dipintra.it/">CLEF labs</a>]
-                    [<a href="https://www.tira.io/...">Tira</a>] (Note: evaluation for this task is not planned to be inside TIRA)
-                    -->
-                </li>
                 <li>Important dates:
                     <ul>
                         <li><strong>February 12, 2026:</strong> Training + Validation set release</li>
@@ -62,11 +55,13 @@ description: PAN at CLEF 2026 - Reasoning Trajectory Detection
                 </li>
                 <li>
                     Data: Accessible at our <a href="https://github.com/mbzuai-nlp/PAN-CLEF2026-Reasoning-Trajectory-Detection">GitHub repository</a>.
-                    <!-- Add dataset hosting link(s) once available (e.g., Zenodo / HuggingFace) -->
                 </li>
                 <li>
                     Evaluation: <em>File-based submissions on a separate evaluation platform (not executed inside the TIRA sandbox).</em>
                 </li>
+                <li><strong>Participation:</strong> 16 participating teams; nine evaluated systems for Subtask 1 and seven for Subtask 2. Seven teams submitted notebook papers, of which six were accepted.</li>
+                <li><strong>Best results:</strong> 0.85 macro-F1 for Source Detection; 0.75 trajectory-level F1 and 0.31 step-level soft-F1 for Safety Detection.</li>
+
             </ul>
 
             <h2 id="task-overview">Task Overview</h2>
@@ -91,38 +86,157 @@ description: PAN at CLEF 2026 - Reasoning Trajectory Detection
 
             <h2 id="data">Data</h2>
             <p>Dataset release details (access, licensing, and download links) is announced at our <a href="https://github.com/mbzuai-nlp/PAN-CLEF2026-Reasoning-Trajectory-Detection">GitHub repository</a>.</p>
+            <div class="uk-overflow-auto" role="region" aria-label="Dataset sizes" tabindex="0">
+                <table class="uk-table uk-table-divider uk-table-small">
+                    <caption>Dataset sizes from Table 1 of the overview report.</caption>
+                    <thead><tr><th scope="col">Subtask</th><th scope="col">Train</th><th scope="col">Validation</th><th scope="col">Test</th></tr></thead>
+                    <tbody>
+                        <tr><th scope="row">Source Detection</th><td>87,556</td><td>497</td><td>2,617</td></tr>
+                        <tr><th scope="row">Safety Detection</th><td>6,079</td><td>2,200</td><td>2,832</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Source Detection Data</h3>
             <p>
-                Structure: each instance is a triplet <em>(query, reasoning trajectory, final answer)</em> with their labels.
-                <!-- Replace with the official schema once fixed. -->
+                Each instance contains a problem statement, its solution, a coarse source label, and a detailed generator label. Human training solutions are drawn from mathematical reasoning corpora, including the AOPS subset of NuminaMath-CoT and Nemotron. The released LLM solutions were generated using GPT-5 Nano, Gemini-3 Flash, K2-Think V2, and DeepSeek R1.
             </p>
+            <p>
+                The test set contains 873 human and 1,744 LLM solutions across 2,083 unique problems. It includes 18 LLM generators, 14 of which are absent from training and validation. These additional generators account for 1,034 test examples. The broader domains, multilingual problems, and variable solution lengths test whether source cues transfer beyond the training distribution.
+            </p>
+
+            <h3>Safety Detection Data</h3>
+            <p>
+                The data are based on <a href="https://arxiv.org/abs/2505.17244">ReasoningShield</a>. Each instance includes the user query, a segmented reasoning trace, a global safety label, and an aligned vector of binary step labels. Test trajectories were manually annotated at both levels.
+            </p>
+            <div class="uk-overflow-auto" role="region" aria-label="Safety label distribution" tabindex="0">
+                <table class="uk-table uk-table-divider uk-table-small">
+                    <caption>Trajectory-level safety labels from Table 4 of the overview report.</caption>
+                    <thead><tr><th scope="col">Label</th><th scope="col">Train</th><th scope="col">Validation</th><th scope="col">Test</th></tr></thead>
+                    <tbody>
+                        <tr><th scope="row">Safe</th><td>5,150</td><td>1,238</td><td>1,281</td></tr>
+                        <tr><th scope="row">Potentially unsafe</th><td>41</td><td>334</td><td>491</td></tr>
+                        <tr><th scope="row">Unsafe</th><td>888</td><td>628</td><td>1,060</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>
+                The test set contains 10,312 annotated steps, with a median of four steps per trajectory; 30.9% of steps are unsafe. Only 40.3% of test queries are English or mostly English. The trajectory label is not determined simply by whether any unsafe step appears, so the two prediction levels must be evaluated separately.
+            </p>
+
 
             <h2 id="submission">Submission</h2>
             <p>
-                <strong>File-only submission.</strong> The evaluation for this task is not conducted inside the TIRA sandbox. Instead, participants submit their system outputs as files in the required format on a separate evaluation platform.
+                Submissions were <strong>prediction files in CSV format</strong>. Participants ran their systems on their own hardware or services, including local or cloud GPUs, open-weight models, external APIs, or rule-based systems. Evaluation did not require execution inside the TIRA sandbox.
             </p>
             <p>
-                Participants may develop and run their systems using any hardware or software resources of their choice (including local or cloud GPUs, open-weight models, or external APIs), as long as the final submission consists solely of the required output files.
+                The official repository specifies the filename <code>submission.csv</code> and provides a <a href="https://github.com/mbzuai-nlp/PAN-CLEF2026-Reasoning-Trajectory-Detection/tree/main/starter-kit">starter kit</a> for the exact output schema and submission procedure. The competition pages are:
             </p>
-
-            <p><strong>Submission platform and output format: TBD.</strong></p>
-            <!-- Once you have the exact format, replace TBD with a concrete example, e.g. JSONL:
-            <pre class="prettyprint"><code class="lang-json">
-{"id":"...", "source_reasoning": "ai", "source_answer":"ai", "safe_reasoning": true, "safe_answer": true}
-            </code></pre>
-            -->
+            <ul class="uk-list uk-list-bullet">
+                <li><a href="https://www.codabench.org/competitions/15502/">Subtask 1: Source Detection on Codabench</a>.</li>
+                <li><a href="https://www.codabench.org/competitions/16085/">Subtask 2: Safety Detection on Codabench</a>.</li>
+            </ul>
 
             <h2 id="evaluation">Evaluation</h2>
-            <p>Evaluation measures and aggregation will be described here once finalized. <strong>TBD.</strong> </p>
+            <h3>Subtask 1: Source Detection</h3>
             <p>
-                The task targets both <em>step-level</em> (reasoning trajectory) and <em>outcome-level</em> (final answer) predictions, encouraging systems that can detect unsafe or synthetic reasoning trajectories and explain their decisions.
+                Systems are ranked by <strong>macro-averaged F1</strong> over the human and LLM classes. Accuracy is a secondary metric. Giving both classes equal weight limits the effect of their unequal frequencies.
+            </p>
+            <p><strong>Macro-F1 = (F1(human) + F1(LLM)) / 2.</strong></p>
+
+            <h3>Subtask 2: Safety Detection</h3>
+            <p>
+                The <strong>primary ranking metric</strong> is trajectory-level macro-F1 after mapping the three released labels to two evaluation classes:
+            </p>
+            <div class="uk-overflow-auto" role="region" aria-label="Safety evaluation label mapping" tabindex="0">
+                <table class="uk-table uk-table-divider uk-table-small">
+                    <caption>Label mapping for the primary Safety Detection score.</caption>
+                    <thead><tr><th scope="col">Released label</th><th scope="col">Evaluation class</th></tr></thead>
+                    <tbody>
+                        <tr><th scope="row">Safe</th><td>Safe</td></tr>
+                        <tr><th scope="row">Potentially unsafe</th><td>Unsafe</td></tr>
+                        <tr><th scope="row">Unsafe</th><td>Unsafe</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><strong>Trajectory-F1 = (F1(safe) + F1(unsafe)) / 2.</strong></p>
+            <p>
+                The <strong>secondary metric</strong>, step-level soft-F1, measures unsafe-step localization. For each trajectory, an F1 score is computed between its predicted and gold step labels; the final score is the mean over trajectories. This is an average of per-trajectory scores, rather than one F1 computed after pooling all steps.
+            </p>
+            <p><strong>Step F1 for one trajectory = 2 &times; TP<sub>soft</sub> / (2 &times; TP<sub>soft</sub> + FP<sub>soft</sub> + FN<sub>soft</sub>).</strong></p>
+            <p>
+                For each aligned step, let <var>p</var> be the predicted unsafe score and <var>y</var> the gold binary label. The soft counts sum <var>p</var> &times; <var>y</var> for TP<sub>soft</sub>, <var>p</var> &times; (1 &minus; <var>y</var>) for FP<sub>soft</sub>, and (1 &minus; <var>p</var>) &times; <var>y</var> for FN<sub>soft</sub>. The metric supports soft predictions; many systems submitted hard 0/1 step labels. Use the official evaluation code for implementation details and edge cases.
             </p>
 
             <h2 id="baselines">Baselines</h2>
-            <p>Baselines and starter code will be linked here. <strong>TBD.</strong> </p>
+            <p>
+                The official baselines use supervised fine-tuning of RoBERTa. For Source Detection, RoBERTa is trained as a sequence classifier. For Safety Detection, each segmented trace is decomposed into step examples, the classifier predicts binary step labels, and the predictions are aggregated back into the trace format. Training and inference code are available in the <a href="https://github.com/mbzuai-nlp/PAN-CLEF2026-Reasoning-Trajectory-Detection/tree/main/baseline">baseline directory</a>.
+            </p>
+            <ul class="uk-list uk-list-bullet">
+                <li><strong>Source Detection:</strong> 0.55 macro-F1 and 0.57 accuracy.</li>
+                <li><strong>Safety Detection:</strong> 0.57 trajectory-F1 and 0.24 step-level soft-F1.</li>
+            </ul>
 
-            <h2 id="leaderboard">Leaderboard</h2>
-            <p>TBD</p>
-            <!-- You can later embed a static table or link to the evaluation platform's leaderboard. -->
+            <h2 id="leaderboard">Final Leaderboards</h2>
+            <p>
+                Scores below reproduce Tables 7 and 8 of the overview report, rounded to two decimal places. Baselines are shown for reference and are not ranked participant systems. A missing notebook does not mean that no prediction submission was evaluated.
+            </p>
+
+            <h3>Subtask 1: Source Detection</h3>
+            <div class="uk-overflow-auto" role="region" aria-label="Source Detection final leaderboard" tabindex="0">
+                <table class="uk-table uk-table-divider uk-table-small uk-table-middle">
+                    <caption>Nine evaluated systems, ranked by macro-F1. Higher scores are better.</caption>
+                    <thead><tr><th scope="col">Rank</th><th scope="col">Team</th><th scope="col">Macro-F1</th><th scope="col">Accuracy</th><th scope="col">Notebook</th><th scope="col">Approach</th></tr></thead>
+                    <tbody>
+                        <tr><td>1</td><th scope="row">Writerslogic</th><td><strong>0.85</strong></td><td><strong>0.85</strong></td><td>Accepted</td><td>Claude Opus and Sonnet agreement with LightGBM fallback.</td></tr>
+                        <tr><td>2</td><th scope="row">srikarkashyap</th><td>0.83</td><td>0.82</td><td>Not submitted</td><td>Not reported.</td></tr>
+                        <tr><td>3</td><th scope="row">DUAN</th><td>0.80</td><td>0.83</td><td>Accepted</td><td>Qwen3.5-2B full fine-tuning with a binary head.</td></tr>
+                        <tr><td>4</td><th scope="row">TUKE-AI</th><td>0.75</td><td>0.74</td><td>Accepted</td><td>RoBERTa-base with chunked problem-solution processing.</td></tr>
+                        <tr><td>5</td><th scope="row">23020073</th><td>0.72</td><td>0.72</td><td>Not submitted</td><td>Not reported.</td></tr>
+                        <tr><td>6</td><th scope="row">Asdkkllk</th><td>0.71</td><td>0.75</td><td>Accepted</td><td>ModernBERT-base with solution-only input and a calibrated threshold.</td></tr>
+                        <tr><td>7</td><th scope="row">threshdsnmj</th><td>0.65</td><td>0.67</td><td>Accepted</td><td>RoBERTa-base with a short solution-only input.</td></tr>
+                        <tr><td>8</td><th scope="row">sajayrrr</th><td>0.43</td><td>0.43</td><td>Not submitted</td><td>Not reported.</td></tr>
+                        <tr><td>9</td><th scope="row">krrag</th><td>0.30</td><td>0.28</td><td>Not submitted</td><td>Not reported.</td></tr>
+                    </tbody>
+                    <tfoot><tr><td>Unranked</td><th scope="row">Baseline</th><td>0.55</td><td>0.57</td><td>Not applicable</td><td>RoBERTa sequence classifier.</td></tr></tfoot>
+                </table>
+            </div>
+
+            <h3>Subtask 2: Safety Detection</h3>
+            <div class="uk-overflow-auto" role="region" aria-label="Safety Detection final leaderboard" tabindex="0">
+                <table class="uk-table uk-table-divider uk-table-small uk-table-middle">
+                    <caption>Seven evaluated systems, ranked by trajectory-F1. Soft-F1 is the secondary metric; higher scores are better.</caption>
+                    <thead><tr><th scope="col">Rank</th><th scope="col">Team</th><th scope="col">Trajectory-F1</th><th scope="col">Step soft-F1</th><th scope="col">Notebook</th><th scope="col">Approach</th></tr></thead>
+                    <tbody>
+                        <tr><td>1</td><th scope="row">Bit-by-Bit</th><td><strong>0.75</strong></td><td><strong>0.31</strong></td><td>Accepted</td><td>Seven-criterion Granite Guardian ensemble and a Qwen3Guard step expert.</td></tr>
+                        <tr><td>2</td><th scope="row">srikarkashyap</th><td>0.70</td><td>0.17</td><td>Not submitted</td><td>Not reported.</td></tr>
+                        <tr><td>3</td><th scope="row">Writerslogic</th><td>0.66</td><td>0.27</td><td>Accepted</td><td>Query harmfulness, multilingual refusal detection, and multi-signal union.</td></tr>
+                        <tr><td>4</td><th scope="row">DUAN</th><td>0.65</td><td>0.16</td><td>Accepted</td><td>Qwen3.5-2B LoRA multi-task classifier.</td></tr>
+                        <tr><td>5</td><th scope="row">threshdsnmj</th><td>0.56</td><td>0.09</td><td>Accepted</td><td>XLM-RoBERTa trace classifier with weak step supervision.</td></tr>
+                        <tr><td>6</td><th scope="row">TUKE-AI</th><td>0.44</td><td>0.12</td><td>Accepted</td><td>XLM-RoBERTa step classifier and BiLSTM-attention trace classifier.</td></tr>
+                        <tr><td>7</td><th scope="row">krrag</th><td>0.43</td><td>0.07</td><td>Not submitted</td><td>Not reported.</td></tr>
+                    </tbody>
+                    <tfoot><tr><td>Unranked</td><th scope="row">Baseline</th><td>0.57</td><td>0.24</td><td>Not applicable</td><td>RoBERTa with step-level decomposition.</td></tr></tfoot>
+                </table>
+            </div>
+
+            <h2 id="findings">Key Findings</h2>
+            <ul class="uk-list uk-list-bullet">
+                <li><strong>Generalization matters.</strong> Strong validation scores often dropped on the hidden test sets, which introduced changes in domains, generators, languages, trace lengths, and class balance.</li>
+                <li><strong>Evidence selection depends on the task.</strong> Compact solution-only views were competitive for source detection. Safety detection benefited from the relationship between user intent, reasoning, and refusal or compliance.</li>
+                <li><strong>Global safety and local safety remain distinct challenges.</strong> Four of seven safety systems exceeded the trajectory-F1 baseline, but only two exceeded the step-level soft-F1 baseline. The best step score was 0.31.</li>
+                <li><strong>Decomposition and calibration were recurring strengths.</strong> Successful systems separated decisions such as query harmfulness and refusal, or trajectory judgment and step localization. Thresholds tuned on validation did not always transfer to test.</li>
+            </ul>
+            <p>
+                The report also identifies limitations: mathematical reasoning dominates Source Detection training; Safety Detection has substantial class imbalance; step-level scoring needs further diagnostics; and reliance on external services can limit exact reproducibility.
+            </p>
+
+            <h2 id="overview-report">Overview Report</h2>
+            <p>
+                Minh Ngoc Ta, Kaiyang Wan, Yan Lin, Yuxia Wang, and Preslav Nakov. 2026.
+                <cite>Overview of the Reasoning Trajectory Detection Task at PAN 2026.</cite>
+                CLEF 2026 Working Notes, September 21-24, 2026, Jena, Germany.
+            </p>
 
         </div>
     </div>
