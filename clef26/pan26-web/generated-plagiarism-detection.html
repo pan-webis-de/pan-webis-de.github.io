@@ -159,46 +159,302 @@ dataset.queries_iter()<br>
             
             <h2 id="results">Results</h2> 
             
-            <h3 id="baselines">Baselines</h3>
+            <h3 id="baselines">Sequential Dataset Results</h3>
+
+            The following table shows the results of all submissions, grouped by team. 
+            For FosuAI, Bedratiuk-Lab, and the best submission of Fsu-AIGC-Detector, only the top-10 results per query were available (their @100 scores are copied from @10). 
+            The submissions of Fsu-AIGC-Detector and NLP-DE did not include a description of their approaches.
+
+            Since only teams that submitted a notebook paper were considered for the competition, Fsu-AIGC-Detector and NLP-DE are listed separately.
 
             <table class="uk-table uk-table-divider uk-table-small">
-                <thead>
-                    <tr>
-                        <th class="uk-text-right">#</th>
-                        <th>Approach</th>
-                        <th>R@10</th>
-                        <th>R@100</th>
-                        <th>nDCG@10</th>
-                        <th>RR</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th class="uk-text-right">1</th>
-                        <th>BM25</th>
-                        <td>tba.</td>
-                        <td>tba.</td>
-                        <td class="uk-background-muted uk-text-bold">0.553</td>
-                        <td class="uk-background-muted uk-text-bold">0.832</td>
-                    </tr>
-                    <tr>
-                        <th class="uk-text-right">3</th>
-                        <th>LinQ Embeddings</th>
-                        <td class="uk-background-muted uk-text-bold">0.445</td>
-                        <td class="uk-background-muted uk-text-bold">0.726</td>
-                        <td>0.391</td>
-                        <td>0.689</td>
-                    </tr>
-                    <tr>
-                        <th class="uk-text-right">2</th>
-                        <th>Numeral Overlap</th>
-                        <td>0.170</td>
-                        <td>0.220</td>
-                        <td>0.184</td>
-                        <td>0.321</td>
-                    </tr>
-                </tbody>
-            </table>
+            <thead>
+                <tr>
+                    <th class="uk-text-right">#</th>
+                    <th>Team</th>
+                    <th>Approach</th>
+                    <th>nDCG@10</th>
+                    <th>nDCG@100</th>
+                    <th>R@10</th>
+                    <th>R@100</th>
+                    <th>MRR</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th class="uk-text-right uk-table-middle" rowspan="2">1</th>
+                    <th class="uk-table-middle" rowspan="2">JLP</th>
+                    <th>BM25 + GTE RRF</th>
+                    <td class="uk-background-muted uk-text-bold">0.799</td>
+                    <td class="uk-background-muted uk-text-bold">0.833</td>
+                    <td class="uk-background-muted uk-text-bold">0.854</td>
+                    <td>0.963</td>
+                    <td class="uk-background-muted uk-text-bold">0.976</td>
+                </tr>
+                <tr>
+                    <th>BM25 + GTE RRF minmax</th>
+                    <td>0.779</td>
+                    <td>0.817</td>
+                    <td>0.838</td>
+                    <td class="uk-background-muted uk-text-bold">0.965</td>
+                    <td>0.961</td>
+                </tr>
+                <tr>
+                    <th class="uk-text-right">2</th>
+                    <th>FosuAI</th>
+                    <th>BM25 Segmented</th>
+                    <td>0.626</td>
+                    <td style="color: #BBB !important;" title="Only top-10 results submitted, so this equals the @10 value">0.626</td>
+                    <td>0.630</td>
+                    <td style="color: #BBB !important;" title="Only top-10 results submitted, so this equals the @10 value">0.630</td>
+                    <td>0.935</td>
+                </tr>
+                <tr>
+                    <th class="uk-text-right uk-table-middle" rowspan="5">3</th>
+                    <th class="uk-table-middle" rowspan="5">ENGsTF</th>
+                    <th>BGE-M3 + BM25 + RR bl.</th>
+                    <td>0.642</td>
+                    <td>0.687</td>
+                    <td>0.671</td>
+                    <td>0.840</td>
+                    <td>0.908</td>
+                </tr>
+                <tr>
+                    <th>BGE-M3 + BM25</th>
+                    <td>0.613</td>
+                    <td>0.658</td>
+                    <td>0.648</td>
+                    <td>0.832</td>
+                    <td>0.912</td>
+                </tr>
+                <tr>
+                    <th>E5 + BM25</th>
+                    <td>0.585</td>
+                    <td>0.637</td>
+                    <td>0.612</td>
+                    <td>0.820</td>
+                    <td>0.876</td>
+                </tr>
+                <tr>
+                    <th>BGE-M3 + BM25 + RR</th>
+                    <td>0.491</td>
+                    <td>0.561</td>
+                    <td>0.565</td>
+                    <td>0.823</td>
+                    <td>0.695</td>
+                </tr>
+                <tr>
+                    <th>E5 + FAISS</th>
+                    <td>0.385</td>
+                    <td>0.448</td>
+                    <td>0.433</td>
+                    <td>0.676</td>
+                    <td>0.647</td>
+                </tr>
+                <tr>
+                    <th class="uk-text-right">4</th>
+                    <th>Bedratiuk-Lab</th>
+                    <th>MiniLM + Reranker</th>
+                    <td>0.385</td>
+                    <td style="color: #BBB !important;" title="Only top-10 results submitted, so this equals the @10 value">0.385</td>
+                    <td>0.386</td>
+                    <td style="color: #BBB !important;" title="Only top-10 results submitted, so this equals the @10 value">0.386</td>
+                    <td>0.619</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr style="border-top: 3px solid #929292;">
+                    <th class="uk-text-right uk-table-middle" rowspan="2">5</th>
+                    <th class="uk-table-middle" rowspan="2">Fsu-AIGC-Detector</th>
+                    <th>unk-1</th>
+                    <td>0.643</td>
+                    <td style="color: #BBB !important;" title="Only top-10 results submitted, so this equals the @10 value">0.643</td>
+                    <td>0.657</td>
+                    <td style="color: #BBB !important;" title="Only top-10 results submitted, so this equals the @10 value">0.657</td>
+                    <td>0.892</td>
+                </tr>
+                <tr>
+                    <th>unk-2</th>
+                    <td>0.301</td>
+                    <td>0.374</td>
+                    <td>0.360</td>
+                    <td>0.643</td>
+                    <td>0.498</td>
+                </tr>
+                <tr>
+                    <th class="uk-text-right uk-table-middle" rowspan="2">6</th>
+                    <th class="uk-table-middle" rowspan="2">NLP-DE</th>
+                    <th>unk-1</th>
+                    <td>0.076</td>
+                    <td>0.111</td>
+                    <td>0.098</td>
+                    <td>0.225</td>
+                    <td>0.137</td>
+                </tr>
+                <tr>
+                    <th>unk-2</th>
+                    <td>0.040</td>
+                    <td>0.067</td>
+                    <td>0.057</td>
+                    <td>0.157</td>
+                    <td>0.076</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr style="border-top: 3px solid #929292;">
+                    <th class="uk-text-right uk-table-middle" rowspan="3"></th>
+                    <th class="uk-table-middle" rowspan="3">Baselines</th>
+                    <th>BM25</th>
+                    <td>0.553</td>
+                    <td>0.607</td>
+                    <td>0.577</td>
+                    <td>0.782</td>
+                    <td>0.832</td>
+                </tr>
+                <tr>
+                    <th>LinQ Embeddings</th>
+                    <td>0.391</td>
+                    <td>0.467</td>
+                    <td>0.445</td>
+                    <td>0.726</td>
+                    <td>0.699</td>
+                </tr>
+                <tr>
+                    <th>Numeral Matching</th>
+                    <td>0.184</td>
+                    <td>0.199</td>
+                    <td>0.170</td>
+                    <td>0.220</td>
+                    <td>0.321</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 id="baselines">One-Shot Dataset Results</h3>
+
+        The internal one-shot test dataset was released after all runs had been submitted. 
+        As a result, we could only evaluate code submissions. 
+        This dataset was used for testing purposes only and is not part of the official shared task.
+        This dataset is included in version v3 on Zenodo: <a href="https://doi.org/10.5281/zenodo.23528623">10.5281/zenodo.23528623</a>.
+
+        <table class="uk-table uk-table-divider uk-table-small">
+        <thead>
+            <tr>
+                <th class="uk-text-right">#</th>
+                <th>Team</th>
+                <th>Approach</th>
+                <th>nDCG@10</th>
+                <th>nDCG@100</th>
+                <th>R@10</th>
+                <th>R@100</th>
+                <th>MRR</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th class="uk-text-right">1</th>
+                <th>FosuAI</th>
+                <th>BM25 Segmented</th>
+                <td class="uk-background-muted uk-text-bold">0.699</td>
+                <td style="color: #BBB !important;" title="Only top-10 results submitted, so this equals the @10 value">0.699</td>
+                <td class="uk-background-muted uk-text-bold">0.775</td>
+                <td style="color: #BBB !important;" title="Only top-10 results submitted, so this equals the @10 value">0.775</td>
+                <td class="uk-background-muted uk-text-bold">0.774</td>
+            </tr>
+            <tr>
+                <th class="uk-text-right uk-table-middle" rowspan="4">2</th>
+                <th class="uk-table-middle" rowspan="4">EngSTF</th>
+                <th>E5 + BM25</th>
+                <td>0.690</td>
+                <td>0.730</td>
+                <td>0.774</td>
+                <td>0.925</td>
+                <td>0.767</td>
+            </tr>
+            <tr>
+                <th>BGE-M3 + BM25</th>
+                <td>0.597</td>
+                <td>0.645</td>
+                <td>0.665</td>
+                <td>0.859</td>
+                <td>0.700</td>
+            </tr>
+            <tr>
+                <th>BGE-M3 + BM25 + RR</th>
+                <td>0.447</td>
+                <td>0.520</td>
+                <td>0.585</td>
+                <td>0.861</td>
+                <td>0.503</td>
+            </tr>
+            <tr>
+                <th>E5 + FAISS</th>
+                <td>0.443</td>
+                <td>0.506</td>
+                <td>0.534</td>
+                <td>0.787</td>
+                <td>0.513</td>
+            </tr>
+            <tr>
+                <th class="uk-text-right">3</th>
+                <th>Bedratiuk-Lab</th>
+                <th>MiniLM + Reranker</th>
+                <td>0.349</td>
+                <td style="color: #BBB !important;" title="Only top-10 results submitted, so this equals the @10 value">0.349</td>
+                <td>0.401</td>
+                <td style="color: #BBB !important;" title="Only top-10 results submitted, so this equals the @10 value">0.401</td>
+                <td>0.437</td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr style="border-top: 3px solid #929292;">
+                <th class="uk-text-right uk-table-middle" rowspan="2">4</th>
+                <th class="uk-table-middle" rowspan="2">Fsu-AIGC-Detector</th>
+                <th>unk-1</th>
+                <td class="uk-background-muted uk-text-bold">0.729</td>
+                <td style="color: #BBB !important;" title="Only top-10 results submitted, so this equals the @10 value">0.729</td>
+                <td class="uk-background-muted uk-text-bold">0.797</td>
+                <td style="color: #BBB !important;" title="Only top-10 results submitted, so this equals the @10 value">0.797</td>
+                <td class="uk-background-muted uk-text-bold">0.793</td>
+            </tr>
+            <tr>
+                <th>unk-2</th>
+                <td>0.352</td>
+                <td>0.422</td>
+                <td>0.428</td>
+                <td>0.711</td>
+                <td>0.443</td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr style="border-top: 3px solid #929292;">
+                <th class="uk-text-right uk-table-middle" rowspan="3"></th>
+                <th class="uk-table-middle" rowspan="3">Baselines</th>
+                <th>BM25</th>
+                <td>0.477</td>
+                <td>0.525</td>
+                <td>0.550</td>
+                <td>0.734</td>
+                <td>0.570</td>
+            </tr>
+            <tr>
+                <th>LinQ Embeddings</th>
+                <td>0.450</td>
+                <td>0.513</td>
+                <td>0.533</td>
+                <td>0.789</td>
+                <td>0.558</td>
+            </tr>
+            <tr>
+                <th>Numeral Matching</th>
+                <td>0.065</td>
+                <td>0.084</td>
+                <td>0.087</td>
+                <td>0.159</td>
+                <td>0.087</td>
+            </tr>
+        </tbody>
+    </table>
 
                                     
             <h2 id="related-work">Related Work</h2>
