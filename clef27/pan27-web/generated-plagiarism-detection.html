@@ -1,0 +1,153 @@
+---
+layout: default
+nav_active: shared-tasks
+title: PAN at CLEF 2027 - Generated Plagiarism Detection
+description: PAN at CLEF 2027 - Generated Plagiarism Detection
+---
+<nav class="uk-container">
+<ul class="uk-breadcrumb">
+<li><a href="../../index.html">PAN</a></li>
+<li><a href="../../shared-tasks.html">Shared Tasks</a></li>
+<li class="uk-disabled"><a href="#">Generated Plagiarism Detection 2027</a></li>
+</ul>
+</nav>
+
+<main class="uk-section uk-section-default">
+    <div class="uk-container">
+        <div class="uk-container uk-margin-small">
+            <div>
+            <h1 class="uk-margin-remove-top">Generative Plagiarism Detection 2027</h1>
+            <ul class="uk-list">
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#synopsis">Synopsis</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task1">Task Overview</a></li>
+               <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#data">Data</a></li>
+<!--                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#submission">Submission</a></li>-->
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#results">Results</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#related-work">Related Work</a></li>
+                <li><span data-uk-icon="chevron-down"></span><a class="uk-margin-small-right" href="#task-committee">Task Committee</a></li>
+            </ul>
+            </div>
+        </div>
+        
+
+        <div class="uk-container uk-margin-medium">
+            <h2 id="synopsis">Synopsis</h2>
+            <ul>
+                <li>Task: TBA.</li>
+                <!-- <li>Registration: [<a href="https://clef-labs-registration.dipintra.it/">CLEF labs</a>]</li> -->
+                <li>Important dates: TBA.
+                </li>
+                <li>Dataset: TBA.</li>
+                <li>Input: TBA.</li>
+                <li>Baselines: TBA.</li>
+                <li>Evaluation: TBA.</li>
+                <li>Submission: TBA.</li>
+            </ul>
+
+            <h2 id="task">Task Overview</h2>
+            <p>TBA.</p>
+
+            <!--
+            <p>
+                This task follows the classic retrieval task design. Each given suspicious document (the query) is fully auto-generated via an undisclosed LLM 
+                that was instructed to write a new scientific document based of multiple (at least 2) source documents. The goal of this task is
+                to identify all sources for the given query document within a given collection.
+                Please retrieve up to 1000 results (from the source documents) in the TREC-style run format for each suspicious document.
+            </p>
+            -->
+
+            <h2 id="data">Data</h2>
+            <p>TBA.</p>
+
+            <!--
+            <p>
+                Please register first at <a href="https://www.tira.io/task-overview/pan26-generated-plagiarism-detection">Tira</a>. 
+                The dataset contains copyrighted material and may be used only for research purposes. <strong>No redistribution allowed.</strong>
+                We will prepare the data in a format compatible with <a href="https://ir-datasets.com/">ir_datasets</a> so that you can directly load the data with the ir_datasets API (please look at the <a href="https://github.com/pan-webis-de/pan-code/tree/master/clef26/generated-plagiarism-detection/baseline-pyterrier">baseline</a> for an example).<br><br>
+                Accessing the data via ir_datasets works like:
+                <pre class="prettyprint lang-py" style="overflow-x:auto;white-space:nowrap">from tira.third_party_integrations import ir_datasets<br>
+# spot-check-dataset-20260227-training is the ID of the spot-check dataset<br>
+dataset = ir_datasets.load("pan26-generated-plagiarism-detection/spot-check-dataset-20260227-training")<br>
+<br>
+#access the to-be-retrieved documents via.<br>
+dataset.docs_iter()<br>
+<br>
+#access the suspicios documents via:<br>
+dataset.queries_iter()<br>
+</pre><br>
+
+                You can also access the data without ir_datasets. The data consists of two files, first the corpus.jsonl.gz file contains all potential source documents (the documents to retrieve from), and queries.jsonl contains all queries (each query is a suspicious document for which we look for the source documents that it plagiarized).
+            <ul>
+                <li>The corpus.jsonl.gz file has the following structure:<pre class="prettyprint lang-py" style="overflow-x:auto;white-space:nowrap">{"doc_id": "123", "default_text": "The text of the arxiv paper with ID 123"}</pre></li>
+                
+                <li>The queries.jsonl file has the following structure:<pre class="prettyprint lang-py" style="overflow-x:auto;white-space:nowrap">{"qid": "1", "query": "The text of the document that we want to check for plagiarism."}</pre></li>
+            </ul>
+                
+            </p>
+
+            -->
+
+            <h2 id="output">Output</h2>
+            <p>TBA.</p>
+
+            <!--
+            <p>
+                For each suspicious document in the query set, retrieve up to 1000 documents and store the rankings in a run.txt.gz file that is in the TREC run format. Each line should look like:
+
+                <pre class="prettyprint lang-py" style="overflow-x:auto;white-space:nowrap">qid Q0 doc rank score tag</pre>
+            With:
+            <ul>
+                <li>qid: The query ID that identifies the suspicious document for which potential source documents should be retrieved.</li>
+                <li>Q0: Unused, should always be Q0.</li>
+                <li>doc: The document ID from the collection of source documents returned by your system for the qid.</li>
+                <li>rank: The rank the document is retrieved at.</li>
+                <li>score: The score (integer or floating point) that generated the ranking. The score must be in descending (non-increasing) order. It is important to handle tied scores (trec_eval sorts documents by the score values and not your rank values).</li>
+                <li>tag: A tag that identifies your system</li>
+            </ul>
+                
+            </p>
+            -->
+
+            <h2 id="results">Leaderboard</h2>
+            <p>TBD</p> 
+
+                                    
+            <h2 id="related-work">Related Work</h2>
+            <ol>
+                <li>
+                    <a href="{{ 'publications.html#?q=2025%20plagiarism%20potthast' | relative_url }}">Plagiarism Detection, PAN @ CLEF'25</a>
+                </li>
+                <li>
+                    <a href="{{ 'publications.html#?q=2014%20plagiarism%20potthast' | relative_url }}">Plagiarism Detection, PAN @ CLEF'14</a>
+                </li>
+                <li>
+                    <a href="{{ 'publications.html#?q=2013%20plagiarism%20potthast' | relative_url }}">Plagiarism Detection, PAN @ CLEF'13</a>
+                </li>
+                <li>
+                    <a href="{{ 'publications.html#?q=2012%20plagiarism%20potthast' | relative_url }}">Plagiarism Detection, PAN @ CLEF'12</a>
+                </li>
+                <li>
+                    <a href="{{ 'publications.html#?q=2011%20plagiarism%20potthast' | relative_url }}">Plagiarism Detection, PAN @ CLEF'11</a>
+                </li>
+                <li>
+                    <a href="{{ 'publications.html#?q=2010%20plagiarism%20potthast' | relative_url }}">Plagiarism Detection, PAN @ CLEF'10</a>
+                </li>
+                <li>
+                    <a href="{{ 'publications.html#?q=2009%20plagiarism%20potthast' | relative_url }}">Plagiarism Detection, PAN @ SEPLN'09</a>
+                </li>  
+            </ol>
+            
+            <h2 id="task-committee">Task Committee</h2>
+            <div data-uk-grid class="uk-grid uk-grid-match uk-grid-small thumbnail-card-grid">
+                {% include people-cards/greinerpetter.html %}
+                {% include people-cards/wu.html %}
+                {% include people-cards/kitamura.html %}
+                {% include people-cards/wookim.html %}
+                {% include people-cards/gipp.html %}
+            </div>    
+            <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+                {% include organizations/clef-organizations-section.html year=2027 %}
+            </div>
+        </div>
+    </div>
+</main> 
