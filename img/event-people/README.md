@@ -1,6 +1,6 @@
-# Portraits for PAN 2027 organizers and speakers
+# Portraits for PAN organizers and speakers
 
-Put portraits of people who appear on the 2027 pages here. External organizers can add them directly in this repository; the central image store (`webis-de-assets`) stays with Webis.
+Put portraits of people who appear on the PAN pages here. External organizers can add them directly in this repository; the central image store (`webis-de-assets`) stays with Webis.
 
 | File               | Content                           |
 |--------------------|-----------------------------------|
@@ -16,7 +16,7 @@ Full format and naming: [Target format](https://github.com/webis-de/webis-de-ass
 Use the thumbnail in a people card:
 
 ```html
-<img src="{{ '/clef27/img/event-people/<key>.jpg' | relative_url }}" alt="<Full Name>">
+<img src="{{ '/img/event-people/<key>.jpg' | relative_url }}" alt="<Full Name>">
 ```
 
 Once a year, Webis moves these files to `webis-de-assets/img/event-people/` (same layout) and points the cards to `https://assets.webis.de/img/event-people/<key>.jpg`.
