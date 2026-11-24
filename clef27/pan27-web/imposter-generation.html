@@ -44,11 +44,30 @@ description: PAN at CLEF 2027 - Imposter Generation
             
             
             <h2 id="task-overview">Task Overview</h2>
-            <p>TBA.</p>
+            <p>In the Impostor Generation task, participants build a system that generates impostor documents for authorship verification. Each problem gives the system a document by a known author. The system must produce a set of impostors: texts written in the same domain, genre and topic, but clearly by other authors. Participants submit only the impostor generator, through <a href="https://www.tira.io/">TIRA</a>. We then plug the generated impostors into a fixed implementation of the Impostors Method and run it on the test dataset. The goal is to generate impostors that let the Impostors Method separate same-author from different-author pairs as reliably as possible.</p>
 
+            <p>The task is structured as follows:</p>
+
+            <ol>
+                <li>Develop an impostor generation system that produces impostor documents for a given input document. To develop and tune your approach, you can use the provided training dataset together with our reference implementation of the Impostors Method, the same one we use for evaluation. You may use any approach, for example prompting or fine-tuning large language models.</li>
+                <li>Submit your impostor generation system through the <a href="https://www.tira.io/">TIRA</a>  platform.</li>
+                <li>We will run your system on our test dataset to generate impostors for each verification problem.</li>
+                <li>We will run our fixed implementation of the Impostors Method on the test problems, using your generated impostors as the comparison set. All other parts of the verification pipeline (features, similarity measure, number of iterations and the decision procedure) are the same for every participant.</li>
+                <li>We will evaluate authorship verification performance on the resulting decisions. Since the impostors are the only thing that differs between submissions, the score directly reflects how good the impostors are.</li>
+            </ol>
 
             <h2 id="data">Data</h2>
-            <p>TBA.</p>
+            The dataset is available via <a href="https://zenodo.org/">Zenodo</a>. <!-- TODO: Add link to the actual dataset -->
+
+            <!-- <p>The training dataset is provided as a set of newline-delimited JSON files. The file format is as follows:</p> -->
+
+            <!-- <pre class="prettyprint">
+                <code class="lang-json">{"id": "9a28d103-7b2e-43da-b511-2efb5f91975f", "text": "..."}
+                {"id": "4fcae8a8-f5e6-4ccd-9dae-10b609a47cfc", "text": "..."}
+                ...</code>
+            </pre> -->
+
+            <!-- <p>The test dataset will have the exact same format.</p> -->
 
             <h2 id="submission">Submission</h2>
             <p>TBA.</p>
@@ -58,7 +77,9 @@ description: PAN at CLEF 2027 - Imposter Generation
             <p>TBA.</p>
 
             <h2 id="baselines">Baselines</h2>
-            <p>TBA.</p>
+            <p>The baselines are published on <a href="https://github.com/pan-webis-de/pan-code/tree/master/clef27/" target="_blank">GitHub</a>.</p> <!-- TODO: Add link to the actual code -->
+
+            <p>More information on how to install and run the baseline can be found in the <a href="https://github.com/pan-webis-de/pan-code/blob/master/clef27/" target="_blank">README on GitHub</a>.</p> <!-- TODO: Add link to the actual readme -->
 
             <h2 id="leaderboard">Leaderboard</h2>
             <p>TBD</p>
